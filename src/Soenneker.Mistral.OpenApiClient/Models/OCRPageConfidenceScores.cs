@@ -9,27 +9,13 @@ namespace Soenneker.Mistral.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class OCRTableObject : IParsable
+    public partial class OCRPageConfidenceScores : IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>Content of the table in the given format</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Content { get; set; }
-#nullable restore
-#else
-        public string Content { get; set; }
-#endif
-        /// <summary>Format of the table</summary>
-        public global::Soenneker.Mistral.OpenApiClient.Models.OCRTableObject_format? Format { get; set; }
-        /// <summary>Table ID for extracted table in a page</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Id { get; set; }
-#nullable restore
-#else
-        public string Id { get; set; }
-#endif
+        /// <summary>Average confidence score across all words on the page, between 0 and 1.</summary>
+        public double? AveragePageConfidenceScore { get; set; }
+        /// <summary>Minimum confidence score across all words on the page, between 0 and 1.</summary>
+        public double? MinimumPageConfidenceScore { get; set; }
         /// <summary>Per-word confidence scores. Returned when `confidence_scores_granularity` is set to `&quot;word&quot;`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -41,12 +27,12 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Mistral.OpenApiClient.Models.OCRTableObject"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Mistral.OpenApiClient.Models.OCRPageConfidenceScores"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::Soenneker.Mistral.OpenApiClient.Models.OCRTableObject CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::Soenneker.Mistral.OpenApiClient.Models.OCRPageConfidenceScores CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Mistral.OpenApiClient.Models.OCRTableObject();
+            return new global::Soenneker.Mistral.OpenApiClient.Models.OCRPageConfidenceScores();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -56,9 +42,8 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "content", n => { Content = n.GetStringValue(); } },
-                { "format", n => { Format = n.GetEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.OCRTableObject_format>(); } },
-                { "id", n => { Id = n.GetStringValue(); } },
+                { "average_page_confidence_score", n => { AveragePageConfidenceScore = n.GetDoubleValue(); } },
+                { "minimum_page_confidence_score", n => { MinimumPageConfidenceScore = n.GetDoubleValue(); } },
                 { "word_confidence_scores", n => { WordConfidenceScores = n.GetCollectionOfObjectValues<global::Soenneker.Mistral.OpenApiClient.Models.OCRConfidenceScore>(global::Soenneker.Mistral.OpenApiClient.Models.OCRConfidenceScore.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
@@ -69,9 +54,8 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("content", Content);
-            writer.WriteEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.OCRTableObject_format>("format", Format);
-            writer.WriteStringValue("id", Id);
+            writer.WriteDoubleValue("average_page_confidence_score", AveragePageConfidenceScore);
+            writer.WriteDoubleValue("minimum_page_confidence_score", MinimumPageConfidenceScore);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Mistral.OpenApiClient.Models.OCRConfidenceScore>("word_confidence_scores", WordConfidenceScores);
         }
     }
