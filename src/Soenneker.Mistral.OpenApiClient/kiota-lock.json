@@ -2,7 +2,7 @@
   "descriptionHash": "2E97A13BD052A377202B9C61C95198AC443EA54FDBAACEC93B3ADE6510A2E4740091388208A736FE39298891D602050D7FFE855272C2F482BDFE8B1D050BCC80",
   "descriptionLocation": "../../openapi.yaml",
   "lockFileVersion": "1.0.0",
-  "kiotaVersion": "1.31.0",
+  "kiotaVersion": "1.31.1",
   "clientClassName": "MistralOpenApiClient",
   "typeAccessModifier": "Public",
   "clientNamespaceName": "Soenneker.Mistral.OpenApiClient",
