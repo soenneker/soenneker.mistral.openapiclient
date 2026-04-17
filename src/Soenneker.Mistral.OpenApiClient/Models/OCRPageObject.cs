@@ -12,14 +12,6 @@ namespace Soenneker.Mistral.OpenApiClient.Models
     public partial class OCRPageObject : IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>Confidence scores for the page. Populated when `confidence_scores_granularity` is set in the request.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.OCRPageConfidenceScores? ConfidenceScores { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Mistral.OpenApiClient.Models.OCRPageConfidenceScores ConfidenceScores { get; set; }
-#endif
         /// <summary>The dimensions of the PDF Page&apos;s screenshot image</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -96,7 +88,6 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "confidence_scores", n => { ConfidenceScores = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.OCRPageConfidenceScores>(global::Soenneker.Mistral.OpenApiClient.Models.OCRPageConfidenceScores.CreateFromDiscriminatorValue); } },
                 { "dimensions", n => { Dimensions = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.OCRPageDimensions>(global::Soenneker.Mistral.OpenApiClient.Models.OCRPageDimensions.CreateFromDiscriminatorValue); } },
                 { "footer", n => { Footer = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.OCRPageObject.OCRPageObject_footer>(global::Soenneker.Mistral.OpenApiClient.Models.OCRPageObject.OCRPageObject_footer.CreateFromDiscriminatorValue); } },
                 { "header", n => { Header = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.OCRPageObject.OCRPageObject_header>(global::Soenneker.Mistral.OpenApiClient.Models.OCRPageObject.OCRPageObject_header.CreateFromDiscriminatorValue); } },
@@ -114,7 +105,6 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.OCRPageConfidenceScores>("confidence_scores", ConfidenceScores);
             writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.OCRPageDimensions>("dimensions", Dimensions);
             writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.OCRPageObject.OCRPageObject_footer>("footer", Footer);
             writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.OCRPageObject.OCRPageObject_header>("header", Header);

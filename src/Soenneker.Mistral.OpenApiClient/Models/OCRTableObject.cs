@@ -30,14 +30,6 @@ namespace Soenneker.Mistral.OpenApiClient.Models
 #else
         public string Id { get; set; }
 #endif
-        /// <summary>Per-word confidence scores. Returned when `confidence_scores_granularity` is set to `&quot;word&quot;`.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public List<global::Soenneker.Mistral.OpenApiClient.Models.OCRConfidenceScore>? WordConfidenceScores { get; set; }
-#nullable restore
-#else
-        public List<global::Soenneker.Mistral.OpenApiClient.Models.OCRConfidenceScore> WordConfidenceScores { get; set; }
-#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -59,7 +51,6 @@ namespace Soenneker.Mistral.OpenApiClient.Models
                 { "content", n => { Content = n.GetStringValue(); } },
                 { "format", n => { Format = n.GetEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.OCRTableObject_format>(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
-                { "word_confidence_scores", n => { WordConfidenceScores = n.GetCollectionOfObjectValues<global::Soenneker.Mistral.OpenApiClient.Models.OCRConfidenceScore>(global::Soenneker.Mistral.OpenApiClient.Models.OCRConfidenceScore.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
         /// <summary>
@@ -72,7 +63,6 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             writer.WriteStringValue("content", Content);
             writer.WriteEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.OCRTableObject_format>("format", Format);
             writer.WriteStringValue("id", Id);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Mistral.OpenApiClient.Models.OCRConfidenceScore>("word_confidence_scores", WordConfidenceScores);
         }
     }
 }

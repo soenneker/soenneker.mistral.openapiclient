@@ -7,7 +7,6 @@ using Soenneker.Mistral.OpenApiClient.V1.Audio;
 using Soenneker.Mistral.OpenApiClient.V1.Batch;
 using Soenneker.Mistral.OpenApiClient.V1.Chat;
 using Soenneker.Mistral.OpenApiClient.V1.Classifications;
-using Soenneker.Mistral.OpenApiClient.V1.Connectors;
 using Soenneker.Mistral.OpenApiClient.V1.Conversations;
 using Soenneker.Mistral.OpenApiClient.V1.ConversationsStream;
 using Soenneker.Mistral.OpenApiClient.V1.Embeddings;
@@ -56,11 +55,6 @@ namespace Soenneker.Mistral.OpenApiClient.V1
         public global::Soenneker.Mistral.OpenApiClient.V1.Classifications.ClassificationsRequestBuilder Classifications
         {
             get => new global::Soenneker.Mistral.OpenApiClient.V1.Classifications.ClassificationsRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>The connectors property</summary>
-        public global::Soenneker.Mistral.OpenApiClient.V1.Connectors.ConnectorsRequestBuilder Connectors
-        {
-            get => new global::Soenneker.Mistral.OpenApiClient.V1.Connectors.ConnectorsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The conversations property</summary>
         public global::Soenneker.Mistral.OpenApiClient.V1.Conversations.ConversationsRequestBuilder Conversations
