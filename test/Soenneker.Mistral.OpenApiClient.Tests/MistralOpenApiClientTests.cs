@@ -1,16 +1,15 @@
-using Soenneker.Tests.FixturedUnit;
-using Xunit;
+using Soenneker.Tests.HostedUnit;
 
 namespace Soenneker.Mistral.OpenApiClient.Tests;
 
-[Collection("Collection")]
-public sealed class MistralOpenApiClientTests : FixturedUnitTest
+[ClassDataSource<Host>(Shared = SharedType.PerTestSession)]
+public sealed class MistralOpenApiClientTests : HostedUnitTest
 {
-    public MistralOpenApiClientTests(Fixture fixture, ITestOutputHelper output) : base(fixture, output)
+    public MistralOpenApiClientTests(Host host) : base(host)
     {
     }
 
-    [Fact]
+    [Test]
     public void Default()
     {
 
