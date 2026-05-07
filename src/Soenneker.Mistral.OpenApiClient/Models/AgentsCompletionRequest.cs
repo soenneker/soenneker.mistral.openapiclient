@@ -66,6 +66,14 @@ namespace Soenneker.Mistral.OpenApiClient.Models
 #endif
         /// <summary>The `presence_penalty` determines how much the model penalizes the repetition of words or phrases. A higher presence penalty encourages the model to use a wider variety of words and phrases, making the output more diverse and creative.</summary>
         public double? PresencePenalty { get; set; }
+        /// <summary>A cache key to enable prompt caching. When provided, the API will attempt to reuse previously computed tokens for requests sharing the same prefix (e.g. multi-turn conversations or requests with a similar system prompt). Cached tokens are billed at 10% of the standard input token price.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Mistral.OpenApiClient.Models.AgentsCompletionRequest.AgentsCompletionRequest_prompt_cache_key? PromptCacheKey { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Mistral.OpenApiClient.Models.AgentsCompletionRequest.AgentsCompletionRequest_prompt_cache_key PromptCacheKey { get; set; }
+#endif
         /// <summary>Allows toggling between the reasoning mode and no system prompt. When set to `reasoning` the system prompt for reasoning models will be used. **Deprecated for reasoning models - use `reasoning_effort` parameter instead.**</summary>
         public global::Soenneker.Mistral.OpenApiClient.Models.MistralPromptMode? PromptMode { get; set; }
         /// <summary>The seed to use for random sampling. If set, different calls will generate deterministic results.</summary>
@@ -145,6 +153,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
                 { "parallel_tool_calls", n => { ParallelToolCalls = n.GetBoolValue(); } },
                 { "prediction", n => { Prediction = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.Prediction>(global::Soenneker.Mistral.OpenApiClient.Models.Prediction.CreateFromDiscriminatorValue); } },
                 { "presence_penalty", n => { PresencePenalty = n.GetDoubleValue(); } },
+                { "prompt_cache_key", n => { PromptCacheKey = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.AgentsCompletionRequest.AgentsCompletionRequest_prompt_cache_key>(global::Soenneker.Mistral.OpenApiClient.Models.AgentsCompletionRequest.AgentsCompletionRequest_prompt_cache_key.CreateFromDiscriminatorValue); } },
                 { "prompt_mode", n => { PromptMode = n.GetEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.MistralPromptMode>(); } },
                 { "random_seed", n => { RandomSeed = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.AgentsCompletionRequest.AgentsCompletionRequest_random_seed>(global::Soenneker.Mistral.OpenApiClient.Models.AgentsCompletionRequest.AgentsCompletionRequest_random_seed.CreateFromDiscriminatorValue); } },
                 { "reasoning_effort", n => { ReasoningEffort = n.GetEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.AgentsCompletionRequest_reasoning_effort>(); } },
@@ -171,6 +180,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             writer.WriteBoolValue("parallel_tool_calls", ParallelToolCalls);
             writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.Prediction>("prediction", Prediction);
             writer.WriteDoubleValue("presence_penalty", PresencePenalty);
+            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.AgentsCompletionRequest.AgentsCompletionRequest_prompt_cache_key>("prompt_cache_key", PromptCacheKey);
             writer.WriteEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.MistralPromptMode>("prompt_mode", PromptMode);
             writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.AgentsCompletionRequest.AgentsCompletionRequest_random_seed>("random_seed", RandomSeed);
             writer.WriteEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.AgentsCompletionRequest_reasoning_effort>("reasoning_effort", ReasoningEffort);
@@ -416,6 +426,74 @@ namespace Soenneker.Mistral.OpenApiClient.Models
                 }
                 else {
                     writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.AgentsCompletionRequest_nMember1>(null, AgentsCompletionRequestNMember1);
+                }
+            }
+        }
+        /// <summary>
+        /// Composed type wrapper for classes <see cref="global::Soenneker.Mistral.OpenApiClient.Models.AgentsCompletionRequest_prompt_cache_keyMember1"/>, <see cref="string"/>
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
+        public partial class AgentsCompletionRequest_prompt_cache_key : IComposedTypeWrapper, IParsable
+        {
+            /// <summary>Composed type representation for type <see cref="global::Soenneker.Mistral.OpenApiClient.Models.AgentsCompletionRequest_prompt_cache_keyMember1"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            public global::Soenneker.Mistral.OpenApiClient.Models.AgentsCompletionRequest_prompt_cache_keyMember1? AgentsCompletionRequestPromptCacheKeyMember1 { get; set; }
+#nullable restore
+#else
+            public global::Soenneker.Mistral.OpenApiClient.Models.AgentsCompletionRequest_prompt_cache_keyMember1 AgentsCompletionRequestPromptCacheKeyMember1 { get; set; }
+#endif
+            /// <summary>Composed type representation for type <see cref="string"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            public string? String { get; set; }
+#nullable restore
+#else
+            public string String { get; set; }
+#endif
+            /// <summary>
+            /// Creates a new instance of the appropriate class based on discriminator value
+            /// </summary>
+            /// <returns>A <see cref="global::Soenneker.Mistral.OpenApiClient.Models.AgentsCompletionRequest.AgentsCompletionRequest_prompt_cache_key"/></returns>
+            /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+            public static global::Soenneker.Mistral.OpenApiClient.Models.AgentsCompletionRequest.AgentsCompletionRequest_prompt_cache_key CreateFromDiscriminatorValue(IParseNode parseNode)
+            {
+                if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
+                var result = new global::Soenneker.Mistral.OpenApiClient.Models.AgentsCompletionRequest.AgentsCompletionRequest_prompt_cache_key();
+                if(parseNode.GetStringValue() is string stringValue)
+                {
+                    result.String = stringValue;
+                }
+                else {
+                    result.AgentsCompletionRequestPromptCacheKeyMember1 = new global::Soenneker.Mistral.OpenApiClient.Models.AgentsCompletionRequest_prompt_cache_keyMember1();
+                }
+                return result;
+            }
+            /// <summary>
+            /// The deserialization information for the current model
+            /// </summary>
+            /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
+            public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+            {
+                if(AgentsCompletionRequestPromptCacheKeyMember1 != null)
+                {
+                    return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(AgentsCompletionRequestPromptCacheKeyMember1);
+                }
+                return new Dictionary<string, Action<IParseNode>>();
+            }
+            /// <summary>
+            /// Serializes information the current object
+            /// </summary>
+            /// <param name="writer">Serialization writer to use to serialize this model</param>
+            public virtual void Serialize(ISerializationWriter writer)
+            {
+                if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+                if(String != null)
+                {
+                    writer.WriteStringValue(null, String);
+                }
+                else {
+                    writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.AgentsCompletionRequest_prompt_cache_keyMember1>(null, AgentsCompletionRequestPromptCacheKeyMember1);
                 }
             }
         }

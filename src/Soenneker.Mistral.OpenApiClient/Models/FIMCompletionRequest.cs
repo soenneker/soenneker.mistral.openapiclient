@@ -52,6 +52,14 @@ namespace Soenneker.Mistral.OpenApiClient.Models
 #else
         public string Prompt { get; set; }
 #endif
+        /// <summary>A cache key to enable prompt caching. When provided, the API will attempt to reuse previously computed tokens for requests sharing the same prefix (e.g. multi-turn conversations or requests with a similar system prompt). Cached tokens are billed at 10% of the standard input token price.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Mistral.OpenApiClient.Models.FIMCompletionRequest.FIMCompletionRequest_prompt_cache_key? PromptCacheKey { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Mistral.OpenApiClient.Models.FIMCompletionRequest.FIMCompletionRequest_prompt_cache_key PromptCacheKey { get; set; }
+#endif
         /// <summary>The seed to use for random sampling. If set, different calls will generate deterministic results.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -118,6 +126,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
                 { "min_tokens", n => { MinTokens = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.FIMCompletionRequest.FIMCompletionRequest_min_tokens>(global::Soenneker.Mistral.OpenApiClient.Models.FIMCompletionRequest.FIMCompletionRequest_min_tokens.CreateFromDiscriminatorValue); } },
                 { "model", n => { Model = n.GetStringValue(); } },
                 { "prompt", n => { Prompt = n.GetStringValue(); } },
+                { "prompt_cache_key", n => { PromptCacheKey = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.FIMCompletionRequest.FIMCompletionRequest_prompt_cache_key>(global::Soenneker.Mistral.OpenApiClient.Models.FIMCompletionRequest.FIMCompletionRequest_prompt_cache_key.CreateFromDiscriminatorValue); } },
                 { "random_seed", n => { RandomSeed = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.FIMCompletionRequest.FIMCompletionRequest_random_seed>(global::Soenneker.Mistral.OpenApiClient.Models.FIMCompletionRequest.FIMCompletionRequest_random_seed.CreateFromDiscriminatorValue); } },
                 { "stop", n => { Stop = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.FIMCompletionRequest.FIMCompletionRequest_stop>(global::Soenneker.Mistral.OpenApiClient.Models.FIMCompletionRequest.FIMCompletionRequest_stop.CreateFromDiscriminatorValue); } },
                 { "stream", n => { Stream = n.GetBoolValue(); } },
@@ -138,6 +147,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.FIMCompletionRequest.FIMCompletionRequest_min_tokens>("min_tokens", MinTokens);
             writer.WriteStringValue("model", Model);
             writer.WriteStringValue("prompt", Prompt);
+            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.FIMCompletionRequest.FIMCompletionRequest_prompt_cache_key>("prompt_cache_key", PromptCacheKey);
             writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.FIMCompletionRequest.FIMCompletionRequest_random_seed>("random_seed", RandomSeed);
             writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.FIMCompletionRequest.FIMCompletionRequest_stop>("stop", Stop);
             writer.WriteBoolValue("stream", Stream);
@@ -266,6 +276,74 @@ namespace Soenneker.Mistral.OpenApiClient.Models
                 }
                 else {
                     writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.FIMCompletionRequest_min_tokensMember1>(null, FIMCompletionRequestMinTokensMember1);
+                }
+            }
+        }
+        /// <summary>
+        /// Composed type wrapper for classes <see cref="global::Soenneker.Mistral.OpenApiClient.Models.FIMCompletionRequest_prompt_cache_keyMember1"/>, <see cref="string"/>
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
+        public partial class FIMCompletionRequest_prompt_cache_key : IComposedTypeWrapper, IParsable
+        {
+            /// <summary>Composed type representation for type <see cref="global::Soenneker.Mistral.OpenApiClient.Models.FIMCompletionRequest_prompt_cache_keyMember1"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            public global::Soenneker.Mistral.OpenApiClient.Models.FIMCompletionRequest_prompt_cache_keyMember1? FIMCompletionRequestPromptCacheKeyMember1 { get; set; }
+#nullable restore
+#else
+            public global::Soenneker.Mistral.OpenApiClient.Models.FIMCompletionRequest_prompt_cache_keyMember1 FIMCompletionRequestPromptCacheKeyMember1 { get; set; }
+#endif
+            /// <summary>Composed type representation for type <see cref="string"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            public string? String { get; set; }
+#nullable restore
+#else
+            public string String { get; set; }
+#endif
+            /// <summary>
+            /// Creates a new instance of the appropriate class based on discriminator value
+            /// </summary>
+            /// <returns>A <see cref="global::Soenneker.Mistral.OpenApiClient.Models.FIMCompletionRequest.FIMCompletionRequest_prompt_cache_key"/></returns>
+            /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+            public static global::Soenneker.Mistral.OpenApiClient.Models.FIMCompletionRequest.FIMCompletionRequest_prompt_cache_key CreateFromDiscriminatorValue(IParseNode parseNode)
+            {
+                if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
+                var result = new global::Soenneker.Mistral.OpenApiClient.Models.FIMCompletionRequest.FIMCompletionRequest_prompt_cache_key();
+                if(parseNode.GetStringValue() is string stringValue)
+                {
+                    result.String = stringValue;
+                }
+                else {
+                    result.FIMCompletionRequestPromptCacheKeyMember1 = new global::Soenneker.Mistral.OpenApiClient.Models.FIMCompletionRequest_prompt_cache_keyMember1();
+                }
+                return result;
+            }
+            /// <summary>
+            /// The deserialization information for the current model
+            /// </summary>
+            /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
+            public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+            {
+                if(FIMCompletionRequestPromptCacheKeyMember1 != null)
+                {
+                    return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(FIMCompletionRequestPromptCacheKeyMember1);
+                }
+                return new Dictionary<string, Action<IParseNode>>();
+            }
+            /// <summary>
+            /// Serializes information the current object
+            /// </summary>
+            /// <param name="writer">Serialization writer to use to serialize this model</param>
+            public virtual void Serialize(ISerializationWriter writer)
+            {
+                if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+                if(String != null)
+                {
+                    writer.WriteStringValue(null, String);
+                }
+                else {
+                    writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.FIMCompletionRequest_prompt_cache_keyMember1>(null, FIMCompletionRequestPromptCacheKeyMember1);
                 }
             }
         }
