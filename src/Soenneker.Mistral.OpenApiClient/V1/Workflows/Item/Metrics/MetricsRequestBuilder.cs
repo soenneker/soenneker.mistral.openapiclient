@@ -12,7 +12,7 @@ using System;
 namespace Soenneker.Mistral.OpenApiClient.V1.Workflows.Item.Metrics
 {
     /// <summary>
-    /// Builds and executes requests for operations under \v1\workflows\{workflow_identifier-id}\metrics
+    /// Builds and executes requests for operations under \v1\workflows\{workflowIdentifier-id}\metrics
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class MetricsRequestBuilder : BaseRequestBuilder
@@ -22,7 +22,7 @@ namespace Soenneker.Mistral.OpenApiClient.V1.Workflows.Item.Metrics
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public MetricsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/workflows/{workflow_identifier%2Did}/metrics{?end_time*,start_time*}", pathParameters)
+        public MetricsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/workflows/{workflowIdentifier%2Did}/metrics{?end_time*,start_time*}", pathParameters)
         {
         }
         /// <summary>
@@ -30,16 +30,16 @@ namespace Soenneker.Mistral.OpenApiClient.V1.Workflows.Item.Metrics
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public MetricsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/workflows/{workflow_identifier%2Did}/metrics{?end_time*,start_time*}", rawUrl)
+        public MetricsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/workflows/{workflowIdentifier%2Did}/metrics{?end_time*,start_time*}", rawUrl)
         {
         }
         /// <summary>
-        /// Get comprehensive metrics for a specific workflow.Args:    workflow_name: The name of the workflow type to get metrics for    start_time: Optional start time filter (ISO 8601 format)    end_time: Optional end time filter (ISO 8601 format)Returns:    WorkflowMetrics: Dictionary containing metrics:        - execution_count: Total number of executions        - success_count: Number of successful executions        - error_count: Number of failed/terminated executions        - average_latency_ms: Average execution duration in milliseconds        - retry_rate: Proportion of workflows with retries        - latency_over_time: Time-series data of execution durationsExample:    GET /v1/workflows/MyWorkflow/metrics    GET /v1/workflows/MyWorkflow/metrics?start_time=2025-01-01T00:00:00Z    GET /v1/workflows/MyWorkflow/metrics?start_time=2025-01-01T00:00:00Z&amp;end_time=2025-12-31T23:59:59Z
+        /// &quot;Get comprehensive metrics for a specific workflow.Args:    workflow_name: The name of the workflow type to get metrics for    start_time: Optional start time filter (ISO 8601 format)    end_time: Optional end time filter (ISO 8601 format)Returns:    WorkflowMetrics: Dictionary containing metrics:        - execution_count: Total number of executions        - success_count: Number of successful executions        - error_count: Number of failed/terminated executions        - average_latency_ms: Average execution duration in milliseconds        - retry_rate: Proportion of workflows with retries        - latency_over_time: Time-series data of execution durationsExample:    GET /v1/workflows/MyWorkflow/metrics    GET /v1/workflows/MyWorkflow/metrics?start_time=2025-01-01T00:00:00Z    GET /v1/workflows/MyWorkflow/metrics?start_time=2025-01-01T00:00:00Z&amp;end_time=2025-12-31T23:59:59Z&quot;
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Mistral.OpenApiClient.Models.WorkflowMetrics"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Mistral.OpenApiClient.Models.HTTPValidationError">When receiving a 422 status code</exception>
+        /// <exception cref="global::Soenneker.Mistral.OpenApiClient.Models.HttpValidationError">When receiving a 422 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Soenneker.Mistral.OpenApiClient.Models.WorkflowMetrics?> GetAsync(Action<RequestConfiguration<global::Soenneker.Mistral.OpenApiClient.V1.Workflows.Item.Metrics.MetricsRequestBuilder.MetricsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -52,12 +52,12 @@ namespace Soenneker.Mistral.OpenApiClient.V1.Workflows.Item.Metrics
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "422", global::Soenneker.Mistral.OpenApiClient.Models.HTTPValidationError.CreateFromDiscriminatorValue },
+                { "422", global::Soenneker.Mistral.OpenApiClient.Models.HttpValidationError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Mistral.OpenApiClient.Models.WorkflowMetrics>(requestInfo, global::Soenneker.Mistral.OpenApiClient.Models.WorkflowMetrics.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get comprehensive metrics for a specific workflow.Args:    workflow_name: The name of the workflow type to get metrics for    start_time: Optional start time filter (ISO 8601 format)    end_time: Optional end time filter (ISO 8601 format)Returns:    WorkflowMetrics: Dictionary containing metrics:        - execution_count: Total number of executions        - success_count: Number of successful executions        - error_count: Number of failed/terminated executions        - average_latency_ms: Average execution duration in milliseconds        - retry_rate: Proportion of workflows with retries        - latency_over_time: Time-series data of execution durationsExample:    GET /v1/workflows/MyWorkflow/metrics    GET /v1/workflows/MyWorkflow/metrics?start_time=2025-01-01T00:00:00Z    GET /v1/workflows/MyWorkflow/metrics?start_time=2025-01-01T00:00:00Z&amp;end_time=2025-12-31T23:59:59Z
+        /// &quot;Get comprehensive metrics for a specific workflow.Args:    workflow_name: The name of the workflow type to get metrics for    start_time: Optional start time filter (ISO 8601 format)    end_time: Optional end time filter (ISO 8601 format)Returns:    WorkflowMetrics: Dictionary containing metrics:        - execution_count: Total number of executions        - success_count: Number of successful executions        - error_count: Number of failed/terminated executions        - average_latency_ms: Average execution duration in milliseconds        - retry_rate: Proportion of workflows with retries        - latency_over_time: Time-series data of execution durationsExample:    GET /v1/workflows/MyWorkflow/metrics    GET /v1/workflows/MyWorkflow/metrics?start_time=2025-01-01T00:00:00Z    GET /v1/workflows/MyWorkflow/metrics?start_time=2025-01-01T00:00:00Z&amp;end_time=2025-12-31T23:59:59Z&quot;
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -85,7 +85,7 @@ namespace Soenneker.Mistral.OpenApiClient.V1.Workflows.Item.Metrics
             return new global::Soenneker.Mistral.OpenApiClient.V1.Workflows.Item.Metrics.MetricsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get comprehensive metrics for a specific workflow.Args:    workflow_name: The name of the workflow type to get metrics for    start_time: Optional start time filter (ISO 8601 format)    end_time: Optional end time filter (ISO 8601 format)Returns:    WorkflowMetrics: Dictionary containing metrics:        - execution_count: Total number of executions        - success_count: Number of successful executions        - error_count: Number of failed/terminated executions        - average_latency_ms: Average execution duration in milliseconds        - retry_rate: Proportion of workflows with retries        - latency_over_time: Time-series data of execution durationsExample:    GET /v1/workflows/MyWorkflow/metrics    GET /v1/workflows/MyWorkflow/metrics?start_time=2025-01-01T00:00:00Z    GET /v1/workflows/MyWorkflow/metrics?start_time=2025-01-01T00:00:00Z&amp;end_time=2025-12-31T23:59:59Z
+        /// &quot;Get comprehensive metrics for a specific workflow.Args:    workflow_name: The name of the workflow type to get metrics for    start_time: Optional start time filter (ISO 8601 format)    end_time: Optional end time filter (ISO 8601 format)Returns:    WorkflowMetrics: Dictionary containing metrics:        - execution_count: Total number of executions        - success_count: Number of successful executions        - error_count: Number of failed/terminated executions        - average_latency_ms: Average execution duration in milliseconds        - retry_rate: Proportion of workflows with retries        - latency_over_time: Time-series data of execution durationsExample:    GET /v1/workflows/MyWorkflow/metrics    GET /v1/workflows/MyWorkflow/metrics?start_time=2025-01-01T00:00:00Z    GET /v1/workflows/MyWorkflow/metrics?start_time=2025-01-01T00:00:00Z&amp;end_time=2025-12-31T23:59:59Z&quot;
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class MetricsRequestBuilderGetQueryParameters 

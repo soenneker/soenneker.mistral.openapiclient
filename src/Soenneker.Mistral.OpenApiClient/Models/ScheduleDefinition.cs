@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.Mistral.OpenApiClient.Models
 {
     /// <summary>
-    /// The schedule definition
+    /// Specification of the times scheduled actions may occur.The times are the union of :py:attr:`calendars`, :py:attr:`intervals`, and:py:attr:`cron_expressions` excluding anything in :py:attr:`skip`.Used for input where schedule_id is optional (can be provided or auto-generated).
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ScheduleDefinition : IAdditionalDataHolder, IParsable
@@ -34,18 +34,18 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         /// <summary>Time after which no more actions will be run.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.ScheduleDefinition.ScheduleDefinition_end_at? EndAt { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.ScheduleDefinitionEndAt? EndAt { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.ScheduleDefinition.ScheduleDefinition_end_at EndAt { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.ScheduleDefinitionEndAt EndAt { get; set; }
 #endif
         /// <summary>Input to provide to the workflow when starting it.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public UntypedNode? Input { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.ScheduleDefinitionInput? Input { get; set; }
 #nullable restore
 #else
-        public UntypedNode Input { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.ScheduleDefinitionInput Input { get; set; }
 #endif
         /// <summary>Interval-based specification of times.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -58,12 +58,12 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         /// <summary>Jitter to apply each action.An action&apos;s scheduled time will be incremented by a random value between 0and this value if present (but not past the next schedule).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.ScheduleDefinition.ScheduleDefinition_jitter? Jitter { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.ScheduleDefinitionJitter? Jitter { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.ScheduleDefinition.ScheduleDefinition_jitter Jitter { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.ScheduleDefinitionJitter Jitter { get; set; }
 #endif
-        /// <summary>Policy for the schedule.</summary>
+        /// <summary>The policy property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Mistral.OpenApiClient.Models.SchedulePolicy? Policy { get; set; }
@@ -74,10 +74,10 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         /// <summary>Unique identifier for the schedule.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.ScheduleDefinition.ScheduleDefinition_schedule_id? ScheduleId { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.ScheduleDefinitionScheduleId? ScheduleId { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.ScheduleDefinition.ScheduleDefinition_schedule_id ScheduleId { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.ScheduleDefinitionScheduleId ScheduleId { get; set; }
 #endif
         /// <summary>Set of calendar times to skip.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -90,18 +90,18 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         /// <summary>Time after which the first action may be run.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.ScheduleDefinition.ScheduleDefinition_start_at? StartAt { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.ScheduleDefinitionStartAt? StartAt { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.ScheduleDefinition.ScheduleDefinition_start_at StartAt { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.ScheduleDefinitionStartAt StartAt { get; set; }
 #endif
         /// <summary>IANA time zone name, for example ``US/Central``.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.ScheduleDefinition.ScheduleDefinition_time_zone_name? TimeZoneName { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.ScheduleDefinitionTimeZoneName? TimeZoneName { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.ScheduleDefinition.ScheduleDefinition_time_zone_name TimeZoneName { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.ScheduleDefinitionTimeZoneName TimeZoneName { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Mistral.OpenApiClient.Models.ScheduleDefinition"/> and sets the default values.
@@ -130,15 +130,15 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             {
                 { "calendars", n => { Calendars = n.GetCollectionOfObjectValues<global::Soenneker.Mistral.OpenApiClient.Models.ScheduleCalendar>(global::Soenneker.Mistral.OpenApiClient.Models.ScheduleCalendar.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "cron_expressions", n => { CronExpressions = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "end_at", n => { EndAt = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ScheduleDefinition.ScheduleDefinition_end_at>(global::Soenneker.Mistral.OpenApiClient.Models.ScheduleDefinition.ScheduleDefinition_end_at.CreateFromDiscriminatorValue); } },
-                { "input", n => { Input = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "end_at", n => { EndAt = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ScheduleDefinitionEndAt>(global::Soenneker.Mistral.OpenApiClient.Models.ScheduleDefinitionEndAt.CreateFromDiscriminatorValue); } },
+                { "input", n => { Input = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ScheduleDefinitionInput>(global::Soenneker.Mistral.OpenApiClient.Models.ScheduleDefinitionInput.CreateFromDiscriminatorValue); } },
                 { "intervals", n => { Intervals = n.GetCollectionOfObjectValues<global::Soenneker.Mistral.OpenApiClient.Models.ScheduleInterval>(global::Soenneker.Mistral.OpenApiClient.Models.ScheduleInterval.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "jitter", n => { Jitter = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ScheduleDefinition.ScheduleDefinition_jitter>(global::Soenneker.Mistral.OpenApiClient.Models.ScheduleDefinition.ScheduleDefinition_jitter.CreateFromDiscriminatorValue); } },
+                { "jitter", n => { Jitter = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ScheduleDefinitionJitter>(global::Soenneker.Mistral.OpenApiClient.Models.ScheduleDefinitionJitter.CreateFromDiscriminatorValue); } },
                 { "policy", n => { Policy = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.SchedulePolicy>(global::Soenneker.Mistral.OpenApiClient.Models.SchedulePolicy.CreateFromDiscriminatorValue); } },
-                { "schedule_id", n => { ScheduleId = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ScheduleDefinition.ScheduleDefinition_schedule_id>(global::Soenneker.Mistral.OpenApiClient.Models.ScheduleDefinition.ScheduleDefinition_schedule_id.CreateFromDiscriminatorValue); } },
+                { "schedule_id", n => { ScheduleId = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ScheduleDefinitionScheduleId>(global::Soenneker.Mistral.OpenApiClient.Models.ScheduleDefinitionScheduleId.CreateFromDiscriminatorValue); } },
                 { "skip", n => { Skip = n.GetCollectionOfObjectValues<global::Soenneker.Mistral.OpenApiClient.Models.ScheduleCalendar>(global::Soenneker.Mistral.OpenApiClient.Models.ScheduleCalendar.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "start_at", n => { StartAt = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ScheduleDefinition.ScheduleDefinition_start_at>(global::Soenneker.Mistral.OpenApiClient.Models.ScheduleDefinition.ScheduleDefinition_start_at.CreateFromDiscriminatorValue); } },
-                { "time_zone_name", n => { TimeZoneName = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ScheduleDefinition.ScheduleDefinition_time_zone_name>(global::Soenneker.Mistral.OpenApiClient.Models.ScheduleDefinition.ScheduleDefinition_time_zone_name.CreateFromDiscriminatorValue); } },
+                { "start_at", n => { StartAt = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ScheduleDefinitionStartAt>(global::Soenneker.Mistral.OpenApiClient.Models.ScheduleDefinitionStartAt.CreateFromDiscriminatorValue); } },
+                { "time_zone_name", n => { TimeZoneName = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ScheduleDefinitionTimeZoneName>(global::Soenneker.Mistral.OpenApiClient.Models.ScheduleDefinitionTimeZoneName.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -150,338 +150,16 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfObjectValues<global::Soenneker.Mistral.OpenApiClient.Models.ScheduleCalendar>("calendars", Calendars);
             writer.WriteCollectionOfPrimitiveValues<string>("cron_expressions", CronExpressions);
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ScheduleDefinition.ScheduleDefinition_end_at>("end_at", EndAt);
-            writer.WriteObjectValue<UntypedNode>("input", Input);
+            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ScheduleDefinitionEndAt>("end_at", EndAt);
+            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ScheduleDefinitionInput>("input", Input);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Mistral.OpenApiClient.Models.ScheduleInterval>("intervals", Intervals);
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ScheduleDefinition.ScheduleDefinition_jitter>("jitter", Jitter);
+            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ScheduleDefinitionJitter>("jitter", Jitter);
             writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.SchedulePolicy>("policy", Policy);
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ScheduleDefinition.ScheduleDefinition_schedule_id>("schedule_id", ScheduleId);
+            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ScheduleDefinitionScheduleId>("schedule_id", ScheduleId);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Mistral.OpenApiClient.Models.ScheduleCalendar>("skip", Skip);
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ScheduleDefinition.ScheduleDefinition_start_at>("start_at", StartAt);
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ScheduleDefinition.ScheduleDefinition_time_zone_name>("time_zone_name", TimeZoneName);
+            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ScheduleDefinitionStartAt>("start_at", StartAt);
+            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ScheduleDefinitionTimeZoneName>("time_zone_name", TimeZoneName);
             writer.WriteAdditionalData(AdditionalData);
-        }
-        /// <summary>
-        /// Composed type wrapper for classes <see cref="DateTimeOffset"/>, <see cref="global::Soenneker.Mistral.OpenApiClient.Models.ScheduleDefinition_end_atMember1"/>
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class ScheduleDefinition_end_at : IComposedTypeWrapper, IParsable
-        {
-            /// <summary>Composed type representation for type <see cref="DateTimeOffset"/></summary>
-            public DateTimeOffset? DateTimeOffset { get; set; }
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.Mistral.OpenApiClient.Models.ScheduleDefinition_end_atMember1"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public global::Soenneker.Mistral.OpenApiClient.Models.ScheduleDefinition_end_atMember1? ScheduleDefinitionEndAtMember1 { get; set; }
-#nullable restore
-#else
-            public global::Soenneker.Mistral.OpenApiClient.Models.ScheduleDefinition_end_atMember1 ScheduleDefinitionEndAtMember1 { get; set; }
-#endif
-            /// <summary>
-            /// Creates a new instance of the appropriate class based on discriminator value
-            /// </summary>
-            /// <returns>A <see cref="global::Soenneker.Mistral.OpenApiClient.Models.ScheduleDefinition.ScheduleDefinition_end_at"/></returns>
-            /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-            public static global::Soenneker.Mistral.OpenApiClient.Models.ScheduleDefinition.ScheduleDefinition_end_at CreateFromDiscriminatorValue(IParseNode parseNode)
-            {
-                if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-                var result = new global::Soenneker.Mistral.OpenApiClient.Models.ScheduleDefinition.ScheduleDefinition_end_at();
-                if(parseNode.GetDateTimeOffsetValue() is DateTimeOffset dateTimeOffsetValue)
-                {
-                    result.DateTimeOffset = dateTimeOffsetValue;
-                }
-                else {
-                    result.ScheduleDefinitionEndAtMember1 = new global::Soenneker.Mistral.OpenApiClient.Models.ScheduleDefinition_end_atMember1();
-                }
-                return result;
-            }
-            /// <summary>
-            /// The deserialization information for the current model
-            /// </summary>
-            /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-            public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
-            {
-                if(ScheduleDefinitionEndAtMember1 != null)
-                {
-                    return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(ScheduleDefinitionEndAtMember1);
-                }
-                return new Dictionary<string, Action<IParseNode>>();
-            }
-            /// <summary>
-            /// Serializes information the current object
-            /// </summary>
-            /// <param name="writer">Serialization writer to use to serialize this model</param>
-            public virtual void Serialize(ISerializationWriter writer)
-            {
-                if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-                if(DateTimeOffset != null)
-                {
-                    writer.WriteDateTimeOffsetValue(null, DateTimeOffset);
-                }
-                else {
-                    writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ScheduleDefinition_end_atMember1>(null, ScheduleDefinitionEndAtMember1);
-                }
-            }
-        }
-        /// <summary>
-        /// Composed type wrapper for classes <see cref="global::Soenneker.Mistral.OpenApiClient.Models.ScheduleDefinition_jitterMember1"/>, <see cref="TimeSpan"/>
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class ScheduleDefinition_jitter : IComposedTypeWrapper, IParsable
-        {
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.Mistral.OpenApiClient.Models.ScheduleDefinition_jitterMember1"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public global::Soenneker.Mistral.OpenApiClient.Models.ScheduleDefinition_jitterMember1? ScheduleDefinitionJitterMember1 { get; set; }
-#nullable restore
-#else
-            public global::Soenneker.Mistral.OpenApiClient.Models.ScheduleDefinition_jitterMember1 ScheduleDefinitionJitterMember1 { get; set; }
-#endif
-            /// <summary>Composed type representation for type <see cref="TimeSpan"/></summary>
-            public TimeSpan? TimeSpan { get; set; }
-            /// <summary>
-            /// Creates a new instance of the appropriate class based on discriminator value
-            /// </summary>
-            /// <returns>A <see cref="global::Soenneker.Mistral.OpenApiClient.Models.ScheduleDefinition.ScheduleDefinition_jitter"/></returns>
-            /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-            public static global::Soenneker.Mistral.OpenApiClient.Models.ScheduleDefinition.ScheduleDefinition_jitter CreateFromDiscriminatorValue(IParseNode parseNode)
-            {
-                if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-                var result = new global::Soenneker.Mistral.OpenApiClient.Models.ScheduleDefinition.ScheduleDefinition_jitter();
-                if(parseNode.GetTimeSpanValue() is TimeSpan timeSpanValue)
-                {
-                    result.TimeSpan = timeSpanValue;
-                }
-                else {
-                    result.ScheduleDefinitionJitterMember1 = new global::Soenneker.Mistral.OpenApiClient.Models.ScheduleDefinition_jitterMember1();
-                }
-                return result;
-            }
-            /// <summary>
-            /// The deserialization information for the current model
-            /// </summary>
-            /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-            public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
-            {
-                if(ScheduleDefinitionJitterMember1 != null)
-                {
-                    return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(ScheduleDefinitionJitterMember1);
-                }
-                return new Dictionary<string, Action<IParseNode>>();
-            }
-            /// <summary>
-            /// Serializes information the current object
-            /// </summary>
-            /// <param name="writer">Serialization writer to use to serialize this model</param>
-            public virtual void Serialize(ISerializationWriter writer)
-            {
-                if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-                if(TimeSpan != null)
-                {
-                    writer.WriteTimeSpanValue(null, TimeSpan);
-                }
-                else {
-                    writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ScheduleDefinition_jitterMember1>(null, ScheduleDefinitionJitterMember1);
-                }
-            }
-        }
-        /// <summary>
-        /// Composed type wrapper for classes <see cref="global::Soenneker.Mistral.OpenApiClient.Models.ScheduleDefinition_schedule_idMember1"/>, <see cref="string"/>
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class ScheduleDefinition_schedule_id : IComposedTypeWrapper, IParsable
-        {
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.Mistral.OpenApiClient.Models.ScheduleDefinition_schedule_idMember1"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public global::Soenneker.Mistral.OpenApiClient.Models.ScheduleDefinition_schedule_idMember1? ScheduleDefinitionScheduleIdMember1 { get; set; }
-#nullable restore
-#else
-            public global::Soenneker.Mistral.OpenApiClient.Models.ScheduleDefinition_schedule_idMember1 ScheduleDefinitionScheduleIdMember1 { get; set; }
-#endif
-            /// <summary>Composed type representation for type <see cref="string"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public string? String { get; set; }
-#nullable restore
-#else
-            public string String { get; set; }
-#endif
-            /// <summary>
-            /// Creates a new instance of the appropriate class based on discriminator value
-            /// </summary>
-            /// <returns>A <see cref="global::Soenneker.Mistral.OpenApiClient.Models.ScheduleDefinition.ScheduleDefinition_schedule_id"/></returns>
-            /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-            public static global::Soenneker.Mistral.OpenApiClient.Models.ScheduleDefinition.ScheduleDefinition_schedule_id CreateFromDiscriminatorValue(IParseNode parseNode)
-            {
-                if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-                var result = new global::Soenneker.Mistral.OpenApiClient.Models.ScheduleDefinition.ScheduleDefinition_schedule_id();
-                if(parseNode.GetStringValue() is string stringValue)
-                {
-                    result.String = stringValue;
-                }
-                else {
-                    result.ScheduleDefinitionScheduleIdMember1 = new global::Soenneker.Mistral.OpenApiClient.Models.ScheduleDefinition_schedule_idMember1();
-                }
-                return result;
-            }
-            /// <summary>
-            /// The deserialization information for the current model
-            /// </summary>
-            /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-            public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
-            {
-                if(ScheduleDefinitionScheduleIdMember1 != null)
-                {
-                    return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(ScheduleDefinitionScheduleIdMember1);
-                }
-                return new Dictionary<string, Action<IParseNode>>();
-            }
-            /// <summary>
-            /// Serializes information the current object
-            /// </summary>
-            /// <param name="writer">Serialization writer to use to serialize this model</param>
-            public virtual void Serialize(ISerializationWriter writer)
-            {
-                if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-                if(String != null)
-                {
-                    writer.WriteStringValue(null, String);
-                }
-                else {
-                    writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ScheduleDefinition_schedule_idMember1>(null, ScheduleDefinitionScheduleIdMember1);
-                }
-            }
-        }
-        /// <summary>
-        /// Composed type wrapper for classes <see cref="DateTimeOffset"/>, <see cref="global::Soenneker.Mistral.OpenApiClient.Models.ScheduleDefinition_start_atMember1"/>
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class ScheduleDefinition_start_at : IComposedTypeWrapper, IParsable
-        {
-            /// <summary>Composed type representation for type <see cref="DateTimeOffset"/></summary>
-            public DateTimeOffset? DateTimeOffset { get; set; }
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.Mistral.OpenApiClient.Models.ScheduleDefinition_start_atMember1"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public global::Soenneker.Mistral.OpenApiClient.Models.ScheduleDefinition_start_atMember1? ScheduleDefinitionStartAtMember1 { get; set; }
-#nullable restore
-#else
-            public global::Soenneker.Mistral.OpenApiClient.Models.ScheduleDefinition_start_atMember1 ScheduleDefinitionStartAtMember1 { get; set; }
-#endif
-            /// <summary>
-            /// Creates a new instance of the appropriate class based on discriminator value
-            /// </summary>
-            /// <returns>A <see cref="global::Soenneker.Mistral.OpenApiClient.Models.ScheduleDefinition.ScheduleDefinition_start_at"/></returns>
-            /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-            public static global::Soenneker.Mistral.OpenApiClient.Models.ScheduleDefinition.ScheduleDefinition_start_at CreateFromDiscriminatorValue(IParseNode parseNode)
-            {
-                if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-                var result = new global::Soenneker.Mistral.OpenApiClient.Models.ScheduleDefinition.ScheduleDefinition_start_at();
-                if(parseNode.GetDateTimeOffsetValue() is DateTimeOffset dateTimeOffsetValue)
-                {
-                    result.DateTimeOffset = dateTimeOffsetValue;
-                }
-                else {
-                    result.ScheduleDefinitionStartAtMember1 = new global::Soenneker.Mistral.OpenApiClient.Models.ScheduleDefinition_start_atMember1();
-                }
-                return result;
-            }
-            /// <summary>
-            /// The deserialization information for the current model
-            /// </summary>
-            /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-            public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
-            {
-                if(ScheduleDefinitionStartAtMember1 != null)
-                {
-                    return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(ScheduleDefinitionStartAtMember1);
-                }
-                return new Dictionary<string, Action<IParseNode>>();
-            }
-            /// <summary>
-            /// Serializes information the current object
-            /// </summary>
-            /// <param name="writer">Serialization writer to use to serialize this model</param>
-            public virtual void Serialize(ISerializationWriter writer)
-            {
-                if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-                if(DateTimeOffset != null)
-                {
-                    writer.WriteDateTimeOffsetValue(null, DateTimeOffset);
-                }
-                else {
-                    writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ScheduleDefinition_start_atMember1>(null, ScheduleDefinitionStartAtMember1);
-                }
-            }
-        }
-        /// <summary>
-        /// Composed type wrapper for classes <see cref="global::Soenneker.Mistral.OpenApiClient.Models.ScheduleDefinition_time_zone_nameMember1"/>, <see cref="string"/>
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class ScheduleDefinition_time_zone_name : IComposedTypeWrapper, IParsable
-        {
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.Mistral.OpenApiClient.Models.ScheduleDefinition_time_zone_nameMember1"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public global::Soenneker.Mistral.OpenApiClient.Models.ScheduleDefinition_time_zone_nameMember1? ScheduleDefinitionTimeZoneNameMember1 { get; set; }
-#nullable restore
-#else
-            public global::Soenneker.Mistral.OpenApiClient.Models.ScheduleDefinition_time_zone_nameMember1 ScheduleDefinitionTimeZoneNameMember1 { get; set; }
-#endif
-            /// <summary>Composed type representation for type <see cref="string"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public string? String { get; set; }
-#nullable restore
-#else
-            public string String { get; set; }
-#endif
-            /// <summary>
-            /// Creates a new instance of the appropriate class based on discriminator value
-            /// </summary>
-            /// <returns>A <see cref="global::Soenneker.Mistral.OpenApiClient.Models.ScheduleDefinition.ScheduleDefinition_time_zone_name"/></returns>
-            /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-            public static global::Soenneker.Mistral.OpenApiClient.Models.ScheduleDefinition.ScheduleDefinition_time_zone_name CreateFromDiscriminatorValue(IParseNode parseNode)
-            {
-                if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-                var result = new global::Soenneker.Mistral.OpenApiClient.Models.ScheduleDefinition.ScheduleDefinition_time_zone_name();
-                if(parseNode.GetStringValue() is string stringValue)
-                {
-                    result.String = stringValue;
-                }
-                else {
-                    result.ScheduleDefinitionTimeZoneNameMember1 = new global::Soenneker.Mistral.OpenApiClient.Models.ScheduleDefinition_time_zone_nameMember1();
-                }
-                return result;
-            }
-            /// <summary>
-            /// The deserialization information for the current model
-            /// </summary>
-            /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-            public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
-            {
-                if(ScheduleDefinitionTimeZoneNameMember1 != null)
-                {
-                    return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(ScheduleDefinitionTimeZoneNameMember1);
-                }
-                return new Dictionary<string, Action<IParseNode>>();
-            }
-            /// <summary>
-            /// Serializes information the current object
-            /// </summary>
-            /// <param name="writer">Serialization writer to use to serialize this model</param>
-            public virtual void Serialize(ISerializationWriter writer)
-            {
-                if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-                if(String != null)
-                {
-                    writer.WriteStringValue(null, String);
-                }
-                else {
-                    writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ScheduleDefinition_time_zone_nameMember1>(null, ScheduleDefinitionTimeZoneNameMember1);
-                }
-            }
         }
     }
 }

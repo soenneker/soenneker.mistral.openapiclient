@@ -15,20 +15,13 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         /// <summary>The tool_configuration property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.ToolConfiguration? ToolConfiguration { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.WebSearchToolToolConfiguration? ToolConfiguration { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.ToolConfiguration ToolConfiguration { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.WebSearchToolToolConfiguration ToolConfiguration { get; set; }
 #endif
         /// <summary>The type property</summary>
-        public global::Soenneker.Mistral.OpenApiClient.Models.WebSearchTool_type? Type { get; set; }
-        /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Mistral.OpenApiClient.Models.WebSearchTool"/> and sets the default values.
-        /// </summary>
-        public WebSearchTool()
-        {
-            Type = global::Soenneker.Mistral.OpenApiClient.Models.WebSearchTool_type.Web_search;
-        }
+        public global::Soenneker.Mistral.OpenApiClient.Models.WebSearchToolType? Type { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -47,8 +40,8 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "tool_configuration", n => { ToolConfiguration = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ToolConfiguration>(global::Soenneker.Mistral.OpenApiClient.Models.ToolConfiguration.CreateFromDiscriminatorValue); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.WebSearchTool_type>(); } },
+                { "tool_configuration", n => { ToolConfiguration = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.WebSearchToolToolConfiguration>(global::Soenneker.Mistral.OpenApiClient.Models.WebSearchToolToolConfiguration.CreateFromDiscriminatorValue); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.WebSearchToolType>(); } },
             };
         }
         /// <summary>
@@ -58,8 +51,8 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ToolConfiguration>("tool_configuration", ToolConfiguration);
-            writer.WriteEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.WebSearchTool_type>("type", Type);
+            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.WebSearchToolToolConfiguration>("tool_configuration", ToolConfiguration);
+            writer.WriteEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.WebSearchToolType>("type", Type);
         }
     }
 }

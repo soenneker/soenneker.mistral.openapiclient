@@ -24,13 +24,6 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         /// <summary>The type property</summary>
         public global::Soenneker.Mistral.OpenApiClient.Models.ToolTypes? Type { get; set; }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Mistral.OpenApiClient.Models.ToolChoice"/> and sets the default values.
-        /// </summary>
-        public ToolChoice()
-        {
-            Type = global::Soenneker.Mistral.OpenApiClient.Models.ToolTypes.Function;
-        }
-        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Mistral.OpenApiClient.Models.ToolChoice"/></returns>

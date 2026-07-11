@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.Mistral.OpenApiClient.Models
 {
     /// <summary>
-    /// Event-specific attributes.
+    /// Attributes for custom task in-progress events with streaming updates.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class CustomTaskInProgressAttributesResponse : IAdditionalDataHolder, IParsable
@@ -34,10 +34,10 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         /// <summary>The current state or incremental update for the task.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.CustomTaskInProgressAttributesResponse.CustomTaskInProgressAttributesResponse_payload? Payload { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.CustomTaskInProgressAttributesResponsePayload? Payload { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.CustomTaskInProgressAttributesResponse.CustomTaskInProgressAttributesResponse_payload Payload { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.CustomTaskInProgressAttributesResponsePayload Payload { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Mistral.OpenApiClient.Models.CustomTaskInProgressAttributesResponse"/> and sets the default values.
@@ -66,7 +66,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             {
                 { "custom_task_id", n => { CustomTaskId = n.GetStringValue(); } },
                 { "custom_task_type", n => { CustomTaskType = n.GetStringValue(); } },
-                { "payload", n => { Payload = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.CustomTaskInProgressAttributesResponse.CustomTaskInProgressAttributesResponse_payload>(global::Soenneker.Mistral.OpenApiClient.Models.CustomTaskInProgressAttributesResponse.CustomTaskInProgressAttributesResponse_payload.CreateFromDiscriminatorValue); } },
+                { "payload", n => { Payload = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.CustomTaskInProgressAttributesResponsePayload>(global::Soenneker.Mistral.OpenApiClient.Models.CustomTaskInProgressAttributesResponsePayload.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -78,83 +78,8 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("custom_task_id", CustomTaskId);
             writer.WriteStringValue("custom_task_type", CustomTaskType);
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.CustomTaskInProgressAttributesResponse.CustomTaskInProgressAttributesResponse_payload>("payload", Payload);
+            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.CustomTaskInProgressAttributesResponsePayload>("payload", Payload);
             writer.WriteAdditionalData(AdditionalData);
-        }
-        /// <summary>
-        /// Composed type wrapper for classes <see cref="global::Soenneker.Mistral.OpenApiClient.Models.JSONPatchPayloadResponse"/>, <see cref="global::Soenneker.Mistral.OpenApiClient.Models.JSONPayloadResponse"/>
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class CustomTaskInProgressAttributesResponse_payload : IComposedTypeWrapper, IParsable
-        {
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.Mistral.OpenApiClient.Models.JSONPatchPayloadResponse"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public global::Soenneker.Mistral.OpenApiClient.Models.JSONPatchPayloadResponse? JSONPatchPayloadResponse { get; set; }
-#nullable restore
-#else
-            public global::Soenneker.Mistral.OpenApiClient.Models.JSONPatchPayloadResponse JSONPatchPayloadResponse { get; set; }
-#endif
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.Mistral.OpenApiClient.Models.JSONPayloadResponse"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public global::Soenneker.Mistral.OpenApiClient.Models.JSONPayloadResponse? JSONPayloadResponse { get; set; }
-#nullable restore
-#else
-            public global::Soenneker.Mistral.OpenApiClient.Models.JSONPayloadResponse JSONPayloadResponse { get; set; }
-#endif
-            /// <summary>
-            /// Creates a new instance of the appropriate class based on discriminator value
-            /// </summary>
-            /// <returns>A <see cref="global::Soenneker.Mistral.OpenApiClient.Models.CustomTaskInProgressAttributesResponse.CustomTaskInProgressAttributesResponse_payload"/></returns>
-            /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-            public static global::Soenneker.Mistral.OpenApiClient.Models.CustomTaskInProgressAttributesResponse.CustomTaskInProgressAttributesResponse_payload CreateFromDiscriminatorValue(IParseNode parseNode)
-            {
-                if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-                var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
-                var result = new global::Soenneker.Mistral.OpenApiClient.Models.CustomTaskInProgressAttributesResponse.CustomTaskInProgressAttributesResponse_payload();
-                if("json_patch".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-                {
-                    result.JSONPatchPayloadResponse = new global::Soenneker.Mistral.OpenApiClient.Models.JSONPatchPayloadResponse();
-                }
-                else if("json".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-                {
-                    result.JSONPayloadResponse = new global::Soenneker.Mistral.OpenApiClient.Models.JSONPayloadResponse();
-                }
-                return result;
-            }
-            /// <summary>
-            /// The deserialization information for the current model
-            /// </summary>
-            /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-            public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
-            {
-                if(JSONPatchPayloadResponse != null)
-                {
-                    return JSONPatchPayloadResponse.GetFieldDeserializers();
-                }
-                else if(JSONPayloadResponse != null)
-                {
-                    return JSONPayloadResponse.GetFieldDeserializers();
-                }
-                return new Dictionary<string, Action<IParseNode>>();
-            }
-            /// <summary>
-            /// Serializes information the current object
-            /// </summary>
-            /// <param name="writer">Serialization writer to use to serialize this model</param>
-            public virtual void Serialize(ISerializationWriter writer)
-            {
-                if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-                if(JSONPatchPayloadResponse != null)
-                {
-                    writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.JSONPatchPayloadResponse>(null, JSONPatchPayloadResponse);
-                }
-                else if(JSONPayloadResponse != null)
-                {
-                    writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.JSONPayloadResponse>(null, JSONPayloadResponse);
-                }
-            }
         }
     }
 }

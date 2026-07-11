@@ -12,7 +12,7 @@ using System;
 namespace Soenneker.Mistral.OpenApiClient.V1.Batch.Jobs.Item.Cancel
 {
     /// <summary>
-    /// Builds and executes requests for operations under \v1\batch\jobs\{job_id}\cancel
+    /// Builds and executes requests for operations under \v1\batch\jobs\{jobId}\cancel
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class CancelRequestBuilder : BaseRequestBuilder
@@ -22,7 +22,7 @@ namespace Soenneker.Mistral.OpenApiClient.V1.Batch.Jobs.Item.Cancel
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public CancelRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/batch/jobs/{job_id}/cancel", pathParameters)
+        public CancelRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/batch/jobs/{jobId}/cancel", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +30,7 @@ namespace Soenneker.Mistral.OpenApiClient.V1.Batch.Jobs.Item.Cancel
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public CancelRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/batch/jobs/{job_id}/cancel", rawUrl)
+        public CancelRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/batch/jobs/{jobId}/cancel", rawUrl)
         {
         }
         /// <summary>

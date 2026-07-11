@@ -35,20 +35,15 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         public string MinDescription { get; set; }
 #endif
         /// <summary>The type property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Type { get; set; }
-#nullable restore
-#else
-        public string Type { get; set; }
-#endif
+        public global::Soenneker.Mistral.OpenApiClient.Models.JudgeRegressionOutput_type? Type { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Mistral.OpenApiClient.Models.JudgeRegressionOutput"/> and sets the default values.
         /// </summary>
         public JudgeRegressionOutput()
         {
             AdditionalData = new Dictionary<string, object>();
-            Type = "REGRESSION";
+            Max = 1;
+            Min = 0;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -72,7 +67,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
                 { "max_description", n => { MaxDescription = n.GetStringValue(); } },
                 { "min", n => { Min = n.GetDoubleValue(); } },
                 { "min_description", n => { MinDescription = n.GetStringValue(); } },
-                { "type", n => { Type = n.GetStringValue(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.JudgeRegressionOutput_type>(); } },
             };
         }
         /// <summary>
@@ -86,7 +81,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             writer.WriteStringValue("max_description", MaxDescription);
             writer.WriteDoubleValue("min", Min);
             writer.WriteStringValue("min_description", MinDescription);
-            writer.WriteStringValue("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.JudgeRegressionOutput_type>("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

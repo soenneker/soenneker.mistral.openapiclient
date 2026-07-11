@@ -35,10 +35,10 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         /// <summary>The enabled_tools property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Mistral.OpenApiClient.Models.ChatCompletionEvent_enabled_tools>? EnabledTools { get; set; }
+        public List<global::Soenneker.Mistral.OpenApiClient.Models.ChatCompletionEventEnabledToolsItemProperty>? EnabledTools { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Mistral.OpenApiClient.Models.ChatCompletionEvent_enabled_tools> EnabledTools { get; set; }
+        public List<global::Soenneker.Mistral.OpenApiClient.Models.ChatCompletionEventEnabledToolsItemProperty> EnabledTools { get; set; }
 #endif
         /// <summary>The event_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -51,10 +51,10 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         /// <summary>The extra_fields property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.ChatCompletionEvent_extra_fields? ExtraFields { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.ChatCompletionEventExtraFieldsProperty? ExtraFields { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.ChatCompletionEvent_extra_fields ExtraFields { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.ChatCompletionEventExtraFieldsProperty ExtraFields { get; set; }
 #endif
         /// <summary>The nb_input_tokens property</summary>
         public int? NbInputTokens { get; set; }
@@ -65,18 +65,18 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         /// <summary>The request_messages property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Mistral.OpenApiClient.Models.ChatCompletionEvent_request_messages>? RequestMessages { get; set; }
+        public List<global::Soenneker.Mistral.OpenApiClient.Models.ChatCompletionEventRequestMessagesItemProperty>? RequestMessages { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Mistral.OpenApiClient.Models.ChatCompletionEvent_request_messages> RequestMessages { get; set; }
+        public List<global::Soenneker.Mistral.OpenApiClient.Models.ChatCompletionEventRequestMessagesItemProperty> RequestMessages { get; set; }
 #endif
         /// <summary>The response_messages property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Mistral.OpenApiClient.Models.ChatCompletionEvent_response_messages>? ResponseMessages { get; set; }
+        public List<global::Soenneker.Mistral.OpenApiClient.Models.ChatCompletionEventResponseMessagesItemProperty>? ResponseMessages { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Mistral.OpenApiClient.Models.ChatCompletionEvent_response_messages> ResponseMessages { get; set; }
+        public List<global::Soenneker.Mistral.OpenApiClient.Models.ChatCompletionEventResponseMessagesItemProperty> ResponseMessages { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Mistral.OpenApiClient.Models.ChatCompletionEvent"/> and sets the default values.
@@ -106,14 +106,14 @@ namespace Soenneker.Mistral.OpenApiClient.Models
                 { "chat_transcription_events", n => { ChatTranscriptionEvents = n.GetCollectionOfObjectValues<global::Soenneker.Mistral.OpenApiClient.Models.ChatTranscriptionEvent>(global::Soenneker.Mistral.OpenApiClient.Models.ChatTranscriptionEvent.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "correlation_id", n => { CorrelationId = n.GetStringValue(); } },
                 { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
-                { "enabled_tools", n => { EnabledTools = n.GetCollectionOfObjectValues<global::Soenneker.Mistral.OpenApiClient.Models.ChatCompletionEvent_enabled_tools>(global::Soenneker.Mistral.OpenApiClient.Models.ChatCompletionEvent_enabled_tools.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "enabled_tools", n => { EnabledTools = n.GetCollectionOfObjectValues<global::Soenneker.Mistral.OpenApiClient.Models.ChatCompletionEventEnabledToolsItemProperty>(global::Soenneker.Mistral.OpenApiClient.Models.ChatCompletionEventEnabledToolsItemProperty.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "event_id", n => { EventId = n.GetStringValue(); } },
-                { "extra_fields", n => { ExtraFields = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ChatCompletionEvent_extra_fields>(global::Soenneker.Mistral.OpenApiClient.Models.ChatCompletionEvent_extra_fields.CreateFromDiscriminatorValue); } },
+                { "extra_fields", n => { ExtraFields = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ChatCompletionEventExtraFieldsProperty>(global::Soenneker.Mistral.OpenApiClient.Models.ChatCompletionEventExtraFieldsProperty.CreateFromDiscriminatorValue); } },
                 { "nb_input_tokens", n => { NbInputTokens = n.GetIntValue(); } },
                 { "nb_messages", n => { NbMessages = n.GetIntValue(); } },
                 { "nb_output_tokens", n => { NbOutputTokens = n.GetIntValue(); } },
-                { "request_messages", n => { RequestMessages = n.GetCollectionOfObjectValues<global::Soenneker.Mistral.OpenApiClient.Models.ChatCompletionEvent_request_messages>(global::Soenneker.Mistral.OpenApiClient.Models.ChatCompletionEvent_request_messages.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "response_messages", n => { ResponseMessages = n.GetCollectionOfObjectValues<global::Soenneker.Mistral.OpenApiClient.Models.ChatCompletionEvent_response_messages>(global::Soenneker.Mistral.OpenApiClient.Models.ChatCompletionEvent_response_messages.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "request_messages", n => { RequestMessages = n.GetCollectionOfObjectValues<global::Soenneker.Mistral.OpenApiClient.Models.ChatCompletionEventRequestMessagesItemProperty>(global::Soenneker.Mistral.OpenApiClient.Models.ChatCompletionEventRequestMessagesItemProperty.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "response_messages", n => { ResponseMessages = n.GetCollectionOfObjectValues<global::Soenneker.Mistral.OpenApiClient.Models.ChatCompletionEventResponseMessagesItemProperty>(global::Soenneker.Mistral.OpenApiClient.Models.ChatCompletionEventResponseMessagesItemProperty.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
         /// <summary>
@@ -126,14 +126,14 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             writer.WriteCollectionOfObjectValues<global::Soenneker.Mistral.OpenApiClient.Models.ChatTranscriptionEvent>("chat_transcription_events", ChatTranscriptionEvents);
             writer.WriteStringValue("correlation_id", CorrelationId);
             writer.WriteDateTimeOffsetValue("created_at", CreatedAt);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Mistral.OpenApiClient.Models.ChatCompletionEvent_enabled_tools>("enabled_tools", EnabledTools);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Mistral.OpenApiClient.Models.ChatCompletionEventEnabledToolsItemProperty>("enabled_tools", EnabledTools);
             writer.WriteStringValue("event_id", EventId);
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ChatCompletionEvent_extra_fields>("extra_fields", ExtraFields);
+            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ChatCompletionEventExtraFieldsProperty>("extra_fields", ExtraFields);
             writer.WriteIntValue("nb_input_tokens", NbInputTokens);
             writer.WriteIntValue("nb_messages", NbMessages);
             writer.WriteIntValue("nb_output_tokens", NbOutputTokens);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Mistral.OpenApiClient.Models.ChatCompletionEvent_request_messages>("request_messages", RequestMessages);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Mistral.OpenApiClient.Models.ChatCompletionEvent_response_messages>("response_messages", ResponseMessages);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Mistral.OpenApiClient.Models.ChatCompletionEventRequestMessagesItemProperty>("request_messages", RequestMessages);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Mistral.OpenApiClient.Models.ChatCompletionEventResponseMessagesItemProperty>("response_messages", ResponseMessages);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

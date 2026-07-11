@@ -12,7 +12,7 @@ using System;
 namespace Soenneker.Mistral.OpenApiClient.V1.Observability.DatasetRecords.Item.LiveJudging
 {
     /// <summary>
-    /// Builds and executes requests for operations under \v1\observability\dataset-records\{dataset_record_id}\live-judging
+    /// Builds and executes requests for operations under \v1\observability\dataset-records\{datasetRecordId}\live-judging
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class LiveJudgingRequestBuilder : BaseRequestBuilder
@@ -22,7 +22,7 @@ namespace Soenneker.Mistral.OpenApiClient.V1.Observability.DatasetRecords.Item.L
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public LiveJudgingRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/observability/dataset-records/{dataset_record_id}/live-judging", pathParameters)
+        public LiveJudgingRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/observability/dataset-records/{datasetRecordId}/live-judging", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +30,7 @@ namespace Soenneker.Mistral.OpenApiClient.V1.Observability.DatasetRecords.Item.L
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public LiveJudgingRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/observability/dataset-records/{dataset_record_id}/live-judging", rawUrl)
+        public LiveJudgingRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/observability/dataset-records/{datasetRecordId}/live-judging", rawUrl)
         {
         }
         /// <summary>

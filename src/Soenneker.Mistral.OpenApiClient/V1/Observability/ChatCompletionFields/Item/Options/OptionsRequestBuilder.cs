@@ -12,7 +12,7 @@ using System;
 namespace Soenneker.Mistral.OpenApiClient.V1.Observability.ChatCompletionFields.Item.Options
 {
     /// <summary>
-    /// Builds and executes requests for operations under \v1\observability\chat-completion-fields\{field_name}\options
+    /// Builds and executes requests for operations under \v1\observability\chat-completion-fields\{fieldName}\options
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class OptionsRequestBuilder : BaseRequestBuilder
@@ -22,7 +22,7 @@ namespace Soenneker.Mistral.OpenApiClient.V1.Observability.ChatCompletionFields.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public OptionsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/observability/chat-completion-fields/{field_name}/options?operator={operator}", pathParameters)
+        public OptionsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/observability/chat-completion-fields/{fieldName}/options?operator={operator}", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +30,7 @@ namespace Soenneker.Mistral.OpenApiClient.V1.Observability.ChatCompletionFields.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public OptionsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/observability/chat-completion-fields/{field_name}/options?operator={operator}", rawUrl)
+        public OptionsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/observability/chat-completion-fields/{fieldName}/options?operator={operator}", rawUrl)
         {
         }
         /// <summary>
@@ -100,7 +100,7 @@ namespace Soenneker.Mistral.OpenApiClient.V1.Observability.ChatCompletionFields.
         {
             /// <summary>The operator to use for filtering options</summary>
             [QueryParameter("operator")]
-            public global::Soenneker.Mistral.OpenApiClient.V1.Observability.ChatCompletionFields.Item.Options.GetOperatorQueryParameterType? Operator { get; set; }
+            public global::Soenneker.Mistral.OpenApiClient.Models.GetChatCompletionFieldOptionsV1ObservabilityChatCompletionFieldsFieldNameOptionsGetOperatorParameter? Operator { get; set; }
         }
     }
 }

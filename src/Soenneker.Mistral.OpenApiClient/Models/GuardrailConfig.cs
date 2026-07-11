@@ -14,12 +14,31 @@ namespace Soenneker.Mistral.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>If true, return HTTP 403 and block request in the event of a server-side error</summary>
+        public bool? BlockOnError { get; set; }
+        /// <summary>The moderation_llm_v1 property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Mistral.OpenApiClient.Models.GuardrailConfigModerationLlmV1? ModerationLlmV1 { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Mistral.OpenApiClient.Models.GuardrailConfigModerationLlmV1 ModerationLlmV1 { get; set; }
+#endif
+        /// <summary>The moderation_llm_v2 property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Mistral.OpenApiClient.Models.GuardrailConfigModerationLlmV2? ModerationLlmV2 { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Mistral.OpenApiClient.Models.GuardrailConfigModerationLlmV2 ModerationLlmV2 { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Mistral.OpenApiClient.Models.GuardrailConfig"/> and sets the default values.
         /// </summary>
         public GuardrailConfig()
         {
             AdditionalData = new Dictionary<string, object>();
+            BlockOnError = false;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -39,6 +58,9 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "block_on_error", n => { BlockOnError = n.GetBoolValue(); } },
+                { "moderation_llm_v1", n => { ModerationLlmV1 = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.GuardrailConfigModerationLlmV1>(global::Soenneker.Mistral.OpenApiClient.Models.GuardrailConfigModerationLlmV1.CreateFromDiscriminatorValue); } },
+                { "moderation_llm_v2", n => { ModerationLlmV2 = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.GuardrailConfigModerationLlmV2>(global::Soenneker.Mistral.OpenApiClient.Models.GuardrailConfigModerationLlmV2.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -48,6 +70,9 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteBoolValue("block_on_error", BlockOnError);
+            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.GuardrailConfigModerationLlmV1>("moderation_llm_v1", ModerationLlmV1);
+            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.GuardrailConfigModerationLlmV2>("moderation_llm_v2", ModerationLlmV2);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -17,10 +17,10 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         /// <summary>The judges property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.PaginatedResult_JudgePreview_? Judges { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.PaginatedResultJudgePreview? Judges { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.PaginatedResult_JudgePreview_ Judges { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.PaginatedResultJudgePreview Judges { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Mistral.OpenApiClient.Models.JudgePreviews"/> and sets the default values.
@@ -47,7 +47,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "judges", n => { Judges = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.PaginatedResult_JudgePreview_>(global::Soenneker.Mistral.OpenApiClient.Models.PaginatedResult_JudgePreview_.CreateFromDiscriminatorValue); } },
+                { "judges", n => { Judges = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.PaginatedResultJudgePreview>(global::Soenneker.Mistral.OpenApiClient.Models.PaginatedResultJudgePreview.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -57,7 +57,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.PaginatedResult_JudgePreview_>("judges", Judges);
+            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.PaginatedResultJudgePreview>("judges", Judges);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

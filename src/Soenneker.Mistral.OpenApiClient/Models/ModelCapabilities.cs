@@ -40,6 +40,16 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         public ModelCapabilities()
         {
             AdditionalData = new Dictionary<string, object>();
+            Audio = false;
+            AudioTranscription = false;
+            Classification = false;
+            CompletionChat = false;
+            CompletionFim = false;
+            FineTuning = false;
+            FunctionCalling = false;
+            Moderation = false;
+            Ocr = false;
+            Vision = false;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

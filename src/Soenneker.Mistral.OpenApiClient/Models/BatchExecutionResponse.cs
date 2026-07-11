@@ -17,10 +17,10 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         /// <summary>Mapping of execution_id to result with status and optional error message</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.BatchExecutionResponse_results? Results { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.BatchExecutionResponseResultsProperty? Results { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.BatchExecutionResponse_results Results { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.BatchExecutionResponseResultsProperty Results { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Mistral.OpenApiClient.Models.BatchExecutionResponse"/> and sets the default values.
@@ -47,7 +47,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "results", n => { Results = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.BatchExecutionResponse_results>(global::Soenneker.Mistral.OpenApiClient.Models.BatchExecutionResponse_results.CreateFromDiscriminatorValue); } },
+                { "results", n => { Results = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.BatchExecutionResponseResultsProperty>(global::Soenneker.Mistral.OpenApiClient.Models.BatchExecutionResponseResultsProperty.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -57,7 +57,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.BatchExecutionResponse_results>("results", Results);
+            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.BatchExecutionResponseResultsProperty>("results", Results);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

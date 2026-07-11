@@ -10,35 +10,35 @@ namespace Soenneker.Mistral.OpenApiClient.Models
     {
         [EnumMember(Value = "RUNNING")]
         #pragma warning disable CS1591
-        RUNNING,
+        Running,
         #pragma warning restore CS1591
         [EnumMember(Value = "COMPLETED")]
         #pragma warning disable CS1591
-        COMPLETED,
+        Completed,
         #pragma warning restore CS1591
         [EnumMember(Value = "FAILED")]
         #pragma warning disable CS1591
-        FAILED,
+        Failed,
         #pragma warning restore CS1591
         [EnumMember(Value = "CANCELED")]
         #pragma warning disable CS1591
-        CANCELED,
+        Canceled,
         #pragma warning restore CS1591
         [EnumMember(Value = "TERMINATED")]
         #pragma warning disable CS1591
-        TERMINATED,
+        Terminated,
         #pragma warning restore CS1591
         [EnumMember(Value = "CONTINUED_AS_NEW")]
         #pragma warning disable CS1591
-        CONTINUED_AS_NEW,
+        ContinuedAsNew,
         #pragma warning restore CS1591
         [EnumMember(Value = "TIMED_OUT")]
         #pragma warning disable CS1591
-        TIMED_OUT,
+        TimedOut,
         #pragma warning restore CS1591
         [EnumMember(Value = "RETRYING_AFTER_ERROR")]
         #pragma warning disable CS1591
-        RETRYING_AFTER_ERROR,
+        RetryingAfterError,
         #pragma warning restore CS1591
     }
 }

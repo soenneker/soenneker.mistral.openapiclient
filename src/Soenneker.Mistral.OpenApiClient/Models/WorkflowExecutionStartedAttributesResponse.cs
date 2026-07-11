@@ -8,20 +8,20 @@ using System;
 namespace Soenneker.Mistral.OpenApiClient.Models
 {
     /// <summary>
-    /// Event-specific attributes.
+    /// Attributes for workflow execution started events.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class WorkflowExecutionStartedAttributesResponse : IAdditionalDataHolder, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The input arguments passed to the workflow.</summary>
+        /// <summary>A payload containing arbitrary JSON data.Used for complete state snapshots or final results.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.JSONPayloadResponse? Input { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.JsonPayloadResponse? Input { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.JSONPayloadResponse Input { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.JsonPayloadResponse Input { get; set; }
 #endif
         /// <summary>Unique identifier for the task within the workflow execution.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -64,7 +64,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "input", n => { Input = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.JSONPayloadResponse>(global::Soenneker.Mistral.OpenApiClient.Models.JSONPayloadResponse.CreateFromDiscriminatorValue); } },
+                { "input", n => { Input = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.JsonPayloadResponse>(global::Soenneker.Mistral.OpenApiClient.Models.JsonPayloadResponse.CreateFromDiscriminatorValue); } },
                 { "task_id", n => { TaskId = n.GetStringValue(); } },
                 { "workflow_name", n => { WorkflowName = n.GetStringValue(); } },
             };
@@ -76,7 +76,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.JSONPayloadResponse>("input", Input);
+            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.JsonPayloadResponse>("input", Input);
             writer.WriteStringValue("task_id", TaskId);
             writer.WriteStringValue("workflow_name", WorkflowName);
             writer.WriteAdditionalData(AdditionalData);

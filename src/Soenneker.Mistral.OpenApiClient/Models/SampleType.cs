@@ -18,15 +18,15 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         #pragma warning restore CS1591
         [EnumMember(Value = "batch_request")]
         #pragma warning disable CS1591
-        Batch_request,
+        BatchRequest,
         #pragma warning restore CS1591
         [EnumMember(Value = "batch_result")]
         #pragma warning disable CS1591
-        Batch_result,
+        BatchResult,
         #pragma warning restore CS1591
         [EnumMember(Value = "batch_error")]
         #pragma warning disable CS1591
-        Batch_error,
+        BatchError,
         #pragma warning restore CS1591
     }
 }

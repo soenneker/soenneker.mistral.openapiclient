@@ -17,10 +17,10 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         /// <summary>The completion_events property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.PaginatedResult_ChatCompletionEventPreview_? CompletionEvents { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.PaginatedResultChatCompletionEventPreview? CompletionEvents { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.PaginatedResult_ChatCompletionEventPreview_ CompletionEvents { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.PaginatedResultChatCompletionEventPreview CompletionEvents { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Mistral.OpenApiClient.Models.CampaignSelectedEvents"/> and sets the default values.
@@ -47,7 +47,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "completion_events", n => { CompletionEvents = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.PaginatedResult_ChatCompletionEventPreview_>(global::Soenneker.Mistral.OpenApiClient.Models.PaginatedResult_ChatCompletionEventPreview_.CreateFromDiscriminatorValue); } },
+                { "completion_events", n => { CompletionEvents = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.PaginatedResultChatCompletionEventPreview>(global::Soenneker.Mistral.OpenApiClient.Models.PaginatedResultChatCompletionEventPreview.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -57,7 +57,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.PaginatedResult_ChatCompletionEventPreview_>("completion_events", CompletionEvents);
+            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.PaginatedResultChatCompletionEventPreview>("completion_events", CompletionEvents);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

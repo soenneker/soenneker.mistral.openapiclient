@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.Mistral.OpenApiClient.Models
 {
     /// <summary>
-    /// Event-specific attributes.
+    /// Attributes for custom task started events.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class CustomTaskStartedAttributesResponse : IAdditionalDataHolder, IParsable
@@ -31,13 +31,13 @@ namespace Soenneker.Mistral.OpenApiClient.Models
 #else
         public string CustomTaskType { get; set; }
 #endif
-        /// <summary>The initial state or payload for the custom task.</summary>
+        /// <summary>A payload containing arbitrary JSON data.Used for complete state snapshots or final results.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.JSONPayloadResponse? Payload { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.JsonPayloadResponse? Payload { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.JSONPayloadResponse Payload { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.JsonPayloadResponse Payload { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Mistral.OpenApiClient.Models.CustomTaskStartedAttributesResponse"/> and sets the default values.
@@ -66,7 +66,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             {
                 { "custom_task_id", n => { CustomTaskId = n.GetStringValue(); } },
                 { "custom_task_type", n => { CustomTaskType = n.GetStringValue(); } },
-                { "payload", n => { Payload = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.JSONPayloadResponse>(global::Soenneker.Mistral.OpenApiClient.Models.JSONPayloadResponse.CreateFromDiscriminatorValue); } },
+                { "payload", n => { Payload = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.JsonPayloadResponse>(global::Soenneker.Mistral.OpenApiClient.Models.JsonPayloadResponse.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -78,7 +78,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("custom_task_id", CustomTaskId);
             writer.WriteStringValue("custom_task_type", CustomTaskType);
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.JSONPayloadResponse>("payload", Payload);
+            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.JsonPayloadResponse>("payload", Payload);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

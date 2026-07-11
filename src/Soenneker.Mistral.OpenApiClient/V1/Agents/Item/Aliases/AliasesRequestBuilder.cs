@@ -12,7 +12,7 @@ using System;
 namespace Soenneker.Mistral.OpenApiClient.V1.Agents.Item.Aliases
 {
     /// <summary>
-    /// Builds and executes requests for operations under \v1\agents\{agent_id}\aliases
+    /// Builds and executes requests for operations under \v1\agents\{agentId}\aliases
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class AliasesRequestBuilder : BaseRequestBuilder
@@ -22,7 +22,7 @@ namespace Soenneker.Mistral.OpenApiClient.V1.Agents.Item.Aliases
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public AliasesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/agents/{agent_id}/aliases?alias={alias}&version={version}", pathParameters)
+        public AliasesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/agents/{agentId}/aliases", pathParameters)
         {
         }
         /// <summary>
@@ -30,30 +30,31 @@ namespace Soenneker.Mistral.OpenApiClient.V1.Agents.Item.Aliases
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public AliasesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/agents/{agent_id}/aliases?alias={alias}&version={version}", rawUrl)
+        public AliasesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/agents/{agentId}/aliases", rawUrl)
         {
         }
         /// <summary>
         /// Delete an existing alias for an agent.
         /// </summary>
+        /// <returns>A <see cref="Stream"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Mistral.OpenApiClient.Models.HTTPValidationError">When receiving a 422 status code</exception>
+        /// <exception cref="global::Soenneker.Mistral.OpenApiClient.Models.HttpValidationError">When receiving a 422 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task DeleteAsync(Action<RequestConfiguration<global::Soenneker.Mistral.OpenApiClient.V1.Agents.Item.Aliases.AliasesRequestBuilder.AliasesRequestBuilderDeleteQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Stream?> DeleteAsync(Action<RequestConfiguration<global::Soenneker.Mistral.OpenApiClient.V1.Agents.Item.Aliases.AliasesRequestBuilder.AliasesRequestBuilderDeleteQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task DeleteAsync(Action<RequestConfiguration<global::Soenneker.Mistral.OpenApiClient.V1.Agents.Item.Aliases.AliasesRequestBuilder.AliasesRequestBuilderDeleteQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Stream> DeleteAsync(Action<RequestConfiguration<global::Soenneker.Mistral.OpenApiClient.V1.Agents.Item.Aliases.AliasesRequestBuilder.AliasesRequestBuilderDeleteQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "422", global::Soenneker.Mistral.OpenApiClient.Models.HTTPValidationError.CreateFromDiscriminatorValue },
+                { "422", global::Soenneker.Mistral.OpenApiClient.Models.HttpValidationError.CreateFromDiscriminatorValue },
             };
-            await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Retrieve all version aliases for a specific agent.
@@ -61,7 +62,7 @@ namespace Soenneker.Mistral.OpenApiClient.V1.Agents.Item.Aliases
         /// <returns>A List&lt;global::Soenneker.Mistral.OpenApiClient.Models.AgentAliasResponse&gt;</returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Mistral.OpenApiClient.Models.HTTPValidationError">When receiving a 422 status code</exception>
+        /// <exception cref="global::Soenneker.Mistral.OpenApiClient.Models.HttpValidationError">When receiving a 422 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<List<global::Soenneker.Mistral.OpenApiClient.Models.AgentAliasResponse>?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -74,7 +75,7 @@ namespace Soenneker.Mistral.OpenApiClient.V1.Agents.Item.Aliases
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "422", global::Soenneker.Mistral.OpenApiClient.Models.HTTPValidationError.CreateFromDiscriminatorValue },
+                { "422", global::Soenneker.Mistral.OpenApiClient.Models.HttpValidationError.CreateFromDiscriminatorValue },
             };
             var collectionResult = await RequestAdapter.SendCollectionAsync<global::Soenneker.Mistral.OpenApiClient.Models.AgentAliasResponse>(requestInfo, global::Soenneker.Mistral.OpenApiClient.Models.AgentAliasResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
             return collectionResult?.AsList();
@@ -85,7 +86,7 @@ namespace Soenneker.Mistral.OpenApiClient.V1.Agents.Item.Aliases
         /// <returns>A <see cref="global::Soenneker.Mistral.OpenApiClient.Models.AgentAliasResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Mistral.OpenApiClient.Models.HTTPValidationError">When receiving a 422 status code</exception>
+        /// <exception cref="global::Soenneker.Mistral.OpenApiClient.Models.HttpValidationError">When receiving a 422 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Soenneker.Mistral.OpenApiClient.Models.AgentAliasResponse?> PutAsync(Action<RequestConfiguration<global::Soenneker.Mistral.OpenApiClient.V1.Agents.Item.Aliases.AliasesRequestBuilder.AliasesRequestBuilderPutQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -98,7 +99,7 @@ namespace Soenneker.Mistral.OpenApiClient.V1.Agents.Item.Aliases
             var requestInfo = ToPutRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "422", global::Soenneker.Mistral.OpenApiClient.Models.HTTPValidationError.CreateFromDiscriminatorValue },
+                { "422", global::Soenneker.Mistral.OpenApiClient.Models.HttpValidationError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Mistral.OpenApiClient.Models.AgentAliasResponse>(requestInfo, global::Soenneker.Mistral.OpenApiClient.Models.AgentAliasResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -116,7 +117,7 @@ namespace Soenneker.Mistral.OpenApiClient.V1.Agents.Item.Aliases
         public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<global::Soenneker.Mistral.OpenApiClient.V1.Agents.Item.Aliases.AliasesRequestBuilder.AliasesRequestBuilderDeleteQueryParameters>> requestConfiguration = default)
         {
 #endif
-            var requestInfo = new RequestInformation(Method.DELETE, "{+baseurl}/v1/agents/{agent_id}/aliases?alias={alias}", PathParameters);
+            var requestInfo = new RequestInformation(Method.DELETE, "{+baseurl}/v1/agents/{agentId}/aliases?alias={alias}", PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;
@@ -135,7 +136,7 @@ namespace Soenneker.Mistral.OpenApiClient.V1.Agents.Item.Aliases
         public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
-            var requestInfo = new RequestInformation(Method.GET, "{+baseurl}/v1/agents/{agent_id}/aliases", PathParameters);
+            var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;
@@ -154,7 +155,7 @@ namespace Soenneker.Mistral.OpenApiClient.V1.Agents.Item.Aliases
         public RequestInformation ToPutRequestInformation(Action<RequestConfiguration<global::Soenneker.Mistral.OpenApiClient.V1.Agents.Item.Aliases.AliasesRequestBuilder.AliasesRequestBuilderPutQueryParameters>> requestConfiguration = default)
         {
 #endif
-            var requestInfo = new RequestInformation(Method.PUT, UrlTemplate, PathParameters);
+            var requestInfo = new RequestInformation(Method.PUT, "{+baseurl}/v1/agents/{agentId}/aliases?alias={alias}&version={version}", PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;

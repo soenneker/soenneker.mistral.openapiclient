@@ -9,24 +9,80 @@ namespace Soenneker.Mistral.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class ConversationRestartRequest : global::Soenneker.Mistral.OpenApiClient.Models.ConversationRestartRequestBase, IAdditionalDataHolder, IParsable
+    public partial class ConversationRestartRequest : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>Specific version of the agent to use when restarting. If not provided, uses the current version.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Mistral.OpenApiClient.Models.ConversationRestartRequestBaseAgentVersion? AgentVersion { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Mistral.OpenApiClient.Models.ConversationRestartRequestBaseAgentVersion AgentVersion { get; set; }
+#endif
+        /// <summary>White-listed arguments from the completion API</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Mistral.OpenApiClient.Models.CompletionArgs? CompletionArgs { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Mistral.OpenApiClient.Models.CompletionArgs CompletionArgs { get; set; }
+#endif
+        /// <summary>The from_entry_id property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? FromEntryId { get; set; }
+#nullable restore
+#else
+        public string FromEntryId { get; set; }
+#endif
+        /// <summary>The guardrails property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Mistral.OpenApiClient.Models.ConversationRestartRequestBaseGuardrails? Guardrails { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Mistral.OpenApiClient.Models.ConversationRestartRequestBaseGuardrails Guardrails { get; set; }
+#endif
+        /// <summary>The handoff_execution property</summary>
+        public global::Soenneker.Mistral.OpenApiClient.Models.ConversationRestartRequestHandoffExecution? HandoffExecution { get; set; }
+        /// <summary>The inputs property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Mistral.OpenApiClient.Models.ConversationInputs? Inputs { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Mistral.OpenApiClient.Models.ConversationInputs Inputs { get; set; }
+#endif
+        /// <summary>Custom metadata for the conversation.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Mistral.OpenApiClient.Models.ConversationRestartRequestBaseMetadata? Metadata { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Mistral.OpenApiClient.Models.ConversationRestartRequestBaseMetadata Metadata { get; set; }
+#endif
+        /// <summary>Whether to store the results into our servers or not.</summary>
+        public bool? Store { get; set; }
+        /// <summary>Whether to stream back partial progress. Otherwise, the server will hold the request open until the timeout or until completion, with the response containing the full result as JSON.</summary>
+        public bool? Stream { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Mistral.OpenApiClient.Models.ConversationRestartRequest"/> and sets the default values.
         /// </summary>
-        public ConversationRestartRequest() : base()
+        public ConversationRestartRequest()
         {
             AdditionalData = new Dictionary<string, object>();
+            Store = true;
+            Stream = false;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Mistral.OpenApiClient.Models.ConversationRestartRequest"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new global::Soenneker.Mistral.OpenApiClient.Models.ConversationRestartRequest CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::Soenneker.Mistral.OpenApiClient.Models.ConversationRestartRequest CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             return new global::Soenneker.Mistral.OpenApiClient.Models.ConversationRestartRequest();
@@ -35,20 +91,37 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         /// The deserialization information for the current model
         /// </summary>
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-        public override IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+        public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
+            return new Dictionary<string, Action<IParseNode>>
             {
+                { "agent_version", n => { AgentVersion = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ConversationRestartRequestBaseAgentVersion>(global::Soenneker.Mistral.OpenApiClient.Models.ConversationRestartRequestBaseAgentVersion.CreateFromDiscriminatorValue); } },
+                { "completion_args", n => { CompletionArgs = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.CompletionArgs>(global::Soenneker.Mistral.OpenApiClient.Models.CompletionArgs.CreateFromDiscriminatorValue); } },
+                { "from_entry_id", n => { FromEntryId = n.GetStringValue(); } },
+                { "guardrails", n => { Guardrails = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ConversationRestartRequestBaseGuardrails>(global::Soenneker.Mistral.OpenApiClient.Models.ConversationRestartRequestBaseGuardrails.CreateFromDiscriminatorValue); } },
+                { "handoff_execution", n => { HandoffExecution = n.GetEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.ConversationRestartRequestHandoffExecution>(); } },
+                { "inputs", n => { Inputs = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ConversationInputs>(global::Soenneker.Mistral.OpenApiClient.Models.ConversationInputs.CreateFromDiscriminatorValue); } },
+                { "metadata", n => { Metadata = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ConversationRestartRequestBaseMetadata>(global::Soenneker.Mistral.OpenApiClient.Models.ConversationRestartRequestBaseMetadata.CreateFromDiscriminatorValue); } },
+                { "store", n => { Store = n.GetBoolValue(); } },
+                { "stream", n => { Stream = n.GetBoolValue(); } },
             };
         }
         /// <summary>
         /// Serializes information the current object
         /// </summary>
         /// <param name="writer">Serialization writer to use to serialize this model</param>
-        public override void Serialize(ISerializationWriter writer)
+        public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            base.Serialize(writer);
+            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ConversationRestartRequestBaseAgentVersion>("agent_version", AgentVersion);
+            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.CompletionArgs>("completion_args", CompletionArgs);
+            writer.WriteStringValue("from_entry_id", FromEntryId);
+            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ConversationRestartRequestBaseGuardrails>("guardrails", Guardrails);
+            writer.WriteEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.ConversationRestartRequestHandoffExecution>("handoff_execution", HandoffExecution);
+            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ConversationInputs>("inputs", Inputs);
+            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ConversationRestartRequestBaseMetadata>("metadata", Metadata);
+            writer.WriteBoolValue("store", Store);
+            writer.WriteBoolValue("stream", Stream);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

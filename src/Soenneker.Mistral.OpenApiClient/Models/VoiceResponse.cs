@@ -18,28 +18,28 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         /// <summary>The age property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.VoiceResponse.VoiceResponse_age? Age { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.VoiceResponseAge? Age { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.VoiceResponse.VoiceResponse_age Age { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.VoiceResponseAge Age { get; set; }
 #endif
         /// <summary>The color property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.VoiceResponse.VoiceResponse_color? Color { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.VoiceResponseColor? Color { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.VoiceResponse.VoiceResponse_color Color { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.VoiceResponseColor Color { get; set; }
 #endif
         /// <summary>The created_at property</summary>
         public DateTimeOffset? CreatedAt { get; set; }
         /// <summary>The gender property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.VoiceResponse.VoiceResponse_gender? Gender { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.VoiceResponseGender? Gender { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.VoiceResponse.VoiceResponse_gender Gender { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.VoiceResponseGender Gender { get; set; }
 #endif
         /// <summary>The id property</summary>
         public Guid? Id { get; set; }
@@ -64,26 +64,26 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         /// <summary>The slug property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.VoiceResponse.VoiceResponse_slug? Slug { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.VoiceResponseSlug? Slug { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.VoiceResponse.VoiceResponse_slug Slug { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.VoiceResponseSlug Slug { get; set; }
 #endif
         /// <summary>The tags property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.VoiceResponse.VoiceResponse_tags? Tags { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.VoiceResponseTags? Tags { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.VoiceResponse.VoiceResponse_tags Tags { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.VoiceResponseTags Tags { get; set; }
 #endif
         /// <summary>The user_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.VoiceResponse.VoiceResponse_user_id? UserId { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.VoiceResponseUserId? UserId { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.VoiceResponse.VoiceResponse_user_id UserId { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.VoiceResponseUserId UserId { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Mistral.OpenApiClient.Models.VoiceResponse"/> and sets the default values.
@@ -91,6 +91,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         public VoiceResponse()
         {
             AdditionalData = new Dictionary<string, object>();
+            RetentionNotice = 30;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -110,17 +111,17 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "age", n => { Age = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.VoiceResponse.VoiceResponse_age>(global::Soenneker.Mistral.OpenApiClient.Models.VoiceResponse.VoiceResponse_age.CreateFromDiscriminatorValue); } },
-                { "color", n => { Color = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.VoiceResponse.VoiceResponse_color>(global::Soenneker.Mistral.OpenApiClient.Models.VoiceResponse.VoiceResponse_color.CreateFromDiscriminatorValue); } },
+                { "age", n => { Age = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.VoiceResponseAge>(global::Soenneker.Mistral.OpenApiClient.Models.VoiceResponseAge.CreateFromDiscriminatorValue); } },
+                { "color", n => { Color = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.VoiceResponseColor>(global::Soenneker.Mistral.OpenApiClient.Models.VoiceResponseColor.CreateFromDiscriminatorValue); } },
                 { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
-                { "gender", n => { Gender = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.VoiceResponse.VoiceResponse_gender>(global::Soenneker.Mistral.OpenApiClient.Models.VoiceResponse.VoiceResponse_gender.CreateFromDiscriminatorValue); } },
+                { "gender", n => { Gender = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.VoiceResponseGender>(global::Soenneker.Mistral.OpenApiClient.Models.VoiceResponseGender.CreateFromDiscriminatorValue); } },
                 { "id", n => { Id = n.GetGuidValue(); } },
                 { "languages", n => { Languages = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "retention_notice", n => { RetentionNotice = n.GetIntValue(); } },
-                { "slug", n => { Slug = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.VoiceResponse.VoiceResponse_slug>(global::Soenneker.Mistral.OpenApiClient.Models.VoiceResponse.VoiceResponse_slug.CreateFromDiscriminatorValue); } },
-                { "tags", n => { Tags = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.VoiceResponse.VoiceResponse_tags>(global::Soenneker.Mistral.OpenApiClient.Models.VoiceResponse.VoiceResponse_tags.CreateFromDiscriminatorValue); } },
-                { "user_id", n => { UserId = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.VoiceResponse.VoiceResponse_user_id>(global::Soenneker.Mistral.OpenApiClient.Models.VoiceResponse.VoiceResponse_user_id.CreateFromDiscriminatorValue); } },
+                { "slug", n => { Slug = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.VoiceResponseSlug>(global::Soenneker.Mistral.OpenApiClient.Models.VoiceResponseSlug.CreateFromDiscriminatorValue); } },
+                { "tags", n => { Tags = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.VoiceResponseTags>(global::Soenneker.Mistral.OpenApiClient.Models.VoiceResponseTags.CreateFromDiscriminatorValue); } },
+                { "user_id", n => { UserId = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.VoiceResponseUserId>(global::Soenneker.Mistral.OpenApiClient.Models.VoiceResponseUserId.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -130,420 +131,18 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.VoiceResponse.VoiceResponse_age>("age", Age);
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.VoiceResponse.VoiceResponse_color>("color", Color);
+            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.VoiceResponseAge>("age", Age);
+            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.VoiceResponseColor>("color", Color);
             writer.WriteDateTimeOffsetValue("created_at", CreatedAt);
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.VoiceResponse.VoiceResponse_gender>("gender", Gender);
+            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.VoiceResponseGender>("gender", Gender);
             writer.WriteGuidValue("id", Id);
             writer.WriteCollectionOfPrimitiveValues<string>("languages", Languages);
             writer.WriteStringValue("name", Name);
             writer.WriteIntValue("retention_notice", RetentionNotice);
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.VoiceResponse.VoiceResponse_slug>("slug", Slug);
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.VoiceResponse.VoiceResponse_tags>("tags", Tags);
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.VoiceResponse.VoiceResponse_user_id>("user_id", UserId);
+            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.VoiceResponseSlug>("slug", Slug);
+            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.VoiceResponseTags>("tags", Tags);
+            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.VoiceResponseUserId>("user_id", UserId);
             writer.WriteAdditionalData(AdditionalData);
-        }
-        /// <summary>
-        /// Composed type wrapper for classes <see cref="global::Soenneker.Mistral.OpenApiClient.Models.VoiceResponse_ageMember1"/>, <see cref="int"/>
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class VoiceResponse_age : IComposedTypeWrapper, IParsable
-        {
-            /// <summary>Composed type representation for type <see cref="int"/></summary>
-            public int? Integer { get; set; }
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.Mistral.OpenApiClient.Models.VoiceResponse_ageMember1"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public global::Soenneker.Mistral.OpenApiClient.Models.VoiceResponse_ageMember1? VoiceResponseAgeMember1 { get; set; }
-#nullable restore
-#else
-            public global::Soenneker.Mistral.OpenApiClient.Models.VoiceResponse_ageMember1 VoiceResponseAgeMember1 { get; set; }
-#endif
-            /// <summary>
-            /// Creates a new instance of the appropriate class based on discriminator value
-            /// </summary>
-            /// <returns>A <see cref="global::Soenneker.Mistral.OpenApiClient.Models.VoiceResponse.VoiceResponse_age"/></returns>
-            /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-            public static global::Soenneker.Mistral.OpenApiClient.Models.VoiceResponse.VoiceResponse_age CreateFromDiscriminatorValue(IParseNode parseNode)
-            {
-                if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-                var result = new global::Soenneker.Mistral.OpenApiClient.Models.VoiceResponse.VoiceResponse_age();
-                if(parseNode.GetIntValue() is int integerValue)
-                {
-                    result.Integer = integerValue;
-                }
-                else {
-                    result.VoiceResponseAgeMember1 = new global::Soenneker.Mistral.OpenApiClient.Models.VoiceResponse_ageMember1();
-                }
-                return result;
-            }
-            /// <summary>
-            /// The deserialization information for the current model
-            /// </summary>
-            /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-            public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
-            {
-                if(VoiceResponseAgeMember1 != null)
-                {
-                    return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(VoiceResponseAgeMember1);
-                }
-                return new Dictionary<string, Action<IParseNode>>();
-            }
-            /// <summary>
-            /// Serializes information the current object
-            /// </summary>
-            /// <param name="writer">Serialization writer to use to serialize this model</param>
-            public virtual void Serialize(ISerializationWriter writer)
-            {
-                if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-                if(Integer != null)
-                {
-                    writer.WriteIntValue(null, Integer);
-                }
-                else {
-                    writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.VoiceResponse_ageMember1>(null, VoiceResponseAgeMember1);
-                }
-            }
-        }
-        /// <summary>
-        /// Composed type wrapper for classes <see cref="global::Soenneker.Mistral.OpenApiClient.Models.VoiceResponse_colorMember1"/>, <see cref="string"/>
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class VoiceResponse_color : IComposedTypeWrapper, IParsable
-        {
-            /// <summary>Composed type representation for type <see cref="string"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public string? String { get; set; }
-#nullable restore
-#else
-            public string String { get; set; }
-#endif
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.Mistral.OpenApiClient.Models.VoiceResponse_colorMember1"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public global::Soenneker.Mistral.OpenApiClient.Models.VoiceResponse_colorMember1? VoiceResponseColorMember1 { get; set; }
-#nullable restore
-#else
-            public global::Soenneker.Mistral.OpenApiClient.Models.VoiceResponse_colorMember1 VoiceResponseColorMember1 { get; set; }
-#endif
-            /// <summary>
-            /// Creates a new instance of the appropriate class based on discriminator value
-            /// </summary>
-            /// <returns>A <see cref="global::Soenneker.Mistral.OpenApiClient.Models.VoiceResponse.VoiceResponse_color"/></returns>
-            /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-            public static global::Soenneker.Mistral.OpenApiClient.Models.VoiceResponse.VoiceResponse_color CreateFromDiscriminatorValue(IParseNode parseNode)
-            {
-                if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-                var result = new global::Soenneker.Mistral.OpenApiClient.Models.VoiceResponse.VoiceResponse_color();
-                if(parseNode.GetStringValue() is string stringValue)
-                {
-                    result.String = stringValue;
-                }
-                else {
-                    result.VoiceResponseColorMember1 = new global::Soenneker.Mistral.OpenApiClient.Models.VoiceResponse_colorMember1();
-                }
-                return result;
-            }
-            /// <summary>
-            /// The deserialization information for the current model
-            /// </summary>
-            /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-            public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
-            {
-                if(VoiceResponseColorMember1 != null)
-                {
-                    return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(VoiceResponseColorMember1);
-                }
-                return new Dictionary<string, Action<IParseNode>>();
-            }
-            /// <summary>
-            /// Serializes information the current object
-            /// </summary>
-            /// <param name="writer">Serialization writer to use to serialize this model</param>
-            public virtual void Serialize(ISerializationWriter writer)
-            {
-                if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-                if(String != null)
-                {
-                    writer.WriteStringValue(null, String);
-                }
-                else {
-                    writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.VoiceResponse_colorMember1>(null, VoiceResponseColorMember1);
-                }
-            }
-        }
-        /// <summary>
-        /// Composed type wrapper for classes <see cref="global::Soenneker.Mistral.OpenApiClient.Models.VoiceResponse_genderMember1"/>, <see cref="string"/>
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class VoiceResponse_gender : IComposedTypeWrapper, IParsable
-        {
-            /// <summary>Composed type representation for type <see cref="string"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public string? String { get; set; }
-#nullable restore
-#else
-            public string String { get; set; }
-#endif
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.Mistral.OpenApiClient.Models.VoiceResponse_genderMember1"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public global::Soenneker.Mistral.OpenApiClient.Models.VoiceResponse_genderMember1? VoiceResponseGenderMember1 { get; set; }
-#nullable restore
-#else
-            public global::Soenneker.Mistral.OpenApiClient.Models.VoiceResponse_genderMember1 VoiceResponseGenderMember1 { get; set; }
-#endif
-            /// <summary>
-            /// Creates a new instance of the appropriate class based on discriminator value
-            /// </summary>
-            /// <returns>A <see cref="global::Soenneker.Mistral.OpenApiClient.Models.VoiceResponse.VoiceResponse_gender"/></returns>
-            /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-            public static global::Soenneker.Mistral.OpenApiClient.Models.VoiceResponse.VoiceResponse_gender CreateFromDiscriminatorValue(IParseNode parseNode)
-            {
-                if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-                var result = new global::Soenneker.Mistral.OpenApiClient.Models.VoiceResponse.VoiceResponse_gender();
-                if(parseNode.GetStringValue() is string stringValue)
-                {
-                    result.String = stringValue;
-                }
-                else {
-                    result.VoiceResponseGenderMember1 = new global::Soenneker.Mistral.OpenApiClient.Models.VoiceResponse_genderMember1();
-                }
-                return result;
-            }
-            /// <summary>
-            /// The deserialization information for the current model
-            /// </summary>
-            /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-            public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
-            {
-                if(VoiceResponseGenderMember1 != null)
-                {
-                    return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(VoiceResponseGenderMember1);
-                }
-                return new Dictionary<string, Action<IParseNode>>();
-            }
-            /// <summary>
-            /// Serializes information the current object
-            /// </summary>
-            /// <param name="writer">Serialization writer to use to serialize this model</param>
-            public virtual void Serialize(ISerializationWriter writer)
-            {
-                if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-                if(String != null)
-                {
-                    writer.WriteStringValue(null, String);
-                }
-                else {
-                    writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.VoiceResponse_genderMember1>(null, VoiceResponseGenderMember1);
-                }
-            }
-        }
-        /// <summary>
-        /// Composed type wrapper for classes <see cref="global::Soenneker.Mistral.OpenApiClient.Models.VoiceResponse_slugMember1"/>, <see cref="string"/>
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class VoiceResponse_slug : IComposedTypeWrapper, IParsable
-        {
-            /// <summary>Composed type representation for type <see cref="string"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public string? String { get; set; }
-#nullable restore
-#else
-            public string String { get; set; }
-#endif
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.Mistral.OpenApiClient.Models.VoiceResponse_slugMember1"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public global::Soenneker.Mistral.OpenApiClient.Models.VoiceResponse_slugMember1? VoiceResponseSlugMember1 { get; set; }
-#nullable restore
-#else
-            public global::Soenneker.Mistral.OpenApiClient.Models.VoiceResponse_slugMember1 VoiceResponseSlugMember1 { get; set; }
-#endif
-            /// <summary>
-            /// Creates a new instance of the appropriate class based on discriminator value
-            /// </summary>
-            /// <returns>A <see cref="global::Soenneker.Mistral.OpenApiClient.Models.VoiceResponse.VoiceResponse_slug"/></returns>
-            /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-            public static global::Soenneker.Mistral.OpenApiClient.Models.VoiceResponse.VoiceResponse_slug CreateFromDiscriminatorValue(IParseNode parseNode)
-            {
-                if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-                var result = new global::Soenneker.Mistral.OpenApiClient.Models.VoiceResponse.VoiceResponse_slug();
-                if(parseNode.GetStringValue() is string stringValue)
-                {
-                    result.String = stringValue;
-                }
-                else {
-                    result.VoiceResponseSlugMember1 = new global::Soenneker.Mistral.OpenApiClient.Models.VoiceResponse_slugMember1();
-                }
-                return result;
-            }
-            /// <summary>
-            /// The deserialization information for the current model
-            /// </summary>
-            /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-            public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
-            {
-                if(VoiceResponseSlugMember1 != null)
-                {
-                    return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(VoiceResponseSlugMember1);
-                }
-                return new Dictionary<string, Action<IParseNode>>();
-            }
-            /// <summary>
-            /// Serializes information the current object
-            /// </summary>
-            /// <param name="writer">Serialization writer to use to serialize this model</param>
-            public virtual void Serialize(ISerializationWriter writer)
-            {
-                if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-                if(String != null)
-                {
-                    writer.WriteStringValue(null, String);
-                }
-                else {
-                    writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.VoiceResponse_slugMember1>(null, VoiceResponseSlugMember1);
-                }
-            }
-        }
-        /// <summary>
-        /// Composed type wrapper for classes <see cref="global::Soenneker.Mistral.OpenApiClient.Models.VoiceResponse_tagsMember1"/>, List&lt;string&gt;
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class VoiceResponse_tags : IComposedTypeWrapper, IParsable
-        {
-            /// <summary>Composed type representation for type List&lt;string&gt;</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public List<string>? String { get; set; }
-#nullable restore
-#else
-            public List<string> String { get; set; }
-#endif
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.Mistral.OpenApiClient.Models.VoiceResponse_tagsMember1"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public global::Soenneker.Mistral.OpenApiClient.Models.VoiceResponse_tagsMember1? VoiceResponseTagsMember1 { get; set; }
-#nullable restore
-#else
-            public global::Soenneker.Mistral.OpenApiClient.Models.VoiceResponse_tagsMember1 VoiceResponseTagsMember1 { get; set; }
-#endif
-            /// <summary>
-            /// Creates a new instance of the appropriate class based on discriminator value
-            /// </summary>
-            /// <returns>A <see cref="global::Soenneker.Mistral.OpenApiClient.Models.VoiceResponse.VoiceResponse_tags"/></returns>
-            /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-            public static global::Soenneker.Mistral.OpenApiClient.Models.VoiceResponse.VoiceResponse_tags CreateFromDiscriminatorValue(IParseNode parseNode)
-            {
-                if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-                var result = new global::Soenneker.Mistral.OpenApiClient.Models.VoiceResponse.VoiceResponse_tags();
-                if(parseNode.GetCollectionOfPrimitiveValues<string>()?.AsList() is List<string> stringValue)
-                {
-                    result.String = stringValue;
-                }
-                else {
-                    result.VoiceResponseTagsMember1 = new global::Soenneker.Mistral.OpenApiClient.Models.VoiceResponse_tagsMember1();
-                }
-                return result;
-            }
-            /// <summary>
-            /// The deserialization information for the current model
-            /// </summary>
-            /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-            public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
-            {
-                if(VoiceResponseTagsMember1 != null)
-                {
-                    return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(VoiceResponseTagsMember1);
-                }
-                return new Dictionary<string, Action<IParseNode>>();
-            }
-            /// <summary>
-            /// Serializes information the current object
-            /// </summary>
-            /// <param name="writer">Serialization writer to use to serialize this model</param>
-            public virtual void Serialize(ISerializationWriter writer)
-            {
-                if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-                if(String != null)
-                {
-                    writer.WriteCollectionOfPrimitiveValues<string>(null, String);
-                }
-                else {
-                    writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.VoiceResponse_tagsMember1>(null, VoiceResponseTagsMember1);
-                }
-            }
-        }
-        /// <summary>
-        /// Composed type wrapper for classes <see cref="global::Soenneker.Mistral.OpenApiClient.Models.VoiceResponse_user_idMember1"/>, <see cref="string"/>
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class VoiceResponse_user_id : IComposedTypeWrapper, IParsable
-        {
-            /// <summary>Composed type representation for type <see cref="string"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public string? String { get; set; }
-#nullable restore
-#else
-            public string String { get; set; }
-#endif
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.Mistral.OpenApiClient.Models.VoiceResponse_user_idMember1"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public global::Soenneker.Mistral.OpenApiClient.Models.VoiceResponse_user_idMember1? VoiceResponseUserIdMember1 { get; set; }
-#nullable restore
-#else
-            public global::Soenneker.Mistral.OpenApiClient.Models.VoiceResponse_user_idMember1 VoiceResponseUserIdMember1 { get; set; }
-#endif
-            /// <summary>
-            /// Creates a new instance of the appropriate class based on discriminator value
-            /// </summary>
-            /// <returns>A <see cref="global::Soenneker.Mistral.OpenApiClient.Models.VoiceResponse.VoiceResponse_user_id"/></returns>
-            /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-            public static global::Soenneker.Mistral.OpenApiClient.Models.VoiceResponse.VoiceResponse_user_id CreateFromDiscriminatorValue(IParseNode parseNode)
-            {
-                if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-                var result = new global::Soenneker.Mistral.OpenApiClient.Models.VoiceResponse.VoiceResponse_user_id();
-                if(parseNode.GetStringValue() is string stringValue)
-                {
-                    result.String = stringValue;
-                }
-                else {
-                    result.VoiceResponseUserIdMember1 = new global::Soenneker.Mistral.OpenApiClient.Models.VoiceResponse_user_idMember1();
-                }
-                return result;
-            }
-            /// <summary>
-            /// The deserialization information for the current model
-            /// </summary>
-            /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-            public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
-            {
-                if(VoiceResponseUserIdMember1 != null)
-                {
-                    return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(VoiceResponseUserIdMember1);
-                }
-                return new Dictionary<string, Action<IParseNode>>();
-            }
-            /// <summary>
-            /// Serializes information the current object
-            /// </summary>
-            /// <param name="writer">Serialization writer to use to serialize this model</param>
-            public virtual void Serialize(ISerializationWriter writer)
-            {
-                if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-                if(String != null)
-                {
-                    writer.WriteStringValue(null, String);
-                }
-                else {
-                    writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.VoiceResponse_user_idMember1>(null, VoiceResponseUserIdMember1);
-                }
-            }
         }
     }
 }

@@ -45,10 +45,10 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         /// <summary>The fine_tuned_model property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.ClassifierDetailedJobOut.ClassifierDetailedJobOut_fine_tuned_model? FineTunedModel { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.ClassifierDetailedJobOutFineTunedModel? FineTunedModel { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.ClassifierDetailedJobOut.ClassifierDetailedJobOut_fine_tuned_model FineTunedModel { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.ClassifierDetailedJobOutFineTunedModel FineTunedModel { get; set; }
 #endif
         /// <summary>The hyperparameters property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -63,26 +63,20 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         /// <summary>The integrations property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Mistral.OpenApiClient.Models.WandbIntegrationOut>? Integrations { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.ClassifierDetailedJobOutIntegrations? Integrations { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Mistral.OpenApiClient.Models.WandbIntegrationOut> Integrations { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.ClassifierDetailedJobOutIntegrations Integrations { get; set; }
 #endif
         /// <summary>The job_type property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? JobType { get; set; }
-#nullable restore
-#else
-        public string JobType { get; set; }
-#endif
+        public global::Soenneker.Mistral.OpenApiClient.Models.ClassifierDetailedJobOut_job_type? JobType { get; set; }
         /// <summary>The metadata property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.JobMetadataOut? Metadata { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.ClassifierDetailedJobOutMetadata? Metadata { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.JobMetadataOut Metadata { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.ClassifierDetailedJobOutMetadata Metadata { get; set; }
 #endif
         /// <summary>The model property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -95,30 +89,24 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         /// <summary>The modified_at property</summary>
         public int? ModifiedAt { get; set; }
         /// <summary>The object property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Object { get; set; }
-#nullable restore
-#else
-        public string Object { get; set; }
-#endif
+        public global::Soenneker.Mistral.OpenApiClient.Models.ClassifierDetailedJobOut_object? Object { get; set; }
         /// <summary>The status property</summary>
-        public global::Soenneker.Mistral.OpenApiClient.Models.ClassifierDetailedJobOut_status? Status { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.ClassifierDetailedJobOutStatus? Status { get; set; }
         /// <summary>The suffix property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.ClassifierDetailedJobOut.ClassifierDetailedJobOut_suffix? Suffix { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.ClassifierDetailedJobOutSuffix? Suffix { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.ClassifierDetailedJobOut.ClassifierDetailedJobOut_suffix Suffix { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.ClassifierDetailedJobOutSuffix Suffix { get; set; }
 #endif
         /// <summary>The trained_tokens property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.ClassifierDetailedJobOut.ClassifierDetailedJobOut_trained_tokens? TrainedTokens { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.ClassifierDetailedJobOutTrainedTokens? TrainedTokens { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.ClassifierDetailedJobOut.ClassifierDetailedJobOut_trained_tokens TrainedTokens { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.ClassifierDetailedJobOutTrainedTokens TrainedTokens { get; set; }
 #endif
         /// <summary>The training_files property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -131,10 +119,10 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         /// <summary>The validation_files property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.ClassifierDetailedJobOut.ClassifierDetailedJobOut_validation_files? ValidationFiles { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.ClassifierDetailedJobOutValidationFiles? ValidationFiles { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.ClassifierDetailedJobOut.ClassifierDetailedJobOut_validation_files ValidationFiles { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.ClassifierDetailedJobOutValidationFiles ValidationFiles { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Mistral.OpenApiClient.Models.ClassifierDetailedJobOut"/> and sets the default values.
@@ -142,8 +130,6 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         public ClassifierDetailedJobOut()
         {
             AdditionalData = new Dictionary<string, object>();
-            JobType = "classifier";
-            Object = "job";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -168,20 +154,20 @@ namespace Soenneker.Mistral.OpenApiClient.Models
                 { "classifier_targets", n => { ClassifierTargets = n.GetCollectionOfObjectValues<global::Soenneker.Mistral.OpenApiClient.Models.ClassifierTargetOut>(global::Soenneker.Mistral.OpenApiClient.Models.ClassifierTargetOut.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "created_at", n => { CreatedAt = n.GetIntValue(); } },
                 { "events", n => { Events = n.GetCollectionOfObjectValues<global::Soenneker.Mistral.OpenApiClient.Models.EventOut>(global::Soenneker.Mistral.OpenApiClient.Models.EventOut.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "fine_tuned_model", n => { FineTunedModel = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ClassifierDetailedJobOut.ClassifierDetailedJobOut_fine_tuned_model>(global::Soenneker.Mistral.OpenApiClient.Models.ClassifierDetailedJobOut.ClassifierDetailedJobOut_fine_tuned_model.CreateFromDiscriminatorValue); } },
+                { "fine_tuned_model", n => { FineTunedModel = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ClassifierDetailedJobOutFineTunedModel>(global::Soenneker.Mistral.OpenApiClient.Models.ClassifierDetailedJobOutFineTunedModel.CreateFromDiscriminatorValue); } },
                 { "hyperparameters", n => { Hyperparameters = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ClassifierTrainingParameters>(global::Soenneker.Mistral.OpenApiClient.Models.ClassifierTrainingParameters.CreateFromDiscriminatorValue); } },
                 { "id", n => { Id = n.GetGuidValue(); } },
-                { "integrations", n => { Integrations = n.GetCollectionOfObjectValues<global::Soenneker.Mistral.OpenApiClient.Models.WandbIntegrationOut>(global::Soenneker.Mistral.OpenApiClient.Models.WandbIntegrationOut.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "job_type", n => { JobType = n.GetStringValue(); } },
-                { "metadata", n => { Metadata = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.JobMetadataOut>(global::Soenneker.Mistral.OpenApiClient.Models.JobMetadataOut.CreateFromDiscriminatorValue); } },
+                { "integrations", n => { Integrations = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ClassifierDetailedJobOutIntegrations>(global::Soenneker.Mistral.OpenApiClient.Models.ClassifierDetailedJobOutIntegrations.CreateFromDiscriminatorValue); } },
+                { "job_type", n => { JobType = n.GetEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.ClassifierDetailedJobOut_job_type>(); } },
+                { "metadata", n => { Metadata = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ClassifierDetailedJobOutMetadata>(global::Soenneker.Mistral.OpenApiClient.Models.ClassifierDetailedJobOutMetadata.CreateFromDiscriminatorValue); } },
                 { "model", n => { Model = n.GetStringValue(); } },
                 { "modified_at", n => { ModifiedAt = n.GetIntValue(); } },
-                { "object", n => { Object = n.GetStringValue(); } },
-                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.ClassifierDetailedJobOut_status>(); } },
-                { "suffix", n => { Suffix = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ClassifierDetailedJobOut.ClassifierDetailedJobOut_suffix>(global::Soenneker.Mistral.OpenApiClient.Models.ClassifierDetailedJobOut.ClassifierDetailedJobOut_suffix.CreateFromDiscriminatorValue); } },
-                { "trained_tokens", n => { TrainedTokens = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ClassifierDetailedJobOut.ClassifierDetailedJobOut_trained_tokens>(global::Soenneker.Mistral.OpenApiClient.Models.ClassifierDetailedJobOut.ClassifierDetailedJobOut_trained_tokens.CreateFromDiscriminatorValue); } },
+                { "object", n => { Object = n.GetEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.ClassifierDetailedJobOut_object>(); } },
+                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.ClassifierDetailedJobOutStatus>(); } },
+                { "suffix", n => { Suffix = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ClassifierDetailedJobOutSuffix>(global::Soenneker.Mistral.OpenApiClient.Models.ClassifierDetailedJobOutSuffix.CreateFromDiscriminatorValue); } },
+                { "trained_tokens", n => { TrainedTokens = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ClassifierDetailedJobOutTrainedTokens>(global::Soenneker.Mistral.OpenApiClient.Models.ClassifierDetailedJobOutTrainedTokens.CreateFromDiscriminatorValue); } },
                 { "training_files", n => { TrainingFiles = n.GetCollectionOfPrimitiveValues<Guid?>()?.AsList(); } },
-                { "validation_files", n => { ValidationFiles = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ClassifierDetailedJobOut.ClassifierDetailedJobOut_validation_files>(global::Soenneker.Mistral.OpenApiClient.Models.ClassifierDetailedJobOut.ClassifierDetailedJobOut_validation_files.CreateFromDiscriminatorValue); } },
+                { "validation_files", n => { ValidationFiles = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ClassifierDetailedJobOutValidationFiles>(global::Soenneker.Mistral.OpenApiClient.Models.ClassifierDetailedJobOutValidationFiles.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -196,287 +182,21 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             writer.WriteCollectionOfObjectValues<global::Soenneker.Mistral.OpenApiClient.Models.ClassifierTargetOut>("classifier_targets", ClassifierTargets);
             writer.WriteIntValue("created_at", CreatedAt);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Mistral.OpenApiClient.Models.EventOut>("events", Events);
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ClassifierDetailedJobOut.ClassifierDetailedJobOut_fine_tuned_model>("fine_tuned_model", FineTunedModel);
+            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ClassifierDetailedJobOutFineTunedModel>("fine_tuned_model", FineTunedModel);
             writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ClassifierTrainingParameters>("hyperparameters", Hyperparameters);
             writer.WriteGuidValue("id", Id);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Mistral.OpenApiClient.Models.WandbIntegrationOut>("integrations", Integrations);
-            writer.WriteStringValue("job_type", JobType);
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.JobMetadataOut>("metadata", Metadata);
+            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ClassifierDetailedJobOutIntegrations>("integrations", Integrations);
+            writer.WriteEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.ClassifierDetailedJobOut_job_type>("job_type", JobType);
+            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ClassifierDetailedJobOutMetadata>("metadata", Metadata);
             writer.WriteStringValue("model", Model);
             writer.WriteIntValue("modified_at", ModifiedAt);
-            writer.WriteStringValue("object", Object);
-            writer.WriteEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.ClassifierDetailedJobOut_status>("status", Status);
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ClassifierDetailedJobOut.ClassifierDetailedJobOut_suffix>("suffix", Suffix);
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ClassifierDetailedJobOut.ClassifierDetailedJobOut_trained_tokens>("trained_tokens", TrainedTokens);
+            writer.WriteEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.ClassifierDetailedJobOut_object>("object", Object);
+            writer.WriteEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.ClassifierDetailedJobOutStatus>("status", Status);
+            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ClassifierDetailedJobOutSuffix>("suffix", Suffix);
+            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ClassifierDetailedJobOutTrainedTokens>("trained_tokens", TrainedTokens);
             writer.WriteCollectionOfPrimitiveValues<Guid?>("training_files", TrainingFiles);
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ClassifierDetailedJobOut.ClassifierDetailedJobOut_validation_files>("validation_files", ValidationFiles);
+            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ClassifierDetailedJobOutValidationFiles>("validation_files", ValidationFiles);
             writer.WriteAdditionalData(AdditionalData);
-        }
-        /// <summary>
-        /// Composed type wrapper for classes <see cref="global::Soenneker.Mistral.OpenApiClient.Models.ClassifierDetailedJobOut_fine_tuned_modelMember1"/>, <see cref="string"/>
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class ClassifierDetailedJobOut_fine_tuned_model : IComposedTypeWrapper, IParsable
-        {
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.Mistral.OpenApiClient.Models.ClassifierDetailedJobOut_fine_tuned_modelMember1"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public global::Soenneker.Mistral.OpenApiClient.Models.ClassifierDetailedJobOut_fine_tuned_modelMember1? ClassifierDetailedJobOutFineTunedModelMember1 { get; set; }
-#nullable restore
-#else
-            public global::Soenneker.Mistral.OpenApiClient.Models.ClassifierDetailedJobOut_fine_tuned_modelMember1 ClassifierDetailedJobOutFineTunedModelMember1 { get; set; }
-#endif
-            /// <summary>Composed type representation for type <see cref="string"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public string? String { get; set; }
-#nullable restore
-#else
-            public string String { get; set; }
-#endif
-            /// <summary>
-            /// Creates a new instance of the appropriate class based on discriminator value
-            /// </summary>
-            /// <returns>A <see cref="global::Soenneker.Mistral.OpenApiClient.Models.ClassifierDetailedJobOut.ClassifierDetailedJobOut_fine_tuned_model"/></returns>
-            /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-            public static global::Soenneker.Mistral.OpenApiClient.Models.ClassifierDetailedJobOut.ClassifierDetailedJobOut_fine_tuned_model CreateFromDiscriminatorValue(IParseNode parseNode)
-            {
-                if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-                var result = new global::Soenneker.Mistral.OpenApiClient.Models.ClassifierDetailedJobOut.ClassifierDetailedJobOut_fine_tuned_model();
-                if(parseNode.GetStringValue() is string stringValue)
-                {
-                    result.String = stringValue;
-                }
-                else {
-                    result.ClassifierDetailedJobOutFineTunedModelMember1 = new global::Soenneker.Mistral.OpenApiClient.Models.ClassifierDetailedJobOut_fine_tuned_modelMember1();
-                }
-                return result;
-            }
-            /// <summary>
-            /// The deserialization information for the current model
-            /// </summary>
-            /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-            public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
-            {
-                if(ClassifierDetailedJobOutFineTunedModelMember1 != null)
-                {
-                    return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(ClassifierDetailedJobOutFineTunedModelMember1);
-                }
-                return new Dictionary<string, Action<IParseNode>>();
-            }
-            /// <summary>
-            /// Serializes information the current object
-            /// </summary>
-            /// <param name="writer">Serialization writer to use to serialize this model</param>
-            public virtual void Serialize(ISerializationWriter writer)
-            {
-                if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-                if(String != null)
-                {
-                    writer.WriteStringValue(null, String);
-                }
-                else {
-                    writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ClassifierDetailedJobOut_fine_tuned_modelMember1>(null, ClassifierDetailedJobOutFineTunedModelMember1);
-                }
-            }
-        }
-        /// <summary>
-        /// Composed type wrapper for classes <see cref="global::Soenneker.Mistral.OpenApiClient.Models.ClassifierDetailedJobOut_suffixMember1"/>, <see cref="string"/>
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class ClassifierDetailedJobOut_suffix : IComposedTypeWrapper, IParsable
-        {
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.Mistral.OpenApiClient.Models.ClassifierDetailedJobOut_suffixMember1"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public global::Soenneker.Mistral.OpenApiClient.Models.ClassifierDetailedJobOut_suffixMember1? ClassifierDetailedJobOutSuffixMember1 { get; set; }
-#nullable restore
-#else
-            public global::Soenneker.Mistral.OpenApiClient.Models.ClassifierDetailedJobOut_suffixMember1 ClassifierDetailedJobOutSuffixMember1 { get; set; }
-#endif
-            /// <summary>Composed type representation for type <see cref="string"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public string? String { get; set; }
-#nullable restore
-#else
-            public string String { get; set; }
-#endif
-            /// <summary>
-            /// Creates a new instance of the appropriate class based on discriminator value
-            /// </summary>
-            /// <returns>A <see cref="global::Soenneker.Mistral.OpenApiClient.Models.ClassifierDetailedJobOut.ClassifierDetailedJobOut_suffix"/></returns>
-            /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-            public static global::Soenneker.Mistral.OpenApiClient.Models.ClassifierDetailedJobOut.ClassifierDetailedJobOut_suffix CreateFromDiscriminatorValue(IParseNode parseNode)
-            {
-                if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-                var result = new global::Soenneker.Mistral.OpenApiClient.Models.ClassifierDetailedJobOut.ClassifierDetailedJobOut_suffix();
-                if(parseNode.GetStringValue() is string stringValue)
-                {
-                    result.String = stringValue;
-                }
-                else {
-                    result.ClassifierDetailedJobOutSuffixMember1 = new global::Soenneker.Mistral.OpenApiClient.Models.ClassifierDetailedJobOut_suffixMember1();
-                }
-                return result;
-            }
-            /// <summary>
-            /// The deserialization information for the current model
-            /// </summary>
-            /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-            public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
-            {
-                if(ClassifierDetailedJobOutSuffixMember1 != null)
-                {
-                    return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(ClassifierDetailedJobOutSuffixMember1);
-                }
-                return new Dictionary<string, Action<IParseNode>>();
-            }
-            /// <summary>
-            /// Serializes information the current object
-            /// </summary>
-            /// <param name="writer">Serialization writer to use to serialize this model</param>
-            public virtual void Serialize(ISerializationWriter writer)
-            {
-                if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-                if(String != null)
-                {
-                    writer.WriteStringValue(null, String);
-                }
-                else {
-                    writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ClassifierDetailedJobOut_suffixMember1>(null, ClassifierDetailedJobOutSuffixMember1);
-                }
-            }
-        }
-        /// <summary>
-        /// Composed type wrapper for classes <see cref="global::Soenneker.Mistral.OpenApiClient.Models.ClassifierDetailedJobOut_trained_tokensMember1"/>, <see cref="int"/>
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class ClassifierDetailedJobOut_trained_tokens : IComposedTypeWrapper, IParsable
-        {
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.Mistral.OpenApiClient.Models.ClassifierDetailedJobOut_trained_tokensMember1"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public global::Soenneker.Mistral.OpenApiClient.Models.ClassifierDetailedJobOut_trained_tokensMember1? ClassifierDetailedJobOutTrainedTokensMember1 { get; set; }
-#nullable restore
-#else
-            public global::Soenneker.Mistral.OpenApiClient.Models.ClassifierDetailedJobOut_trained_tokensMember1 ClassifierDetailedJobOutTrainedTokensMember1 { get; set; }
-#endif
-            /// <summary>Composed type representation for type <see cref="int"/></summary>
-            public int? Integer { get; set; }
-            /// <summary>
-            /// Creates a new instance of the appropriate class based on discriminator value
-            /// </summary>
-            /// <returns>A <see cref="global::Soenneker.Mistral.OpenApiClient.Models.ClassifierDetailedJobOut.ClassifierDetailedJobOut_trained_tokens"/></returns>
-            /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-            public static global::Soenneker.Mistral.OpenApiClient.Models.ClassifierDetailedJobOut.ClassifierDetailedJobOut_trained_tokens CreateFromDiscriminatorValue(IParseNode parseNode)
-            {
-                if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-                var result = new global::Soenneker.Mistral.OpenApiClient.Models.ClassifierDetailedJobOut.ClassifierDetailedJobOut_trained_tokens();
-                if(parseNode.GetIntValue() is int integerValue)
-                {
-                    result.Integer = integerValue;
-                }
-                else {
-                    result.ClassifierDetailedJobOutTrainedTokensMember1 = new global::Soenneker.Mistral.OpenApiClient.Models.ClassifierDetailedJobOut_trained_tokensMember1();
-                }
-                return result;
-            }
-            /// <summary>
-            /// The deserialization information for the current model
-            /// </summary>
-            /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-            public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
-            {
-                if(ClassifierDetailedJobOutTrainedTokensMember1 != null)
-                {
-                    return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(ClassifierDetailedJobOutTrainedTokensMember1);
-                }
-                return new Dictionary<string, Action<IParseNode>>();
-            }
-            /// <summary>
-            /// Serializes information the current object
-            /// </summary>
-            /// <param name="writer">Serialization writer to use to serialize this model</param>
-            public virtual void Serialize(ISerializationWriter writer)
-            {
-                if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-                if(Integer != null)
-                {
-                    writer.WriteIntValue(null, Integer);
-                }
-                else {
-                    writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ClassifierDetailedJobOut_trained_tokensMember1>(null, ClassifierDetailedJobOutTrainedTokensMember1);
-                }
-            }
-        }
-        /// <summary>
-        /// Composed type wrapper for classes <see cref="global::Soenneker.Mistral.OpenApiClient.Models.ClassifierDetailedJobOut_validation_filesMember1"/>, List&lt;Guid&gt;
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class ClassifierDetailedJobOut_validation_files : IComposedTypeWrapper, IParsable
-        {
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.Mistral.OpenApiClient.Models.ClassifierDetailedJobOut_validation_filesMember1"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public global::Soenneker.Mistral.OpenApiClient.Models.ClassifierDetailedJobOut_validation_filesMember1? ClassifierDetailedJobOutValidationFilesMember1 { get; set; }
-#nullable restore
-#else
-            public global::Soenneker.Mistral.OpenApiClient.Models.ClassifierDetailedJobOut_validation_filesMember1 ClassifierDetailedJobOutValidationFilesMember1 { get; set; }
-#endif
-            /// <summary>Composed type representation for type List&lt;Guid&gt;</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public List<Guid?>? Guid { get; set; }
-#nullable restore
-#else
-            public List<Guid?> Guid { get; set; }
-#endif
-            /// <summary>
-            /// Creates a new instance of the appropriate class based on discriminator value
-            /// </summary>
-            /// <returns>A <see cref="global::Soenneker.Mistral.OpenApiClient.Models.ClassifierDetailedJobOut.ClassifierDetailedJobOut_validation_files"/></returns>
-            /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-            public static global::Soenneker.Mistral.OpenApiClient.Models.ClassifierDetailedJobOut.ClassifierDetailedJobOut_validation_files CreateFromDiscriminatorValue(IParseNode parseNode)
-            {
-                if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-                var result = new global::Soenneker.Mistral.OpenApiClient.Models.ClassifierDetailedJobOut.ClassifierDetailedJobOut_validation_files();
-                if(parseNode.GetCollectionOfPrimitiveValues<Guid?>()?.AsList() is List<Guid?> guidValue)
-                {
-                    result.Guid = guidValue;
-                }
-                else {
-                    result.ClassifierDetailedJobOutValidationFilesMember1 = new global::Soenneker.Mistral.OpenApiClient.Models.ClassifierDetailedJobOut_validation_filesMember1();
-                }
-                return result;
-            }
-            /// <summary>
-            /// The deserialization information for the current model
-            /// </summary>
-            /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-            public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
-            {
-                if(ClassifierDetailedJobOutValidationFilesMember1 != null)
-                {
-                    return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(ClassifierDetailedJobOutValidationFilesMember1);
-                }
-                return new Dictionary<string, Action<IParseNode>>();
-            }
-            /// <summary>
-            /// Serializes information the current object
-            /// </summary>
-            /// <param name="writer">Serialization writer to use to serialize this model</param>
-            public virtual void Serialize(ISerializationWriter writer)
-            {
-                if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-                if(Guid != null)
-                {
-                    writer.WriteCollectionOfPrimitiveValues<Guid?>(null, Guid);
-                }
-                else {
-                    writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ClassifierDetailedJobOut_validation_filesMember1>(null, ClassifierDetailedJobOutValidationFilesMember1);
-                }
-            }
         }
     }
 }

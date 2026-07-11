@@ -3,13 +3,14 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Mistral.OpenApiClient.Models
 {
-    /// <summary>The format of embeddings in the response.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
+    #pragma warning disable CS1591
     public enum EncodingFormat
+    #pragma warning restore CS1591
     {
         [EnumMember(Value = "float")]
         #pragma warning disable CS1591
-        Float,
+        FloatValue,
         #pragma warning restore CS1591
         [EnumMember(Value = "base64")]
         #pragma warning disable CS1591

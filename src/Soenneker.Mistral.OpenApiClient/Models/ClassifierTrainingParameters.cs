@@ -17,44 +17,44 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         /// <summary>The epochs property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.ClassifierTrainingParameters.ClassifierTrainingParameters_epochs? Epochs { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.ClassifierTrainingParametersEpochs? Epochs { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.ClassifierTrainingParameters.ClassifierTrainingParameters_epochs Epochs { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.ClassifierTrainingParametersEpochs Epochs { get; set; }
 #endif
         /// <summary>The learning_rate property</summary>
         public double? LearningRate { get; set; }
         /// <summary>The seq_len property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.ClassifierTrainingParameters.ClassifierTrainingParameters_seq_len? SeqLen { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.ClassifierTrainingParametersSeqLen? SeqLen { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.ClassifierTrainingParameters.ClassifierTrainingParameters_seq_len SeqLen { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.ClassifierTrainingParametersSeqLen SeqLen { get; set; }
 #endif
         /// <summary>The training_steps property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.ClassifierTrainingParameters.ClassifierTrainingParameters_training_steps? TrainingSteps { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.ClassifierTrainingParametersTrainingSteps? TrainingSteps { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.ClassifierTrainingParameters.ClassifierTrainingParameters_training_steps TrainingSteps { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.ClassifierTrainingParametersTrainingSteps TrainingSteps { get; set; }
 #endif
         /// <summary>The warmup_fraction property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.ClassifierTrainingParameters.ClassifierTrainingParameters_warmup_fraction? WarmupFraction { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.ClassifierTrainingParametersWarmupFraction? WarmupFraction { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.ClassifierTrainingParameters.ClassifierTrainingParameters_warmup_fraction WarmupFraction { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.ClassifierTrainingParametersWarmupFraction WarmupFraction { get; set; }
 #endif
         /// <summary>The weight_decay property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.ClassifierTrainingParameters.ClassifierTrainingParameters_weight_decay? WeightDecay { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.ClassifierTrainingParametersWeightDecay? WeightDecay { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.ClassifierTrainingParameters.ClassifierTrainingParameters_weight_decay WeightDecay { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.ClassifierTrainingParametersWeightDecay WeightDecay { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Mistral.OpenApiClient.Models.ClassifierTrainingParameters"/> and sets the default values.
@@ -62,6 +62,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         public ClassifierTrainingParameters()
         {
             AdditionalData = new Dictionary<string, object>();
+            LearningRate = 0.0001;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -81,12 +82,12 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "epochs", n => { Epochs = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ClassifierTrainingParameters.ClassifierTrainingParameters_epochs>(global::Soenneker.Mistral.OpenApiClient.Models.ClassifierTrainingParameters.ClassifierTrainingParameters_epochs.CreateFromDiscriminatorValue); } },
+                { "epochs", n => { Epochs = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ClassifierTrainingParametersEpochs>(global::Soenneker.Mistral.OpenApiClient.Models.ClassifierTrainingParametersEpochs.CreateFromDiscriminatorValue); } },
                 { "learning_rate", n => { LearningRate = n.GetDoubleValue(); } },
-                { "seq_len", n => { SeqLen = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ClassifierTrainingParameters.ClassifierTrainingParameters_seq_len>(global::Soenneker.Mistral.OpenApiClient.Models.ClassifierTrainingParameters.ClassifierTrainingParameters_seq_len.CreateFromDiscriminatorValue); } },
-                { "training_steps", n => { TrainingSteps = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ClassifierTrainingParameters.ClassifierTrainingParameters_training_steps>(global::Soenneker.Mistral.OpenApiClient.Models.ClassifierTrainingParameters.ClassifierTrainingParameters_training_steps.CreateFromDiscriminatorValue); } },
-                { "warmup_fraction", n => { WarmupFraction = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ClassifierTrainingParameters.ClassifierTrainingParameters_warmup_fraction>(global::Soenneker.Mistral.OpenApiClient.Models.ClassifierTrainingParameters.ClassifierTrainingParameters_warmup_fraction.CreateFromDiscriminatorValue); } },
-                { "weight_decay", n => { WeightDecay = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ClassifierTrainingParameters.ClassifierTrainingParameters_weight_decay>(global::Soenneker.Mistral.OpenApiClient.Models.ClassifierTrainingParameters.ClassifierTrainingParameters_weight_decay.CreateFromDiscriminatorValue); } },
+                { "seq_len", n => { SeqLen = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ClassifierTrainingParametersSeqLen>(global::Soenneker.Mistral.OpenApiClient.Models.ClassifierTrainingParametersSeqLen.CreateFromDiscriminatorValue); } },
+                { "training_steps", n => { TrainingSteps = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ClassifierTrainingParametersTrainingSteps>(global::Soenneker.Mistral.OpenApiClient.Models.ClassifierTrainingParametersTrainingSteps.CreateFromDiscriminatorValue); } },
+                { "warmup_fraction", n => { WarmupFraction = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ClassifierTrainingParametersWarmupFraction>(global::Soenneker.Mistral.OpenApiClient.Models.ClassifierTrainingParametersWarmupFraction.CreateFromDiscriminatorValue); } },
+                { "weight_decay", n => { WeightDecay = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ClassifierTrainingParametersWeightDecay>(global::Soenneker.Mistral.OpenApiClient.Models.ClassifierTrainingParametersWeightDecay.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -96,323 +97,13 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ClassifierTrainingParameters.ClassifierTrainingParameters_epochs>("epochs", Epochs);
+            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ClassifierTrainingParametersEpochs>("epochs", Epochs);
             writer.WriteDoubleValue("learning_rate", LearningRate);
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ClassifierTrainingParameters.ClassifierTrainingParameters_seq_len>("seq_len", SeqLen);
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ClassifierTrainingParameters.ClassifierTrainingParameters_training_steps>("training_steps", TrainingSteps);
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ClassifierTrainingParameters.ClassifierTrainingParameters_warmup_fraction>("warmup_fraction", WarmupFraction);
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ClassifierTrainingParameters.ClassifierTrainingParameters_weight_decay>("weight_decay", WeightDecay);
+            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ClassifierTrainingParametersSeqLen>("seq_len", SeqLen);
+            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ClassifierTrainingParametersTrainingSteps>("training_steps", TrainingSteps);
+            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ClassifierTrainingParametersWarmupFraction>("warmup_fraction", WarmupFraction);
+            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ClassifierTrainingParametersWeightDecay>("weight_decay", WeightDecay);
             writer.WriteAdditionalData(AdditionalData);
-        }
-        /// <summary>
-        /// Composed type wrapper for classes <see cref="double"/>, <see cref="global::Soenneker.Mistral.OpenApiClient.Models.ClassifierTrainingParameters_epochsMember1"/>
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class ClassifierTrainingParameters_epochs : IComposedTypeWrapper, IParsable
-        {
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.Mistral.OpenApiClient.Models.ClassifierTrainingParameters_epochsMember1"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public global::Soenneker.Mistral.OpenApiClient.Models.ClassifierTrainingParameters_epochsMember1? ClassifierTrainingParametersEpochsMember1 { get; set; }
-#nullable restore
-#else
-            public global::Soenneker.Mistral.OpenApiClient.Models.ClassifierTrainingParameters_epochsMember1 ClassifierTrainingParametersEpochsMember1 { get; set; }
-#endif
-            /// <summary>Composed type representation for type <see cref="double"/></summary>
-            public double? Double { get; set; }
-            /// <summary>
-            /// Creates a new instance of the appropriate class based on discriminator value
-            /// </summary>
-            /// <returns>A <see cref="global::Soenneker.Mistral.OpenApiClient.Models.ClassifierTrainingParameters.ClassifierTrainingParameters_epochs"/></returns>
-            /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-            public static global::Soenneker.Mistral.OpenApiClient.Models.ClassifierTrainingParameters.ClassifierTrainingParameters_epochs CreateFromDiscriminatorValue(IParseNode parseNode)
-            {
-                if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-                var result = new global::Soenneker.Mistral.OpenApiClient.Models.ClassifierTrainingParameters.ClassifierTrainingParameters_epochs();
-                if(parseNode.GetDoubleValue() is double doubleValue)
-                {
-                    result.Double = doubleValue;
-                }
-                else {
-                    result.ClassifierTrainingParametersEpochsMember1 = new global::Soenneker.Mistral.OpenApiClient.Models.ClassifierTrainingParameters_epochsMember1();
-                }
-                return result;
-            }
-            /// <summary>
-            /// The deserialization information for the current model
-            /// </summary>
-            /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-            public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
-            {
-                if(ClassifierTrainingParametersEpochsMember1 != null)
-                {
-                    return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(ClassifierTrainingParametersEpochsMember1);
-                }
-                return new Dictionary<string, Action<IParseNode>>();
-            }
-            /// <summary>
-            /// Serializes information the current object
-            /// </summary>
-            /// <param name="writer">Serialization writer to use to serialize this model</param>
-            public virtual void Serialize(ISerializationWriter writer)
-            {
-                if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-                if(Double != null)
-                {
-                    writer.WriteDoubleValue(null, Double);
-                }
-                else {
-                    writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ClassifierTrainingParameters_epochsMember1>(null, ClassifierTrainingParametersEpochsMember1);
-                }
-            }
-        }
-        /// <summary>
-        /// Composed type wrapper for classes <see cref="global::Soenneker.Mistral.OpenApiClient.Models.ClassifierTrainingParameters_seq_lenMember1"/>, <see cref="int"/>
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class ClassifierTrainingParameters_seq_len : IComposedTypeWrapper, IParsable
-        {
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.Mistral.OpenApiClient.Models.ClassifierTrainingParameters_seq_lenMember1"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public global::Soenneker.Mistral.OpenApiClient.Models.ClassifierTrainingParameters_seq_lenMember1? ClassifierTrainingParametersSeqLenMember1 { get; set; }
-#nullable restore
-#else
-            public global::Soenneker.Mistral.OpenApiClient.Models.ClassifierTrainingParameters_seq_lenMember1 ClassifierTrainingParametersSeqLenMember1 { get; set; }
-#endif
-            /// <summary>Composed type representation for type <see cref="int"/></summary>
-            public int? Integer { get; set; }
-            /// <summary>
-            /// Creates a new instance of the appropriate class based on discriminator value
-            /// </summary>
-            /// <returns>A <see cref="global::Soenneker.Mistral.OpenApiClient.Models.ClassifierTrainingParameters.ClassifierTrainingParameters_seq_len"/></returns>
-            /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-            public static global::Soenneker.Mistral.OpenApiClient.Models.ClassifierTrainingParameters.ClassifierTrainingParameters_seq_len CreateFromDiscriminatorValue(IParseNode parseNode)
-            {
-                if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-                var result = new global::Soenneker.Mistral.OpenApiClient.Models.ClassifierTrainingParameters.ClassifierTrainingParameters_seq_len();
-                if(parseNode.GetIntValue() is int integerValue)
-                {
-                    result.Integer = integerValue;
-                }
-                else {
-                    result.ClassifierTrainingParametersSeqLenMember1 = new global::Soenneker.Mistral.OpenApiClient.Models.ClassifierTrainingParameters_seq_lenMember1();
-                }
-                return result;
-            }
-            /// <summary>
-            /// The deserialization information for the current model
-            /// </summary>
-            /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-            public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
-            {
-                if(ClassifierTrainingParametersSeqLenMember1 != null)
-                {
-                    return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(ClassifierTrainingParametersSeqLenMember1);
-                }
-                return new Dictionary<string, Action<IParseNode>>();
-            }
-            /// <summary>
-            /// Serializes information the current object
-            /// </summary>
-            /// <param name="writer">Serialization writer to use to serialize this model</param>
-            public virtual void Serialize(ISerializationWriter writer)
-            {
-                if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-                if(Integer != null)
-                {
-                    writer.WriteIntValue(null, Integer);
-                }
-                else {
-                    writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ClassifierTrainingParameters_seq_lenMember1>(null, ClassifierTrainingParametersSeqLenMember1);
-                }
-            }
-        }
-        /// <summary>
-        /// Composed type wrapper for classes <see cref="global::Soenneker.Mistral.OpenApiClient.Models.ClassifierTrainingParameters_training_stepsMember1"/>, <see cref="int"/>
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class ClassifierTrainingParameters_training_steps : IComposedTypeWrapper, IParsable
-        {
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.Mistral.OpenApiClient.Models.ClassifierTrainingParameters_training_stepsMember1"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public global::Soenneker.Mistral.OpenApiClient.Models.ClassifierTrainingParameters_training_stepsMember1? ClassifierTrainingParametersTrainingStepsMember1 { get; set; }
-#nullable restore
-#else
-            public global::Soenneker.Mistral.OpenApiClient.Models.ClassifierTrainingParameters_training_stepsMember1 ClassifierTrainingParametersTrainingStepsMember1 { get; set; }
-#endif
-            /// <summary>Composed type representation for type <see cref="int"/></summary>
-            public int? Integer { get; set; }
-            /// <summary>
-            /// Creates a new instance of the appropriate class based on discriminator value
-            /// </summary>
-            /// <returns>A <see cref="global::Soenneker.Mistral.OpenApiClient.Models.ClassifierTrainingParameters.ClassifierTrainingParameters_training_steps"/></returns>
-            /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-            public static global::Soenneker.Mistral.OpenApiClient.Models.ClassifierTrainingParameters.ClassifierTrainingParameters_training_steps CreateFromDiscriminatorValue(IParseNode parseNode)
-            {
-                if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-                var result = new global::Soenneker.Mistral.OpenApiClient.Models.ClassifierTrainingParameters.ClassifierTrainingParameters_training_steps();
-                if(parseNode.GetIntValue() is int integerValue)
-                {
-                    result.Integer = integerValue;
-                }
-                else {
-                    result.ClassifierTrainingParametersTrainingStepsMember1 = new global::Soenneker.Mistral.OpenApiClient.Models.ClassifierTrainingParameters_training_stepsMember1();
-                }
-                return result;
-            }
-            /// <summary>
-            /// The deserialization information for the current model
-            /// </summary>
-            /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-            public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
-            {
-                if(ClassifierTrainingParametersTrainingStepsMember1 != null)
-                {
-                    return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(ClassifierTrainingParametersTrainingStepsMember1);
-                }
-                return new Dictionary<string, Action<IParseNode>>();
-            }
-            /// <summary>
-            /// Serializes information the current object
-            /// </summary>
-            /// <param name="writer">Serialization writer to use to serialize this model</param>
-            public virtual void Serialize(ISerializationWriter writer)
-            {
-                if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-                if(Integer != null)
-                {
-                    writer.WriteIntValue(null, Integer);
-                }
-                else {
-                    writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ClassifierTrainingParameters_training_stepsMember1>(null, ClassifierTrainingParametersTrainingStepsMember1);
-                }
-            }
-        }
-        /// <summary>
-        /// Composed type wrapper for classes <see cref="double"/>, <see cref="global::Soenneker.Mistral.OpenApiClient.Models.ClassifierTrainingParameters_warmup_fractionMember1"/>
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class ClassifierTrainingParameters_warmup_fraction : IComposedTypeWrapper, IParsable
-        {
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.Mistral.OpenApiClient.Models.ClassifierTrainingParameters_warmup_fractionMember1"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public global::Soenneker.Mistral.OpenApiClient.Models.ClassifierTrainingParameters_warmup_fractionMember1? ClassifierTrainingParametersWarmupFractionMember1 { get; set; }
-#nullable restore
-#else
-            public global::Soenneker.Mistral.OpenApiClient.Models.ClassifierTrainingParameters_warmup_fractionMember1 ClassifierTrainingParametersWarmupFractionMember1 { get; set; }
-#endif
-            /// <summary>Composed type representation for type <see cref="double"/></summary>
-            public double? Double { get; set; }
-            /// <summary>
-            /// Creates a new instance of the appropriate class based on discriminator value
-            /// </summary>
-            /// <returns>A <see cref="global::Soenneker.Mistral.OpenApiClient.Models.ClassifierTrainingParameters.ClassifierTrainingParameters_warmup_fraction"/></returns>
-            /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-            public static global::Soenneker.Mistral.OpenApiClient.Models.ClassifierTrainingParameters.ClassifierTrainingParameters_warmup_fraction CreateFromDiscriminatorValue(IParseNode parseNode)
-            {
-                if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-                var result = new global::Soenneker.Mistral.OpenApiClient.Models.ClassifierTrainingParameters.ClassifierTrainingParameters_warmup_fraction();
-                if(parseNode.GetDoubleValue() is double doubleValue)
-                {
-                    result.Double = doubleValue;
-                }
-                else {
-                    result.ClassifierTrainingParametersWarmupFractionMember1 = new global::Soenneker.Mistral.OpenApiClient.Models.ClassifierTrainingParameters_warmup_fractionMember1();
-                }
-                return result;
-            }
-            /// <summary>
-            /// The deserialization information for the current model
-            /// </summary>
-            /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-            public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
-            {
-                if(ClassifierTrainingParametersWarmupFractionMember1 != null)
-                {
-                    return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(ClassifierTrainingParametersWarmupFractionMember1);
-                }
-                return new Dictionary<string, Action<IParseNode>>();
-            }
-            /// <summary>
-            /// Serializes information the current object
-            /// </summary>
-            /// <param name="writer">Serialization writer to use to serialize this model</param>
-            public virtual void Serialize(ISerializationWriter writer)
-            {
-                if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-                if(Double != null)
-                {
-                    writer.WriteDoubleValue(null, Double);
-                }
-                else {
-                    writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ClassifierTrainingParameters_warmup_fractionMember1>(null, ClassifierTrainingParametersWarmupFractionMember1);
-                }
-            }
-        }
-        /// <summary>
-        /// Composed type wrapper for classes <see cref="double"/>, <see cref="global::Soenneker.Mistral.OpenApiClient.Models.ClassifierTrainingParameters_weight_decayMember1"/>
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class ClassifierTrainingParameters_weight_decay : IComposedTypeWrapper, IParsable
-        {
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.Mistral.OpenApiClient.Models.ClassifierTrainingParameters_weight_decayMember1"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public global::Soenneker.Mistral.OpenApiClient.Models.ClassifierTrainingParameters_weight_decayMember1? ClassifierTrainingParametersWeightDecayMember1 { get; set; }
-#nullable restore
-#else
-            public global::Soenneker.Mistral.OpenApiClient.Models.ClassifierTrainingParameters_weight_decayMember1 ClassifierTrainingParametersWeightDecayMember1 { get; set; }
-#endif
-            /// <summary>Composed type representation for type <see cref="double"/></summary>
-            public double? Double { get; set; }
-            /// <summary>
-            /// Creates a new instance of the appropriate class based on discriminator value
-            /// </summary>
-            /// <returns>A <see cref="global::Soenneker.Mistral.OpenApiClient.Models.ClassifierTrainingParameters.ClassifierTrainingParameters_weight_decay"/></returns>
-            /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-            public static global::Soenneker.Mistral.OpenApiClient.Models.ClassifierTrainingParameters.ClassifierTrainingParameters_weight_decay CreateFromDiscriminatorValue(IParseNode parseNode)
-            {
-                if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-                var result = new global::Soenneker.Mistral.OpenApiClient.Models.ClassifierTrainingParameters.ClassifierTrainingParameters_weight_decay();
-                if(parseNode.GetDoubleValue() is double doubleValue)
-                {
-                    result.Double = doubleValue;
-                }
-                else {
-                    result.ClassifierTrainingParametersWeightDecayMember1 = new global::Soenneker.Mistral.OpenApiClient.Models.ClassifierTrainingParameters_weight_decayMember1();
-                }
-                return result;
-            }
-            /// <summary>
-            /// The deserialization information for the current model
-            /// </summary>
-            /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-            public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
-            {
-                if(ClassifierTrainingParametersWeightDecayMember1 != null)
-                {
-                    return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(ClassifierTrainingParametersWeightDecayMember1);
-                }
-                return new Dictionary<string, Action<IParseNode>>();
-            }
-            /// <summary>
-            /// Serializes information the current object
-            /// </summary>
-            /// <param name="writer">Serialization writer to use to serialize this model</param>
-            public virtual void Serialize(ISerializationWriter writer)
-            {
-                if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-                if(Double != null)
-                {
-                    writer.WriteDoubleValue(null, Double);
-                }
-                else {
-                    writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ClassifierTrainingParameters_weight_decayMember1>(null, ClassifierTrainingParametersWeightDecayMember1);
-                }
-            }
         }
     }
 }

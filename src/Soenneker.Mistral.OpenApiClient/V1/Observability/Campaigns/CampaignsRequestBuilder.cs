@@ -20,14 +20,14 @@ namespace Soenneker.Mistral.OpenApiClient.V1.Observability.Campaigns
     {
         /// <summary>Gets an item from the Soenneker.Mistral.OpenApiClient.v1.observability.campaigns.item collection</summary>
         /// <param name="position">Unique identifier of the item</param>
-        /// <returns>A <see cref="global::Soenneker.Mistral.OpenApiClient.V1.Observability.Campaigns.Item.WithCampaign_ItemRequestBuilder"/></returns>
-        public global::Soenneker.Mistral.OpenApiClient.V1.Observability.Campaigns.Item.WithCampaign_ItemRequestBuilder this[Guid position]
+        /// <returns>A <see cref="global::Soenneker.Mistral.OpenApiClient.V1.Observability.Campaigns.Item.WithCampaignItemRequestBuilder"/></returns>
+        public global::Soenneker.Mistral.OpenApiClient.V1.Observability.Campaigns.Item.WithCampaignItemRequestBuilder this[Guid position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
-                urlTplParams.Add("campaign_id", position);
-                return new global::Soenneker.Mistral.OpenApiClient.V1.Observability.Campaigns.Item.WithCampaign_ItemRequestBuilder(urlTplParams, RequestAdapter);
+                urlTplParams.Add("campaignId", position);
+                return new global::Soenneker.Mistral.OpenApiClient.V1.Observability.Campaigns.Item.WithCampaignItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>

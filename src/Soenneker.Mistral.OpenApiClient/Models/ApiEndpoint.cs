@@ -3,9 +3,10 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Mistral.OpenApiClient.Models
 {
-    /// <summary>The endpoint to be used for batch inference.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
+    #pragma warning disable CS1591
     public enum ApiEndpoint
+    #pragma warning restore CS1591
     {
         [EnumMember(Value = "/v1/chat/completions")]
         #pragma warning disable CS1591

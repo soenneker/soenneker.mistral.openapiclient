@@ -17,59 +17,59 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         /// <summary>The custom_tracing_attributes property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public UntypedNode? CustomTracingAttributes { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.WorkflowExecutionRequestCustomTracingAttributes? CustomTracingAttributes { get; set; }
 #nullable restore
 #else
-        public UntypedNode CustomTracingAttributes { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.WorkflowExecutionRequestCustomTracingAttributes CustomTracingAttributes { get; set; }
 #endif
         /// <summary>Name of the deployment to route this execution to</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.WorkflowExecutionRequest.WorkflowExecutionRequest_deployment_name? DeploymentName { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.WorkflowExecutionRequestDeploymentName? DeploymentName { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.WorkflowExecutionRequest.WorkflowExecutionRequest_deployment_name DeploymentName { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.WorkflowExecutionRequestDeploymentName DeploymentName { get; set; }
 #endif
         /// <summary>Encoded input to the workflow, used when payload encoding is enabled.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.NetworkEncodedInput? EncodedInput { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.WorkflowExecutionRequestEncodedInput? EncodedInput { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.NetworkEncodedInput EncodedInput { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.WorkflowExecutionRequestEncodedInput EncodedInput { get; set; }
 #endif
         /// <summary>Allows you to specify a custom execution ID. If not provided, a random ID will be generated.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.WorkflowExecutionRequest.WorkflowExecutionRequest_execution_id? ExecutionId { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.WorkflowExecutionRequestExecutionId? ExecutionId { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.WorkflowExecutionRequest.WorkflowExecutionRequest_execution_id ExecutionId { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.WorkflowExecutionRequestExecutionId ExecutionId { get; set; }
 #endif
         /// <summary>The input to the workflow. This should be a dictionary that matches the workflow&apos;s input schema.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public UntypedNode? Input { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.WorkflowExecutionRequestInput? Input { get; set; }
 #nullable restore
 #else
-        public UntypedNode Input { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.WorkflowExecutionRequestInput Input { get; set; }
 #endif
         /// <summary>Deprecated. Use deployment_name instead.</summary>
         [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.WorkflowExecutionRequest.WorkflowExecutionRequest_task_queue? TaskQueue { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.WorkflowExecutionRequestTaskQueue? TaskQueue { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.WorkflowExecutionRequest.WorkflowExecutionRequest_task_queue TaskQueue { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.WorkflowExecutionRequestTaskQueue TaskQueue { get; set; }
 #endif
         /// <summary>Maximum time to wait for completion when wait_for_result is true.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.WorkflowExecutionRequest.WorkflowExecutionRequest_timeout_seconds? TimeoutSeconds { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.WorkflowExecutionRequestTimeoutSeconds? TimeoutSeconds { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.WorkflowExecutionRequest.WorkflowExecutionRequest_timeout_seconds TimeoutSeconds { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.WorkflowExecutionRequestTimeoutSeconds TimeoutSeconds { get; set; }
 #endif
         /// <summary>If true, wait for the workflow to complete and return the result directly.</summary>
         public bool? WaitForResult { get; set; }
@@ -79,6 +79,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         public WorkflowExecutionRequest()
         {
             AdditionalData = new Dictionary<string, object>();
+            WaitForResult = false;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -98,13 +99,13 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "custom_tracing_attributes", n => { CustomTracingAttributes = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
-                { "deployment_name", n => { DeploymentName = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.WorkflowExecutionRequest.WorkflowExecutionRequest_deployment_name>(global::Soenneker.Mistral.OpenApiClient.Models.WorkflowExecutionRequest.WorkflowExecutionRequest_deployment_name.CreateFromDiscriminatorValue); } },
-                { "encoded_input", n => { EncodedInput = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.NetworkEncodedInput>(global::Soenneker.Mistral.OpenApiClient.Models.NetworkEncodedInput.CreateFromDiscriminatorValue); } },
-                { "execution_id", n => { ExecutionId = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.WorkflowExecutionRequest.WorkflowExecutionRequest_execution_id>(global::Soenneker.Mistral.OpenApiClient.Models.WorkflowExecutionRequest.WorkflowExecutionRequest_execution_id.CreateFromDiscriminatorValue); } },
-                { "input", n => { Input = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
-                { "task_queue", n => { TaskQueue = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.WorkflowExecutionRequest.WorkflowExecutionRequest_task_queue>(global::Soenneker.Mistral.OpenApiClient.Models.WorkflowExecutionRequest.WorkflowExecutionRequest_task_queue.CreateFromDiscriminatorValue); } },
-                { "timeout_seconds", n => { TimeoutSeconds = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.WorkflowExecutionRequest.WorkflowExecutionRequest_timeout_seconds>(global::Soenneker.Mistral.OpenApiClient.Models.WorkflowExecutionRequest.WorkflowExecutionRequest_timeout_seconds.CreateFromDiscriminatorValue); } },
+                { "custom_tracing_attributes", n => { CustomTracingAttributes = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.WorkflowExecutionRequestCustomTracingAttributes>(global::Soenneker.Mistral.OpenApiClient.Models.WorkflowExecutionRequestCustomTracingAttributes.CreateFromDiscriminatorValue); } },
+                { "deployment_name", n => { DeploymentName = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.WorkflowExecutionRequestDeploymentName>(global::Soenneker.Mistral.OpenApiClient.Models.WorkflowExecutionRequestDeploymentName.CreateFromDiscriminatorValue); } },
+                { "encoded_input", n => { EncodedInput = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.WorkflowExecutionRequestEncodedInput>(global::Soenneker.Mistral.OpenApiClient.Models.WorkflowExecutionRequestEncodedInput.CreateFromDiscriminatorValue); } },
+                { "execution_id", n => { ExecutionId = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.WorkflowExecutionRequestExecutionId>(global::Soenneker.Mistral.OpenApiClient.Models.WorkflowExecutionRequestExecutionId.CreateFromDiscriminatorValue); } },
+                { "input", n => { Input = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.WorkflowExecutionRequestInput>(global::Soenneker.Mistral.OpenApiClient.Models.WorkflowExecutionRequestInput.CreateFromDiscriminatorValue); } },
+                { "task_queue", n => { TaskQueue = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.WorkflowExecutionRequestTaskQueue>(global::Soenneker.Mistral.OpenApiClient.Models.WorkflowExecutionRequestTaskQueue.CreateFromDiscriminatorValue); } },
+                { "timeout_seconds", n => { TimeoutSeconds = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.WorkflowExecutionRequestTimeoutSeconds>(global::Soenneker.Mistral.OpenApiClient.Models.WorkflowExecutionRequestTimeoutSeconds.CreateFromDiscriminatorValue); } },
                 { "wait_for_result", n => { WaitForResult = n.GetBoolValue(); } },
             };
         }
@@ -115,281 +116,15 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<UntypedNode>("custom_tracing_attributes", CustomTracingAttributes);
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.WorkflowExecutionRequest.WorkflowExecutionRequest_deployment_name>("deployment_name", DeploymentName);
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.NetworkEncodedInput>("encoded_input", EncodedInput);
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.WorkflowExecutionRequest.WorkflowExecutionRequest_execution_id>("execution_id", ExecutionId);
-            writer.WriteObjectValue<UntypedNode>("input", Input);
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.WorkflowExecutionRequest.WorkflowExecutionRequest_task_queue>("task_queue", TaskQueue);
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.WorkflowExecutionRequest.WorkflowExecutionRequest_timeout_seconds>("timeout_seconds", TimeoutSeconds);
+            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.WorkflowExecutionRequestCustomTracingAttributes>("custom_tracing_attributes", CustomTracingAttributes);
+            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.WorkflowExecutionRequestDeploymentName>("deployment_name", DeploymentName);
+            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.WorkflowExecutionRequestEncodedInput>("encoded_input", EncodedInput);
+            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.WorkflowExecutionRequestExecutionId>("execution_id", ExecutionId);
+            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.WorkflowExecutionRequestInput>("input", Input);
+            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.WorkflowExecutionRequestTaskQueue>("task_queue", TaskQueue);
+            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.WorkflowExecutionRequestTimeoutSeconds>("timeout_seconds", TimeoutSeconds);
             writer.WriteBoolValue("wait_for_result", WaitForResult);
             writer.WriteAdditionalData(AdditionalData);
-        }
-        /// <summary>
-        /// Composed type wrapper for classes <see cref="global::Soenneker.Mistral.OpenApiClient.Models.WorkflowExecutionRequest_deployment_nameMember1"/>, <see cref="string"/>
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class WorkflowExecutionRequest_deployment_name : IComposedTypeWrapper, IParsable
-        {
-            /// <summary>Composed type representation for type <see cref="string"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public string? String { get; set; }
-#nullable restore
-#else
-            public string String { get; set; }
-#endif
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.Mistral.OpenApiClient.Models.WorkflowExecutionRequest_deployment_nameMember1"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public global::Soenneker.Mistral.OpenApiClient.Models.WorkflowExecutionRequest_deployment_nameMember1? WorkflowExecutionRequestDeploymentNameMember1 { get; set; }
-#nullable restore
-#else
-            public global::Soenneker.Mistral.OpenApiClient.Models.WorkflowExecutionRequest_deployment_nameMember1 WorkflowExecutionRequestDeploymentNameMember1 { get; set; }
-#endif
-            /// <summary>
-            /// Creates a new instance of the appropriate class based on discriminator value
-            /// </summary>
-            /// <returns>A <see cref="global::Soenneker.Mistral.OpenApiClient.Models.WorkflowExecutionRequest.WorkflowExecutionRequest_deployment_name"/></returns>
-            /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-            public static global::Soenneker.Mistral.OpenApiClient.Models.WorkflowExecutionRequest.WorkflowExecutionRequest_deployment_name CreateFromDiscriminatorValue(IParseNode parseNode)
-            {
-                if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-                var result = new global::Soenneker.Mistral.OpenApiClient.Models.WorkflowExecutionRequest.WorkflowExecutionRequest_deployment_name();
-                if(parseNode.GetStringValue() is string stringValue)
-                {
-                    result.String = stringValue;
-                }
-                else {
-                    result.WorkflowExecutionRequestDeploymentNameMember1 = new global::Soenneker.Mistral.OpenApiClient.Models.WorkflowExecutionRequest_deployment_nameMember1();
-                }
-                return result;
-            }
-            /// <summary>
-            /// The deserialization information for the current model
-            /// </summary>
-            /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-            public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
-            {
-                if(WorkflowExecutionRequestDeploymentNameMember1 != null)
-                {
-                    return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(WorkflowExecutionRequestDeploymentNameMember1);
-                }
-                return new Dictionary<string, Action<IParseNode>>();
-            }
-            /// <summary>
-            /// Serializes information the current object
-            /// </summary>
-            /// <param name="writer">Serialization writer to use to serialize this model</param>
-            public virtual void Serialize(ISerializationWriter writer)
-            {
-                if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-                if(String != null)
-                {
-                    writer.WriteStringValue(null, String);
-                }
-                else {
-                    writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.WorkflowExecutionRequest_deployment_nameMember1>(null, WorkflowExecutionRequestDeploymentNameMember1);
-                }
-            }
-        }
-        /// <summary>
-        /// Composed type wrapper for classes <see cref="global::Soenneker.Mistral.OpenApiClient.Models.WorkflowExecutionRequest_execution_idMember1"/>, <see cref="string"/>
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class WorkflowExecutionRequest_execution_id : IComposedTypeWrapper, IParsable
-        {
-            /// <summary>Composed type representation for type <see cref="string"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public string? String { get; set; }
-#nullable restore
-#else
-            public string String { get; set; }
-#endif
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.Mistral.OpenApiClient.Models.WorkflowExecutionRequest_execution_idMember1"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public global::Soenneker.Mistral.OpenApiClient.Models.WorkflowExecutionRequest_execution_idMember1? WorkflowExecutionRequestExecutionIdMember1 { get; set; }
-#nullable restore
-#else
-            public global::Soenneker.Mistral.OpenApiClient.Models.WorkflowExecutionRequest_execution_idMember1 WorkflowExecutionRequestExecutionIdMember1 { get; set; }
-#endif
-            /// <summary>
-            /// Creates a new instance of the appropriate class based on discriminator value
-            /// </summary>
-            /// <returns>A <see cref="global::Soenneker.Mistral.OpenApiClient.Models.WorkflowExecutionRequest.WorkflowExecutionRequest_execution_id"/></returns>
-            /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-            public static global::Soenneker.Mistral.OpenApiClient.Models.WorkflowExecutionRequest.WorkflowExecutionRequest_execution_id CreateFromDiscriminatorValue(IParseNode parseNode)
-            {
-                if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-                var result = new global::Soenneker.Mistral.OpenApiClient.Models.WorkflowExecutionRequest.WorkflowExecutionRequest_execution_id();
-                if(parseNode.GetStringValue() is string stringValue)
-                {
-                    result.String = stringValue;
-                }
-                else {
-                    result.WorkflowExecutionRequestExecutionIdMember1 = new global::Soenneker.Mistral.OpenApiClient.Models.WorkflowExecutionRequest_execution_idMember1();
-                }
-                return result;
-            }
-            /// <summary>
-            /// The deserialization information for the current model
-            /// </summary>
-            /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-            public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
-            {
-                if(WorkflowExecutionRequestExecutionIdMember1 != null)
-                {
-                    return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(WorkflowExecutionRequestExecutionIdMember1);
-                }
-                return new Dictionary<string, Action<IParseNode>>();
-            }
-            /// <summary>
-            /// Serializes information the current object
-            /// </summary>
-            /// <param name="writer">Serialization writer to use to serialize this model</param>
-            public virtual void Serialize(ISerializationWriter writer)
-            {
-                if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-                if(String != null)
-                {
-                    writer.WriteStringValue(null, String);
-                }
-                else {
-                    writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.WorkflowExecutionRequest_execution_idMember1>(null, WorkflowExecutionRequestExecutionIdMember1);
-                }
-            }
-        }
-        /// <summary>
-        /// Composed type wrapper for classes <see cref="global::Soenneker.Mistral.OpenApiClient.Models.WorkflowExecutionRequest_task_queueMember1"/>, <see cref="string"/>
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class WorkflowExecutionRequest_task_queue : IComposedTypeWrapper, IParsable
-        {
-            /// <summary>Composed type representation for type <see cref="string"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public string? String { get; set; }
-#nullable restore
-#else
-            public string String { get; set; }
-#endif
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.Mistral.OpenApiClient.Models.WorkflowExecutionRequest_task_queueMember1"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public global::Soenneker.Mistral.OpenApiClient.Models.WorkflowExecutionRequest_task_queueMember1? WorkflowExecutionRequestTaskQueueMember1 { get; set; }
-#nullable restore
-#else
-            public global::Soenneker.Mistral.OpenApiClient.Models.WorkflowExecutionRequest_task_queueMember1 WorkflowExecutionRequestTaskQueueMember1 { get; set; }
-#endif
-            /// <summary>
-            /// Creates a new instance of the appropriate class based on discriminator value
-            /// </summary>
-            /// <returns>A <see cref="global::Soenneker.Mistral.OpenApiClient.Models.WorkflowExecutionRequest.WorkflowExecutionRequest_task_queue"/></returns>
-            /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-            public static global::Soenneker.Mistral.OpenApiClient.Models.WorkflowExecutionRequest.WorkflowExecutionRequest_task_queue CreateFromDiscriminatorValue(IParseNode parseNode)
-            {
-                if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-                var result = new global::Soenneker.Mistral.OpenApiClient.Models.WorkflowExecutionRequest.WorkflowExecutionRequest_task_queue();
-                if(parseNode.GetStringValue() is string stringValue)
-                {
-                    result.String = stringValue;
-                }
-                else {
-                    result.WorkflowExecutionRequestTaskQueueMember1 = new global::Soenneker.Mistral.OpenApiClient.Models.WorkflowExecutionRequest_task_queueMember1();
-                }
-                return result;
-            }
-            /// <summary>
-            /// The deserialization information for the current model
-            /// </summary>
-            /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-            public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
-            {
-                if(WorkflowExecutionRequestTaskQueueMember1 != null)
-                {
-                    return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(WorkflowExecutionRequestTaskQueueMember1);
-                }
-                return new Dictionary<string, Action<IParseNode>>();
-            }
-            /// <summary>
-            /// Serializes information the current object
-            /// </summary>
-            /// <param name="writer">Serialization writer to use to serialize this model</param>
-            public virtual void Serialize(ISerializationWriter writer)
-            {
-                if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-                if(String != null)
-                {
-                    writer.WriteStringValue(null, String);
-                }
-                else {
-                    writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.WorkflowExecutionRequest_task_queueMember1>(null, WorkflowExecutionRequestTaskQueueMember1);
-                }
-            }
-        }
-        /// <summary>
-        /// Composed type wrapper for classes <see cref="double"/>, <see cref="global::Soenneker.Mistral.OpenApiClient.Models.WorkflowExecutionRequest_timeout_secondsMember1"/>
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class WorkflowExecutionRequest_timeout_seconds : IComposedTypeWrapper, IParsable
-        {
-            /// <summary>Composed type representation for type <see cref="double"/></summary>
-            public double? Double { get; set; }
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.Mistral.OpenApiClient.Models.WorkflowExecutionRequest_timeout_secondsMember1"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public global::Soenneker.Mistral.OpenApiClient.Models.WorkflowExecutionRequest_timeout_secondsMember1? WorkflowExecutionRequestTimeoutSecondsMember1 { get; set; }
-#nullable restore
-#else
-            public global::Soenneker.Mistral.OpenApiClient.Models.WorkflowExecutionRequest_timeout_secondsMember1 WorkflowExecutionRequestTimeoutSecondsMember1 { get; set; }
-#endif
-            /// <summary>
-            /// Creates a new instance of the appropriate class based on discriminator value
-            /// </summary>
-            /// <returns>A <see cref="global::Soenneker.Mistral.OpenApiClient.Models.WorkflowExecutionRequest.WorkflowExecutionRequest_timeout_seconds"/></returns>
-            /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-            public static global::Soenneker.Mistral.OpenApiClient.Models.WorkflowExecutionRequest.WorkflowExecutionRequest_timeout_seconds CreateFromDiscriminatorValue(IParseNode parseNode)
-            {
-                if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-                var result = new global::Soenneker.Mistral.OpenApiClient.Models.WorkflowExecutionRequest.WorkflowExecutionRequest_timeout_seconds();
-                if(parseNode.GetDoubleValue() is double doubleValue)
-                {
-                    result.Double = doubleValue;
-                }
-                else {
-                    result.WorkflowExecutionRequestTimeoutSecondsMember1 = new global::Soenneker.Mistral.OpenApiClient.Models.WorkflowExecutionRequest_timeout_secondsMember1();
-                }
-                return result;
-            }
-            /// <summary>
-            /// The deserialization information for the current model
-            /// </summary>
-            /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-            public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
-            {
-                if(WorkflowExecutionRequestTimeoutSecondsMember1 != null)
-                {
-                    return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(WorkflowExecutionRequestTimeoutSecondsMember1);
-                }
-                return new Dictionary<string, Action<IParseNode>>();
-            }
-            /// <summary>
-            /// Serializes information the current object
-            /// </summary>
-            /// <param name="writer">Serialization writer to use to serialize this model</param>
-            public virtual void Serialize(ISerializationWriter writer)
-            {
-                if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-                if(Double != null)
-                {
-                    writer.WriteDoubleValue(null, Double);
-                }
-                else {
-                    writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.WorkflowExecutionRequest_timeout_secondsMember1>(null, WorkflowExecutionRequestTimeoutSecondsMember1);
-                }
-            }
         }
     }
 }

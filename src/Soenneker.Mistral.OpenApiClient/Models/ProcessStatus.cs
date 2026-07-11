@@ -10,11 +10,11 @@ namespace Soenneker.Mistral.OpenApiClient.Models
     {
         [EnumMember(Value = "self_managed")]
         #pragma warning disable CS1591
-        Self_managed,
+        SelfManaged,
         #pragma warning restore CS1591
         [EnumMember(Value = "missing_content")]
         #pragma warning disable CS1591
-        Missing_content,
+        MissingContent,
         #pragma warning restore CS1591
         [EnumMember(Value = "noop")]
         #pragma warning disable CS1591
@@ -30,7 +30,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         #pragma warning restore CS1591
         [EnumMember(Value = "in_progress")]
         #pragma warning disable CS1591
-        In_progress,
+        InProgress,
         #pragma warning restore CS1591
         [EnumMember(Value = "error")]
         #pragma warning disable CS1591
@@ -38,7 +38,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         #pragma warning restore CS1591
         [EnumMember(Value = "waiting_for_capacity")]
         #pragma warning disable CS1591
-        Waiting_for_capacity,
+        WaitingForCapacity,
         #pragma warning restore CS1591
     }
 }

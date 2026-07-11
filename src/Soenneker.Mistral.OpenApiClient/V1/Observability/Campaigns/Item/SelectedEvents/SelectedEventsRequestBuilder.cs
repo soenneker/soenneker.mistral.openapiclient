@@ -12,7 +12,7 @@ using System;
 namespace Soenneker.Mistral.OpenApiClient.V1.Observability.Campaigns.Item.SelectedEvents
 {
     /// <summary>
-    /// Builds and executes requests for operations under \v1\observability\campaigns\{campaign_id}\selected-events
+    /// Builds and executes requests for operations under \v1\observability\campaigns\{campaignId}\selected-events
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class SelectedEventsRequestBuilder : BaseRequestBuilder
@@ -22,7 +22,7 @@ namespace Soenneker.Mistral.OpenApiClient.V1.Observability.Campaigns.Item.Select
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public SelectedEventsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/observability/campaigns/{campaign_id}/selected-events{?page*,page_size*}", pathParameters)
+        public SelectedEventsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/observability/campaigns/{campaignId}/selected-events{?page*,page_size*}", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +30,7 @@ namespace Soenneker.Mistral.OpenApiClient.V1.Observability.Campaigns.Item.Select
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public SelectedEventsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/observability/campaigns/{campaign_id}/selected-events{?page*,page_size*}", rawUrl)
+        public SelectedEventsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/observability/campaigns/{campaignId}/selected-events{?page*,page_size*}", rawUrl)
         {
         }
         /// <summary>

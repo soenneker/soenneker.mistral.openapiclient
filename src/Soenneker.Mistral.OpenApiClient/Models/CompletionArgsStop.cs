@@ -7,36 +7,28 @@ using System.IO;
 using System;
 namespace Soenneker.Mistral.OpenApiClient.Models
 {
-    /// <summary>
-    /// Composed type wrapper for classes <see cref="global::Soenneker.Mistral.OpenApiClient.Models.CompletionArgsStopMember1"/>, <see cref="string"/>, List&lt;string&gt;
-    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class CompletionArgsStop : IComposedTypeWrapper, IParsable
+    #pragma warning disable CS1591
+    public partial class CompletionArgsStop : IAdditionalDataHolder, IParsable
+    #pragma warning restore CS1591
     {
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Mistral.OpenApiClient.Models.CompletionArgsStopMember1"/></summary>
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The value property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.CompletionArgsStopMember1? CompletionArgsStopMember1 { get; set; }
+        public string? Value { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.CompletionArgsStopMember1 CompletionArgsStopMember1 { get; set; }
+        public string Value { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="string"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? CompletionArgsStopString { get; set; }
-#nullable restore
-#else
-        public string CompletionArgsStopString { get; set; }
-#endif
-        /// <summary>Composed type representation for type List&lt;string&gt;</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public List<string>? String { get; set; }
-#nullable restore
-#else
-        public List<string> String { get; set; }
-#endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Mistral.OpenApiClient.Models.CompletionArgsStop"/> and sets the default values.
+        /// </summary>
+        public CompletionArgsStop()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -45,19 +37,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         public static global::Soenneker.Mistral.OpenApiClient.Models.CompletionArgsStop CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            var result = new global::Soenneker.Mistral.OpenApiClient.Models.CompletionArgsStop();
-            if(parseNode.GetStringValue() is string completionArgsStopStringValue)
-            {
-                result.CompletionArgsStopString = completionArgsStopStringValue;
-            }
-            else if(parseNode.GetCollectionOfPrimitiveValues<string>()?.AsList() is List<string> stringValue)
-            {
-                result.String = stringValue;
-            }
-            else {
-                result.CompletionArgsStopMember1 = new global::Soenneker.Mistral.OpenApiClient.Models.CompletionArgsStopMember1();
-            }
-            return result;
+            return new global::Soenneker.Mistral.OpenApiClient.Models.CompletionArgsStop();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -65,11 +45,10 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            if(CompletionArgsStopMember1 != null)
+            return new Dictionary<string, Action<IParseNode>>
             {
-                return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(CompletionArgsStopMember1);
-            }
-            return new Dictionary<string, Action<IParseNode>>();
+                { "value", n => { Value = n.GetStringValue(); } },
+            };
         }
         /// <summary>
         /// Serializes information the current object
@@ -78,17 +57,8 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            if(CompletionArgsStopString != null)
-            {
-                writer.WriteStringValue(null, CompletionArgsStopString);
-            }
-            else if(String != null)
-            {
-                writer.WriteCollectionOfPrimitiveValues<string>(null, String);
-            }
-            else {
-                writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.CompletionArgsStopMember1>(null, CompletionArgsStopMember1);
-            }
+            writer.WriteStringValue("value", Value);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

@@ -23,14 +23,14 @@ namespace Soenneker.Mistral.OpenApiClient.V1.Observability.DatasetRecords
         }
         /// <summary>Gets an item from the Soenneker.Mistral.OpenApiClient.v1.observability.datasetRecords.item collection</summary>
         /// <param name="position">Unique identifier of the item</param>
-        /// <returns>A <see cref="global::Soenneker.Mistral.OpenApiClient.V1.Observability.DatasetRecords.Item.WithDataset_record_ItemRequestBuilder"/></returns>
-        public global::Soenneker.Mistral.OpenApiClient.V1.Observability.DatasetRecords.Item.WithDataset_record_ItemRequestBuilder this[Guid position]
+        /// <returns>A <see cref="global::Soenneker.Mistral.OpenApiClient.V1.Observability.DatasetRecords.Item.WithDatasetRecordItemRequestBuilder"/></returns>
+        public global::Soenneker.Mistral.OpenApiClient.V1.Observability.DatasetRecords.Item.WithDatasetRecordItemRequestBuilder this[Guid position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
-                urlTplParams.Add("dataset_record_id", position);
-                return new global::Soenneker.Mistral.OpenApiClient.V1.Observability.DatasetRecords.Item.WithDataset_record_ItemRequestBuilder(urlTplParams, RequestAdapter);
+                urlTplParams.Add("datasetRecordId", position);
+                return new global::Soenneker.Mistral.OpenApiClient.V1.Observability.DatasetRecords.Item.WithDatasetRecordItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>

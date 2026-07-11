@@ -33,10 +33,10 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         /// <summary>The response_message property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.ChatTranscriptionEvent_response_message? ResponseMessage { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.ChatTranscriptionEventResponseMessageProperty? ResponseMessage { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.ChatTranscriptionEvent_response_message ResponseMessage { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.ChatTranscriptionEventResponseMessageProperty ResponseMessage { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Mistral.OpenApiClient.Models.ChatTranscriptionEvent"/> and sets the default values.
@@ -65,7 +65,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             {
                 { "audio_url", n => { AudioUrl = n.GetStringValue(); } },
                 { "model", n => { Model = n.GetStringValue(); } },
-                { "response_message", n => { ResponseMessage = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ChatTranscriptionEvent_response_message>(global::Soenneker.Mistral.OpenApiClient.Models.ChatTranscriptionEvent_response_message.CreateFromDiscriminatorValue); } },
+                { "response_message", n => { ResponseMessage = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ChatTranscriptionEventResponseMessageProperty>(global::Soenneker.Mistral.OpenApiClient.Models.ChatTranscriptionEventResponseMessageProperty.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -77,7 +77,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("audio_url", AudioUrl);
             writer.WriteStringValue("model", Model);
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ChatTranscriptionEvent_response_message>("response_message", ResponseMessage);
+            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ChatTranscriptionEventResponseMessageProperty>("response_message", ResponseMessage);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -3,9 +3,10 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Mistral.OpenApiClient.Models
 {
-    /// <summary>The intended purpose of the uploaded file, currently supports fine-tuning (`fine-tune`), OCR (`ocr`), Audio/Transcription (`audio`) and batch inference (`batch`).</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
+    #pragma warning disable CS1591
     public enum FilePurpose
+    #pragma warning restore CS1591
     {
         [EnumMember(Value = "fine-tune")]
         #pragma warning disable CS1591

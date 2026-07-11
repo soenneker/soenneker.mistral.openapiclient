@@ -17,10 +17,10 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         /// <summary>The result of the Update workflow call</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public UntypedNode? Result { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.UpdateWorkflowResponseResult? Result { get; set; }
 #nullable restore
 #else
-        public UntypedNode Result { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.UpdateWorkflowResponseResult Result { get; set; }
 #endif
         /// <summary>The update_name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -55,7 +55,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "result", n => { Result = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "result", n => { Result = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.UpdateWorkflowResponseResult>(global::Soenneker.Mistral.OpenApiClient.Models.UpdateWorkflowResponseResult.CreateFromDiscriminatorValue); } },
                 { "update_name", n => { UpdateName = n.GetStringValue(); } },
             };
         }
@@ -66,7 +66,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<UntypedNode>("result", Result);
+            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.UpdateWorkflowResponseResult>("result", Result);
             writer.WriteStringValue("update_name", UpdateName);
             writer.WriteAdditionalData(AdditionalData);
         }

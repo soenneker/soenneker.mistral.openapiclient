@@ -26,10 +26,10 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         /// <summary>The result of the workflow execution</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public UntypedNode? Result { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.WorkflowExecutionSyncResponseResult? Result { get; set; }
 #nullable restore
 #else
-        public UntypedNode Result { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.WorkflowExecutionSyncResponseResult Result { get; set; }
 #endif
         /// <summary>Name of the workflow that was executed</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -65,7 +65,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "execution_id", n => { ExecutionId = n.GetStringValue(); } },
-                { "result", n => { Result = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "result", n => { Result = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.WorkflowExecutionSyncResponseResult>(global::Soenneker.Mistral.OpenApiClient.Models.WorkflowExecutionSyncResponseResult.CreateFromDiscriminatorValue); } },
                 { "workflow_name", n => { WorkflowName = n.GetStringValue(); } },
             };
         }
@@ -77,7 +77,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("execution_id", ExecutionId);
-            writer.WriteObjectValue<UntypedNode>("result", Result);
+            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.WorkflowExecutionSyncResponseResult>("result", Result);
             writer.WriteStringValue("workflow_name", WorkflowName);
             writer.WriteAdditionalData(AdditionalData);
         }

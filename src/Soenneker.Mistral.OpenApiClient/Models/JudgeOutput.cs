@@ -25,10 +25,10 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         /// <summary>The answer property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.JudgeOutput.JudgeOutput_answer? Answer { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.JudgeOutputAnswer? Answer { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.JudgeOutput.JudgeOutput_answer Answer { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.JudgeOutputAnswer Answer { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Mistral.OpenApiClient.Models.JudgeOutput"/> and sets the default values.
@@ -56,7 +56,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "analysis", n => { Analysis = n.GetStringValue(); } },
-                { "answer", n => { Answer = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.JudgeOutput.JudgeOutput_answer>(global::Soenneker.Mistral.OpenApiClient.Models.JudgeOutput.JudgeOutput_answer.CreateFromDiscriminatorValue); } },
+                { "answer", n => { Answer = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.JudgeOutputAnswer>(global::Soenneker.Mistral.OpenApiClient.Models.JudgeOutputAnswer.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -67,68 +67,8 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("analysis", Analysis);
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.JudgeOutput.JudgeOutput_answer>("answer", Answer);
+            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.JudgeOutputAnswer>("answer", Answer);
             writer.WriteAdditionalData(AdditionalData);
-        }
-        /// <summary>
-        /// Composed type wrapper for classes <see cref="double"/>, <see cref="string"/>
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class JudgeOutput_answer : IComposedTypeWrapper, IParsable
-        {
-            /// <summary>Composed type representation for type <see cref="double"/></summary>
-            public double? Double { get; set; }
-            /// <summary>Composed type representation for type <see cref="string"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public string? String { get; set; }
-#nullable restore
-#else
-            public string String { get; set; }
-#endif
-            /// <summary>
-            /// Creates a new instance of the appropriate class based on discriminator value
-            /// </summary>
-            /// <returns>A <see cref="global::Soenneker.Mistral.OpenApiClient.Models.JudgeOutput.JudgeOutput_answer"/></returns>
-            /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-            public static global::Soenneker.Mistral.OpenApiClient.Models.JudgeOutput.JudgeOutput_answer CreateFromDiscriminatorValue(IParseNode parseNode)
-            {
-                if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-                var result = new global::Soenneker.Mistral.OpenApiClient.Models.JudgeOutput.JudgeOutput_answer();
-                if(parseNode.GetDoubleValue() is double doubleValue)
-                {
-                    result.Double = doubleValue;
-                }
-                else if(parseNode.GetStringValue() is string stringValue)
-                {
-                    result.String = stringValue;
-                }
-                return result;
-            }
-            /// <summary>
-            /// The deserialization information for the current model
-            /// </summary>
-            /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-            public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
-            {
-                return new Dictionary<string, Action<IParseNode>>();
-            }
-            /// <summary>
-            /// Serializes information the current object
-            /// </summary>
-            /// <param name="writer">Serialization writer to use to serialize this model</param>
-            public virtual void Serialize(ISerializationWriter writer)
-            {
-                if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-                if(Double != null)
-                {
-                    writer.WriteDoubleValue(null, Double);
-                }
-                else if(String != null)
-                {
-                    writer.WriteStringValue(null, String);
-                }
-            }
         }
     }
 }

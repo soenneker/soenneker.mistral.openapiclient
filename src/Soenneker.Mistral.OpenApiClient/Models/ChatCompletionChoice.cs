@@ -15,7 +15,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The finish_reason property</summary>
-        public global::Soenneker.Mistral.OpenApiClient.Models.ChatCompletionChoice_finish_reason? FinishReason { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.ChatCompletionChoiceFinishReason? FinishReason { get; set; }
         /// <summary>The index property</summary>
         public int? Index { get; set; }
         /// <summary>The message property</summary>
@@ -51,7 +51,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "finish_reason", n => { FinishReason = n.GetEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.ChatCompletionChoice_finish_reason>(); } },
+                { "finish_reason", n => { FinishReason = n.GetEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.ChatCompletionChoiceFinishReason>(); } },
                 { "index", n => { Index = n.GetIntValue(); } },
                 { "message", n => { Message = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.AssistantMessage>(global::Soenneker.Mistral.OpenApiClient.Models.AssistantMessage.CreateFromDiscriminatorValue); } },
             };
@@ -63,7 +63,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.ChatCompletionChoice_finish_reason>("finish_reason", FinishReason);
+            writer.WriteEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.ChatCompletionChoiceFinishReason>("finish_reason", FinishReason);
             writer.WriteIntValue("index", Index);
             writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.AssistantMessage>("message", Message);
             writer.WriteAdditionalData(AdditionalData);

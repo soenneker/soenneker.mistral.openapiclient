@@ -26,6 +26,8 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         public ScheduleRange()
         {
             AdditionalData = new Dictionary<string, object>();
+            End = 0;
+            Step = 0;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

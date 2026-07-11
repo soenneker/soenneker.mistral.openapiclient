@@ -12,7 +12,7 @@ using System;
 namespace Soenneker.Mistral.OpenApiClient.V1.Observability.Datasets.Item.Imports.FromCampaign
 {
     /// <summary>
-    /// Builds and executes requests for operations under \v1\observability\datasets\{dataset_id}\imports\from-campaign
+    /// Builds and executes requests for operations under \v1\observability\datasets\{datasetId}\imports\from-campaign
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class FromCampaignRequestBuilder : BaseRequestBuilder
@@ -22,7 +22,7 @@ namespace Soenneker.Mistral.OpenApiClient.V1.Observability.Datasets.Item.Imports
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public FromCampaignRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/observability/datasets/{dataset_id}/imports/from-campaign", pathParameters)
+        public FromCampaignRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/observability/datasets/{datasetId}/imports/from-campaign", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +30,7 @@ namespace Soenneker.Mistral.OpenApiClient.V1.Observability.Datasets.Item.Imports
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public FromCampaignRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/observability/datasets/{dataset_id}/imports/from-campaign", rawUrl)
+        public FromCampaignRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/observability/datasets/{datasetId}/imports/from-campaign", rawUrl)
         {
         }
         /// <summary>

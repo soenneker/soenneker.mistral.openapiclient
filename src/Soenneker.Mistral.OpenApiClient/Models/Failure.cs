@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.Mistral.OpenApiClient.Models
 {
     /// <summary>
-    /// Details about the failure that caused the workflow to fail.
+    /// Represents an error or exception that occurred during execution.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class Failure : IAdditionalDataHolder, IParsable

@@ -12,7 +12,7 @@ using System;
 namespace Soenneker.Mistral.OpenApiClient.V1.Observability.Datasets.Item.Exports.ToJsonl
 {
     /// <summary>
-    /// Builds and executes requests for operations under \v1\observability\datasets\{dataset_id}\exports\to-jsonl
+    /// Builds and executes requests for operations under \v1\observability\datasets\{datasetId}\exports\to-jsonl
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ToJsonlRequestBuilder : BaseRequestBuilder
@@ -22,7 +22,7 @@ namespace Soenneker.Mistral.OpenApiClient.V1.Observability.Datasets.Item.Exports
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ToJsonlRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/observability/datasets/{dataset_id}/exports/to-jsonl", pathParameters)
+        public ToJsonlRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/observability/datasets/{datasetId}/exports/to-jsonl", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +30,7 @@ namespace Soenneker.Mistral.OpenApiClient.V1.Observability.Datasets.Item.Exports
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ToJsonlRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/observability/datasets/{dataset_id}/exports/to-jsonl", rawUrl)
+        public ToJsonlRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/observability/datasets/{datasetId}/exports/to-jsonl", rawUrl)
         {
         }
         /// <summary>

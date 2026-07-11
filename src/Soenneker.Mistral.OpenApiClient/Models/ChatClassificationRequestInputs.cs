@@ -8,26 +8,26 @@ using System;
 namespace Soenneker.Mistral.OpenApiClient.Models
 {
     /// <summary>
-    /// Composed type wrapper for classes <see cref="global::Soenneker.Mistral.OpenApiClient.Models.InstructRequest"/>, List&lt;global::Soenneker.Mistral.OpenApiClient.Models.InstructRequest&gt;
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Mistral.OpenApiClient.Models.ChatClassificationRequestInputsBranch2"/>, <see cref="global::Soenneker.Mistral.OpenApiClient.Models.InstructRequest"/>
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ChatClassificationRequestInputs : IComposedTypeWrapper, IParsable
     {
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Mistral.OpenApiClient.Models.ChatClassificationRequestInputsBranch2"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Mistral.OpenApiClient.Models.ChatClassificationRequestInputsBranch2? ChatClassificationRequestInputsBranch2 { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Mistral.OpenApiClient.Models.ChatClassificationRequestInputsBranch2 ChatClassificationRequestInputsBranch2 { get; set; }
+#endif
         /// <summary>Composed type representation for type <see cref="global::Soenneker.Mistral.OpenApiClient.Models.InstructRequest"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.InstructRequest? ChatClassificationRequestInputsInstructRequest { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.InstructRequest? InstructRequest { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.InstructRequest ChatClassificationRequestInputsInstructRequest { get; set; }
-#endif
-        /// <summary>Composed type representation for type List&lt;global::Soenneker.Mistral.OpenApiClient.Models.InstructRequest&gt;</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public List<global::Soenneker.Mistral.OpenApiClient.Models.InstructRequest>? InstructRequest { get; set; }
-#nullable restore
-#else
-        public List<global::Soenneker.Mistral.OpenApiClient.Models.InstructRequest> InstructRequest { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.InstructRequest InstructRequest { get; set; }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -38,13 +38,8 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             var result = new global::Soenneker.Mistral.OpenApiClient.Models.ChatClassificationRequestInputs();
-            if(parseNode.GetCollectionOfObjectValues<global::Soenneker.Mistral.OpenApiClient.Models.InstructRequest>(global::Soenneker.Mistral.OpenApiClient.Models.InstructRequest.CreateFromDiscriminatorValue)?.AsList() is List<global::Soenneker.Mistral.OpenApiClient.Models.InstructRequest> instructRequestValue)
-            {
-                result.InstructRequest = instructRequestValue;
-            }
-            else {
-                result.ChatClassificationRequestInputsInstructRequest = new global::Soenneker.Mistral.OpenApiClient.Models.InstructRequest();
-            }
+            result.ChatClassificationRequestInputsBranch2 = new global::Soenneker.Mistral.OpenApiClient.Models.ChatClassificationRequestInputsBranch2();
+            result.InstructRequest = new global::Soenneker.Mistral.OpenApiClient.Models.InstructRequest();
             return result;
         }
         /// <summary>
@@ -53,9 +48,9 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            if(ChatClassificationRequestInputsInstructRequest != null)
+            if(ChatClassificationRequestInputsBranch2 != null || InstructRequest != null)
             {
-                return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(ChatClassificationRequestInputsInstructRequest);
+                return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(ChatClassificationRequestInputsBranch2, InstructRequest);
             }
             return new Dictionary<string, Action<IParseNode>>();
         }
@@ -66,13 +61,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            if(InstructRequest != null)
-            {
-                writer.WriteCollectionOfObjectValues<global::Soenneker.Mistral.OpenApiClient.Models.InstructRequest>(null, InstructRequest);
-            }
-            else {
-                writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.InstructRequest>(null, ChatClassificationRequestInputsInstructRequest);
-            }
+            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ChatClassificationRequestInputsBranch2>(null, ChatClassificationRequestInputsBranch2, InstructRequest);
         }
     }
 }

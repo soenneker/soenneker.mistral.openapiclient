@@ -4,7 +4,6 @@ using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
 using Soenneker.Mistral.OpenApiClient.Models;
-using Soenneker.Mistral.OpenApiClient.V1.Agents.Completions;
 using Soenneker.Mistral.OpenApiClient.V1.Agents.Item;
 using System.Collections.Generic;
 using System.IO;
@@ -19,21 +18,16 @@ namespace Soenneker.Mistral.OpenApiClient.V1.Agents
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class AgentsRequestBuilder : BaseRequestBuilder
     {
-        /// <summary>The completions property</summary>
-        public global::Soenneker.Mistral.OpenApiClient.V1.Agents.Completions.CompletionsRequestBuilder Completions
-        {
-            get => new global::Soenneker.Mistral.OpenApiClient.V1.Agents.Completions.CompletionsRequestBuilder(PathParameters, RequestAdapter);
-        }
         /// <summary>Gets an item from the Soenneker.Mistral.OpenApiClient.v1.agents.item collection</summary>
         /// <param name="position">Unique identifier of the item</param>
-        /// <returns>A <see cref="global::Soenneker.Mistral.OpenApiClient.V1.Agents.Item.WithAgent_ItemRequestBuilder"/></returns>
-        public global::Soenneker.Mistral.OpenApiClient.V1.Agents.Item.WithAgent_ItemRequestBuilder this[string position]
+        /// <returns>A <see cref="global::Soenneker.Mistral.OpenApiClient.V1.Agents.Item.WithAgentItemRequestBuilder"/></returns>
+        public global::Soenneker.Mistral.OpenApiClient.V1.Agents.Item.WithAgentItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
-                urlTplParams.Add("agent_id", position);
-                return new global::Soenneker.Mistral.OpenApiClient.V1.Agents.Item.WithAgent_ItemRequestBuilder(urlTplParams, RequestAdapter);
+                urlTplParams.Add("agentId", position);
+                return new global::Soenneker.Mistral.OpenApiClient.V1.Agents.Item.WithAgentItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
@@ -58,7 +52,7 @@ namespace Soenneker.Mistral.OpenApiClient.V1.Agents
         /// <returns>A List&lt;global::Soenneker.Mistral.OpenApiClient.Models.Agent&gt;</returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Mistral.OpenApiClient.Models.HTTPValidationError">When receiving a 422 status code</exception>
+        /// <exception cref="global::Soenneker.Mistral.OpenApiClient.Models.HttpValidationError">When receiving a 422 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<List<global::Soenneker.Mistral.OpenApiClient.Models.Agent>?> GetAsync(Action<RequestConfiguration<global::Soenneker.Mistral.OpenApiClient.V1.Agents.AgentsRequestBuilder.AgentsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -71,7 +65,7 @@ namespace Soenneker.Mistral.OpenApiClient.V1.Agents
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "422", global::Soenneker.Mistral.OpenApiClient.Models.HTTPValidationError.CreateFromDiscriminatorValue },
+                { "422", global::Soenneker.Mistral.OpenApiClient.Models.HttpValidationError.CreateFromDiscriminatorValue },
             };
             var collectionResult = await RequestAdapter.SendCollectionAsync<global::Soenneker.Mistral.OpenApiClient.Models.Agent>(requestInfo, global::Soenneker.Mistral.OpenApiClient.Models.Agent.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
             return collectionResult?.AsList();
@@ -83,7 +77,7 @@ namespace Soenneker.Mistral.OpenApiClient.V1.Agents
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Mistral.OpenApiClient.Models.HTTPValidationError">When receiving a 422 status code</exception>
+        /// <exception cref="global::Soenneker.Mistral.OpenApiClient.Models.HttpValidationError">When receiving a 422 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Soenneker.Mistral.OpenApiClient.Models.Agent?> PostAsync(global::Soenneker.Mistral.OpenApiClient.Models.AgentCreationRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -97,7 +91,7 @@ namespace Soenneker.Mistral.OpenApiClient.V1.Agents
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "422", global::Soenneker.Mistral.OpenApiClient.Models.HTTPValidationError.CreateFromDiscriminatorValue },
+                { "422", global::Soenneker.Mistral.OpenApiClient.Models.HttpValidationError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Mistral.OpenApiClient.Models.Agent>(requestInfo, global::Soenneker.Mistral.OpenApiClient.Models.Agent.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

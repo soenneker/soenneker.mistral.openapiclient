@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.Mistral.OpenApiClient.Models
 {
     /// <summary>
-    /// Event-specific attributes.
+    /// Attributes for activity task retrying events.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ActivityTaskRetryingAttributes : IAdditionalDataHolder, IParsable
@@ -25,7 +25,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The attempt number that failed (1-indexed).</summary>
         public int? Attempt { get; set; }
-        /// <summary>Details about the failure that caused the retry.</summary>
+        /// <summary>Represents an error or exception that occurred during execution.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Mistral.OpenApiClient.Models.Failure? Failure { get; set; }

@@ -3,21 +3,22 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Mistral.OpenApiClient.Models
 {
-    /// <summary>The kind of the scope</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
+    #pragma warning disable CS1591
     public enum TempoTraceScopeKind
+    #pragma warning restore CS1591
     {
         [EnumMember(Value = "SPAN_KIND_INTERNAL")]
         #pragma warning disable CS1591
-        SPAN_KIND_INTERNAL,
+        SpanKindInternal,
         #pragma warning restore CS1591
         [EnumMember(Value = "SPAN_KIND_SERVER")]
         #pragma warning disable CS1591
-        SPAN_KIND_SERVER,
+        SpanKindServer,
         #pragma warning restore CS1591
         [EnumMember(Value = "SPAN_KIND_CLIENT")]
         #pragma warning disable CS1591
-        SPAN_KIND_CLIENT,
+        SpanKindClient,
         #pragma warning restore CS1591
     }
 }

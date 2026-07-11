@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.Mistral.OpenApiClient.Models
 {
     /// <summary>
-    /// Specify the format that the model must output. By default it will use `{ &quot;type&quot;: &quot;text&quot; }`. Setting to `{ &quot;type&quot;: &quot;json_object&quot; }` enables JSON mode, which guarantees the message the model generates is in JSON. When using JSON mode you MUST also instruct the model to produce JSON yourself with a system or a user message. Setting to `{ &quot;type&quot;: &quot;json_schema&quot; }` enables JSON schema mode, which guarantees the message the model generates is in JSON and follows the schema you provide.
+    /// &quot;Specify the format that the model must output. By default it will use `{ \&quot;type\&quot;: \&quot;text\&quot; }`. Setting to `{ \&quot;type\&quot;: \&quot;json_object\&quot; }` enables JSON mode, which guarantees the message the model generates is in JSON. When using JSON mode you MUST also instruct the model to produce JSON yourself with a system or a user message. Setting to `{ \&quot;type\&quot;: \&quot;json_schema\&quot; }` enables JSON schema mode, which guarantees the message the model generates is in JSON and follows the schema you provide.&quot;
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ResponseFormat : IParsable
@@ -16,20 +16,13 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         /// <summary>The json_schema property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.JsonSchema? JsonSchema { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.ResponseFormatJsonSchema? JsonSchema { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.JsonSchema JsonSchema { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.ResponseFormatJsonSchema JsonSchema { get; set; }
 #endif
         /// <summary>The type property</summary>
         public global::Soenneker.Mistral.OpenApiClient.Models.ResponseFormats? Type { get; set; }
-        /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Mistral.OpenApiClient.Models.ResponseFormat"/> and sets the default values.
-        /// </summary>
-        public ResponseFormat()
-        {
-            Type = global::Soenneker.Mistral.OpenApiClient.Models.ResponseFormats.Text;
-        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -48,7 +41,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "json_schema", n => { JsonSchema = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.JsonSchema>(global::Soenneker.Mistral.OpenApiClient.Models.JsonSchema.CreateFromDiscriminatorValue); } },
+                { "json_schema", n => { JsonSchema = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ResponseFormatJsonSchema>(global::Soenneker.Mistral.OpenApiClient.Models.ResponseFormatJsonSchema.CreateFromDiscriminatorValue); } },
                 { "type", n => { Type = n.GetEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.ResponseFormats>(); } },
             };
         }
@@ -59,7 +52,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.JsonSchema>("json_schema", JsonSchema);
+            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ResponseFormatJsonSchema>("json_schema", JsonSchema);
             writer.WriteEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.ResponseFormats>("type", Type);
         }
     }

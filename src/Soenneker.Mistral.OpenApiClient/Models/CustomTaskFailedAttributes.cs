@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.Mistral.OpenApiClient.Models
 {
     /// <summary>
-    /// Event-specific attributes.
+    /// Attributes for custom task failed events.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class CustomTaskFailedAttributes : IAdditionalDataHolder, IParsable
@@ -31,7 +31,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
 #else
         public string CustomTaskType { get; set; }
 #endif
-        /// <summary>Details about the failure that caused the task to fail.</summary>
+        /// <summary>Represents an error or exception that occurred during execution.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Mistral.OpenApiClient.Models.Failure? Failure { get; set; }

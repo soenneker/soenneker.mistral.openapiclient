@@ -15,34 +15,34 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         /// <summary>The agent_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.FunctionCallEntry.FunctionCallEntry_agent_id? AgentId { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.FunctionCallEntryAgentId? AgentId { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.FunctionCallEntry.FunctionCallEntry_agent_id AgentId { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.FunctionCallEntryAgentId AgentId { get; set; }
 #endif
         /// <summary>The arguments property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Arguments { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.FunctionCallEntryArguments? Arguments { get; set; }
 #nullable restore
 #else
-        public string Arguments { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.FunctionCallEntryArguments Arguments { get; set; }
 #endif
         /// <summary>The completed_at property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.FunctionCallEntry.FunctionCallEntry_completed_at? CompletedAt { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.FunctionCallEntryCompletedAt? CompletedAt { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.FunctionCallEntry.FunctionCallEntry_completed_at CompletedAt { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.FunctionCallEntryCompletedAt CompletedAt { get; set; }
 #endif
         /// <summary>The confirmation_status property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.FunctionCallEntry.FunctionCallEntry_confirmation_status? ConfirmationStatus { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.FunctionCallEntryConfirmationStatus? ConfirmationStatus { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.FunctionCallEntry.FunctionCallEntry_confirmation_status ConfirmationStatus { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.FunctionCallEntryConfirmationStatus ConfirmationStatus { get; set; }
 #endif
         /// <summary>The created_at property</summary>
         public DateTimeOffset? CreatedAt { get; set; }
@@ -57,10 +57,10 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         /// <summary>The model property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.FunctionCallEntry.FunctionCallEntry_model? Model { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.FunctionCallEntryModel? Model { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.FunctionCallEntry.FunctionCallEntry_model Model { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.FunctionCallEntryModel Model { get; set; }
 #endif
         /// <summary>The name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -71,13 +71,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         public string Name { get; set; }
 #endif
         /// <summary>The object property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Object { get; set; }
-#nullable restore
-#else
-        public string Object { get; set; }
-#endif
+        public global::Soenneker.Mistral.OpenApiClient.Models.FunctionCallEntry_object? Object { get; set; }
         /// <summary>The tool_call_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -87,21 +81,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         public string ToolCallId { get; set; }
 #endif
         /// <summary>The type property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Type { get; set; }
-#nullable restore
-#else
-        public string Type { get; set; }
-#endif
-        /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Mistral.OpenApiClient.Models.FunctionCallEntry"/> and sets the default values.
-        /// </summary>
-        public FunctionCallEntry()
-        {
-            Object = "entry";
-            Type = "function.call";
-        }
+        public global::Soenneker.Mistral.OpenApiClient.Models.FunctionCallEntry_type? Type { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -120,17 +100,17 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "agent_id", n => { AgentId = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.FunctionCallEntry.FunctionCallEntry_agent_id>(global::Soenneker.Mistral.OpenApiClient.Models.FunctionCallEntry.FunctionCallEntry_agent_id.CreateFromDiscriminatorValue); } },
-                { "arguments", n => { Arguments = n.GetStringValue(); } },
-                { "completed_at", n => { CompletedAt = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.FunctionCallEntry.FunctionCallEntry_completed_at>(global::Soenneker.Mistral.OpenApiClient.Models.FunctionCallEntry.FunctionCallEntry_completed_at.CreateFromDiscriminatorValue); } },
-                { "confirmation_status", n => { ConfirmationStatus = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.FunctionCallEntry.FunctionCallEntry_confirmation_status>(global::Soenneker.Mistral.OpenApiClient.Models.FunctionCallEntry.FunctionCallEntry_confirmation_status.CreateFromDiscriminatorValue); } },
+                { "agent_id", n => { AgentId = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.FunctionCallEntryAgentId>(global::Soenneker.Mistral.OpenApiClient.Models.FunctionCallEntryAgentId.CreateFromDiscriminatorValue); } },
+                { "arguments", n => { Arguments = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.FunctionCallEntryArguments>(global::Soenneker.Mistral.OpenApiClient.Models.FunctionCallEntryArguments.CreateFromDiscriminatorValue); } },
+                { "completed_at", n => { CompletedAt = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.FunctionCallEntryCompletedAt>(global::Soenneker.Mistral.OpenApiClient.Models.FunctionCallEntryCompletedAt.CreateFromDiscriminatorValue); } },
+                { "confirmation_status", n => { ConfirmationStatus = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.FunctionCallEntryConfirmationStatus>(global::Soenneker.Mistral.OpenApiClient.Models.FunctionCallEntryConfirmationStatus.CreateFromDiscriminatorValue); } },
                 { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
-                { "model", n => { Model = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.FunctionCallEntry.FunctionCallEntry_model>(global::Soenneker.Mistral.OpenApiClient.Models.FunctionCallEntry.FunctionCallEntry_model.CreateFromDiscriminatorValue); } },
+                { "model", n => { Model = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.FunctionCallEntryModel>(global::Soenneker.Mistral.OpenApiClient.Models.FunctionCallEntryModel.CreateFromDiscriminatorValue); } },
                 { "name", n => { Name = n.GetStringValue(); } },
-                { "object", n => { Object = n.GetStringValue(); } },
+                { "object", n => { Object = n.GetEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.FunctionCallEntry_object>(); } },
                 { "tool_call_id", n => { ToolCallId = n.GetStringValue(); } },
-                { "type", n => { Type = n.GetStringValue(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.FunctionCallEntry_type>(); } },
             };
         }
         /// <summary>
@@ -140,283 +120,17 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.FunctionCallEntry.FunctionCallEntry_agent_id>("agent_id", AgentId);
-            writer.WriteStringValue("arguments", Arguments);
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.FunctionCallEntry.FunctionCallEntry_completed_at>("completed_at", CompletedAt);
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.FunctionCallEntry.FunctionCallEntry_confirmation_status>("confirmation_status", ConfirmationStatus);
+            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.FunctionCallEntryAgentId>("agent_id", AgentId);
+            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.FunctionCallEntryArguments>("arguments", Arguments);
+            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.FunctionCallEntryCompletedAt>("completed_at", CompletedAt);
+            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.FunctionCallEntryConfirmationStatus>("confirmation_status", ConfirmationStatus);
             writer.WriteDateTimeOffsetValue("created_at", CreatedAt);
             writer.WriteStringValue("id", Id);
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.FunctionCallEntry.FunctionCallEntry_model>("model", Model);
+            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.FunctionCallEntryModel>("model", Model);
             writer.WriteStringValue("name", Name);
-            writer.WriteStringValue("object", Object);
+            writer.WriteEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.FunctionCallEntry_object>("object", Object);
             writer.WriteStringValue("tool_call_id", ToolCallId);
-            writer.WriteStringValue("type", Type);
-        }
-        /// <summary>
-        /// Composed type wrapper for classes <see cref="global::Soenneker.Mistral.OpenApiClient.Models.FunctionCallEntry_agent_idMember1"/>, <see cref="string"/>
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class FunctionCallEntry_agent_id : IComposedTypeWrapper, IParsable
-        {
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.Mistral.OpenApiClient.Models.FunctionCallEntry_agent_idMember1"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public global::Soenneker.Mistral.OpenApiClient.Models.FunctionCallEntry_agent_idMember1? FunctionCallEntryAgentIdMember1 { get; set; }
-#nullable restore
-#else
-            public global::Soenneker.Mistral.OpenApiClient.Models.FunctionCallEntry_agent_idMember1 FunctionCallEntryAgentIdMember1 { get; set; }
-#endif
-            /// <summary>Composed type representation for type <see cref="string"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public string? String { get; set; }
-#nullable restore
-#else
-            public string String { get; set; }
-#endif
-            /// <summary>
-            /// Creates a new instance of the appropriate class based on discriminator value
-            /// </summary>
-            /// <returns>A <see cref="global::Soenneker.Mistral.OpenApiClient.Models.FunctionCallEntry.FunctionCallEntry_agent_id"/></returns>
-            /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-            public static global::Soenneker.Mistral.OpenApiClient.Models.FunctionCallEntry.FunctionCallEntry_agent_id CreateFromDiscriminatorValue(IParseNode parseNode)
-            {
-                if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-                var result = new global::Soenneker.Mistral.OpenApiClient.Models.FunctionCallEntry.FunctionCallEntry_agent_id();
-                if(parseNode.GetStringValue() is string stringValue)
-                {
-                    result.String = stringValue;
-                }
-                else {
-                    result.FunctionCallEntryAgentIdMember1 = new global::Soenneker.Mistral.OpenApiClient.Models.FunctionCallEntry_agent_idMember1();
-                }
-                return result;
-            }
-            /// <summary>
-            /// The deserialization information for the current model
-            /// </summary>
-            /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-            public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
-            {
-                if(FunctionCallEntryAgentIdMember1 != null)
-                {
-                    return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(FunctionCallEntryAgentIdMember1);
-                }
-                return new Dictionary<string, Action<IParseNode>>();
-            }
-            /// <summary>
-            /// Serializes information the current object
-            /// </summary>
-            /// <param name="writer">Serialization writer to use to serialize this model</param>
-            public virtual void Serialize(ISerializationWriter writer)
-            {
-                if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-                if(String != null)
-                {
-                    writer.WriteStringValue(null, String);
-                }
-                else {
-                    writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.FunctionCallEntry_agent_idMember1>(null, FunctionCallEntryAgentIdMember1);
-                }
-            }
-        }
-        /// <summary>
-        /// Composed type wrapper for classes <see cref="DateTimeOffset"/>, <see cref="global::Soenneker.Mistral.OpenApiClient.Models.FunctionCallEntry_completed_atMember1"/>
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class FunctionCallEntry_completed_at : IComposedTypeWrapper, IParsable
-        {
-            /// <summary>Composed type representation for type <see cref="DateTimeOffset"/></summary>
-            public DateTimeOffset? DateTimeOffset { get; set; }
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.Mistral.OpenApiClient.Models.FunctionCallEntry_completed_atMember1"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public global::Soenneker.Mistral.OpenApiClient.Models.FunctionCallEntry_completed_atMember1? FunctionCallEntryCompletedAtMember1 { get; set; }
-#nullable restore
-#else
-            public global::Soenneker.Mistral.OpenApiClient.Models.FunctionCallEntry_completed_atMember1 FunctionCallEntryCompletedAtMember1 { get; set; }
-#endif
-            /// <summary>
-            /// Creates a new instance of the appropriate class based on discriminator value
-            /// </summary>
-            /// <returns>A <see cref="global::Soenneker.Mistral.OpenApiClient.Models.FunctionCallEntry.FunctionCallEntry_completed_at"/></returns>
-            /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-            public static global::Soenneker.Mistral.OpenApiClient.Models.FunctionCallEntry.FunctionCallEntry_completed_at CreateFromDiscriminatorValue(IParseNode parseNode)
-            {
-                if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-                var result = new global::Soenneker.Mistral.OpenApiClient.Models.FunctionCallEntry.FunctionCallEntry_completed_at();
-                if(parseNode.GetDateTimeOffsetValue() is DateTimeOffset dateTimeOffsetValue)
-                {
-                    result.DateTimeOffset = dateTimeOffsetValue;
-                }
-                else {
-                    result.FunctionCallEntryCompletedAtMember1 = new global::Soenneker.Mistral.OpenApiClient.Models.FunctionCallEntry_completed_atMember1();
-                }
-                return result;
-            }
-            /// <summary>
-            /// The deserialization information for the current model
-            /// </summary>
-            /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-            public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
-            {
-                if(FunctionCallEntryCompletedAtMember1 != null)
-                {
-                    return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(FunctionCallEntryCompletedAtMember1);
-                }
-                return new Dictionary<string, Action<IParseNode>>();
-            }
-            /// <summary>
-            /// Serializes information the current object
-            /// </summary>
-            /// <param name="writer">Serialization writer to use to serialize this model</param>
-            public virtual void Serialize(ISerializationWriter writer)
-            {
-                if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-                if(DateTimeOffset != null)
-                {
-                    writer.WriteDateTimeOffsetValue(null, DateTimeOffset);
-                }
-                else {
-                    writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.FunctionCallEntry_completed_atMember1>(null, FunctionCallEntryCompletedAtMember1);
-                }
-            }
-        }
-        /// <summary>
-        /// Composed type wrapper for classes <see cref="global::Soenneker.Mistral.OpenApiClient.Models.FunctionCallEntry_confirmation_statusMember1"/>, <see cref="string"/>
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class FunctionCallEntry_confirmation_status : IComposedTypeWrapper, IParsable
-        {
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.Mistral.OpenApiClient.Models.FunctionCallEntry_confirmation_statusMember1"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public global::Soenneker.Mistral.OpenApiClient.Models.FunctionCallEntry_confirmation_statusMember1? FunctionCallEntryConfirmationStatusMember1 { get; set; }
-#nullable restore
-#else
-            public global::Soenneker.Mistral.OpenApiClient.Models.FunctionCallEntry_confirmation_statusMember1 FunctionCallEntryConfirmationStatusMember1 { get; set; }
-#endif
-            /// <summary>Composed type representation for type <see cref="string"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public string? String { get; set; }
-#nullable restore
-#else
-            public string String { get; set; }
-#endif
-            /// <summary>
-            /// Creates a new instance of the appropriate class based on discriminator value
-            /// </summary>
-            /// <returns>A <see cref="global::Soenneker.Mistral.OpenApiClient.Models.FunctionCallEntry.FunctionCallEntry_confirmation_status"/></returns>
-            /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-            public static global::Soenneker.Mistral.OpenApiClient.Models.FunctionCallEntry.FunctionCallEntry_confirmation_status CreateFromDiscriminatorValue(IParseNode parseNode)
-            {
-                if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-                var result = new global::Soenneker.Mistral.OpenApiClient.Models.FunctionCallEntry.FunctionCallEntry_confirmation_status();
-                if(parseNode.GetStringValue() is string stringValue)
-                {
-                    result.String = stringValue;
-                }
-                else {
-                    result.FunctionCallEntryConfirmationStatusMember1 = new global::Soenneker.Mistral.OpenApiClient.Models.FunctionCallEntry_confirmation_statusMember1();
-                }
-                return result;
-            }
-            /// <summary>
-            /// The deserialization information for the current model
-            /// </summary>
-            /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-            public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
-            {
-                if(FunctionCallEntryConfirmationStatusMember1 != null)
-                {
-                    return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(FunctionCallEntryConfirmationStatusMember1);
-                }
-                return new Dictionary<string, Action<IParseNode>>();
-            }
-            /// <summary>
-            /// Serializes information the current object
-            /// </summary>
-            /// <param name="writer">Serialization writer to use to serialize this model</param>
-            public virtual void Serialize(ISerializationWriter writer)
-            {
-                if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-                if(String != null)
-                {
-                    writer.WriteStringValue(null, String);
-                }
-                else {
-                    writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.FunctionCallEntry_confirmation_statusMember1>(null, FunctionCallEntryConfirmationStatusMember1);
-                }
-            }
-        }
-        /// <summary>
-        /// Composed type wrapper for classes <see cref="global::Soenneker.Mistral.OpenApiClient.Models.FunctionCallEntry_modelMember1"/>, <see cref="string"/>
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class FunctionCallEntry_model : IComposedTypeWrapper, IParsable
-        {
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.Mistral.OpenApiClient.Models.FunctionCallEntry_modelMember1"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public global::Soenneker.Mistral.OpenApiClient.Models.FunctionCallEntry_modelMember1? FunctionCallEntryModelMember1 { get; set; }
-#nullable restore
-#else
-            public global::Soenneker.Mistral.OpenApiClient.Models.FunctionCallEntry_modelMember1 FunctionCallEntryModelMember1 { get; set; }
-#endif
-            /// <summary>Composed type representation for type <see cref="string"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public string? String { get; set; }
-#nullable restore
-#else
-            public string String { get; set; }
-#endif
-            /// <summary>
-            /// Creates a new instance of the appropriate class based on discriminator value
-            /// </summary>
-            /// <returns>A <see cref="global::Soenneker.Mistral.OpenApiClient.Models.FunctionCallEntry.FunctionCallEntry_model"/></returns>
-            /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-            public static global::Soenneker.Mistral.OpenApiClient.Models.FunctionCallEntry.FunctionCallEntry_model CreateFromDiscriminatorValue(IParseNode parseNode)
-            {
-                if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-                var result = new global::Soenneker.Mistral.OpenApiClient.Models.FunctionCallEntry.FunctionCallEntry_model();
-                if(parseNode.GetStringValue() is string stringValue)
-                {
-                    result.String = stringValue;
-                }
-                else {
-                    result.FunctionCallEntryModelMember1 = new global::Soenneker.Mistral.OpenApiClient.Models.FunctionCallEntry_modelMember1();
-                }
-                return result;
-            }
-            /// <summary>
-            /// The deserialization information for the current model
-            /// </summary>
-            /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-            public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
-            {
-                if(FunctionCallEntryModelMember1 != null)
-                {
-                    return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(FunctionCallEntryModelMember1);
-                }
-                return new Dictionary<string, Action<IParseNode>>();
-            }
-            /// <summary>
-            /// Serializes information the current object
-            /// </summary>
-            /// <param name="writer">Serialization writer to use to serialize this model</param>
-            public virtual void Serialize(ISerializationWriter writer)
-            {
-                if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-                if(String != null)
-                {
-                    writer.WriteStringValue(null, String);
-                }
-                else {
-                    writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.FunctionCallEntry_modelMember1>(null, FunctionCallEntryModelMember1);
-                }
-            }
+            writer.WriteEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.FunctionCallEntry_type>("type", Type);
         }
     }
 }

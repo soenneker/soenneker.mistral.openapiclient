@@ -23,7 +23,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         public List<string> Labels { get; set; }
 #endif
         /// <summary>The loss_function property</summary>
-        public global::Soenneker.Mistral.OpenApiClient.Models.FTClassifierLossFunction? LossFunction { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.FtClassifierLossFunction? LossFunction { get; set; }
         /// <summary>The name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -60,7 +60,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "labels", n => { Labels = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "loss_function", n => { LossFunction = n.GetEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.FTClassifierLossFunction>(); } },
+                { "loss_function", n => { LossFunction = n.GetEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.FtClassifierLossFunction>(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "weight", n => { Weight = n.GetDoubleValue(); } },
             };
@@ -73,7 +73,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfPrimitiveValues<string>("labels", Labels);
-            writer.WriteEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.FTClassifierLossFunction>("loss_function", LossFunction);
+            writer.WriteEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.FtClassifierLossFunction>("loss_function", LossFunction);
             writer.WriteStringValue("name", Name);
             writer.WriteDoubleValue("weight", Weight);
             writer.WriteAdditionalData(AdditionalData);

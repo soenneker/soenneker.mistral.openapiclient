@@ -25,10 +25,10 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         /// <summary>The value of the attribute</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.TempoTraceAttribute.TempoTraceAttribute_value? Value { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.TempoTraceAttributeValue? Value { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.TempoTraceAttribute.TempoTraceAttribute_value Value { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.TempoTraceAttributeValue Value { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Mistral.OpenApiClient.Models.TempoTraceAttribute"/> and sets the default values.
@@ -56,7 +56,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "key", n => { Key = n.GetStringValue(); } },
-                { "value", n => { Value = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.TempoTraceAttribute.TempoTraceAttribute_value>(global::Soenneker.Mistral.OpenApiClient.Models.TempoTraceAttribute.TempoTraceAttribute_value.CreateFromDiscriminatorValue); } },
+                { "value", n => { Value = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.TempoTraceAttributeValue>(global::Soenneker.Mistral.OpenApiClient.Models.TempoTraceAttributeValue.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -67,74 +67,8 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("key", Key);
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.TempoTraceAttribute.TempoTraceAttribute_value>("value", Value);
+            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.TempoTraceAttributeValue>("value", Value);
             writer.WriteAdditionalData(AdditionalData);
-        }
-        /// <summary>
-        /// Composed type wrapper for classes <see cref="global::Soenneker.Mistral.OpenApiClient.Models.TempoTraceAttributeBoolValue"/>, <see cref="global::Soenneker.Mistral.OpenApiClient.Models.TempoTraceAttributeIntValue"/>, <see cref="global::Soenneker.Mistral.OpenApiClient.Models.TempoTraceAttributeStringValue"/>
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class TempoTraceAttribute_value : IComposedTypeWrapper, IParsable
-        {
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.Mistral.OpenApiClient.Models.TempoTraceAttributeBoolValue"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public global::Soenneker.Mistral.OpenApiClient.Models.TempoTraceAttributeBoolValue? TempoTraceAttributeBoolValue { get; set; }
-#nullable restore
-#else
-            public global::Soenneker.Mistral.OpenApiClient.Models.TempoTraceAttributeBoolValue TempoTraceAttributeBoolValue { get; set; }
-#endif
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.Mistral.OpenApiClient.Models.TempoTraceAttributeIntValue"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public global::Soenneker.Mistral.OpenApiClient.Models.TempoTraceAttributeIntValue? TempoTraceAttributeIntValue { get; set; }
-#nullable restore
-#else
-            public global::Soenneker.Mistral.OpenApiClient.Models.TempoTraceAttributeIntValue TempoTraceAttributeIntValue { get; set; }
-#endif
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.Mistral.OpenApiClient.Models.TempoTraceAttributeStringValue"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public global::Soenneker.Mistral.OpenApiClient.Models.TempoTraceAttributeStringValue? TempoTraceAttributeStringValue { get; set; }
-#nullable restore
-#else
-            public global::Soenneker.Mistral.OpenApiClient.Models.TempoTraceAttributeStringValue TempoTraceAttributeStringValue { get; set; }
-#endif
-            /// <summary>
-            /// Creates a new instance of the appropriate class based on discriminator value
-            /// </summary>
-            /// <returns>A <see cref="global::Soenneker.Mistral.OpenApiClient.Models.TempoTraceAttribute.TempoTraceAttribute_value"/></returns>
-            /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-            public static global::Soenneker.Mistral.OpenApiClient.Models.TempoTraceAttribute.TempoTraceAttribute_value CreateFromDiscriminatorValue(IParseNode parseNode)
-            {
-                if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-                var result = new global::Soenneker.Mistral.OpenApiClient.Models.TempoTraceAttribute.TempoTraceAttribute_value();
-                result.TempoTraceAttributeBoolValue = new global::Soenneker.Mistral.OpenApiClient.Models.TempoTraceAttributeBoolValue();
-                result.TempoTraceAttributeIntValue = new global::Soenneker.Mistral.OpenApiClient.Models.TempoTraceAttributeIntValue();
-                result.TempoTraceAttributeStringValue = new global::Soenneker.Mistral.OpenApiClient.Models.TempoTraceAttributeStringValue();
-                return result;
-            }
-            /// <summary>
-            /// The deserialization information for the current model
-            /// </summary>
-            /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-            public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
-            {
-                if(TempoTraceAttributeBoolValue != null || TempoTraceAttributeIntValue != null || TempoTraceAttributeStringValue != null)
-                {
-                    return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(TempoTraceAttributeBoolValue, TempoTraceAttributeIntValue, TempoTraceAttributeStringValue);
-                }
-                return new Dictionary<string, Action<IParseNode>>();
-            }
-            /// <summary>
-            /// Serializes information the current object
-            /// </summary>
-            /// <param name="writer">Serialization writer to use to serialize this model</param>
-            public virtual void Serialize(ISerializationWriter writer)
-            {
-                if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-                writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.TempoTraceAttributeBoolValue>(null, TempoTraceAttributeBoolValue, TempoTraceAttributeIntValue, TempoTraceAttributeStringValue);
-            }
         }
     }
 }

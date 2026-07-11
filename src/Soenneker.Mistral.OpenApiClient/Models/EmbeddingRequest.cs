@@ -12,23 +12,23 @@ namespace Soenneker.Mistral.OpenApiClient.Models
     public partial class EmbeddingRequest : IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The format of embeddings in the response.</summary>
+        /// <summary>The encoding_format property</summary>
         public global::Soenneker.Mistral.OpenApiClient.Models.EncodingFormat? EncodingFormat { get; set; }
         /// <summary>Text to embed.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.EmbeddingRequest.EmbeddingRequest_input? Input { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.EmbeddingRequestInput? Input { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.EmbeddingRequest.EmbeddingRequest_input Input { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.EmbeddingRequestInput Input { get; set; }
 #endif
         /// <summary>The metadata property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public UntypedNode? Metadata { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.EmbeddingRequestMetadata? Metadata { get; set; }
 #nullable restore
 #else
-        public UntypedNode Metadata { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.EmbeddingRequestMetadata Metadata { get; set; }
 #endif
         /// <summary>ID of the model to use.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -41,21 +41,13 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         /// <summary>The dimension of the output embeddings when feature available. If not provided, a default output dimension will be used.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.EmbeddingRequest.EmbeddingRequest_output_dimension? OutputDimension { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.EmbeddingRequestOutputDimension? OutputDimension { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.EmbeddingRequest.EmbeddingRequest_output_dimension OutputDimension { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.EmbeddingRequestOutputDimension OutputDimension { get; set; }
 #endif
-        /// <summary>The data type of the output embeddings when feature available. If not provided, a default output data type will be used.</summary>
+        /// <summary>The output_dtype property</summary>
         public global::Soenneker.Mistral.OpenApiClient.Models.EmbeddingDtype? OutputDtype { get; set; }
-        /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Mistral.OpenApiClient.Models.EmbeddingRequest"/> and sets the default values.
-        /// </summary>
-        public EmbeddingRequest()
-        {
-            EncodingFormat = global::Soenneker.Mistral.OpenApiClient.Models.EncodingFormat.Float;
-            OutputDtype = global::Soenneker.Mistral.OpenApiClient.Models.EmbeddingDtype.Float;
-        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -75,10 +67,10 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "encoding_format", n => { EncodingFormat = n.GetEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.EncodingFormat>(); } },
-                { "input", n => { Input = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.EmbeddingRequest.EmbeddingRequest_input>(global::Soenneker.Mistral.OpenApiClient.Models.EmbeddingRequest.EmbeddingRequest_input.CreateFromDiscriminatorValue); } },
-                { "metadata", n => { Metadata = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "input", n => { Input = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.EmbeddingRequestInput>(global::Soenneker.Mistral.OpenApiClient.Models.EmbeddingRequestInput.CreateFromDiscriminatorValue); } },
+                { "metadata", n => { Metadata = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.EmbeddingRequestMetadata>(global::Soenneker.Mistral.OpenApiClient.Models.EmbeddingRequestMetadata.CreateFromDiscriminatorValue); } },
                 { "model", n => { Model = n.GetStringValue(); } },
-                { "output_dimension", n => { OutputDimension = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.EmbeddingRequest.EmbeddingRequest_output_dimension>(global::Soenneker.Mistral.OpenApiClient.Models.EmbeddingRequest.EmbeddingRequest_output_dimension.CreateFromDiscriminatorValue); } },
+                { "output_dimension", n => { OutputDimension = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.EmbeddingRequestOutputDimension>(global::Soenneker.Mistral.OpenApiClient.Models.EmbeddingRequestOutputDimension.CreateFromDiscriminatorValue); } },
                 { "output_dtype", n => { OutputDtype = n.GetEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.EmbeddingDtype>(); } },
             };
         }
@@ -90,139 +82,11 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.EncodingFormat>("encoding_format", EncodingFormat);
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.EmbeddingRequest.EmbeddingRequest_input>("input", Input);
-            writer.WriteObjectValue<UntypedNode>("metadata", Metadata);
+            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.EmbeddingRequestInput>("input", Input);
+            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.EmbeddingRequestMetadata>("metadata", Metadata);
             writer.WriteStringValue("model", Model);
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.EmbeddingRequest.EmbeddingRequest_output_dimension>("output_dimension", OutputDimension);
+            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.EmbeddingRequestOutputDimension>("output_dimension", OutputDimension);
             writer.WriteEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.EmbeddingDtype>("output_dtype", OutputDtype);
-        }
-        /// <summary>
-        /// Composed type wrapper for classes <see cref="string"/>, List&lt;string&gt;
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class EmbeddingRequest_input : IComposedTypeWrapper, IParsable
-        {
-            /// <summary>Composed type representation for type <see cref="string"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public string? EmbeddingRequestInputString { get; set; }
-#nullable restore
-#else
-            public string EmbeddingRequestInputString { get; set; }
-#endif
-            /// <summary>Composed type representation for type List&lt;string&gt;</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public List<string>? String { get; set; }
-#nullable restore
-#else
-            public List<string> String { get; set; }
-#endif
-            /// <summary>
-            /// Creates a new instance of the appropriate class based on discriminator value
-            /// </summary>
-            /// <returns>A <see cref="global::Soenneker.Mistral.OpenApiClient.Models.EmbeddingRequest.EmbeddingRequest_input"/></returns>
-            /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-            public static global::Soenneker.Mistral.OpenApiClient.Models.EmbeddingRequest.EmbeddingRequest_input CreateFromDiscriminatorValue(IParseNode parseNode)
-            {
-                if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-                var result = new global::Soenneker.Mistral.OpenApiClient.Models.EmbeddingRequest.EmbeddingRequest_input();
-                if(parseNode.GetStringValue() is string embeddingRequestInputStringValue)
-                {
-                    result.EmbeddingRequestInputString = embeddingRequestInputStringValue;
-                }
-                else if(parseNode.GetCollectionOfPrimitiveValues<string>()?.AsList() is List<string> stringValue)
-                {
-                    result.String = stringValue;
-                }
-                return result;
-            }
-            /// <summary>
-            /// The deserialization information for the current model
-            /// </summary>
-            /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-            public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
-            {
-                return new Dictionary<string, Action<IParseNode>>();
-            }
-            /// <summary>
-            /// Serializes information the current object
-            /// </summary>
-            /// <param name="writer">Serialization writer to use to serialize this model</param>
-            public virtual void Serialize(ISerializationWriter writer)
-            {
-                if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-                if(EmbeddingRequestInputString != null)
-                {
-                    writer.WriteStringValue(null, EmbeddingRequestInputString);
-                }
-                else if(String != null)
-                {
-                    writer.WriteCollectionOfPrimitiveValues<string>(null, String);
-                }
-            }
-        }
-        /// <summary>
-        /// Composed type wrapper for classes <see cref="global::Soenneker.Mistral.OpenApiClient.Models.EmbeddingRequest_output_dimensionMember1"/>, <see cref="int"/>
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class EmbeddingRequest_output_dimension : IComposedTypeWrapper, IParsable
-        {
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.Mistral.OpenApiClient.Models.EmbeddingRequest_output_dimensionMember1"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public global::Soenneker.Mistral.OpenApiClient.Models.EmbeddingRequest_output_dimensionMember1? EmbeddingRequestOutputDimensionMember1 { get; set; }
-#nullable restore
-#else
-            public global::Soenneker.Mistral.OpenApiClient.Models.EmbeddingRequest_output_dimensionMember1 EmbeddingRequestOutputDimensionMember1 { get; set; }
-#endif
-            /// <summary>Composed type representation for type <see cref="int"/></summary>
-            public int? Integer { get; set; }
-            /// <summary>
-            /// Creates a new instance of the appropriate class based on discriminator value
-            /// </summary>
-            /// <returns>A <see cref="global::Soenneker.Mistral.OpenApiClient.Models.EmbeddingRequest.EmbeddingRequest_output_dimension"/></returns>
-            /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-            public static global::Soenneker.Mistral.OpenApiClient.Models.EmbeddingRequest.EmbeddingRequest_output_dimension CreateFromDiscriminatorValue(IParseNode parseNode)
-            {
-                if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-                var result = new global::Soenneker.Mistral.OpenApiClient.Models.EmbeddingRequest.EmbeddingRequest_output_dimension();
-                if(parseNode.GetIntValue() is int integerValue)
-                {
-                    result.Integer = integerValue;
-                }
-                else {
-                    result.EmbeddingRequestOutputDimensionMember1 = new global::Soenneker.Mistral.OpenApiClient.Models.EmbeddingRequest_output_dimensionMember1();
-                }
-                return result;
-            }
-            /// <summary>
-            /// The deserialization information for the current model
-            /// </summary>
-            /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-            public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
-            {
-                if(EmbeddingRequestOutputDimensionMember1 != null)
-                {
-                    return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(EmbeddingRequestOutputDimensionMember1);
-                }
-                return new Dictionary<string, Action<IParseNode>>();
-            }
-            /// <summary>
-            /// Serializes information the current object
-            /// </summary>
-            /// <param name="writer">Serialization writer to use to serialize this model</param>
-            public virtual void Serialize(ISerializationWriter writer)
-            {
-                if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-                if(Integer != null)
-                {
-                    writer.WriteIntValue(null, Integer);
-                }
-                else {
-                    writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.EmbeddingRequest_output_dimensionMember1>(null, EmbeddingRequestOutputDimensionMember1);
-                }
-            }
         }
     }
 }

@@ -29,14 +29,14 @@ namespace Soenneker.Mistral.OpenApiClient.V1.Observability.ChatCompletionEvents
         }
         /// <summary>Gets an item from the Soenneker.Mistral.OpenApiClient.v1.observability.chatCompletionEvents.item collection</summary>
         /// <param name="position">Unique identifier of the item</param>
-        /// <returns>A <see cref="global::Soenneker.Mistral.OpenApiClient.V1.Observability.ChatCompletionEvents.Item.WithEvent_ItemRequestBuilder"/></returns>
-        public global::Soenneker.Mistral.OpenApiClient.V1.Observability.ChatCompletionEvents.Item.WithEvent_ItemRequestBuilder this[Guid position]
+        /// <returns>A <see cref="global::Soenneker.Mistral.OpenApiClient.V1.Observability.ChatCompletionEvents.Item.WithEventItemRequestBuilder"/></returns>
+        public global::Soenneker.Mistral.OpenApiClient.V1.Observability.ChatCompletionEvents.Item.WithEventItemRequestBuilder this[Guid position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
-                urlTplParams.Add("event_id", position);
-                return new global::Soenneker.Mistral.OpenApiClient.V1.Observability.ChatCompletionEvents.Item.WithEvent_ItemRequestBuilder(urlTplParams, RequestAdapter);
+                urlTplParams.Add("eventId", position);
+                return new global::Soenneker.Mistral.OpenApiClient.V1.Observability.ChatCompletionEvents.Item.WithEventItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>

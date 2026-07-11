@@ -9,17 +9,35 @@ namespace Soenneker.Mistral.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class ToolCall : IAdditionalDataHolder, IParsable
+    public partial class ToolCall : IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The function property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Mistral.OpenApiClient.Models.FunctionCall? Function { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Mistral.OpenApiClient.Models.FunctionCall Function { get; set; }
+#endif
+        /// <summary>The id property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Id { get; set; }
+#nullable restore
+#else
+        public string Id { get; set; }
+#endif
+        /// <summary>The index property</summary>
+        public int? Index { get; set; }
+        /// <summary>The type property</summary>
+        public global::Soenneker.Mistral.OpenApiClient.Models.ToolTypes? Type { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Mistral.OpenApiClient.Models.ToolCall"/> and sets the default values.
         /// </summary>
         public ToolCall()
         {
-            AdditionalData = new Dictionary<string, object>();
+            Index = 0;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -39,6 +57,10 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "function", n => { Function = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.FunctionCall>(global::Soenneker.Mistral.OpenApiClient.Models.FunctionCall.CreateFromDiscriminatorValue); } },
+                { "id", n => { Id = n.GetStringValue(); } },
+                { "index", n => { Index = n.GetIntValue(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.ToolTypes>(); } },
             };
         }
         /// <summary>
@@ -48,7 +70,10 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteAdditionalData(AdditionalData);
+            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.FunctionCall>("function", Function);
+            writer.WriteStringValue("id", Id);
+            writer.WriteIntValue("index", Index);
+            writer.WriteEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.ToolTypes>("type", Type);
         }
     }
 }

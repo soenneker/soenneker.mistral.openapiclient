@@ -14,6 +14,22 @@ namespace Soenneker.Mistral.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The body property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Mistral.OpenApiClient.Models.BatchRequestBodyProperty? Body { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Mistral.OpenApiClient.Models.BatchRequestBodyProperty Body { get; set; }
+#endif
+        /// <summary>The custom_id property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Mistral.OpenApiClient.Models.BatchRequestCustomId? CustomId { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Mistral.OpenApiClient.Models.BatchRequestCustomId CustomId { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Mistral.OpenApiClient.Models.BatchRequest"/> and sets the default values.
         /// </summary>
@@ -39,6 +55,8 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "body", n => { Body = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.BatchRequestBodyProperty>(global::Soenneker.Mistral.OpenApiClient.Models.BatchRequestBodyProperty.CreateFromDiscriminatorValue); } },
+                { "custom_id", n => { CustomId = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.BatchRequestCustomId>(global::Soenneker.Mistral.OpenApiClient.Models.BatchRequestCustomId.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -48,6 +66,8 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.BatchRequestBodyProperty>("body", Body);
+            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.BatchRequestCustomId>("custom_id", CustomId);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -17,14 +17,14 @@ namespace Soenneker.Mistral.OpenApiClient.V1.Fine_tuning.ModelsRequests
     {
         /// <summary>Gets an item from the Soenneker.Mistral.OpenApiClient.v1.fine_tuning.modelsRequests.item collection</summary>
         /// <param name="position">The ID of the model to update.</param>
-        /// <returns>A <see cref="global::Soenneker.Mistral.OpenApiClient.V1.Fine_tuning.ModelsRequests.Item.WithModel_ItemRequestBuilder"/></returns>
-        public global::Soenneker.Mistral.OpenApiClient.V1.Fine_tuning.ModelsRequests.Item.WithModel_ItemRequestBuilder this[string position]
+        /// <returns>A <see cref="global::Soenneker.Mistral.OpenApiClient.V1.Fine_tuning.ModelsRequests.Item.WithModelItemRequestBuilder"/></returns>
+        public global::Soenneker.Mistral.OpenApiClient.V1.Fine_tuning.ModelsRequests.Item.WithModelItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
-                urlTplParams.Add("model_id", position);
-                return new global::Soenneker.Mistral.OpenApiClient.V1.Fine_tuning.ModelsRequests.Item.WithModel_ItemRequestBuilder(urlTplParams, RequestAdapter);
+                urlTplParams.Add("modelId", position);
+                return new global::Soenneker.Mistral.OpenApiClient.V1.Fine_tuning.ModelsRequests.Item.WithModelItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>

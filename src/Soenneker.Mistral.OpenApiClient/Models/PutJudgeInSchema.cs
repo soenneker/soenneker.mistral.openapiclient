@@ -49,10 +49,10 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         /// <summary>The output property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.PutJudgeInSchema.PutJudgeInSchema_output? Output { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.PutJudgeInSchemaOutput? Output { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.PutJudgeInSchema.PutJudgeInSchema_output Output { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.PutJudgeInSchemaOutput Output { get; set; }
 #endif
         /// <summary>The tools property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -91,7 +91,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
                 { "instructions", n => { Instructions = n.GetStringValue(); } },
                 { "model_name", n => { ModelName = n.GetStringValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
-                { "output", n => { Output = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.PutJudgeInSchema.PutJudgeInSchema_output>(global::Soenneker.Mistral.OpenApiClient.Models.PutJudgeInSchema.PutJudgeInSchema_output.CreateFromDiscriminatorValue); } },
+                { "output", n => { Output = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.PutJudgeInSchemaOutput>(global::Soenneker.Mistral.OpenApiClient.Models.PutJudgeInSchemaOutput.CreateFromDiscriminatorValue); } },
                 { "tools", n => { Tools = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
             };
         }
@@ -106,84 +106,9 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             writer.WriteStringValue("instructions", Instructions);
             writer.WriteStringValue("model_name", ModelName);
             writer.WriteStringValue("name", Name);
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.PutJudgeInSchema.PutJudgeInSchema_output>("output", Output);
+            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.PutJudgeInSchemaOutput>("output", Output);
             writer.WriteCollectionOfPrimitiveValues<string>("tools", Tools);
             writer.WriteAdditionalData(AdditionalData);
-        }
-        /// <summary>
-        /// Composed type wrapper for classes <see cref="global::Soenneker.Mistral.OpenApiClient.Models.JudgeClassificationOutput"/>, <see cref="global::Soenneker.Mistral.OpenApiClient.Models.JudgeRegressionOutput"/>
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class PutJudgeInSchema_output : IComposedTypeWrapper, IParsable
-        {
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.Mistral.OpenApiClient.Models.JudgeClassificationOutput"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public global::Soenneker.Mistral.OpenApiClient.Models.JudgeClassificationOutput? JudgeClassificationOutput { get; set; }
-#nullable restore
-#else
-            public global::Soenneker.Mistral.OpenApiClient.Models.JudgeClassificationOutput JudgeClassificationOutput { get; set; }
-#endif
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.Mistral.OpenApiClient.Models.JudgeRegressionOutput"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public global::Soenneker.Mistral.OpenApiClient.Models.JudgeRegressionOutput? JudgeRegressionOutput { get; set; }
-#nullable restore
-#else
-            public global::Soenneker.Mistral.OpenApiClient.Models.JudgeRegressionOutput JudgeRegressionOutput { get; set; }
-#endif
-            /// <summary>
-            /// Creates a new instance of the appropriate class based on discriminator value
-            /// </summary>
-            /// <returns>A <see cref="global::Soenneker.Mistral.OpenApiClient.Models.PutJudgeInSchema.PutJudgeInSchema_output"/></returns>
-            /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-            public static global::Soenneker.Mistral.OpenApiClient.Models.PutJudgeInSchema.PutJudgeInSchema_output CreateFromDiscriminatorValue(IParseNode parseNode)
-            {
-                if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-                var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
-                var result = new global::Soenneker.Mistral.OpenApiClient.Models.PutJudgeInSchema.PutJudgeInSchema_output();
-                if("CLASSIFICATION".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-                {
-                    result.JudgeClassificationOutput = new global::Soenneker.Mistral.OpenApiClient.Models.JudgeClassificationOutput();
-                }
-                else if("REGRESSION".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-                {
-                    result.JudgeRegressionOutput = new global::Soenneker.Mistral.OpenApiClient.Models.JudgeRegressionOutput();
-                }
-                return result;
-            }
-            /// <summary>
-            /// The deserialization information for the current model
-            /// </summary>
-            /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-            public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
-            {
-                if(JudgeClassificationOutput != null)
-                {
-                    return JudgeClassificationOutput.GetFieldDeserializers();
-                }
-                else if(JudgeRegressionOutput != null)
-                {
-                    return JudgeRegressionOutput.GetFieldDeserializers();
-                }
-                return new Dictionary<string, Action<IParseNode>>();
-            }
-            /// <summary>
-            /// Serializes information the current object
-            /// </summary>
-            /// <param name="writer">Serialization writer to use to serialize this model</param>
-            public virtual void Serialize(ISerializationWriter writer)
-            {
-                if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-                if(JudgeClassificationOutput != null)
-                {
-                    writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.JudgeClassificationOutput>(null, JudgeClassificationOutput);
-                }
-                else if(JudgeRegressionOutput != null)
-                {
-                    writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.JudgeRegressionOutput>(null, JudgeRegressionOutput);
-                }
-            }
         }
     }
 }

@@ -15,7 +15,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Event-specific attributes.</summary>
+        /// <summary>Attributes for workflow execution failed events.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Mistral.OpenApiClient.Models.WorkflowExecutionFailedAttributes? Attributes { get; set; }
@@ -34,20 +34,14 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         /// <summary>Unix timestamp in nanoseconds when the event was created.</summary>
         public int? EventTimestamp { get; set; }
         /// <summary>Event type discriminator.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? EventType { get; set; }
-#nullable restore
-#else
-        public string EventType { get; set; }
-#endif
+        public global::Soenneker.Mistral.OpenApiClient.Models.WorkflowExecutionFailedResponse_event_type? EventType { get; set; }
         /// <summary>Execution ID of the parent workflow that initiated this execution. If this is a root workflow, this field is not set.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.WorkflowExecutionFailedResponse.WorkflowExecutionFailedResponse_parent_workflow_exec_id? ParentWorkflowExecId { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.WorkflowExecutionFailedResponseParentWorkflowExecId? ParentWorkflowExecId { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.WorkflowExecutionFailedResponse.WorkflowExecutionFailedResponse_parent_workflow_exec_id ParentWorkflowExecId { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.WorkflowExecutionFailedResponseParentWorkflowExecId ParentWorkflowExecId { get; set; }
 #endif
         /// <summary>Execution ID of the root workflow that initiated this execution chain.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -87,7 +81,6 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         public WorkflowExecutionFailedResponse()
         {
             AdditionalData = new Dictionary<string, object>();
-            EventType = "WORKFLOW_EXECUTION_FAILED";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -110,8 +103,8 @@ namespace Soenneker.Mistral.OpenApiClient.Models
                 { "attributes", n => { Attributes = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.WorkflowExecutionFailedAttributes>(global::Soenneker.Mistral.OpenApiClient.Models.WorkflowExecutionFailedAttributes.CreateFromDiscriminatorValue); } },
                 { "event_id", n => { EventId = n.GetStringValue(); } },
                 { "event_timestamp", n => { EventTimestamp = n.GetIntValue(); } },
-                { "event_type", n => { EventType = n.GetStringValue(); } },
-                { "parent_workflow_exec_id", n => { ParentWorkflowExecId = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.WorkflowExecutionFailedResponse.WorkflowExecutionFailedResponse_parent_workflow_exec_id>(global::Soenneker.Mistral.OpenApiClient.Models.WorkflowExecutionFailedResponse.WorkflowExecutionFailedResponse_parent_workflow_exec_id.CreateFromDiscriminatorValue); } },
+                { "event_type", n => { EventType = n.GetEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.WorkflowExecutionFailedResponse_event_type>(); } },
+                { "parent_workflow_exec_id", n => { ParentWorkflowExecId = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.WorkflowExecutionFailedResponseParentWorkflowExecId>(global::Soenneker.Mistral.OpenApiClient.Models.WorkflowExecutionFailedResponseParentWorkflowExecId.CreateFromDiscriminatorValue); } },
                 { "root_workflow_exec_id", n => { RootWorkflowExecId = n.GetStringValue(); } },
                 { "workflow_exec_id", n => { WorkflowExecId = n.GetStringValue(); } },
                 { "workflow_name", n => { WorkflowName = n.GetStringValue(); } },
@@ -128,81 +121,13 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.WorkflowExecutionFailedAttributes>("attributes", Attributes);
             writer.WriteStringValue("event_id", EventId);
             writer.WriteIntValue("event_timestamp", EventTimestamp);
-            writer.WriteStringValue("event_type", EventType);
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.WorkflowExecutionFailedResponse.WorkflowExecutionFailedResponse_parent_workflow_exec_id>("parent_workflow_exec_id", ParentWorkflowExecId);
+            writer.WriteEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.WorkflowExecutionFailedResponse_event_type>("event_type", EventType);
+            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.WorkflowExecutionFailedResponseParentWorkflowExecId>("parent_workflow_exec_id", ParentWorkflowExecId);
             writer.WriteStringValue("root_workflow_exec_id", RootWorkflowExecId);
             writer.WriteStringValue("workflow_exec_id", WorkflowExecId);
             writer.WriteStringValue("workflow_name", WorkflowName);
             writer.WriteStringValue("workflow_run_id", WorkflowRunId);
             writer.WriteAdditionalData(AdditionalData);
-        }
-        /// <summary>
-        /// Composed type wrapper for classes <see cref="global::Soenneker.Mistral.OpenApiClient.Models.WorkflowExecutionFailedResponse_parent_workflow_exec_idMember1"/>, <see cref="string"/>
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class WorkflowExecutionFailedResponse_parent_workflow_exec_id : IComposedTypeWrapper, IParsable
-        {
-            /// <summary>Composed type representation for type <see cref="string"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public string? String { get; set; }
-#nullable restore
-#else
-            public string String { get; set; }
-#endif
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.Mistral.OpenApiClient.Models.WorkflowExecutionFailedResponse_parent_workflow_exec_idMember1"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public global::Soenneker.Mistral.OpenApiClient.Models.WorkflowExecutionFailedResponse_parent_workflow_exec_idMember1? WorkflowExecutionFailedResponseParentWorkflowExecIdMember1 { get; set; }
-#nullable restore
-#else
-            public global::Soenneker.Mistral.OpenApiClient.Models.WorkflowExecutionFailedResponse_parent_workflow_exec_idMember1 WorkflowExecutionFailedResponseParentWorkflowExecIdMember1 { get; set; }
-#endif
-            /// <summary>
-            /// Creates a new instance of the appropriate class based on discriminator value
-            /// </summary>
-            /// <returns>A <see cref="global::Soenneker.Mistral.OpenApiClient.Models.WorkflowExecutionFailedResponse.WorkflowExecutionFailedResponse_parent_workflow_exec_id"/></returns>
-            /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-            public static global::Soenneker.Mistral.OpenApiClient.Models.WorkflowExecutionFailedResponse.WorkflowExecutionFailedResponse_parent_workflow_exec_id CreateFromDiscriminatorValue(IParseNode parseNode)
-            {
-                if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-                var result = new global::Soenneker.Mistral.OpenApiClient.Models.WorkflowExecutionFailedResponse.WorkflowExecutionFailedResponse_parent_workflow_exec_id();
-                if(parseNode.GetStringValue() is string stringValue)
-                {
-                    result.String = stringValue;
-                }
-                else {
-                    result.WorkflowExecutionFailedResponseParentWorkflowExecIdMember1 = new global::Soenneker.Mistral.OpenApiClient.Models.WorkflowExecutionFailedResponse_parent_workflow_exec_idMember1();
-                }
-                return result;
-            }
-            /// <summary>
-            /// The deserialization information for the current model
-            /// </summary>
-            /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-            public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
-            {
-                if(WorkflowExecutionFailedResponseParentWorkflowExecIdMember1 != null)
-                {
-                    return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(WorkflowExecutionFailedResponseParentWorkflowExecIdMember1);
-                }
-                return new Dictionary<string, Action<IParseNode>>();
-            }
-            /// <summary>
-            /// Serializes information the current object
-            /// </summary>
-            /// <param name="writer">Serialization writer to use to serialize this model</param>
-            public virtual void Serialize(ISerializationWriter writer)
-            {
-                if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-                if(String != null)
-                {
-                    writer.WriteStringValue(null, String);
-                }
-                else {
-                    writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.WorkflowExecutionFailedResponse_parent_workflow_exec_idMember1>(null, WorkflowExecutionFailedResponseParentWorkflowExecIdMember1);
-                }
-            }
         }
     }
 }

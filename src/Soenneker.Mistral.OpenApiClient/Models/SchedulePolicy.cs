@@ -7,17 +7,16 @@ using System.IO;
 using System;
 namespace Soenneker.Mistral.OpenApiClient.Models
 {
-    /// <summary>
-    /// Policy for the schedule.
-    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
+    #pragma warning disable CS1591
     public partial class SchedulePolicy : IAdditionalDataHolder, IParsable
+    #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>After a Temporal server is unavailable, amount of time in seconds in the past to execute missed actions.</summary>
         public int? CatchupWindowSeconds { get; set; }
-        /// <summary>Policy controlling what to do when a workflow is already running.</summary>
+        /// <summary>Controls what happens when a workflow would be started by a schedule butone is already running.</summary>
         public int? Overlap { get; set; }
         /// <summary>Whether to pause the schedule after a workflow failure.</summary>
         public bool? PauseOnFailure { get; set; }
@@ -27,6 +26,8 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         public SchedulePolicy()
         {
             AdditionalData = new Dictionary<string, object>();
+            CatchupWindowSeconds = 31536000;
+            PauseOnFailure = false;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

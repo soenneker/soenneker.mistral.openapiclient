@@ -17,18 +17,18 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         /// <summary>The agent_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.BatchJobOut.BatchJobOut_agent_id? AgentId { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.BatchJobOutAgentId? AgentId { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.BatchJobOut.BatchJobOut_agent_id AgentId { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.BatchJobOutAgentId AgentId { get; set; }
 #endif
         /// <summary>The completed_at property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.BatchJobOut.BatchJobOut_completed_at? CompletedAt { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.BatchJobOutCompletedAt? CompletedAt { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.BatchJobOut.BatchJobOut_completed_at CompletedAt { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.BatchJobOutCompletedAt CompletedAt { get; set; }
 #endif
         /// <summary>The completed_requests property</summary>
         public int? CompletedRequests { get; set; }
@@ -45,10 +45,10 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         /// <summary>The error_file property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.BatchJobOut.BatchJobOut_error_file? ErrorFile { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.BatchJobOutErrorFile? ErrorFile { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.BatchJobOut.BatchJobOut_error_file ErrorFile { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.BatchJobOutErrorFile ErrorFile { get; set; }
 #endif
         /// <summary>The errors property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -79,50 +79,44 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         /// <summary>The metadata property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public UntypedNode? Metadata { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.BatchJobOutMetadata? Metadata { get; set; }
 #nullable restore
 #else
-        public UntypedNode Metadata { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.BatchJobOutMetadata Metadata { get; set; }
 #endif
         /// <summary>The model property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.BatchJobOut.BatchJobOut_model? Model { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.BatchJobOutModel? Model { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.BatchJobOut.BatchJobOut_model Model { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.BatchJobOutModel Model { get; set; }
 #endif
         /// <summary>The object property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Object { get; set; }
-#nullable restore
-#else
-        public string Object { get; set; }
-#endif
+        public global::Soenneker.Mistral.OpenApiClient.Models.BatchJobOut_object? Object { get; set; }
         /// <summary>The output_file property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.BatchJobOut.BatchJobOut_output_file? OutputFile { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.BatchJobOutOutputFile? OutputFile { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.BatchJobOut.BatchJobOut_output_file OutputFile { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.BatchJobOutOutputFile OutputFile { get; set; }
 #endif
         /// <summary>The outputs property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.BatchJobOut.BatchJobOut_outputs? Outputs { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.BatchJobOutOutputs? Outputs { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.BatchJobOut.BatchJobOut_outputs Outputs { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.BatchJobOutOutputs Outputs { get; set; }
 #endif
         /// <summary>The started_at property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.BatchJobOut.BatchJobOut_started_at? StartedAt { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.BatchJobOutStartedAt? StartedAt { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.BatchJobOut.BatchJobOut_started_at StartedAt { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.BatchJobOutStartedAt StartedAt { get; set; }
 #endif
         /// <summary>The status property</summary>
         public global::Soenneker.Mistral.OpenApiClient.Models.BatchJobStatus? Status { get; set; }
@@ -136,7 +130,6 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         public BatchJobOut()
         {
             AdditionalData = new Dictionary<string, object>();
-            Object = "batch";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -156,22 +149,22 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "agent_id", n => { AgentId = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.BatchJobOut.BatchJobOut_agent_id>(global::Soenneker.Mistral.OpenApiClient.Models.BatchJobOut.BatchJobOut_agent_id.CreateFromDiscriminatorValue); } },
-                { "completed_at", n => { CompletedAt = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.BatchJobOut.BatchJobOut_completed_at>(global::Soenneker.Mistral.OpenApiClient.Models.BatchJobOut.BatchJobOut_completed_at.CreateFromDiscriminatorValue); } },
+                { "agent_id", n => { AgentId = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.BatchJobOutAgentId>(global::Soenneker.Mistral.OpenApiClient.Models.BatchJobOutAgentId.CreateFromDiscriminatorValue); } },
+                { "completed_at", n => { CompletedAt = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.BatchJobOutCompletedAt>(global::Soenneker.Mistral.OpenApiClient.Models.BatchJobOutCompletedAt.CreateFromDiscriminatorValue); } },
                 { "completed_requests", n => { CompletedRequests = n.GetIntValue(); } },
                 { "created_at", n => { CreatedAt = n.GetIntValue(); } },
                 { "endpoint", n => { Endpoint = n.GetStringValue(); } },
-                { "error_file", n => { ErrorFile = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.BatchJobOut.BatchJobOut_error_file>(global::Soenneker.Mistral.OpenApiClient.Models.BatchJobOut.BatchJobOut_error_file.CreateFromDiscriminatorValue); } },
+                { "error_file", n => { ErrorFile = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.BatchJobOutErrorFile>(global::Soenneker.Mistral.OpenApiClient.Models.BatchJobOutErrorFile.CreateFromDiscriminatorValue); } },
                 { "errors", n => { Errors = n.GetCollectionOfObjectValues<global::Soenneker.Mistral.OpenApiClient.Models.BatchError>(global::Soenneker.Mistral.OpenApiClient.Models.BatchError.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "failed_requests", n => { FailedRequests = n.GetIntValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "input_files", n => { InputFiles = n.GetCollectionOfPrimitiveValues<Guid?>()?.AsList(); } },
-                { "metadata", n => { Metadata = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
-                { "model", n => { Model = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.BatchJobOut.BatchJobOut_model>(global::Soenneker.Mistral.OpenApiClient.Models.BatchJobOut.BatchJobOut_model.CreateFromDiscriminatorValue); } },
-                { "object", n => { Object = n.GetStringValue(); } },
-                { "output_file", n => { OutputFile = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.BatchJobOut.BatchJobOut_output_file>(global::Soenneker.Mistral.OpenApiClient.Models.BatchJobOut.BatchJobOut_output_file.CreateFromDiscriminatorValue); } },
-                { "outputs", n => { Outputs = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.BatchJobOut.BatchJobOut_outputs>(global::Soenneker.Mistral.OpenApiClient.Models.BatchJobOut.BatchJobOut_outputs.CreateFromDiscriminatorValue); } },
-                { "started_at", n => { StartedAt = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.BatchJobOut.BatchJobOut_started_at>(global::Soenneker.Mistral.OpenApiClient.Models.BatchJobOut.BatchJobOut_started_at.CreateFromDiscriminatorValue); } },
+                { "metadata", n => { Metadata = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.BatchJobOutMetadata>(global::Soenneker.Mistral.OpenApiClient.Models.BatchJobOutMetadata.CreateFromDiscriminatorValue); } },
+                { "model", n => { Model = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.BatchJobOutModel>(global::Soenneker.Mistral.OpenApiClient.Models.BatchJobOutModel.CreateFromDiscriminatorValue); } },
+                { "object", n => { Object = n.GetEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.BatchJobOut_object>(); } },
+                { "output_file", n => { OutputFile = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.BatchJobOutOutputFile>(global::Soenneker.Mistral.OpenApiClient.Models.BatchJobOutOutputFile.CreateFromDiscriminatorValue); } },
+                { "outputs", n => { Outputs = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.BatchJobOutOutputs>(global::Soenneker.Mistral.OpenApiClient.Models.BatchJobOutOutputs.CreateFromDiscriminatorValue); } },
+                { "started_at", n => { StartedAt = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.BatchJobOutStartedAt>(global::Soenneker.Mistral.OpenApiClient.Models.BatchJobOutStartedAt.CreateFromDiscriminatorValue); } },
                 { "status", n => { Status = n.GetEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.BatchJobStatus>(); } },
                 { "succeeded_requests", n => { SucceededRequests = n.GetIntValue(); } },
                 { "total_requests", n => { TotalRequests = n.GetIntValue(); } },
@@ -184,478 +177,26 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.BatchJobOut.BatchJobOut_agent_id>("agent_id", AgentId);
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.BatchJobOut.BatchJobOut_completed_at>("completed_at", CompletedAt);
+            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.BatchJobOutAgentId>("agent_id", AgentId);
+            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.BatchJobOutCompletedAt>("completed_at", CompletedAt);
             writer.WriteIntValue("completed_requests", CompletedRequests);
             writer.WriteIntValue("created_at", CreatedAt);
             writer.WriteStringValue("endpoint", Endpoint);
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.BatchJobOut.BatchJobOut_error_file>("error_file", ErrorFile);
+            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.BatchJobOutErrorFile>("error_file", ErrorFile);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Mistral.OpenApiClient.Models.BatchError>("errors", Errors);
             writer.WriteIntValue("failed_requests", FailedRequests);
             writer.WriteStringValue("id", Id);
             writer.WriteCollectionOfPrimitiveValues<Guid?>("input_files", InputFiles);
-            writer.WriteObjectValue<UntypedNode>("metadata", Metadata);
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.BatchJobOut.BatchJobOut_model>("model", Model);
-            writer.WriteStringValue("object", Object);
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.BatchJobOut.BatchJobOut_output_file>("output_file", OutputFile);
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.BatchJobOut.BatchJobOut_outputs>("outputs", Outputs);
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.BatchJobOut.BatchJobOut_started_at>("started_at", StartedAt);
+            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.BatchJobOutMetadata>("metadata", Metadata);
+            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.BatchJobOutModel>("model", Model);
+            writer.WriteEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.BatchJobOut_object>("object", Object);
+            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.BatchJobOutOutputFile>("output_file", OutputFile);
+            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.BatchJobOutOutputs>("outputs", Outputs);
+            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.BatchJobOutStartedAt>("started_at", StartedAt);
             writer.WriteEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.BatchJobStatus>("status", Status);
             writer.WriteIntValue("succeeded_requests", SucceededRequests);
             writer.WriteIntValue("total_requests", TotalRequests);
             writer.WriteAdditionalData(AdditionalData);
-        }
-        /// <summary>
-        /// Composed type wrapper for classes <see cref="global::Soenneker.Mistral.OpenApiClient.Models.BatchJobOut_agent_idMember1"/>, <see cref="string"/>
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class BatchJobOut_agent_id : IComposedTypeWrapper, IParsable
-        {
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.Mistral.OpenApiClient.Models.BatchJobOut_agent_idMember1"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public global::Soenneker.Mistral.OpenApiClient.Models.BatchJobOut_agent_idMember1? BatchJobOutAgentIdMember1 { get; set; }
-#nullable restore
-#else
-            public global::Soenneker.Mistral.OpenApiClient.Models.BatchJobOut_agent_idMember1 BatchJobOutAgentIdMember1 { get; set; }
-#endif
-            /// <summary>Composed type representation for type <see cref="string"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public string? String { get; set; }
-#nullable restore
-#else
-            public string String { get; set; }
-#endif
-            /// <summary>
-            /// Creates a new instance of the appropriate class based on discriminator value
-            /// </summary>
-            /// <returns>A <see cref="global::Soenneker.Mistral.OpenApiClient.Models.BatchJobOut.BatchJobOut_agent_id"/></returns>
-            /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-            public static global::Soenneker.Mistral.OpenApiClient.Models.BatchJobOut.BatchJobOut_agent_id CreateFromDiscriminatorValue(IParseNode parseNode)
-            {
-                if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-                var result = new global::Soenneker.Mistral.OpenApiClient.Models.BatchJobOut.BatchJobOut_agent_id();
-                if(parseNode.GetStringValue() is string stringValue)
-                {
-                    result.String = stringValue;
-                }
-                else {
-                    result.BatchJobOutAgentIdMember1 = new global::Soenneker.Mistral.OpenApiClient.Models.BatchJobOut_agent_idMember1();
-                }
-                return result;
-            }
-            /// <summary>
-            /// The deserialization information for the current model
-            /// </summary>
-            /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-            public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
-            {
-                if(BatchJobOutAgentIdMember1 != null)
-                {
-                    return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(BatchJobOutAgentIdMember1);
-                }
-                return new Dictionary<string, Action<IParseNode>>();
-            }
-            /// <summary>
-            /// Serializes information the current object
-            /// </summary>
-            /// <param name="writer">Serialization writer to use to serialize this model</param>
-            public virtual void Serialize(ISerializationWriter writer)
-            {
-                if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-                if(String != null)
-                {
-                    writer.WriteStringValue(null, String);
-                }
-                else {
-                    writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.BatchJobOut_agent_idMember1>(null, BatchJobOutAgentIdMember1);
-                }
-            }
-        }
-        /// <summary>
-        /// Composed type wrapper for classes <see cref="global::Soenneker.Mistral.OpenApiClient.Models.BatchJobOut_completed_atMember1"/>, <see cref="int"/>
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class BatchJobOut_completed_at : IComposedTypeWrapper, IParsable
-        {
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.Mistral.OpenApiClient.Models.BatchJobOut_completed_atMember1"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public global::Soenneker.Mistral.OpenApiClient.Models.BatchJobOut_completed_atMember1? BatchJobOutCompletedAtMember1 { get; set; }
-#nullable restore
-#else
-            public global::Soenneker.Mistral.OpenApiClient.Models.BatchJobOut_completed_atMember1 BatchJobOutCompletedAtMember1 { get; set; }
-#endif
-            /// <summary>Composed type representation for type <see cref="int"/></summary>
-            public int? Integer { get; set; }
-            /// <summary>
-            /// Creates a new instance of the appropriate class based on discriminator value
-            /// </summary>
-            /// <returns>A <see cref="global::Soenneker.Mistral.OpenApiClient.Models.BatchJobOut.BatchJobOut_completed_at"/></returns>
-            /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-            public static global::Soenneker.Mistral.OpenApiClient.Models.BatchJobOut.BatchJobOut_completed_at CreateFromDiscriminatorValue(IParseNode parseNode)
-            {
-                if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-                var result = new global::Soenneker.Mistral.OpenApiClient.Models.BatchJobOut.BatchJobOut_completed_at();
-                if(parseNode.GetIntValue() is int integerValue)
-                {
-                    result.Integer = integerValue;
-                }
-                else {
-                    result.BatchJobOutCompletedAtMember1 = new global::Soenneker.Mistral.OpenApiClient.Models.BatchJobOut_completed_atMember1();
-                }
-                return result;
-            }
-            /// <summary>
-            /// The deserialization information for the current model
-            /// </summary>
-            /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-            public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
-            {
-                if(BatchJobOutCompletedAtMember1 != null)
-                {
-                    return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(BatchJobOutCompletedAtMember1);
-                }
-                return new Dictionary<string, Action<IParseNode>>();
-            }
-            /// <summary>
-            /// Serializes information the current object
-            /// </summary>
-            /// <param name="writer">Serialization writer to use to serialize this model</param>
-            public virtual void Serialize(ISerializationWriter writer)
-            {
-                if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-                if(Integer != null)
-                {
-                    writer.WriteIntValue(null, Integer);
-                }
-                else {
-                    writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.BatchJobOut_completed_atMember1>(null, BatchJobOutCompletedAtMember1);
-                }
-            }
-        }
-        /// <summary>
-        /// Composed type wrapper for classes <see cref="global::Soenneker.Mistral.OpenApiClient.Models.BatchJobOut_error_fileMember1"/>, <see cref="Guid"/>
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class BatchJobOut_error_file : IComposedTypeWrapper, IParsable
-        {
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.Mistral.OpenApiClient.Models.BatchJobOut_error_fileMember1"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public global::Soenneker.Mistral.OpenApiClient.Models.BatchJobOut_error_fileMember1? BatchJobOutErrorFileMember1 { get; set; }
-#nullable restore
-#else
-            public global::Soenneker.Mistral.OpenApiClient.Models.BatchJobOut_error_fileMember1 BatchJobOutErrorFileMember1 { get; set; }
-#endif
-            /// <summary>Composed type representation for type <see cref="Guid"/></summary>
-            public Guid? Guid { get; set; }
-            /// <summary>
-            /// Creates a new instance of the appropriate class based on discriminator value
-            /// </summary>
-            /// <returns>A <see cref="global::Soenneker.Mistral.OpenApiClient.Models.BatchJobOut.BatchJobOut_error_file"/></returns>
-            /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-            public static global::Soenneker.Mistral.OpenApiClient.Models.BatchJobOut.BatchJobOut_error_file CreateFromDiscriminatorValue(IParseNode parseNode)
-            {
-                if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-                var result = new global::Soenneker.Mistral.OpenApiClient.Models.BatchJobOut.BatchJobOut_error_file();
-                if(parseNode.GetGuidValue() is Guid guidValue)
-                {
-                    result.Guid = guidValue;
-                }
-                else {
-                    result.BatchJobOutErrorFileMember1 = new global::Soenneker.Mistral.OpenApiClient.Models.BatchJobOut_error_fileMember1();
-                }
-                return result;
-            }
-            /// <summary>
-            /// The deserialization information for the current model
-            /// </summary>
-            /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-            public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
-            {
-                if(BatchJobOutErrorFileMember1 != null)
-                {
-                    return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(BatchJobOutErrorFileMember1);
-                }
-                return new Dictionary<string, Action<IParseNode>>();
-            }
-            /// <summary>
-            /// Serializes information the current object
-            /// </summary>
-            /// <param name="writer">Serialization writer to use to serialize this model</param>
-            public virtual void Serialize(ISerializationWriter writer)
-            {
-                if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-                if(Guid != null)
-                {
-                    writer.WriteGuidValue(null, Guid);
-                }
-                else {
-                    writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.BatchJobOut_error_fileMember1>(null, BatchJobOutErrorFileMember1);
-                }
-            }
-        }
-        /// <summary>
-        /// Composed type wrapper for classes <see cref="global::Soenneker.Mistral.OpenApiClient.Models.BatchJobOut_modelMember1"/>, <see cref="string"/>
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class BatchJobOut_model : IComposedTypeWrapper, IParsable
-        {
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.Mistral.OpenApiClient.Models.BatchJobOut_modelMember1"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public global::Soenneker.Mistral.OpenApiClient.Models.BatchJobOut_modelMember1? BatchJobOutModelMember1 { get; set; }
-#nullable restore
-#else
-            public global::Soenneker.Mistral.OpenApiClient.Models.BatchJobOut_modelMember1 BatchJobOutModelMember1 { get; set; }
-#endif
-            /// <summary>Composed type representation for type <see cref="string"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public string? String { get; set; }
-#nullable restore
-#else
-            public string String { get; set; }
-#endif
-            /// <summary>
-            /// Creates a new instance of the appropriate class based on discriminator value
-            /// </summary>
-            /// <returns>A <see cref="global::Soenneker.Mistral.OpenApiClient.Models.BatchJobOut.BatchJobOut_model"/></returns>
-            /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-            public static global::Soenneker.Mistral.OpenApiClient.Models.BatchJobOut.BatchJobOut_model CreateFromDiscriminatorValue(IParseNode parseNode)
-            {
-                if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-                var result = new global::Soenneker.Mistral.OpenApiClient.Models.BatchJobOut.BatchJobOut_model();
-                if(parseNode.GetStringValue() is string stringValue)
-                {
-                    result.String = stringValue;
-                }
-                else {
-                    result.BatchJobOutModelMember1 = new global::Soenneker.Mistral.OpenApiClient.Models.BatchJobOut_modelMember1();
-                }
-                return result;
-            }
-            /// <summary>
-            /// The deserialization information for the current model
-            /// </summary>
-            /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-            public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
-            {
-                if(BatchJobOutModelMember1 != null)
-                {
-                    return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(BatchJobOutModelMember1);
-                }
-                return new Dictionary<string, Action<IParseNode>>();
-            }
-            /// <summary>
-            /// Serializes information the current object
-            /// </summary>
-            /// <param name="writer">Serialization writer to use to serialize this model</param>
-            public virtual void Serialize(ISerializationWriter writer)
-            {
-                if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-                if(String != null)
-                {
-                    writer.WriteStringValue(null, String);
-                }
-                else {
-                    writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.BatchJobOut_modelMember1>(null, BatchJobOutModelMember1);
-                }
-            }
-        }
-        /// <summary>
-        /// Composed type wrapper for classes <see cref="global::Soenneker.Mistral.OpenApiClient.Models.BatchJobOut_output_fileMember1"/>, <see cref="Guid"/>
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class BatchJobOut_output_file : IComposedTypeWrapper, IParsable
-        {
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.Mistral.OpenApiClient.Models.BatchJobOut_output_fileMember1"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public global::Soenneker.Mistral.OpenApiClient.Models.BatchJobOut_output_fileMember1? BatchJobOutOutputFileMember1 { get; set; }
-#nullable restore
-#else
-            public global::Soenneker.Mistral.OpenApiClient.Models.BatchJobOut_output_fileMember1 BatchJobOutOutputFileMember1 { get; set; }
-#endif
-            /// <summary>Composed type representation for type <see cref="Guid"/></summary>
-            public Guid? Guid { get; set; }
-            /// <summary>
-            /// Creates a new instance of the appropriate class based on discriminator value
-            /// </summary>
-            /// <returns>A <see cref="global::Soenneker.Mistral.OpenApiClient.Models.BatchJobOut.BatchJobOut_output_file"/></returns>
-            /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-            public static global::Soenneker.Mistral.OpenApiClient.Models.BatchJobOut.BatchJobOut_output_file CreateFromDiscriminatorValue(IParseNode parseNode)
-            {
-                if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-                var result = new global::Soenneker.Mistral.OpenApiClient.Models.BatchJobOut.BatchJobOut_output_file();
-                if(parseNode.GetGuidValue() is Guid guidValue)
-                {
-                    result.Guid = guidValue;
-                }
-                else {
-                    result.BatchJobOutOutputFileMember1 = new global::Soenneker.Mistral.OpenApiClient.Models.BatchJobOut_output_fileMember1();
-                }
-                return result;
-            }
-            /// <summary>
-            /// The deserialization information for the current model
-            /// </summary>
-            /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-            public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
-            {
-                if(BatchJobOutOutputFileMember1 != null)
-                {
-                    return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(BatchJobOutOutputFileMember1);
-                }
-                return new Dictionary<string, Action<IParseNode>>();
-            }
-            /// <summary>
-            /// Serializes information the current object
-            /// </summary>
-            /// <param name="writer">Serialization writer to use to serialize this model</param>
-            public virtual void Serialize(ISerializationWriter writer)
-            {
-                if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-                if(Guid != null)
-                {
-                    writer.WriteGuidValue(null, Guid);
-                }
-                else {
-                    writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.BatchJobOut_output_fileMember1>(null, BatchJobOutOutputFileMember1);
-                }
-            }
-        }
-        /// <summary>
-        /// Composed type wrapper for classes <see cref="global::Soenneker.Mistral.OpenApiClient.Models.BatchJobOut_outputsMember2"/>, List&lt;global::Soenneker.Mistral.OpenApiClient.Models.BatchJobOut_outputsMember1&gt;
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class BatchJobOut_outputs : IComposedTypeWrapper, IParsable
-        {
-            /// <summary>Composed type representation for type List&lt;global::Soenneker.Mistral.OpenApiClient.Models.BatchJobOut_outputsMember1&gt;</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public List<global::Soenneker.Mistral.OpenApiClient.Models.BatchJobOut_outputsMember1>? BatchJobOutOutputsMember1 { get; set; }
-#nullable restore
-#else
-            public List<global::Soenneker.Mistral.OpenApiClient.Models.BatchJobOut_outputsMember1> BatchJobOutOutputsMember1 { get; set; }
-#endif
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.Mistral.OpenApiClient.Models.BatchJobOut_outputsMember2"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public global::Soenneker.Mistral.OpenApiClient.Models.BatchJobOut_outputsMember2? BatchJobOutOutputsMember2 { get; set; }
-#nullable restore
-#else
-            public global::Soenneker.Mistral.OpenApiClient.Models.BatchJobOut_outputsMember2 BatchJobOutOutputsMember2 { get; set; }
-#endif
-            /// <summary>
-            /// Creates a new instance of the appropriate class based on discriminator value
-            /// </summary>
-            /// <returns>A <see cref="global::Soenneker.Mistral.OpenApiClient.Models.BatchJobOut.BatchJobOut_outputs"/></returns>
-            /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-            public static global::Soenneker.Mistral.OpenApiClient.Models.BatchJobOut.BatchJobOut_outputs CreateFromDiscriminatorValue(IParseNode parseNode)
-            {
-                if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-                var result = new global::Soenneker.Mistral.OpenApiClient.Models.BatchJobOut.BatchJobOut_outputs();
-                if(parseNode.GetCollectionOfObjectValues<global::Soenneker.Mistral.OpenApiClient.Models.BatchJobOut_outputsMember1>(global::Soenneker.Mistral.OpenApiClient.Models.BatchJobOut_outputsMember1.CreateFromDiscriminatorValue)?.AsList() is List<global::Soenneker.Mistral.OpenApiClient.Models.BatchJobOut_outputsMember1> batchJobOutOutputsMember1Value)
-                {
-                    result.BatchJobOutOutputsMember1 = batchJobOutOutputsMember1Value;
-                }
-                else {
-                    result.BatchJobOutOutputsMember2 = new global::Soenneker.Mistral.OpenApiClient.Models.BatchJobOut_outputsMember2();
-                }
-                return result;
-            }
-            /// <summary>
-            /// The deserialization information for the current model
-            /// </summary>
-            /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-            public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
-            {
-                if(BatchJobOutOutputsMember2 != null)
-                {
-                    return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(BatchJobOutOutputsMember2);
-                }
-                return new Dictionary<string, Action<IParseNode>>();
-            }
-            /// <summary>
-            /// Serializes information the current object
-            /// </summary>
-            /// <param name="writer">Serialization writer to use to serialize this model</param>
-            public virtual void Serialize(ISerializationWriter writer)
-            {
-                if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-                if(BatchJobOutOutputsMember1 != null)
-                {
-                    writer.WriteCollectionOfObjectValues<global::Soenneker.Mistral.OpenApiClient.Models.BatchJobOut_outputsMember1>(null, BatchJobOutOutputsMember1);
-                }
-                else {
-                    writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.BatchJobOut_outputsMember2>(null, BatchJobOutOutputsMember2);
-                }
-            }
-        }
-        /// <summary>
-        /// Composed type wrapper for classes <see cref="global::Soenneker.Mistral.OpenApiClient.Models.BatchJobOut_started_atMember1"/>, <see cref="int"/>
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class BatchJobOut_started_at : IComposedTypeWrapper, IParsable
-        {
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.Mistral.OpenApiClient.Models.BatchJobOut_started_atMember1"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public global::Soenneker.Mistral.OpenApiClient.Models.BatchJobOut_started_atMember1? BatchJobOutStartedAtMember1 { get; set; }
-#nullable restore
-#else
-            public global::Soenneker.Mistral.OpenApiClient.Models.BatchJobOut_started_atMember1 BatchJobOutStartedAtMember1 { get; set; }
-#endif
-            /// <summary>Composed type representation for type <see cref="int"/></summary>
-            public int? Integer { get; set; }
-            /// <summary>
-            /// Creates a new instance of the appropriate class based on discriminator value
-            /// </summary>
-            /// <returns>A <see cref="global::Soenneker.Mistral.OpenApiClient.Models.BatchJobOut.BatchJobOut_started_at"/></returns>
-            /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-            public static global::Soenneker.Mistral.OpenApiClient.Models.BatchJobOut.BatchJobOut_started_at CreateFromDiscriminatorValue(IParseNode parseNode)
-            {
-                if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-                var result = new global::Soenneker.Mistral.OpenApiClient.Models.BatchJobOut.BatchJobOut_started_at();
-                if(parseNode.GetIntValue() is int integerValue)
-                {
-                    result.Integer = integerValue;
-                }
-                else {
-                    result.BatchJobOutStartedAtMember1 = new global::Soenneker.Mistral.OpenApiClient.Models.BatchJobOut_started_atMember1();
-                }
-                return result;
-            }
-            /// <summary>
-            /// The deserialization information for the current model
-            /// </summary>
-            /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-            public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
-            {
-                if(BatchJobOutStartedAtMember1 != null)
-                {
-                    return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(BatchJobOutStartedAtMember1);
-                }
-                return new Dictionary<string, Action<IParseNode>>();
-            }
-            /// <summary>
-            /// Serializes information the current object
-            /// </summary>
-            /// <param name="writer">Serialization writer to use to serialize this model</param>
-            public virtual void Serialize(ISerializationWriter writer)
-            {
-                if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-                if(Integer != null)
-                {
-                    writer.WriteIntValue(null, Integer);
-                }
-                else {
-                    writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.BatchJobOut_started_atMember1>(null, BatchJobOutStartedAtMember1);
-                }
-            }
         }
     }
 }

@@ -20,14 +20,14 @@ namespace Soenneker.Mistral.OpenApiClient.V1.Batch.Jobs
     {
         /// <summary>Gets an item from the Soenneker.Mistral.OpenApiClient.v1.batch.jobs.item collection</summary>
         /// <param name="position">Unique identifier of the item</param>
-        /// <returns>A <see cref="global::Soenneker.Mistral.OpenApiClient.V1.Batch.Jobs.Item.WithJob_ItemRequestBuilder"/></returns>
-        public global::Soenneker.Mistral.OpenApiClient.V1.Batch.Jobs.Item.WithJob_ItemRequestBuilder this[Guid position]
+        /// <returns>A <see cref="global::Soenneker.Mistral.OpenApiClient.V1.Batch.Jobs.Item.WithJobItemRequestBuilder"/></returns>
+        public global::Soenneker.Mistral.OpenApiClient.V1.Batch.Jobs.Item.WithJobItemRequestBuilder this[Guid position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
-                urlTplParams.Add("job_id", position);
-                return new global::Soenneker.Mistral.OpenApiClient.V1.Batch.Jobs.Item.WithJob_ItemRequestBuilder(urlTplParams, RequestAdapter);
+                urlTplParams.Add("jobId", position);
+                return new global::Soenneker.Mistral.OpenApiClient.V1.Batch.Jobs.Item.WithJobItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
@@ -179,7 +179,7 @@ namespace Soenneker.Mistral.OpenApiClient.V1.Batch.Jobs
             public string Model { get; set; }
 #endif
             [QueryParameter("order_by")]
-            public global::Soenneker.Mistral.OpenApiClient.V1.Batch.Jobs.GetOrder_byQueryParameterType? OrderBy { get; set; }
+            public global::Soenneker.Mistral.OpenApiClient.Models.JobsApiRoutesBatchGetBatchJobsOrderByParameter? OrderBy { get; set; }
             [QueryParameter("page")]
             public int? Page { get; set; }
             [QueryParameter("page_size")]

@@ -10,11 +10,11 @@ namespace Soenneker.Mistral.OpenApiClient.Models
     {
         [EnumMember(Value = "EVENT")]
         #pragma warning disable CS1591
-        EVENT,
+        EventValue,
         #pragma warning restore CS1591
         [EnumMember(Value = "EVENT_PROGRESS")]
         #pragma warning disable CS1591
-        EVENT_PROGRESS,
+        EventProgress,
         #pragma warning restore CS1591
     }
 }

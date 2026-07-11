@@ -9,15 +9,136 @@ namespace Soenneker.Mistral.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class ConversationRequest : global::Soenneker.Mistral.OpenApiClient.Models.ConversationRequestBase, IParsable
+    public partial class ConversationRequest : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The agent_id property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Mistral.OpenApiClient.Models.ConversationRequestBaseAgentId? AgentId { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Mistral.OpenApiClient.Models.ConversationRequestBaseAgentId AgentId { get; set; }
+#endif
+        /// <summary>The agent_version property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Mistral.OpenApiClient.Models.ConversationRequestBaseAgentVersion? AgentVersion { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Mistral.OpenApiClient.Models.ConversationRequestBaseAgentVersion AgentVersion { get; set; }
+#endif
+        /// <summary>The completion_args property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Mistral.OpenApiClient.Models.ConversationRequestBaseCompletionArgs? CompletionArgs { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Mistral.OpenApiClient.Models.ConversationRequestBaseCompletionArgs CompletionArgs { get; set; }
+#endif
+        /// <summary>The description property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Mistral.OpenApiClient.Models.ConversationRequestBaseDescription? Description { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Mistral.OpenApiClient.Models.ConversationRequestBaseDescription Description { get; set; }
+#endif
+        /// <summary>The guardrails property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Mistral.OpenApiClient.Models.ConversationRequestBaseGuardrails? Guardrails { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Mistral.OpenApiClient.Models.ConversationRequestBaseGuardrails Guardrails { get; set; }
+#endif
+        /// <summary>The handoff_execution property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Mistral.OpenApiClient.Models.ConversationRequestBaseHandoffExecution? HandoffExecution { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Mistral.OpenApiClient.Models.ConversationRequestBaseHandoffExecution HandoffExecution { get; set; }
+#endif
+        /// <summary>The inputs property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Mistral.OpenApiClient.Models.ConversationInputs? Inputs { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Mistral.OpenApiClient.Models.ConversationInputs Inputs { get; set; }
+#endif
+        /// <summary>The instructions property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Mistral.OpenApiClient.Models.ConversationRequestBaseInstructions? Instructions { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Mistral.OpenApiClient.Models.ConversationRequestBaseInstructions Instructions { get; set; }
+#endif
+        /// <summary>The metadata property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Mistral.OpenApiClient.Models.ConversationRequestBaseMetadata? Metadata { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Mistral.OpenApiClient.Models.ConversationRequestBaseMetadata Metadata { get; set; }
+#endif
+        /// <summary>The model property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Mistral.OpenApiClient.Models.ConversationRequestBaseModel? Model { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Mistral.OpenApiClient.Models.ConversationRequestBaseModel Model { get; set; }
+#endif
+        /// <summary>The name property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Mistral.OpenApiClient.Models.ConversationRequestBaseName? Name { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Mistral.OpenApiClient.Models.ConversationRequestBaseName Name { get; set; }
+#endif
+        /// <summary>The store property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Mistral.OpenApiClient.Models.ConversationRequestBaseStore? Store { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Mistral.OpenApiClient.Models.ConversationRequestBaseStore Store { get; set; }
+#endif
+        /// <summary>The stream property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Mistral.OpenApiClient.Models.ConversationRequestBaseStream? Stream { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Mistral.OpenApiClient.Models.ConversationRequestBaseStream Stream { get; set; }
+#endif
+        /// <summary>The tools property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Mistral.OpenApiClient.Models.ConversationRequestBaseTools? Tools { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Mistral.OpenApiClient.Models.ConversationRequestBaseTools Tools { get; set; }
+#endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Mistral.OpenApiClient.Models.ConversationRequest"/> and sets the default values.
+        /// </summary>
+        public ConversationRequest()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Mistral.OpenApiClient.Models.ConversationRequest"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new global::Soenneker.Mistral.OpenApiClient.Models.ConversationRequest CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::Soenneker.Mistral.OpenApiClient.Models.ConversationRequest CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             return new global::Soenneker.Mistral.OpenApiClient.Models.ConversationRequest();
@@ -26,20 +147,48 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         /// The deserialization information for the current model
         /// </summary>
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-        public override IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+        public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
+            return new Dictionary<string, Action<IParseNode>>
             {
+                { "agent_id", n => { AgentId = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ConversationRequestBaseAgentId>(global::Soenneker.Mistral.OpenApiClient.Models.ConversationRequestBaseAgentId.CreateFromDiscriminatorValue); } },
+                { "agent_version", n => { AgentVersion = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ConversationRequestBaseAgentVersion>(global::Soenneker.Mistral.OpenApiClient.Models.ConversationRequestBaseAgentVersion.CreateFromDiscriminatorValue); } },
+                { "completion_args", n => { CompletionArgs = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ConversationRequestBaseCompletionArgs>(global::Soenneker.Mistral.OpenApiClient.Models.ConversationRequestBaseCompletionArgs.CreateFromDiscriminatorValue); } },
+                { "description", n => { Description = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ConversationRequestBaseDescription>(global::Soenneker.Mistral.OpenApiClient.Models.ConversationRequestBaseDescription.CreateFromDiscriminatorValue); } },
+                { "guardrails", n => { Guardrails = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ConversationRequestBaseGuardrails>(global::Soenneker.Mistral.OpenApiClient.Models.ConversationRequestBaseGuardrails.CreateFromDiscriminatorValue); } },
+                { "handoff_execution", n => { HandoffExecution = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ConversationRequestBaseHandoffExecution>(global::Soenneker.Mistral.OpenApiClient.Models.ConversationRequestBaseHandoffExecution.CreateFromDiscriminatorValue); } },
+                { "inputs", n => { Inputs = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ConversationInputs>(global::Soenneker.Mistral.OpenApiClient.Models.ConversationInputs.CreateFromDiscriminatorValue); } },
+                { "instructions", n => { Instructions = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ConversationRequestBaseInstructions>(global::Soenneker.Mistral.OpenApiClient.Models.ConversationRequestBaseInstructions.CreateFromDiscriminatorValue); } },
+                { "metadata", n => { Metadata = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ConversationRequestBaseMetadata>(global::Soenneker.Mistral.OpenApiClient.Models.ConversationRequestBaseMetadata.CreateFromDiscriminatorValue); } },
+                { "model", n => { Model = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ConversationRequestBaseModel>(global::Soenneker.Mistral.OpenApiClient.Models.ConversationRequestBaseModel.CreateFromDiscriminatorValue); } },
+                { "name", n => { Name = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ConversationRequestBaseName>(global::Soenneker.Mistral.OpenApiClient.Models.ConversationRequestBaseName.CreateFromDiscriminatorValue); } },
+                { "store", n => { Store = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ConversationRequestBaseStore>(global::Soenneker.Mistral.OpenApiClient.Models.ConversationRequestBaseStore.CreateFromDiscriminatorValue); } },
+                { "stream", n => { Stream = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ConversationRequestBaseStream>(global::Soenneker.Mistral.OpenApiClient.Models.ConversationRequestBaseStream.CreateFromDiscriminatorValue); } },
+                { "tools", n => { Tools = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ConversationRequestBaseTools>(global::Soenneker.Mistral.OpenApiClient.Models.ConversationRequestBaseTools.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
         /// Serializes information the current object
         /// </summary>
         /// <param name="writer">Serialization writer to use to serialize this model</param>
-        public override void Serialize(ISerializationWriter writer)
+        public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            base.Serialize(writer);
+            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ConversationRequestBaseAgentId>("agent_id", AgentId);
+            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ConversationRequestBaseAgentVersion>("agent_version", AgentVersion);
+            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ConversationRequestBaseCompletionArgs>("completion_args", CompletionArgs);
+            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ConversationRequestBaseDescription>("description", Description);
+            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ConversationRequestBaseGuardrails>("guardrails", Guardrails);
+            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ConversationRequestBaseHandoffExecution>("handoff_execution", HandoffExecution);
+            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ConversationInputs>("inputs", Inputs);
+            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ConversationRequestBaseInstructions>("instructions", Instructions);
+            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ConversationRequestBaseMetadata>("metadata", Metadata);
+            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ConversationRequestBaseModel>("model", Model);
+            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ConversationRequestBaseName>("name", Name);
+            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ConversationRequestBaseStore>("store", Store);
+            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ConversationRequestBaseStream>("stream", Stream);
+            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ConversationRequestBaseTools>("tools", Tools);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

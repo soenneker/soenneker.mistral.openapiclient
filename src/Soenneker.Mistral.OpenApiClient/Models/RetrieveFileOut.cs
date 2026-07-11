@@ -23,10 +23,10 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         /// <summary>The expires_at property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.RetrieveFileOut.RetrieveFileOut_expires_at? ExpiresAt { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.RetrieveFileOutExpiresAt? ExpiresAt { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.RetrieveFileOut.RetrieveFileOut_expires_at ExpiresAt { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.RetrieveFileOutExpiresAt ExpiresAt { get; set; }
 #endif
         /// <summary>The name of the uploaded file.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -41,18 +41,18 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         /// <summary>The mimetype property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.RetrieveFileOut.RetrieveFileOut_mimetype? Mimetype { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.RetrieveFileOutMimetype? Mimetype { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.RetrieveFileOut.RetrieveFileOut_mimetype Mimetype { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.RetrieveFileOutMimetype Mimetype { get; set; }
 #endif
         /// <summary>The num_lines property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.RetrieveFileOut.RetrieveFileOut_num_lines? NumLines { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.RetrieveFileOutNumLines? NumLines { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.RetrieveFileOut.RetrieveFileOut_num_lines NumLines { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.RetrieveFileOutNumLines NumLines { get; set; }
 #endif
         /// <summary>The object type, which is always &quot;file&quot;.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -62,22 +62,28 @@ namespace Soenneker.Mistral.OpenApiClient.Models
 #else
         public string Object { get; set; }
 #endif
-        /// <summary>The intended purpose of the uploaded file, currently supports fine-tuning (`fine-tune`), OCR (`ocr`), Audio/Transcription (`audio`) and batch inference (`batch`).</summary>
+        /// <summary>The purpose property</summary>
         public global::Soenneker.Mistral.OpenApiClient.Models.FilePurpose? Purpose { get; set; }
         /// <summary>The sample_type property</summary>
         public global::Soenneker.Mistral.OpenApiClient.Models.SampleType? SampleType { get; set; }
         /// <summary>The signature property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.RetrieveFileOut.RetrieveFileOut_signature? Signature { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.RetrieveFileOutSignature? Signature { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.RetrieveFileOut.RetrieveFileOut_signature Signature { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.RetrieveFileOutSignature Signature { get; set; }
 #endif
         /// <summary>The source property</summary>
         public global::Soenneker.Mistral.OpenApiClient.Models.Source? Source { get; set; }
         /// <summary>The visibility property</summary>
-        public global::Soenneker.Mistral.OpenApiClient.Models.FileVisibility? Visibility { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Mistral.OpenApiClient.Models.RetrieveFileOutVisibility? Visibility { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Mistral.OpenApiClient.Models.RetrieveFileOutVisibility Visibility { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Mistral.OpenApiClient.Models.RetrieveFileOut"/> and sets the default values.
         /// </summary>
@@ -106,17 +112,17 @@ namespace Soenneker.Mistral.OpenApiClient.Models
                 { "bytes", n => { Bytes = n.GetIntValue(); } },
                 { "created_at", n => { CreatedAt = n.GetIntValue(); } },
                 { "deleted", n => { Deleted = n.GetBoolValue(); } },
-                { "expires_at", n => { ExpiresAt = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.RetrieveFileOut.RetrieveFileOut_expires_at>(global::Soenneker.Mistral.OpenApiClient.Models.RetrieveFileOut.RetrieveFileOut_expires_at.CreateFromDiscriminatorValue); } },
+                { "expires_at", n => { ExpiresAt = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.RetrieveFileOutExpiresAt>(global::Soenneker.Mistral.OpenApiClient.Models.RetrieveFileOutExpiresAt.CreateFromDiscriminatorValue); } },
                 { "filename", n => { Filename = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetGuidValue(); } },
-                { "mimetype", n => { Mimetype = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.RetrieveFileOut.RetrieveFileOut_mimetype>(global::Soenneker.Mistral.OpenApiClient.Models.RetrieveFileOut.RetrieveFileOut_mimetype.CreateFromDiscriminatorValue); } },
-                { "num_lines", n => { NumLines = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.RetrieveFileOut.RetrieveFileOut_num_lines>(global::Soenneker.Mistral.OpenApiClient.Models.RetrieveFileOut.RetrieveFileOut_num_lines.CreateFromDiscriminatorValue); } },
+                { "mimetype", n => { Mimetype = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.RetrieveFileOutMimetype>(global::Soenneker.Mistral.OpenApiClient.Models.RetrieveFileOutMimetype.CreateFromDiscriminatorValue); } },
+                { "num_lines", n => { NumLines = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.RetrieveFileOutNumLines>(global::Soenneker.Mistral.OpenApiClient.Models.RetrieveFileOutNumLines.CreateFromDiscriminatorValue); } },
                 { "object", n => { Object = n.GetStringValue(); } },
                 { "purpose", n => { Purpose = n.GetEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.FilePurpose>(); } },
                 { "sample_type", n => { SampleType = n.GetEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.SampleType>(); } },
-                { "signature", n => { Signature = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.RetrieveFileOut.RetrieveFileOut_signature>(global::Soenneker.Mistral.OpenApiClient.Models.RetrieveFileOut.RetrieveFileOut_signature.CreateFromDiscriminatorValue); } },
+                { "signature", n => { Signature = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.RetrieveFileOutSignature>(global::Soenneker.Mistral.OpenApiClient.Models.RetrieveFileOutSignature.CreateFromDiscriminatorValue); } },
                 { "source", n => { Source = n.GetEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.Source>(); } },
-                { "visibility", n => { Visibility = n.GetEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.FileVisibility>(); } },
+                { "visibility", n => { Visibility = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.RetrieveFileOutVisibility>(global::Soenneker.Mistral.OpenApiClient.Models.RetrieveFileOutVisibility.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -129,278 +135,18 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             writer.WriteIntValue("bytes", Bytes);
             writer.WriteIntValue("created_at", CreatedAt);
             writer.WriteBoolValue("deleted", Deleted);
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.RetrieveFileOut.RetrieveFileOut_expires_at>("expires_at", ExpiresAt);
+            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.RetrieveFileOutExpiresAt>("expires_at", ExpiresAt);
             writer.WriteStringValue("filename", Filename);
             writer.WriteGuidValue("id", Id);
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.RetrieveFileOut.RetrieveFileOut_mimetype>("mimetype", Mimetype);
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.RetrieveFileOut.RetrieveFileOut_num_lines>("num_lines", NumLines);
+            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.RetrieveFileOutMimetype>("mimetype", Mimetype);
+            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.RetrieveFileOutNumLines>("num_lines", NumLines);
             writer.WriteStringValue("object", Object);
             writer.WriteEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.FilePurpose>("purpose", Purpose);
             writer.WriteEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.SampleType>("sample_type", SampleType);
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.RetrieveFileOut.RetrieveFileOut_signature>("signature", Signature);
+            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.RetrieveFileOutSignature>("signature", Signature);
             writer.WriteEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.Source>("source", Source);
-            writer.WriteEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.FileVisibility>("visibility", Visibility);
+            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.RetrieveFileOutVisibility>("visibility", Visibility);
             writer.WriteAdditionalData(AdditionalData);
-        }
-        /// <summary>
-        /// Composed type wrapper for classes <see cref="global::Soenneker.Mistral.OpenApiClient.Models.RetrieveFileOut_expires_atMember1"/>, <see cref="int"/>
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class RetrieveFileOut_expires_at : IComposedTypeWrapper, IParsable
-        {
-            /// <summary>Composed type representation for type <see cref="int"/></summary>
-            public int? Integer { get; set; }
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.Mistral.OpenApiClient.Models.RetrieveFileOut_expires_atMember1"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public global::Soenneker.Mistral.OpenApiClient.Models.RetrieveFileOut_expires_atMember1? RetrieveFileOutExpiresAtMember1 { get; set; }
-#nullable restore
-#else
-            public global::Soenneker.Mistral.OpenApiClient.Models.RetrieveFileOut_expires_atMember1 RetrieveFileOutExpiresAtMember1 { get; set; }
-#endif
-            /// <summary>
-            /// Creates a new instance of the appropriate class based on discriminator value
-            /// </summary>
-            /// <returns>A <see cref="global::Soenneker.Mistral.OpenApiClient.Models.RetrieveFileOut.RetrieveFileOut_expires_at"/></returns>
-            /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-            public static global::Soenneker.Mistral.OpenApiClient.Models.RetrieveFileOut.RetrieveFileOut_expires_at CreateFromDiscriminatorValue(IParseNode parseNode)
-            {
-                if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-                var result = new global::Soenneker.Mistral.OpenApiClient.Models.RetrieveFileOut.RetrieveFileOut_expires_at();
-                if(parseNode.GetIntValue() is int integerValue)
-                {
-                    result.Integer = integerValue;
-                }
-                else {
-                    result.RetrieveFileOutExpiresAtMember1 = new global::Soenneker.Mistral.OpenApiClient.Models.RetrieveFileOut_expires_atMember1();
-                }
-                return result;
-            }
-            /// <summary>
-            /// The deserialization information for the current model
-            /// </summary>
-            /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-            public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
-            {
-                if(RetrieveFileOutExpiresAtMember1 != null)
-                {
-                    return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(RetrieveFileOutExpiresAtMember1);
-                }
-                return new Dictionary<string, Action<IParseNode>>();
-            }
-            /// <summary>
-            /// Serializes information the current object
-            /// </summary>
-            /// <param name="writer">Serialization writer to use to serialize this model</param>
-            public virtual void Serialize(ISerializationWriter writer)
-            {
-                if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-                if(Integer != null)
-                {
-                    writer.WriteIntValue(null, Integer);
-                }
-                else {
-                    writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.RetrieveFileOut_expires_atMember1>(null, RetrieveFileOutExpiresAtMember1);
-                }
-            }
-        }
-        /// <summary>
-        /// Composed type wrapper for classes <see cref="global::Soenneker.Mistral.OpenApiClient.Models.RetrieveFileOut_mimetypeMember1"/>, <see cref="string"/>
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class RetrieveFileOut_mimetype : IComposedTypeWrapper, IParsable
-        {
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.Mistral.OpenApiClient.Models.RetrieveFileOut_mimetypeMember1"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public global::Soenneker.Mistral.OpenApiClient.Models.RetrieveFileOut_mimetypeMember1? RetrieveFileOutMimetypeMember1 { get; set; }
-#nullable restore
-#else
-            public global::Soenneker.Mistral.OpenApiClient.Models.RetrieveFileOut_mimetypeMember1 RetrieveFileOutMimetypeMember1 { get; set; }
-#endif
-            /// <summary>Composed type representation for type <see cref="string"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public string? String { get; set; }
-#nullable restore
-#else
-            public string String { get; set; }
-#endif
-            /// <summary>
-            /// Creates a new instance of the appropriate class based on discriminator value
-            /// </summary>
-            /// <returns>A <see cref="global::Soenneker.Mistral.OpenApiClient.Models.RetrieveFileOut.RetrieveFileOut_mimetype"/></returns>
-            /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-            public static global::Soenneker.Mistral.OpenApiClient.Models.RetrieveFileOut.RetrieveFileOut_mimetype CreateFromDiscriminatorValue(IParseNode parseNode)
-            {
-                if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-                var result = new global::Soenneker.Mistral.OpenApiClient.Models.RetrieveFileOut.RetrieveFileOut_mimetype();
-                if(parseNode.GetStringValue() is string stringValue)
-                {
-                    result.String = stringValue;
-                }
-                else {
-                    result.RetrieveFileOutMimetypeMember1 = new global::Soenneker.Mistral.OpenApiClient.Models.RetrieveFileOut_mimetypeMember1();
-                }
-                return result;
-            }
-            /// <summary>
-            /// The deserialization information for the current model
-            /// </summary>
-            /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-            public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
-            {
-                if(RetrieveFileOutMimetypeMember1 != null)
-                {
-                    return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(RetrieveFileOutMimetypeMember1);
-                }
-                return new Dictionary<string, Action<IParseNode>>();
-            }
-            /// <summary>
-            /// Serializes information the current object
-            /// </summary>
-            /// <param name="writer">Serialization writer to use to serialize this model</param>
-            public virtual void Serialize(ISerializationWriter writer)
-            {
-                if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-                if(String != null)
-                {
-                    writer.WriteStringValue(null, String);
-                }
-                else {
-                    writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.RetrieveFileOut_mimetypeMember1>(null, RetrieveFileOutMimetypeMember1);
-                }
-            }
-        }
-        /// <summary>
-        /// Composed type wrapper for classes <see cref="global::Soenneker.Mistral.OpenApiClient.Models.RetrieveFileOut_num_linesMember1"/>, <see cref="int"/>
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class RetrieveFileOut_num_lines : IComposedTypeWrapper, IParsable
-        {
-            /// <summary>Composed type representation for type <see cref="int"/></summary>
-            public int? Integer { get; set; }
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.Mistral.OpenApiClient.Models.RetrieveFileOut_num_linesMember1"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public global::Soenneker.Mistral.OpenApiClient.Models.RetrieveFileOut_num_linesMember1? RetrieveFileOutNumLinesMember1 { get; set; }
-#nullable restore
-#else
-            public global::Soenneker.Mistral.OpenApiClient.Models.RetrieveFileOut_num_linesMember1 RetrieveFileOutNumLinesMember1 { get; set; }
-#endif
-            /// <summary>
-            /// Creates a new instance of the appropriate class based on discriminator value
-            /// </summary>
-            /// <returns>A <see cref="global::Soenneker.Mistral.OpenApiClient.Models.RetrieveFileOut.RetrieveFileOut_num_lines"/></returns>
-            /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-            public static global::Soenneker.Mistral.OpenApiClient.Models.RetrieveFileOut.RetrieveFileOut_num_lines CreateFromDiscriminatorValue(IParseNode parseNode)
-            {
-                if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-                var result = new global::Soenneker.Mistral.OpenApiClient.Models.RetrieveFileOut.RetrieveFileOut_num_lines();
-                if(parseNode.GetIntValue() is int integerValue)
-                {
-                    result.Integer = integerValue;
-                }
-                else {
-                    result.RetrieveFileOutNumLinesMember1 = new global::Soenneker.Mistral.OpenApiClient.Models.RetrieveFileOut_num_linesMember1();
-                }
-                return result;
-            }
-            /// <summary>
-            /// The deserialization information for the current model
-            /// </summary>
-            /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-            public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
-            {
-                if(RetrieveFileOutNumLinesMember1 != null)
-                {
-                    return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(RetrieveFileOutNumLinesMember1);
-                }
-                return new Dictionary<string, Action<IParseNode>>();
-            }
-            /// <summary>
-            /// Serializes information the current object
-            /// </summary>
-            /// <param name="writer">Serialization writer to use to serialize this model</param>
-            public virtual void Serialize(ISerializationWriter writer)
-            {
-                if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-                if(Integer != null)
-                {
-                    writer.WriteIntValue(null, Integer);
-                }
-                else {
-                    writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.RetrieveFileOut_num_linesMember1>(null, RetrieveFileOutNumLinesMember1);
-                }
-            }
-        }
-        /// <summary>
-        /// Composed type wrapper for classes <see cref="global::Soenneker.Mistral.OpenApiClient.Models.RetrieveFileOut_signatureMember1"/>, <see cref="string"/>
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class RetrieveFileOut_signature : IComposedTypeWrapper, IParsable
-        {
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.Mistral.OpenApiClient.Models.RetrieveFileOut_signatureMember1"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public global::Soenneker.Mistral.OpenApiClient.Models.RetrieveFileOut_signatureMember1? RetrieveFileOutSignatureMember1 { get; set; }
-#nullable restore
-#else
-            public global::Soenneker.Mistral.OpenApiClient.Models.RetrieveFileOut_signatureMember1 RetrieveFileOutSignatureMember1 { get; set; }
-#endif
-            /// <summary>Composed type representation for type <see cref="string"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public string? String { get; set; }
-#nullable restore
-#else
-            public string String { get; set; }
-#endif
-            /// <summary>
-            /// Creates a new instance of the appropriate class based on discriminator value
-            /// </summary>
-            /// <returns>A <see cref="global::Soenneker.Mistral.OpenApiClient.Models.RetrieveFileOut.RetrieveFileOut_signature"/></returns>
-            /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-            public static global::Soenneker.Mistral.OpenApiClient.Models.RetrieveFileOut.RetrieveFileOut_signature CreateFromDiscriminatorValue(IParseNode parseNode)
-            {
-                if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-                var result = new global::Soenneker.Mistral.OpenApiClient.Models.RetrieveFileOut.RetrieveFileOut_signature();
-                if(parseNode.GetStringValue() is string stringValue)
-                {
-                    result.String = stringValue;
-                }
-                else {
-                    result.RetrieveFileOutSignatureMember1 = new global::Soenneker.Mistral.OpenApiClient.Models.RetrieveFileOut_signatureMember1();
-                }
-                return result;
-            }
-            /// <summary>
-            /// The deserialization information for the current model
-            /// </summary>
-            /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-            public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
-            {
-                if(RetrieveFileOutSignatureMember1 != null)
-                {
-                    return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(RetrieveFileOutSignatureMember1);
-                }
-                return new Dictionary<string, Action<IParseNode>>();
-            }
-            /// <summary>
-            /// Serializes information the current object
-            /// </summary>
-            /// <param name="writer">Serialization writer to use to serialize this model</param>
-            public virtual void Serialize(ISerializationWriter writer)
-            {
-                if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-                if(String != null)
-                {
-                    writer.WriteStringValue(null, String);
-                }
-                else {
-                    writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.RetrieveFileOut_signatureMember1>(null, RetrieveFileOutSignatureMember1);
-                }
-            }
         }
     }
 }

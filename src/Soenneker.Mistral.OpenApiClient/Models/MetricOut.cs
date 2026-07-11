@@ -18,26 +18,26 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         /// <summary>The train_loss property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.MetricOut.MetricOut_train_loss? TrainLoss { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.MetricOutTrainLoss? TrainLoss { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.MetricOut.MetricOut_train_loss TrainLoss { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.MetricOutTrainLoss TrainLoss { get; set; }
 #endif
         /// <summary>The valid_loss property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.MetricOut.MetricOut_valid_loss? ValidLoss { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.MetricOutValidLoss? ValidLoss { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.MetricOut.MetricOut_valid_loss ValidLoss { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.MetricOutValidLoss ValidLoss { get; set; }
 #endif
         /// <summary>The valid_mean_token_accuracy property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.MetricOut.MetricOut_valid_mean_token_accuracy? ValidMeanTokenAccuracy { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.MetricOutValidMeanTokenAccuracy? ValidMeanTokenAccuracy { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.MetricOut.MetricOut_valid_mean_token_accuracy ValidMeanTokenAccuracy { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.MetricOutValidMeanTokenAccuracy ValidMeanTokenAccuracy { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Mistral.OpenApiClient.Models.MetricOut"/> and sets the default values.
@@ -64,9 +64,9 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "train_loss", n => { TrainLoss = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.MetricOut.MetricOut_train_loss>(global::Soenneker.Mistral.OpenApiClient.Models.MetricOut.MetricOut_train_loss.CreateFromDiscriminatorValue); } },
-                { "valid_loss", n => { ValidLoss = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.MetricOut.MetricOut_valid_loss>(global::Soenneker.Mistral.OpenApiClient.Models.MetricOut.MetricOut_valid_loss.CreateFromDiscriminatorValue); } },
-                { "valid_mean_token_accuracy", n => { ValidMeanTokenAccuracy = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.MetricOut.MetricOut_valid_mean_token_accuracy>(global::Soenneker.Mistral.OpenApiClient.Models.MetricOut.MetricOut_valid_mean_token_accuracy.CreateFromDiscriminatorValue); } },
+                { "train_loss", n => { TrainLoss = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.MetricOutTrainLoss>(global::Soenneker.Mistral.OpenApiClient.Models.MetricOutTrainLoss.CreateFromDiscriminatorValue); } },
+                { "valid_loss", n => { ValidLoss = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.MetricOutValidLoss>(global::Soenneker.Mistral.OpenApiClient.Models.MetricOutValidLoss.CreateFromDiscriminatorValue); } },
+                { "valid_mean_token_accuracy", n => { ValidMeanTokenAccuracy = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.MetricOutValidMeanTokenAccuracy>(global::Soenneker.Mistral.OpenApiClient.Models.MetricOutValidMeanTokenAccuracy.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -76,196 +76,10 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.MetricOut.MetricOut_train_loss>("train_loss", TrainLoss);
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.MetricOut.MetricOut_valid_loss>("valid_loss", ValidLoss);
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.MetricOut.MetricOut_valid_mean_token_accuracy>("valid_mean_token_accuracy", ValidMeanTokenAccuracy);
+            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.MetricOutTrainLoss>("train_loss", TrainLoss);
+            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.MetricOutValidLoss>("valid_loss", ValidLoss);
+            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.MetricOutValidMeanTokenAccuracy>("valid_mean_token_accuracy", ValidMeanTokenAccuracy);
             writer.WriteAdditionalData(AdditionalData);
-        }
-        /// <summary>
-        /// Composed type wrapper for classes <see cref="double"/>, <see cref="global::Soenneker.Mistral.OpenApiClient.Models.MetricOut_train_lossMember1"/>
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class MetricOut_train_loss : IComposedTypeWrapper, IParsable
-        {
-            /// <summary>Composed type representation for type <see cref="double"/></summary>
-            public double? Double { get; set; }
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.Mistral.OpenApiClient.Models.MetricOut_train_lossMember1"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public global::Soenneker.Mistral.OpenApiClient.Models.MetricOut_train_lossMember1? MetricOutTrainLossMember1 { get; set; }
-#nullable restore
-#else
-            public global::Soenneker.Mistral.OpenApiClient.Models.MetricOut_train_lossMember1 MetricOutTrainLossMember1 { get; set; }
-#endif
-            /// <summary>
-            /// Creates a new instance of the appropriate class based on discriminator value
-            /// </summary>
-            /// <returns>A <see cref="global::Soenneker.Mistral.OpenApiClient.Models.MetricOut.MetricOut_train_loss"/></returns>
-            /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-            public static global::Soenneker.Mistral.OpenApiClient.Models.MetricOut.MetricOut_train_loss CreateFromDiscriminatorValue(IParseNode parseNode)
-            {
-                if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-                var result = new global::Soenneker.Mistral.OpenApiClient.Models.MetricOut.MetricOut_train_loss();
-                if(parseNode.GetDoubleValue() is double doubleValue)
-                {
-                    result.Double = doubleValue;
-                }
-                else {
-                    result.MetricOutTrainLossMember1 = new global::Soenneker.Mistral.OpenApiClient.Models.MetricOut_train_lossMember1();
-                }
-                return result;
-            }
-            /// <summary>
-            /// The deserialization information for the current model
-            /// </summary>
-            /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-            public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
-            {
-                if(MetricOutTrainLossMember1 != null)
-                {
-                    return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(MetricOutTrainLossMember1);
-                }
-                return new Dictionary<string, Action<IParseNode>>();
-            }
-            /// <summary>
-            /// Serializes information the current object
-            /// </summary>
-            /// <param name="writer">Serialization writer to use to serialize this model</param>
-            public virtual void Serialize(ISerializationWriter writer)
-            {
-                if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-                if(Double != null)
-                {
-                    writer.WriteDoubleValue(null, Double);
-                }
-                else {
-                    writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.MetricOut_train_lossMember1>(null, MetricOutTrainLossMember1);
-                }
-            }
-        }
-        /// <summary>
-        /// Composed type wrapper for classes <see cref="double"/>, <see cref="global::Soenneker.Mistral.OpenApiClient.Models.MetricOut_valid_lossMember1"/>
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class MetricOut_valid_loss : IComposedTypeWrapper, IParsable
-        {
-            /// <summary>Composed type representation for type <see cref="double"/></summary>
-            public double? Double { get; set; }
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.Mistral.OpenApiClient.Models.MetricOut_valid_lossMember1"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public global::Soenneker.Mistral.OpenApiClient.Models.MetricOut_valid_lossMember1? MetricOutValidLossMember1 { get; set; }
-#nullable restore
-#else
-            public global::Soenneker.Mistral.OpenApiClient.Models.MetricOut_valid_lossMember1 MetricOutValidLossMember1 { get; set; }
-#endif
-            /// <summary>
-            /// Creates a new instance of the appropriate class based on discriminator value
-            /// </summary>
-            /// <returns>A <see cref="global::Soenneker.Mistral.OpenApiClient.Models.MetricOut.MetricOut_valid_loss"/></returns>
-            /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-            public static global::Soenneker.Mistral.OpenApiClient.Models.MetricOut.MetricOut_valid_loss CreateFromDiscriminatorValue(IParseNode parseNode)
-            {
-                if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-                var result = new global::Soenneker.Mistral.OpenApiClient.Models.MetricOut.MetricOut_valid_loss();
-                if(parseNode.GetDoubleValue() is double doubleValue)
-                {
-                    result.Double = doubleValue;
-                }
-                else {
-                    result.MetricOutValidLossMember1 = new global::Soenneker.Mistral.OpenApiClient.Models.MetricOut_valid_lossMember1();
-                }
-                return result;
-            }
-            /// <summary>
-            /// The deserialization information for the current model
-            /// </summary>
-            /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-            public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
-            {
-                if(MetricOutValidLossMember1 != null)
-                {
-                    return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(MetricOutValidLossMember1);
-                }
-                return new Dictionary<string, Action<IParseNode>>();
-            }
-            /// <summary>
-            /// Serializes information the current object
-            /// </summary>
-            /// <param name="writer">Serialization writer to use to serialize this model</param>
-            public virtual void Serialize(ISerializationWriter writer)
-            {
-                if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-                if(Double != null)
-                {
-                    writer.WriteDoubleValue(null, Double);
-                }
-                else {
-                    writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.MetricOut_valid_lossMember1>(null, MetricOutValidLossMember1);
-                }
-            }
-        }
-        /// <summary>
-        /// Composed type wrapper for classes <see cref="double"/>, <see cref="global::Soenneker.Mistral.OpenApiClient.Models.MetricOut_valid_mean_token_accuracyMember1"/>
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class MetricOut_valid_mean_token_accuracy : IComposedTypeWrapper, IParsable
-        {
-            /// <summary>Composed type representation for type <see cref="double"/></summary>
-            public double? Double { get; set; }
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.Mistral.OpenApiClient.Models.MetricOut_valid_mean_token_accuracyMember1"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public global::Soenneker.Mistral.OpenApiClient.Models.MetricOut_valid_mean_token_accuracyMember1? MetricOutValidMeanTokenAccuracyMember1 { get; set; }
-#nullable restore
-#else
-            public global::Soenneker.Mistral.OpenApiClient.Models.MetricOut_valid_mean_token_accuracyMember1 MetricOutValidMeanTokenAccuracyMember1 { get; set; }
-#endif
-            /// <summary>
-            /// Creates a new instance of the appropriate class based on discriminator value
-            /// </summary>
-            /// <returns>A <see cref="global::Soenneker.Mistral.OpenApiClient.Models.MetricOut.MetricOut_valid_mean_token_accuracy"/></returns>
-            /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-            public static global::Soenneker.Mistral.OpenApiClient.Models.MetricOut.MetricOut_valid_mean_token_accuracy CreateFromDiscriminatorValue(IParseNode parseNode)
-            {
-                if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-                var result = new global::Soenneker.Mistral.OpenApiClient.Models.MetricOut.MetricOut_valid_mean_token_accuracy();
-                if(parseNode.GetDoubleValue() is double doubleValue)
-                {
-                    result.Double = doubleValue;
-                }
-                else {
-                    result.MetricOutValidMeanTokenAccuracyMember1 = new global::Soenneker.Mistral.OpenApiClient.Models.MetricOut_valid_mean_token_accuracyMember1();
-                }
-                return result;
-            }
-            /// <summary>
-            /// The deserialization information for the current model
-            /// </summary>
-            /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-            public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
-            {
-                if(MetricOutValidMeanTokenAccuracyMember1 != null)
-                {
-                    return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(MetricOutValidMeanTokenAccuracyMember1);
-                }
-                return new Dictionary<string, Action<IParseNode>>();
-            }
-            /// <summary>
-            /// Serializes information the current object
-            /// </summary>
-            /// <param name="writer">Serialization writer to use to serialize this model</param>
-            public virtual void Serialize(ISerializationWriter writer)
-            {
-                if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-                if(Double != null)
-                {
-                    writer.WriteDoubleValue(null, Double);
-                }
-                else {
-                    writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.MetricOut_valid_mean_token_accuracyMember1>(null, MetricOutValidMeanTokenAccuracyMember1);
-                }
-            }
         }
     }
 }

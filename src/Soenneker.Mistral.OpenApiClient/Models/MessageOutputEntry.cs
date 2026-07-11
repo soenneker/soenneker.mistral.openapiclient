@@ -15,26 +15,26 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         /// <summary>The agent_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.MessageOutputEntry.MessageOutputEntry_agent_id? AgentId { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.MessageOutputEntryAgentId? AgentId { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.MessageOutputEntry.MessageOutputEntry_agent_id AgentId { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.MessageOutputEntryAgentId AgentId { get; set; }
 #endif
         /// <summary>The completed_at property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.MessageOutputEntry.MessageOutputEntry_completed_at? CompletedAt { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.MessageOutputEntryCompletedAt? CompletedAt { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.MessageOutputEntry.MessageOutputEntry_completed_at CompletedAt { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.MessageOutputEntryCompletedAt CompletedAt { get; set; }
 #endif
         /// <summary>The content property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.MessageOutputEntry.MessageOutputEntry_content? Content { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.MessageOutputEntryContent? Content { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.MessageOutputEntry.MessageOutputEntry_content Content { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.MessageOutputEntryContent Content { get; set; }
 #endif
         /// <summary>The created_at property</summary>
         public DateTimeOffset? CreatedAt { get; set; }
@@ -49,44 +49,17 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         /// <summary>The model property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.MessageOutputEntry.MessageOutputEntry_model? Model { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.MessageOutputEntryModel? Model { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.MessageOutputEntry.MessageOutputEntry_model Model { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.MessageOutputEntryModel Model { get; set; }
 #endif
         /// <summary>The object property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Object { get; set; }
-#nullable restore
-#else
-        public string Object { get; set; }
-#endif
+        public global::Soenneker.Mistral.OpenApiClient.Models.MessageOutputEntry_object? Object { get; set; }
         /// <summary>The role property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Role { get; set; }
-#nullable restore
-#else
-        public string Role { get; set; }
-#endif
+        public global::Soenneker.Mistral.OpenApiClient.Models.MessageOutputEntry_role? Role { get; set; }
         /// <summary>The type property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Type { get; set; }
-#nullable restore
-#else
-        public string Type { get; set; }
-#endif
-        /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Mistral.OpenApiClient.Models.MessageOutputEntry"/> and sets the default values.
-        /// </summary>
-        public MessageOutputEntry()
-        {
-            Object = "entry";
-            Role = "assistant";
-            Type = "message.output";
-        }
+        public global::Soenneker.Mistral.OpenApiClient.Models.MessageOutputEntry_type? Type { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -105,15 +78,15 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "agent_id", n => { AgentId = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.MessageOutputEntry.MessageOutputEntry_agent_id>(global::Soenneker.Mistral.OpenApiClient.Models.MessageOutputEntry.MessageOutputEntry_agent_id.CreateFromDiscriminatorValue); } },
-                { "completed_at", n => { CompletedAt = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.MessageOutputEntry.MessageOutputEntry_completed_at>(global::Soenneker.Mistral.OpenApiClient.Models.MessageOutputEntry.MessageOutputEntry_completed_at.CreateFromDiscriminatorValue); } },
-                { "content", n => { Content = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.MessageOutputEntry.MessageOutputEntry_content>(global::Soenneker.Mistral.OpenApiClient.Models.MessageOutputEntry.MessageOutputEntry_content.CreateFromDiscriminatorValue); } },
+                { "agent_id", n => { AgentId = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.MessageOutputEntryAgentId>(global::Soenneker.Mistral.OpenApiClient.Models.MessageOutputEntryAgentId.CreateFromDiscriminatorValue); } },
+                { "completed_at", n => { CompletedAt = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.MessageOutputEntryCompletedAt>(global::Soenneker.Mistral.OpenApiClient.Models.MessageOutputEntryCompletedAt.CreateFromDiscriminatorValue); } },
+                { "content", n => { Content = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.MessageOutputEntryContent>(global::Soenneker.Mistral.OpenApiClient.Models.MessageOutputEntryContent.CreateFromDiscriminatorValue); } },
                 { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
-                { "model", n => { Model = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.MessageOutputEntry.MessageOutputEntry_model>(global::Soenneker.Mistral.OpenApiClient.Models.MessageOutputEntry.MessageOutputEntry_model.CreateFromDiscriminatorValue); } },
-                { "object", n => { Object = n.GetStringValue(); } },
-                { "role", n => { Role = n.GetStringValue(); } },
-                { "type", n => { Type = n.GetStringValue(); } },
+                { "model", n => { Model = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.MessageOutputEntryModel>(global::Soenneker.Mistral.OpenApiClient.Models.MessageOutputEntryModel.CreateFromDiscriminatorValue); } },
+                { "object", n => { Object = n.GetEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.MessageOutputEntry_object>(); } },
+                { "role", n => { Role = n.GetEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.MessageOutputEntry_role>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.MessageOutputEntry_type>(); } },
             };
         }
         /// <summary>
@@ -123,279 +96,15 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.MessageOutputEntry.MessageOutputEntry_agent_id>("agent_id", AgentId);
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.MessageOutputEntry.MessageOutputEntry_completed_at>("completed_at", CompletedAt);
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.MessageOutputEntry.MessageOutputEntry_content>("content", Content);
+            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.MessageOutputEntryAgentId>("agent_id", AgentId);
+            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.MessageOutputEntryCompletedAt>("completed_at", CompletedAt);
+            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.MessageOutputEntryContent>("content", Content);
             writer.WriteDateTimeOffsetValue("created_at", CreatedAt);
             writer.WriteStringValue("id", Id);
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.MessageOutputEntry.MessageOutputEntry_model>("model", Model);
-            writer.WriteStringValue("object", Object);
-            writer.WriteStringValue("role", Role);
-            writer.WriteStringValue("type", Type);
-        }
-        /// <summary>
-        /// Composed type wrapper for classes <see cref="global::Soenneker.Mistral.OpenApiClient.Models.MessageOutputEntry_agent_idMember1"/>, <see cref="string"/>
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class MessageOutputEntry_agent_id : IComposedTypeWrapper, IParsable
-        {
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.Mistral.OpenApiClient.Models.MessageOutputEntry_agent_idMember1"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public global::Soenneker.Mistral.OpenApiClient.Models.MessageOutputEntry_agent_idMember1? MessageOutputEntryAgentIdMember1 { get; set; }
-#nullable restore
-#else
-            public global::Soenneker.Mistral.OpenApiClient.Models.MessageOutputEntry_agent_idMember1 MessageOutputEntryAgentIdMember1 { get; set; }
-#endif
-            /// <summary>Composed type representation for type <see cref="string"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public string? String { get; set; }
-#nullable restore
-#else
-            public string String { get; set; }
-#endif
-            /// <summary>
-            /// Creates a new instance of the appropriate class based on discriminator value
-            /// </summary>
-            /// <returns>A <see cref="global::Soenneker.Mistral.OpenApiClient.Models.MessageOutputEntry.MessageOutputEntry_agent_id"/></returns>
-            /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-            public static global::Soenneker.Mistral.OpenApiClient.Models.MessageOutputEntry.MessageOutputEntry_agent_id CreateFromDiscriminatorValue(IParseNode parseNode)
-            {
-                if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-                var result = new global::Soenneker.Mistral.OpenApiClient.Models.MessageOutputEntry.MessageOutputEntry_agent_id();
-                if(parseNode.GetStringValue() is string stringValue)
-                {
-                    result.String = stringValue;
-                }
-                else {
-                    result.MessageOutputEntryAgentIdMember1 = new global::Soenneker.Mistral.OpenApiClient.Models.MessageOutputEntry_agent_idMember1();
-                }
-                return result;
-            }
-            /// <summary>
-            /// The deserialization information for the current model
-            /// </summary>
-            /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-            public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
-            {
-                if(MessageOutputEntryAgentIdMember1 != null)
-                {
-                    return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(MessageOutputEntryAgentIdMember1);
-                }
-                return new Dictionary<string, Action<IParseNode>>();
-            }
-            /// <summary>
-            /// Serializes information the current object
-            /// </summary>
-            /// <param name="writer">Serialization writer to use to serialize this model</param>
-            public virtual void Serialize(ISerializationWriter writer)
-            {
-                if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-                if(String != null)
-                {
-                    writer.WriteStringValue(null, String);
-                }
-                else {
-                    writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.MessageOutputEntry_agent_idMember1>(null, MessageOutputEntryAgentIdMember1);
-                }
-            }
-        }
-        /// <summary>
-        /// Composed type wrapper for classes <see cref="DateTimeOffset"/>, <see cref="global::Soenneker.Mistral.OpenApiClient.Models.MessageOutputEntry_completed_atMember1"/>
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class MessageOutputEntry_completed_at : IComposedTypeWrapper, IParsable
-        {
-            /// <summary>Composed type representation for type <see cref="DateTimeOffset"/></summary>
-            public DateTimeOffset? DateTimeOffset { get; set; }
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.Mistral.OpenApiClient.Models.MessageOutputEntry_completed_atMember1"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public global::Soenneker.Mistral.OpenApiClient.Models.MessageOutputEntry_completed_atMember1? MessageOutputEntryCompletedAtMember1 { get; set; }
-#nullable restore
-#else
-            public global::Soenneker.Mistral.OpenApiClient.Models.MessageOutputEntry_completed_atMember1 MessageOutputEntryCompletedAtMember1 { get; set; }
-#endif
-            /// <summary>
-            /// Creates a new instance of the appropriate class based on discriminator value
-            /// </summary>
-            /// <returns>A <see cref="global::Soenneker.Mistral.OpenApiClient.Models.MessageOutputEntry.MessageOutputEntry_completed_at"/></returns>
-            /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-            public static global::Soenneker.Mistral.OpenApiClient.Models.MessageOutputEntry.MessageOutputEntry_completed_at CreateFromDiscriminatorValue(IParseNode parseNode)
-            {
-                if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-                var result = new global::Soenneker.Mistral.OpenApiClient.Models.MessageOutputEntry.MessageOutputEntry_completed_at();
-                if(parseNode.GetDateTimeOffsetValue() is DateTimeOffset dateTimeOffsetValue)
-                {
-                    result.DateTimeOffset = dateTimeOffsetValue;
-                }
-                else {
-                    result.MessageOutputEntryCompletedAtMember1 = new global::Soenneker.Mistral.OpenApiClient.Models.MessageOutputEntry_completed_atMember1();
-                }
-                return result;
-            }
-            /// <summary>
-            /// The deserialization information for the current model
-            /// </summary>
-            /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-            public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
-            {
-                if(MessageOutputEntryCompletedAtMember1 != null)
-                {
-                    return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(MessageOutputEntryCompletedAtMember1);
-                }
-                return new Dictionary<string, Action<IParseNode>>();
-            }
-            /// <summary>
-            /// Serializes information the current object
-            /// </summary>
-            /// <param name="writer">Serialization writer to use to serialize this model</param>
-            public virtual void Serialize(ISerializationWriter writer)
-            {
-                if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-                if(DateTimeOffset != null)
-                {
-                    writer.WriteDateTimeOffsetValue(null, DateTimeOffset);
-                }
-                else {
-                    writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.MessageOutputEntry_completed_atMember1>(null, MessageOutputEntryCompletedAtMember1);
-                }
-            }
-        }
-        /// <summary>
-        /// Composed type wrapper for classes <see cref="string"/>, List&lt;global::Soenneker.Mistral.OpenApiClient.Models.ToolReferenceChunk&gt;
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class MessageOutputEntry_content : IComposedTypeWrapper, IParsable
-        {
-            /// <summary>Composed type representation for type <see cref="string"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public string? String { get; set; }
-#nullable restore
-#else
-            public string String { get; set; }
-#endif
-            /// <summary>Composed type representation for type List&lt;global::Soenneker.Mistral.OpenApiClient.Models.ToolReferenceChunk&gt;</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public List<global::Soenneker.Mistral.OpenApiClient.Models.ToolReferenceChunk>? ToolReferenceChunk { get; set; }
-#nullable restore
-#else
-            public List<global::Soenneker.Mistral.OpenApiClient.Models.ToolReferenceChunk> ToolReferenceChunk { get; set; }
-#endif
-            /// <summary>
-            /// Creates a new instance of the appropriate class based on discriminator value
-            /// </summary>
-            /// <returns>A <see cref="global::Soenneker.Mistral.OpenApiClient.Models.MessageOutputEntry.MessageOutputEntry_content"/></returns>
-            /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-            public static global::Soenneker.Mistral.OpenApiClient.Models.MessageOutputEntry.MessageOutputEntry_content CreateFromDiscriminatorValue(IParseNode parseNode)
-            {
-                if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-                var result = new global::Soenneker.Mistral.OpenApiClient.Models.MessageOutputEntry.MessageOutputEntry_content();
-                if(parseNode.GetStringValue() is string stringValue)
-                {
-                    result.String = stringValue;
-                }
-                else if(parseNode.GetCollectionOfObjectValues<global::Soenneker.Mistral.OpenApiClient.Models.ToolReferenceChunk>(global::Soenneker.Mistral.OpenApiClient.Models.ToolReferenceChunk.CreateFromDiscriminatorValue)?.AsList() is List<global::Soenneker.Mistral.OpenApiClient.Models.ToolReferenceChunk> toolReferenceChunkValue)
-                {
-                    result.ToolReferenceChunk = toolReferenceChunkValue;
-                }
-                return result;
-            }
-            /// <summary>
-            /// The deserialization information for the current model
-            /// </summary>
-            /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-            public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
-            {
-                return new Dictionary<string, Action<IParseNode>>();
-            }
-            /// <summary>
-            /// Serializes information the current object
-            /// </summary>
-            /// <param name="writer">Serialization writer to use to serialize this model</param>
-            public virtual void Serialize(ISerializationWriter writer)
-            {
-                if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-                if(String != null)
-                {
-                    writer.WriteStringValue(null, String);
-                }
-                else if(ToolReferenceChunk != null)
-                {
-                    writer.WriteCollectionOfObjectValues<global::Soenneker.Mistral.OpenApiClient.Models.ToolReferenceChunk>(null, ToolReferenceChunk);
-                }
-            }
-        }
-        /// <summary>
-        /// Composed type wrapper for classes <see cref="global::Soenneker.Mistral.OpenApiClient.Models.MessageOutputEntry_modelMember1"/>, <see cref="string"/>
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class MessageOutputEntry_model : IComposedTypeWrapper, IParsable
-        {
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.Mistral.OpenApiClient.Models.MessageOutputEntry_modelMember1"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public global::Soenneker.Mistral.OpenApiClient.Models.MessageOutputEntry_modelMember1? MessageOutputEntryModelMember1 { get; set; }
-#nullable restore
-#else
-            public global::Soenneker.Mistral.OpenApiClient.Models.MessageOutputEntry_modelMember1 MessageOutputEntryModelMember1 { get; set; }
-#endif
-            /// <summary>Composed type representation for type <see cref="string"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public string? String { get; set; }
-#nullable restore
-#else
-            public string String { get; set; }
-#endif
-            /// <summary>
-            /// Creates a new instance of the appropriate class based on discriminator value
-            /// </summary>
-            /// <returns>A <see cref="global::Soenneker.Mistral.OpenApiClient.Models.MessageOutputEntry.MessageOutputEntry_model"/></returns>
-            /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-            public static global::Soenneker.Mistral.OpenApiClient.Models.MessageOutputEntry.MessageOutputEntry_model CreateFromDiscriminatorValue(IParseNode parseNode)
-            {
-                if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-                var result = new global::Soenneker.Mistral.OpenApiClient.Models.MessageOutputEntry.MessageOutputEntry_model();
-                if(parseNode.GetStringValue() is string stringValue)
-                {
-                    result.String = stringValue;
-                }
-                else {
-                    result.MessageOutputEntryModelMember1 = new global::Soenneker.Mistral.OpenApiClient.Models.MessageOutputEntry_modelMember1();
-                }
-                return result;
-            }
-            /// <summary>
-            /// The deserialization information for the current model
-            /// </summary>
-            /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-            public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
-            {
-                if(MessageOutputEntryModelMember1 != null)
-                {
-                    return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(MessageOutputEntryModelMember1);
-                }
-                return new Dictionary<string, Action<IParseNode>>();
-            }
-            /// <summary>
-            /// Serializes information the current object
-            /// </summary>
-            /// <param name="writer">Serialization writer to use to serialize this model</param>
-            public virtual void Serialize(ISerializationWriter writer)
-            {
-                if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-                if(String != null)
-                {
-                    writer.WriteStringValue(null, String);
-                }
-                else {
-                    writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.MessageOutputEntry_modelMember1>(null, MessageOutputEntryModelMember1);
-                }
-            }
+            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.MessageOutputEntryModel>("model", Model);
+            writer.WriteEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.MessageOutputEntry_object>("object", Object);
+            writer.WriteEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.MessageOutputEntry_role>("role", Role);
+            writer.WriteEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.MessageOutputEntry_type>("type", Type);
         }
     }
 }

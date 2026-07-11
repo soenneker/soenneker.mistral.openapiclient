@@ -33,10 +33,10 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         /// <summary>The results property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Mistral.OpenApiClient.Models.ClassificationResponse_results>? Results { get; set; }
+        public List<global::Soenneker.Mistral.OpenApiClient.Models.ClassificationResponseResultsItemProperty>? Results { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Mistral.OpenApiClient.Models.ClassificationResponse_results> Results { get; set; }
+        public List<global::Soenneker.Mistral.OpenApiClient.Models.ClassificationResponseResultsItemProperty> Results { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Mistral.OpenApiClient.Models.ClassificationResponse"/> and sets the default values.
@@ -65,7 +65,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             {
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "model", n => { Model = n.GetStringValue(); } },
-                { "results", n => { Results = n.GetCollectionOfObjectValues<global::Soenneker.Mistral.OpenApiClient.Models.ClassificationResponse_results>(global::Soenneker.Mistral.OpenApiClient.Models.ClassificationResponse_results.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "results", n => { Results = n.GetCollectionOfObjectValues<global::Soenneker.Mistral.OpenApiClient.Models.ClassificationResponseResultsItemProperty>(global::Soenneker.Mistral.OpenApiClient.Models.ClassificationResponseResultsItemProperty.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
         /// <summary>
@@ -77,7 +77,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("id", Id);
             writer.WriteStringValue("model", Model);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Mistral.OpenApiClient.Models.ClassificationResponse_results>("results", Results);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Mistral.OpenApiClient.Models.ClassificationResponseResultsItemProperty>("results", Results);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

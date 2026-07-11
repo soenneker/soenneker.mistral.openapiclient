@@ -31,13 +31,20 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         /// <summary>The parameters property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.Function_parameters? Parameters { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.FunctionParametersProperty? Parameters { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.Function_parameters Parameters { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.FunctionParametersProperty Parameters { get; set; }
 #endif
         /// <summary>The strict property</summary>
         public bool? Strict { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Mistral.OpenApiClient.Models.Function"/> and sets the default values.
+        /// </summary>
+        public Function()
+        {
+            Strict = false;
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -58,7 +65,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             {
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
-                { "parameters", n => { Parameters = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.Function_parameters>(global::Soenneker.Mistral.OpenApiClient.Models.Function_parameters.CreateFromDiscriminatorValue); } },
+                { "parameters", n => { Parameters = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.FunctionParametersProperty>(global::Soenneker.Mistral.OpenApiClient.Models.FunctionParametersProperty.CreateFromDiscriminatorValue); } },
                 { "strict", n => { Strict = n.GetBoolValue(); } },
             };
         }
@@ -71,7 +78,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("description", Description);
             writer.WriteStringValue("name", Name);
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.Function_parameters>("parameters", Parameters);
+            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.FunctionParametersProperty>("parameters", Parameters);
             writer.WriteBoolValue("strict", Strict);
         }
     }

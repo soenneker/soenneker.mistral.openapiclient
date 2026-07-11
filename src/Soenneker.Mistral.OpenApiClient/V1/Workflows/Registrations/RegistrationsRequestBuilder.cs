@@ -20,14 +20,14 @@ namespace Soenneker.Mistral.OpenApiClient.V1.Workflows.Registrations
     {
         /// <summary>Gets an item from the Soenneker.Mistral.OpenApiClient.v1.workflows.registrations.item collection</summary>
         /// <param name="position">Unique identifier of the item</param>
-        /// <returns>A <see cref="global::Soenneker.Mistral.OpenApiClient.V1.Workflows.Registrations.Item.WithWorkflow_registration_ItemRequestBuilder"/></returns>
-        public global::Soenneker.Mistral.OpenApiClient.V1.Workflows.Registrations.Item.WithWorkflow_registration_ItemRequestBuilder this[Guid position]
+        /// <returns>A <see cref="global::Soenneker.Mistral.OpenApiClient.V1.Workflows.Registrations.Item.WithWorkflowRegistrationItemRequestBuilder"/></returns>
+        public global::Soenneker.Mistral.OpenApiClient.V1.Workflows.Registrations.Item.WithWorkflowRegistrationItemRequestBuilder this[Guid position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
-                urlTplParams.Add("workflow_registration_id", position);
-                return new global::Soenneker.Mistral.OpenApiClient.V1.Workflows.Registrations.Item.WithWorkflow_registration_ItemRequestBuilder(urlTplParams, RequestAdapter);
+                urlTplParams.Add("workflowRegistrationId", position);
+                return new global::Soenneker.Mistral.OpenApiClient.V1.Workflows.Registrations.Item.WithWorkflowRegistrationItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
@@ -52,7 +52,7 @@ namespace Soenneker.Mistral.OpenApiClient.V1.Workflows.Registrations
         /// <returns>A <see cref="global::Soenneker.Mistral.OpenApiClient.Models.WorkflowRegistrationListResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Mistral.OpenApiClient.Models.HTTPValidationError">When receiving a 422 status code</exception>
+        /// <exception cref="global::Soenneker.Mistral.OpenApiClient.Models.HttpValidationError">When receiving a 422 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Soenneker.Mistral.OpenApiClient.Models.WorkflowRegistrationListResponse?> GetAsync(Action<RequestConfiguration<global::Soenneker.Mistral.OpenApiClient.V1.Workflows.Registrations.RegistrationsRequestBuilder.RegistrationsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -65,7 +65,7 @@ namespace Soenneker.Mistral.OpenApiClient.V1.Workflows.Registrations
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "422", global::Soenneker.Mistral.OpenApiClient.Models.HTTPValidationError.CreateFromDiscriminatorValue },
+                { "422", global::Soenneker.Mistral.OpenApiClient.Models.HttpValidationError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Mistral.OpenApiClient.Models.WorkflowRegistrationListResponse>(requestInfo, global::Soenneker.Mistral.OpenApiClient.Models.WorkflowRegistrationListResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -106,7 +106,7 @@ namespace Soenneker.Mistral.OpenApiClient.V1.Workflows.Registrations
             /// <summary>Whether to only return active workflows versions</summary>
             [QueryParameter("active_only")]
             public bool? ActiveOnly { get; set; }
-            /// <summary>Filter by archived state. False=exclude archived, True=only archived, None=include all</summary>
+            /// <summary>Filter by archived state. False=exclude archived, true=only archived, None=include all</summary>
             [QueryParameter("archived")]
             public bool? Archived { get; set; }
             /// <summary>Whether to only return workflows compatible with chat assistant</summary>

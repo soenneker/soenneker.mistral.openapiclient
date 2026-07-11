@@ -17,18 +17,18 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         /// <summary>The ctx property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.ValidationError_ctx? Ctx { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.ValidationErrorCtxProperty? Ctx { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.ValidationError_ctx Ctx { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.ValidationErrorCtxProperty Ctx { get; set; }
 #endif
         /// <summary>The input property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public UntypedNode? Input { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.ValidationErrorInput? Input { get; set; }
 #nullable restore
 #else
-        public UntypedNode Input { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.ValidationErrorInput Input { get; set; }
 #endif
         /// <summary>The loc property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -79,8 +79,8 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "ctx", n => { Ctx = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ValidationError_ctx>(global::Soenneker.Mistral.OpenApiClient.Models.ValidationError_ctx.CreateFromDiscriminatorValue); } },
-                { "input", n => { Input = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "ctx", n => { Ctx = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ValidationErrorCtxProperty>(global::Soenneker.Mistral.OpenApiClient.Models.ValidationErrorCtxProperty.CreateFromDiscriminatorValue); } },
+                { "input", n => { Input = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ValidationErrorInput>(global::Soenneker.Mistral.OpenApiClient.Models.ValidationErrorInput.CreateFromDiscriminatorValue); } },
                 { "loc", n => { Loc = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "msg", n => { Msg = n.GetStringValue(); } },
                 { "type", n => { Type = n.GetStringValue(); } },
@@ -93,8 +93,8 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ValidationError_ctx>("ctx", Ctx);
-            writer.WriteObjectValue<UntypedNode>("input", Input);
+            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ValidationErrorCtxProperty>("ctx", Ctx);
+            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ValidationErrorInput>("input", Input);
             writer.WriteCollectionOfPrimitiveValues<string>("loc", Loc);
             writer.WriteStringValue("msg", Msg);
             writer.WriteStringValue("type", Type);

@@ -10,23 +10,23 @@ namespace Soenneker.Mistral.OpenApiClient.Models
     {
         [EnumMember(Value = "web_search")]
         #pragma warning disable CS1591
-        Web_search,
+        WebSearch,
         #pragma warning restore CS1591
         [EnumMember(Value = "web_search_premium")]
         #pragma warning disable CS1591
-        Web_search_premium,
+        WebSearchPremium,
         #pragma warning restore CS1591
         [EnumMember(Value = "code_interpreter")]
         #pragma warning disable CS1591
-        Code_interpreter,
+        CodeInterpreter,
         #pragma warning restore CS1591
         [EnumMember(Value = "image_generation")]
         #pragma warning disable CS1591
-        Image_generation,
+        ImageGeneration,
         #pragma warning restore CS1591
         [EnumMember(Value = "document_library")]
         #pragma warning disable CS1591
-        Document_library,
+        DocumentLibrary,
         #pragma warning restore CS1591
     }
 }

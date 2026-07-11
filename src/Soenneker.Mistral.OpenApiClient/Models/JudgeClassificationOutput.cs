@@ -23,20 +23,13 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         public List<global::Soenneker.Mistral.OpenApiClient.Models.JudgeClassificationOutputOption> Options { get; set; }
 #endif
         /// <summary>The type property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Type { get; set; }
-#nullable restore
-#else
-        public string Type { get; set; }
-#endif
+        public global::Soenneker.Mistral.OpenApiClient.Models.JudgeClassificationOutput_type? Type { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Mistral.OpenApiClient.Models.JudgeClassificationOutput"/> and sets the default values.
         /// </summary>
         public JudgeClassificationOutput()
         {
             AdditionalData = new Dictionary<string, object>();
-            Type = "CLASSIFICATION";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -57,7 +50,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "options", n => { Options = n.GetCollectionOfObjectValues<global::Soenneker.Mistral.OpenApiClient.Models.JudgeClassificationOutputOption>(global::Soenneker.Mistral.OpenApiClient.Models.JudgeClassificationOutputOption.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "type", n => { Type = n.GetStringValue(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.JudgeClassificationOutput_type>(); } },
             };
         }
         /// <summary>
@@ -68,7 +61,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfObjectValues<global::Soenneker.Mistral.OpenApiClient.Models.JudgeClassificationOutputOption>("options", Options);
-            writer.WriteStringValue("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.JudgeClassificationOutput_type>("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

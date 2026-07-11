@@ -15,10 +15,10 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         /// <summary>The completed_at property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.AgentHandoffEntry.AgentHandoffEntry_completed_at? CompletedAt { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.AgentHandoffEntryCompletedAt? CompletedAt { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.AgentHandoffEntry.AgentHandoffEntry_completed_at CompletedAt { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.AgentHandoffEntryCompletedAt CompletedAt { get; set; }
 #endif
         /// <summary>The created_at property</summary>
         public DateTimeOffset? CreatedAt { get; set; }
@@ -47,13 +47,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         public string NextAgentName { get; set; }
 #endif
         /// <summary>The object property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Object { get; set; }
-#nullable restore
-#else
-        public string Object { get; set; }
-#endif
+        public global::Soenneker.Mistral.OpenApiClient.Models.AgentHandoffEntry_object? Object { get; set; }
         /// <summary>The previous_agent_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -71,21 +65,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         public string PreviousAgentName { get; set; }
 #endif
         /// <summary>The type property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Type { get; set; }
-#nullable restore
-#else
-        public string Type { get; set; }
-#endif
-        /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Mistral.OpenApiClient.Models.AgentHandoffEntry"/> and sets the default values.
-        /// </summary>
-        public AgentHandoffEntry()
-        {
-            Object = "entry";
-            Type = "agent.handoff";
-        }
+        public global::Soenneker.Mistral.OpenApiClient.Models.AgentHandoffEntry_type? Type { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -104,15 +84,15 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "completed_at", n => { CompletedAt = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.AgentHandoffEntry.AgentHandoffEntry_completed_at>(global::Soenneker.Mistral.OpenApiClient.Models.AgentHandoffEntry.AgentHandoffEntry_completed_at.CreateFromDiscriminatorValue); } },
+                { "completed_at", n => { CompletedAt = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.AgentHandoffEntryCompletedAt>(global::Soenneker.Mistral.OpenApiClient.Models.AgentHandoffEntryCompletedAt.CreateFromDiscriminatorValue); } },
                 { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "next_agent_id", n => { NextAgentId = n.GetStringValue(); } },
                 { "next_agent_name", n => { NextAgentName = n.GetStringValue(); } },
-                { "object", n => { Object = n.GetStringValue(); } },
+                { "object", n => { Object = n.GetEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.AgentHandoffEntry_object>(); } },
                 { "previous_agent_id", n => { PreviousAgentId = n.GetStringValue(); } },
                 { "previous_agent_name", n => { PreviousAgentName = n.GetStringValue(); } },
-                { "type", n => { Type = n.GetStringValue(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.AgentHandoffEntry_type>(); } },
             };
         }
         /// <summary>
@@ -122,77 +102,15 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.AgentHandoffEntry.AgentHandoffEntry_completed_at>("completed_at", CompletedAt);
+            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.AgentHandoffEntryCompletedAt>("completed_at", CompletedAt);
             writer.WriteDateTimeOffsetValue("created_at", CreatedAt);
             writer.WriteStringValue("id", Id);
             writer.WriteStringValue("next_agent_id", NextAgentId);
             writer.WriteStringValue("next_agent_name", NextAgentName);
-            writer.WriteStringValue("object", Object);
+            writer.WriteEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.AgentHandoffEntry_object>("object", Object);
             writer.WriteStringValue("previous_agent_id", PreviousAgentId);
             writer.WriteStringValue("previous_agent_name", PreviousAgentName);
-            writer.WriteStringValue("type", Type);
-        }
-        /// <summary>
-        /// Composed type wrapper for classes <see cref="DateTimeOffset"/>, <see cref="global::Soenneker.Mistral.OpenApiClient.Models.AgentHandoffEntry_completed_atMember1"/>
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class AgentHandoffEntry_completed_at : IComposedTypeWrapper, IParsable
-        {
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.Mistral.OpenApiClient.Models.AgentHandoffEntry_completed_atMember1"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public global::Soenneker.Mistral.OpenApiClient.Models.AgentHandoffEntry_completed_atMember1? AgentHandoffEntryCompletedAtMember1 { get; set; }
-#nullable restore
-#else
-            public global::Soenneker.Mistral.OpenApiClient.Models.AgentHandoffEntry_completed_atMember1 AgentHandoffEntryCompletedAtMember1 { get; set; }
-#endif
-            /// <summary>Composed type representation for type <see cref="DateTimeOffset"/></summary>
-            public DateTimeOffset? DateTimeOffset { get; set; }
-            /// <summary>
-            /// Creates a new instance of the appropriate class based on discriminator value
-            /// </summary>
-            /// <returns>A <see cref="global::Soenneker.Mistral.OpenApiClient.Models.AgentHandoffEntry.AgentHandoffEntry_completed_at"/></returns>
-            /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-            public static global::Soenneker.Mistral.OpenApiClient.Models.AgentHandoffEntry.AgentHandoffEntry_completed_at CreateFromDiscriminatorValue(IParseNode parseNode)
-            {
-                if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-                var result = new global::Soenneker.Mistral.OpenApiClient.Models.AgentHandoffEntry.AgentHandoffEntry_completed_at();
-                if(parseNode.GetDateTimeOffsetValue() is DateTimeOffset dateTimeOffsetValue)
-                {
-                    result.DateTimeOffset = dateTimeOffsetValue;
-                }
-                else {
-                    result.AgentHandoffEntryCompletedAtMember1 = new global::Soenneker.Mistral.OpenApiClient.Models.AgentHandoffEntry_completed_atMember1();
-                }
-                return result;
-            }
-            /// <summary>
-            /// The deserialization information for the current model
-            /// </summary>
-            /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-            public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
-            {
-                if(AgentHandoffEntryCompletedAtMember1 != null)
-                {
-                    return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(AgentHandoffEntryCompletedAtMember1);
-                }
-                return new Dictionary<string, Action<IParseNode>>();
-            }
-            /// <summary>
-            /// Serializes information the current object
-            /// </summary>
-            /// <param name="writer">Serialization writer to use to serialize this model</param>
-            public virtual void Serialize(ISerializationWriter writer)
-            {
-                if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-                if(DateTimeOffset != null)
-                {
-                    writer.WriteDateTimeOffsetValue(null, DateTimeOffset);
-                }
-                else {
-                    writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.AgentHandoffEntry_completed_atMember1>(null, AgentHandoffEntryCompletedAtMember1);
-                }
-            }
+            writer.WriteEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.AgentHandoffEntry_type>("type", Type);
         }
     }
 }

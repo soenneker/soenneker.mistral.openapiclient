@@ -17,10 +17,10 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         /// <summary>The datasets property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.PaginatedResult_DatasetPreview_? Datasets { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.PaginatedResultDatasetPreview? Datasets { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.PaginatedResult_DatasetPreview_ Datasets { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.PaginatedResultDatasetPreview Datasets { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Mistral.OpenApiClient.Models.DatasetPreviews"/> and sets the default values.
@@ -47,7 +47,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "datasets", n => { Datasets = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.PaginatedResult_DatasetPreview_>(global::Soenneker.Mistral.OpenApiClient.Models.PaginatedResult_DatasetPreview_.CreateFromDiscriminatorValue); } },
+                { "datasets", n => { Datasets = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.PaginatedResultDatasetPreview>(global::Soenneker.Mistral.OpenApiClient.Models.PaginatedResultDatasetPreview.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -57,7 +57,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.PaginatedResult_DatasetPreview_>("datasets", Datasets);
+            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.PaginatedResultDatasetPreview>("datasets", Datasets);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

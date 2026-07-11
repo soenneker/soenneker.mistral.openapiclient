@@ -39,7 +39,7 @@ namespace Soenneker.Mistral.OpenApiClient.V1.Workflows.Events.StreamNamespace
         /// <returns>A <see cref="Stream"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Mistral.OpenApiClient.Models.HTTPValidationError">When receiving a 422 status code</exception>
+        /// <exception cref="global::Soenneker.Mistral.OpenApiClient.Models.HttpValidationError">When receiving a 422 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<Stream?> GetAsync(Action<RequestConfiguration<global::Soenneker.Mistral.OpenApiClient.V1.Workflows.Events.StreamNamespace.StreamRequestBuilder.StreamRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -52,7 +52,7 @@ namespace Soenneker.Mistral.OpenApiClient.V1.Workflows.Events.StreamNamespace
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "422", global::Soenneker.Mistral.OpenApiClient.Models.HTTPValidationError.CreateFromDiscriminatorValue },
+                { "422", global::Soenneker.Mistral.OpenApiClient.Models.HttpValidationError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -136,7 +136,7 @@ namespace Soenneker.Mistral.OpenApiClient.V1.Workflows.Events.StreamNamespace
             public string RootWorkflowExecId { get; set; }
 #endif
             [QueryParameter("scope")]
-            public global::Soenneker.Mistral.OpenApiClient.V1.Workflows.Events.StreamNamespace.GetScopeQueryParameterType? Scope { get; set; }
+            public global::Soenneker.Mistral.OpenApiClient.Models.GetStreamEventsV1WorkflowsEventsStreamGetScopeParameter? Scope { get; set; }
             [QueryParameter("start_seq")]
             public int? StartSeq { get; set; }
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

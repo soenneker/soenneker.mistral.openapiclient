@@ -8,18 +8,18 @@ using System;
 namespace Soenneker.Mistral.OpenApiClient.Models
 {
     /// <summary>
-    /// Composed type wrapper for classes <see cref="string"/>, List&lt;global::Soenneker.Mistral.OpenApiClient.Models.AgentHandoffEntry&gt;
+    /// Composed type wrapper for classes <see cref="string"/>, List&lt;global::Soenneker.Mistral.OpenApiClient.Models.InputEntriesItem&gt;
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ConversationInputs : IComposedTypeWrapper, IParsable
     {
-        /// <summary>Composed type representation for type List&lt;global::Soenneker.Mistral.OpenApiClient.Models.AgentHandoffEntry&gt;</summary>
+        /// <summary>Composed type representation for type List&lt;global::Soenneker.Mistral.OpenApiClient.Models.InputEntriesItem&gt;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Mistral.OpenApiClient.Models.AgentHandoffEntry>? AgentHandoffEntry { get; set; }
+        public List<global::Soenneker.Mistral.OpenApiClient.Models.InputEntriesItem>? InputEntriesItem { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Mistral.OpenApiClient.Models.AgentHandoffEntry> AgentHandoffEntry { get; set; }
+        public List<global::Soenneker.Mistral.OpenApiClient.Models.InputEntriesItem> InputEntriesItem { get; set; }
 #endif
         /// <summary>Composed type representation for type <see cref="string"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -42,9 +42,9 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             {
                 result.String = stringValue;
             }
-            else if(parseNode.GetCollectionOfObjectValues<global::Soenneker.Mistral.OpenApiClient.Models.AgentHandoffEntry>(global::Soenneker.Mistral.OpenApiClient.Models.AgentHandoffEntry.CreateFromDiscriminatorValue)?.AsList() is List<global::Soenneker.Mistral.OpenApiClient.Models.AgentHandoffEntry> agentHandoffEntryValue)
+            else if(parseNode.GetCollectionOfObjectValues<global::Soenneker.Mistral.OpenApiClient.Models.InputEntriesItem>(global::Soenneker.Mistral.OpenApiClient.Models.InputEntriesItem.CreateFromDiscriminatorValue)?.AsList() is List<global::Soenneker.Mistral.OpenApiClient.Models.InputEntriesItem> inputEntriesItemValue)
             {
-                result.AgentHandoffEntry = agentHandoffEntryValue;
+                result.InputEntriesItem = inputEntriesItemValue;
             }
             return result;
         }
@@ -67,9 +67,9 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             {
                 writer.WriteStringValue(null, String);
             }
-            else if(AgentHandoffEntry != null)
+            else if(InputEntriesItem != null)
             {
-                writer.WriteCollectionOfObjectValues<global::Soenneker.Mistral.OpenApiClient.Models.AgentHandoffEntry>(null, AgentHandoffEntry);
+                writer.WriteCollectionOfObjectValues<global::Soenneker.Mistral.OpenApiClient.Models.InputEntriesItem>(null, InputEntriesItem);
             }
         }
     }

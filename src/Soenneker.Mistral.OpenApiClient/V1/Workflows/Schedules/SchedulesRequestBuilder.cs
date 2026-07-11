@@ -20,14 +20,14 @@ namespace Soenneker.Mistral.OpenApiClient.V1.Workflows.Schedules
     {
         /// <summary>Gets an item from the Soenneker.Mistral.OpenApiClient.v1.workflows.schedules.item collection</summary>
         /// <param name="position">Unique identifier of the item</param>
-        /// <returns>A <see cref="global::Soenneker.Mistral.OpenApiClient.V1.Workflows.Schedules.Item.WithSchedule_ItemRequestBuilder"/></returns>
-        public global::Soenneker.Mistral.OpenApiClient.V1.Workflows.Schedules.Item.WithSchedule_ItemRequestBuilder this[string position]
+        /// <returns>A <see cref="global::Soenneker.Mistral.OpenApiClient.V1.Workflows.Schedules.Item.WithScheduleItemRequestBuilder"/></returns>
+        public global::Soenneker.Mistral.OpenApiClient.V1.Workflows.Schedules.Item.WithScheduleItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
-                urlTplParams.Add("schedule_id", position);
-                return new global::Soenneker.Mistral.OpenApiClient.V1.Workflows.Schedules.Item.WithSchedule_ItemRequestBuilder(urlTplParams, RequestAdapter);
+                urlTplParams.Add("scheduleId", position);
+                return new global::Soenneker.Mistral.OpenApiClient.V1.Workflows.Schedules.Item.WithScheduleItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
@@ -71,7 +71,7 @@ namespace Soenneker.Mistral.OpenApiClient.V1.Workflows.Schedules
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Mistral.OpenApiClient.Models.HTTPValidationError">When receiving a 422 status code</exception>
+        /// <exception cref="global::Soenneker.Mistral.OpenApiClient.Models.HttpValidationError">When receiving a 422 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Soenneker.Mistral.OpenApiClient.Models.WorkflowScheduleResponse?> PostAsync(global::Soenneker.Mistral.OpenApiClient.Models.WorkflowScheduleRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -85,7 +85,7 @@ namespace Soenneker.Mistral.OpenApiClient.V1.Workflows.Schedules
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "422", global::Soenneker.Mistral.OpenApiClient.Models.HTTPValidationError.CreateFromDiscriminatorValue },
+                { "422", global::Soenneker.Mistral.OpenApiClient.Models.HttpValidationError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Mistral.OpenApiClient.Models.WorkflowScheduleResponse>(requestInfo, global::Soenneker.Mistral.OpenApiClient.Models.WorkflowScheduleResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

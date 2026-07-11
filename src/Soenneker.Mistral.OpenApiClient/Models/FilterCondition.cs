@@ -14,6 +14,24 @@ namespace Soenneker.Mistral.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The field property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Field { get; set; }
+#nullable restore
+#else
+        public string Field { get; set; }
+#endif
+        /// <summary>The op property</summary>
+        public global::Soenneker.Mistral.OpenApiClient.Models.FilterConditionOp? Op { get; set; }
+        /// <summary>The value property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Mistral.OpenApiClient.Models.FilterConditionValue? Value { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Mistral.OpenApiClient.Models.FilterConditionValue Value { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Mistral.OpenApiClient.Models.FilterCondition"/> and sets the default values.
         /// </summary>
@@ -39,6 +57,9 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "field", n => { Field = n.GetStringValue(); } },
+                { "op", n => { Op = n.GetEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.FilterConditionOp>(); } },
+                { "value", n => { Value = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.FilterConditionValue>(global::Soenneker.Mistral.OpenApiClient.Models.FilterConditionValue.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -48,6 +69,9 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteStringValue("field", Field);
+            writer.WriteEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.FilterConditionOp>("op", Op);
+            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.FilterConditionValue>("value", Value);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

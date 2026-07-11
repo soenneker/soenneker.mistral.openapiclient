@@ -3,9 +3,10 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Mistral.OpenApiClient.Models
 {
-    /// <summary>Output audio format. Defaults to mp3.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
+    #pragma warning disable CS1591
     public enum SpeechOutputFormat
+    #pragma warning restore CS1591
     {
         [EnumMember(Value = "pcm")]
         #pragma warning disable CS1591

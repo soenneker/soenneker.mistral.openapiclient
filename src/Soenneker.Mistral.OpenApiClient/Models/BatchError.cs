@@ -30,6 +30,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         public BatchError()
         {
             AdditionalData = new Dictionary<string, object>();
+            Count = 1;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

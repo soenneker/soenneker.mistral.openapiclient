@@ -20,14 +20,14 @@ namespace Soenneker.Mistral.OpenApiClient.V1.Observability.ChatCompletionFields
     {
         /// <summary>Gets an item from the Soenneker.Mistral.OpenApiClient.v1.observability.chatCompletionFields.item collection</summary>
         /// <param name="position">Unique identifier of the item</param>
-        /// <returns>A <see cref="global::Soenneker.Mistral.OpenApiClient.V1.Observability.ChatCompletionFields.Item.WithField_nameItemRequestBuilder"/></returns>
-        public global::Soenneker.Mistral.OpenApiClient.V1.Observability.ChatCompletionFields.Item.WithField_nameItemRequestBuilder this[string position]
+        /// <returns>A <see cref="global::Soenneker.Mistral.OpenApiClient.V1.Observability.ChatCompletionFields.Item.WithFieldNameItemRequestBuilder"/></returns>
+        public global::Soenneker.Mistral.OpenApiClient.V1.Observability.ChatCompletionFields.Item.WithFieldNameItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
-                urlTplParams.Add("field_name", position);
-                return new global::Soenneker.Mistral.OpenApiClient.V1.Observability.ChatCompletionFields.Item.WithField_nameItemRequestBuilder(urlTplParams, RequestAdapter);
+                urlTplParams.Add("fieldName", position);
+                return new global::Soenneker.Mistral.OpenApiClient.V1.Observability.ChatCompletionFields.Item.WithFieldNameItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>

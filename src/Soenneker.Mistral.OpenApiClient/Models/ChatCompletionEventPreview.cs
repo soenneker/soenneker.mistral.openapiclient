@@ -35,10 +35,10 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         /// <summary>The extra_fields property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.ChatCompletionEventPreview_extra_fields? ExtraFields { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.ChatCompletionEventPreviewExtraFieldsProperty? ExtraFields { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.ChatCompletionEventPreview_extra_fields ExtraFields { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.ChatCompletionEventPreviewExtraFieldsProperty ExtraFields { get; set; }
 #endif
         /// <summary>The nb_input_tokens property</summary>
         public int? NbInputTokens { get; set; }
@@ -72,7 +72,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
                 { "correlation_id", n => { CorrelationId = n.GetStringValue(); } },
                 { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
                 { "event_id", n => { EventId = n.GetStringValue(); } },
-                { "extra_fields", n => { ExtraFields = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ChatCompletionEventPreview_extra_fields>(global::Soenneker.Mistral.OpenApiClient.Models.ChatCompletionEventPreview_extra_fields.CreateFromDiscriminatorValue); } },
+                { "extra_fields", n => { ExtraFields = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ChatCompletionEventPreviewExtraFieldsProperty>(global::Soenneker.Mistral.OpenApiClient.Models.ChatCompletionEventPreviewExtraFieldsProperty.CreateFromDiscriminatorValue); } },
                 { "nb_input_tokens", n => { NbInputTokens = n.GetIntValue(); } },
                 { "nb_output_tokens", n => { NbOutputTokens = n.GetIntValue(); } },
             };
@@ -87,7 +87,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             writer.WriteStringValue("correlation_id", CorrelationId);
             writer.WriteDateTimeOffsetValue("created_at", CreatedAt);
             writer.WriteStringValue("event_id", EventId);
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ChatCompletionEventPreview_extra_fields>("extra_fields", ExtraFields);
+            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ChatCompletionEventPreviewExtraFieldsProperty>("extra_fields", ExtraFields);
             writer.WriteIntValue("nb_input_tokens", NbInputTokens);
             writer.WriteIntValue("nb_output_tokens", NbOutputTokens);
             writer.WriteAdditionalData(AdditionalData);

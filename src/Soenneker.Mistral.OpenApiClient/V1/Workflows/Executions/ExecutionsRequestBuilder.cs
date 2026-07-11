@@ -29,14 +29,14 @@ namespace Soenneker.Mistral.OpenApiClient.V1.Workflows.Executions
         }
         /// <summary>Gets an item from the Soenneker.Mistral.OpenApiClient.v1.workflows.executions.item collection</summary>
         /// <param name="position">Unique identifier of the item</param>
-        /// <returns>A <see cref="global::Soenneker.Mistral.OpenApiClient.V1.Workflows.Executions.Item.WithExecution_ItemRequestBuilder"/></returns>
-        public global::Soenneker.Mistral.OpenApiClient.V1.Workflows.Executions.Item.WithExecution_ItemRequestBuilder this[string position]
+        /// <returns>A <see cref="global::Soenneker.Mistral.OpenApiClient.V1.Workflows.Executions.Item.WithExecutionItemRequestBuilder"/></returns>
+        public global::Soenneker.Mistral.OpenApiClient.V1.Workflows.Executions.Item.WithExecutionItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
-                urlTplParams.Add("execution_id", position);
-                return new global::Soenneker.Mistral.OpenApiClient.V1.Workflows.Executions.Item.WithExecution_ItemRequestBuilder(urlTplParams, RequestAdapter);
+                urlTplParams.Add("executionId", position);
+                return new global::Soenneker.Mistral.OpenApiClient.V1.Workflows.Executions.Item.WithExecutionItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>

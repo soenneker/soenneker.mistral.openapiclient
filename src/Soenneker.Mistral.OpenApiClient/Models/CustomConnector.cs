@@ -15,10 +15,10 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         /// <summary>The authorization property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public UntypedNode? Authorization { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.CustomConnectorAuthorization? Authorization { get; set; }
 #nullable restore
 #else
-        public UntypedNode Authorization { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.CustomConnectorAuthorization Authorization { get; set; }
 #endif
         /// <summary>The connector_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -31,20 +31,13 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         /// <summary>The tool_configuration property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.ToolConfiguration? ToolConfiguration { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.CustomConnectorToolConfiguration? ToolConfiguration { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.ToolConfiguration ToolConfiguration { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.CustomConnectorToolConfiguration ToolConfiguration { get; set; }
 #endif
         /// <summary>The type property</summary>
-        public global::Soenneker.Mistral.OpenApiClient.Models.CustomConnector_type? Type { get; set; }
-        /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Mistral.OpenApiClient.Models.CustomConnector"/> and sets the default values.
-        /// </summary>
-        public CustomConnector()
-        {
-            Type = global::Soenneker.Mistral.OpenApiClient.Models.CustomConnector_type.Connector;
-        }
+        public global::Soenneker.Mistral.OpenApiClient.Models.CustomConnectorType? Type { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -63,10 +56,10 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "authorization", n => { Authorization = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "authorization", n => { Authorization = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.CustomConnectorAuthorization>(global::Soenneker.Mistral.OpenApiClient.Models.CustomConnectorAuthorization.CreateFromDiscriminatorValue); } },
                 { "connector_id", n => { ConnectorId = n.GetStringValue(); } },
-                { "tool_configuration", n => { ToolConfiguration = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ToolConfiguration>(global::Soenneker.Mistral.OpenApiClient.Models.ToolConfiguration.CreateFromDiscriminatorValue); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.CustomConnector_type>(); } },
+                { "tool_configuration", n => { ToolConfiguration = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.CustomConnectorToolConfiguration>(global::Soenneker.Mistral.OpenApiClient.Models.CustomConnectorToolConfiguration.CreateFromDiscriminatorValue); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.CustomConnectorType>(); } },
             };
         }
         /// <summary>
@@ -76,10 +69,10 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<UntypedNode>("authorization", Authorization);
+            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.CustomConnectorAuthorization>("authorization", Authorization);
             writer.WriteStringValue("connector_id", ConnectorId);
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ToolConfiguration>("tool_configuration", ToolConfiguration);
-            writer.WriteEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.CustomConnector_type>("type", Type);
+            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.CustomConnectorToolConfiguration>("tool_configuration", ToolConfiguration);
+            writer.WriteEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.CustomConnectorType>("type", Type);
         }
     }
 }

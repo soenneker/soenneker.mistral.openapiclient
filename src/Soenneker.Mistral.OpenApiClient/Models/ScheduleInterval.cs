@@ -19,10 +19,10 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         /// <summary>The offset property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.ScheduleInterval.ScheduleInterval_offset? Offset { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.ScheduleIntervalOffset? Offset { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.ScheduleInterval.ScheduleInterval_offset Offset { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.ScheduleIntervalOffset Offset { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Mistral.OpenApiClient.Models.ScheduleInterval"/> and sets the default values.
@@ -50,7 +50,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "every", n => { Every = n.GetTimeSpanValue(); } },
-                { "offset", n => { Offset = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ScheduleInterval.ScheduleInterval_offset>(global::Soenneker.Mistral.OpenApiClient.Models.ScheduleInterval.ScheduleInterval_offset.CreateFromDiscriminatorValue); } },
+                { "offset", n => { Offset = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ScheduleIntervalOffset>(global::Soenneker.Mistral.OpenApiClient.Models.ScheduleIntervalOffset.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -61,70 +61,8 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteTimeSpanValue("every", Every);
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ScheduleInterval.ScheduleInterval_offset>("offset", Offset);
+            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ScheduleIntervalOffset>("offset", Offset);
             writer.WriteAdditionalData(AdditionalData);
-        }
-        /// <summary>
-        /// Composed type wrapper for classes <see cref="global::Soenneker.Mistral.OpenApiClient.Models.ScheduleInterval_offsetMember1"/>, <see cref="TimeSpan"/>
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class ScheduleInterval_offset : IComposedTypeWrapper, IParsable
-        {
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.Mistral.OpenApiClient.Models.ScheduleInterval_offsetMember1"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public global::Soenneker.Mistral.OpenApiClient.Models.ScheduleInterval_offsetMember1? ScheduleIntervalOffsetMember1 { get; set; }
-#nullable restore
-#else
-            public global::Soenneker.Mistral.OpenApiClient.Models.ScheduleInterval_offsetMember1 ScheduleIntervalOffsetMember1 { get; set; }
-#endif
-            /// <summary>Composed type representation for type <see cref="TimeSpan"/></summary>
-            public TimeSpan? TimeSpan { get; set; }
-            /// <summary>
-            /// Creates a new instance of the appropriate class based on discriminator value
-            /// </summary>
-            /// <returns>A <see cref="global::Soenneker.Mistral.OpenApiClient.Models.ScheduleInterval.ScheduleInterval_offset"/></returns>
-            /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-            public static global::Soenneker.Mistral.OpenApiClient.Models.ScheduleInterval.ScheduleInterval_offset CreateFromDiscriminatorValue(IParseNode parseNode)
-            {
-                if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-                var result = new global::Soenneker.Mistral.OpenApiClient.Models.ScheduleInterval.ScheduleInterval_offset();
-                if(parseNode.GetTimeSpanValue() is TimeSpan timeSpanValue)
-                {
-                    result.TimeSpan = timeSpanValue;
-                }
-                else {
-                    result.ScheduleIntervalOffsetMember1 = new global::Soenneker.Mistral.OpenApiClient.Models.ScheduleInterval_offsetMember1();
-                }
-                return result;
-            }
-            /// <summary>
-            /// The deserialization information for the current model
-            /// </summary>
-            /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-            public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
-            {
-                if(ScheduleIntervalOffsetMember1 != null)
-                {
-                    return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(ScheduleIntervalOffsetMember1);
-                }
-                return new Dictionary<string, Action<IParseNode>>();
-            }
-            /// <summary>
-            /// Serializes information the current object
-            /// </summary>
-            /// <param name="writer">Serialization writer to use to serialize this model</param>
-            public virtual void Serialize(ISerializationWriter writer)
-            {
-                if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-                if(TimeSpan != null)
-                {
-                    writer.WriteTimeSpanValue(null, TimeSpan);
-                }
-                else {
-                    writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ScheduleInterval_offsetMember1>(null, ScheduleIntervalOffsetMember1);
-                }
-            }
         }
     }
 }

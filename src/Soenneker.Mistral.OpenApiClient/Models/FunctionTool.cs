@@ -21,14 +21,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         public global::Soenneker.Mistral.OpenApiClient.Models.Function Function { get; set; }
 #endif
         /// <summary>The type property</summary>
-        public global::Soenneker.Mistral.OpenApiClient.Models.FunctionTool_type? Type { get; set; }
-        /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Mistral.OpenApiClient.Models.FunctionTool"/> and sets the default values.
-        /// </summary>
-        public FunctionTool()
-        {
-            Type = global::Soenneker.Mistral.OpenApiClient.Models.FunctionTool_type.Function;
-        }
+        public global::Soenneker.Mistral.OpenApiClient.Models.FunctionToolType? Type { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -48,7 +41,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "function", n => { Function = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.Function>(global::Soenneker.Mistral.OpenApiClient.Models.Function.CreateFromDiscriminatorValue); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.FunctionTool_type>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.FunctionToolType>(); } },
             };
         }
         /// <summary>
@@ -59,7 +52,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.Function>("function", Function);
-            writer.WriteEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.FunctionTool_type>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.FunctionToolType>("type", Type);
         }
     }
 }

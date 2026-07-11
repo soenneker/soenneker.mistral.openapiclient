@@ -20,14 +20,14 @@ namespace Soenneker.Mistral.OpenApiClient.V1.ModelsRequests
     {
         /// <summary>Gets an item from the Soenneker.Mistral.OpenApiClient.v1.modelsRequests.item collection</summary>
         /// <param name="position">The ID of the model to retrieve.</param>
-        /// <returns>A <see cref="global::Soenneker.Mistral.OpenApiClient.V1.ModelsRequests.Item.WithModel_ItemRequestBuilder"/></returns>
-        public global::Soenneker.Mistral.OpenApiClient.V1.ModelsRequests.Item.WithModel_ItemRequestBuilder this[string position]
+        /// <returns>A <see cref="global::Soenneker.Mistral.OpenApiClient.V1.ModelsRequests.Item.WithModelItemRequestBuilder"/></returns>
+        public global::Soenneker.Mistral.OpenApiClient.V1.ModelsRequests.Item.WithModelItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
-                urlTplParams.Add("model_id", position);
-                return new global::Soenneker.Mistral.OpenApiClient.V1.ModelsRequests.Item.WithModel_ItemRequestBuilder(urlTplParams, RequestAdapter);
+                urlTplParams.Add("modelId", position);
+                return new global::Soenneker.Mistral.OpenApiClient.V1.ModelsRequests.Item.WithModelItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
@@ -52,7 +52,7 @@ namespace Soenneker.Mistral.OpenApiClient.V1.ModelsRequests
         /// <returns>A <see cref="global::Soenneker.Mistral.OpenApiClient.Models.ModelList"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Mistral.OpenApiClient.Models.HTTPValidationError">When receiving a 422 status code</exception>
+        /// <exception cref="global::Soenneker.Mistral.OpenApiClient.Models.HttpValidationError">When receiving a 422 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Soenneker.Mistral.OpenApiClient.Models.ModelList?> GetAsync(Action<RequestConfiguration<global::Soenneker.Mistral.OpenApiClient.V1.ModelsRequests.ModelsRequestBuilder.ModelsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -65,7 +65,7 @@ namespace Soenneker.Mistral.OpenApiClient.V1.ModelsRequests
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "422", global::Soenneker.Mistral.OpenApiClient.Models.HTTPValidationError.CreateFromDiscriminatorValue },
+                { "422", global::Soenneker.Mistral.OpenApiClient.Models.HttpValidationError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Mistral.OpenApiClient.Models.ModelList>(requestInfo, global::Soenneker.Mistral.OpenApiClient.Models.ModelList.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

@@ -17,20 +17,20 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         /// <summary>The base_revision property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.JudgePreview.JudgePreview_base_revision? BaseRevision { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.JudgePreviewBaseRevision? BaseRevision { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.JudgePreview.JudgePreview_base_revision BaseRevision { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.JudgePreviewBaseRevision BaseRevision { get; set; }
 #endif
         /// <summary>The created_at property</summary>
         public DateTimeOffset? CreatedAt { get; set; }
         /// <summary>The deleted_at property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.JudgePreview.JudgePreview_deleted_at? DeletedAt { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.JudgePreviewDeletedAt? DeletedAt { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.JudgePreview.JudgePreview_deleted_at DeletedAt { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.JudgePreviewDeletedAt DeletedAt { get; set; }
 #endif
         /// <summary>The description property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -43,10 +43,10 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         /// <summary>The down_revision property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.JudgePreview.JudgePreview_down_revision? DownRevision { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.JudgePreviewDownRevision? DownRevision { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.JudgePreview.JudgePreview_down_revision DownRevision { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.JudgePreviewDownRevision DownRevision { get; set; }
 #endif
         /// <summary>The id property</summary>
         public Guid? Id { get; set; }
@@ -77,10 +77,10 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         /// <summary>The output property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.JudgePreview.JudgePreview_output? Output { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.JudgePreviewOutput? Output { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.JudgePreview.JudgePreview_output Output { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.JudgePreviewOutput Output { get; set; }
 #endif
         /// <summary>The owner_id property</summary>
         public Guid? OwnerId { get; set; }
@@ -97,10 +97,10 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         /// <summary>The up_revision property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.JudgePreview.JudgePreview_up_revision? UpRevision { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.JudgePreviewUpRevision? UpRevision { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.JudgePreview.JudgePreview_up_revision UpRevision { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.JudgePreviewUpRevision UpRevision { get; set; }
 #endif
         /// <summary>The workspace_id property</summary>
         public Guid? WorkspaceId { get; set; }
@@ -129,19 +129,19 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "base_revision", n => { BaseRevision = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.JudgePreview.JudgePreview_base_revision>(global::Soenneker.Mistral.OpenApiClient.Models.JudgePreview.JudgePreview_base_revision.CreateFromDiscriminatorValue); } },
+                { "base_revision", n => { BaseRevision = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.JudgePreviewBaseRevision>(global::Soenneker.Mistral.OpenApiClient.Models.JudgePreviewBaseRevision.CreateFromDiscriminatorValue); } },
                 { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
-                { "deleted_at", n => { DeletedAt = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.JudgePreview.JudgePreview_deleted_at>(global::Soenneker.Mistral.OpenApiClient.Models.JudgePreview.JudgePreview_deleted_at.CreateFromDiscriminatorValue); } },
+                { "deleted_at", n => { DeletedAt = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.JudgePreviewDeletedAt>(global::Soenneker.Mistral.OpenApiClient.Models.JudgePreviewDeletedAt.CreateFromDiscriminatorValue); } },
                 { "description", n => { Description = n.GetStringValue(); } },
-                { "down_revision", n => { DownRevision = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.JudgePreview.JudgePreview_down_revision>(global::Soenneker.Mistral.OpenApiClient.Models.JudgePreview.JudgePreview_down_revision.CreateFromDiscriminatorValue); } },
+                { "down_revision", n => { DownRevision = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.JudgePreviewDownRevision>(global::Soenneker.Mistral.OpenApiClient.Models.JudgePreviewDownRevision.CreateFromDiscriminatorValue); } },
                 { "id", n => { Id = n.GetGuidValue(); } },
                 { "instructions", n => { Instructions = n.GetStringValue(); } },
                 { "model_name", n => { ModelName = n.GetStringValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
-                { "output", n => { Output = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.JudgePreview.JudgePreview_output>(global::Soenneker.Mistral.OpenApiClient.Models.JudgePreview.JudgePreview_output.CreateFromDiscriminatorValue); } },
+                { "output", n => { Output = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.JudgePreviewOutput>(global::Soenneker.Mistral.OpenApiClient.Models.JudgePreviewOutput.CreateFromDiscriminatorValue); } },
                 { "owner_id", n => { OwnerId = n.GetGuidValue(); } },
                 { "tools", n => { Tools = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "up_revision", n => { UpRevision = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.JudgePreview.JudgePreview_up_revision>(global::Soenneker.Mistral.OpenApiClient.Models.JudgePreview.JudgePreview_up_revision.CreateFromDiscriminatorValue); } },
+                { "up_revision", n => { UpRevision = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.JudgePreviewUpRevision>(global::Soenneker.Mistral.OpenApiClient.Models.JudgePreviewUpRevision.CreateFromDiscriminatorValue); } },
                 { "updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
                 { "workspace_id", n => { WorkspaceId = n.GetGuidValue(); } },
             };
@@ -153,345 +153,22 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.JudgePreview.JudgePreview_base_revision>("base_revision", BaseRevision);
+            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.JudgePreviewBaseRevision>("base_revision", BaseRevision);
             writer.WriteDateTimeOffsetValue("created_at", CreatedAt);
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.JudgePreview.JudgePreview_deleted_at>("deleted_at", DeletedAt);
+            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.JudgePreviewDeletedAt>("deleted_at", DeletedAt);
             writer.WriteStringValue("description", Description);
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.JudgePreview.JudgePreview_down_revision>("down_revision", DownRevision);
+            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.JudgePreviewDownRevision>("down_revision", DownRevision);
             writer.WriteGuidValue("id", Id);
             writer.WriteStringValue("instructions", Instructions);
             writer.WriteStringValue("model_name", ModelName);
             writer.WriteStringValue("name", Name);
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.JudgePreview.JudgePreview_output>("output", Output);
+            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.JudgePreviewOutput>("output", Output);
             writer.WriteGuidValue("owner_id", OwnerId);
             writer.WriteCollectionOfPrimitiveValues<string>("tools", Tools);
             writer.WriteDateTimeOffsetValue("updated_at", UpdatedAt);
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.JudgePreview.JudgePreview_up_revision>("up_revision", UpRevision);
+            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.JudgePreviewUpRevision>("up_revision", UpRevision);
             writer.WriteGuidValue("workspace_id", WorkspaceId);
             writer.WriteAdditionalData(AdditionalData);
-        }
-        /// <summary>
-        /// Composed type wrapper for classes <see cref="global::Soenneker.Mistral.OpenApiClient.Models.JudgePreview_base_revisionMember1"/>, <see cref="Guid"/>
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class JudgePreview_base_revision : IComposedTypeWrapper, IParsable
-        {
-            /// <summary>Composed type representation for type <see cref="Guid"/></summary>
-            public Guid? Guid { get; set; }
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.Mistral.OpenApiClient.Models.JudgePreview_base_revisionMember1"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public global::Soenneker.Mistral.OpenApiClient.Models.JudgePreview_base_revisionMember1? JudgePreviewBaseRevisionMember1 { get; set; }
-#nullable restore
-#else
-            public global::Soenneker.Mistral.OpenApiClient.Models.JudgePreview_base_revisionMember1 JudgePreviewBaseRevisionMember1 { get; set; }
-#endif
-            /// <summary>
-            /// Creates a new instance of the appropriate class based on discriminator value
-            /// </summary>
-            /// <returns>A <see cref="global::Soenneker.Mistral.OpenApiClient.Models.JudgePreview.JudgePreview_base_revision"/></returns>
-            /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-            public static global::Soenneker.Mistral.OpenApiClient.Models.JudgePreview.JudgePreview_base_revision CreateFromDiscriminatorValue(IParseNode parseNode)
-            {
-                if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-                var result = new global::Soenneker.Mistral.OpenApiClient.Models.JudgePreview.JudgePreview_base_revision();
-                if(parseNode.GetGuidValue() is Guid guidValue)
-                {
-                    result.Guid = guidValue;
-                }
-                else {
-                    result.JudgePreviewBaseRevisionMember1 = new global::Soenneker.Mistral.OpenApiClient.Models.JudgePreview_base_revisionMember1();
-                }
-                return result;
-            }
-            /// <summary>
-            /// The deserialization information for the current model
-            /// </summary>
-            /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-            public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
-            {
-                if(JudgePreviewBaseRevisionMember1 != null)
-                {
-                    return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(JudgePreviewBaseRevisionMember1);
-                }
-                return new Dictionary<string, Action<IParseNode>>();
-            }
-            /// <summary>
-            /// Serializes information the current object
-            /// </summary>
-            /// <param name="writer">Serialization writer to use to serialize this model</param>
-            public virtual void Serialize(ISerializationWriter writer)
-            {
-                if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-                if(Guid != null)
-                {
-                    writer.WriteGuidValue(null, Guid);
-                }
-                else {
-                    writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.JudgePreview_base_revisionMember1>(null, JudgePreviewBaseRevisionMember1);
-                }
-            }
-        }
-        /// <summary>
-        /// Composed type wrapper for classes <see cref="DateTimeOffset"/>, <see cref="global::Soenneker.Mistral.OpenApiClient.Models.JudgePreview_deleted_atMember1"/>
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class JudgePreview_deleted_at : IComposedTypeWrapper, IParsable
-        {
-            /// <summary>Composed type representation for type <see cref="DateTimeOffset"/></summary>
-            public DateTimeOffset? DateTimeOffset { get; set; }
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.Mistral.OpenApiClient.Models.JudgePreview_deleted_atMember1"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public global::Soenneker.Mistral.OpenApiClient.Models.JudgePreview_deleted_atMember1? JudgePreviewDeletedAtMember1 { get; set; }
-#nullable restore
-#else
-            public global::Soenneker.Mistral.OpenApiClient.Models.JudgePreview_deleted_atMember1 JudgePreviewDeletedAtMember1 { get; set; }
-#endif
-            /// <summary>
-            /// Creates a new instance of the appropriate class based on discriminator value
-            /// </summary>
-            /// <returns>A <see cref="global::Soenneker.Mistral.OpenApiClient.Models.JudgePreview.JudgePreview_deleted_at"/></returns>
-            /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-            public static global::Soenneker.Mistral.OpenApiClient.Models.JudgePreview.JudgePreview_deleted_at CreateFromDiscriminatorValue(IParseNode parseNode)
-            {
-                if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-                var result = new global::Soenneker.Mistral.OpenApiClient.Models.JudgePreview.JudgePreview_deleted_at();
-                if(parseNode.GetDateTimeOffsetValue() is DateTimeOffset dateTimeOffsetValue)
-                {
-                    result.DateTimeOffset = dateTimeOffsetValue;
-                }
-                else {
-                    result.JudgePreviewDeletedAtMember1 = new global::Soenneker.Mistral.OpenApiClient.Models.JudgePreview_deleted_atMember1();
-                }
-                return result;
-            }
-            /// <summary>
-            /// The deserialization information for the current model
-            /// </summary>
-            /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-            public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
-            {
-                if(JudgePreviewDeletedAtMember1 != null)
-                {
-                    return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(JudgePreviewDeletedAtMember1);
-                }
-                return new Dictionary<string, Action<IParseNode>>();
-            }
-            /// <summary>
-            /// Serializes information the current object
-            /// </summary>
-            /// <param name="writer">Serialization writer to use to serialize this model</param>
-            public virtual void Serialize(ISerializationWriter writer)
-            {
-                if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-                if(DateTimeOffset != null)
-                {
-                    writer.WriteDateTimeOffsetValue(null, DateTimeOffset);
-                }
-                else {
-                    writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.JudgePreview_deleted_atMember1>(null, JudgePreviewDeletedAtMember1);
-                }
-            }
-        }
-        /// <summary>
-        /// Composed type wrapper for classes <see cref="global::Soenneker.Mistral.OpenApiClient.Models.JudgePreview_down_revisionMember1"/>, <see cref="Guid"/>
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class JudgePreview_down_revision : IComposedTypeWrapper, IParsable
-        {
-            /// <summary>Composed type representation for type <see cref="Guid"/></summary>
-            public Guid? Guid { get; set; }
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.Mistral.OpenApiClient.Models.JudgePreview_down_revisionMember1"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public global::Soenneker.Mistral.OpenApiClient.Models.JudgePreview_down_revisionMember1? JudgePreviewDownRevisionMember1 { get; set; }
-#nullable restore
-#else
-            public global::Soenneker.Mistral.OpenApiClient.Models.JudgePreview_down_revisionMember1 JudgePreviewDownRevisionMember1 { get; set; }
-#endif
-            /// <summary>
-            /// Creates a new instance of the appropriate class based on discriminator value
-            /// </summary>
-            /// <returns>A <see cref="global::Soenneker.Mistral.OpenApiClient.Models.JudgePreview.JudgePreview_down_revision"/></returns>
-            /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-            public static global::Soenneker.Mistral.OpenApiClient.Models.JudgePreview.JudgePreview_down_revision CreateFromDiscriminatorValue(IParseNode parseNode)
-            {
-                if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-                var result = new global::Soenneker.Mistral.OpenApiClient.Models.JudgePreview.JudgePreview_down_revision();
-                if(parseNode.GetGuidValue() is Guid guidValue)
-                {
-                    result.Guid = guidValue;
-                }
-                else {
-                    result.JudgePreviewDownRevisionMember1 = new global::Soenneker.Mistral.OpenApiClient.Models.JudgePreview_down_revisionMember1();
-                }
-                return result;
-            }
-            /// <summary>
-            /// The deserialization information for the current model
-            /// </summary>
-            /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-            public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
-            {
-                if(JudgePreviewDownRevisionMember1 != null)
-                {
-                    return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(JudgePreviewDownRevisionMember1);
-                }
-                return new Dictionary<string, Action<IParseNode>>();
-            }
-            /// <summary>
-            /// Serializes information the current object
-            /// </summary>
-            /// <param name="writer">Serialization writer to use to serialize this model</param>
-            public virtual void Serialize(ISerializationWriter writer)
-            {
-                if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-                if(Guid != null)
-                {
-                    writer.WriteGuidValue(null, Guid);
-                }
-                else {
-                    writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.JudgePreview_down_revisionMember1>(null, JudgePreviewDownRevisionMember1);
-                }
-            }
-        }
-        /// <summary>
-        /// Composed type wrapper for classes <see cref="global::Soenneker.Mistral.OpenApiClient.Models.JudgeClassificationOutput"/>, <see cref="global::Soenneker.Mistral.OpenApiClient.Models.JudgeRegressionOutput"/>
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class JudgePreview_output : IComposedTypeWrapper, IParsable
-        {
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.Mistral.OpenApiClient.Models.JudgeClassificationOutput"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public global::Soenneker.Mistral.OpenApiClient.Models.JudgeClassificationOutput? JudgeClassificationOutput { get; set; }
-#nullable restore
-#else
-            public global::Soenneker.Mistral.OpenApiClient.Models.JudgeClassificationOutput JudgeClassificationOutput { get; set; }
-#endif
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.Mistral.OpenApiClient.Models.JudgeRegressionOutput"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public global::Soenneker.Mistral.OpenApiClient.Models.JudgeRegressionOutput? JudgeRegressionOutput { get; set; }
-#nullable restore
-#else
-            public global::Soenneker.Mistral.OpenApiClient.Models.JudgeRegressionOutput JudgeRegressionOutput { get; set; }
-#endif
-            /// <summary>
-            /// Creates a new instance of the appropriate class based on discriminator value
-            /// </summary>
-            /// <returns>A <see cref="global::Soenneker.Mistral.OpenApiClient.Models.JudgePreview.JudgePreview_output"/></returns>
-            /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-            public static global::Soenneker.Mistral.OpenApiClient.Models.JudgePreview.JudgePreview_output CreateFromDiscriminatorValue(IParseNode parseNode)
-            {
-                if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-                var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
-                var result = new global::Soenneker.Mistral.OpenApiClient.Models.JudgePreview.JudgePreview_output();
-                if("CLASSIFICATION".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-                {
-                    result.JudgeClassificationOutput = new global::Soenneker.Mistral.OpenApiClient.Models.JudgeClassificationOutput();
-                }
-                else if("REGRESSION".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-                {
-                    result.JudgeRegressionOutput = new global::Soenneker.Mistral.OpenApiClient.Models.JudgeRegressionOutput();
-                }
-                return result;
-            }
-            /// <summary>
-            /// The deserialization information for the current model
-            /// </summary>
-            /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-            public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
-            {
-                if(JudgeClassificationOutput != null)
-                {
-                    return JudgeClassificationOutput.GetFieldDeserializers();
-                }
-                else if(JudgeRegressionOutput != null)
-                {
-                    return JudgeRegressionOutput.GetFieldDeserializers();
-                }
-                return new Dictionary<string, Action<IParseNode>>();
-            }
-            /// <summary>
-            /// Serializes information the current object
-            /// </summary>
-            /// <param name="writer">Serialization writer to use to serialize this model</param>
-            public virtual void Serialize(ISerializationWriter writer)
-            {
-                if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-                if(JudgeClassificationOutput != null)
-                {
-                    writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.JudgeClassificationOutput>(null, JudgeClassificationOutput);
-                }
-                else if(JudgeRegressionOutput != null)
-                {
-                    writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.JudgeRegressionOutput>(null, JudgeRegressionOutput);
-                }
-            }
-        }
-        /// <summary>
-        /// Composed type wrapper for classes <see cref="global::Soenneker.Mistral.OpenApiClient.Models.JudgePreview_up_revisionMember1"/>, <see cref="Guid"/>
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class JudgePreview_up_revision : IComposedTypeWrapper, IParsable
-        {
-            /// <summary>Composed type representation for type <see cref="Guid"/></summary>
-            public Guid? Guid { get; set; }
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.Mistral.OpenApiClient.Models.JudgePreview_up_revisionMember1"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public global::Soenneker.Mistral.OpenApiClient.Models.JudgePreview_up_revisionMember1? JudgePreviewUpRevisionMember1 { get; set; }
-#nullable restore
-#else
-            public global::Soenneker.Mistral.OpenApiClient.Models.JudgePreview_up_revisionMember1 JudgePreviewUpRevisionMember1 { get; set; }
-#endif
-            /// <summary>
-            /// Creates a new instance of the appropriate class based on discriminator value
-            /// </summary>
-            /// <returns>A <see cref="global::Soenneker.Mistral.OpenApiClient.Models.JudgePreview.JudgePreview_up_revision"/></returns>
-            /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-            public static global::Soenneker.Mistral.OpenApiClient.Models.JudgePreview.JudgePreview_up_revision CreateFromDiscriminatorValue(IParseNode parseNode)
-            {
-                if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-                var result = new global::Soenneker.Mistral.OpenApiClient.Models.JudgePreview.JudgePreview_up_revision();
-                if(parseNode.GetGuidValue() is Guid guidValue)
-                {
-                    result.Guid = guidValue;
-                }
-                else {
-                    result.JudgePreviewUpRevisionMember1 = new global::Soenneker.Mistral.OpenApiClient.Models.JudgePreview_up_revisionMember1();
-                }
-                return result;
-            }
-            /// <summary>
-            /// The deserialization information for the current model
-            /// </summary>
-            /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-            public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
-            {
-                if(JudgePreviewUpRevisionMember1 != null)
-                {
-                    return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(JudgePreviewUpRevisionMember1);
-                }
-                return new Dictionary<string, Action<IParseNode>>();
-            }
-            /// <summary>
-            /// Serializes information the current object
-            /// </summary>
-            /// <param name="writer">Serialization writer to use to serialize this model</param>
-            public virtual void Serialize(ISerializationWriter writer)
-            {
-                if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-                if(Guid != null)
-                {
-                    writer.WriteGuidValue(null, Guid);
-                }
-                else {
-                    writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.JudgePreview_up_revisionMember1>(null, JudgePreviewUpRevisionMember1);
-                }
-            }
         }
     }
 }

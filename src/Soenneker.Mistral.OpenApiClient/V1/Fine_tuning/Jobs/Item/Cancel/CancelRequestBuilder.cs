@@ -12,7 +12,7 @@ using System;
 namespace Soenneker.Mistral.OpenApiClient.V1.Fine_tuning.Jobs.Item.Cancel
 {
     /// <summary>
-    /// Builds and executes requests for operations under \v1\fine_tuning\jobs\{job_id}\cancel
+    /// Builds and executes requests for operations under \v1\fine_tuning\jobs\{jobId}\cancel
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class CancelRequestBuilder : BaseRequestBuilder
@@ -22,7 +22,7 @@ namespace Soenneker.Mistral.OpenApiClient.V1.Fine_tuning.Jobs.Item.Cancel
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public CancelRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/fine_tuning/jobs/{job_id}/cancel", pathParameters)
+        public CancelRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/fine_tuning/jobs/{jobId}/cancel", pathParameters)
         {
         }
         /// <summary>
@@ -30,26 +30,26 @@ namespace Soenneker.Mistral.OpenApiClient.V1.Fine_tuning.Jobs.Item.Cancel
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public CancelRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/fine_tuning/jobs/{job_id}/cancel", rawUrl)
+        public CancelRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/fine_tuning/jobs/{jobId}/cancel", rawUrl)
         {
         }
         /// <summary>
         /// Request the cancellation of a fine tuning job.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Mistral.OpenApiClient.V1.Fine_tuning.Jobs.Item.Cancel.CancelRequestBuilder.CancelPostResponse"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Mistral.OpenApiClient.Models.JobsApiRoutesFineTuningCancelFineTuningJob200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Mistral.OpenApiClient.V1.Fine_tuning.Jobs.Item.Cancel.CancelRequestBuilder.CancelPostResponse?> PostAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Mistral.OpenApiClient.Models.JobsApiRoutesFineTuningCancelFineTuningJob200Response?> PostAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Mistral.OpenApiClient.V1.Fine_tuning.Jobs.Item.Cancel.CancelRequestBuilder.CancelPostResponse> PostAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Mistral.OpenApiClient.Models.JobsApiRoutesFineTuningCancelFineTuningJob200Response> PostAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToPostRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Mistral.OpenApiClient.V1.Fine_tuning.Jobs.Item.Cancel.CancelRequestBuilder.CancelPostResponse>(requestInfo, global::Soenneker.Mistral.OpenApiClient.V1.Fine_tuning.Jobs.Item.Cancel.CancelRequestBuilder.CancelPostResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Mistral.OpenApiClient.Models.JobsApiRoutesFineTuningCancelFineTuningJob200Response>(requestInfo, global::Soenneker.Mistral.OpenApiClient.Models.JobsApiRoutesFineTuningCancelFineTuningJob200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Request the cancellation of a fine tuning job.
@@ -78,81 +78,6 @@ namespace Soenneker.Mistral.OpenApiClient.V1.Fine_tuning.Jobs.Item.Cancel
         public global::Soenneker.Mistral.OpenApiClient.V1.Fine_tuning.Jobs.Item.Cancel.CancelRequestBuilder WithUrl(string rawUrl)
         {
             return new global::Soenneker.Mistral.OpenApiClient.V1.Fine_tuning.Jobs.Item.Cancel.CancelRequestBuilder(rawUrl, RequestAdapter);
-        }
-        /// <summary>
-        /// Composed type wrapper for classes <see cref="global::Soenneker.Mistral.OpenApiClient.Models.ClassifierDetailedJobOut"/>, <see cref="global::Soenneker.Mistral.OpenApiClient.Models.CompletionDetailedJobOut"/>
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class CancelPostResponse : IComposedTypeWrapper, IParsable
-        {
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.Mistral.OpenApiClient.Models.ClassifierDetailedJobOut"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public global::Soenneker.Mistral.OpenApiClient.Models.ClassifierDetailedJobOut? ClassifierDetailedJobOut { get; set; }
-#nullable restore
-#else
-            public global::Soenneker.Mistral.OpenApiClient.Models.ClassifierDetailedJobOut ClassifierDetailedJobOut { get; set; }
-#endif
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.Mistral.OpenApiClient.Models.CompletionDetailedJobOut"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public global::Soenneker.Mistral.OpenApiClient.Models.CompletionDetailedJobOut? CompletionDetailedJobOut { get; set; }
-#nullable restore
-#else
-            public global::Soenneker.Mistral.OpenApiClient.Models.CompletionDetailedJobOut CompletionDetailedJobOut { get; set; }
-#endif
-            /// <summary>
-            /// Creates a new instance of the appropriate class based on discriminator value
-            /// </summary>
-            /// <returns>A <see cref="global::Soenneker.Mistral.OpenApiClient.V1.Fine_tuning.Jobs.Item.Cancel.CancelRequestBuilder.CancelPostResponse"/></returns>
-            /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-            public static global::Soenneker.Mistral.OpenApiClient.V1.Fine_tuning.Jobs.Item.Cancel.CancelRequestBuilder.CancelPostResponse CreateFromDiscriminatorValue(IParseNode parseNode)
-            {
-                if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-                var mappingValue = parseNode.GetChildNode("job_type")?.GetStringValue();
-                var result = new global::Soenneker.Mistral.OpenApiClient.V1.Fine_tuning.Jobs.Item.Cancel.CancelRequestBuilder.CancelPostResponse();
-                if("classifier".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-                {
-                    result.ClassifierDetailedJobOut = new global::Soenneker.Mistral.OpenApiClient.Models.ClassifierDetailedJobOut();
-                }
-                else if("completion".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-                {
-                    result.CompletionDetailedJobOut = new global::Soenneker.Mistral.OpenApiClient.Models.CompletionDetailedJobOut();
-                }
-                return result;
-            }
-            /// <summary>
-            /// The deserialization information for the current model
-            /// </summary>
-            /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-            public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
-            {
-                if(ClassifierDetailedJobOut != null)
-                {
-                    return ClassifierDetailedJobOut.GetFieldDeserializers();
-                }
-                else if(CompletionDetailedJobOut != null)
-                {
-                    return CompletionDetailedJobOut.GetFieldDeserializers();
-                }
-                return new Dictionary<string, Action<IParseNode>>();
-            }
-            /// <summary>
-            /// Serializes information the current object
-            /// </summary>
-            /// <param name="writer">Serialization writer to use to serialize this model</param>
-            public virtual void Serialize(ISerializationWriter writer)
-            {
-                if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-                if(ClassifierDetailedJobOut != null)
-                {
-                    writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ClassifierDetailedJobOut>(null, ClassifierDetailedJobOut);
-                }
-                else if(CompletionDetailedJobOut != null)
-                {
-                    writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.CompletionDetailedJobOut>(null, CompletionDetailedJobOut);
-                }
-            }
         }
     }
 }

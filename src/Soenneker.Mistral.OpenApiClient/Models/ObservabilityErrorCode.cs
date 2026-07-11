@@ -10,175 +10,175 @@ namespace Soenneker.Mistral.OpenApiClient.Models
     {
         [EnumMember(Value = "UNKNOWN_ERROR")]
         #pragma warning disable CS1591
-        UNKNOWN_ERROR,
+        UnknownError,
         #pragma warning restore CS1591
         [EnumMember(Value = "VALIDATION_ERROR")]
         #pragma warning disable CS1591
-        VALIDATION_ERROR,
+        ValidationError,
         #pragma warning restore CS1591
         [EnumMember(Value = "AUTH_FORBIDDEN")]
         #pragma warning disable CS1591
-        AUTH_FORBIDDEN,
+        AuthForbidden,
         #pragma warning restore CS1591
         [EnumMember(Value = "AUTH_FORBIDDEN_NOT_WORKSPACE_ADMIN")]
         #pragma warning disable CS1591
-        AUTH_FORBIDDEN_NOT_WORKSPACE_ADMIN,
+        AuthForbiddenNotWorkspaceAdmin,
         #pragma warning restore CS1591
         [EnumMember(Value = "AUTH_FORBIDDEN_WORKSPACE_NOT_FOUND")]
         #pragma warning disable CS1591
-        AUTH_FORBIDDEN_WORKSPACE_NOT_FOUND,
+        AuthForbiddenWorkspaceNotFound,
         #pragma warning restore CS1591
         [EnumMember(Value = "AUTH_FORBIDDEN_ROLE_NOT_FOUND")]
         #pragma warning disable CS1591
-        AUTH_FORBIDDEN_ROLE_NOT_FOUND,
+        AuthForbiddenRoleNotFound,
         #pragma warning restore CS1591
         [EnumMember(Value = "AUTH_FORBIDDEN_ORG_NOT_WHITELISTED")]
         #pragma warning disable CS1591
-        AUTH_FORBIDDEN_ORG_NOT_WHITELISTED,
+        AuthForbiddenOrgNotWhitelisted,
         #pragma warning restore CS1591
         [EnumMember(Value = "AUTH_UNAUTHORIZED")]
         #pragma warning disable CS1591
-        AUTH_UNAUTHORIZED,
+        AuthUnauthorized,
         #pragma warning restore CS1591
         [EnumMember(Value = "FEATURE_NOT_SUPPORTED")]
         #pragma warning disable CS1591
-        FEATURE_NOT_SUPPORTED,
+        FeatureNotSupported,
         #pragma warning restore CS1591
         [EnumMember(Value = "FIELDS_BAD_REQUEST")]
         #pragma warning disable CS1591
-        FIELDS_BAD_REQUEST,
+        FieldsBadRequest,
         #pragma warning restore CS1591
         [EnumMember(Value = "FIELDS_NOT_FOUND")]
         #pragma warning disable CS1591
-        FIELDS_NOT_FOUND,
+        FieldsNotFound,
         #pragma warning restore CS1591
         [EnumMember(Value = "SEARCH_NOT_FOUND")]
         #pragma warning disable CS1591
-        SEARCH_NOT_FOUND,
+        SearchNotFound,
         #pragma warning restore CS1591
         [EnumMember(Value = "SEARCH_BAD_REQUEST")]
         #pragma warning disable CS1591
-        SEARCH_BAD_REQUEST,
+        SearchBadRequest,
         #pragma warning restore CS1591
         [EnumMember(Value = "SEARCH_SERVICE_UNAVAILABLE")]
         #pragma warning disable CS1591
-        SEARCH_SERVICE_UNAVAILABLE,
+        SearchServiceUnavailable,
         #pragma warning restore CS1591
         [EnumMember(Value = "DATABASE_ERROR")]
         #pragma warning disable CS1591
-        DATABASE_ERROR,
+        DatabaseError,
         #pragma warning restore CS1591
         [EnumMember(Value = "DATABASE_TIMEOUT")]
         #pragma warning disable CS1591
-        DATABASE_TIMEOUT,
+        DatabaseTimeout,
         #pragma warning restore CS1591
         [EnumMember(Value = "DATABASE_UNAVAILABLE")]
         #pragma warning disable CS1591
-        DATABASE_UNAVAILABLE,
+        DatabaseUnavailable,
         #pragma warning restore CS1591
         [EnumMember(Value = "DATABASE_QUERY_ERROR")]
         #pragma warning disable CS1591
-        DATABASE_QUERY_ERROR,
+        DatabaseQueryError,
         #pragma warning restore CS1591
         [EnumMember(Value = "SEARCH_FILTER_TO_SQL_CONVERSION_ERROR")]
         #pragma warning disable CS1591
-        SEARCH_FILTER_TO_SQL_CONVERSION_ERROR,
+        SearchFilterToSqlConversionError,
         #pragma warning restore CS1591
         [EnumMember(Value = "JUDGE_CONVERSATION_FORMAT_ERROR")]
         #pragma warning disable CS1591
-        JUDGE_CONVERSATION_FORMAT_ERROR,
+        JudgeConversationFormatError,
         #pragma warning restore CS1591
         [EnumMember(Value = "JUDGE_MISTRAL_API_ERROR")]
         #pragma warning disable CS1591
-        JUDGE_MISTRAL_API_ERROR,
+        JudgeMistralApiError,
         #pragma warning restore CS1591
         [EnumMember(Value = "JUDGE_MISTRAL_API_TIMEOUT")]
         #pragma warning disable CS1591
-        JUDGE_MISTRAL_API_TIMEOUT,
+        JudgeMistralApiTimeout,
         #pragma warning restore CS1591
         [EnumMember(Value = "JUDGE_NAME_ALREADY_EXISTS")]
         #pragma warning disable CS1591
-        JUDGE_NAME_ALREADY_EXISTS,
+        JudgeNameAlreadyExists,
         #pragma warning restore CS1591
         [EnumMember(Value = "JUDGE_NOT_FOUND")]
         #pragma warning disable CS1591
-        JUDGE_NOT_FOUND,
+        JudgeNotFound,
         #pragma warning restore CS1591
         [EnumMember(Value = "JUDGE_ALREADY_HAS_NEW_VERSION")]
         #pragma warning disable CS1591
-        JUDGE_ALREADY_HAS_NEW_VERSION,
+        JudgeAlreadyHasNewVersion,
         #pragma warning restore CS1591
         [EnumMember(Value = "JUDGE_USED_IN_CAMPAIGN_CANNOT_BE_UPDATED")]
         #pragma warning disable CS1591
-        JUDGE_USED_IN_CAMPAIGN_CANNOT_BE_UPDATED,
+        JudgeUsedInCampaignCannotBeUpdated,
         #pragma warning restore CS1591
         [EnumMember(Value = "JUDGE_DID_NOT_CHANGE")]
         #pragma warning disable CS1591
-        JUDGE_DID_NOT_CHANGE,
+        JudgeDidNotChange,
         #pragma warning restore CS1591
         [EnumMember(Value = "CAMPAIGN_NOT_FOUND")]
         #pragma warning disable CS1591
-        CAMPAIGN_NOT_FOUND,
+        CampaignNotFound,
         #pragma warning restore CS1591
         [EnumMember(Value = "CAMPAIGN_NO_MATCHING_EVENTS")]
         #pragma warning disable CS1591
-        CAMPAIGN_NO_MATCHING_EVENTS,
+        CampaignNoMatchingEvents,
         #pragma warning restore CS1591
         [EnumMember(Value = "DATASET_NOT_FOUND")]
         #pragma warning disable CS1591
-        DATASET_NOT_FOUND,
+        DatasetNotFound,
         #pragma warning restore CS1591
         [EnumMember(Value = "DATASET_TASK_NOT_FOUND")]
         #pragma warning disable CS1591
-        DATASET_TASK_NOT_FOUND,
+        DatasetTaskNotFound,
         #pragma warning restore CS1591
         [EnumMember(Value = "DATASET_RECORD_NOT_FOUND")]
         #pragma warning disable CS1591
-        DATASET_RECORD_NOT_FOUND,
+        DatasetRecordNotFound,
         #pragma warning restore CS1591
         [EnumMember(Value = "DATASET_RECORD_FORMAT_ERROR")]
         #pragma warning disable CS1591
-        DATASET_RECORD_FORMAT_ERROR,
+        DatasetRecordFormatError,
         #pragma warning restore CS1591
         [EnumMember(Value = "AGENT_NOT_FOUND")]
         #pragma warning disable CS1591
-        AGENT_NOT_FOUND,
+        AgentNotFound,
         #pragma warning restore CS1591
         [EnumMember(Value = "AGENT_MISTRAL_API_ERROR")]
         #pragma warning disable CS1591
-        AGENT_MISTRAL_API_ERROR,
+        AgentMistralApiError,
         #pragma warning restore CS1591
         [EnumMember(Value = "EVALUATION_NOT_FOUND")]
         #pragma warning disable CS1591
-        EVALUATION_NOT_FOUND,
+        EvaluationNotFound,
         #pragma warning restore CS1591
         [EnumMember(Value = "EVALUATION_CURRENTLY_RUNNING")]
         #pragma warning disable CS1591
-        EVALUATION_CURRENTLY_RUNNING,
+        EvaluationCurrentlyRunning,
         #pragma warning restore CS1591
         [EnumMember(Value = "EVALUATION_RECORD_NOT_FOUND")]
         #pragma warning disable CS1591
-        EVALUATION_RECORD_NOT_FOUND,
+        EvaluationRecordNotFound,
         #pragma warning restore CS1591
         [EnumMember(Value = "EVALUATION_RUN_NOT_FOUND")]
         #pragma warning disable CS1591
-        EVALUATION_RUN_NOT_FOUND,
+        EvaluationRunNotFound,
         #pragma warning restore CS1591
         [EnumMember(Value = "EVALUATION_RUN_TRANSITION_IS_INVALID")]
         #pragma warning disable CS1591
-        EVALUATION_RUN_TRANSITION_IS_INVALID,
+        EvaluationRunTransitionIsInvalid,
         #pragma warning restore CS1591
         [EnumMember(Value = "EVALUATION_RUN_TRANSITION_IS_RUNNING_ALREADY")]
         #pragma warning disable CS1591
-        EVALUATION_RUN_TRANSITION_IS_RUNNING_ALREADY,
+        EvaluationRunTransitionIsRunningAlready,
         #pragma warning restore CS1591
         [EnumMember(Value = "EVALUATION_RUN_TRANSITION_ERROR")]
         #pragma warning disable CS1591
-        EVALUATION_RUN_TRANSITION_ERROR,
+        EvaluationRunTransitionError,
         #pragma warning restore CS1591
         [EnumMember(Value = "TEMPLATE_SYNTAX_ERROR")]
         #pragma warning disable CS1591
-        TEMPLATE_SYNTAX_ERROR,
+        TemplateSyntaxError,
         #pragma warning restore CS1591
     }
 }

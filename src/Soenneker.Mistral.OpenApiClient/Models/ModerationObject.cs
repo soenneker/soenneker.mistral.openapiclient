@@ -17,18 +17,18 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         /// <summary>Moderation result thresholds</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.ModerationObject_categories? Categories { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.ModerationObjectCategoriesProperty? Categories { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.ModerationObject_categories Categories { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.ModerationObjectCategoriesProperty Categories { get; set; }
 #endif
         /// <summary>Moderation result</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.ModerationObject_category_scores? CategoryScores { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.ModerationObjectCategoryScoresProperty? CategoryScores { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.ModerationObject_category_scores CategoryScores { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.ModerationObjectCategoryScoresProperty CategoryScores { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Mistral.OpenApiClient.Models.ModerationObject"/> and sets the default values.
@@ -55,8 +55,8 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "categories", n => { Categories = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ModerationObject_categories>(global::Soenneker.Mistral.OpenApiClient.Models.ModerationObject_categories.CreateFromDiscriminatorValue); } },
-                { "category_scores", n => { CategoryScores = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ModerationObject_category_scores>(global::Soenneker.Mistral.OpenApiClient.Models.ModerationObject_category_scores.CreateFromDiscriminatorValue); } },
+                { "categories", n => { Categories = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ModerationObjectCategoriesProperty>(global::Soenneker.Mistral.OpenApiClient.Models.ModerationObjectCategoriesProperty.CreateFromDiscriminatorValue); } },
+                { "category_scores", n => { CategoryScores = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ModerationObjectCategoryScoresProperty>(global::Soenneker.Mistral.OpenApiClient.Models.ModerationObjectCategoryScoresProperty.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -66,8 +66,8 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ModerationObject_categories>("categories", Categories);
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ModerationObject_category_scores>("category_scores", CategoryScores);
+            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ModerationObjectCategoriesProperty>("categories", Categories);
+            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ModerationObjectCategoryScoresProperty>("category_scores", CategoryScores);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

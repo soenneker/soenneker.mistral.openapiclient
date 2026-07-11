@@ -10,19 +10,19 @@ namespace Soenneker.Mistral.OpenApiClient.Models
     {
         [EnumMember(Value = "EXPLORER")]
         #pragma warning disable CS1591
-        EXPLORER,
+        Explorer,
         #pragma warning restore CS1591
         [EnumMember(Value = "UPLOADED_FILE")]
         #pragma warning disable CS1591
-        UPLOADED_FILE,
+        UploadedFile,
         #pragma warning restore CS1591
         [EnumMember(Value = "DIRECT_INPUT")]
         #pragma warning disable CS1591
-        DIRECT_INPUT,
+        DirectInput,
         #pragma warning restore CS1591
         [EnumMember(Value = "PLAYGROUND")]
         #pragma warning disable CS1591
-        PLAYGROUND,
+        Playground,
         #pragma warning restore CS1591
     }
 }

@@ -38,6 +38,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         public DeleteModelOut()
         {
             AdditionalData = new Dictionary<string, object>();
+            Deleted = true;
             Object = "model";
         }
         /// <summary>

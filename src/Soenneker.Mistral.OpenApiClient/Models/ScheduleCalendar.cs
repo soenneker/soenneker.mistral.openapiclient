@@ -17,10 +17,10 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         /// <summary>The comment property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.ScheduleCalendar.ScheduleCalendar_comment? Comment { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.ScheduleCalendarComment? Comment { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.ScheduleCalendar.ScheduleCalendar_comment Comment { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.ScheduleCalendarComment Comment { get; set; }
 #endif
         /// <summary>The day_of_month property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -103,7 +103,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "comment", n => { Comment = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ScheduleCalendar.ScheduleCalendar_comment>(global::Soenneker.Mistral.OpenApiClient.Models.ScheduleCalendar.ScheduleCalendar_comment.CreateFromDiscriminatorValue); } },
+                { "comment", n => { Comment = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ScheduleCalendarComment>(global::Soenneker.Mistral.OpenApiClient.Models.ScheduleCalendarComment.CreateFromDiscriminatorValue); } },
                 { "day_of_month", n => { DayOfMonth = n.GetCollectionOfObjectValues<global::Soenneker.Mistral.OpenApiClient.Models.ScheduleRange>(global::Soenneker.Mistral.OpenApiClient.Models.ScheduleRange.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "day_of_week", n => { DayOfWeek = n.GetCollectionOfObjectValues<global::Soenneker.Mistral.OpenApiClient.Models.ScheduleRange>(global::Soenneker.Mistral.OpenApiClient.Models.ScheduleRange.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "hour", n => { Hour = n.GetCollectionOfObjectValues<global::Soenneker.Mistral.OpenApiClient.Models.ScheduleRange>(global::Soenneker.Mistral.OpenApiClient.Models.ScheduleRange.CreateFromDiscriminatorValue)?.AsList(); } },
@@ -120,7 +120,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ScheduleCalendar.ScheduleCalendar_comment>("comment", Comment);
+            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ScheduleCalendarComment>("comment", Comment);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Mistral.OpenApiClient.Models.ScheduleRange>("day_of_month", DayOfMonth);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Mistral.OpenApiClient.Models.ScheduleRange>("day_of_week", DayOfWeek);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Mistral.OpenApiClient.Models.ScheduleRange>("hour", Hour);
@@ -129,74 +129,6 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             writer.WriteCollectionOfObjectValues<global::Soenneker.Mistral.OpenApiClient.Models.ScheduleRange>("second", Second);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Mistral.OpenApiClient.Models.ScheduleRange>("year", Year);
             writer.WriteAdditionalData(AdditionalData);
-        }
-        /// <summary>
-        /// Composed type wrapper for classes <see cref="global::Soenneker.Mistral.OpenApiClient.Models.ScheduleCalendar_commentMember1"/>, <see cref="string"/>
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class ScheduleCalendar_comment : IComposedTypeWrapper, IParsable
-        {
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.Mistral.OpenApiClient.Models.ScheduleCalendar_commentMember1"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public global::Soenneker.Mistral.OpenApiClient.Models.ScheduleCalendar_commentMember1? ScheduleCalendarCommentMember1 { get; set; }
-#nullable restore
-#else
-            public global::Soenneker.Mistral.OpenApiClient.Models.ScheduleCalendar_commentMember1 ScheduleCalendarCommentMember1 { get; set; }
-#endif
-            /// <summary>Composed type representation for type <see cref="string"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public string? String { get; set; }
-#nullable restore
-#else
-            public string String { get; set; }
-#endif
-            /// <summary>
-            /// Creates a new instance of the appropriate class based on discriminator value
-            /// </summary>
-            /// <returns>A <see cref="global::Soenneker.Mistral.OpenApiClient.Models.ScheduleCalendar.ScheduleCalendar_comment"/></returns>
-            /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-            public static global::Soenneker.Mistral.OpenApiClient.Models.ScheduleCalendar.ScheduleCalendar_comment CreateFromDiscriminatorValue(IParseNode parseNode)
-            {
-                if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-                var result = new global::Soenneker.Mistral.OpenApiClient.Models.ScheduleCalendar.ScheduleCalendar_comment();
-                if(parseNode.GetStringValue() is string stringValue)
-                {
-                    result.String = stringValue;
-                }
-                else {
-                    result.ScheduleCalendarCommentMember1 = new global::Soenneker.Mistral.OpenApiClient.Models.ScheduleCalendar_commentMember1();
-                }
-                return result;
-            }
-            /// <summary>
-            /// The deserialization information for the current model
-            /// </summary>
-            /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-            public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
-            {
-                if(ScheduleCalendarCommentMember1 != null)
-                {
-                    return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(ScheduleCalendarCommentMember1);
-                }
-                return new Dictionary<string, Action<IParseNode>>();
-            }
-            /// <summary>
-            /// Serializes information the current object
-            /// </summary>
-            /// <param name="writer">Serialization writer to use to serialize this model</param>
-            public virtual void Serialize(ISerializationWriter writer)
-            {
-                if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-                if(String != null)
-                {
-                    writer.WriteStringValue(null, String);
-                }
-                else {
-                    writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ScheduleCalendar_commentMember1>(null, ScheduleCalendarCommentMember1);
-                }
-            }
         }
     }
 }

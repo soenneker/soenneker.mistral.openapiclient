@@ -10,31 +10,31 @@ namespace Soenneker.Mistral.OpenApiClient.Models
     {
         [EnumMember(Value = "QUEUED")]
         #pragma warning disable CS1591
-        QUEUED,
+        Queued,
         #pragma warning restore CS1591
         [EnumMember(Value = "RUNNING")]
         #pragma warning disable CS1591
-        RUNNING,
+        Running,
         #pragma warning restore CS1591
         [EnumMember(Value = "SUCCESS")]
         #pragma warning disable CS1591
-        SUCCESS,
+        Success,
         #pragma warning restore CS1591
         [EnumMember(Value = "FAILED")]
         #pragma warning disable CS1591
-        FAILED,
+        Failed,
         #pragma warning restore CS1591
         [EnumMember(Value = "TIMEOUT_EXCEEDED")]
         #pragma warning disable CS1591
-        TIMEOUT_EXCEEDED,
+        TimeoutExceeded,
         #pragma warning restore CS1591
         [EnumMember(Value = "CANCELLATION_REQUESTED")]
         #pragma warning disable CS1591
-        CANCELLATION_REQUESTED,
+        CancellationRequested,
         #pragma warning restore CS1591
         [EnumMember(Value = "CANCELLED")]
         #pragma warning disable CS1591
-        CANCELLED,
+        Cancelled,
         #pragma warning restore CS1591
     }
 }

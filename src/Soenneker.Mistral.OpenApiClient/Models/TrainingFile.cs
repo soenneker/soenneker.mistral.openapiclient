@@ -24,6 +24,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         public TrainingFile()
         {
             AdditionalData = new Dictionary<string, object>();
+            Weight = 1;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

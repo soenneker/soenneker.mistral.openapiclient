@@ -20,14 +20,14 @@ namespace Soenneker.Mistral.OpenApiClient.V1.Observability.Judges
     {
         /// <summary>Gets an item from the Soenneker.Mistral.OpenApiClient.v1.observability.judges.item collection</summary>
         /// <param name="position">Unique identifier of the item</param>
-        /// <returns>A <see cref="global::Soenneker.Mistral.OpenApiClient.V1.Observability.Judges.Item.WithJudge_ItemRequestBuilder"/></returns>
-        public global::Soenneker.Mistral.OpenApiClient.V1.Observability.Judges.Item.WithJudge_ItemRequestBuilder this[Guid position]
+        /// <returns>A <see cref="global::Soenneker.Mistral.OpenApiClient.V1.Observability.Judges.Item.WithJudgeItemRequestBuilder"/></returns>
+        public global::Soenneker.Mistral.OpenApiClient.V1.Observability.Judges.Item.WithJudgeItemRequestBuilder this[Guid position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
-                urlTplParams.Add("judge_id", position);
-                return new global::Soenneker.Mistral.OpenApiClient.V1.Observability.Judges.Item.WithJudge_ItemRequestBuilder(urlTplParams, RequestAdapter);
+                urlTplParams.Add("judgeId", position);
+                return new global::Soenneker.Mistral.OpenApiClient.V1.Observability.Judges.Item.WithJudgeItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>

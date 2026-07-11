@@ -17,10 +17,10 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         /// <summary>The tasks property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.PaginatedResult_DatasetImportTask_? Tasks { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.PaginatedResultDatasetImportTask? Tasks { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.PaginatedResult_DatasetImportTask_ Tasks { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.PaginatedResultDatasetImportTask Tasks { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Mistral.OpenApiClient.Models.DatasetImportTasks"/> and sets the default values.
@@ -47,7 +47,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "tasks", n => { Tasks = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.PaginatedResult_DatasetImportTask_>(global::Soenneker.Mistral.OpenApiClient.Models.PaginatedResult_DatasetImportTask_.CreateFromDiscriminatorValue); } },
+                { "tasks", n => { Tasks = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.PaginatedResultDatasetImportTask>(global::Soenneker.Mistral.OpenApiClient.Models.PaginatedResultDatasetImportTask.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -57,7 +57,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.PaginatedResult_DatasetImportTask_>("tasks", Tasks);
+            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.PaginatedResultDatasetImportTask>("tasks", Tasks);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

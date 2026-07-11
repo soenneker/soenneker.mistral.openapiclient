@@ -38,6 +38,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         public WorkerInfo()
         {
             AdditionalData = new Dictionary<string, object>();
+            Tls = false;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

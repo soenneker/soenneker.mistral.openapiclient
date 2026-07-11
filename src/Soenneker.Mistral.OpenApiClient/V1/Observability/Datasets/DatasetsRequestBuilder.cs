@@ -20,14 +20,14 @@ namespace Soenneker.Mistral.OpenApiClient.V1.Observability.Datasets
     {
         /// <summary>Gets an item from the Soenneker.Mistral.OpenApiClient.v1.observability.datasets.item collection</summary>
         /// <param name="position">Unique identifier of the item</param>
-        /// <returns>A <see cref="global::Soenneker.Mistral.OpenApiClient.V1.Observability.Datasets.Item.WithDataset_ItemRequestBuilder"/></returns>
-        public global::Soenneker.Mistral.OpenApiClient.V1.Observability.Datasets.Item.WithDataset_ItemRequestBuilder this[Guid position]
+        /// <returns>A <see cref="global::Soenneker.Mistral.OpenApiClient.V1.Observability.Datasets.Item.WithDatasetItemRequestBuilder"/></returns>
+        public global::Soenneker.Mistral.OpenApiClient.V1.Observability.Datasets.Item.WithDatasetItemRequestBuilder this[Guid position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
-                urlTplParams.Add("dataset_id", position);
-                return new global::Soenneker.Mistral.OpenApiClient.V1.Observability.Datasets.Item.WithDataset_ItemRequestBuilder(urlTplParams, RequestAdapter);
+                urlTplParams.Add("datasetId", position);
+                return new global::Soenneker.Mistral.OpenApiClient.V1.Observability.Datasets.Item.WithDatasetItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>

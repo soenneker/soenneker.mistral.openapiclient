@@ -23,28 +23,28 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         /// <summary>The deleted_at property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.DatasetImportTask.DatasetImportTask_deleted_at? DeletedAt { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.DatasetImportTaskDeletedAt? DeletedAt { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.DatasetImportTask.DatasetImportTask_deleted_at DeletedAt { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.DatasetImportTaskDeletedAt DeletedAt { get; set; }
 #endif
         /// <summary>The id property</summary>
         public Guid? Id { get; set; }
         /// <summary>The message property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.DatasetImportTask.DatasetImportTask_message? Message { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.DatasetImportTaskMessage? Message { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.DatasetImportTask.DatasetImportTask_message Message { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.DatasetImportTaskMessage Message { get; set; }
 #endif
         /// <summary>The progress property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.DatasetImportTask.DatasetImportTask_progress? Progress { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.DatasetImportTaskProgress? Progress { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.DatasetImportTask.DatasetImportTask_progress Progress { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.DatasetImportTaskProgress Progress { get; set; }
 #endif
         /// <summary>The status property</summary>
         public global::Soenneker.Mistral.OpenApiClient.Models.BaseTaskStatus? Status { get; set; }
@@ -80,10 +80,10 @@ namespace Soenneker.Mistral.OpenApiClient.Models
                 { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
                 { "creator_id", n => { CreatorId = n.GetGuidValue(); } },
                 { "dataset_id", n => { DatasetId = n.GetGuidValue(); } },
-                { "deleted_at", n => { DeletedAt = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.DatasetImportTask.DatasetImportTask_deleted_at>(global::Soenneker.Mistral.OpenApiClient.Models.DatasetImportTask.DatasetImportTask_deleted_at.CreateFromDiscriminatorValue); } },
+                { "deleted_at", n => { DeletedAt = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.DatasetImportTaskDeletedAt>(global::Soenneker.Mistral.OpenApiClient.Models.DatasetImportTaskDeletedAt.CreateFromDiscriminatorValue); } },
                 { "id", n => { Id = n.GetGuidValue(); } },
-                { "message", n => { Message = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.DatasetImportTask.DatasetImportTask_message>(global::Soenneker.Mistral.OpenApiClient.Models.DatasetImportTask.DatasetImportTask_message.CreateFromDiscriminatorValue); } },
-                { "progress", n => { Progress = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.DatasetImportTask.DatasetImportTask_progress>(global::Soenneker.Mistral.OpenApiClient.Models.DatasetImportTask.DatasetImportTask_progress.CreateFromDiscriminatorValue); } },
+                { "message", n => { Message = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.DatasetImportTaskMessage>(global::Soenneker.Mistral.OpenApiClient.Models.DatasetImportTaskMessage.CreateFromDiscriminatorValue); } },
+                { "progress", n => { Progress = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.DatasetImportTaskProgress>(global::Soenneker.Mistral.OpenApiClient.Models.DatasetImportTaskProgress.CreateFromDiscriminatorValue); } },
                 { "status", n => { Status = n.GetEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.BaseTaskStatus>(); } },
                 { "updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
                 { "workspace_id", n => { WorkspaceId = n.GetGuidValue(); } },
@@ -99,206 +99,14 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             writer.WriteDateTimeOffsetValue("created_at", CreatedAt);
             writer.WriteGuidValue("creator_id", CreatorId);
             writer.WriteGuidValue("dataset_id", DatasetId);
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.DatasetImportTask.DatasetImportTask_deleted_at>("deleted_at", DeletedAt);
+            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.DatasetImportTaskDeletedAt>("deleted_at", DeletedAt);
             writer.WriteGuidValue("id", Id);
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.DatasetImportTask.DatasetImportTask_message>("message", Message);
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.DatasetImportTask.DatasetImportTask_progress>("progress", Progress);
+            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.DatasetImportTaskMessage>("message", Message);
+            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.DatasetImportTaskProgress>("progress", Progress);
             writer.WriteEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.BaseTaskStatus>("status", Status);
             writer.WriteDateTimeOffsetValue("updated_at", UpdatedAt);
             writer.WriteGuidValue("workspace_id", WorkspaceId);
             writer.WriteAdditionalData(AdditionalData);
-        }
-        /// <summary>
-        /// Composed type wrapper for classes <see cref="DateTimeOffset"/>, <see cref="global::Soenneker.Mistral.OpenApiClient.Models.DatasetImportTask_deleted_atMember1"/>
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class DatasetImportTask_deleted_at : IComposedTypeWrapper, IParsable
-        {
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.Mistral.OpenApiClient.Models.DatasetImportTask_deleted_atMember1"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public global::Soenneker.Mistral.OpenApiClient.Models.DatasetImportTask_deleted_atMember1? DatasetImportTaskDeletedAtMember1 { get; set; }
-#nullable restore
-#else
-            public global::Soenneker.Mistral.OpenApiClient.Models.DatasetImportTask_deleted_atMember1 DatasetImportTaskDeletedAtMember1 { get; set; }
-#endif
-            /// <summary>Composed type representation for type <see cref="DateTimeOffset"/></summary>
-            public DateTimeOffset? DateTimeOffset { get; set; }
-            /// <summary>
-            /// Creates a new instance of the appropriate class based on discriminator value
-            /// </summary>
-            /// <returns>A <see cref="global::Soenneker.Mistral.OpenApiClient.Models.DatasetImportTask.DatasetImportTask_deleted_at"/></returns>
-            /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-            public static global::Soenneker.Mistral.OpenApiClient.Models.DatasetImportTask.DatasetImportTask_deleted_at CreateFromDiscriminatorValue(IParseNode parseNode)
-            {
-                if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-                var result = new global::Soenneker.Mistral.OpenApiClient.Models.DatasetImportTask.DatasetImportTask_deleted_at();
-                if(parseNode.GetDateTimeOffsetValue() is DateTimeOffset dateTimeOffsetValue)
-                {
-                    result.DateTimeOffset = dateTimeOffsetValue;
-                }
-                else {
-                    result.DatasetImportTaskDeletedAtMember1 = new global::Soenneker.Mistral.OpenApiClient.Models.DatasetImportTask_deleted_atMember1();
-                }
-                return result;
-            }
-            /// <summary>
-            /// The deserialization information for the current model
-            /// </summary>
-            /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-            public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
-            {
-                if(DatasetImportTaskDeletedAtMember1 != null)
-                {
-                    return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(DatasetImportTaskDeletedAtMember1);
-                }
-                return new Dictionary<string, Action<IParseNode>>();
-            }
-            /// <summary>
-            /// Serializes information the current object
-            /// </summary>
-            /// <param name="writer">Serialization writer to use to serialize this model</param>
-            public virtual void Serialize(ISerializationWriter writer)
-            {
-                if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-                if(DateTimeOffset != null)
-                {
-                    writer.WriteDateTimeOffsetValue(null, DateTimeOffset);
-                }
-                else {
-                    writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.DatasetImportTask_deleted_atMember1>(null, DatasetImportTaskDeletedAtMember1);
-                }
-            }
-        }
-        /// <summary>
-        /// Composed type wrapper for classes <see cref="global::Soenneker.Mistral.OpenApiClient.Models.DatasetImportTask_messageMember1"/>, <see cref="string"/>
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class DatasetImportTask_message : IComposedTypeWrapper, IParsable
-        {
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.Mistral.OpenApiClient.Models.DatasetImportTask_messageMember1"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public global::Soenneker.Mistral.OpenApiClient.Models.DatasetImportTask_messageMember1? DatasetImportTaskMessageMember1 { get; set; }
-#nullable restore
-#else
-            public global::Soenneker.Mistral.OpenApiClient.Models.DatasetImportTask_messageMember1 DatasetImportTaskMessageMember1 { get; set; }
-#endif
-            /// <summary>Composed type representation for type <see cref="string"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public string? String { get; set; }
-#nullable restore
-#else
-            public string String { get; set; }
-#endif
-            /// <summary>
-            /// Creates a new instance of the appropriate class based on discriminator value
-            /// </summary>
-            /// <returns>A <see cref="global::Soenneker.Mistral.OpenApiClient.Models.DatasetImportTask.DatasetImportTask_message"/></returns>
-            /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-            public static global::Soenneker.Mistral.OpenApiClient.Models.DatasetImportTask.DatasetImportTask_message CreateFromDiscriminatorValue(IParseNode parseNode)
-            {
-                if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-                var result = new global::Soenneker.Mistral.OpenApiClient.Models.DatasetImportTask.DatasetImportTask_message();
-                if(parseNode.GetStringValue() is string stringValue)
-                {
-                    result.String = stringValue;
-                }
-                else {
-                    result.DatasetImportTaskMessageMember1 = new global::Soenneker.Mistral.OpenApiClient.Models.DatasetImportTask_messageMember1();
-                }
-                return result;
-            }
-            /// <summary>
-            /// The deserialization information for the current model
-            /// </summary>
-            /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-            public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
-            {
-                if(DatasetImportTaskMessageMember1 != null)
-                {
-                    return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(DatasetImportTaskMessageMember1);
-                }
-                return new Dictionary<string, Action<IParseNode>>();
-            }
-            /// <summary>
-            /// Serializes information the current object
-            /// </summary>
-            /// <param name="writer">Serialization writer to use to serialize this model</param>
-            public virtual void Serialize(ISerializationWriter writer)
-            {
-                if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-                if(String != null)
-                {
-                    writer.WriteStringValue(null, String);
-                }
-                else {
-                    writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.DatasetImportTask_messageMember1>(null, DatasetImportTaskMessageMember1);
-                }
-            }
-        }
-        /// <summary>
-        /// Composed type wrapper for classes <see cref="global::Soenneker.Mistral.OpenApiClient.Models.DatasetImportTask_progressMember1"/>, <see cref="int"/>
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class DatasetImportTask_progress : IComposedTypeWrapper, IParsable
-        {
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.Mistral.OpenApiClient.Models.DatasetImportTask_progressMember1"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public global::Soenneker.Mistral.OpenApiClient.Models.DatasetImportTask_progressMember1? DatasetImportTaskProgressMember1 { get; set; }
-#nullable restore
-#else
-            public global::Soenneker.Mistral.OpenApiClient.Models.DatasetImportTask_progressMember1 DatasetImportTaskProgressMember1 { get; set; }
-#endif
-            /// <summary>Composed type representation for type <see cref="int"/></summary>
-            public int? Integer { get; set; }
-            /// <summary>
-            /// Creates a new instance of the appropriate class based on discriminator value
-            /// </summary>
-            /// <returns>A <see cref="global::Soenneker.Mistral.OpenApiClient.Models.DatasetImportTask.DatasetImportTask_progress"/></returns>
-            /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-            public static global::Soenneker.Mistral.OpenApiClient.Models.DatasetImportTask.DatasetImportTask_progress CreateFromDiscriminatorValue(IParseNode parseNode)
-            {
-                if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-                var result = new global::Soenneker.Mistral.OpenApiClient.Models.DatasetImportTask.DatasetImportTask_progress();
-                if(parseNode.GetIntValue() is int integerValue)
-                {
-                    result.Integer = integerValue;
-                }
-                else {
-                    result.DatasetImportTaskProgressMember1 = new global::Soenneker.Mistral.OpenApiClient.Models.DatasetImportTask_progressMember1();
-                }
-                return result;
-            }
-            /// <summary>
-            /// The deserialization information for the current model
-            /// </summary>
-            /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-            public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
-            {
-                if(DatasetImportTaskProgressMember1 != null)
-                {
-                    return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(DatasetImportTaskProgressMember1);
-                }
-                return new Dictionary<string, Action<IParseNode>>();
-            }
-            /// <summary>
-            /// Serializes information the current object
-            /// </summary>
-            /// <param name="writer">Serialization writer to use to serialize this model</param>
-            public virtual void Serialize(ISerializationWriter writer)
-            {
-                if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-                if(Integer != null)
-                {
-                    writer.WriteIntValue(null, Integer);
-                }
-                else {
-                    writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.DatasetImportTask_progressMember1>(null, DatasetImportTaskProgressMember1);
-                }
-            }
         }
     }
 }

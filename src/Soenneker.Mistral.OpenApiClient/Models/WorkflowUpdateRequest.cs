@@ -17,26 +17,26 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         /// <summary>Whether to make the workflow available in the chat assistant</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.WorkflowUpdateRequest.WorkflowUpdateRequest_available_in_chat_assistant? AvailableInChatAssistant { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.WorkflowUpdateRequestAvailableInChatAssistant? AvailableInChatAssistant { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.WorkflowUpdateRequest.WorkflowUpdateRequest_available_in_chat_assistant AvailableInChatAssistant { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.WorkflowUpdateRequestAvailableInChatAssistant AvailableInChatAssistant { get; set; }
 #endif
         /// <summary>New description value</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.WorkflowUpdateRequest.WorkflowUpdateRequest_description? Description { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.WorkflowUpdateRequestDescription? Description { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.WorkflowUpdateRequest.WorkflowUpdateRequest_description Description { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.WorkflowUpdateRequestDescription Description { get; set; }
 #endif
         /// <summary>New display name value</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.WorkflowUpdateRequest.WorkflowUpdateRequest_display_name? DisplayName { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.WorkflowUpdateRequestDisplayName? DisplayName { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.WorkflowUpdateRequest.WorkflowUpdateRequest_display_name DisplayName { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.WorkflowUpdateRequestDisplayName DisplayName { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Mistral.OpenApiClient.Models.WorkflowUpdateRequest"/> and sets the default values.
@@ -63,9 +63,9 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "available_in_chat_assistant", n => { AvailableInChatAssistant = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.WorkflowUpdateRequest.WorkflowUpdateRequest_available_in_chat_assistant>(global::Soenneker.Mistral.OpenApiClient.Models.WorkflowUpdateRequest.WorkflowUpdateRequest_available_in_chat_assistant.CreateFromDiscriminatorValue); } },
-                { "description", n => { Description = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.WorkflowUpdateRequest.WorkflowUpdateRequest_description>(global::Soenneker.Mistral.OpenApiClient.Models.WorkflowUpdateRequest.WorkflowUpdateRequest_description.CreateFromDiscriminatorValue); } },
-                { "display_name", n => { DisplayName = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.WorkflowUpdateRequest.WorkflowUpdateRequest_display_name>(global::Soenneker.Mistral.OpenApiClient.Models.WorkflowUpdateRequest.WorkflowUpdateRequest_display_name.CreateFromDiscriminatorValue); } },
+                { "available_in_chat_assistant", n => { AvailableInChatAssistant = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.WorkflowUpdateRequestAvailableInChatAssistant>(global::Soenneker.Mistral.OpenApiClient.Models.WorkflowUpdateRequestAvailableInChatAssistant.CreateFromDiscriminatorValue); } },
+                { "description", n => { Description = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.WorkflowUpdateRequestDescription>(global::Soenneker.Mistral.OpenApiClient.Models.WorkflowUpdateRequestDescription.CreateFromDiscriminatorValue); } },
+                { "display_name", n => { DisplayName = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.WorkflowUpdateRequestDisplayName>(global::Soenneker.Mistral.OpenApiClient.Models.WorkflowUpdateRequestDisplayName.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -75,208 +75,10 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.WorkflowUpdateRequest.WorkflowUpdateRequest_available_in_chat_assistant>("available_in_chat_assistant", AvailableInChatAssistant);
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.WorkflowUpdateRequest.WorkflowUpdateRequest_description>("description", Description);
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.WorkflowUpdateRequest.WorkflowUpdateRequest_display_name>("display_name", DisplayName);
+            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.WorkflowUpdateRequestAvailableInChatAssistant>("available_in_chat_assistant", AvailableInChatAssistant);
+            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.WorkflowUpdateRequestDescription>("description", Description);
+            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.WorkflowUpdateRequestDisplayName>("display_name", DisplayName);
             writer.WriteAdditionalData(AdditionalData);
-        }
-        /// <summary>
-        /// Composed type wrapper for classes <see cref="bool"/>, <see cref="global::Soenneker.Mistral.OpenApiClient.Models.WorkflowUpdateRequest_available_in_chat_assistantMember1"/>
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class WorkflowUpdateRequest_available_in_chat_assistant : IComposedTypeWrapper, IParsable
-        {
-            /// <summary>Composed type representation for type <see cref="bool"/></summary>
-            public bool? Boolean { get; set; }
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.Mistral.OpenApiClient.Models.WorkflowUpdateRequest_available_in_chat_assistantMember1"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public global::Soenneker.Mistral.OpenApiClient.Models.WorkflowUpdateRequest_available_in_chat_assistantMember1? WorkflowUpdateRequestAvailableInChatAssistantMember1 { get; set; }
-#nullable restore
-#else
-            public global::Soenneker.Mistral.OpenApiClient.Models.WorkflowUpdateRequest_available_in_chat_assistantMember1 WorkflowUpdateRequestAvailableInChatAssistantMember1 { get; set; }
-#endif
-            /// <summary>
-            /// Creates a new instance of the appropriate class based on discriminator value
-            /// </summary>
-            /// <returns>A <see cref="global::Soenneker.Mistral.OpenApiClient.Models.WorkflowUpdateRequest.WorkflowUpdateRequest_available_in_chat_assistant"/></returns>
-            /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-            public static global::Soenneker.Mistral.OpenApiClient.Models.WorkflowUpdateRequest.WorkflowUpdateRequest_available_in_chat_assistant CreateFromDiscriminatorValue(IParseNode parseNode)
-            {
-                if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-                var result = new global::Soenneker.Mistral.OpenApiClient.Models.WorkflowUpdateRequest.WorkflowUpdateRequest_available_in_chat_assistant();
-                if(parseNode.GetBoolValue() is bool booleanValue)
-                {
-                    result.Boolean = booleanValue;
-                }
-                else {
-                    result.WorkflowUpdateRequestAvailableInChatAssistantMember1 = new global::Soenneker.Mistral.OpenApiClient.Models.WorkflowUpdateRequest_available_in_chat_assistantMember1();
-                }
-                return result;
-            }
-            /// <summary>
-            /// The deserialization information for the current model
-            /// </summary>
-            /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-            public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
-            {
-                if(WorkflowUpdateRequestAvailableInChatAssistantMember1 != null)
-                {
-                    return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(WorkflowUpdateRequestAvailableInChatAssistantMember1);
-                }
-                return new Dictionary<string, Action<IParseNode>>();
-            }
-            /// <summary>
-            /// Serializes information the current object
-            /// </summary>
-            /// <param name="writer">Serialization writer to use to serialize this model</param>
-            public virtual void Serialize(ISerializationWriter writer)
-            {
-                if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-                if(Boolean != null)
-                {
-                    writer.WriteBoolValue(null, Boolean);
-                }
-                else {
-                    writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.WorkflowUpdateRequest_available_in_chat_assistantMember1>(null, WorkflowUpdateRequestAvailableInChatAssistantMember1);
-                }
-            }
-        }
-        /// <summary>
-        /// Composed type wrapper for classes <see cref="global::Soenneker.Mistral.OpenApiClient.Models.WorkflowUpdateRequest_descriptionMember1"/>, <see cref="string"/>
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class WorkflowUpdateRequest_description : IComposedTypeWrapper, IParsable
-        {
-            /// <summary>Composed type representation for type <see cref="string"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public string? String { get; set; }
-#nullable restore
-#else
-            public string String { get; set; }
-#endif
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.Mistral.OpenApiClient.Models.WorkflowUpdateRequest_descriptionMember1"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public global::Soenneker.Mistral.OpenApiClient.Models.WorkflowUpdateRequest_descriptionMember1? WorkflowUpdateRequestDescriptionMember1 { get; set; }
-#nullable restore
-#else
-            public global::Soenneker.Mistral.OpenApiClient.Models.WorkflowUpdateRequest_descriptionMember1 WorkflowUpdateRequestDescriptionMember1 { get; set; }
-#endif
-            /// <summary>
-            /// Creates a new instance of the appropriate class based on discriminator value
-            /// </summary>
-            /// <returns>A <see cref="global::Soenneker.Mistral.OpenApiClient.Models.WorkflowUpdateRequest.WorkflowUpdateRequest_description"/></returns>
-            /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-            public static global::Soenneker.Mistral.OpenApiClient.Models.WorkflowUpdateRequest.WorkflowUpdateRequest_description CreateFromDiscriminatorValue(IParseNode parseNode)
-            {
-                if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-                var result = new global::Soenneker.Mistral.OpenApiClient.Models.WorkflowUpdateRequest.WorkflowUpdateRequest_description();
-                if(parseNode.GetStringValue() is string stringValue)
-                {
-                    result.String = stringValue;
-                }
-                else {
-                    result.WorkflowUpdateRequestDescriptionMember1 = new global::Soenneker.Mistral.OpenApiClient.Models.WorkflowUpdateRequest_descriptionMember1();
-                }
-                return result;
-            }
-            /// <summary>
-            /// The deserialization information for the current model
-            /// </summary>
-            /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-            public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
-            {
-                if(WorkflowUpdateRequestDescriptionMember1 != null)
-                {
-                    return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(WorkflowUpdateRequestDescriptionMember1);
-                }
-                return new Dictionary<string, Action<IParseNode>>();
-            }
-            /// <summary>
-            /// Serializes information the current object
-            /// </summary>
-            /// <param name="writer">Serialization writer to use to serialize this model</param>
-            public virtual void Serialize(ISerializationWriter writer)
-            {
-                if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-                if(String != null)
-                {
-                    writer.WriteStringValue(null, String);
-                }
-                else {
-                    writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.WorkflowUpdateRequest_descriptionMember1>(null, WorkflowUpdateRequestDescriptionMember1);
-                }
-            }
-        }
-        /// <summary>
-        /// Composed type wrapper for classes <see cref="global::Soenneker.Mistral.OpenApiClient.Models.WorkflowUpdateRequest_display_nameMember1"/>, <see cref="string"/>
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class WorkflowUpdateRequest_display_name : IComposedTypeWrapper, IParsable
-        {
-            /// <summary>Composed type representation for type <see cref="string"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public string? String { get; set; }
-#nullable restore
-#else
-            public string String { get; set; }
-#endif
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.Mistral.OpenApiClient.Models.WorkflowUpdateRequest_display_nameMember1"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public global::Soenneker.Mistral.OpenApiClient.Models.WorkflowUpdateRequest_display_nameMember1? WorkflowUpdateRequestDisplayNameMember1 { get; set; }
-#nullable restore
-#else
-            public global::Soenneker.Mistral.OpenApiClient.Models.WorkflowUpdateRequest_display_nameMember1 WorkflowUpdateRequestDisplayNameMember1 { get; set; }
-#endif
-            /// <summary>
-            /// Creates a new instance of the appropriate class based on discriminator value
-            /// </summary>
-            /// <returns>A <see cref="global::Soenneker.Mistral.OpenApiClient.Models.WorkflowUpdateRequest.WorkflowUpdateRequest_display_name"/></returns>
-            /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-            public static global::Soenneker.Mistral.OpenApiClient.Models.WorkflowUpdateRequest.WorkflowUpdateRequest_display_name CreateFromDiscriminatorValue(IParseNode parseNode)
-            {
-                if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-                var result = new global::Soenneker.Mistral.OpenApiClient.Models.WorkflowUpdateRequest.WorkflowUpdateRequest_display_name();
-                if(parseNode.GetStringValue() is string stringValue)
-                {
-                    result.String = stringValue;
-                }
-                else {
-                    result.WorkflowUpdateRequestDisplayNameMember1 = new global::Soenneker.Mistral.OpenApiClient.Models.WorkflowUpdateRequest_display_nameMember1();
-                }
-                return result;
-            }
-            /// <summary>
-            /// The deserialization information for the current model
-            /// </summary>
-            /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-            public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
-            {
-                if(WorkflowUpdateRequestDisplayNameMember1 != null)
-                {
-                    return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(WorkflowUpdateRequestDisplayNameMember1);
-                }
-                return new Dictionary<string, Action<IParseNode>>();
-            }
-            /// <summary>
-            /// Serializes information the current object
-            /// </summary>
-            /// <param name="writer">Serialization writer to use to serialize this model</param>
-            public virtual void Serialize(ISerializationWriter writer)
-            {
-                if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-                if(String != null)
-                {
-                    writer.WriteStringValue(null, String);
-                }
-                else {
-                    writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.WorkflowUpdateRequest_display_nameMember1>(null, WorkflowUpdateRequestDisplayNameMember1);
-                }
-            }
         }
     }
 }

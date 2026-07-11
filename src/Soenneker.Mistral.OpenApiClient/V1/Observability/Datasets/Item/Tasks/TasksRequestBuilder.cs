@@ -13,21 +13,21 @@ using System;
 namespace Soenneker.Mistral.OpenApiClient.V1.Observability.Datasets.Item.Tasks
 {
     /// <summary>
-    /// Builds and executes requests for operations under \v1\observability\datasets\{dataset_id}\tasks
+    /// Builds and executes requests for operations under \v1\observability\datasets\{datasetId}\tasks
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class TasksRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Soenneker.Mistral.OpenApiClient.v1.observability.datasets.item.tasks.item collection</summary>
         /// <param name="position">Unique identifier of the item</param>
-        /// <returns>A <see cref="global::Soenneker.Mistral.OpenApiClient.V1.Observability.Datasets.Item.Tasks.Item.WithTask_ItemRequestBuilder"/></returns>
-        public global::Soenneker.Mistral.OpenApiClient.V1.Observability.Datasets.Item.Tasks.Item.WithTask_ItemRequestBuilder this[Guid position]
+        /// <returns>A <see cref="global::Soenneker.Mistral.OpenApiClient.V1.Observability.Datasets.Item.Tasks.Item.WithTaskItemRequestBuilder"/></returns>
+        public global::Soenneker.Mistral.OpenApiClient.V1.Observability.Datasets.Item.Tasks.Item.WithTaskItemRequestBuilder this[Guid position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
-                urlTplParams.Add("task_id", position);
-                return new global::Soenneker.Mistral.OpenApiClient.V1.Observability.Datasets.Item.Tasks.Item.WithTask_ItemRequestBuilder(urlTplParams, RequestAdapter);
+                urlTplParams.Add("taskId", position);
+                return new global::Soenneker.Mistral.OpenApiClient.V1.Observability.Datasets.Item.Tasks.Item.WithTaskItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
@@ -35,7 +35,7 @@ namespace Soenneker.Mistral.OpenApiClient.V1.Observability.Datasets.Item.Tasks
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public TasksRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/observability/datasets/{dataset_id}/tasks{?page*,page_size*}", pathParameters)
+        public TasksRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/observability/datasets/{datasetId}/tasks{?page*,page_size*}", pathParameters)
         {
         }
         /// <summary>
@@ -43,7 +43,7 @@ namespace Soenneker.Mistral.OpenApiClient.V1.Observability.Datasets.Item.Tasks
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public TasksRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/observability/datasets/{dataset_id}/tasks{?page*,page_size*}", rawUrl)
+        public TasksRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/observability/datasets/{datasetId}/tasks{?page*,page_size*}", rawUrl)
         {
         }
         /// <summary>

@@ -5,7 +5,7 @@ using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
 using Soenneker.Mistral.OpenApiClient.Models;
 using Soenneker.Mistral.OpenApiClient.V1.Conversations.Item;
-using Soenneker.Mistral.OpenApiClient.V1.Conversations.WithConversation_idStream;
+using Soenneker.Mistral.OpenApiClient.V1.Conversations.WithConversationIdStream;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
@@ -21,14 +21,14 @@ namespace Soenneker.Mistral.OpenApiClient.V1.Conversations
     {
         /// <summary>Gets an item from the Soenneker.Mistral.OpenApiClient.v1.conversations.item collection</summary>
         /// <param name="position">ID of the conversation from which we are fetching metadata.</param>
-        /// <returns>A <see cref="global::Soenneker.Mistral.OpenApiClient.V1.Conversations.Item.WithConversation_ItemRequestBuilder"/></returns>
-        public global::Soenneker.Mistral.OpenApiClient.V1.Conversations.Item.WithConversation_ItemRequestBuilder this[string position]
+        /// <returns>A <see cref="global::Soenneker.Mistral.OpenApiClient.V1.Conversations.Item.WithConversationItemRequestBuilder"/></returns>
+        public global::Soenneker.Mistral.OpenApiClient.V1.Conversations.Item.WithConversationItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
-                urlTplParams.Add("conversation_id", position);
-                return new global::Soenneker.Mistral.OpenApiClient.V1.Conversations.Item.WithConversation_ItemRequestBuilder(urlTplParams, RequestAdapter);
+                urlTplParams.Add("conversationId", position);
+                return new global::Soenneker.Mistral.OpenApiClient.V1.Conversations.Item.WithConversationItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
@@ -50,25 +50,25 @@ namespace Soenneker.Mistral.OpenApiClient.V1.Conversations
         /// <summary>
         /// Retrieve a list of conversation entities sorted by creation time.
         /// </summary>
-        /// <returns>A List&lt;global::Soenneker.Mistral.OpenApiClient.V1.Conversations.ConversationsRequestBuilder.Conversations&gt;</returns>
+        /// <returns>A List&lt;global::Soenneker.Mistral.OpenApiClient.Models.ResponseV1ConversationsListItem&gt;</returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Mistral.OpenApiClient.Models.HTTPValidationError">When receiving a 422 status code</exception>
+        /// <exception cref="global::Soenneker.Mistral.OpenApiClient.Models.HttpValidationError">When receiving a 422 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<List<global::Soenneker.Mistral.OpenApiClient.V1.Conversations.ConversationsRequestBuilder.Conversations>?> GetAsync(Action<RequestConfiguration<global::Soenneker.Mistral.OpenApiClient.V1.Conversations.ConversationsRequestBuilder.ConversationsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<List<global::Soenneker.Mistral.OpenApiClient.Models.ResponseV1ConversationsListItem>?> GetAsync(Action<RequestConfiguration<global::Soenneker.Mistral.OpenApiClient.V1.Conversations.ConversationsRequestBuilder.ConversationsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<List<global::Soenneker.Mistral.OpenApiClient.V1.Conversations.ConversationsRequestBuilder.Conversations>> GetAsync(Action<RequestConfiguration<global::Soenneker.Mistral.OpenApiClient.V1.Conversations.ConversationsRequestBuilder.ConversationsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<List<global::Soenneker.Mistral.OpenApiClient.Models.ResponseV1ConversationsListItem>> GetAsync(Action<RequestConfiguration<global::Soenneker.Mistral.OpenApiClient.V1.Conversations.ConversationsRequestBuilder.ConversationsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "422", global::Soenneker.Mistral.OpenApiClient.Models.HTTPValidationError.CreateFromDiscriminatorValue },
+                { "422", global::Soenneker.Mistral.OpenApiClient.Models.HttpValidationError.CreateFromDiscriminatorValue },
             };
-            var collectionResult = await RequestAdapter.SendCollectionAsync<global::Soenneker.Mistral.OpenApiClient.V1.Conversations.ConversationsRequestBuilder.Conversations>(requestInfo, global::Soenneker.Mistral.OpenApiClient.V1.Conversations.ConversationsRequestBuilder.Conversations.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            var collectionResult = await RequestAdapter.SendCollectionAsync<global::Soenneker.Mistral.OpenApiClient.Models.ResponseV1ConversationsListItem>(requestInfo, global::Soenneker.Mistral.OpenApiClient.Models.ResponseV1ConversationsListItem.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
             return collectionResult?.AsList();
         }
         /// <summary>
@@ -78,7 +78,7 @@ namespace Soenneker.Mistral.OpenApiClient.V1.Conversations
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Mistral.OpenApiClient.Models.HTTPValidationError">When receiving a 422 status code</exception>
+        /// <exception cref="global::Soenneker.Mistral.OpenApiClient.Models.HttpValidationError">When receiving a 422 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Soenneker.Mistral.OpenApiClient.Models.ConversationResponse?> PostAsync(global::Soenneker.Mistral.OpenApiClient.Models.ConversationRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -92,7 +92,7 @@ namespace Soenneker.Mistral.OpenApiClient.V1.Conversations
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "422", global::Soenneker.Mistral.OpenApiClient.Models.HTTPValidationError.CreateFromDiscriminatorValue },
+                { "422", global::Soenneker.Mistral.OpenApiClient.Models.HttpValidationError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Mistral.OpenApiClient.Models.ConversationResponse>(requestInfo, global::Soenneker.Mistral.OpenApiClient.Models.ConversationResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -138,14 +138,14 @@ namespace Soenneker.Mistral.OpenApiClient.V1.Conversations
             return requestInfo;
         }
         /// <summary>
-        /// Builds and executes requests for operations under \v1\conversations\{conversation_id}#stream
+        /// Builds and executes requests for operations under \v1\conversations\{conversationId}#stream
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Mistral.OpenApiClient.V1.Conversations.WithConversation_idStream.WithConversation_idStreamRequestBuilder"/></returns>
-        /// <param name="conversation_id">ID of the conversation to which we append entries.</param>
-        public global::Soenneker.Mistral.OpenApiClient.V1.Conversations.WithConversation_idStream.WithConversation_idStreamRequestBuilder WithConversation_idStream(string conversation_id)
+        /// <returns>A <see cref="global::Soenneker.Mistral.OpenApiClient.V1.Conversations.WithConversationIdStream.WithConversationIdStreamRequestBuilder"/></returns>
+        /// <param name="conversationId">ID of the conversation to which we append entries.</param>
+        public global::Soenneker.Mistral.OpenApiClient.V1.Conversations.WithConversationIdStream.WithConversationIdStreamRequestBuilder WithConversationIdStream(string conversationId)
         {
-            if(string.IsNullOrEmpty(conversation_id)) throw new ArgumentNullException(nameof(conversation_id));
-            return new global::Soenneker.Mistral.OpenApiClient.V1.Conversations.WithConversation_idStream.WithConversation_idStreamRequestBuilder(PathParameters, RequestAdapter, conversation_id);
+            if(string.IsNullOrEmpty(conversationId)) throw new ArgumentNullException(nameof(conversationId));
+            return new global::Soenneker.Mistral.OpenApiClient.V1.Conversations.WithConversationIdStream.WithConversationIdStreamRequestBuilder(PathParameters, RequestAdapter, conversationId);
         }
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
@@ -155,63 +155,6 @@ namespace Soenneker.Mistral.OpenApiClient.V1.Conversations
         public global::Soenneker.Mistral.OpenApiClient.V1.Conversations.ConversationsRequestBuilder WithUrl(string rawUrl)
         {
             return new global::Soenneker.Mistral.OpenApiClient.V1.Conversations.ConversationsRequestBuilder(rawUrl, RequestAdapter);
-        }
-        /// <summary>
-        /// Composed type wrapper for classes <see cref="global::Soenneker.Mistral.OpenApiClient.Models.AgentConversation"/>, <see cref="global::Soenneker.Mistral.OpenApiClient.Models.ModelConversation"/>
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class Conversations : IComposedTypeWrapper, IParsable
-        {
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.Mistral.OpenApiClient.Models.AgentConversation"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public global::Soenneker.Mistral.OpenApiClient.Models.AgentConversation? AgentConversation { get; set; }
-#nullable restore
-#else
-            public global::Soenneker.Mistral.OpenApiClient.Models.AgentConversation AgentConversation { get; set; }
-#endif
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.Mistral.OpenApiClient.Models.ModelConversation"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public global::Soenneker.Mistral.OpenApiClient.Models.ModelConversation? ModelConversation { get; set; }
-#nullable restore
-#else
-            public global::Soenneker.Mistral.OpenApiClient.Models.ModelConversation ModelConversation { get; set; }
-#endif
-            /// <summary>
-            /// Creates a new instance of the appropriate class based on discriminator value
-            /// </summary>
-            /// <returns>A <see cref="global::Soenneker.Mistral.OpenApiClient.V1.Conversations.ConversationsRequestBuilder.Conversations"/></returns>
-            /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-            public static global::Soenneker.Mistral.OpenApiClient.V1.Conversations.ConversationsRequestBuilder.Conversations CreateFromDiscriminatorValue(IParseNode parseNode)
-            {
-                if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-                var result = new global::Soenneker.Mistral.OpenApiClient.V1.Conversations.ConversationsRequestBuilder.Conversations();
-                result.AgentConversation = new global::Soenneker.Mistral.OpenApiClient.Models.AgentConversation();
-                result.ModelConversation = new global::Soenneker.Mistral.OpenApiClient.Models.ModelConversation();
-                return result;
-            }
-            /// <summary>
-            /// The deserialization information for the current model
-            /// </summary>
-            /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-            public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
-            {
-                if(AgentConversation != null || ModelConversation != null)
-                {
-                    return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(AgentConversation, ModelConversation);
-                }
-                return new Dictionary<string, Action<IParseNode>>();
-            }
-            /// <summary>
-            /// Serializes information the current object
-            /// </summary>
-            /// <param name="writer">Serialization writer to use to serialize this model</param>
-            public virtual void Serialize(ISerializationWriter writer)
-            {
-                if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-                writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.AgentConversation>(null, AgentConversation, ModelConversation);
-            }
         }
         /// <summary>
         /// Retrieve a list of conversation entities sorted by creation time.
