@@ -655,166 +655,6 @@
             }
           }
         }
-      },
-      "get": {
-        "tags": [
-          "beta.agents"
-        ],
-        "summary": "List agent entities.",
-        "description": "Retrieve a list of agent entities sorted by creation time.",
-        "operationId": "AgentsApiV1AgentsList",
-        "parameters": [
-          {
-            "name": "page",
-            "in": "query",
-            "description": "Page number (0-indexed)",
-            "schema": {
-              "title": "Page",
-              "minimum": 0,
-              "type": "integer",
-              "description": "Page number (0-indexed)",
-              "default": 0
-            }
-          },
-          {
-            "name": "page_size",
-            "in": "query",
-            "description": "Number of agents per page",
-            "schema": {
-              "title": "Page Size",
-              "maximum": 1000,
-              "minimum": 1,
-              "type": "integer",
-              "description": "Number of agents per page",
-              "default": 20
-            }
-          },
-          {
-            "name": "deployment_chat",
-            "in": "query",
-            "schema": {
-              "title": "Deployment Chat",
-              "type": "object",
-              "anyOf": [
-                {
-                  "type": "boolean"
-                },
-                {
-                  "type": "object"
-                }
-              ]
-            }
-          },
-          {
-            "name": "sources",
-            "in": "query",
-            "schema": {
-              "title": "Sources",
-              "type": "object",
-              "anyOf": [
-                {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/RequestSource"
-                  }
-                },
-                {
-                  "type": "object"
-                }
-              ]
-            }
-          },
-          {
-            "name": "name",
-            "in": "query",
-            "description": "Filter by agent name",
-            "schema": {
-              "title": "Name",
-              "type": "object",
-              "anyOf": [
-                {
-                  "type": "string"
-                },
-                {
-                  "type": "object"
-                }
-              ],
-              "description": "Filter by agent name"
-            }
-          },
-          {
-            "name": "search",
-            "in": "query",
-            "description": "Search agents by name or ID",
-            "schema": {
-              "title": "Search",
-              "type": "object",
-              "anyOf": [
-                {
-                  "type": "string"
-                },
-                {
-                  "type": "object"
-                }
-              ],
-              "description": "Search agents by name or ID"
-            }
-          },
-          {
-            "name": "id",
-            "in": "query",
-            "schema": {
-              "title": "Id",
-              "type": "object",
-              "anyOf": [
-                {
-                  "type": "string"
-                },
-                {
-                  "type": "object"
-                }
-              ]
-            }
-          },
-          {
-            "name": "metadata",
-            "in": "query",
-            "schema": {
-              "title": "Metadata",
-              "type": "object",
-              "anyOf": [
-                {
-                  "type": "object"
-                },
-                {
-                  "type": "object"
-                }
-              ]
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Successful Response",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/AgentsApiV1AgentsList200Response"
-                }
-              }
-            }
-          },
-          "422": {
-            "description": "Validation Error",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/HttpValidationError"
-                }
-              }
-            }
-          }
-        }
       }
     },
     "/v1/agents/{agentId}": {
@@ -946,6 +786,174 @@
           }
         ],
         "responses": {
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HttpValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/agents/pages": {
+      "get": {
+        "tags": [
+          "beta.agents"
+        ],
+        "summary": "List agent entities, cursor-paginated.",
+        "description": "Retrieve a page of agent entities. Unlike the deprecated \u0060GET /v1/agents\u0060, this endpoint paginates by opaque cursor and honors per-agent sharing, returning only agents the caller is authorized to see.",
+        "operationId": "AgentsApiV1AgentsListPages",
+        "parameters": [
+          {
+            "name": "page_size",
+            "in": "query",
+            "description": "Number of agents per page",
+            "schema": {
+              "title": "Page Size",
+              "maximum": 1000,
+              "minimum": 1,
+              "type": "integer",
+              "description": "Number of agents per page",
+              "default": 20
+            }
+          },
+          {
+            "name": "deployment_chat",
+            "in": "query",
+            "schema": {
+              "title": "Deployment Chat",
+              "type": "object",
+              "anyOf": [
+                {
+                  "type": "boolean"
+                },
+                {
+                  "type": "object"
+                }
+              ]
+            }
+          },
+          {
+            "name": "sources",
+            "in": "query",
+            "schema": {
+              "title": "Sources",
+              "type": "object",
+              "anyOf": [
+                {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/RequestSource"
+                  }
+                },
+                {
+                  "type": "object"
+                }
+              ]
+            }
+          },
+          {
+            "name": "name",
+            "in": "query",
+            "description": "Filter by agent name",
+            "schema": {
+              "title": "Name",
+              "type": "object",
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "object"
+                }
+              ],
+              "description": "Filter by agent name"
+            }
+          },
+          {
+            "name": "search",
+            "in": "query",
+            "description": "Search agents by name or ID",
+            "schema": {
+              "title": "Search",
+              "type": "object",
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "object"
+                }
+              ],
+              "description": "Search agents by name or ID"
+            }
+          },
+          {
+            "name": "id",
+            "in": "query",
+            "schema": {
+              "title": "Id",
+              "type": "object",
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "object"
+                }
+              ]
+            }
+          },
+          {
+            "name": "metadata",
+            "in": "query",
+            "schema": {
+              "title": "Metadata",
+              "type": "object",
+              "anyOf": [
+                {
+                  "type": "object"
+                },
+                {
+                  "type": "object"
+                }
+              ]
+            }
+          },
+          {
+            "name": "page_token",
+            "in": "query",
+            "description": "Opaque cursor from a previous response\u0027s next_page_token. When set, results page forward from the cursor.",
+            "schema": {
+              "title": "Page Token",
+              "type": "object",
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "object"
+                }
+              ],
+              "description": "Opaque cursor from a previous response\u0027s next_page_token. When set, results page forward from the cursor."
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AgentListPage"
+                }
+              }
+            }
+          },
           "422": {
             "description": "Validation Error",
             "content": {
@@ -11471,6 +11479,43 @@
           },
           "version_message": {
             "$ref": "#/components/schemas/AgentVersionMessage"
+          }
+        },
+        "additionalProperties": false
+      },
+      "AgentListPage": {
+        "title": "AgentListPage",
+        "required": [
+          "data"
+        ],
+        "type": "object",
+        "properties": {
+          "object": {
+            "title": "Object",
+            "enum": [
+              "list"
+            ],
+            "type": "string",
+            "x-ms-enum": {
+              "name": "ObjectValue",
+              "modelAsString": false,
+              "values": [
+                {
+                  "value": "list",
+                  "name": "List"
+                }
+              ]
+            }
+          },
+          "data": {
+            "title": "Data",
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Agent"
+            }
+          },
+          "next_page_token": {
+            "$ref": "#/components/schemas/AgentListPageNextPageToken"
           }
         },
         "additionalProperties": false
@@ -27992,6 +28037,18 @@
           }
         ]
       },
+      "AgentListPageNextPageToken": {
+        "title": "Next Page Token",
+        "type": "object",
+        "anyOf": [
+          {
+            "$ref": "#/components/schemas/NextPageToken"
+          },
+          {
+            "type": "object"
+          }
+        ]
+      },
       "AgentConversationName": {
         "title": "Name",
         "type": "object",
@@ -39247,13 +39304,6 @@
           }
         }
       },
-      "ResponseV1AgentsList": {
-        "title": "Response V1 Agents List",
-        "type": "array",
-        "items": {
-          "$ref": "#/components/schemas/Agent"
-        }
-      },
       "ResponseV1AgentsListVersions": {
         "title": "Response V1 Agents List Versions",
         "type": "array",
@@ -40087,6 +40137,17 @@
         }
       },
       "VersionMessage": {
+        "required": [
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "string"
+          }
+        }
+      },
+      "NextPageToken": {
         "required": [
           "value"
         ],
@@ -42363,17 +42424,6 @@
           }
         }
       },
-      "NextPageToken": {
-        "required": [
-          "value"
-        ],
-        "type": "object",
-        "properties": {
-          "value": {
-            "type": "string"
-          }
-        }
-      },
       "EndTimeUnixMs": {
         "required": [
           "value"
@@ -42752,12 +42802,6 @@
         "type": "array",
         "items": {
           "$ref": "#/components/schemas/ResponseV1ConversationsListItem"
-        }
-      },
-      "AgentsApiV1AgentsList200Response": {
-        "type": "array",
-        "items": {
-          "$ref": "#/components/schemas/Agent"
         }
       },
       "AgentsApiV1AgentsListVersions200Response": {
