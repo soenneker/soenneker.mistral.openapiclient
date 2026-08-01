@@ -9,27 +9,27 @@ namespace Soenneker.Mistral.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class GetWorkflowExecutionHistoryV1WorkflowsExecutionsExecutionIdHistoryGet200ResponseResponseJson : IAdditionalDataHolder, IParsable
+    public partial class GetRunHistoryV1WorkflowsRunsRunIdHistoryGet200ResponseSchema : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Mistral.OpenApiClient.Models.GetWorkflowExecutionHistoryV1WorkflowsExecutionsExecutionIdHistoryGet200ResponseResponseJson"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Mistral.OpenApiClient.Models.GetRunHistoryV1WorkflowsRunsRunIdHistoryGet200ResponseSchema"/> and sets the default values.
         /// </summary>
-        public GetWorkflowExecutionHistoryV1WorkflowsExecutionsExecutionIdHistoryGet200ResponseResponseJson()
+        public GetRunHistoryV1WorkflowsRunsRunIdHistoryGet200ResponseSchema()
         {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Mistral.OpenApiClient.Models.GetWorkflowExecutionHistoryV1WorkflowsExecutionsExecutionIdHistoryGet200ResponseResponseJson"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Mistral.OpenApiClient.Models.GetRunHistoryV1WorkflowsRunsRunIdHistoryGet200ResponseSchema"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::Soenneker.Mistral.OpenApiClient.Models.GetWorkflowExecutionHistoryV1WorkflowsExecutionsExecutionIdHistoryGet200ResponseResponseJson CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::Soenneker.Mistral.OpenApiClient.Models.GetRunHistoryV1WorkflowsRunsRunIdHistoryGet200ResponseSchema CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Mistral.OpenApiClient.Models.GetWorkflowExecutionHistoryV1WorkflowsExecutionsExecutionIdHistoryGet200ResponseResponseJson();
+            return new global::Soenneker.Mistral.OpenApiClient.Models.GetRunHistoryV1WorkflowsRunsRunIdHistoryGet200ResponseSchema();
         }
         /// <summary>
         /// The deserialization information for the current model

@@ -1776,7 +1776,7 @@
             "content": {
               "application/octet-stream": {
                 "schema": {
-                  "$ref": "#/components/schemas/FilesApiRoutesDownloadFile200ResponseResponseOctetStream"
+                  "$ref": "#/components/schemas/FilesApiRoutesDownloadFile200OctetStreamResponseSchema"
                 }
               }
             }
@@ -8137,7 +8137,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/GetWorkflowExecutionHistoryV1WorkflowsExecutionsExecutionIdHistoryGet200ResponseResponseJson"
+                  "$ref": "#/components/schemas/GetWorkflowExecutionHistoryV1WorkflowsExecutionsExecutionIdHistoryGet200ResponseSchema"
                 }
               }
             }
@@ -8693,7 +8693,7 @@
             "content": {
               "text/event-stream": {
                 "schema": {
-                  "$ref": "#/components/schemas/StreamV1WorkflowsExecutionsExecutionIdStreamGet200Response"
+                  "$ref": "#/components/schemas/StreamV1WorkflowsExecutionsExecutionIdStreamGet200EventStreamResponse"
                 }
               }
             }
@@ -8993,7 +8993,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/GetRunHistoryV1WorkflowsRunsRunIdHistoryGet200ResponseResponseJson"
+                  "$ref": "#/components/schemas/GetRunHistoryV1WorkflowsRunsRunIdHistoryGet200ResponseSchema"
                 }
               }
             }
@@ -9268,7 +9268,7 @@
             "content": {
               "text/event-stream": {
                 "schema": {
-                  "$ref": "#/components/schemas/GetStreamEventsV1WorkflowsEventsStreamGet200Response"
+                  "$ref": "#/components/schemas/GetStreamEventsV1WorkflowsEventsStreamGet200EventStreamResponse"
                 }
               }
             }
@@ -39341,7 +39341,7 @@
           }
         }
       },
-      "FilesApiRoutesDownloadFile200Response": {
+      "FilesApiRoutesDownloadFile200OctetStreamResponse": {
         "type": "string",
         "format": "binary"
       },
@@ -42816,7 +42816,7 @@
           "$ref": "#/components/schemas/AgentAliasResponse"
         }
       },
-      "FilesApiRoutesDownloadFile200ResponseResponseOctetStream": {
+      "FilesApiRoutesDownloadFile200OctetStreamResponseSchema": {
         "type": "string",
         "format": "binary"
       },
@@ -42829,10 +42829,10 @@
       "LibrariesDocumentsGetExtractedTextSignedUrlV1200Response": {
         "type": "string"
       },
-      "GetWorkflowExecutionHistoryV1WorkflowsExecutionsExecutionIdHistoryGet200ResponseResponseJson": {
+      "GetWorkflowExecutionHistoryV1WorkflowsExecutionsExecutionIdHistoryGet200ResponseSchema": {
         "type": "object"
       },
-      "StreamV1WorkflowsExecutionsExecutionIdStreamGet200Response": {
+      "StreamV1WorkflowsExecutionsExecutionIdStreamGet200EventStreamResponse": {
         "type": "object",
         "properties": {
           "event": {
@@ -42849,10 +42849,10 @@
           }
         }
       },
-      "GetRunHistoryV1WorkflowsRunsRunIdHistoryGet200ResponseResponseJson": {
+      "GetRunHistoryV1WorkflowsRunsRunIdHistoryGet200ResponseSchema": {
         "type": "object"
       },
-      "GetStreamEventsV1WorkflowsEventsStreamGet200Response": {
+      "GetStreamEventsV1WorkflowsEventsStreamGet200EventStreamResponse": {
         "type": "object",
         "properties": {
           "event": {
