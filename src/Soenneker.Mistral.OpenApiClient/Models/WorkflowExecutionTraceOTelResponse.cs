@@ -23,13 +23,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         public string DataSource { get; set; }
 #endif
         /// <summary>The end time of the workflow execution, if available</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.WorkflowExecutionTraceOTelResponseEndTime? EndTime { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Mistral.OpenApiClient.Models.WorkflowExecutionTraceOTelResponseEndTime EndTime { get; set; }
-#endif
+        public DateTimeOffset? EndTime { get; set; }
         /// <summary>The ID of the workflow execution</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -49,18 +43,18 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         /// <summary>The ID of the trace</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.WorkflowExecutionTraceOTelResponseOtelTraceId? OtelTraceId { get; set; }
+        public string? OtelTraceId { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.WorkflowExecutionTraceOTelResponseOtelTraceId OtelTraceId { get; set; }
+        public string OtelTraceId { get; set; }
 #endif
         /// <summary>The parent execution ID of the workflow execution</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.WorkflowExecutionTraceOTelResponseParentExecutionId? ParentExecutionId { get; set; }
+        public string? ParentExecutionId { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.WorkflowExecutionTraceOTelResponseParentExecutionId ParentExecutionId { get; set; }
+        public string ParentExecutionId { get; set; }
 #endif
         /// <summary>The result of the workflow execution, if available</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -89,13 +83,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         public global::Soenneker.Mistral.OpenApiClient.Models.WorkflowExecutionTraceOTelResponseStatus Status { get; set; }
 #endif
         /// <summary>The total duration of the trace in milliseconds</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.WorkflowExecutionTraceOTelResponseTotalDurationMs? TotalDurationMs { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Mistral.OpenApiClient.Models.WorkflowExecutionTraceOTelResponseTotalDurationMs TotalDurationMs { get; set; }
-#endif
+        public int? TotalDurationMs { get; set; }
         /// <summary>The name of the workflow</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -130,16 +118,16 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "data_source", n => { DataSource = n.GetStringValue(); } },
-                { "end_time", n => { EndTime = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.WorkflowExecutionTraceOTelResponseEndTime>(global::Soenneker.Mistral.OpenApiClient.Models.WorkflowExecutionTraceOTelResponseEndTime.CreateFromDiscriminatorValue); } },
+                { "end_time", n => { EndTime = n.GetDateTimeOffsetValue(); } },
                 { "execution_id", n => { ExecutionId = n.GetStringValue(); } },
                 { "otel_trace_data", n => { OtelTraceData = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.WorkflowExecutionTraceOTelResponseOtelTraceData>(global::Soenneker.Mistral.OpenApiClient.Models.WorkflowExecutionTraceOTelResponseOtelTraceData.CreateFromDiscriminatorValue); } },
-                { "otel_trace_id", n => { OtelTraceId = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.WorkflowExecutionTraceOTelResponseOtelTraceId>(global::Soenneker.Mistral.OpenApiClient.Models.WorkflowExecutionTraceOTelResponseOtelTraceId.CreateFromDiscriminatorValue); } },
-                { "parent_execution_id", n => { ParentExecutionId = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.WorkflowExecutionTraceOTelResponseParentExecutionId>(global::Soenneker.Mistral.OpenApiClient.Models.WorkflowExecutionTraceOTelResponseParentExecutionId.CreateFromDiscriminatorValue); } },
+                { "otel_trace_id", n => { OtelTraceId = n.GetStringValue(); } },
+                { "parent_execution_id", n => { ParentExecutionId = n.GetStringValue(); } },
                 { "result", n => { Result = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.WorkflowExecutionTraceOTelResponseResult>(global::Soenneker.Mistral.OpenApiClient.Models.WorkflowExecutionTraceOTelResponseResult.CreateFromDiscriminatorValue); } },
                 { "root_execution_id", n => { RootExecutionId = n.GetStringValue(); } },
                 { "start_time", n => { StartTime = n.GetDateTimeOffsetValue(); } },
                 { "status", n => { Status = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.WorkflowExecutionTraceOTelResponseStatus>(global::Soenneker.Mistral.OpenApiClient.Models.WorkflowExecutionTraceOTelResponseStatus.CreateFromDiscriminatorValue); } },
-                { "total_duration_ms", n => { TotalDurationMs = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.WorkflowExecutionTraceOTelResponseTotalDurationMs>(global::Soenneker.Mistral.OpenApiClient.Models.WorkflowExecutionTraceOTelResponseTotalDurationMs.CreateFromDiscriminatorValue); } },
+                { "total_duration_ms", n => { TotalDurationMs = n.GetIntValue(); } },
                 { "workflow_name", n => { WorkflowName = n.GetStringValue(); } },
             };
         }
@@ -151,16 +139,16 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("data_source", DataSource);
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.WorkflowExecutionTraceOTelResponseEndTime>("end_time", EndTime);
+            writer.WriteDateTimeOffsetValue("end_time", EndTime);
             writer.WriteStringValue("execution_id", ExecutionId);
             writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.WorkflowExecutionTraceOTelResponseOtelTraceData>("otel_trace_data", OtelTraceData);
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.WorkflowExecutionTraceOTelResponseOtelTraceId>("otel_trace_id", OtelTraceId);
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.WorkflowExecutionTraceOTelResponseParentExecutionId>("parent_execution_id", ParentExecutionId);
+            writer.WriteStringValue("otel_trace_id", OtelTraceId);
+            writer.WriteStringValue("parent_execution_id", ParentExecutionId);
             writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.WorkflowExecutionTraceOTelResponseResult>("result", Result);
             writer.WriteStringValue("root_execution_id", RootExecutionId);
             writer.WriteDateTimeOffsetValue("start_time", StartTime);
             writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.WorkflowExecutionTraceOTelResponseStatus>("status", Status);
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.WorkflowExecutionTraceOTelResponseTotalDurationMs>("total_duration_ms", TotalDurationMs);
+            writer.WriteIntValue("total_duration_ms", TotalDurationMs);
             writer.WriteStringValue("workflow_name", WorkflowName);
             writer.WriteAdditionalData(AdditionalData);
         }

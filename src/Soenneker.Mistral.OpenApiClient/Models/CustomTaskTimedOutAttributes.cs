@@ -34,10 +34,10 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         /// <summary>The type of timeout that occurred.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.CustomTaskTimedOutAttributesTimeoutType? TimeoutType { get; set; }
+        public string? TimeoutType { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.CustomTaskTimedOutAttributesTimeoutType TimeoutType { get; set; }
+        public string TimeoutType { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Mistral.OpenApiClient.Models.CustomTaskTimedOutAttributes"/> and sets the default values.
@@ -66,7 +66,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             {
                 { "custom_task_id", n => { CustomTaskId = n.GetStringValue(); } },
                 { "custom_task_type", n => { CustomTaskType = n.GetStringValue(); } },
-                { "timeout_type", n => { TimeoutType = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.CustomTaskTimedOutAttributesTimeoutType>(global::Soenneker.Mistral.OpenApiClient.Models.CustomTaskTimedOutAttributesTimeoutType.CreateFromDiscriminatorValue); } },
+                { "timeout_type", n => { TimeoutType = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -78,7 +78,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("custom_task_id", CustomTaskId);
             writer.WriteStringValue("custom_task_type", CustomTaskType);
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.CustomTaskTimedOutAttributesTimeoutType>("timeout_type", TimeoutType);
+            writer.WriteStringValue("timeout_type", TimeoutType);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

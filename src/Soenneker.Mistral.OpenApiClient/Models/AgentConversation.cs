@@ -33,10 +33,10 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         /// <summary>Description of the what the conversation is about.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.AgentConversationDescription? Description { get; set; }
+        public string? Description { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.AgentConversationDescription Description { get; set; }
+        public string Description { get; set; }
 #endif
         /// <summary>The id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -57,10 +57,10 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         /// <summary>Name given to the conversation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.AgentConversationName? Name { get; set; }
+        public string? Name { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.AgentConversationName Name { get; set; }
+        public string Name { get; set; }
 #endif
         /// <summary>The object property</summary>
         public global::Soenneker.Mistral.OpenApiClient.Models.AgentConversation_object? Object { get; set; }
@@ -87,10 +87,10 @@ namespace Soenneker.Mistral.OpenApiClient.Models
                 { "agent_id", n => { AgentId = n.GetStringValue(); } },
                 { "agent_version", n => { AgentVersion = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.AgentConversationAgentVersion>(global::Soenneker.Mistral.OpenApiClient.Models.AgentConversationAgentVersion.CreateFromDiscriminatorValue); } },
                 { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
-                { "description", n => { Description = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.AgentConversationDescription>(global::Soenneker.Mistral.OpenApiClient.Models.AgentConversationDescription.CreateFromDiscriminatorValue); } },
+                { "description", n => { Description = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "metadata", n => { Metadata = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.AgentConversationMetadata>(global::Soenneker.Mistral.OpenApiClient.Models.AgentConversationMetadata.CreateFromDiscriminatorValue); } },
-                { "name", n => { Name = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.AgentConversationName>(global::Soenneker.Mistral.OpenApiClient.Models.AgentConversationName.CreateFromDiscriminatorValue); } },
+                { "name", n => { Name = n.GetStringValue(); } },
                 { "object", n => { Object = n.GetEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.AgentConversation_object>(); } },
                 { "updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
             };
@@ -105,10 +105,10 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             writer.WriteStringValue("agent_id", AgentId);
             writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.AgentConversationAgentVersion>("agent_version", AgentVersion);
             writer.WriteDateTimeOffsetValue("created_at", CreatedAt);
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.AgentConversationDescription>("description", Description);
+            writer.WriteStringValue("description", Description);
             writer.WriteStringValue("id", Id);
             writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.AgentConversationMetadata>("metadata", Metadata);
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.AgentConversationName>("name", Name);
+            writer.WriteStringValue("name", Name);
             writer.WriteEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.AgentConversation_object>("object", Object);
             writer.WriteDateTimeOffsetValue("updated_at", UpdatedAt);
         }

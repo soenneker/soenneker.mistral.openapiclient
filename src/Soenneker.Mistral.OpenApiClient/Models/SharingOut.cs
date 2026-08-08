@@ -35,21 +35,9 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         public string ShareWithType { get; set; }
 #endif
         /// <summary>The share_with_uuid property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.SharingOutShareWithUuid? ShareWithUuid { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Mistral.OpenApiClient.Models.SharingOutShareWithUuid ShareWithUuid { get; set; }
-#endif
+        public Guid? ShareWithUuid { get; set; }
         /// <summary>The user_id property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.SharingOutUserId? UserId { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Mistral.OpenApiClient.Models.SharingOutUserId UserId { get; set; }
-#endif
+        public Guid? UserId { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Mistral.OpenApiClient.Models.SharingOut"/> and sets the default values.
         /// </summary>
@@ -79,8 +67,8 @@ namespace Soenneker.Mistral.OpenApiClient.Models
                 { "org_id", n => { OrgId = n.GetGuidValue(); } },
                 { "role", n => { Role = n.GetStringValue(); } },
                 { "share_with_type", n => { ShareWithType = n.GetStringValue(); } },
-                { "share_with_uuid", n => { ShareWithUuid = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.SharingOutShareWithUuid>(global::Soenneker.Mistral.OpenApiClient.Models.SharingOutShareWithUuid.CreateFromDiscriminatorValue); } },
-                { "user_id", n => { UserId = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.SharingOutUserId>(global::Soenneker.Mistral.OpenApiClient.Models.SharingOutUserId.CreateFromDiscriminatorValue); } },
+                { "share_with_uuid", n => { ShareWithUuid = n.GetGuidValue(); } },
+                { "user_id", n => { UserId = n.GetGuidValue(); } },
             };
         }
         /// <summary>
@@ -94,8 +82,8 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             writer.WriteGuidValue("org_id", OrgId);
             writer.WriteStringValue("role", Role);
             writer.WriteStringValue("share_with_type", ShareWithType);
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.SharingOutShareWithUuid>("share_with_uuid", ShareWithUuid);
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.SharingOutUserId>("user_id", UserId);
+            writer.WriteGuidValue("share_with_uuid", ShareWithUuid);
+            writer.WriteGuidValue("user_id", UserId);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

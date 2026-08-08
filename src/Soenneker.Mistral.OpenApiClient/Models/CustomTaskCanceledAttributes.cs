@@ -34,10 +34,10 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         /// <summary>Optional reason provided for the cancellation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.CustomTaskCanceledAttributesReason? Reason { get; set; }
+        public string? Reason { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.CustomTaskCanceledAttributesReason Reason { get; set; }
+        public string Reason { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Mistral.OpenApiClient.Models.CustomTaskCanceledAttributes"/> and sets the default values.
@@ -66,7 +66,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             {
                 { "custom_task_id", n => { CustomTaskId = n.GetStringValue(); } },
                 { "custom_task_type", n => { CustomTaskType = n.GetStringValue(); } },
-                { "reason", n => { Reason = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.CustomTaskCanceledAttributesReason>(global::Soenneker.Mistral.OpenApiClient.Models.CustomTaskCanceledAttributesReason.CreateFromDiscriminatorValue); } },
+                { "reason", n => { Reason = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -78,7 +78,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("custom_task_id", CustomTaskId);
             writer.WriteStringValue("custom_task_type", CustomTaskType);
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.CustomTaskCanceledAttributesReason>("reason", Reason);
+            writer.WriteStringValue("reason", Reason);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

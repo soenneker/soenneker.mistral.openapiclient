@@ -17,10 +17,10 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         /// <summary>The comment property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.ScheduleCalendarComment? Comment { get; set; }
+        public string? Comment { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.ScheduleCalendarComment Comment { get; set; }
+        public string Comment { get; set; }
 #endif
         /// <summary>The day_of_month property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -103,7 +103,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "comment", n => { Comment = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ScheduleCalendarComment>(global::Soenneker.Mistral.OpenApiClient.Models.ScheduleCalendarComment.CreateFromDiscriminatorValue); } },
+                { "comment", n => { Comment = n.GetStringValue(); } },
                 { "day_of_month", n => { DayOfMonth = n.GetCollectionOfObjectValues<global::Soenneker.Mistral.OpenApiClient.Models.ScheduleRange>(global::Soenneker.Mistral.OpenApiClient.Models.ScheduleRange.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "day_of_week", n => { DayOfWeek = n.GetCollectionOfObjectValues<global::Soenneker.Mistral.OpenApiClient.Models.ScheduleRange>(global::Soenneker.Mistral.OpenApiClient.Models.ScheduleRange.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "hour", n => { Hour = n.GetCollectionOfObjectValues<global::Soenneker.Mistral.OpenApiClient.Models.ScheduleRange>(global::Soenneker.Mistral.OpenApiClient.Models.ScheduleRange.CreateFromDiscriminatorValue)?.AsList(); } },
@@ -120,7 +120,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ScheduleCalendarComment>("comment", Comment);
+            writer.WriteStringValue("comment", Comment);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Mistral.OpenApiClient.Models.ScheduleRange>("day_of_month", DayOfMonth);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Mistral.OpenApiClient.Models.ScheduleRange>("day_of_week", DayOfWeek);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Mistral.OpenApiClient.Models.ScheduleRange>("hour", Hour);

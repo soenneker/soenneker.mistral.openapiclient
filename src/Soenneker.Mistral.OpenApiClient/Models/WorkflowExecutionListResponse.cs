@@ -25,10 +25,10 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         /// <summary>Token to use for fetching the next page of results. Null if this is the last page.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.WorkflowExecutionListResponseNextPageToken? NextPageToken { get; set; }
+        public string? NextPageToken { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.WorkflowExecutionListResponseNextPageToken NextPageToken { get; set; }
+        public string NextPageToken { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Mistral.OpenApiClient.Models.WorkflowExecutionListResponse"/> and sets the default values.
@@ -56,7 +56,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "executions", n => { Executions = n.GetCollectionOfObjectValues<global::Soenneker.Mistral.OpenApiClient.Models.WorkflowExecutionWithoutResultResponse>(global::Soenneker.Mistral.OpenApiClient.Models.WorkflowExecutionWithoutResultResponse.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "next_page_token", n => { NextPageToken = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.WorkflowExecutionListResponseNextPageToken>(global::Soenneker.Mistral.OpenApiClient.Models.WorkflowExecutionListResponseNextPageToken.CreateFromDiscriminatorValue); } },
+                { "next_page_token", n => { NextPageToken = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -67,7 +67,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfObjectValues<global::Soenneker.Mistral.OpenApiClient.Models.WorkflowExecutionWithoutResultResponse>("executions", Executions);
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.WorkflowExecutionListResponseNextPageToken>("next_page_token", NextPageToken);
+            writer.WriteStringValue("next_page_token", NextPageToken);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

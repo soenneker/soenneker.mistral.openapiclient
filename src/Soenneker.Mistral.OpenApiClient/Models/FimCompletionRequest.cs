@@ -13,13 +13,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
     #pragma warning restore CS1591
     {
         /// <summary>The maximum number of tokens to generate in the completion. The token count of your prompt plus `max_tokens` cannot exceed the model&apos;s context length.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.FimCompletionRequestMaxTokens? MaxTokens { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Mistral.OpenApiClient.Models.FimCompletionRequestMaxTokens MaxTokens { get; set; }
-#endif
+        public int? MaxTokens { get; set; }
         /// <summary>The metadata property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -29,13 +23,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         public global::Soenneker.Mistral.OpenApiClient.Models.FimCompletionRequestMetadata Metadata { get; set; }
 #endif
         /// <summary>The minimum number of tokens to generate in the completion.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.FimCompletionRequestMinTokens? MinTokens { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Mistral.OpenApiClient.Models.FimCompletionRequestMinTokens MinTokens { get; set; }
-#endif
+        public int? MinTokens { get; set; }
         /// <summary>ID of the model with FIM to use.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -55,19 +43,13 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         /// <summary>A cache key to enable prompt caching. When provided, the API will attempt to reuse previously computed tokens for requests sharing the same prefix (e.g. multi-turn conversations or requests with a similar system prompt). Cached tokens are billed at 10% of the standard input token price.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.FimCompletionRequestPromptCacheKey? PromptCacheKey { get; set; }
+        public string? PromptCacheKey { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.FimCompletionRequestPromptCacheKey PromptCacheKey { get; set; }
+        public string PromptCacheKey { get; set; }
 #endif
         /// <summary>The seed to use for random sampling. If set, different calls will generate deterministic results.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.FimCompletionRequestRandomSeed? RandomSeed { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Mistral.OpenApiClient.Models.FimCompletionRequestRandomSeed RandomSeed { get; set; }
-#endif
+        public int? RandomSeed { get; set; }
         /// <summary>Stop generation if this token is detected. Or if one of these tokens is detected when providing an array</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -81,19 +63,13 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         /// <summary>Optional text/code that adds more context for the model. When given a `prompt` and a `suffix` the model will fill what is between them. When `suffix` is not provided, the model will simply execute completion starting with `prompt`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.FimCompletionRequestSuffix? Suffix { get; set; }
+        public string? Suffix { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.FimCompletionRequestSuffix Suffix { get; set; }
+        public string Suffix { get; set; }
 #endif
         /// <summary>What sampling temperature to use, we recommend between 0.0 and 0.7. Higher values like 0.7 will make the output more random, while lower values like 0.2 will make it more focused and deterministic. We generally recommend altering this or `top_p` but not both. The default value varies depending on the model you are targeting. Call the `/models` endpoint to retrieve the appropriate value.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.FimCompletionRequestTemperature? Temperature { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Mistral.OpenApiClient.Models.FimCompletionRequestTemperature Temperature { get; set; }
-#endif
+        public double? Temperature { get; set; }
         /// <summary>Nucleus sampling, where the model considers the results of the tokens with `top_p` probability mass. So 0.1 means only the tokens comprising the top 10% probability mass are considered. We generally recommend altering this or `temperature` but not both.</summary>
         public double? TopP { get; set; }
         /// <summary>
@@ -123,17 +99,17 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "max_tokens", n => { MaxTokens = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.FimCompletionRequestMaxTokens>(global::Soenneker.Mistral.OpenApiClient.Models.FimCompletionRequestMaxTokens.CreateFromDiscriminatorValue); } },
+                { "max_tokens", n => { MaxTokens = n.GetIntValue(); } },
                 { "metadata", n => { Metadata = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.FimCompletionRequestMetadata>(global::Soenneker.Mistral.OpenApiClient.Models.FimCompletionRequestMetadata.CreateFromDiscriminatorValue); } },
-                { "min_tokens", n => { MinTokens = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.FimCompletionRequestMinTokens>(global::Soenneker.Mistral.OpenApiClient.Models.FimCompletionRequestMinTokens.CreateFromDiscriminatorValue); } },
+                { "min_tokens", n => { MinTokens = n.GetIntValue(); } },
                 { "model", n => { Model = n.GetStringValue(); } },
                 { "prompt", n => { Prompt = n.GetStringValue(); } },
-                { "prompt_cache_key", n => { PromptCacheKey = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.FimCompletionRequestPromptCacheKey>(global::Soenneker.Mistral.OpenApiClient.Models.FimCompletionRequestPromptCacheKey.CreateFromDiscriminatorValue); } },
-                { "random_seed", n => { RandomSeed = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.FimCompletionRequestRandomSeed>(global::Soenneker.Mistral.OpenApiClient.Models.FimCompletionRequestRandomSeed.CreateFromDiscriminatorValue); } },
+                { "prompt_cache_key", n => { PromptCacheKey = n.GetStringValue(); } },
+                { "random_seed", n => { RandomSeed = n.GetIntValue(); } },
                 { "stop", n => { Stop = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.FimCompletionRequestStop>(global::Soenneker.Mistral.OpenApiClient.Models.FimCompletionRequestStop.CreateFromDiscriminatorValue); } },
                 { "stream", n => { Stream = n.GetBoolValue(); } },
-                { "suffix", n => { Suffix = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.FimCompletionRequestSuffix>(global::Soenneker.Mistral.OpenApiClient.Models.FimCompletionRequestSuffix.CreateFromDiscriminatorValue); } },
-                { "temperature", n => { Temperature = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.FimCompletionRequestTemperature>(global::Soenneker.Mistral.OpenApiClient.Models.FimCompletionRequestTemperature.CreateFromDiscriminatorValue); } },
+                { "suffix", n => { Suffix = n.GetStringValue(); } },
+                { "temperature", n => { Temperature = n.GetDoubleValue(); } },
                 { "top_p", n => { TopP = n.GetDoubleValue(); } },
             };
         }
@@ -144,17 +120,17 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.FimCompletionRequestMaxTokens>("max_tokens", MaxTokens);
+            writer.WriteIntValue("max_tokens", MaxTokens);
             writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.FimCompletionRequestMetadata>("metadata", Metadata);
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.FimCompletionRequestMinTokens>("min_tokens", MinTokens);
+            writer.WriteIntValue("min_tokens", MinTokens);
             writer.WriteStringValue("model", Model);
             writer.WriteStringValue("prompt", Prompt);
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.FimCompletionRequestPromptCacheKey>("prompt_cache_key", PromptCacheKey);
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.FimCompletionRequestRandomSeed>("random_seed", RandomSeed);
+            writer.WriteStringValue("prompt_cache_key", PromptCacheKey);
+            writer.WriteIntValue("random_seed", RandomSeed);
             writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.FimCompletionRequestStop>("stop", Stop);
             writer.WriteBoolValue("stream", Stream);
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.FimCompletionRequestSuffix>("suffix", Suffix);
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.FimCompletionRequestTemperature>("temperature", Temperature);
+            writer.WriteStringValue("suffix", Suffix);
+            writer.WriteDoubleValue("temperature", Temperature);
             writer.WriteDoubleValue("top_p", TopP);
         }
     }

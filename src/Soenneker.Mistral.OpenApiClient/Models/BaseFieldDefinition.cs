@@ -17,10 +17,10 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         /// <summary>The group property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.BaseFieldDefinitionGroup? Group { get; set; }
+        public string? Group { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.BaseFieldDefinitionGroup Group { get; set; }
+        public string Group { get; set; }
 #endif
         /// <summary>The label property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -73,7 +73,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "group", n => { Group = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.BaseFieldDefinitionGroup>(global::Soenneker.Mistral.OpenApiClient.Models.BaseFieldDefinitionGroup.CreateFromDiscriminatorValue); } },
+                { "group", n => { Group = n.GetStringValue(); } },
                 { "label", n => { Label = n.GetStringValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "supported_operators", n => { SupportedOperators = n.GetCollectionOfEnumValues<global::Soenneker.Mistral.OpenApiClient.Models.BaseFieldDefinitionSupportedOperatorsItem>()?.AsList(); } },
@@ -87,7 +87,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.BaseFieldDefinitionGroup>("group", Group);
+            writer.WriteStringValue("group", Group);
             writer.WriteStringValue("label", Label);
             writer.WriteStringValue("name", Name);
             writer.WriteEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.BaseFieldDefinitionType>("type", Type);

@@ -13,21 +13,9 @@ namespace Soenneker.Mistral.OpenApiClient.Models
     #pragma warning restore CS1591
     {
         /// <summary>X coordinate of bottom-right corner of the extracted image</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.OcrImageObjectBottomRightX? BottomRightX { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Mistral.OpenApiClient.Models.OcrImageObjectBottomRightX BottomRightX { get; set; }
-#endif
+        public int? BottomRightX { get; set; }
         /// <summary>Y coordinate of bottom-right corner of the extracted image</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.OcrImageObjectBottomRightY? BottomRightY { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Mistral.OpenApiClient.Models.OcrImageObjectBottomRightY BottomRightY { get; set; }
-#endif
+        public int? BottomRightY { get; set; }
         /// <summary>Image ID for extracted image in a page</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -39,35 +27,23 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         /// <summary>Annotation of the extracted image in json str</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.OcrImageObjectImageAnnotation? ImageAnnotation { get; set; }
+        public string? ImageAnnotation { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.OcrImageObjectImageAnnotation ImageAnnotation { get; set; }
+        public string ImageAnnotation { get; set; }
 #endif
         /// <summary>Base64 string of the extracted image</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.OcrImageObjectImageBase64? ImageBase64 { get; set; }
+        public string? ImageBase64 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.OcrImageObjectImageBase64 ImageBase64 { get; set; }
+        public string ImageBase64 { get; set; }
 #endif
         /// <summary>X coordinate of top-left corner of the extracted image</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.OcrImageObjectTopLeftX? TopLeftX { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Mistral.OpenApiClient.Models.OcrImageObjectTopLeftX TopLeftX { get; set; }
-#endif
+        public int? TopLeftX { get; set; }
         /// <summary>Y coordinate of top-left corner of the extracted image</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.OcrImageObjectTopLeftY? TopLeftY { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Mistral.OpenApiClient.Models.OcrImageObjectTopLeftY TopLeftY { get; set; }
-#endif
+        public int? TopLeftY { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -86,13 +62,13 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "bottom_right_x", n => { BottomRightX = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.OcrImageObjectBottomRightX>(global::Soenneker.Mistral.OpenApiClient.Models.OcrImageObjectBottomRightX.CreateFromDiscriminatorValue); } },
-                { "bottom_right_y", n => { BottomRightY = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.OcrImageObjectBottomRightY>(global::Soenneker.Mistral.OpenApiClient.Models.OcrImageObjectBottomRightY.CreateFromDiscriminatorValue); } },
+                { "bottom_right_x", n => { BottomRightX = n.GetIntValue(); } },
+                { "bottom_right_y", n => { BottomRightY = n.GetIntValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
-                { "image_annotation", n => { ImageAnnotation = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.OcrImageObjectImageAnnotation>(global::Soenneker.Mistral.OpenApiClient.Models.OcrImageObjectImageAnnotation.CreateFromDiscriminatorValue); } },
-                { "image_base64", n => { ImageBase64 = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.OcrImageObjectImageBase64>(global::Soenneker.Mistral.OpenApiClient.Models.OcrImageObjectImageBase64.CreateFromDiscriminatorValue); } },
-                { "top_left_x", n => { TopLeftX = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.OcrImageObjectTopLeftX>(global::Soenneker.Mistral.OpenApiClient.Models.OcrImageObjectTopLeftX.CreateFromDiscriminatorValue); } },
-                { "top_left_y", n => { TopLeftY = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.OcrImageObjectTopLeftY>(global::Soenneker.Mistral.OpenApiClient.Models.OcrImageObjectTopLeftY.CreateFromDiscriminatorValue); } },
+                { "image_annotation", n => { ImageAnnotation = n.GetStringValue(); } },
+                { "image_base64", n => { ImageBase64 = n.GetStringValue(); } },
+                { "top_left_x", n => { TopLeftX = n.GetIntValue(); } },
+                { "top_left_y", n => { TopLeftY = n.GetIntValue(); } },
             };
         }
         /// <summary>
@@ -102,13 +78,13 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.OcrImageObjectBottomRightX>("bottom_right_x", BottomRightX);
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.OcrImageObjectBottomRightY>("bottom_right_y", BottomRightY);
+            writer.WriteIntValue("bottom_right_x", BottomRightX);
+            writer.WriteIntValue("bottom_right_y", BottomRightY);
             writer.WriteStringValue("id", Id);
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.OcrImageObjectImageAnnotation>("image_annotation", ImageAnnotation);
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.OcrImageObjectImageBase64>("image_base64", ImageBase64);
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.OcrImageObjectTopLeftX>("top_left_x", TopLeftX);
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.OcrImageObjectTopLeftY>("top_left_y", TopLeftY);
+            writer.WriteStringValue("image_annotation", ImageAnnotation);
+            writer.WriteStringValue("image_base64", ImageBase64);
+            writer.WriteIntValue("top_left_x", TopLeftX);
+            writer.WriteIntValue("top_left_y", TopLeftY);
         }
     }
 }

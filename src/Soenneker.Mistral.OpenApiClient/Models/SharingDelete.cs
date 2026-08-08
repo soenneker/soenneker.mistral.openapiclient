@@ -15,13 +15,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The org_id property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.SharingDeleteOrgId? OrgId { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Mistral.OpenApiClient.Models.SharingDeleteOrgId OrgId { get; set; }
-#endif
+        public Guid? OrgId { get; set; }
         /// <summary>The type of entity, used to share a library.</summary>
         public global::Soenneker.Mistral.OpenApiClient.Models.EntityType? ShareWithType { get; set; }
         /// <summary>The id of the entity (user, workspace or organization) to share with</summary>
@@ -51,7 +45,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "org_id", n => { OrgId = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.SharingDeleteOrgId>(global::Soenneker.Mistral.OpenApiClient.Models.SharingDeleteOrgId.CreateFromDiscriminatorValue); } },
+                { "org_id", n => { OrgId = n.GetGuidValue(); } },
                 { "share_with_type", n => { ShareWithType = n.GetEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.EntityType>(); } },
                 { "share_with_uuid", n => { ShareWithUuid = n.GetGuidValue(); } },
             };
@@ -63,7 +57,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.SharingDeleteOrgId>("org_id", OrgId);
+            writer.WriteGuidValue("org_id", OrgId);
             writer.WriteEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.EntityType>("share_with_type", ShareWithType);
             writer.WriteGuidValue("share_with_uuid", ShareWithUuid);
             writer.WriteAdditionalData(AdditionalData);

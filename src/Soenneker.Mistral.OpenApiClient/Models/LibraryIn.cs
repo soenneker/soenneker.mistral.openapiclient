@@ -15,20 +15,14 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The chunk_size property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.LibraryInChunkSize? ChunkSize { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Mistral.OpenApiClient.Models.LibraryInChunkSize ChunkSize { get; set; }
-#endif
+        public int? ChunkSize { get; set; }
         /// <summary>The description property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.LibraryInDescription? Description { get; set; }
+        public string? Description { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.LibraryInDescription Description { get; set; }
+        public string Description { get; set; }
 #endif
         /// <summary>The name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -63,8 +57,8 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "chunk_size", n => { ChunkSize = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.LibraryInChunkSize>(global::Soenneker.Mistral.OpenApiClient.Models.LibraryInChunkSize.CreateFromDiscriminatorValue); } },
-                { "description", n => { Description = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.LibraryInDescription>(global::Soenneker.Mistral.OpenApiClient.Models.LibraryInDescription.CreateFromDiscriminatorValue); } },
+                { "chunk_size", n => { ChunkSize = n.GetIntValue(); } },
+                { "description", n => { Description = n.GetStringValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
             };
         }
@@ -75,8 +69,8 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.LibraryInChunkSize>("chunk_size", ChunkSize);
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.LibraryInDescription>("description", Description);
+            writer.WriteIntValue("chunk_size", ChunkSize);
+            writer.WriteStringValue("description", Description);
             writer.WriteStringValue("name", Name);
             writer.WriteAdditionalData(AdditionalData);
         }

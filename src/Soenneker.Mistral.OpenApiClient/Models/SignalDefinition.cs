@@ -17,10 +17,10 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         /// <summary>Description of the signal</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.SignalDefinitionDescription? Description { get; set; }
+        public string? Description { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.SignalDefinitionDescription Description { get; set; }
+        public string Description { get; set; }
 #endif
         /// <summary>Input JSON schema of the signal&apos;s model</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -63,7 +63,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "description", n => { Description = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.SignalDefinitionDescription>(global::Soenneker.Mistral.OpenApiClient.Models.SignalDefinitionDescription.CreateFromDiscriminatorValue); } },
+                { "description", n => { Description = n.GetStringValue(); } },
                 { "input_schema", n => { InputSchema = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.SignalDefinitionInputSchemaProperty>(global::Soenneker.Mistral.OpenApiClient.Models.SignalDefinitionInputSchemaProperty.CreateFromDiscriminatorValue); } },
                 { "name", n => { Name = n.GetStringValue(); } },
             };
@@ -75,7 +75,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.SignalDefinitionDescription>("description", Description);
+            writer.WriteStringValue("description", Description);
             writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.SignalDefinitionInputSchemaProperty>("input_schema", InputSchema);
             writer.WriteStringValue("name", Name);
             writer.WriteAdditionalData(AdditionalData);

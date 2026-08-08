@@ -26,10 +26,10 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         /// <summary>The description property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.ResourceLinkDescription? Description { get; set; }
+        public string? Description { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.ResourceLinkDescription Description { get; set; }
+        public string Description { get; set; }
 #endif
         /// <summary>The icons property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -50,10 +50,10 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         /// <summary>The mimeType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.ResourceLinkMimeType? MimeType { get; set; }
+        public string? MimeType { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.ResourceLinkMimeType MimeType { get; set; }
+        public string MimeType { get; set; }
 #endif
         /// <summary>The name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -64,20 +64,14 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         public string Name { get; set; }
 #endif
         /// <summary>The size property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.ResourceLinkSize? Size { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Mistral.OpenApiClient.Models.ResourceLinkSize Size { get; set; }
-#endif
+        public int? Size { get; set; }
         /// <summary>The title property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.ResourceLinkTitle? Title { get; set; }
+        public string? Title { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.ResourceLinkTitle Title { get; set; }
+        public string Title { get; set; }
 #endif
         /// <summary>The type property</summary>
         public global::Soenneker.Mistral.OpenApiClient.Models.ResourceLink_type? Type { get; set; }
@@ -115,13 +109,13 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "annotations", n => { Annotations = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ResourceLinkAnnotations>(global::Soenneker.Mistral.OpenApiClient.Models.ResourceLinkAnnotations.CreateFromDiscriminatorValue); } },
-                { "description", n => { Description = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ResourceLinkDescription>(global::Soenneker.Mistral.OpenApiClient.Models.ResourceLinkDescription.CreateFromDiscriminatorValue); } },
+                { "description", n => { Description = n.GetStringValue(); } },
                 { "icons", n => { Icons = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ResourceLinkIcons>(global::Soenneker.Mistral.OpenApiClient.Models.ResourceLinkIcons.CreateFromDiscriminatorValue); } },
                 { "_meta", n => { Meta = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ResourceLinkMeta>(global::Soenneker.Mistral.OpenApiClient.Models.ResourceLinkMeta.CreateFromDiscriminatorValue); } },
-                { "mimeType", n => { MimeType = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ResourceLinkMimeType>(global::Soenneker.Mistral.OpenApiClient.Models.ResourceLinkMimeType.CreateFromDiscriminatorValue); } },
+                { "mimeType", n => { MimeType = n.GetStringValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
-                { "size", n => { Size = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ResourceLinkSize>(global::Soenneker.Mistral.OpenApiClient.Models.ResourceLinkSize.CreateFromDiscriminatorValue); } },
-                { "title", n => { Title = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ResourceLinkTitle>(global::Soenneker.Mistral.OpenApiClient.Models.ResourceLinkTitle.CreateFromDiscriminatorValue); } },
+                { "size", n => { Size = n.GetIntValue(); } },
+                { "title", n => { Title = n.GetStringValue(); } },
                 { "type", n => { Type = n.GetEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.ResourceLink_type>(); } },
                 { "uri", n => { Uri = n.GetStringValue(); } },
             };
@@ -134,13 +128,13 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ResourceLinkAnnotations>("annotations", Annotations);
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ResourceLinkDescription>("description", Description);
+            writer.WriteStringValue("description", Description);
             writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ResourceLinkIcons>("icons", Icons);
             writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ResourceLinkMeta>("_meta", Meta);
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ResourceLinkMimeType>("mimeType", MimeType);
+            writer.WriteStringValue("mimeType", MimeType);
             writer.WriteStringValue("name", Name);
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ResourceLinkSize>("size", Size);
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ResourceLinkTitle>("title", Title);
+            writer.WriteIntValue("size", Size);
+            writer.WriteStringValue("title", Title);
             writer.WriteEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.ResourceLink_type>("type", Type);
             writer.WriteStringValue("uri", Uri);
             writer.WriteAdditionalData(AdditionalData);

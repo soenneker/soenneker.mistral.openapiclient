@@ -17,10 +17,10 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         /// <summary>Name of the deployment to route this schedule to</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.WorkflowScheduleRequestDeploymentName? DeploymentName { get; set; }
+        public string? DeploymentName { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.WorkflowScheduleRequestDeploymentName DeploymentName { get; set; }
+        public string DeploymentName { get; set; }
 #endif
         /// <summary>Specification of the times scheduled actions may occur.The times are the union of :py:attr:`calendars`, :py:attr:`intervals`, and:py:attr:`cron_expressions` excluding anything in :py:attr:`skip`.Used for input where schedule_id is optional (can be provided or auto-generated).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -33,44 +33,32 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         /// <summary>Allows you to specify a custom schedule ID. If not provided, a random ID will be generated.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.WorkflowScheduleRequestScheduleId? ScheduleId { get; set; }
+        public string? ScheduleId { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.WorkflowScheduleRequestScheduleId ScheduleId { get; set; }
+        public string ScheduleId { get; set; }
 #endif
         /// <summary>The name or ID of the workflow to schedule</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.WorkflowScheduleRequestWorkflowIdentifier? WorkflowIdentifier { get; set; }
+        public string? WorkflowIdentifier { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.WorkflowScheduleRequestWorkflowIdentifier WorkflowIdentifier { get; set; }
+        public string WorkflowIdentifier { get; set; }
 #endif
         /// <summary>The ID of the workflow registration to schedule</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.WorkflowScheduleRequestWorkflowRegistrationId? WorkflowRegistrationId { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Mistral.OpenApiClient.Models.WorkflowScheduleRequestWorkflowRegistrationId WorkflowRegistrationId { get; set; }
-#endif
+        public Guid? WorkflowRegistrationId { get; set; }
         /// <summary>Deprecated. Use deployment_name instead.</summary>
         [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.WorkflowScheduleRequestWorkflowTaskQueue? WorkflowTaskQueue { get; set; }
+        public string? WorkflowTaskQueue { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.WorkflowScheduleRequestWorkflowTaskQueue WorkflowTaskQueue { get; set; }
+        public string WorkflowTaskQueue { get; set; }
 #endif
         /// <summary>&quot;Deprecated: use workflow_registration_id&quot;</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.WorkflowScheduleRequestWorkflowVersionId? WorkflowVersionId { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Mistral.OpenApiClient.Models.WorkflowScheduleRequestWorkflowVersionId WorkflowVersionId { get; set; }
-#endif
+        public Guid? WorkflowVersionId { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Mistral.OpenApiClient.Models.WorkflowScheduleRequest"/> and sets the default values.
         /// </summary>
@@ -96,13 +84,13 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "deployment_name", n => { DeploymentName = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.WorkflowScheduleRequestDeploymentName>(global::Soenneker.Mistral.OpenApiClient.Models.WorkflowScheduleRequestDeploymentName.CreateFromDiscriminatorValue); } },
+                { "deployment_name", n => { DeploymentName = n.GetStringValue(); } },
                 { "schedule", n => { Schedule = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ScheduleDefinition>(global::Soenneker.Mistral.OpenApiClient.Models.ScheduleDefinition.CreateFromDiscriminatorValue); } },
-                { "schedule_id", n => { ScheduleId = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.WorkflowScheduleRequestScheduleId>(global::Soenneker.Mistral.OpenApiClient.Models.WorkflowScheduleRequestScheduleId.CreateFromDiscriminatorValue); } },
-                { "workflow_identifier", n => { WorkflowIdentifier = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.WorkflowScheduleRequestWorkflowIdentifier>(global::Soenneker.Mistral.OpenApiClient.Models.WorkflowScheduleRequestWorkflowIdentifier.CreateFromDiscriminatorValue); } },
-                { "workflow_registration_id", n => { WorkflowRegistrationId = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.WorkflowScheduleRequestWorkflowRegistrationId>(global::Soenneker.Mistral.OpenApiClient.Models.WorkflowScheduleRequestWorkflowRegistrationId.CreateFromDiscriminatorValue); } },
-                { "workflow_task_queue", n => { WorkflowTaskQueue = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.WorkflowScheduleRequestWorkflowTaskQueue>(global::Soenneker.Mistral.OpenApiClient.Models.WorkflowScheduleRequestWorkflowTaskQueue.CreateFromDiscriminatorValue); } },
-                { "workflow_version_id", n => { WorkflowVersionId = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.WorkflowScheduleRequestWorkflowVersionId>(global::Soenneker.Mistral.OpenApiClient.Models.WorkflowScheduleRequestWorkflowVersionId.CreateFromDiscriminatorValue); } },
+                { "schedule_id", n => { ScheduleId = n.GetStringValue(); } },
+                { "workflow_identifier", n => { WorkflowIdentifier = n.GetStringValue(); } },
+                { "workflow_registration_id", n => { WorkflowRegistrationId = n.GetGuidValue(); } },
+                { "workflow_task_queue", n => { WorkflowTaskQueue = n.GetStringValue(); } },
+                { "workflow_version_id", n => { WorkflowVersionId = n.GetGuidValue(); } },
             };
         }
         /// <summary>
@@ -112,13 +100,13 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.WorkflowScheduleRequestDeploymentName>("deployment_name", DeploymentName);
+            writer.WriteStringValue("deployment_name", DeploymentName);
             writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ScheduleDefinition>("schedule", Schedule);
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.WorkflowScheduleRequestScheduleId>("schedule_id", ScheduleId);
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.WorkflowScheduleRequestWorkflowIdentifier>("workflow_identifier", WorkflowIdentifier);
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.WorkflowScheduleRequestWorkflowRegistrationId>("workflow_registration_id", WorkflowRegistrationId);
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.WorkflowScheduleRequestWorkflowTaskQueue>("workflow_task_queue", WorkflowTaskQueue);
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.WorkflowScheduleRequestWorkflowVersionId>("workflow_version_id", WorkflowVersionId);
+            writer.WriteStringValue("schedule_id", ScheduleId);
+            writer.WriteStringValue("workflow_identifier", WorkflowIdentifier);
+            writer.WriteGuidValue("workflow_registration_id", WorkflowRegistrationId);
+            writer.WriteStringValue("workflow_task_queue", WorkflowTaskQueue);
+            writer.WriteGuidValue("workflow_version_id", WorkflowVersionId);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

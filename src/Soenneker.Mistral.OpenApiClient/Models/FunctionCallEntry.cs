@@ -15,10 +15,10 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         /// <summary>The agent_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.FunctionCallEntryAgentId? AgentId { get; set; }
+        public string? AgentId { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.FunctionCallEntryAgentId AgentId { get; set; }
+        public string AgentId { get; set; }
 #endif
         /// <summary>The arguments property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -29,21 +29,9 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         public global::Soenneker.Mistral.OpenApiClient.Models.FunctionCallEntryArguments Arguments { get; set; }
 #endif
         /// <summary>The completed_at property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.FunctionCallEntryCompletedAt? CompletedAt { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Mistral.OpenApiClient.Models.FunctionCallEntryCompletedAt CompletedAt { get; set; }
-#endif
+        public DateTimeOffset? CompletedAt { get; set; }
         /// <summary>The confirmation_status property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
         public global::Soenneker.Mistral.OpenApiClient.Models.FunctionCallEntryConfirmationStatus? ConfirmationStatus { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Mistral.OpenApiClient.Models.FunctionCallEntryConfirmationStatus ConfirmationStatus { get; set; }
-#endif
         /// <summary>The created_at property</summary>
         public DateTimeOffset? CreatedAt { get; set; }
         /// <summary>The id property</summary>
@@ -57,10 +45,10 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         /// <summary>The model property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.FunctionCallEntryModel? Model { get; set; }
+        public string? Model { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.FunctionCallEntryModel Model { get; set; }
+        public string Model { get; set; }
 #endif
         /// <summary>The name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -100,13 +88,13 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "agent_id", n => { AgentId = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.FunctionCallEntryAgentId>(global::Soenneker.Mistral.OpenApiClient.Models.FunctionCallEntryAgentId.CreateFromDiscriminatorValue); } },
+                { "agent_id", n => { AgentId = n.GetStringValue(); } },
                 { "arguments", n => { Arguments = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.FunctionCallEntryArguments>(global::Soenneker.Mistral.OpenApiClient.Models.FunctionCallEntryArguments.CreateFromDiscriminatorValue); } },
-                { "completed_at", n => { CompletedAt = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.FunctionCallEntryCompletedAt>(global::Soenneker.Mistral.OpenApiClient.Models.FunctionCallEntryCompletedAt.CreateFromDiscriminatorValue); } },
-                { "confirmation_status", n => { ConfirmationStatus = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.FunctionCallEntryConfirmationStatus>(global::Soenneker.Mistral.OpenApiClient.Models.FunctionCallEntryConfirmationStatus.CreateFromDiscriminatorValue); } },
+                { "completed_at", n => { CompletedAt = n.GetDateTimeOffsetValue(); } },
+                { "confirmation_status", n => { ConfirmationStatus = n.GetEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.FunctionCallEntryConfirmationStatus>(); } },
                 { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
-                { "model", n => { Model = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.FunctionCallEntryModel>(global::Soenneker.Mistral.OpenApiClient.Models.FunctionCallEntryModel.CreateFromDiscriminatorValue); } },
+                { "model", n => { Model = n.GetStringValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "object", n => { Object = n.GetEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.FunctionCallEntry_object>(); } },
                 { "tool_call_id", n => { ToolCallId = n.GetStringValue(); } },
@@ -120,13 +108,13 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.FunctionCallEntryAgentId>("agent_id", AgentId);
+            writer.WriteStringValue("agent_id", AgentId);
             writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.FunctionCallEntryArguments>("arguments", Arguments);
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.FunctionCallEntryCompletedAt>("completed_at", CompletedAt);
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.FunctionCallEntryConfirmationStatus>("confirmation_status", ConfirmationStatus);
+            writer.WriteDateTimeOffsetValue("completed_at", CompletedAt);
+            writer.WriteEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.FunctionCallEntryConfirmationStatus>("confirmation_status", ConfirmationStatus);
             writer.WriteDateTimeOffsetValue("created_at", CreatedAt);
             writer.WriteStringValue("id", Id);
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.FunctionCallEntryModel>("model", Model);
+            writer.WriteStringValue("model", Model);
             writer.WriteStringValue("name", Name);
             writer.WriteEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.FunctionCallEntry_object>("object", Object);
             writer.WriteStringValue("tool_call_id", ToolCallId);

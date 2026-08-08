@@ -17,10 +17,10 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         /// <summary>The auth_type property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.ConnectorAuthType? AuthType { get; set; }
+        public string? AuthType { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.ConnectorAuthType AuthType { get; set; }
+        public string AuthType { get; set; }
 #endif
         /// <summary>The created_at property</summary>
         public DateTimeOffset? CreatedAt { get; set; }
@@ -47,10 +47,10 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         /// <summary>The server property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.ConnectorServer? Server { get; set; }
+        public string? Server { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.ConnectorServer Server { get; set; }
+        public string Server { get; set; }
 #endif
         /// <summary>The tools property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -85,13 +85,13 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "auth_type", n => { AuthType = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ConnectorAuthType>(global::Soenneker.Mistral.OpenApiClient.Models.ConnectorAuthType.CreateFromDiscriminatorValue); } },
+                { "auth_type", n => { AuthType = n.GetStringValue(); } },
                 { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetGuidValue(); } },
                 { "modified_at", n => { ModifiedAt = n.GetDateTimeOffsetValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
-                { "server", n => { Server = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ConnectorServer>(global::Soenneker.Mistral.OpenApiClient.Models.ConnectorServer.CreateFromDiscriminatorValue); } },
+                { "server", n => { Server = n.GetStringValue(); } },
                 { "tools", n => { Tools = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ConnectorTools>(global::Soenneker.Mistral.OpenApiClient.Models.ConnectorTools.CreateFromDiscriminatorValue); } },
             };
         }
@@ -102,13 +102,13 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ConnectorAuthType>("auth_type", AuthType);
+            writer.WriteStringValue("auth_type", AuthType);
             writer.WriteDateTimeOffsetValue("created_at", CreatedAt);
             writer.WriteStringValue("description", Description);
             writer.WriteGuidValue("id", Id);
             writer.WriteDateTimeOffsetValue("modified_at", ModifiedAt);
             writer.WriteStringValue("name", Name);
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ConnectorServer>("server", Server);
+            writer.WriteStringValue("server", Server);
             writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ConnectorTools>("tools", Tools);
             writer.WriteAdditionalData(AdditionalData);
         }

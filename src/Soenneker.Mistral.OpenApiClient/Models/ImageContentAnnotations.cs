@@ -23,13 +23,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         public global::Soenneker.Mistral.OpenApiClient.Models.AnnotationsAudience Audience { get; set; }
 #endif
         /// <summary>The priority property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.AnnotationsPriority? Priority { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Mistral.OpenApiClient.Models.AnnotationsPriority Priority { get; set; }
-#endif
+        public double? Priority { get; set; }
         /// <summary>Union discriminator</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -64,7 +58,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "audience", n => { Audience = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.AnnotationsAudience>(global::Soenneker.Mistral.OpenApiClient.Models.AnnotationsAudience.CreateFromDiscriminatorValue); } },
-                { "priority", n => { Priority = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.AnnotationsPriority>(global::Soenneker.Mistral.OpenApiClient.Models.AnnotationsPriority.CreateFromDiscriminatorValue); } },
+                { "priority", n => { Priority = n.GetDoubleValue(); } },
                 { "type", n => { Type = n.GetStringValue(); } },
             };
         }
@@ -76,7 +70,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.AnnotationsAudience>("audience", Audience);
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.AnnotationsPriority>("priority", Priority);
+            writer.WriteDoubleValue("priority", Priority);
             writer.WriteStringValue("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }

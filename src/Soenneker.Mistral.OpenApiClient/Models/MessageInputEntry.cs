@@ -14,13 +14,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
     public partial class MessageInputEntry : IParsable
     {
         /// <summary>The completed_at property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.MessageInputEntryCompletedAt? CompletedAt { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Mistral.OpenApiClient.Models.MessageInputEntryCompletedAt CompletedAt { get; set; }
-#endif
+        public DateTimeOffset? CompletedAt { get; set; }
         /// <summary>The content property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -72,7 +66,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "completed_at", n => { CompletedAt = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.MessageInputEntryCompletedAt>(global::Soenneker.Mistral.OpenApiClient.Models.MessageInputEntryCompletedAt.CreateFromDiscriminatorValue); } },
+                { "completed_at", n => { CompletedAt = n.GetDateTimeOffsetValue(); } },
                 { "content", n => { Content = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.MessageInputEntryContent>(global::Soenneker.Mistral.OpenApiClient.Models.MessageInputEntryContent.CreateFromDiscriminatorValue); } },
                 { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
@@ -89,7 +83,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.MessageInputEntryCompletedAt>("completed_at", CompletedAt);
+            writer.WriteDateTimeOffsetValue("completed_at", CompletedAt);
             writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.MessageInputEntryContent>("content", Content);
             writer.WriteDateTimeOffsetValue("created_at", CreatedAt);
             writer.WriteStringValue("id", Id);

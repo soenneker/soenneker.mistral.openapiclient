@@ -15,19 +15,13 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         /// <summary>The agent_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.MessageOutputEntryAgentId? AgentId { get; set; }
+        public string? AgentId { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.MessageOutputEntryAgentId AgentId { get; set; }
+        public string AgentId { get; set; }
 #endif
         /// <summary>The completed_at property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.MessageOutputEntryCompletedAt? CompletedAt { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Mistral.OpenApiClient.Models.MessageOutputEntryCompletedAt CompletedAt { get; set; }
-#endif
+        public DateTimeOffset? CompletedAt { get; set; }
         /// <summary>The content property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -49,10 +43,10 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         /// <summary>The model property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.MessageOutputEntryModel? Model { get; set; }
+        public string? Model { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.MessageOutputEntryModel Model { get; set; }
+        public string Model { get; set; }
 #endif
         /// <summary>The object property</summary>
         public global::Soenneker.Mistral.OpenApiClient.Models.MessageOutputEntry_object? Object { get; set; }
@@ -78,12 +72,12 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "agent_id", n => { AgentId = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.MessageOutputEntryAgentId>(global::Soenneker.Mistral.OpenApiClient.Models.MessageOutputEntryAgentId.CreateFromDiscriminatorValue); } },
-                { "completed_at", n => { CompletedAt = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.MessageOutputEntryCompletedAt>(global::Soenneker.Mistral.OpenApiClient.Models.MessageOutputEntryCompletedAt.CreateFromDiscriminatorValue); } },
+                { "agent_id", n => { AgentId = n.GetStringValue(); } },
+                { "completed_at", n => { CompletedAt = n.GetDateTimeOffsetValue(); } },
                 { "content", n => { Content = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.MessageOutputEntryContent>(global::Soenneker.Mistral.OpenApiClient.Models.MessageOutputEntryContent.CreateFromDiscriminatorValue); } },
                 { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
-                { "model", n => { Model = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.MessageOutputEntryModel>(global::Soenneker.Mistral.OpenApiClient.Models.MessageOutputEntryModel.CreateFromDiscriminatorValue); } },
+                { "model", n => { Model = n.GetStringValue(); } },
                 { "object", n => { Object = n.GetEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.MessageOutputEntry_object>(); } },
                 { "role", n => { Role = n.GetEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.MessageOutputEntry_role>(); } },
                 { "type", n => { Type = n.GetEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.MessageOutputEntry_type>(); } },
@@ -96,12 +90,12 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.MessageOutputEntryAgentId>("agent_id", AgentId);
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.MessageOutputEntryCompletedAt>("completed_at", CompletedAt);
+            writer.WriteStringValue("agent_id", AgentId);
+            writer.WriteDateTimeOffsetValue("completed_at", CompletedAt);
             writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.MessageOutputEntryContent>("content", Content);
             writer.WriteDateTimeOffsetValue("created_at", CreatedAt);
             writer.WriteStringValue("id", Id);
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.MessageOutputEntryModel>("model", Model);
+            writer.WriteStringValue("model", Model);
             writer.WriteEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.MessageOutputEntry_object>("object", Object);
             writer.WriteEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.MessageOutputEntry_role>("role", Role);
             writer.WriteEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.MessageOutputEntry_type>("type", Type);

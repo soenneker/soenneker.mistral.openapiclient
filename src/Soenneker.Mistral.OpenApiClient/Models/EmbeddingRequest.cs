@@ -39,13 +39,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         public string Model { get; set; }
 #endif
         /// <summary>The dimension of the output embeddings when feature available. If not provided, a default output dimension will be used.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.EmbeddingRequestOutputDimension? OutputDimension { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Mistral.OpenApiClient.Models.EmbeddingRequestOutputDimension OutputDimension { get; set; }
-#endif
+        public int? OutputDimension { get; set; }
         /// <summary>The output_dtype property</summary>
         public global::Soenneker.Mistral.OpenApiClient.Models.EmbeddingDtype? OutputDtype { get; set; }
         /// <summary>
@@ -70,7 +64,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
                 { "input", n => { Input = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.EmbeddingRequestInput>(global::Soenneker.Mistral.OpenApiClient.Models.EmbeddingRequestInput.CreateFromDiscriminatorValue); } },
                 { "metadata", n => { Metadata = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.EmbeddingRequestMetadata>(global::Soenneker.Mistral.OpenApiClient.Models.EmbeddingRequestMetadata.CreateFromDiscriminatorValue); } },
                 { "model", n => { Model = n.GetStringValue(); } },
-                { "output_dimension", n => { OutputDimension = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.EmbeddingRequestOutputDimension>(global::Soenneker.Mistral.OpenApiClient.Models.EmbeddingRequestOutputDimension.CreateFromDiscriminatorValue); } },
+                { "output_dimension", n => { OutputDimension = n.GetIntValue(); } },
                 { "output_dtype", n => { OutputDtype = n.GetEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.EmbeddingDtype>(); } },
             };
         }
@@ -85,7 +79,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.EmbeddingRequestInput>("input", Input);
             writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.EmbeddingRequestMetadata>("metadata", Metadata);
             writer.WriteStringValue("model", Model);
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.EmbeddingRequestOutputDimension>("output_dimension", OutputDimension);
+            writer.WriteIntValue("output_dimension", OutputDimension);
             writer.WriteEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.EmbeddingDtype>("output_dtype", OutputDtype);
         }
     }

@@ -15,23 +15,11 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The base_revision property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.JudgePreviewBaseRevision? BaseRevision { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Mistral.OpenApiClient.Models.JudgePreviewBaseRevision BaseRevision { get; set; }
-#endif
+        public Guid? BaseRevision { get; set; }
         /// <summary>The created_at property</summary>
         public DateTimeOffset? CreatedAt { get; set; }
         /// <summary>The deleted_at property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.JudgePreviewDeletedAt? DeletedAt { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Mistral.OpenApiClient.Models.JudgePreviewDeletedAt DeletedAt { get; set; }
-#endif
+        public DateTimeOffset? DeletedAt { get; set; }
         /// <summary>The description property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -41,13 +29,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         public string Description { get; set; }
 #endif
         /// <summary>The down_revision property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.JudgePreviewDownRevision? DownRevision { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Mistral.OpenApiClient.Models.JudgePreviewDownRevision DownRevision { get; set; }
-#endif
+        public Guid? DownRevision { get; set; }
         /// <summary>The id property</summary>
         public Guid? Id { get; set; }
         /// <summary>The instructions property</summary>
@@ -95,13 +77,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         /// <summary>The updated_at property</summary>
         public DateTimeOffset? UpdatedAt { get; set; }
         /// <summary>The up_revision property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.JudgePreviewUpRevision? UpRevision { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Mistral.OpenApiClient.Models.JudgePreviewUpRevision UpRevision { get; set; }
-#endif
+        public Guid? UpRevision { get; set; }
         /// <summary>The workspace_id property</summary>
         public Guid? WorkspaceId { get; set; }
         /// <summary>
@@ -129,11 +105,11 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "base_revision", n => { BaseRevision = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.JudgePreviewBaseRevision>(global::Soenneker.Mistral.OpenApiClient.Models.JudgePreviewBaseRevision.CreateFromDiscriminatorValue); } },
+                { "base_revision", n => { BaseRevision = n.GetGuidValue(); } },
                 { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
-                { "deleted_at", n => { DeletedAt = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.JudgePreviewDeletedAt>(global::Soenneker.Mistral.OpenApiClient.Models.JudgePreviewDeletedAt.CreateFromDiscriminatorValue); } },
+                { "deleted_at", n => { DeletedAt = n.GetDateTimeOffsetValue(); } },
                 { "description", n => { Description = n.GetStringValue(); } },
-                { "down_revision", n => { DownRevision = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.JudgePreviewDownRevision>(global::Soenneker.Mistral.OpenApiClient.Models.JudgePreviewDownRevision.CreateFromDiscriminatorValue); } },
+                { "down_revision", n => { DownRevision = n.GetGuidValue(); } },
                 { "id", n => { Id = n.GetGuidValue(); } },
                 { "instructions", n => { Instructions = n.GetStringValue(); } },
                 { "model_name", n => { ModelName = n.GetStringValue(); } },
@@ -141,7 +117,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
                 { "output", n => { Output = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.JudgePreviewOutput>(global::Soenneker.Mistral.OpenApiClient.Models.JudgePreviewOutput.CreateFromDiscriminatorValue); } },
                 { "owner_id", n => { OwnerId = n.GetGuidValue(); } },
                 { "tools", n => { Tools = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "up_revision", n => { UpRevision = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.JudgePreviewUpRevision>(global::Soenneker.Mistral.OpenApiClient.Models.JudgePreviewUpRevision.CreateFromDiscriminatorValue); } },
+                { "up_revision", n => { UpRevision = n.GetGuidValue(); } },
                 { "updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
                 { "workspace_id", n => { WorkspaceId = n.GetGuidValue(); } },
             };
@@ -153,11 +129,11 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.JudgePreviewBaseRevision>("base_revision", BaseRevision);
+            writer.WriteGuidValue("base_revision", BaseRevision);
             writer.WriteDateTimeOffsetValue("created_at", CreatedAt);
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.JudgePreviewDeletedAt>("deleted_at", DeletedAt);
+            writer.WriteDateTimeOffsetValue("deleted_at", DeletedAt);
             writer.WriteStringValue("description", Description);
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.JudgePreviewDownRevision>("down_revision", DownRevision);
+            writer.WriteGuidValue("down_revision", DownRevision);
             writer.WriteGuidValue("id", Id);
             writer.WriteStringValue("instructions", Instructions);
             writer.WriteStringValue("model_name", ModelName);
@@ -166,7 +142,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             writer.WriteGuidValue("owner_id", OwnerId);
             writer.WriteCollectionOfPrimitiveValues<string>("tools", Tools);
             writer.WriteDateTimeOffsetValue("updated_at", UpdatedAt);
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.JudgePreviewUpRevision>("up_revision", UpRevision);
+            writer.WriteGuidValue("up_revision", UpRevision);
             writer.WriteGuidValue("workspace_id", WorkspaceId);
             writer.WriteAdditionalData(AdditionalData);
         }

@@ -23,36 +23,24 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The expires_at property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.OAuth2TokenExpiresAt? ExpiresAt { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Mistral.OpenApiClient.Models.OAuth2TokenExpiresAt ExpiresAt { get; set; }
-#endif
+        public DateTimeOffset? ExpiresAt { get; set; }
         /// <summary>The expires_in property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.OAuth2TokenExpiresIn? ExpiresIn { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Mistral.OpenApiClient.Models.OAuth2TokenExpiresIn ExpiresIn { get; set; }
-#endif
+        public int? ExpiresIn { get; set; }
         /// <summary>The refresh_token property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.OAuth2TokenRefreshToken? RefreshToken { get; set; }
+        public string? RefreshToken { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.OAuth2TokenRefreshToken RefreshToken { get; set; }
+        public string RefreshToken { get; set; }
 #endif
         /// <summary>The scope property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.OAuth2TokenScope? Scope { get; set; }
+        public string? Scope { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.OAuth2TokenScope Scope { get; set; }
+        public string Scope { get; set; }
 #endif
         /// <summary>The token_type property</summary>
         public global::Soenneker.Mistral.OpenApiClient.Models.ConnectionCredentialsOAuth_token_type? TokenType { get; set; }
@@ -90,10 +78,10 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "access_token", n => { AccessToken = n.GetStringValue(); } },
-                { "expires_at", n => { ExpiresAt = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.OAuth2TokenExpiresAt>(global::Soenneker.Mistral.OpenApiClient.Models.OAuth2TokenExpiresAt.CreateFromDiscriminatorValue); } },
-                { "expires_in", n => { ExpiresIn = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.OAuth2TokenExpiresIn>(global::Soenneker.Mistral.OpenApiClient.Models.OAuth2TokenExpiresIn.CreateFromDiscriminatorValue); } },
-                { "refresh_token", n => { RefreshToken = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.OAuth2TokenRefreshToken>(global::Soenneker.Mistral.OpenApiClient.Models.OAuth2TokenRefreshToken.CreateFromDiscriminatorValue); } },
-                { "scope", n => { Scope = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.OAuth2TokenScope>(global::Soenneker.Mistral.OpenApiClient.Models.OAuth2TokenScope.CreateFromDiscriminatorValue); } },
+                { "expires_at", n => { ExpiresAt = n.GetDateTimeOffsetValue(); } },
+                { "expires_in", n => { ExpiresIn = n.GetIntValue(); } },
+                { "refresh_token", n => { RefreshToken = n.GetStringValue(); } },
+                { "scope", n => { Scope = n.GetStringValue(); } },
                 { "token_type", n => { TokenType = n.GetEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.ConnectionCredentialsOAuth_token_type>(); } },
                 { "type", n => { Type = n.GetStringValue(); } },
             };
@@ -106,10 +94,10 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("access_token", AccessToken);
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.OAuth2TokenExpiresAt>("expires_at", ExpiresAt);
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.OAuth2TokenExpiresIn>("expires_in", ExpiresIn);
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.OAuth2TokenRefreshToken>("refresh_token", RefreshToken);
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.OAuth2TokenScope>("scope", Scope);
+            writer.WriteDateTimeOffsetValue("expires_at", ExpiresAt);
+            writer.WriteIntValue("expires_in", ExpiresIn);
+            writer.WriteStringValue("refresh_token", RefreshToken);
+            writer.WriteStringValue("scope", Scope);
             writer.WriteEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.ConnectionCredentialsOAuth_token_type>("token_type", TokenType);
             writer.WriteStringValue("type", Type);
             writer.WriteAdditionalData(AdditionalData);

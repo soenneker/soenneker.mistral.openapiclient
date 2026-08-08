@@ -15,62 +15,44 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The chunk_size property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.LibraryOutChunkSize? ChunkSize { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Mistral.OpenApiClient.Models.LibraryOutChunkSize ChunkSize { get; set; }
-#endif
+        public int? ChunkSize { get; set; }
         /// <summary>The created_at property</summary>
         public DateTimeOffset? CreatedAt { get; set; }
         /// <summary>The description property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.LibraryOutDescription? Description { get; set; }
+        public string? Description { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.LibraryOutDescription Description { get; set; }
+        public string Description { get; set; }
 #endif
         /// <summary>The emoji property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.LibraryOutEmoji? Emoji { get; set; }
+        public string? Emoji { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.LibraryOutEmoji Emoji { get; set; }
+        public string Emoji { get; set; }
 #endif
         /// <summary>The explicit_user_members_count property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.LibraryOutExplicitUserMembersCount? ExplicitUserMembersCount { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Mistral.OpenApiClient.Models.LibraryOutExplicitUserMembersCount ExplicitUserMembersCount { get; set; }
-#endif
+        public int? ExplicitUserMembersCount { get; set; }
         /// <summary>The explicit_workspace_members_count property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.LibraryOutExplicitWorkspaceMembersCount? ExplicitWorkspaceMembersCount { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Mistral.OpenApiClient.Models.LibraryOutExplicitWorkspaceMembersCount ExplicitWorkspaceMembersCount { get; set; }
-#endif
+        public int? ExplicitWorkspaceMembersCount { get; set; }
         /// <summary>The generated_description property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.LibraryOutGeneratedDescription? GeneratedDescription { get; set; }
+        public string? GeneratedDescription { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.LibraryOutGeneratedDescription GeneratedDescription { get; set; }
+        public string GeneratedDescription { get; set; }
 #endif
         /// <summary>Generated Name</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.LibraryOutGeneratedName? GeneratedName { get; set; }
+        public string? GeneratedName { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.LibraryOutGeneratedName GeneratedName { get; set; }
+        public string GeneratedName { get; set; }
 #endif
         /// <summary>The id property</summary>
         public Guid? Id { get; set; }
@@ -87,19 +69,13 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         /// <summary>The org_sharing_role property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.LibraryOutOrgSharingRole? OrgSharingRole { get; set; }
+        public string? OrgSharingRole { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.LibraryOutOrgSharingRole OrgSharingRole { get; set; }
+        public string OrgSharingRole { get; set; }
 #endif
         /// <summary>The owner_id property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.LibraryOutOwnerId? OwnerId { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Mistral.OpenApiClient.Models.LibraryOutOwnerId OwnerId { get; set; }
-#endif
+        public Guid? OwnerId { get; set; }
         /// <summary>The owner_type property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -137,19 +113,19 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "chunk_size", n => { ChunkSize = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.LibraryOutChunkSize>(global::Soenneker.Mistral.OpenApiClient.Models.LibraryOutChunkSize.CreateFromDiscriminatorValue); } },
+                { "chunk_size", n => { ChunkSize = n.GetIntValue(); } },
                 { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
-                { "description", n => { Description = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.LibraryOutDescription>(global::Soenneker.Mistral.OpenApiClient.Models.LibraryOutDescription.CreateFromDiscriminatorValue); } },
-                { "emoji", n => { Emoji = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.LibraryOutEmoji>(global::Soenneker.Mistral.OpenApiClient.Models.LibraryOutEmoji.CreateFromDiscriminatorValue); } },
-                { "explicit_user_members_count", n => { ExplicitUserMembersCount = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.LibraryOutExplicitUserMembersCount>(global::Soenneker.Mistral.OpenApiClient.Models.LibraryOutExplicitUserMembersCount.CreateFromDiscriminatorValue); } },
-                { "explicit_workspace_members_count", n => { ExplicitWorkspaceMembersCount = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.LibraryOutExplicitWorkspaceMembersCount>(global::Soenneker.Mistral.OpenApiClient.Models.LibraryOutExplicitWorkspaceMembersCount.CreateFromDiscriminatorValue); } },
-                { "generated_description", n => { GeneratedDescription = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.LibraryOutGeneratedDescription>(global::Soenneker.Mistral.OpenApiClient.Models.LibraryOutGeneratedDescription.CreateFromDiscriminatorValue); } },
-                { "generated_name", n => { GeneratedName = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.LibraryOutGeneratedName>(global::Soenneker.Mistral.OpenApiClient.Models.LibraryOutGeneratedName.CreateFromDiscriminatorValue); } },
+                { "description", n => { Description = n.GetStringValue(); } },
+                { "emoji", n => { Emoji = n.GetStringValue(); } },
+                { "explicit_user_members_count", n => { ExplicitUserMembersCount = n.GetIntValue(); } },
+                { "explicit_workspace_members_count", n => { ExplicitWorkspaceMembersCount = n.GetIntValue(); } },
+                { "generated_description", n => { GeneratedDescription = n.GetStringValue(); } },
+                { "generated_name", n => { GeneratedName = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetGuidValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "nb_documents", n => { NbDocuments = n.GetIntValue(); } },
-                { "org_sharing_role", n => { OrgSharingRole = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.LibraryOutOrgSharingRole>(global::Soenneker.Mistral.OpenApiClient.Models.LibraryOutOrgSharingRole.CreateFromDiscriminatorValue); } },
-                { "owner_id", n => { OwnerId = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.LibraryOutOwnerId>(global::Soenneker.Mistral.OpenApiClient.Models.LibraryOutOwnerId.CreateFromDiscriminatorValue); } },
+                { "org_sharing_role", n => { OrgSharingRole = n.GetStringValue(); } },
+                { "owner_id", n => { OwnerId = n.GetGuidValue(); } },
                 { "owner_type", n => { OwnerType = n.GetStringValue(); } },
                 { "total_size", n => { TotalSize = n.GetIntValue(); } },
                 { "updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
@@ -162,19 +138,19 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.LibraryOutChunkSize>("chunk_size", ChunkSize);
+            writer.WriteIntValue("chunk_size", ChunkSize);
             writer.WriteDateTimeOffsetValue("created_at", CreatedAt);
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.LibraryOutDescription>("description", Description);
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.LibraryOutEmoji>("emoji", Emoji);
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.LibraryOutExplicitUserMembersCount>("explicit_user_members_count", ExplicitUserMembersCount);
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.LibraryOutExplicitWorkspaceMembersCount>("explicit_workspace_members_count", ExplicitWorkspaceMembersCount);
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.LibraryOutGeneratedDescription>("generated_description", GeneratedDescription);
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.LibraryOutGeneratedName>("generated_name", GeneratedName);
+            writer.WriteStringValue("description", Description);
+            writer.WriteStringValue("emoji", Emoji);
+            writer.WriteIntValue("explicit_user_members_count", ExplicitUserMembersCount);
+            writer.WriteIntValue("explicit_workspace_members_count", ExplicitWorkspaceMembersCount);
+            writer.WriteStringValue("generated_description", GeneratedDescription);
+            writer.WriteStringValue("generated_name", GeneratedName);
             writer.WriteGuidValue("id", Id);
             writer.WriteStringValue("name", Name);
             writer.WriteIntValue("nb_documents", NbDocuments);
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.LibraryOutOrgSharingRole>("org_sharing_role", OrgSharingRole);
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.LibraryOutOwnerId>("owner_id", OwnerId);
+            writer.WriteStringValue("org_sharing_role", OrgSharingRole);
+            writer.WriteGuidValue("owner_id", OwnerId);
             writer.WriteStringValue("owner_type", OwnerType);
             writer.WriteIntValue("total_size", TotalSize);
             writer.WriteDateTimeOffsetValue("updated_at", UpdatedAt);

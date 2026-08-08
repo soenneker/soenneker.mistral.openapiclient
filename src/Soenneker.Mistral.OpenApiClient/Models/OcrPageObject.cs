@@ -39,18 +39,18 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         /// <summary>Footer of the page</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.OcrPageObjectFooter? Footer { get; set; }
+        public string? Footer { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.OcrPageObjectFooter Footer { get; set; }
+        public string Footer { get; set; }
 #endif
         /// <summary>Header of the page</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.OcrPageObjectHeader? Header { get; set; }
+        public string? Header { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.OcrPageObjectHeader Header { get; set; }
+        public string Header { get; set; }
 #endif
         /// <summary>List of all hyperlinks in the page</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -107,8 +107,8 @@ namespace Soenneker.Mistral.OpenApiClient.Models
                 { "blocks", n => { Blocks = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.OcrPageObjectBlocks>(global::Soenneker.Mistral.OpenApiClient.Models.OcrPageObjectBlocks.CreateFromDiscriminatorValue); } },
                 { "confidence_scores", n => { ConfidenceScores = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.OcrPageObjectConfidenceScores>(global::Soenneker.Mistral.OpenApiClient.Models.OcrPageObjectConfidenceScores.CreateFromDiscriminatorValue); } },
                 { "dimensions", n => { Dimensions = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.OcrPageObjectDimensions>(global::Soenneker.Mistral.OpenApiClient.Models.OcrPageObjectDimensions.CreateFromDiscriminatorValue); } },
-                { "footer", n => { Footer = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.OcrPageObjectFooter>(global::Soenneker.Mistral.OpenApiClient.Models.OcrPageObjectFooter.CreateFromDiscriminatorValue); } },
-                { "header", n => { Header = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.OcrPageObjectHeader>(global::Soenneker.Mistral.OpenApiClient.Models.OcrPageObjectHeader.CreateFromDiscriminatorValue); } },
+                { "footer", n => { Footer = n.GetStringValue(); } },
+                { "header", n => { Header = n.GetStringValue(); } },
                 { "hyperlinks", n => { Hyperlinks = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "images", n => { Images = n.GetCollectionOfObjectValues<global::Soenneker.Mistral.OpenApiClient.Models.OcrImageObject>(global::Soenneker.Mistral.OpenApiClient.Models.OcrImageObject.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "index", n => { Index = n.GetIntValue(); } },
@@ -126,8 +126,8 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.OcrPageObjectBlocks>("blocks", Blocks);
             writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.OcrPageObjectConfidenceScores>("confidence_scores", ConfidenceScores);
             writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.OcrPageObjectDimensions>("dimensions", Dimensions);
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.OcrPageObjectFooter>("footer", Footer);
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.OcrPageObjectHeader>("header", Header);
+            writer.WriteStringValue("footer", Footer);
+            writer.WriteStringValue("header", Header);
             writer.WriteCollectionOfPrimitiveValues<string>("hyperlinks", Hyperlinks);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Mistral.OpenApiClient.Models.OcrImageObject>("images", Images);
             writer.WriteIntValue("index", Index);

@@ -16,20 +16,14 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The age property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.VoiceUpdateRequestAge? Age { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Mistral.OpenApiClient.Models.VoiceUpdateRequestAge Age { get; set; }
-#endif
+        public int? Age { get; set; }
         /// <summary>The gender property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.VoiceUpdateRequestGender? Gender { get; set; }
+        public string? Gender { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.VoiceUpdateRequestGender Gender { get; set; }
+        public string Gender { get; set; }
 #endif
         /// <summary>The languages property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -42,10 +36,10 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         /// <summary>The name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.VoiceUpdateRequestName? Name { get; set; }
+        public string? Name { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.VoiceUpdateRequestName Name { get; set; }
+        public string Name { get; set; }
 #endif
         /// <summary>The tags property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -80,10 +74,10 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "age", n => { Age = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.VoiceUpdateRequestAge>(global::Soenneker.Mistral.OpenApiClient.Models.VoiceUpdateRequestAge.CreateFromDiscriminatorValue); } },
-                { "gender", n => { Gender = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.VoiceUpdateRequestGender>(global::Soenneker.Mistral.OpenApiClient.Models.VoiceUpdateRequestGender.CreateFromDiscriminatorValue); } },
+                { "age", n => { Age = n.GetIntValue(); } },
+                { "gender", n => { Gender = n.GetStringValue(); } },
                 { "languages", n => { Languages = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.VoiceUpdateRequestLanguages>(global::Soenneker.Mistral.OpenApiClient.Models.VoiceUpdateRequestLanguages.CreateFromDiscriminatorValue); } },
-                { "name", n => { Name = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.VoiceUpdateRequestName>(global::Soenneker.Mistral.OpenApiClient.Models.VoiceUpdateRequestName.CreateFromDiscriminatorValue); } },
+                { "name", n => { Name = n.GetStringValue(); } },
                 { "tags", n => { Tags = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.VoiceUpdateRequestTags>(global::Soenneker.Mistral.OpenApiClient.Models.VoiceUpdateRequestTags.CreateFromDiscriminatorValue); } },
             };
         }
@@ -94,10 +88,10 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.VoiceUpdateRequestAge>("age", Age);
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.VoiceUpdateRequestGender>("gender", Gender);
+            writer.WriteIntValue("age", Age);
+            writer.WriteStringValue("gender", Gender);
             writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.VoiceUpdateRequestLanguages>("languages", Languages);
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.VoiceUpdateRequestName>("name", Name);
+            writer.WriteStringValue("name", Name);
             writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.VoiceUpdateRequestTags>("tags", Tags);
             writer.WriteAdditionalData(AdditionalData);
         }

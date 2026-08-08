@@ -17,10 +17,10 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         /// <summary>The next_cursor property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.PaginationResponseNextCursor? NextCursor { get; set; }
+        public string? NextCursor { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.PaginationResponseNextCursor NextCursor { get; set; }
+        public string NextCursor { get; set; }
 #endif
         /// <summary>The page_size property</summary>
         public int? PageSize { get; set; }
@@ -49,7 +49,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "next_cursor", n => { NextCursor = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.PaginationResponseNextCursor>(global::Soenneker.Mistral.OpenApiClient.Models.PaginationResponseNextCursor.CreateFromDiscriminatorValue); } },
+                { "next_cursor", n => { NextCursor = n.GetStringValue(); } },
                 { "page_size", n => { PageSize = n.GetIntValue(); } },
             };
         }
@@ -60,7 +60,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.PaginationResponseNextCursor>("next_cursor", NextCursor);
+            writer.WriteStringValue("next_cursor", NextCursor);
             writer.WriteIntValue("page_size", PageSize);
             writer.WriteAdditionalData(AdditionalData);
         }

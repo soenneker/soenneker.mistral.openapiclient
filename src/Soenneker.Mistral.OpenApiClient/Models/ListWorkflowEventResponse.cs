@@ -25,10 +25,10 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         /// <summary>Cursor for pagination.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.ListWorkflowEventResponseNextCursor? NextCursor { get; set; }
+        public string? NextCursor { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.ListWorkflowEventResponseNextCursor NextCursor { get; set; }
+        public string NextCursor { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Mistral.OpenApiClient.Models.ListWorkflowEventResponse"/> and sets the default values.
@@ -56,7 +56,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "events", n => { Events = n.GetCollectionOfObjectValues<global::Soenneker.Mistral.OpenApiClient.Models.ListWorkflowEventResponseEventsItem>(global::Soenneker.Mistral.OpenApiClient.Models.ListWorkflowEventResponseEventsItem.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "next_cursor", n => { NextCursor = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ListWorkflowEventResponseNextCursor>(global::Soenneker.Mistral.OpenApiClient.Models.ListWorkflowEventResponseNextCursor.CreateFromDiscriminatorValue); } },
+                { "next_cursor", n => { NextCursor = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -67,7 +67,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfObjectValues<global::Soenneker.Mistral.OpenApiClient.Models.ListWorkflowEventResponseEventsItem>("events", Events);
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ListWorkflowEventResponseNextCursor>("next_cursor", NextCursor);
+            writer.WriteStringValue("next_cursor", NextCursor);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

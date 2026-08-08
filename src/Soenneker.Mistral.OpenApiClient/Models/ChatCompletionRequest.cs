@@ -23,13 +23,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         public global::Soenneker.Mistral.OpenApiClient.Models.ChatCompletionRequestGuardrails Guardrails { get; set; }
 #endif
         /// <summary>The maximum number of tokens to generate in the completion. The token count of your prompt plus `max_tokens` cannot exceed the model&apos;s context length.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.ChatCompletionRequestMaxTokens? MaxTokens { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Mistral.OpenApiClient.Models.ChatCompletionRequestMaxTokens MaxTokens { get; set; }
-#endif
+        public int? MaxTokens { get; set; }
         /// <summary>The prompt(s) to generate completions for, encoded as a list of dict with role and content.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -55,13 +49,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         public string Model { get; set; }
 #endif
         /// <summary>Number of completions to return for each request, input tokens are only billed once.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.ChatCompletionRequestN? N { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Mistral.OpenApiClient.Models.ChatCompletionRequestN N { get; set; }
-#endif
+        public int? N { get; set; }
         /// <summary>Whether to enable parallel function calling during tool use, when enabled the model can call multiple tools in parallel.</summary>
         public bool? ParallelToolCalls { get; set; }
         /// <summary>Enable users to specify an expected completion, optimizing response times by leveraging known or predictable content.</summary>
@@ -77,10 +65,10 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         /// <summary>A cache key to enable prompt caching. When provided, the API will attempt to reuse previously computed tokens for requests sharing the same prefix (e.g. multi-turn conversations or requests with a similar system prompt). Cached tokens are billed at 10% of the standard input token price.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.ChatCompletionRequestPromptCacheKey? PromptCacheKey { get; set; }
+        public string? PromptCacheKey { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.ChatCompletionRequestPromptCacheKey PromptCacheKey { get; set; }
+        public string PromptCacheKey { get; set; }
 #endif
         /// <summary>Allows toggling between the reasoning mode and no system prompt. When set to `reasoning` the system prompt for reasoning models will be used. **Deprecated for reasoning models - use `reasoning_effort` parameter instead.**</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -91,13 +79,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         public global::Soenneker.Mistral.OpenApiClient.Models.ChatCompletionRequestPromptMode PromptMode { get; set; }
 #endif
         /// <summary>The seed to use for random sampling. If set, different calls will generate deterministic results.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.ChatCompletionRequestRandomSeed? RandomSeed { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Mistral.OpenApiClient.Models.ChatCompletionRequestRandomSeed RandomSeed { get; set; }
-#endif
+        public int? RandomSeed { get; set; }
         /// <summary>Controls the reasoning effort level for reasoning models. &quot;high&quot; enables comprehensive reasoning traces, &quot;none&quot; disables reasoning effort.</summary>
         public global::Soenneker.Mistral.OpenApiClient.Models.ChatCompletionRequestReasoningEffort? ReasoningEffort { get; set; }
         /// <summary>&quot;Specify the format that the model must output. By default it will use `{ \&quot;type\&quot;: \&quot;text\&quot; }`. Setting to `{ \&quot;type\&quot;: \&quot;json_object\&quot; }` enables JSON mode, which guarantees the message the model generates is in JSON. When using JSON mode you MUST also instruct the model to produce JSON yourself with a system or a user message. Setting to `{ \&quot;type\&quot;: \&quot;json_schema\&quot; }` enables JSON schema mode, which guarantees the message the model generates is in JSON and follows the schema you provide.&quot;</summary>
@@ -121,13 +103,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         /// <summary>&quot;Whether to stream back partial progress. If set, tokens will be sent as data-only server-side events as they become available, with the stream terminated by a data: [DONE] message. Otherwise, the server will hold the request open until the timeout or until completion, with the response containing the full result as JSON.&quot;</summary>
         public bool? Stream { get; set; }
         /// <summary>What sampling temperature to use, we recommend between 0.0 and 0.7. Higher values like 0.7 will make the output more random, while lower values like 0.2 will make it more focused and deterministic. We generally recommend altering this or `top_p` but not both. The default value varies depending on the model you are targeting. Call the `/models` endpoint to retrieve the appropriate value.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.ChatCompletionRequestTemperature? Temperature { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Mistral.OpenApiClient.Models.ChatCompletionRequestTemperature Temperature { get; set; }
-#endif
+        public double? Temperature { get; set; }
         /// <summary>&quot;Controls which (if any) tool is called by the model. `none` means the model will not call any tool and instead generates a message. `auto` means the model can pick between generating a message or calling one or more tools. `any` or `required` means the model must call one or more tools. Specifying a particular tool via `{\&quot;type\&quot;: \&quot;function\&quot;, \&quot;function\&quot;: {\&quot;name\&quot;: \&quot;my_function\&quot;}}` forces the model to call that tool.&quot;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -178,23 +154,23 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             {
                 { "frequency_penalty", n => { FrequencyPenalty = n.GetDoubleValue(); } },
                 { "guardrails", n => { Guardrails = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ChatCompletionRequestGuardrails>(global::Soenneker.Mistral.OpenApiClient.Models.ChatCompletionRequestGuardrails.CreateFromDiscriminatorValue); } },
-                { "max_tokens", n => { MaxTokens = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ChatCompletionRequestMaxTokens>(global::Soenneker.Mistral.OpenApiClient.Models.ChatCompletionRequestMaxTokens.CreateFromDiscriminatorValue); } },
+                { "max_tokens", n => { MaxTokens = n.GetIntValue(); } },
                 { "messages", n => { Messages = n.GetCollectionOfObjectValues<global::Soenneker.Mistral.OpenApiClient.Models.ChatCompletionRequestMessagesItem>(global::Soenneker.Mistral.OpenApiClient.Models.ChatCompletionRequestMessagesItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "metadata", n => { Metadata = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ChatCompletionRequestMetadata>(global::Soenneker.Mistral.OpenApiClient.Models.ChatCompletionRequestMetadata.CreateFromDiscriminatorValue); } },
                 { "model", n => { Model = n.GetStringValue(); } },
-                { "n", n => { N = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ChatCompletionRequestN>(global::Soenneker.Mistral.OpenApiClient.Models.ChatCompletionRequestN.CreateFromDiscriminatorValue); } },
+                { "n", n => { N = n.GetIntValue(); } },
                 { "parallel_tool_calls", n => { ParallelToolCalls = n.GetBoolValue(); } },
                 { "prediction", n => { Prediction = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.Prediction>(global::Soenneker.Mistral.OpenApiClient.Models.Prediction.CreateFromDiscriminatorValue); } },
                 { "presence_penalty", n => { PresencePenalty = n.GetDoubleValue(); } },
-                { "prompt_cache_key", n => { PromptCacheKey = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ChatCompletionRequestPromptCacheKey>(global::Soenneker.Mistral.OpenApiClient.Models.ChatCompletionRequestPromptCacheKey.CreateFromDiscriminatorValue); } },
+                { "prompt_cache_key", n => { PromptCacheKey = n.GetStringValue(); } },
                 { "prompt_mode", n => { PromptMode = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ChatCompletionRequestPromptMode>(global::Soenneker.Mistral.OpenApiClient.Models.ChatCompletionRequestPromptMode.CreateFromDiscriminatorValue); } },
-                { "random_seed", n => { RandomSeed = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ChatCompletionRequestRandomSeed>(global::Soenneker.Mistral.OpenApiClient.Models.ChatCompletionRequestRandomSeed.CreateFromDiscriminatorValue); } },
+                { "random_seed", n => { RandomSeed = n.GetIntValue(); } },
                 { "reasoning_effort", n => { ReasoningEffort = n.GetEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.ChatCompletionRequestReasoningEffort>(); } },
                 { "response_format", n => { ResponseFormat = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ResponseFormat>(global::Soenneker.Mistral.OpenApiClient.Models.ResponseFormat.CreateFromDiscriminatorValue); } },
                 { "safe_prompt", n => { SafePrompt = n.GetBoolValue(); } },
                 { "stop", n => { Stop = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ChatCompletionRequestStop>(global::Soenneker.Mistral.OpenApiClient.Models.ChatCompletionRequestStop.CreateFromDiscriminatorValue); } },
                 { "stream", n => { Stream = n.GetBoolValue(); } },
-                { "temperature", n => { Temperature = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ChatCompletionRequestTemperature>(global::Soenneker.Mistral.OpenApiClient.Models.ChatCompletionRequestTemperature.CreateFromDiscriminatorValue); } },
+                { "temperature", n => { Temperature = n.GetDoubleValue(); } },
                 { "tool_choice", n => { ToolChoice = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ChatCompletionRequestToolChoice>(global::Soenneker.Mistral.OpenApiClient.Models.ChatCompletionRequestToolChoice.CreateFromDiscriminatorValue); } },
                 { "tools", n => { Tools = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ChatCompletionRequestTools>(global::Soenneker.Mistral.OpenApiClient.Models.ChatCompletionRequestTools.CreateFromDiscriminatorValue); } },
                 { "top_p", n => { TopP = n.GetDoubleValue(); } },
@@ -209,23 +185,23 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteDoubleValue("frequency_penalty", FrequencyPenalty);
             writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ChatCompletionRequestGuardrails>("guardrails", Guardrails);
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ChatCompletionRequestMaxTokens>("max_tokens", MaxTokens);
+            writer.WriteIntValue("max_tokens", MaxTokens);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Mistral.OpenApiClient.Models.ChatCompletionRequestMessagesItem>("messages", Messages);
             writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ChatCompletionRequestMetadata>("metadata", Metadata);
             writer.WriteStringValue("model", Model);
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ChatCompletionRequestN>("n", N);
+            writer.WriteIntValue("n", N);
             writer.WriteBoolValue("parallel_tool_calls", ParallelToolCalls);
             writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.Prediction>("prediction", Prediction);
             writer.WriteDoubleValue("presence_penalty", PresencePenalty);
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ChatCompletionRequestPromptCacheKey>("prompt_cache_key", PromptCacheKey);
+            writer.WriteStringValue("prompt_cache_key", PromptCacheKey);
             writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ChatCompletionRequestPromptMode>("prompt_mode", PromptMode);
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ChatCompletionRequestRandomSeed>("random_seed", RandomSeed);
+            writer.WriteIntValue("random_seed", RandomSeed);
             writer.WriteEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.ChatCompletionRequestReasoningEffort>("reasoning_effort", ReasoningEffort);
             writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ResponseFormat>("response_format", ResponseFormat);
             writer.WriteBoolValue("safe_prompt", SafePrompt);
             writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ChatCompletionRequestStop>("stop", Stop);
             writer.WriteBoolValue("stream", Stream);
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ChatCompletionRequestTemperature>("temperature", Temperature);
+            writer.WriteDoubleValue("temperature", Temperature);
             writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ChatCompletionRequestToolChoice>("tool_choice", ToolChoice);
             writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ChatCompletionRequestTools>("tools", Tools);
             writer.WriteDoubleValue("top_p", TopP);

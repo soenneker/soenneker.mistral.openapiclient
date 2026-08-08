@@ -13,13 +13,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
     #pragma warning restore CS1591
     {
         /// <summary>The completed_at property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.FunctionResultEntryCompletedAt? CompletedAt { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Mistral.OpenApiClient.Models.FunctionResultEntryCompletedAt CompletedAt { get; set; }
-#endif
+        public DateTimeOffset? CompletedAt { get; set; }
         /// <summary>The created_at property</summary>
         public DateTimeOffset? CreatedAt { get; set; }
         /// <summary>The id property</summary>
@@ -68,7 +62,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "completed_at", n => { CompletedAt = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.FunctionResultEntryCompletedAt>(global::Soenneker.Mistral.OpenApiClient.Models.FunctionResultEntryCompletedAt.CreateFromDiscriminatorValue); } },
+                { "completed_at", n => { CompletedAt = n.GetDateTimeOffsetValue(); } },
                 { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "object", n => { Object = n.GetEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.FunctionResultEntry_object>(); } },
@@ -84,7 +78,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.FunctionResultEntryCompletedAt>("completed_at", CompletedAt);
+            writer.WriteDateTimeOffsetValue("completed_at", CompletedAt);
             writer.WriteDateTimeOffsetValue("created_at", CreatedAt);
             writer.WriteStringValue("id", Id);
             writer.WriteEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.FunctionResultEntry_object>("object", Object);

@@ -37,10 +37,10 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         /// <summary>The fine_tuned_model property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.CompletionDetailedJobOutFineTunedModel? FineTunedModel { get; set; }
+        public string? FineTunedModel { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.CompletionDetailedJobOutFineTunedModel FineTunedModel { get; set; }
+        public string FineTunedModel { get; set; }
 #endif
         /// <summary>The hyperparameters property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -95,19 +95,13 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         /// <summary>The suffix property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.CompletionDetailedJobOutSuffix? Suffix { get; set; }
+        public string? Suffix { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.CompletionDetailedJobOutSuffix Suffix { get; set; }
+        public string Suffix { get; set; }
 #endif
         /// <summary>The trained_tokens property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.CompletionDetailedJobOutTrainedTokens? TrainedTokens { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Mistral.OpenApiClient.Models.CompletionDetailedJobOutTrainedTokens TrainedTokens { get; set; }
-#endif
+        public int? TrainedTokens { get; set; }
         /// <summary>The training_files property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -153,7 +147,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
                 { "checkpoints", n => { Checkpoints = n.GetCollectionOfObjectValues<global::Soenneker.Mistral.OpenApiClient.Models.CheckpointOut>(global::Soenneker.Mistral.OpenApiClient.Models.CheckpointOut.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "created_at", n => { CreatedAt = n.GetIntValue(); } },
                 { "events", n => { Events = n.GetCollectionOfObjectValues<global::Soenneker.Mistral.OpenApiClient.Models.EventOut>(global::Soenneker.Mistral.OpenApiClient.Models.EventOut.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "fine_tuned_model", n => { FineTunedModel = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.CompletionDetailedJobOutFineTunedModel>(global::Soenneker.Mistral.OpenApiClient.Models.CompletionDetailedJobOutFineTunedModel.CreateFromDiscriminatorValue); } },
+                { "fine_tuned_model", n => { FineTunedModel = n.GetStringValue(); } },
                 { "hyperparameters", n => { Hyperparameters = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.CompletionTrainingParameters>(global::Soenneker.Mistral.OpenApiClient.Models.CompletionTrainingParameters.CreateFromDiscriminatorValue); } },
                 { "id", n => { Id = n.GetGuidValue(); } },
                 { "integrations", n => { Integrations = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.CompletionDetailedJobOutIntegrations>(global::Soenneker.Mistral.OpenApiClient.Models.CompletionDetailedJobOutIntegrations.CreateFromDiscriminatorValue); } },
@@ -164,8 +158,8 @@ namespace Soenneker.Mistral.OpenApiClient.Models
                 { "object", n => { Object = n.GetEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.CompletionDetailedJobOut_object>(); } },
                 { "repositories", n => { Repositories = n.GetCollectionOfObjectValues<global::Soenneker.Mistral.OpenApiClient.Models.CompletionDetailedJobOutRepositoriesItem>(global::Soenneker.Mistral.OpenApiClient.Models.CompletionDetailedJobOutRepositoriesItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "status", n => { Status = n.GetEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.CompletionDetailedJobOutStatus>(); } },
-                { "suffix", n => { Suffix = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.CompletionDetailedJobOutSuffix>(global::Soenneker.Mistral.OpenApiClient.Models.CompletionDetailedJobOutSuffix.CreateFromDiscriminatorValue); } },
-                { "trained_tokens", n => { TrainedTokens = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.CompletionDetailedJobOutTrainedTokens>(global::Soenneker.Mistral.OpenApiClient.Models.CompletionDetailedJobOutTrainedTokens.CreateFromDiscriminatorValue); } },
+                { "suffix", n => { Suffix = n.GetStringValue(); } },
+                { "trained_tokens", n => { TrainedTokens = n.GetIntValue(); } },
                 { "training_files", n => { TrainingFiles = n.GetCollectionOfPrimitiveValues<Guid?>()?.AsList(); } },
                 { "validation_files", n => { ValidationFiles = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.CompletionDetailedJobOutValidationFiles>(global::Soenneker.Mistral.OpenApiClient.Models.CompletionDetailedJobOutValidationFiles.CreateFromDiscriminatorValue); } },
             };
@@ -181,7 +175,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             writer.WriteCollectionOfObjectValues<global::Soenneker.Mistral.OpenApiClient.Models.CheckpointOut>("checkpoints", Checkpoints);
             writer.WriteIntValue("created_at", CreatedAt);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Mistral.OpenApiClient.Models.EventOut>("events", Events);
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.CompletionDetailedJobOutFineTunedModel>("fine_tuned_model", FineTunedModel);
+            writer.WriteStringValue("fine_tuned_model", FineTunedModel);
             writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.CompletionTrainingParameters>("hyperparameters", Hyperparameters);
             writer.WriteGuidValue("id", Id);
             writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.CompletionDetailedJobOutIntegrations>("integrations", Integrations);
@@ -192,8 +186,8 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             writer.WriteEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.CompletionDetailedJobOut_object>("object", Object);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Mistral.OpenApiClient.Models.CompletionDetailedJobOutRepositoriesItem>("repositories", Repositories);
             writer.WriteEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.CompletionDetailedJobOutStatus>("status", Status);
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.CompletionDetailedJobOutSuffix>("suffix", Suffix);
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.CompletionDetailedJobOutTrainedTokens>("trained_tokens", TrainedTokens);
+            writer.WriteStringValue("suffix", Suffix);
+            writer.WriteIntValue("trained_tokens", TrainedTokens);
             writer.WriteCollectionOfPrimitiveValues<Guid?>("training_files", TrainingFiles);
             writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.CompletionDetailedJobOutValidationFiles>("validation_files", ValidationFiles);
             writer.WriteAdditionalData(AdditionalData);

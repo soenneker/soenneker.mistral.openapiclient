@@ -27,38 +27,32 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         /// <summary>The extension property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.DocumentOutExtension? Extension { get; set; }
+        public string? Extension { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.DocumentOutExtension Extension { get; set; }
+        public string Extension { get; set; }
 #endif
         /// <summary>The hash property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.DocumentOutHash? Hash { get; set; }
+        public string? Hash { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.DocumentOutHash Hash { get; set; }
+        public string Hash { get; set; }
 #endif
         /// <summary>The id property</summary>
         public Guid? Id { get; set; }
         /// <summary>The last_processed_at property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.DocumentOutLastProcessedAt? LastProcessedAt { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Mistral.OpenApiClient.Models.DocumentOutLastProcessedAt LastProcessedAt { get; set; }
-#endif
+        public DateTimeOffset? LastProcessedAt { get; set; }
         /// <summary>The library_id property</summary>
         public Guid? LibraryId { get; set; }
         /// <summary>The mime_type property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.DocumentOutMimeType? MimeType { get; set; }
+        public string? MimeType { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.DocumentOutMimeType MimeType { get; set; }
+        public string MimeType { get; set; }
 #endif
         /// <summary>The name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -69,13 +63,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         public string Name { get; set; }
 #endif
         /// <summary>The number_of_pages property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.DocumentOutNumberOfPages? NumberOfPages { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Mistral.OpenApiClient.Models.DocumentOutNumberOfPages NumberOfPages { get; set; }
-#endif
+        public int? NumberOfPages { get; set; }
         /// <summary>The processing_status property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -87,47 +75,23 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         /// <summary>The process_status property</summary>
         public global::Soenneker.Mistral.OpenApiClient.Models.ProcessStatus? ProcessStatus { get; set; }
         /// <summary>The size property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.DocumentOutSize? Size { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Mistral.OpenApiClient.Models.DocumentOutSize Size { get; set; }
-#endif
+        public int? Size { get; set; }
         /// <summary>The summary property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.DocumentOutSummary? Summary { get; set; }
+        public string? Summary { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.DocumentOutSummary Summary { get; set; }
+        public string Summary { get; set; }
 #endif
         /// <summary>The tokens_processing_main_content property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.DocumentOutTokensProcessingMainContent? TokensProcessingMainContent { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Mistral.OpenApiClient.Models.DocumentOutTokensProcessingMainContent TokensProcessingMainContent { get; set; }
-#endif
+        public int? TokensProcessingMainContent { get; set; }
         /// <summary>The tokens_processing_summary property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.DocumentOutTokensProcessingSummary? TokensProcessingSummary { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Mistral.OpenApiClient.Models.DocumentOutTokensProcessingSummary TokensProcessingSummary { get; set; }
-#endif
+        public int? TokensProcessingSummary { get; set; }
         /// <summary>The tokens_processing_total property</summary>
         public int? TokensProcessingTotal { get; private set; }
         /// <summary>The uploaded_by_id property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.DocumentOutUploadedById? UploadedById { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Mistral.OpenApiClient.Models.DocumentOutUploadedById UploadedById { get; set; }
-#endif
+        public Guid? UploadedById { get; set; }
         /// <summary>The uploaded_by_type property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -139,10 +103,10 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         /// <summary>The url property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.DocumentOutUrl? Url { get; set; }
+        public string? Url { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.DocumentOutUrl Url { get; set; }
+        public string Url { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Mistral.OpenApiClient.Models.DocumentOut"/> and sets the default values.
@@ -171,24 +135,24 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             {
                 { "attributes", n => { Attributes = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.DocumentOutAttributes>(global::Soenneker.Mistral.OpenApiClient.Models.DocumentOutAttributes.CreateFromDiscriminatorValue); } },
                 { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
-                { "extension", n => { Extension = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.DocumentOutExtension>(global::Soenneker.Mistral.OpenApiClient.Models.DocumentOutExtension.CreateFromDiscriminatorValue); } },
-                { "hash", n => { Hash = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.DocumentOutHash>(global::Soenneker.Mistral.OpenApiClient.Models.DocumentOutHash.CreateFromDiscriminatorValue); } },
+                { "extension", n => { Extension = n.GetStringValue(); } },
+                { "hash", n => { Hash = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetGuidValue(); } },
-                { "last_processed_at", n => { LastProcessedAt = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.DocumentOutLastProcessedAt>(global::Soenneker.Mistral.OpenApiClient.Models.DocumentOutLastProcessedAt.CreateFromDiscriminatorValue); } },
+                { "last_processed_at", n => { LastProcessedAt = n.GetDateTimeOffsetValue(); } },
                 { "library_id", n => { LibraryId = n.GetGuidValue(); } },
-                { "mime_type", n => { MimeType = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.DocumentOutMimeType>(global::Soenneker.Mistral.OpenApiClient.Models.DocumentOutMimeType.CreateFromDiscriminatorValue); } },
+                { "mime_type", n => { MimeType = n.GetStringValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
-                { "number_of_pages", n => { NumberOfPages = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.DocumentOutNumberOfPages>(global::Soenneker.Mistral.OpenApiClient.Models.DocumentOutNumberOfPages.CreateFromDiscriminatorValue); } },
+                { "number_of_pages", n => { NumberOfPages = n.GetIntValue(); } },
                 { "process_status", n => { ProcessStatus = n.GetEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.ProcessStatus>(); } },
                 { "processing_status", n => { ProcessingStatus = n.GetStringValue(); } },
-                { "size", n => { Size = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.DocumentOutSize>(global::Soenneker.Mistral.OpenApiClient.Models.DocumentOutSize.CreateFromDiscriminatorValue); } },
-                { "summary", n => { Summary = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.DocumentOutSummary>(global::Soenneker.Mistral.OpenApiClient.Models.DocumentOutSummary.CreateFromDiscriminatorValue); } },
-                { "tokens_processing_main_content", n => { TokensProcessingMainContent = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.DocumentOutTokensProcessingMainContent>(global::Soenneker.Mistral.OpenApiClient.Models.DocumentOutTokensProcessingMainContent.CreateFromDiscriminatorValue); } },
-                { "tokens_processing_summary", n => { TokensProcessingSummary = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.DocumentOutTokensProcessingSummary>(global::Soenneker.Mistral.OpenApiClient.Models.DocumentOutTokensProcessingSummary.CreateFromDiscriminatorValue); } },
+                { "size", n => { Size = n.GetIntValue(); } },
+                { "summary", n => { Summary = n.GetStringValue(); } },
+                { "tokens_processing_main_content", n => { TokensProcessingMainContent = n.GetIntValue(); } },
+                { "tokens_processing_summary", n => { TokensProcessingSummary = n.GetIntValue(); } },
                 { "tokens_processing_total", n => { TokensProcessingTotal = n.GetIntValue(); } },
-                { "uploaded_by_id", n => { UploadedById = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.DocumentOutUploadedById>(global::Soenneker.Mistral.OpenApiClient.Models.DocumentOutUploadedById.CreateFromDiscriminatorValue); } },
+                { "uploaded_by_id", n => { UploadedById = n.GetGuidValue(); } },
                 { "uploaded_by_type", n => { UploadedByType = n.GetStringValue(); } },
-                { "url", n => { Url = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.DocumentOutUrl>(global::Soenneker.Mistral.OpenApiClient.Models.DocumentOutUrl.CreateFromDiscriminatorValue); } },
+                { "url", n => { Url = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -200,22 +164,22 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.DocumentOutAttributes>("attributes", Attributes);
             writer.WriteDateTimeOffsetValue("created_at", CreatedAt);
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.DocumentOutExtension>("extension", Extension);
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.DocumentOutHash>("hash", Hash);
+            writer.WriteStringValue("extension", Extension);
+            writer.WriteStringValue("hash", Hash);
             writer.WriteGuidValue("id", Id);
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.DocumentOutLastProcessedAt>("last_processed_at", LastProcessedAt);
+            writer.WriteDateTimeOffsetValue("last_processed_at", LastProcessedAt);
             writer.WriteGuidValue("library_id", LibraryId);
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.DocumentOutMimeType>("mime_type", MimeType);
+            writer.WriteStringValue("mime_type", MimeType);
             writer.WriteStringValue("name", Name);
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.DocumentOutNumberOfPages>("number_of_pages", NumberOfPages);
+            writer.WriteIntValue("number_of_pages", NumberOfPages);
             writer.WriteEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.ProcessStatus>("process_status", ProcessStatus);
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.DocumentOutSize>("size", Size);
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.DocumentOutSummary>("summary", Summary);
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.DocumentOutTokensProcessingMainContent>("tokens_processing_main_content", TokensProcessingMainContent);
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.DocumentOutTokensProcessingSummary>("tokens_processing_summary", TokensProcessingSummary);
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.DocumentOutUploadedById>("uploaded_by_id", UploadedById);
+            writer.WriteIntValue("size", Size);
+            writer.WriteStringValue("summary", Summary);
+            writer.WriteIntValue("tokens_processing_main_content", TokensProcessingMainContent);
+            writer.WriteIntValue("tokens_processing_summary", TokensProcessingSummary);
+            writer.WriteGuidValue("uploaded_by_id", UploadedById);
             writer.WriteStringValue("uploaded_by_type", UploadedByType);
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.DocumentOutUrl>("url", Url);
+            writer.WriteStringValue("url", Url);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

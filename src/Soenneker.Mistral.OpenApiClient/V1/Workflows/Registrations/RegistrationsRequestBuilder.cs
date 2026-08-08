@@ -106,22 +106,15 @@ namespace Soenneker.Mistral.OpenApiClient.V1.Workflows.Registrations
             /// <summary>Whether to only return active workflows versions</summary>
             [QueryParameter("active_only")]
             public bool? ActiveOnly { get; set; }
-            /// <summary>Filter by archived state. False=exclude archived, true=only archived, None=include all</summary>
+            /// <summary>Filter by archived state. False=exclude archived, True=only archived, None=include all</summary>
             [QueryParameter("archived")]
             public bool? Archived { get; set; }
             /// <summary>Whether to only return workflows compatible with chat assistant</summary>
             [QueryParameter("available_in_chat_assistant")]
             public bool? AvailableInChatAssistant { get; set; }
             /// <summary>The cursor for pagination</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
             [QueryParameter("cursor")]
-            public string? Cursor { get; set; }
-#nullable restore
-#else
-            [QueryParameter("cursor")]
-            public string Cursor { get; set; }
-#endif
+            public Guid? Cursor { get; set; }
             /// <summary>Whether to include shared workflow versions</summary>
             [QueryParameter("include_shared")]
             public bool? IncludeShared { get; set; }
@@ -142,15 +135,8 @@ namespace Soenneker.Mistral.OpenApiClient.V1.Workflows.Registrations
             [QueryParameter("with_workflow")]
             public bool? WithWorkflow { get; set; }
             /// <summary>The workflow ID to filter by</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
             [QueryParameter("workflow_id")]
-            public string? WorkflowId { get; set; }
-#nullable restore
-#else
-            [QueryParameter("workflow_id")]
-            public string WorkflowId { get; set; }
-#endif
+            public Guid? WorkflowId { get; set; }
             /// <summary>The workflow name to filter by</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable

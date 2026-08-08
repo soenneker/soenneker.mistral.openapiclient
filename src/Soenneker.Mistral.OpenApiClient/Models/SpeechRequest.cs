@@ -25,18 +25,18 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         /// <summary>The model property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.SpeechRequestModel? Model { get; set; }
+        public string? Model { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.SpeechRequestModel Model { get; set; }
+        public string Model { get; set; }
 #endif
         /// <summary>The base64-encoded audio reference for zero-shot voice cloning.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.SpeechRequestRefAudio? RefAudio { get; set; }
+        public string? RefAudio { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.SpeechRequestRefAudio RefAudio { get; set; }
+        public string RefAudio { get; set; }
 #endif
         /// <summary>The response_format property</summary>
         public global::Soenneker.Mistral.OpenApiClient.Models.SpeechOutputFormat? ResponseFormat { get; set; }
@@ -45,10 +45,10 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         /// <summary>The preset or custom voice to use for generating the speech.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.SpeechRequestVoiceId? VoiceId { get; set; }
+        public string? VoiceId { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.SpeechRequestVoiceId VoiceId { get; set; }
+        public string VoiceId { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Mistral.OpenApiClient.Models.SpeechRequest"/> and sets the default values.
@@ -77,11 +77,11 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "input", n => { Input = n.GetStringValue(); } },
-                { "model", n => { Model = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.SpeechRequestModel>(global::Soenneker.Mistral.OpenApiClient.Models.SpeechRequestModel.CreateFromDiscriminatorValue); } },
-                { "ref_audio", n => { RefAudio = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.SpeechRequestRefAudio>(global::Soenneker.Mistral.OpenApiClient.Models.SpeechRequestRefAudio.CreateFromDiscriminatorValue); } },
+                { "model", n => { Model = n.GetStringValue(); } },
+                { "ref_audio", n => { RefAudio = n.GetStringValue(); } },
                 { "response_format", n => { ResponseFormat = n.GetEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.SpeechOutputFormat>(); } },
                 { "stream", n => { Stream = n.GetBoolValue(); } },
-                { "voice_id", n => { VoiceId = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.SpeechRequestVoiceId>(global::Soenneker.Mistral.OpenApiClient.Models.SpeechRequestVoiceId.CreateFromDiscriminatorValue); } },
+                { "voice_id", n => { VoiceId = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -92,11 +92,11 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("input", Input);
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.SpeechRequestModel>("model", Model);
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.SpeechRequestRefAudio>("ref_audio", RefAudio);
+            writer.WriteStringValue("model", Model);
+            writer.WriteStringValue("ref_audio", RefAudio);
             writer.WriteEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.SpeechOutputFormat>("response_format", ResponseFormat);
             writer.WriteBoolValue("stream", Stream);
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.SpeechRequestVoiceId>("voice_id", VoiceId);
+            writer.WriteStringValue("voice_id", VoiceId);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

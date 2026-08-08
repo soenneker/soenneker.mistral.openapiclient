@@ -141,24 +141,10 @@ namespace Soenneker.Mistral.OpenApiClient.V1.Fine_tuning.Jobs
         public partial class JobsRequestBuilderGetQueryParameters 
         {
             /// <summary>The date/time to filter on. When set, the results for previous creation times are not displayed.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
             [QueryParameter("created_after")]
-            public string? CreatedAfter { get; set; }
-#nullable restore
-#else
-            [QueryParameter("created_after")]
-            public string CreatedAfter { get; set; }
-#endif
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
+            public DateTimeOffset? CreatedAfter { get; set; }
             [QueryParameter("created_before")]
-            public string? CreatedBefore { get; set; }
-#nullable restore
-#else
-            [QueryParameter("created_before")]
-            public string CreatedBefore { get; set; }
-#endif
+            public DateTimeOffset? CreatedBefore { get; set; }
             /// <summary>When set, only return results for jobs created by the API caller. Other results are not displayed.</summary>
             [QueryParameter("created_by_me")]
             public bool? CreatedByMe { get; set; }
@@ -179,15 +165,8 @@ namespace Soenneker.Mistral.OpenApiClient.V1.Fine_tuning.Jobs
             [QueryParameter("page_size")]
             public int? PageSize { get; set; }
             /// <summary>The current job state to filter on. When set, the other results are not displayed.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
             [QueryParameter("status")]
-            public string? Status { get; set; }
-#nullable restore
-#else
-            [QueryParameter("status")]
-            public string Status { get; set; }
-#endif
+            public global::Soenneker.Mistral.OpenApiClient.Models.JobsApiRoutesFineTuningGetFineTuningJobsStatusParameter? Status { get; set; }
             /// <summary>The model suffix to filter on. When set, the other results are not displayed.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable

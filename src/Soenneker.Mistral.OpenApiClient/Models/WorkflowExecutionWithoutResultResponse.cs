@@ -15,13 +15,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The end time of the workflow execution, if available</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.WorkflowExecutionWithoutResultResponseEndTime? EndTime { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Mistral.OpenApiClient.Models.WorkflowExecutionWithoutResultResponseEndTime EndTime { get; set; }
-#endif
+        public DateTimeOffset? EndTime { get; set; }
         /// <summary>The ID of the workflow execution</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -33,10 +27,10 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         /// <summary>The parent execution ID of the workflow execution</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.WorkflowExecutionWithoutResultResponseParentExecutionId? ParentExecutionId { get; set; }
+        public string? ParentExecutionId { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.WorkflowExecutionWithoutResultResponseParentExecutionId ParentExecutionId { get; set; }
+        public string ParentExecutionId { get; set; }
 #endif
         /// <summary>The root execution ID of the workflow execution</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -57,13 +51,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         public global::Soenneker.Mistral.OpenApiClient.Models.WorkflowExecutionWithoutResultResponseStatus Status { get; set; }
 #endif
         /// <summary>The total duration of the trace in milliseconds</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.WorkflowExecutionWithoutResultResponseTotalDurationMs? TotalDurationMs { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Mistral.OpenApiClient.Models.WorkflowExecutionWithoutResultResponseTotalDurationMs TotalDurationMs { get; set; }
-#endif
+        public int? TotalDurationMs { get; set; }
         /// <summary>The name of the workflow</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -97,13 +85,13 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "end_time", n => { EndTime = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.WorkflowExecutionWithoutResultResponseEndTime>(global::Soenneker.Mistral.OpenApiClient.Models.WorkflowExecutionWithoutResultResponseEndTime.CreateFromDiscriminatorValue); } },
+                { "end_time", n => { EndTime = n.GetDateTimeOffsetValue(); } },
                 { "execution_id", n => { ExecutionId = n.GetStringValue(); } },
-                { "parent_execution_id", n => { ParentExecutionId = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.WorkflowExecutionWithoutResultResponseParentExecutionId>(global::Soenneker.Mistral.OpenApiClient.Models.WorkflowExecutionWithoutResultResponseParentExecutionId.CreateFromDiscriminatorValue); } },
+                { "parent_execution_id", n => { ParentExecutionId = n.GetStringValue(); } },
                 { "root_execution_id", n => { RootExecutionId = n.GetStringValue(); } },
                 { "start_time", n => { StartTime = n.GetDateTimeOffsetValue(); } },
                 { "status", n => { Status = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.WorkflowExecutionWithoutResultResponseStatus>(global::Soenneker.Mistral.OpenApiClient.Models.WorkflowExecutionWithoutResultResponseStatus.CreateFromDiscriminatorValue); } },
-                { "total_duration_ms", n => { TotalDurationMs = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.WorkflowExecutionWithoutResultResponseTotalDurationMs>(global::Soenneker.Mistral.OpenApiClient.Models.WorkflowExecutionWithoutResultResponseTotalDurationMs.CreateFromDiscriminatorValue); } },
+                { "total_duration_ms", n => { TotalDurationMs = n.GetIntValue(); } },
                 { "workflow_name", n => { WorkflowName = n.GetStringValue(); } },
             };
         }
@@ -114,13 +102,13 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.WorkflowExecutionWithoutResultResponseEndTime>("end_time", EndTime);
+            writer.WriteDateTimeOffsetValue("end_time", EndTime);
             writer.WriteStringValue("execution_id", ExecutionId);
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.WorkflowExecutionWithoutResultResponseParentExecutionId>("parent_execution_id", ParentExecutionId);
+            writer.WriteStringValue("parent_execution_id", ParentExecutionId);
             writer.WriteStringValue("root_execution_id", RootExecutionId);
             writer.WriteDateTimeOffsetValue("start_time", StartTime);
             writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.WorkflowExecutionWithoutResultResponseStatus>("status", Status);
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.WorkflowExecutionWithoutResultResponseTotalDurationMs>("total_duration_ms", TotalDurationMs);
+            writer.WriteIntValue("total_duration_ms", TotalDurationMs);
             writer.WriteStringValue("workflow_name", WorkflowName);
             writer.WriteAdditionalData(AdditionalData);
         }

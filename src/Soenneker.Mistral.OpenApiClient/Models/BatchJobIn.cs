@@ -17,10 +17,10 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         /// <summary>In case you want to use a specific agent from the **deprecated** agents api for batch inference, you can specify the agent ID here.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.BatchJobInAgentId? AgentId { get; set; }
+        public string? AgentId { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.BatchJobInAgentId AgentId { get; set; }
+        public string AgentId { get; set; }
 #endif
         /// <summary>The endpoint property</summary>
         public global::Soenneker.Mistral.OpenApiClient.Models.ApiEndpoint? Endpoint { get; set; }
@@ -43,10 +43,10 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         /// <summary>The model to be used for batch inference.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.BatchJobInModel? Model { get; set; }
+        public string? Model { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.BatchJobInModel Model { get; set; }
+        public string Model { get; set; }
 #endif
         /// <summary>The requests property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -84,11 +84,11 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "agent_id", n => { AgentId = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.BatchJobInAgentId>(global::Soenneker.Mistral.OpenApiClient.Models.BatchJobInAgentId.CreateFromDiscriminatorValue); } },
+                { "agent_id", n => { AgentId = n.GetStringValue(); } },
                 { "endpoint", n => { Endpoint = n.GetEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.ApiEndpoint>(); } },
                 { "input_files", n => { InputFiles = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.BatchJobInInputFiles>(global::Soenneker.Mistral.OpenApiClient.Models.BatchJobInInputFiles.CreateFromDiscriminatorValue); } },
                 { "metadata", n => { Metadata = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.BatchJobInMetadata>(global::Soenneker.Mistral.OpenApiClient.Models.BatchJobInMetadata.CreateFromDiscriminatorValue); } },
-                { "model", n => { Model = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.BatchJobInModel>(global::Soenneker.Mistral.OpenApiClient.Models.BatchJobInModel.CreateFromDiscriminatorValue); } },
+                { "model", n => { Model = n.GetStringValue(); } },
                 { "requests", n => { Requests = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.BatchJobInRequests>(global::Soenneker.Mistral.OpenApiClient.Models.BatchJobInRequests.CreateFromDiscriminatorValue); } },
                 { "timeout_hours", n => { TimeoutHours = n.GetIntValue(); } },
             };
@@ -100,11 +100,11 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.BatchJobInAgentId>("agent_id", AgentId);
+            writer.WriteStringValue("agent_id", AgentId);
             writer.WriteEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.ApiEndpoint>("endpoint", Endpoint);
             writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.BatchJobInInputFiles>("input_files", InputFiles);
             writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.BatchJobInMetadata>("metadata", Metadata);
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.BatchJobInModel>("model", Model);
+            writer.WriteStringValue("model", Model);
             writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.BatchJobInRequests>("requests", Requests);
             writer.WriteIntValue("timeout_hours", TimeoutHours);
             writer.WriteAdditionalData(AdditionalData);

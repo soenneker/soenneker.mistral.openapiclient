@@ -34,10 +34,10 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         /// <summary>The mimeType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.BlobResourceContentsMimeType? MimeType { get; set; }
+        public string? MimeType { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.BlobResourceContentsMimeType MimeType { get; set; }
+        public string MimeType { get; set; }
 #endif
         /// <summary>The uri property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -74,7 +74,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             {
                 { "blob", n => { Blob = n.GetStringValue(); } },
                 { "_meta", n => { Meta = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.BlobResourceContentsMeta>(global::Soenneker.Mistral.OpenApiClient.Models.BlobResourceContentsMeta.CreateFromDiscriminatorValue); } },
-                { "mimeType", n => { MimeType = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.BlobResourceContentsMimeType>(global::Soenneker.Mistral.OpenApiClient.Models.BlobResourceContentsMimeType.CreateFromDiscriminatorValue); } },
+                { "mimeType", n => { MimeType = n.GetStringValue(); } },
                 { "uri", n => { Uri = n.GetStringValue(); } },
             };
         }
@@ -87,7 +87,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("blob", Blob);
             writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.BlobResourceContentsMeta>("_meta", Meta);
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.BlobResourceContentsMimeType>("mimeType", MimeType);
+            writer.WriteStringValue("mimeType", MimeType);
             writer.WriteStringValue("uri", Uri);
             writer.WriteAdditionalData(AdditionalData);
         }

@@ -19,18 +19,18 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         /// <summary>The next property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.PaginatedResultJudgePreviewNext? Next { get; set; }
+        public string? Next { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.PaginatedResultJudgePreviewNext Next { get; set; }
+        public string Next { get; set; }
 #endif
         /// <summary>The previous property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.PaginatedResultJudgePreviewPrevious? Previous { get; set; }
+        public string? Previous { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.PaginatedResultJudgePreviewPrevious Previous { get; set; }
+        public string Previous { get; set; }
 #endif
         /// <summary>The results property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -66,8 +66,8 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "count", n => { Count = n.GetIntValue(); } },
-                { "next", n => { Next = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.PaginatedResultJudgePreviewNext>(global::Soenneker.Mistral.OpenApiClient.Models.PaginatedResultJudgePreviewNext.CreateFromDiscriminatorValue); } },
-                { "previous", n => { Previous = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.PaginatedResultJudgePreviewPrevious>(global::Soenneker.Mistral.OpenApiClient.Models.PaginatedResultJudgePreviewPrevious.CreateFromDiscriminatorValue); } },
+                { "next", n => { Next = n.GetStringValue(); } },
+                { "previous", n => { Previous = n.GetStringValue(); } },
                 { "results", n => { Results = n.GetCollectionOfObjectValues<global::Soenneker.Mistral.OpenApiClient.Models.JudgePreview>(global::Soenneker.Mistral.OpenApiClient.Models.JudgePreview.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
@@ -79,8 +79,8 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteIntValue("count", Count);
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.PaginatedResultJudgePreviewNext>("next", Next);
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.PaginatedResultJudgePreviewPrevious>("previous", Previous);
+            writer.WriteStringValue("next", Next);
+            writer.WriteStringValue("previous", Previous);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Mistral.OpenApiClient.Models.JudgePreview>("results", Results);
             writer.WriteAdditionalData(AdditionalData);
         }

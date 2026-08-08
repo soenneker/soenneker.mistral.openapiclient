@@ -21,31 +21,19 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         /// <summary>The dataset_id property</summary>
         public Guid? DatasetId { get; set; }
         /// <summary>The deleted_at property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.DatasetImportTaskDeletedAt? DeletedAt { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Mistral.OpenApiClient.Models.DatasetImportTaskDeletedAt DeletedAt { get; set; }
-#endif
+        public DateTimeOffset? DeletedAt { get; set; }
         /// <summary>The id property</summary>
         public Guid? Id { get; set; }
         /// <summary>The message property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.DatasetImportTaskMessage? Message { get; set; }
+        public string? Message { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.DatasetImportTaskMessage Message { get; set; }
+        public string Message { get; set; }
 #endif
         /// <summary>The progress property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.DatasetImportTaskProgress? Progress { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Mistral.OpenApiClient.Models.DatasetImportTaskProgress Progress { get; set; }
-#endif
+        public int? Progress { get; set; }
         /// <summary>The status property</summary>
         public global::Soenneker.Mistral.OpenApiClient.Models.BaseTaskStatus? Status { get; set; }
         /// <summary>The updated_at property</summary>
@@ -80,10 +68,10 @@ namespace Soenneker.Mistral.OpenApiClient.Models
                 { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
                 { "creator_id", n => { CreatorId = n.GetGuidValue(); } },
                 { "dataset_id", n => { DatasetId = n.GetGuidValue(); } },
-                { "deleted_at", n => { DeletedAt = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.DatasetImportTaskDeletedAt>(global::Soenneker.Mistral.OpenApiClient.Models.DatasetImportTaskDeletedAt.CreateFromDiscriminatorValue); } },
+                { "deleted_at", n => { DeletedAt = n.GetDateTimeOffsetValue(); } },
                 { "id", n => { Id = n.GetGuidValue(); } },
-                { "message", n => { Message = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.DatasetImportTaskMessage>(global::Soenneker.Mistral.OpenApiClient.Models.DatasetImportTaskMessage.CreateFromDiscriminatorValue); } },
-                { "progress", n => { Progress = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.DatasetImportTaskProgress>(global::Soenneker.Mistral.OpenApiClient.Models.DatasetImportTaskProgress.CreateFromDiscriminatorValue); } },
+                { "message", n => { Message = n.GetStringValue(); } },
+                { "progress", n => { Progress = n.GetIntValue(); } },
                 { "status", n => { Status = n.GetEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.BaseTaskStatus>(); } },
                 { "updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
                 { "workspace_id", n => { WorkspaceId = n.GetGuidValue(); } },
@@ -99,10 +87,10 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             writer.WriteDateTimeOffsetValue("created_at", CreatedAt);
             writer.WriteGuidValue("creator_id", CreatorId);
             writer.WriteGuidValue("dataset_id", DatasetId);
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.DatasetImportTaskDeletedAt>("deleted_at", DeletedAt);
+            writer.WriteDateTimeOffsetValue("deleted_at", DeletedAt);
             writer.WriteGuidValue("id", Id);
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.DatasetImportTaskMessage>("message", Message);
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.DatasetImportTaskProgress>("progress", Progress);
+            writer.WriteStringValue("message", Message);
+            writer.WriteIntValue("progress", Progress);
             writer.WriteEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.BaseTaskStatus>("status", Status);
             writer.WriteDateTimeOffsetValue("updated_at", UpdatedAt);
             writer.WriteGuidValue("workspace_id", WorkspaceId);

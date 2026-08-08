@@ -23,10 +23,10 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         /// <summary>Reason for resetting the workflow execution</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.ResetInvocationBodyReason? Reason { get; set; }
+        public string? Reason { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.ResetInvocationBodyReason Reason { get; set; }
+        public string Reason { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Mistral.OpenApiClient.Models.ResetInvocationBody"/> and sets the default values.
@@ -58,7 +58,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
                 { "event_id", n => { EventId = n.GetIntValue(); } },
                 { "exclude_signals", n => { ExcludeSignals = n.GetBoolValue(); } },
                 { "exclude_updates", n => { ExcludeUpdates = n.GetBoolValue(); } },
-                { "reason", n => { Reason = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ResetInvocationBodyReason>(global::Soenneker.Mistral.OpenApiClient.Models.ResetInvocationBodyReason.CreateFromDiscriminatorValue); } },
+                { "reason", n => { Reason = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -71,7 +71,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             writer.WriteIntValue("event_id", EventId);
             writer.WriteBoolValue("exclude_signals", ExcludeSignals);
             writer.WriteBoolValue("exclude_updates", ExcludeUpdates);
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ResetInvocationBodyReason>("reason", Reason);
+            writer.WriteStringValue("reason", Reason);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

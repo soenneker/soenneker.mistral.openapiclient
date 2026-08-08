@@ -19,13 +19,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         /// <summary>The UNIX timestamp (in seconds) of the event.</summary>
         public int? CreatedAt { get; set; }
         /// <summary>The expires_at property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.FileSchemaExpiresAt? ExpiresAt { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Mistral.OpenApiClient.Models.FileSchemaExpiresAt ExpiresAt { get; set; }
-#endif
+        public int? ExpiresAt { get; set; }
         /// <summary>The name of the uploaded file.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -39,19 +33,13 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         /// <summary>The mimetype property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.FileSchemaMimetype? Mimetype { get; set; }
+        public string? Mimetype { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.FileSchemaMimetype Mimetype { get; set; }
+        public string Mimetype { get; set; }
 #endif
         /// <summary>The num_lines property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.FileSchemaNumLines? NumLines { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Mistral.OpenApiClient.Models.FileSchemaNumLines NumLines { get; set; }
-#endif
+        public int? NumLines { get; set; }
         /// <summary>The object type, which is always &quot;file&quot;.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -67,10 +55,10 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         /// <summary>The signature property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.FileSchemaSignature? Signature { get; set; }
+        public string? Signature { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.FileSchemaSignature Signature { get; set; }
+        public string Signature { get; set; }
 #endif
         /// <summary>The source property</summary>
         public global::Soenneker.Mistral.OpenApiClient.Models.Source? Source { get; set; }
@@ -109,15 +97,15 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             {
                 { "bytes", n => { Bytes = n.GetIntValue(); } },
                 { "created_at", n => { CreatedAt = n.GetIntValue(); } },
-                { "expires_at", n => { ExpiresAt = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.FileSchemaExpiresAt>(global::Soenneker.Mistral.OpenApiClient.Models.FileSchemaExpiresAt.CreateFromDiscriminatorValue); } },
+                { "expires_at", n => { ExpiresAt = n.GetIntValue(); } },
                 { "filename", n => { Filename = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetGuidValue(); } },
-                { "mimetype", n => { Mimetype = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.FileSchemaMimetype>(global::Soenneker.Mistral.OpenApiClient.Models.FileSchemaMimetype.CreateFromDiscriminatorValue); } },
-                { "num_lines", n => { NumLines = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.FileSchemaNumLines>(global::Soenneker.Mistral.OpenApiClient.Models.FileSchemaNumLines.CreateFromDiscriminatorValue); } },
+                { "mimetype", n => { Mimetype = n.GetStringValue(); } },
+                { "num_lines", n => { NumLines = n.GetIntValue(); } },
                 { "object", n => { Object = n.GetStringValue(); } },
                 { "purpose", n => { Purpose = n.GetEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.FilePurpose>(); } },
                 { "sample_type", n => { SampleType = n.GetEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.SampleType>(); } },
-                { "signature", n => { Signature = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.FileSchemaSignature>(global::Soenneker.Mistral.OpenApiClient.Models.FileSchemaSignature.CreateFromDiscriminatorValue); } },
+                { "signature", n => { Signature = n.GetStringValue(); } },
                 { "source", n => { Source = n.GetEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.Source>(); } },
                 { "visibility", n => { Visibility = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.FileSchemaVisibility>(global::Soenneker.Mistral.OpenApiClient.Models.FileSchemaVisibility.CreateFromDiscriminatorValue); } },
             };
@@ -131,15 +119,15 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteIntValue("bytes", Bytes);
             writer.WriteIntValue("created_at", CreatedAt);
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.FileSchemaExpiresAt>("expires_at", ExpiresAt);
+            writer.WriteIntValue("expires_at", ExpiresAt);
             writer.WriteStringValue("filename", Filename);
             writer.WriteGuidValue("id", Id);
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.FileSchemaMimetype>("mimetype", Mimetype);
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.FileSchemaNumLines>("num_lines", NumLines);
+            writer.WriteStringValue("mimetype", Mimetype);
+            writer.WriteIntValue("num_lines", NumLines);
             writer.WriteStringValue("object", Object);
             writer.WriteEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.FilePurpose>("purpose", Purpose);
             writer.WriteEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.SampleType>("sample_type", SampleType);
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.FileSchemaSignature>("signature", Signature);
+            writer.WriteStringValue("signature", Signature);
             writer.WriteEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.Source>("source", Source);
             writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.FileSchemaVisibility>("visibility", Visibility);
             writer.WriteAdditionalData(AdditionalData);

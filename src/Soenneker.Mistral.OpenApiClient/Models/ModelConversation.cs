@@ -25,10 +25,10 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         /// <summary>Description of the what the conversation is about.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.ModelConversationDescription? Description { get; set; }
+        public string? Description { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.ModelConversationDescription Description { get; set; }
+        public string Description { get; set; }
 #endif
         /// <summary>The guardrails property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -49,10 +49,10 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         /// <summary>Instruction prompt the model will follow during the conversation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.ModelConversationInstructions? Instructions { get; set; }
+        public string? Instructions { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.ModelConversationInstructions Instructions { get; set; }
+        public string Instructions { get; set; }
 #endif
         /// <summary>Custom metadata for the conversation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -73,10 +73,10 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         /// <summary>Name given to the conversation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.ModelConversationName? Name { get; set; }
+        public string? Name { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.ModelConversationName Name { get; set; }
+        public string Name { get; set; }
 #endif
         /// <summary>The object property</summary>
         public global::Soenneker.Mistral.OpenApiClient.Models.ModelConversation_object? Object { get; set; }
@@ -110,13 +110,13 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             {
                 { "completion_args", n => { CompletionArgs = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.CompletionArgs>(global::Soenneker.Mistral.OpenApiClient.Models.CompletionArgs.CreateFromDiscriminatorValue); } },
                 { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
-                { "description", n => { Description = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ModelConversationDescription>(global::Soenneker.Mistral.OpenApiClient.Models.ModelConversationDescription.CreateFromDiscriminatorValue); } },
+                { "description", n => { Description = n.GetStringValue(); } },
                 { "guardrails", n => { Guardrails = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ModelConversationGuardrails>(global::Soenneker.Mistral.OpenApiClient.Models.ModelConversationGuardrails.CreateFromDiscriminatorValue); } },
                 { "id", n => { Id = n.GetStringValue(); } },
-                { "instructions", n => { Instructions = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ModelConversationInstructions>(global::Soenneker.Mistral.OpenApiClient.Models.ModelConversationInstructions.CreateFromDiscriminatorValue); } },
+                { "instructions", n => { Instructions = n.GetStringValue(); } },
                 { "metadata", n => { Metadata = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ModelConversationMetadata>(global::Soenneker.Mistral.OpenApiClient.Models.ModelConversationMetadata.CreateFromDiscriminatorValue); } },
                 { "model", n => { Model = n.GetStringValue(); } },
-                { "name", n => { Name = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ModelConversationName>(global::Soenneker.Mistral.OpenApiClient.Models.ModelConversationName.CreateFromDiscriminatorValue); } },
+                { "name", n => { Name = n.GetStringValue(); } },
                 { "object", n => { Object = n.GetEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.ModelConversation_object>(); } },
                 { "tools", n => { Tools = n.GetCollectionOfObjectValues<global::Soenneker.Mistral.OpenApiClient.Models.ModelConversationToolsItem>(global::Soenneker.Mistral.OpenApiClient.Models.ModelConversationToolsItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
@@ -131,13 +131,13 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.CompletionArgs>("completion_args", CompletionArgs);
             writer.WriteDateTimeOffsetValue("created_at", CreatedAt);
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ModelConversationDescription>("description", Description);
+            writer.WriteStringValue("description", Description);
             writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ModelConversationGuardrails>("guardrails", Guardrails);
             writer.WriteStringValue("id", Id);
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ModelConversationInstructions>("instructions", Instructions);
+            writer.WriteStringValue("instructions", Instructions);
             writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ModelConversationMetadata>("metadata", Metadata);
             writer.WriteStringValue("model", Model);
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ModelConversationName>("name", Name);
+            writer.WriteStringValue("name", Name);
             writer.WriteEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.ModelConversation_object>("object", Object);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Mistral.OpenApiClient.Models.ModelConversationToolsItem>("tools", Tools);
             writer.WriteDateTimeOffsetValue("updated_at", UpdatedAt);

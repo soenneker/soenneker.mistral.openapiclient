@@ -23,10 +23,10 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         /// <summary>The description property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.AgentCreationRequestDescription? Description { get; set; }
+        public string? Description { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.AgentCreationRequestDescription Description { get; set; }
+        public string Description { get; set; }
 #endif
         /// <summary>The guardrails property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -47,10 +47,10 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         /// <summary>Instruction prompt the model will follow during the conversation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.AgentCreationRequestInstructions? Instructions { get; set; }
+        public string? Instructions { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.AgentCreationRequestInstructions Instructions { get; set; }
+        public string Instructions { get; set; }
 #endif
         /// <summary>The metadata property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -87,10 +87,10 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         /// <summary>The version_message property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.AgentCreationRequestVersionMessage? VersionMessage { get; set; }
+        public string? VersionMessage { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.AgentCreationRequestVersionMessage VersionMessage { get; set; }
+        public string VersionMessage { get; set; }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -111,15 +111,15 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "completion_args", n => { CompletionArgs = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.CompletionArgs>(global::Soenneker.Mistral.OpenApiClient.Models.CompletionArgs.CreateFromDiscriminatorValue); } },
-                { "description", n => { Description = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.AgentCreationRequestDescription>(global::Soenneker.Mistral.OpenApiClient.Models.AgentCreationRequestDescription.CreateFromDiscriminatorValue); } },
+                { "description", n => { Description = n.GetStringValue(); } },
                 { "guardrails", n => { Guardrails = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.AgentCreationRequestGuardrails>(global::Soenneker.Mistral.OpenApiClient.Models.AgentCreationRequestGuardrails.CreateFromDiscriminatorValue); } },
                 { "handoffs", n => { Handoffs = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.AgentCreationRequestHandoffs>(global::Soenneker.Mistral.OpenApiClient.Models.AgentCreationRequestHandoffs.CreateFromDiscriminatorValue); } },
-                { "instructions", n => { Instructions = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.AgentCreationRequestInstructions>(global::Soenneker.Mistral.OpenApiClient.Models.AgentCreationRequestInstructions.CreateFromDiscriminatorValue); } },
+                { "instructions", n => { Instructions = n.GetStringValue(); } },
                 { "metadata", n => { Metadata = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.AgentCreationRequestMetadata>(global::Soenneker.Mistral.OpenApiClient.Models.AgentCreationRequestMetadata.CreateFromDiscriminatorValue); } },
                 { "model", n => { Model = n.GetStringValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "tools", n => { Tools = n.GetCollectionOfObjectValues<global::Soenneker.Mistral.OpenApiClient.Models.AgentCreationRequestToolsItem>(global::Soenneker.Mistral.OpenApiClient.Models.AgentCreationRequestToolsItem.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "version_message", n => { VersionMessage = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.AgentCreationRequestVersionMessage>(global::Soenneker.Mistral.OpenApiClient.Models.AgentCreationRequestVersionMessage.CreateFromDiscriminatorValue); } },
+                { "version_message", n => { VersionMessage = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -130,15 +130,15 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.CompletionArgs>("completion_args", CompletionArgs);
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.AgentCreationRequestDescription>("description", Description);
+            writer.WriteStringValue("description", Description);
             writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.AgentCreationRequestGuardrails>("guardrails", Guardrails);
             writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.AgentCreationRequestHandoffs>("handoffs", Handoffs);
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.AgentCreationRequestInstructions>("instructions", Instructions);
+            writer.WriteStringValue("instructions", Instructions);
             writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.AgentCreationRequestMetadata>("metadata", Metadata);
             writer.WriteStringValue("model", Model);
             writer.WriteStringValue("name", Name);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Mistral.OpenApiClient.Models.AgentCreationRequestToolsItem>("tools", Tools);
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.AgentCreationRequestVersionMessage>("version_message", VersionMessage);
+            writer.WriteStringValue("version_message", VersionMessage);
         }
     }
 }

@@ -18,10 +18,10 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         /// <summary>The bearer_token property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.ConnectionCredentialsBearerToken? BearerToken { get; set; }
+        public string? BearerToken { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.ConnectionCredentialsBearerToken BearerToken { get; set; }
+        public string BearerToken { get; set; }
 #endif
         /// <summary>The headers property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -72,7 +72,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "bearer_token", n => { BearerToken = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ConnectionCredentialsBearerToken>(global::Soenneker.Mistral.OpenApiClient.Models.ConnectionCredentialsBearerToken.CreateFromDiscriminatorValue); } },
+                { "bearer_token", n => { BearerToken = n.GetStringValue(); } },
                 { "headers", n => { Headers = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ConnectionCredentialsHeaders>(global::Soenneker.Mistral.OpenApiClient.Models.ConnectionCredentialsHeaders.CreateFromDiscriminatorValue); } },
                 { "oauth", n => { Oauth = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ConnectionCredentialsOAuth>(global::Soenneker.Mistral.OpenApiClient.Models.ConnectionCredentialsOAuth.CreateFromDiscriminatorValue); } },
                 { "type", n => { Type = n.GetStringValue(); } },
@@ -85,7 +85,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ConnectionCredentialsBearerToken>("bearer_token", BearerToken);
+            writer.WriteStringValue("bearer_token", BearerToken);
             writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ConnectionCredentialsHeaders>("headers", Headers);
             writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ConnectionCredentialsOAuth>("oauth", Oauth);
             writer.WriteStringValue("type", Type);

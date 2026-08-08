@@ -41,10 +41,10 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         /// <summary>The ref property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.GithubRepositoryOutRef? Ref { get; set; }
+        public string? Ref { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.GithubRepositoryOutRef Ref { get; set; }
+        public string Ref { get; set; }
 #endif
         /// <summary>Union discriminator</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -85,7 +85,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
                 { "commit_id", n => { CommitId = n.GetStringValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "owner", n => { Owner = n.GetStringValue(); } },
-                { "ref", n => { Ref = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.GithubRepositoryOutRef>(global::Soenneker.Mistral.OpenApiClient.Models.GithubRepositoryOutRef.CreateFromDiscriminatorValue); } },
+                { "ref", n => { Ref = n.GetStringValue(); } },
                 { "type", n => { Type = n.GetStringValue(); } },
                 { "weight", n => { Weight = n.GetDoubleValue(); } },
             };
@@ -100,7 +100,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             writer.WriteStringValue("commit_id", CommitId);
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("owner", Owner);
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.GithubRepositoryOutRef>("ref", Ref);
+            writer.WriteStringValue("ref", Ref);
             writer.WriteStringValue("type", Type);
             writer.WriteDoubleValue("weight", Weight);
             writer.WriteAdditionalData(AdditionalData);

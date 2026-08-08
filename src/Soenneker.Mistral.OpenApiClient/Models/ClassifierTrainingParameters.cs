@@ -15,47 +15,17 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The epochs property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.ClassifierTrainingParametersEpochs? Epochs { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Mistral.OpenApiClient.Models.ClassifierTrainingParametersEpochs Epochs { get; set; }
-#endif
+        public double? Epochs { get; set; }
         /// <summary>The learning_rate property</summary>
         public double? LearningRate { get; set; }
         /// <summary>The seq_len property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.ClassifierTrainingParametersSeqLen? SeqLen { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Mistral.OpenApiClient.Models.ClassifierTrainingParametersSeqLen SeqLen { get; set; }
-#endif
+        public int? SeqLen { get; set; }
         /// <summary>The training_steps property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.ClassifierTrainingParametersTrainingSteps? TrainingSteps { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Mistral.OpenApiClient.Models.ClassifierTrainingParametersTrainingSteps TrainingSteps { get; set; }
-#endif
+        public int? TrainingSteps { get; set; }
         /// <summary>The warmup_fraction property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.ClassifierTrainingParametersWarmupFraction? WarmupFraction { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Mistral.OpenApiClient.Models.ClassifierTrainingParametersWarmupFraction WarmupFraction { get; set; }
-#endif
+        public double? WarmupFraction { get; set; }
         /// <summary>The weight_decay property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.ClassifierTrainingParametersWeightDecay? WeightDecay { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Mistral.OpenApiClient.Models.ClassifierTrainingParametersWeightDecay WeightDecay { get; set; }
-#endif
+        public double? WeightDecay { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Mistral.OpenApiClient.Models.ClassifierTrainingParameters"/> and sets the default values.
         /// </summary>
@@ -63,6 +33,8 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         {
             AdditionalData = new Dictionary<string, object>();
             LearningRate = 0.0001;
+            WarmupFraction = 0.05;
+            WeightDecay = 0.1;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -82,12 +54,12 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "epochs", n => { Epochs = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ClassifierTrainingParametersEpochs>(global::Soenneker.Mistral.OpenApiClient.Models.ClassifierTrainingParametersEpochs.CreateFromDiscriminatorValue); } },
+                { "epochs", n => { Epochs = n.GetDoubleValue(); } },
                 { "learning_rate", n => { LearningRate = n.GetDoubleValue(); } },
-                { "seq_len", n => { SeqLen = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ClassifierTrainingParametersSeqLen>(global::Soenneker.Mistral.OpenApiClient.Models.ClassifierTrainingParametersSeqLen.CreateFromDiscriminatorValue); } },
-                { "training_steps", n => { TrainingSteps = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ClassifierTrainingParametersTrainingSteps>(global::Soenneker.Mistral.OpenApiClient.Models.ClassifierTrainingParametersTrainingSteps.CreateFromDiscriminatorValue); } },
-                { "warmup_fraction", n => { WarmupFraction = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ClassifierTrainingParametersWarmupFraction>(global::Soenneker.Mistral.OpenApiClient.Models.ClassifierTrainingParametersWarmupFraction.CreateFromDiscriminatorValue); } },
-                { "weight_decay", n => { WeightDecay = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ClassifierTrainingParametersWeightDecay>(global::Soenneker.Mistral.OpenApiClient.Models.ClassifierTrainingParametersWeightDecay.CreateFromDiscriminatorValue); } },
+                { "seq_len", n => { SeqLen = n.GetIntValue(); } },
+                { "training_steps", n => { TrainingSteps = n.GetIntValue(); } },
+                { "warmup_fraction", n => { WarmupFraction = n.GetDoubleValue(); } },
+                { "weight_decay", n => { WeightDecay = n.GetDoubleValue(); } },
             };
         }
         /// <summary>
@@ -97,12 +69,12 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ClassifierTrainingParametersEpochs>("epochs", Epochs);
+            writer.WriteDoubleValue("epochs", Epochs);
             writer.WriteDoubleValue("learning_rate", LearningRate);
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ClassifierTrainingParametersSeqLen>("seq_len", SeqLen);
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ClassifierTrainingParametersTrainingSteps>("training_steps", TrainingSteps);
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ClassifierTrainingParametersWarmupFraction>("warmup_fraction", WarmupFraction);
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ClassifierTrainingParametersWeightDecay>("weight_decay", WeightDecay);
+            writer.WriteIntValue("seq_len", SeqLen);
+            writer.WriteIntValue("training_steps", TrainingSteps);
+            writer.WriteDoubleValue("warmup_fraction", WarmupFraction);
+            writer.WriteDoubleValue("weight_decay", WeightDecay);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

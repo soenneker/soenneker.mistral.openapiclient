@@ -32,13 +32,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         public List<string> CronExpressions { get; set; }
 #endif
         /// <summary>Time after which no more actions will be run.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.ScheduleDefinitionEndAt? EndAt { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Mistral.OpenApiClient.Models.ScheduleDefinitionEndAt EndAt { get; set; }
-#endif
+        public DateTimeOffset? EndAt { get; set; }
         /// <summary>Input to provide to the workflow when starting it.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -56,13 +50,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         public List<global::Soenneker.Mistral.OpenApiClient.Models.ScheduleInterval> Intervals { get; set; }
 #endif
         /// <summary>Jitter to apply each action.An action&apos;s scheduled time will be incremented by a random value between 0and this value if present (but not past the next schedule).</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.ScheduleDefinitionJitter? Jitter { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Mistral.OpenApiClient.Models.ScheduleDefinitionJitter Jitter { get; set; }
-#endif
+        public TimeSpan? Jitter { get; set; }
         /// <summary>The policy property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -74,10 +62,10 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         /// <summary>Unique identifier for the schedule.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.ScheduleDefinitionScheduleId? ScheduleId { get; set; }
+        public string? ScheduleId { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.ScheduleDefinitionScheduleId ScheduleId { get; set; }
+        public string ScheduleId { get; set; }
 #endif
         /// <summary>Set of calendar times to skip.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -88,20 +76,14 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         public List<global::Soenneker.Mistral.OpenApiClient.Models.ScheduleCalendar> Skip { get; set; }
 #endif
         /// <summary>Time after which the first action may be run.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.ScheduleDefinitionStartAt? StartAt { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Mistral.OpenApiClient.Models.ScheduleDefinitionStartAt StartAt { get; set; }
-#endif
+        public DateTimeOffset? StartAt { get; set; }
         /// <summary>IANA time zone name, for example ``US/Central``.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.ScheduleDefinitionTimeZoneName? TimeZoneName { get; set; }
+        public string? TimeZoneName { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.ScheduleDefinitionTimeZoneName TimeZoneName { get; set; }
+        public string TimeZoneName { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Mistral.OpenApiClient.Models.ScheduleDefinition"/> and sets the default values.
@@ -130,15 +112,15 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             {
                 { "calendars", n => { Calendars = n.GetCollectionOfObjectValues<global::Soenneker.Mistral.OpenApiClient.Models.ScheduleCalendar>(global::Soenneker.Mistral.OpenApiClient.Models.ScheduleCalendar.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "cron_expressions", n => { CronExpressions = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "end_at", n => { EndAt = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ScheduleDefinitionEndAt>(global::Soenneker.Mistral.OpenApiClient.Models.ScheduleDefinitionEndAt.CreateFromDiscriminatorValue); } },
+                { "end_at", n => { EndAt = n.GetDateTimeOffsetValue(); } },
                 { "input", n => { Input = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ScheduleDefinitionInput>(global::Soenneker.Mistral.OpenApiClient.Models.ScheduleDefinitionInput.CreateFromDiscriminatorValue); } },
                 { "intervals", n => { Intervals = n.GetCollectionOfObjectValues<global::Soenneker.Mistral.OpenApiClient.Models.ScheduleInterval>(global::Soenneker.Mistral.OpenApiClient.Models.ScheduleInterval.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "jitter", n => { Jitter = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ScheduleDefinitionJitter>(global::Soenneker.Mistral.OpenApiClient.Models.ScheduleDefinitionJitter.CreateFromDiscriminatorValue); } },
+                { "jitter", n => { Jitter = n.GetTimeSpanValue(); } },
                 { "policy", n => { Policy = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.SchedulePolicy>(global::Soenneker.Mistral.OpenApiClient.Models.SchedulePolicy.CreateFromDiscriminatorValue); } },
-                { "schedule_id", n => { ScheduleId = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ScheduleDefinitionScheduleId>(global::Soenneker.Mistral.OpenApiClient.Models.ScheduleDefinitionScheduleId.CreateFromDiscriminatorValue); } },
+                { "schedule_id", n => { ScheduleId = n.GetStringValue(); } },
                 { "skip", n => { Skip = n.GetCollectionOfObjectValues<global::Soenneker.Mistral.OpenApiClient.Models.ScheduleCalendar>(global::Soenneker.Mistral.OpenApiClient.Models.ScheduleCalendar.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "start_at", n => { StartAt = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ScheduleDefinitionStartAt>(global::Soenneker.Mistral.OpenApiClient.Models.ScheduleDefinitionStartAt.CreateFromDiscriminatorValue); } },
-                { "time_zone_name", n => { TimeZoneName = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ScheduleDefinitionTimeZoneName>(global::Soenneker.Mistral.OpenApiClient.Models.ScheduleDefinitionTimeZoneName.CreateFromDiscriminatorValue); } },
+                { "start_at", n => { StartAt = n.GetDateTimeOffsetValue(); } },
+                { "time_zone_name", n => { TimeZoneName = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -150,15 +132,15 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfObjectValues<global::Soenneker.Mistral.OpenApiClient.Models.ScheduleCalendar>("calendars", Calendars);
             writer.WriteCollectionOfPrimitiveValues<string>("cron_expressions", CronExpressions);
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ScheduleDefinitionEndAt>("end_at", EndAt);
+            writer.WriteDateTimeOffsetValue("end_at", EndAt);
             writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ScheduleDefinitionInput>("input", Input);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Mistral.OpenApiClient.Models.ScheduleInterval>("intervals", Intervals);
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ScheduleDefinitionJitter>("jitter", Jitter);
+            writer.WriteTimeSpanValue("jitter", Jitter);
             writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.SchedulePolicy>("policy", Policy);
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ScheduleDefinitionScheduleId>("schedule_id", ScheduleId);
+            writer.WriteStringValue("schedule_id", ScheduleId);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Mistral.OpenApiClient.Models.ScheduleCalendar>("skip", Skip);
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ScheduleDefinitionStartAt>("start_at", StartAt);
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ScheduleDefinitionTimeZoneName>("time_zone_name", TimeZoneName);
+            writer.WriteDateTimeOffsetValue("start_at", StartAt);
+            writer.WriteStringValue("time_zone_name", TimeZoneName);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

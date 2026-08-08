@@ -13,13 +13,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
     #pragma warning restore CS1591
     {
         /// <summary>Document size in bytes</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.OcrUsageInfoDocSizeBytes? DocSizeBytes { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Mistral.OpenApiClient.Models.OcrUsageInfoDocSizeBytes DocSizeBytes { get; set; }
-#endif
+        public int? DocSizeBytes { get; set; }
         /// <summary>Number of pages processed</summary>
         public int? PagesProcessed { get; set; }
         /// <summary>
@@ -40,7 +34,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "doc_size_bytes", n => { DocSizeBytes = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.OcrUsageInfoDocSizeBytes>(global::Soenneker.Mistral.OpenApiClient.Models.OcrUsageInfoDocSizeBytes.CreateFromDiscriminatorValue); } },
+                { "doc_size_bytes", n => { DocSizeBytes = n.GetIntValue(); } },
                 { "pages_processed", n => { PagesProcessed = n.GetIntValue(); } },
             };
         }
@@ -51,7 +45,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.OcrUsageInfoDocSizeBytes>("doc_size_bytes", DocSizeBytes);
+            writer.WriteIntValue("doc_size_bytes", DocSizeBytes);
             writer.WriteIntValue("pages_processed", PagesProcessed);
         }
     }

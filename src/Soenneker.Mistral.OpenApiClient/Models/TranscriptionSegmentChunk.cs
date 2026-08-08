@@ -15,20 +15,14 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         /// <summary>The end property</summary>
         public double? End { get; set; }
         /// <summary>The score property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.TranscriptionSegmentChunkScore? Score { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Mistral.OpenApiClient.Models.TranscriptionSegmentChunkScore Score { get; set; }
-#endif
+        public double? Score { get; set; }
         /// <summary>The speaker_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.TranscriptionSegmentChunkSpeakerId? SpeakerId { get; set; }
+        public string? SpeakerId { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.TranscriptionSegmentChunkSpeakerId SpeakerId { get; set; }
+        public string SpeakerId { get; set; }
 #endif
         /// <summary>The start property</summary>
         public double? Start { get; set; }
@@ -61,8 +55,8 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "end", n => { End = n.GetDoubleValue(); } },
-                { "score", n => { Score = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.TranscriptionSegmentChunkScore>(global::Soenneker.Mistral.OpenApiClient.Models.TranscriptionSegmentChunkScore.CreateFromDiscriminatorValue); } },
-                { "speaker_id", n => { SpeakerId = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.TranscriptionSegmentChunkSpeakerId>(global::Soenneker.Mistral.OpenApiClient.Models.TranscriptionSegmentChunkSpeakerId.CreateFromDiscriminatorValue); } },
+                { "score", n => { Score = n.GetDoubleValue(); } },
+                { "speaker_id", n => { SpeakerId = n.GetStringValue(); } },
                 { "start", n => { Start = n.GetDoubleValue(); } },
                 { "text", n => { Text = n.GetStringValue(); } },
                 { "type", n => { Type = n.GetEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.TranscriptionSegmentChunk_type>(); } },
@@ -76,8 +70,8 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteDoubleValue("end", End);
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.TranscriptionSegmentChunkScore>("score", Score);
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.TranscriptionSegmentChunkSpeakerId>("speaker_id", SpeakerId);
+            writer.WriteDoubleValue("score", Score);
+            writer.WriteStringValue("speaker_id", SpeakerId);
             writer.WriteDoubleValue("start", Start);
             writer.WriteStringValue("text", Text);
             writer.WriteEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.TranscriptionSegmentChunk_type>("type", Type);

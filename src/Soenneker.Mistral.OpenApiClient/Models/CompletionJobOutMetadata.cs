@@ -15,61 +15,25 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The cost property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.JobMetadataOutCost? Cost { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Mistral.OpenApiClient.Models.JobMetadataOutCost Cost { get; set; }
-#endif
+        public double? Cost { get; set; }
         /// <summary>The cost_currency property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.JobMetadataOutCostCurrency? CostCurrency { get; set; }
+        public string? CostCurrency { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.JobMetadataOutCostCurrency CostCurrency { get; set; }
+        public string CostCurrency { get; set; }
 #endif
         /// <summary>The data_tokens property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.JobMetadataOutDataTokens? DataTokens { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Mistral.OpenApiClient.Models.JobMetadataOutDataTokens DataTokens { get; set; }
-#endif
+        public int? DataTokens { get; set; }
         /// <summary>The estimated_start_time property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.JobMetadataOutEstimatedStartTime? EstimatedStartTime { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Mistral.OpenApiClient.Models.JobMetadataOutEstimatedStartTime EstimatedStartTime { get; set; }
-#endif
+        public int? EstimatedStartTime { get; set; }
         /// <summary>The expected_duration_seconds property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.JobMetadataOutExpectedDurationSeconds? ExpectedDurationSeconds { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Mistral.OpenApiClient.Models.JobMetadataOutExpectedDurationSeconds ExpectedDurationSeconds { get; set; }
-#endif
+        public int? ExpectedDurationSeconds { get; set; }
         /// <summary>The train_tokens property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.JobMetadataOutTrainTokens? TrainTokens { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Mistral.OpenApiClient.Models.JobMetadataOutTrainTokens TrainTokens { get; set; }
-#endif
+        public int? TrainTokens { get; set; }
         /// <summary>The train_tokens_per_step property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.JobMetadataOutTrainTokensPerStep? TrainTokensPerStep { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Mistral.OpenApiClient.Models.JobMetadataOutTrainTokensPerStep TrainTokensPerStep { get; set; }
-#endif
+        public int? TrainTokensPerStep { get; set; }
         /// <summary>Union discriminator</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -103,13 +67,13 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "cost", n => { Cost = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.JobMetadataOutCost>(global::Soenneker.Mistral.OpenApiClient.Models.JobMetadataOutCost.CreateFromDiscriminatorValue); } },
-                { "cost_currency", n => { CostCurrency = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.JobMetadataOutCostCurrency>(global::Soenneker.Mistral.OpenApiClient.Models.JobMetadataOutCostCurrency.CreateFromDiscriminatorValue); } },
-                { "data_tokens", n => { DataTokens = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.JobMetadataOutDataTokens>(global::Soenneker.Mistral.OpenApiClient.Models.JobMetadataOutDataTokens.CreateFromDiscriminatorValue); } },
-                { "estimated_start_time", n => { EstimatedStartTime = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.JobMetadataOutEstimatedStartTime>(global::Soenneker.Mistral.OpenApiClient.Models.JobMetadataOutEstimatedStartTime.CreateFromDiscriminatorValue); } },
-                { "expected_duration_seconds", n => { ExpectedDurationSeconds = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.JobMetadataOutExpectedDurationSeconds>(global::Soenneker.Mistral.OpenApiClient.Models.JobMetadataOutExpectedDurationSeconds.CreateFromDiscriminatorValue); } },
-                { "train_tokens", n => { TrainTokens = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.JobMetadataOutTrainTokens>(global::Soenneker.Mistral.OpenApiClient.Models.JobMetadataOutTrainTokens.CreateFromDiscriminatorValue); } },
-                { "train_tokens_per_step", n => { TrainTokensPerStep = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.JobMetadataOutTrainTokensPerStep>(global::Soenneker.Mistral.OpenApiClient.Models.JobMetadataOutTrainTokensPerStep.CreateFromDiscriminatorValue); } },
+                { "cost", n => { Cost = n.GetDoubleValue(); } },
+                { "cost_currency", n => { CostCurrency = n.GetStringValue(); } },
+                { "data_tokens", n => { DataTokens = n.GetIntValue(); } },
+                { "estimated_start_time", n => { EstimatedStartTime = n.GetIntValue(); } },
+                { "expected_duration_seconds", n => { ExpectedDurationSeconds = n.GetIntValue(); } },
+                { "train_tokens", n => { TrainTokens = n.GetIntValue(); } },
+                { "train_tokens_per_step", n => { TrainTokensPerStep = n.GetIntValue(); } },
                 { "type", n => { Type = n.GetStringValue(); } },
             };
         }
@@ -120,13 +84,13 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.JobMetadataOutCost>("cost", Cost);
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.JobMetadataOutCostCurrency>("cost_currency", CostCurrency);
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.JobMetadataOutDataTokens>("data_tokens", DataTokens);
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.JobMetadataOutEstimatedStartTime>("estimated_start_time", EstimatedStartTime);
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.JobMetadataOutExpectedDurationSeconds>("expected_duration_seconds", ExpectedDurationSeconds);
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.JobMetadataOutTrainTokens>("train_tokens", TrainTokens);
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.JobMetadataOutTrainTokensPerStep>("train_tokens_per_step", TrainTokensPerStep);
+            writer.WriteDoubleValue("cost", Cost);
+            writer.WriteStringValue("cost_currency", CostCurrency);
+            writer.WriteIntValue("data_tokens", DataTokens);
+            writer.WriteIntValue("estimated_start_time", EstimatedStartTime);
+            writer.WriteIntValue("expected_duration_seconds", ExpectedDurationSeconds);
+            writer.WriteIntValue("train_tokens", TrainTokens);
+            writer.WriteIntValue("train_tokens_per_step", TrainTokensPerStep);
             writer.WriteStringValue("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }

@@ -17,13 +17,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         /// <summary>The created_at property</summary>
         public DateTimeOffset? CreatedAt { get; set; }
         /// <summary>The deleted_at property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.CampaignPreviewDeletedAt? DeletedAt { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Mistral.OpenApiClient.Models.CampaignPreviewDeletedAt DeletedAt { get; set; }
-#endif
+        public DateTimeOffset? DeletedAt { get; set; }
         /// <summary>The description property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -92,7 +86,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
-                { "deleted_at", n => { DeletedAt = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.CampaignPreviewDeletedAt>(global::Soenneker.Mistral.OpenApiClient.Models.CampaignPreviewDeletedAt.CreateFromDiscriminatorValue); } },
+                { "deleted_at", n => { DeletedAt = n.GetDateTimeOffsetValue(); } },
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetGuidValue(); } },
                 { "judge", n => { Judge = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.JudgePreview>(global::Soenneker.Mistral.OpenApiClient.Models.JudgePreview.CreateFromDiscriminatorValue); } },
@@ -112,7 +106,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteDateTimeOffsetValue("created_at", CreatedAt);
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.CampaignPreviewDeletedAt>("deleted_at", DeletedAt);
+            writer.WriteDateTimeOffsetValue("deleted_at", DeletedAt);
             writer.WriteStringValue("description", Description);
             writer.WriteGuidValue("id", Id);
             writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.JudgePreview>("judge", Judge);

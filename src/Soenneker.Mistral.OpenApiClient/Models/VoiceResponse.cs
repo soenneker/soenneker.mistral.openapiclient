@@ -16,30 +16,24 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The age property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.VoiceResponseAge? Age { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Mistral.OpenApiClient.Models.VoiceResponseAge Age { get; set; }
-#endif
+        public int? Age { get; set; }
         /// <summary>The color property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.VoiceResponseColor? Color { get; set; }
+        public string? Color { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.VoiceResponseColor Color { get; set; }
+        public string Color { get; set; }
 #endif
         /// <summary>The created_at property</summary>
         public DateTimeOffset? CreatedAt { get; set; }
         /// <summary>The gender property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.VoiceResponseGender? Gender { get; set; }
+        public string? Gender { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.VoiceResponseGender Gender { get; set; }
+        public string Gender { get; set; }
 #endif
         /// <summary>The id property</summary>
         public Guid? Id { get; set; }
@@ -64,10 +58,10 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         /// <summary>The slug property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.VoiceResponseSlug? Slug { get; set; }
+        public string? Slug { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.VoiceResponseSlug Slug { get; set; }
+        public string Slug { get; set; }
 #endif
         /// <summary>The tags property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -80,10 +74,10 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         /// <summary>The user_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.VoiceResponseUserId? UserId { get; set; }
+        public string? UserId { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.VoiceResponseUserId UserId { get; set; }
+        public string UserId { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Mistral.OpenApiClient.Models.VoiceResponse"/> and sets the default values.
@@ -111,17 +105,17 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "age", n => { Age = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.VoiceResponseAge>(global::Soenneker.Mistral.OpenApiClient.Models.VoiceResponseAge.CreateFromDiscriminatorValue); } },
-                { "color", n => { Color = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.VoiceResponseColor>(global::Soenneker.Mistral.OpenApiClient.Models.VoiceResponseColor.CreateFromDiscriminatorValue); } },
+                { "age", n => { Age = n.GetIntValue(); } },
+                { "color", n => { Color = n.GetStringValue(); } },
                 { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
-                { "gender", n => { Gender = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.VoiceResponseGender>(global::Soenneker.Mistral.OpenApiClient.Models.VoiceResponseGender.CreateFromDiscriminatorValue); } },
+                { "gender", n => { Gender = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetGuidValue(); } },
                 { "languages", n => { Languages = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "retention_notice", n => { RetentionNotice = n.GetIntValue(); } },
-                { "slug", n => { Slug = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.VoiceResponseSlug>(global::Soenneker.Mistral.OpenApiClient.Models.VoiceResponseSlug.CreateFromDiscriminatorValue); } },
+                { "slug", n => { Slug = n.GetStringValue(); } },
                 { "tags", n => { Tags = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.VoiceResponseTags>(global::Soenneker.Mistral.OpenApiClient.Models.VoiceResponseTags.CreateFromDiscriminatorValue); } },
-                { "user_id", n => { UserId = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.VoiceResponseUserId>(global::Soenneker.Mistral.OpenApiClient.Models.VoiceResponseUserId.CreateFromDiscriminatorValue); } },
+                { "user_id", n => { UserId = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -131,17 +125,17 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.VoiceResponseAge>("age", Age);
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.VoiceResponseColor>("color", Color);
+            writer.WriteIntValue("age", Age);
+            writer.WriteStringValue("color", Color);
             writer.WriteDateTimeOffsetValue("created_at", CreatedAt);
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.VoiceResponseGender>("gender", Gender);
+            writer.WriteStringValue("gender", Gender);
             writer.WriteGuidValue("id", Id);
             writer.WriteCollectionOfPrimitiveValues<string>("languages", Languages);
             writer.WriteStringValue("name", Name);
             writer.WriteIntValue("retention_notice", RetentionNotice);
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.VoiceResponseSlug>("slug", Slug);
+            writer.WriteStringValue("slug", Slug);
             writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.VoiceResponseTags>("tags", Tags);
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.VoiceResponseUserId>("user_id", UserId);
+            writer.WriteStringValue("user_id", UserId);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

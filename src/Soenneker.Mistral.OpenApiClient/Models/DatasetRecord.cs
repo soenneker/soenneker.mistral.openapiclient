@@ -19,13 +19,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         /// <summary>The dataset_id property</summary>
         public Guid? DatasetId { get; set; }
         /// <summary>The deleted_at property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.DatasetRecordDeletedAt? DeletedAt { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Mistral.OpenApiClient.Models.DatasetRecordDeletedAt DeletedAt { get; set; }
-#endif
+        public DateTimeOffset? DeletedAt { get; set; }
         /// <summary>The id property</summary>
         public Guid? Id { get; set; }
         /// <summary>The payload property</summary>
@@ -75,7 +69,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             {
                 { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
                 { "dataset_id", n => { DatasetId = n.GetGuidValue(); } },
-                { "deleted_at", n => { DeletedAt = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.DatasetRecordDeletedAt>(global::Soenneker.Mistral.OpenApiClient.Models.DatasetRecordDeletedAt.CreateFromDiscriminatorValue); } },
+                { "deleted_at", n => { DeletedAt = n.GetDateTimeOffsetValue(); } },
                 { "id", n => { Id = n.GetGuidValue(); } },
                 { "payload", n => { Payload = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ConversationPayload>(global::Soenneker.Mistral.OpenApiClient.Models.ConversationPayload.CreateFromDiscriminatorValue); } },
                 { "properties", n => { Properties = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.DatasetRecordPropertiesProperty>(global::Soenneker.Mistral.OpenApiClient.Models.DatasetRecordPropertiesProperty.CreateFromDiscriminatorValue); } },
@@ -92,7 +86,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteDateTimeOffsetValue("created_at", CreatedAt);
             writer.WriteGuidValue("dataset_id", DatasetId);
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.DatasetRecordDeletedAt>("deleted_at", DeletedAt);
+            writer.WriteDateTimeOffsetValue("deleted_at", DeletedAt);
             writer.WriteGuidValue("id", Id);
             writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ConversationPayload>("payload", Payload);
             writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.DatasetRecordPropertiesProperty>("properties", Properties);

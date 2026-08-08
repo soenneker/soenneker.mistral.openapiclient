@@ -15,29 +15,17 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The cost of the fine-tuning job.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.LegacyJobMetadataOutCost? Cost { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Mistral.OpenApiClient.Models.LegacyJobMetadataOutCost Cost { get; set; }
-#endif
+        public double? Cost { get; set; }
         /// <summary>The currency used for the fine-tuning job cost.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.LegacyJobMetadataOutCostCurrency? CostCurrency { get; set; }
+        public string? CostCurrency { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.LegacyJobMetadataOutCostCurrency CostCurrency { get; set; }
+        public string CostCurrency { get; set; }
 #endif
         /// <summary>The total number of tokens in the training dataset.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.LegacyJobMetadataOutDataTokens? DataTokens { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Mistral.OpenApiClient.Models.LegacyJobMetadataOutDataTokens DataTokens { get; set; }
-#endif
+        public int? DataTokens { get; set; }
         /// <summary>The deprecated property</summary>
         public bool? Deprecated { get; set; }
         /// <summary>The details property</summary>
@@ -49,55 +37,19 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         public string Details { get; set; }
 #endif
         /// <summary>The number of complete passes through the entire training dataset.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.LegacyJobMetadataOutEpochs? Epochs { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Mistral.OpenApiClient.Models.LegacyJobMetadataOutEpochs Epochs { get; set; }
-#endif
+        public double? Epochs { get; set; }
         /// <summary>The estimated_start_time property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.LegacyJobMetadataOutEstimatedStartTime? EstimatedStartTime { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Mistral.OpenApiClient.Models.LegacyJobMetadataOutEstimatedStartTime EstimatedStartTime { get; set; }
-#endif
+        public int? EstimatedStartTime { get; set; }
         /// <summary>The approximated time (in seconds) for the fine-tuning process to complete.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.LegacyJobMetadataOutExpectedDurationSeconds? ExpectedDurationSeconds { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Mistral.OpenApiClient.Models.LegacyJobMetadataOutExpectedDurationSeconds ExpectedDurationSeconds { get; set; }
-#endif
+        public int? ExpectedDurationSeconds { get; set; }
         /// <summary>The object property</summary>
         public global::Soenneker.Mistral.OpenApiClient.Models.LegacyJobMetadataOut_object? Object { get; set; }
         /// <summary>The number of training steps to perform. A training step refers to a single update of the model weights during the fine-tuning process. This update is typically calculated using a batch of samples from the training dataset.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.LegacyJobMetadataOutTrainingSteps? TrainingSteps { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Mistral.OpenApiClient.Models.LegacyJobMetadataOutTrainingSteps TrainingSteps { get; set; }
-#endif
+        public int? TrainingSteps { get; set; }
         /// <summary>The total number of tokens used during the fine-tuning process.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.LegacyJobMetadataOutTrainTokens? TrainTokens { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Mistral.OpenApiClient.Models.LegacyJobMetadataOutTrainTokens TrainTokens { get; set; }
-#endif
+        public int? TrainTokens { get; set; }
         /// <summary>The number of tokens consumed by one training step.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.LegacyJobMetadataOutTrainTokensPerStep? TrainTokensPerStep { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Mistral.OpenApiClient.Models.LegacyJobMetadataOutTrainTokensPerStep TrainTokensPerStep { get; set; }
-#endif
+        public int? TrainTokensPerStep { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Mistral.OpenApiClient.Models.LegacyJobMetadataOut"/> and sets the default values.
         /// </summary>
@@ -124,18 +76,18 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "cost", n => { Cost = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.LegacyJobMetadataOutCost>(global::Soenneker.Mistral.OpenApiClient.Models.LegacyJobMetadataOutCost.CreateFromDiscriminatorValue); } },
-                { "cost_currency", n => { CostCurrency = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.LegacyJobMetadataOutCostCurrency>(global::Soenneker.Mistral.OpenApiClient.Models.LegacyJobMetadataOutCostCurrency.CreateFromDiscriminatorValue); } },
-                { "data_tokens", n => { DataTokens = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.LegacyJobMetadataOutDataTokens>(global::Soenneker.Mistral.OpenApiClient.Models.LegacyJobMetadataOutDataTokens.CreateFromDiscriminatorValue); } },
+                { "cost", n => { Cost = n.GetDoubleValue(); } },
+                { "cost_currency", n => { CostCurrency = n.GetStringValue(); } },
+                { "data_tokens", n => { DataTokens = n.GetIntValue(); } },
                 { "deprecated", n => { Deprecated = n.GetBoolValue(); } },
                 { "details", n => { Details = n.GetStringValue(); } },
-                { "epochs", n => { Epochs = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.LegacyJobMetadataOutEpochs>(global::Soenneker.Mistral.OpenApiClient.Models.LegacyJobMetadataOutEpochs.CreateFromDiscriminatorValue); } },
-                { "estimated_start_time", n => { EstimatedStartTime = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.LegacyJobMetadataOutEstimatedStartTime>(global::Soenneker.Mistral.OpenApiClient.Models.LegacyJobMetadataOutEstimatedStartTime.CreateFromDiscriminatorValue); } },
-                { "expected_duration_seconds", n => { ExpectedDurationSeconds = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.LegacyJobMetadataOutExpectedDurationSeconds>(global::Soenneker.Mistral.OpenApiClient.Models.LegacyJobMetadataOutExpectedDurationSeconds.CreateFromDiscriminatorValue); } },
+                { "epochs", n => { Epochs = n.GetDoubleValue(); } },
+                { "estimated_start_time", n => { EstimatedStartTime = n.GetIntValue(); } },
+                { "expected_duration_seconds", n => { ExpectedDurationSeconds = n.GetIntValue(); } },
                 { "object", n => { Object = n.GetEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.LegacyJobMetadataOut_object>(); } },
-                { "train_tokens", n => { TrainTokens = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.LegacyJobMetadataOutTrainTokens>(global::Soenneker.Mistral.OpenApiClient.Models.LegacyJobMetadataOutTrainTokens.CreateFromDiscriminatorValue); } },
-                { "train_tokens_per_step", n => { TrainTokensPerStep = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.LegacyJobMetadataOutTrainTokensPerStep>(global::Soenneker.Mistral.OpenApiClient.Models.LegacyJobMetadataOutTrainTokensPerStep.CreateFromDiscriminatorValue); } },
-                { "training_steps", n => { TrainingSteps = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.LegacyJobMetadataOutTrainingSteps>(global::Soenneker.Mistral.OpenApiClient.Models.LegacyJobMetadataOutTrainingSteps.CreateFromDiscriminatorValue); } },
+                { "train_tokens", n => { TrainTokens = n.GetIntValue(); } },
+                { "train_tokens_per_step", n => { TrainTokensPerStep = n.GetIntValue(); } },
+                { "training_steps", n => { TrainingSteps = n.GetIntValue(); } },
             };
         }
         /// <summary>
@@ -145,18 +97,18 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.LegacyJobMetadataOutCost>("cost", Cost);
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.LegacyJobMetadataOutCostCurrency>("cost_currency", CostCurrency);
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.LegacyJobMetadataOutDataTokens>("data_tokens", DataTokens);
+            writer.WriteDoubleValue("cost", Cost);
+            writer.WriteStringValue("cost_currency", CostCurrency);
+            writer.WriteIntValue("data_tokens", DataTokens);
             writer.WriteBoolValue("deprecated", Deprecated);
             writer.WriteStringValue("details", Details);
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.LegacyJobMetadataOutEpochs>("epochs", Epochs);
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.LegacyJobMetadataOutEstimatedStartTime>("estimated_start_time", EstimatedStartTime);
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.LegacyJobMetadataOutExpectedDurationSeconds>("expected_duration_seconds", ExpectedDurationSeconds);
+            writer.WriteDoubleValue("epochs", Epochs);
+            writer.WriteIntValue("estimated_start_time", EstimatedStartTime);
+            writer.WriteIntValue("expected_duration_seconds", ExpectedDurationSeconds);
             writer.WriteEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.LegacyJobMetadataOut_object>("object", Object);
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.LegacyJobMetadataOutTrainingSteps>("training_steps", TrainingSteps);
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.LegacyJobMetadataOutTrainTokens>("train_tokens", TrainTokens);
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.LegacyJobMetadataOutTrainTokensPerStep>("train_tokens_per_step", TrainTokensPerStep);
+            writer.WriteIntValue("training_steps", TrainingSteps);
+            writer.WriteIntValue("train_tokens", TrainTokens);
+            writer.WriteIntValue("train_tokens_per_step", TrainTokensPerStep);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -149,15 +149,8 @@ namespace Soenneker.Mistral.OpenApiClient.V1.Batch.Jobs
             [QueryParameter("agent_id")]
             public string AgentId { get; set; }
 #endif
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
             [QueryParameter("created_after")]
-            public string? CreatedAfter { get; set; }
-#nullable restore
-#else
-            [QueryParameter("created_after")]
-            public string CreatedAfter { get; set; }
-#endif
+            public DateTimeOffset? CreatedAfter { get; set; }
             [QueryParameter("created_by_me")]
             public bool? CreatedByMe { get; set; }
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

@@ -15,10 +15,10 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         /// <summary>The agent_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.ToolExecutionEntryAgentId? AgentId { get; set; }
+        public string? AgentId { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.ToolExecutionEntryAgentId AgentId { get; set; }
+        public string AgentId { get; set; }
 #endif
         /// <summary>The arguments property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -29,13 +29,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         public string Arguments { get; set; }
 #endif
         /// <summary>The completed_at property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.ToolExecutionEntryCompletedAt? CompletedAt { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Mistral.OpenApiClient.Models.ToolExecutionEntryCompletedAt CompletedAt { get; set; }
-#endif
+        public DateTimeOffset? CompletedAt { get; set; }
         /// <summary>The created_at property</summary>
         public DateTimeOffset? CreatedAt { get; set; }
         /// <summary>The id property</summary>
@@ -57,10 +51,10 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         /// <summary>The model property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.ToolExecutionEntryModel? Model { get; set; }
+        public string? Model { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.ToolExecutionEntryModel Model { get; set; }
+        public string Model { get; set; }
 #endif
         /// <summary>The name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -92,13 +86,13 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "agent_id", n => { AgentId = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ToolExecutionEntryAgentId>(global::Soenneker.Mistral.OpenApiClient.Models.ToolExecutionEntryAgentId.CreateFromDiscriminatorValue); } },
+                { "agent_id", n => { AgentId = n.GetStringValue(); } },
                 { "arguments", n => { Arguments = n.GetStringValue(); } },
-                { "completed_at", n => { CompletedAt = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ToolExecutionEntryCompletedAt>(global::Soenneker.Mistral.OpenApiClient.Models.ToolExecutionEntryCompletedAt.CreateFromDiscriminatorValue); } },
+                { "completed_at", n => { CompletedAt = n.GetDateTimeOffsetValue(); } },
                 { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "info", n => { Info = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ToolExecutionEntryInfo>(global::Soenneker.Mistral.OpenApiClient.Models.ToolExecutionEntryInfo.CreateFromDiscriminatorValue); } },
-                { "model", n => { Model = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ToolExecutionEntryModel>(global::Soenneker.Mistral.OpenApiClient.Models.ToolExecutionEntryModel.CreateFromDiscriminatorValue); } },
+                { "model", n => { Model = n.GetStringValue(); } },
                 { "name", n => { Name = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ToolExecutionEntryName>(global::Soenneker.Mistral.OpenApiClient.Models.ToolExecutionEntryName.CreateFromDiscriminatorValue); } },
                 { "object", n => { Object = n.GetEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.ToolExecutionEntry_object>(); } },
                 { "type", n => { Type = n.GetEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.ToolExecutionEntry_type>(); } },
@@ -111,13 +105,13 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ToolExecutionEntryAgentId>("agent_id", AgentId);
+            writer.WriteStringValue("agent_id", AgentId);
             writer.WriteStringValue("arguments", Arguments);
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ToolExecutionEntryCompletedAt>("completed_at", CompletedAt);
+            writer.WriteDateTimeOffsetValue("completed_at", CompletedAt);
             writer.WriteDateTimeOffsetValue("created_at", CreatedAt);
             writer.WriteStringValue("id", Id);
             writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ToolExecutionEntryInfo>("info", Info);
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ToolExecutionEntryModel>("model", Model);
+            writer.WriteStringValue("model", Model);
             writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ToolExecutionEntryName>("name", Name);
             writer.WriteEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.ToolExecutionEntry_object>("object", Object);
             writer.WriteEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.ToolExecutionEntry_type>("type", Type);

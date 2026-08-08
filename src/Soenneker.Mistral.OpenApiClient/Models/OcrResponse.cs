@@ -15,10 +15,10 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         /// <summary>Formatted response in the request_format if provided in json str</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.OcrResponseDocumentAnnotation? DocumentAnnotation { get; set; }
+        public string? DocumentAnnotation { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.OcrResponseDocumentAnnotation DocumentAnnotation { get; set; }
+        public string DocumentAnnotation { get; set; }
 #endif
         /// <summary>The model used to generate the OCR.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -62,7 +62,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "document_annotation", n => { DocumentAnnotation = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.OcrResponseDocumentAnnotation>(global::Soenneker.Mistral.OpenApiClient.Models.OcrResponseDocumentAnnotation.CreateFromDiscriminatorValue); } },
+                { "document_annotation", n => { DocumentAnnotation = n.GetStringValue(); } },
                 { "model", n => { Model = n.GetStringValue(); } },
                 { "pages", n => { Pages = n.GetCollectionOfObjectValues<global::Soenneker.Mistral.OpenApiClient.Models.OcrPageObject>(global::Soenneker.Mistral.OpenApiClient.Models.OcrPageObject.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "usage_info", n => { UsageInfo = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.OcrUsageInfo>(global::Soenneker.Mistral.OpenApiClient.Models.OcrUsageInfo.CreateFromDiscriminatorValue); } },
@@ -75,7 +75,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.OcrResponseDocumentAnnotation>("document_annotation", DocumentAnnotation);
+            writer.WriteStringValue("document_annotation", DocumentAnnotation);
             writer.WriteStringValue("model", Model);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Mistral.OpenApiClient.Models.OcrPageObject>("pages", Pages);
             writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.OcrUsageInfo>("usage_info", UsageInfo);

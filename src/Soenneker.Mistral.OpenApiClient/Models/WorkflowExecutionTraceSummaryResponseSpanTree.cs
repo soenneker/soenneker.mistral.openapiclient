@@ -32,13 +32,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         public List<global::Soenneker.Mistral.OpenApiClient.Models.WorkflowExecutionTraceSummarySpan> Children { get; set; }
 #endif
         /// <summary>The end time of the span in nanoseconds since the Unix epoch</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.WorkflowExecutionTraceSummarySpanEndTimeUnixNano? EndTimeUnixNano { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Mistral.OpenApiClient.Models.WorkflowExecutionTraceSummarySpanEndTimeUnixNano EndTimeUnixNano { get; set; }
-#endif
+        public int? EndTimeUnixNano { get; set; }
         /// <summary>The events of the span</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -100,7 +94,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             {
                 { "attributes", n => { Attributes = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.WorkflowExecutionTraceSummarySpanAttributesProperty>(global::Soenneker.Mistral.OpenApiClient.Models.WorkflowExecutionTraceSummarySpanAttributesProperty.CreateFromDiscriminatorValue); } },
                 { "children", n => { Children = n.GetCollectionOfObjectValues<global::Soenneker.Mistral.OpenApiClient.Models.WorkflowExecutionTraceSummarySpan>(global::Soenneker.Mistral.OpenApiClient.Models.WorkflowExecutionTraceSummarySpan.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "end_time_unix_nano", n => { EndTimeUnixNano = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.WorkflowExecutionTraceSummarySpanEndTimeUnixNano>(global::Soenneker.Mistral.OpenApiClient.Models.WorkflowExecutionTraceSummarySpanEndTimeUnixNano.CreateFromDiscriminatorValue); } },
+                { "end_time_unix_nano", n => { EndTimeUnixNano = n.GetIntValue(); } },
                 { "events", n => { Events = n.GetCollectionOfObjectValues<global::Soenneker.Mistral.OpenApiClient.Models.WorkflowExecutionTraceEvent>(global::Soenneker.Mistral.OpenApiClient.Models.WorkflowExecutionTraceEvent.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "span_id", n => { SpanId = n.GetStringValue(); } },
@@ -117,7 +111,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.WorkflowExecutionTraceSummarySpanAttributesProperty>("attributes", Attributes);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Mistral.OpenApiClient.Models.WorkflowExecutionTraceSummarySpan>("children", Children);
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.WorkflowExecutionTraceSummarySpanEndTimeUnixNano>("end_time_unix_nano", EndTimeUnixNano);
+            writer.WriteIntValue("end_time_unix_nano", EndTimeUnixNano);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Mistral.OpenApiClient.Models.WorkflowExecutionTraceEvent>("events", Events);
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("span_id", SpanId);

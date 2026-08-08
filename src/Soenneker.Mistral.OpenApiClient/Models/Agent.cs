@@ -27,10 +27,10 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         /// <summary>The description property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.AgentDescription? Description { get; set; }
+        public string? Description { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.AgentDescription Description { get; set; }
+        public string Description { get; set; }
 #endif
         /// <summary>The guardrails property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -59,10 +59,10 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         /// <summary>Instruction prompt the model will follow during the conversation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.AgentInstructions? Instructions { get; set; }
+        public string? Instructions { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.AgentInstructions Instructions { get; set; }
+        public string Instructions { get; set; }
 #endif
         /// <summary>The metadata property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -113,10 +113,10 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         /// <summary>The version_message property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.AgentVersionMessage? VersionMessage { get; set; }
+        public string? VersionMessage { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.AgentVersionMessage VersionMessage { get; set; }
+        public string VersionMessage { get; set; }
 #endif
         /// <summary>The versions property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -147,11 +147,11 @@ namespace Soenneker.Mistral.OpenApiClient.Models
                 { "completion_args", n => { CompletionArgs = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.CompletionArgs>(global::Soenneker.Mistral.OpenApiClient.Models.CompletionArgs.CreateFromDiscriminatorValue); } },
                 { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
                 { "deployment_chat", n => { DeploymentChat = n.GetBoolValue(); } },
-                { "description", n => { Description = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.AgentDescription>(global::Soenneker.Mistral.OpenApiClient.Models.AgentDescription.CreateFromDiscriminatorValue); } },
+                { "description", n => { Description = n.GetStringValue(); } },
                 { "guardrails", n => { Guardrails = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.AgentGuardrails>(global::Soenneker.Mistral.OpenApiClient.Models.AgentGuardrails.CreateFromDiscriminatorValue); } },
                 { "handoffs", n => { Handoffs = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.AgentHandoffs>(global::Soenneker.Mistral.OpenApiClient.Models.AgentHandoffs.CreateFromDiscriminatorValue); } },
                 { "id", n => { Id = n.GetStringValue(); } },
-                { "instructions", n => { Instructions = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.AgentInstructions>(global::Soenneker.Mistral.OpenApiClient.Models.AgentInstructions.CreateFromDiscriminatorValue); } },
+                { "instructions", n => { Instructions = n.GetStringValue(); } },
                 { "metadata", n => { Metadata = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.AgentMetadata>(global::Soenneker.Mistral.OpenApiClient.Models.AgentMetadata.CreateFromDiscriminatorValue); } },
                 { "model", n => { Model = n.GetStringValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
@@ -160,7 +160,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
                 { "tools", n => { Tools = n.GetCollectionOfObjectValues<global::Soenneker.Mistral.OpenApiClient.Models.AgentToolsItem>(global::Soenneker.Mistral.OpenApiClient.Models.AgentToolsItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
                 { "version", n => { Version = n.GetIntValue(); } },
-                { "version_message", n => { VersionMessage = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.AgentVersionMessage>(global::Soenneker.Mistral.OpenApiClient.Models.AgentVersionMessage.CreateFromDiscriminatorValue); } },
+                { "version_message", n => { VersionMessage = n.GetStringValue(); } },
                 { "versions", n => { Versions = n.GetCollectionOfPrimitiveValues<int?>()?.AsList(); } },
             };
         }
@@ -174,11 +174,11 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.CompletionArgs>("completion_args", CompletionArgs);
             writer.WriteDateTimeOffsetValue("created_at", CreatedAt);
             writer.WriteBoolValue("deployment_chat", DeploymentChat);
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.AgentDescription>("description", Description);
+            writer.WriteStringValue("description", Description);
             writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.AgentGuardrails>("guardrails", Guardrails);
             writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.AgentHandoffs>("handoffs", Handoffs);
             writer.WriteStringValue("id", Id);
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.AgentInstructions>("instructions", Instructions);
+            writer.WriteStringValue("instructions", Instructions);
             writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.AgentMetadata>("metadata", Metadata);
             writer.WriteStringValue("model", Model);
             writer.WriteStringValue("name", Name);
@@ -187,7 +187,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             writer.WriteCollectionOfObjectValues<global::Soenneker.Mistral.OpenApiClient.Models.AgentToolsItem>("tools", Tools);
             writer.WriteDateTimeOffsetValue("updated_at", UpdatedAt);
             writer.WriteIntValue("version", Version);
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.AgentVersionMessage>("version_message", VersionMessage);
+            writer.WriteStringValue("version_message", VersionMessage);
             writer.WriteCollectionOfPrimitiveValues<int?>("versions", Versions);
         }
     }

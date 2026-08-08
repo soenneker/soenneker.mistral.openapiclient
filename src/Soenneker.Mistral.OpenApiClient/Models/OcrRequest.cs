@@ -21,13 +21,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         public global::Soenneker.Mistral.OpenApiClient.Models.OcrRequestBboxAnnotationFormat BboxAnnotationFormat { get; set; }
 #endif
         /// <summary>&quot;Granularity for confidence scores: &apos;word&apos; (per-word scores) or &apos;page&apos; (aggregate only). Defaults to None (no confidence scores) to keep response payload small.&quot;</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
         public global::Soenneker.Mistral.OpenApiClient.Models.OcrRequestConfidenceScoresGranularity? ConfidenceScoresGranularity { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Mistral.OpenApiClient.Models.OcrRequestConfidenceScoresGranularity ConfidenceScoresGranularity { get; set; }
-#endif
         /// <summary>Document to run OCR on</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -47,10 +41,10 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         /// <summary>Optional prompt to guide the model in extracting structured output from the entire document. A document_annotation_format must be provided.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.OcrRequestDocumentAnnotationPrompt? DocumentAnnotationPrompt { get; set; }
+        public string? DocumentAnnotationPrompt { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.OcrRequestDocumentAnnotationPrompt DocumentAnnotationPrompt { get; set; }
+        public string DocumentAnnotationPrompt { get; set; }
 #endif
         /// <summary>The extract_footer property</summary>
         public bool? ExtractFooter { get; set; }
@@ -65,38 +59,20 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         public string Id { get; set; }
 #endif
         /// <summary>Max images to extract</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.OcrRequestImageLimit? ImageLimit { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Mistral.OpenApiClient.Models.OcrRequestImageLimit ImageLimit { get; set; }
-#endif
+        public int? ImageLimit { get; set; }
         /// <summary>Minimum height and width of image to extract</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.OcrRequestImageMinSize? ImageMinSize { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Mistral.OpenApiClient.Models.OcrRequestImageMinSize ImageMinSize { get; set; }
-#endif
+        public int? ImageMinSize { get; set; }
         /// <summary>Return paragraph-level bounding boxes for all content blocks in the response</summary>
         public bool? IncludeBlocks { get; set; }
         /// <summary>Include image URLs in response</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.OcrRequestIncludeImageBase64? IncludeImageBase64 { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Mistral.OpenApiClient.Models.OcrRequestIncludeImageBase64 IncludeImageBase64 { get; set; }
-#endif
+        public bool? IncludeImageBase64 { get; set; }
         /// <summary>The model property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.OcrRequestModel? Model { get; set; }
+        public string? Model { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.OcrRequestModel Model { get; set; }
+        public string Model { get; set; }
 #endif
         /// <summary>Specific pages to process. Accepts a list of integers or a string of comma-separated numbers and ranges (e.g. &apos;0,1,2&apos; or &apos;0-5&apos; or &apos;0,2-4&apos;). Page numbers start from 0.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -107,13 +83,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         public global::Soenneker.Mistral.OpenApiClient.Models.OcrRequestPages Pages { get; set; }
 #endif
         /// <summary>The table_format property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
         public global::Soenneker.Mistral.OpenApiClient.Models.OcrRequestTableFormat? TableFormat { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Mistral.OpenApiClient.Models.OcrRequestTableFormat TableFormat { get; set; }
-#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Mistral.OpenApiClient.Models.OcrRequest"/> and sets the default values.
         /// </summary>
@@ -142,20 +112,20 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "bbox_annotation_format", n => { BboxAnnotationFormat = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.OcrRequestBboxAnnotationFormat>(global::Soenneker.Mistral.OpenApiClient.Models.OcrRequestBboxAnnotationFormat.CreateFromDiscriminatorValue); } },
-                { "confidence_scores_granularity", n => { ConfidenceScoresGranularity = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.OcrRequestConfidenceScoresGranularity>(global::Soenneker.Mistral.OpenApiClient.Models.OcrRequestConfidenceScoresGranularity.CreateFromDiscriminatorValue); } },
+                { "confidence_scores_granularity", n => { ConfidenceScoresGranularity = n.GetEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.OcrRequestConfidenceScoresGranularity>(); } },
                 { "document", n => { Document = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.OcrRequestDocument>(global::Soenneker.Mistral.OpenApiClient.Models.OcrRequestDocument.CreateFromDiscriminatorValue); } },
                 { "document_annotation_format", n => { DocumentAnnotationFormat = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.OcrRequestDocumentAnnotationFormat>(global::Soenneker.Mistral.OpenApiClient.Models.OcrRequestDocumentAnnotationFormat.CreateFromDiscriminatorValue); } },
-                { "document_annotation_prompt", n => { DocumentAnnotationPrompt = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.OcrRequestDocumentAnnotationPrompt>(global::Soenneker.Mistral.OpenApiClient.Models.OcrRequestDocumentAnnotationPrompt.CreateFromDiscriminatorValue); } },
+                { "document_annotation_prompt", n => { DocumentAnnotationPrompt = n.GetStringValue(); } },
                 { "extract_footer", n => { ExtractFooter = n.GetBoolValue(); } },
                 { "extract_header", n => { ExtractHeader = n.GetBoolValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
-                { "image_limit", n => { ImageLimit = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.OcrRequestImageLimit>(global::Soenneker.Mistral.OpenApiClient.Models.OcrRequestImageLimit.CreateFromDiscriminatorValue); } },
-                { "image_min_size", n => { ImageMinSize = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.OcrRequestImageMinSize>(global::Soenneker.Mistral.OpenApiClient.Models.OcrRequestImageMinSize.CreateFromDiscriminatorValue); } },
+                { "image_limit", n => { ImageLimit = n.GetIntValue(); } },
+                { "image_min_size", n => { ImageMinSize = n.GetIntValue(); } },
                 { "include_blocks", n => { IncludeBlocks = n.GetBoolValue(); } },
-                { "include_image_base64", n => { IncludeImageBase64 = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.OcrRequestIncludeImageBase64>(global::Soenneker.Mistral.OpenApiClient.Models.OcrRequestIncludeImageBase64.CreateFromDiscriminatorValue); } },
-                { "model", n => { Model = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.OcrRequestModel>(global::Soenneker.Mistral.OpenApiClient.Models.OcrRequestModel.CreateFromDiscriminatorValue); } },
+                { "include_image_base64", n => { IncludeImageBase64 = n.GetBoolValue(); } },
+                { "model", n => { Model = n.GetStringValue(); } },
                 { "pages", n => { Pages = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.OcrRequestPages>(global::Soenneker.Mistral.OpenApiClient.Models.OcrRequestPages.CreateFromDiscriminatorValue); } },
-                { "table_format", n => { TableFormat = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.OcrRequestTableFormat>(global::Soenneker.Mistral.OpenApiClient.Models.OcrRequestTableFormat.CreateFromDiscriminatorValue); } },
+                { "table_format", n => { TableFormat = n.GetEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.OcrRequestTableFormat>(); } },
             };
         }
         /// <summary>
@@ -166,20 +136,20 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.OcrRequestBboxAnnotationFormat>("bbox_annotation_format", BboxAnnotationFormat);
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.OcrRequestConfidenceScoresGranularity>("confidence_scores_granularity", ConfidenceScoresGranularity);
+            writer.WriteEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.OcrRequestConfidenceScoresGranularity>("confidence_scores_granularity", ConfidenceScoresGranularity);
             writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.OcrRequestDocument>("document", Document);
             writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.OcrRequestDocumentAnnotationFormat>("document_annotation_format", DocumentAnnotationFormat);
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.OcrRequestDocumentAnnotationPrompt>("document_annotation_prompt", DocumentAnnotationPrompt);
+            writer.WriteStringValue("document_annotation_prompt", DocumentAnnotationPrompt);
             writer.WriteBoolValue("extract_footer", ExtractFooter);
             writer.WriteBoolValue("extract_header", ExtractHeader);
             writer.WriteStringValue("id", Id);
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.OcrRequestImageLimit>("image_limit", ImageLimit);
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.OcrRequestImageMinSize>("image_min_size", ImageMinSize);
+            writer.WriteIntValue("image_limit", ImageLimit);
+            writer.WriteIntValue("image_min_size", ImageMinSize);
             writer.WriteBoolValue("include_blocks", IncludeBlocks);
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.OcrRequestIncludeImageBase64>("include_image_base64", IncludeImageBase64);
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.OcrRequestModel>("model", Model);
+            writer.WriteBoolValue("include_image_base64", IncludeImageBase64);
+            writer.WriteStringValue("model", Model);
             writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.OcrRequestPages>("pages", Pages);
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.OcrRequestTableFormat>("table_format", TableFormat);
+            writer.WriteEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.OcrRequestTableFormat>("table_format", TableFormat);
         }
     }
 }

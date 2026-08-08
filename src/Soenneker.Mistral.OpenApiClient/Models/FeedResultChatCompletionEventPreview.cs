@@ -17,18 +17,18 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         /// <summary>The cursor property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.FeedResultChatCompletionEventPreviewCursor? Cursor { get; set; }
+        public string? Cursor { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.FeedResultChatCompletionEventPreviewCursor Cursor { get; set; }
+        public string Cursor { get; set; }
 #endif
         /// <summary>The next property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.FeedResultChatCompletionEventPreviewNext? Next { get; set; }
+        public string? Next { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.FeedResultChatCompletionEventPreviewNext Next { get; set; }
+        public string Next { get; set; }
 #endif
         /// <summary>The results property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -63,8 +63,8 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "cursor", n => { Cursor = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.FeedResultChatCompletionEventPreviewCursor>(global::Soenneker.Mistral.OpenApiClient.Models.FeedResultChatCompletionEventPreviewCursor.CreateFromDiscriminatorValue); } },
-                { "next", n => { Next = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.FeedResultChatCompletionEventPreviewNext>(global::Soenneker.Mistral.OpenApiClient.Models.FeedResultChatCompletionEventPreviewNext.CreateFromDiscriminatorValue); } },
+                { "cursor", n => { Cursor = n.GetStringValue(); } },
+                { "next", n => { Next = n.GetStringValue(); } },
                 { "results", n => { Results = n.GetCollectionOfObjectValues<global::Soenneker.Mistral.OpenApiClient.Models.ChatCompletionEventPreview>(global::Soenneker.Mistral.OpenApiClient.Models.ChatCompletionEventPreview.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
@@ -75,8 +75,8 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.FeedResultChatCompletionEventPreviewCursor>("cursor", Cursor);
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.FeedResultChatCompletionEventPreviewNext>("next", Next);
+            writer.WriteStringValue("cursor", Cursor);
+            writer.WriteStringValue("next", Next);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Mistral.OpenApiClient.Models.ChatCompletionEventPreview>("results", Results);
             writer.WriteAdditionalData(AdditionalData);
         }

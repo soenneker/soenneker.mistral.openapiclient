@@ -23,10 +23,10 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         /// <summary>Description of the workflow</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.WorkflowDescription? Description { get; set; }
+        public string? Description { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.WorkflowDescription Description { get; set; }
+        public string Description { get; set; }
 #endif
         /// <summary>Display name of the workflow</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -51,10 +51,10 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         /// <summary>Reserved namespace for shared workflows (e.g., &apos;shared:my-shared-workflow&apos;)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.WorkflowSharedNamespace? SharedNamespace { get; set; }
+        public string? SharedNamespace { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.WorkflowSharedNamespace SharedNamespace { get; set; }
+        public string SharedNamespace { get; set; }
 #endif
         /// <summary>The type property</summary>
         public global::Soenneker.Mistral.OpenApiClient.Models.WorkflowType? Type { get; set; }
@@ -91,12 +91,12 @@ namespace Soenneker.Mistral.OpenApiClient.Models
                 { "archived", n => { Archived = n.GetBoolValue(); } },
                 { "available_in_chat_assistant", n => { AvailableInChatAssistant = n.GetBoolValue(); } },
                 { "customer_id", n => { CustomerId = n.GetGuidValue(); } },
-                { "description", n => { Description = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.WorkflowDescription>(global::Soenneker.Mistral.OpenApiClient.Models.WorkflowDescription.CreateFromDiscriminatorValue); } },
+                { "description", n => { Description = n.GetStringValue(); } },
                 { "display_name", n => { DisplayName = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetGuidValue(); } },
                 { "is_technical", n => { IsTechnical = n.GetBoolValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
-                { "shared_namespace", n => { SharedNamespace = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.WorkflowSharedNamespace>(global::Soenneker.Mistral.OpenApiClient.Models.WorkflowSharedNamespace.CreateFromDiscriminatorValue); } },
+                { "shared_namespace", n => { SharedNamespace = n.GetStringValue(); } },
                 { "type", n => { Type = n.GetEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.WorkflowType>(); } },
                 { "workspace_id", n => { WorkspaceId = n.GetGuidValue(); } },
             };
@@ -111,12 +111,12 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             writer.WriteBoolValue("archived", Archived);
             writer.WriteBoolValue("available_in_chat_assistant", AvailableInChatAssistant);
             writer.WriteGuidValue("customer_id", CustomerId);
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.WorkflowDescription>("description", Description);
+            writer.WriteStringValue("description", Description);
             writer.WriteStringValue("display_name", DisplayName);
             writer.WriteGuidValue("id", Id);
             writer.WriteBoolValue("is_technical", IsTechnical);
             writer.WriteStringValue("name", Name);
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.WorkflowSharedNamespace>("shared_namespace", SharedNamespace);
+            writer.WriteStringValue("shared_namespace", SharedNamespace);
             writer.WriteEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.WorkflowType>("type", Type);
             writer.WriteGuidValue("workspace_id", WorkspaceId);
             writer.WriteAdditionalData(AdditionalData);

@@ -69,10 +69,10 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         /// <summary>A string that will be added to your fine-tuning model name. For example, a suffix of &quot;my-great-model&quot; would produce a model name like `ft:open-mistral-7b:my-great-model:xxx...`</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.JobInSuffix? Suffix { get; set; }
+        public string? Suffix { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.JobInSuffix Suffix { get; set; }
+        public string Suffix { get; set; }
 #endif
         /// <summary>The training_files property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -124,7 +124,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
                 { "job_type", n => { JobType = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.JobInJobType>(global::Soenneker.Mistral.OpenApiClient.Models.JobInJobType.CreateFromDiscriminatorValue); } },
                 { "model", n => { Model = n.GetStringValue(); } },
                 { "repositories", n => { Repositories = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.JobInRepositories>(global::Soenneker.Mistral.OpenApiClient.Models.JobInRepositories.CreateFromDiscriminatorValue); } },
-                { "suffix", n => { Suffix = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.JobInSuffix>(global::Soenneker.Mistral.OpenApiClient.Models.JobInSuffix.CreateFromDiscriminatorValue); } },
+                { "suffix", n => { Suffix = n.GetStringValue(); } },
                 { "training_files", n => { TrainingFiles = n.GetCollectionOfObjectValues<global::Soenneker.Mistral.OpenApiClient.Models.TrainingFile>(global::Soenneker.Mistral.OpenApiClient.Models.TrainingFile.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "validation_files", n => { ValidationFiles = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.JobInValidationFiles>(global::Soenneker.Mistral.OpenApiClient.Models.JobInValidationFiles.CreateFromDiscriminatorValue); } },
             };
@@ -144,7 +144,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.JobInJobType>("job_type", JobType);
             writer.WriteStringValue("model", Model);
             writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.JobInRepositories>("repositories", Repositories);
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.JobInSuffix>("suffix", Suffix);
+            writer.WriteStringValue("suffix", Suffix);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Mistral.OpenApiClient.Models.TrainingFile>("training_files", TrainingFiles);
             writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.JobInValidationFiles>("validation_files", ValidationFiles);
             writer.WriteAdditionalData(AdditionalData);

@@ -16,29 +16,11 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The train_loss property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.MetricOutTrainLoss? TrainLoss { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Mistral.OpenApiClient.Models.MetricOutTrainLoss TrainLoss { get; set; }
-#endif
+        public double? TrainLoss { get; set; }
         /// <summary>The valid_loss property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.MetricOutValidLoss? ValidLoss { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Mistral.OpenApiClient.Models.MetricOutValidLoss ValidLoss { get; set; }
-#endif
+        public double? ValidLoss { get; set; }
         /// <summary>The valid_mean_token_accuracy property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.MetricOutValidMeanTokenAccuracy? ValidMeanTokenAccuracy { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Mistral.OpenApiClient.Models.MetricOutValidMeanTokenAccuracy ValidMeanTokenAccuracy { get; set; }
-#endif
+        public double? ValidMeanTokenAccuracy { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Mistral.OpenApiClient.Models.MetricOut"/> and sets the default values.
         /// </summary>
@@ -64,9 +46,9 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "train_loss", n => { TrainLoss = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.MetricOutTrainLoss>(global::Soenneker.Mistral.OpenApiClient.Models.MetricOutTrainLoss.CreateFromDiscriminatorValue); } },
-                { "valid_loss", n => { ValidLoss = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.MetricOutValidLoss>(global::Soenneker.Mistral.OpenApiClient.Models.MetricOutValidLoss.CreateFromDiscriminatorValue); } },
-                { "valid_mean_token_accuracy", n => { ValidMeanTokenAccuracy = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.MetricOutValidMeanTokenAccuracy>(global::Soenneker.Mistral.OpenApiClient.Models.MetricOutValidMeanTokenAccuracy.CreateFromDiscriminatorValue); } },
+                { "train_loss", n => { TrainLoss = n.GetDoubleValue(); } },
+                { "valid_loss", n => { ValidLoss = n.GetDoubleValue(); } },
+                { "valid_mean_token_accuracy", n => { ValidMeanTokenAccuracy = n.GetDoubleValue(); } },
             };
         }
         /// <summary>
@@ -76,9 +58,9 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.MetricOutTrainLoss>("train_loss", TrainLoss);
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.MetricOutValidLoss>("valid_loss", ValidLoss);
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.MetricOutValidMeanTokenAccuracy>("valid_mean_token_accuracy", ValidMeanTokenAccuracy);
+            writer.WriteDoubleValue("train_loss", TrainLoss);
+            writer.WriteDoubleValue("valid_loss", ValidLoss);
+            writer.WriteDoubleValue("valid_mean_token_accuracy", ValidMeanTokenAccuracy);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

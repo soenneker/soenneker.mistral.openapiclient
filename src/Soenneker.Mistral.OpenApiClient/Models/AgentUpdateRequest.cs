@@ -21,20 +21,14 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         public global::Soenneker.Mistral.OpenApiClient.Models.CompletionArgs CompletionArgs { get; set; }
 #endif
         /// <summary>The deployment_chat property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.AgentUpdateRequestDeploymentChat? DeploymentChat { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Mistral.OpenApiClient.Models.AgentUpdateRequestDeploymentChat DeploymentChat { get; set; }
-#endif
+        public bool? DeploymentChat { get; set; }
         /// <summary>The description property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.AgentUpdateRequestDescription? Description { get; set; }
+        public string? Description { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.AgentUpdateRequestDescription Description { get; set; }
+        public string Description { get; set; }
 #endif
         /// <summary>The guardrails property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -55,10 +49,10 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         /// <summary>Instruction prompt the model will follow during the conversation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.AgentUpdateRequestInstructions? Instructions { get; set; }
+        public string? Instructions { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.AgentUpdateRequestInstructions Instructions { get; set; }
+        public string Instructions { get; set; }
 #endif
         /// <summary>The metadata property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -71,18 +65,18 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         /// <summary>The model property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.AgentUpdateRequestModel? Model { get; set; }
+        public string? Model { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.AgentUpdateRequestModel Model { get; set; }
+        public string Model { get; set; }
 #endif
         /// <summary>The name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.AgentUpdateRequestName? Name { get; set; }
+        public string? Name { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.AgentUpdateRequestName Name { get; set; }
+        public string Name { get; set; }
 #endif
         /// <summary>List of tools which are available to the model during the conversation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -95,10 +89,10 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         /// <summary>The version_message property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.AgentUpdateRequestVersionMessage? VersionMessage { get; set; }
+        public string? VersionMessage { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.AgentUpdateRequestVersionMessage VersionMessage { get; set; }
+        public string VersionMessage { get; set; }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -119,16 +113,16 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "completion_args", n => { CompletionArgs = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.CompletionArgs>(global::Soenneker.Mistral.OpenApiClient.Models.CompletionArgs.CreateFromDiscriminatorValue); } },
-                { "deployment_chat", n => { DeploymentChat = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.AgentUpdateRequestDeploymentChat>(global::Soenneker.Mistral.OpenApiClient.Models.AgentUpdateRequestDeploymentChat.CreateFromDiscriminatorValue); } },
-                { "description", n => { Description = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.AgentUpdateRequestDescription>(global::Soenneker.Mistral.OpenApiClient.Models.AgentUpdateRequestDescription.CreateFromDiscriminatorValue); } },
+                { "deployment_chat", n => { DeploymentChat = n.GetBoolValue(); } },
+                { "description", n => { Description = n.GetStringValue(); } },
                 { "guardrails", n => { Guardrails = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.AgentUpdateRequestGuardrails>(global::Soenneker.Mistral.OpenApiClient.Models.AgentUpdateRequestGuardrails.CreateFromDiscriminatorValue); } },
                 { "handoffs", n => { Handoffs = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.AgentUpdateRequestHandoffs>(global::Soenneker.Mistral.OpenApiClient.Models.AgentUpdateRequestHandoffs.CreateFromDiscriminatorValue); } },
-                { "instructions", n => { Instructions = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.AgentUpdateRequestInstructions>(global::Soenneker.Mistral.OpenApiClient.Models.AgentUpdateRequestInstructions.CreateFromDiscriminatorValue); } },
+                { "instructions", n => { Instructions = n.GetStringValue(); } },
                 { "metadata", n => { Metadata = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.AgentUpdateRequestMetadata>(global::Soenneker.Mistral.OpenApiClient.Models.AgentUpdateRequestMetadata.CreateFromDiscriminatorValue); } },
-                { "model", n => { Model = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.AgentUpdateRequestModel>(global::Soenneker.Mistral.OpenApiClient.Models.AgentUpdateRequestModel.CreateFromDiscriminatorValue); } },
-                { "name", n => { Name = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.AgentUpdateRequestName>(global::Soenneker.Mistral.OpenApiClient.Models.AgentUpdateRequestName.CreateFromDiscriminatorValue); } },
+                { "model", n => { Model = n.GetStringValue(); } },
+                { "name", n => { Name = n.GetStringValue(); } },
                 { "tools", n => { Tools = n.GetCollectionOfObjectValues<global::Soenneker.Mistral.OpenApiClient.Models.AgentUpdateRequestToolsItem>(global::Soenneker.Mistral.OpenApiClient.Models.AgentUpdateRequestToolsItem.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "version_message", n => { VersionMessage = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.AgentUpdateRequestVersionMessage>(global::Soenneker.Mistral.OpenApiClient.Models.AgentUpdateRequestVersionMessage.CreateFromDiscriminatorValue); } },
+                { "version_message", n => { VersionMessage = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -139,16 +133,16 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.CompletionArgs>("completion_args", CompletionArgs);
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.AgentUpdateRequestDeploymentChat>("deployment_chat", DeploymentChat);
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.AgentUpdateRequestDescription>("description", Description);
+            writer.WriteBoolValue("deployment_chat", DeploymentChat);
+            writer.WriteStringValue("description", Description);
             writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.AgentUpdateRequestGuardrails>("guardrails", Guardrails);
             writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.AgentUpdateRequestHandoffs>("handoffs", Handoffs);
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.AgentUpdateRequestInstructions>("instructions", Instructions);
+            writer.WriteStringValue("instructions", Instructions);
             writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.AgentUpdateRequestMetadata>("metadata", Metadata);
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.AgentUpdateRequestModel>("model", Model);
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.AgentUpdateRequestName>("name", Name);
+            writer.WriteStringValue("model", Model);
+            writer.WriteStringValue("name", Name);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Mistral.OpenApiClient.Models.AgentUpdateRequestToolsItem>("tools", Tools);
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.AgentUpdateRequestVersionMessage>("version_message", VersionMessage);
+            writer.WriteStringValue("version_message", VersionMessage);
         }
     }
 }

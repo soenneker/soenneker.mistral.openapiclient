@@ -33,36 +33,24 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         /// <summary>The created property</summary>
         public int? Created { get; set; }
         /// <summary>The default_model_temperature property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.BaseModelCardDefaultModelTemperature? DefaultModelTemperature { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Mistral.OpenApiClient.Models.BaseModelCardDefaultModelTemperature DefaultModelTemperature { get; set; }
-#endif
+        public double? DefaultModelTemperature { get; set; }
         /// <summary>The deprecation property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.BaseModelCardDeprecation? Deprecation { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Mistral.OpenApiClient.Models.BaseModelCardDeprecation Deprecation { get; set; }
-#endif
+        public DateTimeOffset? Deprecation { get; set; }
         /// <summary>The deprecation_replacement_model property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.BaseModelCardDeprecationReplacementModel? DeprecationReplacementModel { get; set; }
+        public string? DeprecationReplacementModel { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.BaseModelCardDeprecationReplacementModel DeprecationReplacementModel { get; set; }
+        public string DeprecationReplacementModel { get; set; }
 #endif
         /// <summary>The description property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.BaseModelCardDescription? Description { get; set; }
+        public string? Description { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.BaseModelCardDescription Description { get; set; }
+        public string Description { get; set; }
 #endif
         /// <summary>The id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -77,10 +65,10 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         /// <summary>The name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.BaseModelCardName? Name { get; set; }
+        public string? Name { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.BaseModelCardName Name { get; set; }
+        public string Name { get; set; }
 #endif
         /// <summary>The object property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -131,13 +119,13 @@ namespace Soenneker.Mistral.OpenApiClient.Models
                 { "aliases", n => { Aliases = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "capabilities", n => { Capabilities = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ModelCapabilities>(global::Soenneker.Mistral.OpenApiClient.Models.ModelCapabilities.CreateFromDiscriminatorValue); } },
                 { "created", n => { Created = n.GetIntValue(); } },
-                { "default_model_temperature", n => { DefaultModelTemperature = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.BaseModelCardDefaultModelTemperature>(global::Soenneker.Mistral.OpenApiClient.Models.BaseModelCardDefaultModelTemperature.CreateFromDiscriminatorValue); } },
-                { "deprecation", n => { Deprecation = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.BaseModelCardDeprecation>(global::Soenneker.Mistral.OpenApiClient.Models.BaseModelCardDeprecation.CreateFromDiscriminatorValue); } },
-                { "deprecation_replacement_model", n => { DeprecationReplacementModel = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.BaseModelCardDeprecationReplacementModel>(global::Soenneker.Mistral.OpenApiClient.Models.BaseModelCardDeprecationReplacementModel.CreateFromDiscriminatorValue); } },
-                { "description", n => { Description = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.BaseModelCardDescription>(global::Soenneker.Mistral.OpenApiClient.Models.BaseModelCardDescription.CreateFromDiscriminatorValue); } },
+                { "default_model_temperature", n => { DefaultModelTemperature = n.GetDoubleValue(); } },
+                { "deprecation", n => { Deprecation = n.GetDateTimeOffsetValue(); } },
+                { "deprecation_replacement_model", n => { DeprecationReplacementModel = n.GetStringValue(); } },
+                { "description", n => { Description = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "max_context_length", n => { MaxContextLength = n.GetIntValue(); } },
-                { "name", n => { Name = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.BaseModelCardName>(global::Soenneker.Mistral.OpenApiClient.Models.BaseModelCardName.CreateFromDiscriminatorValue); } },
+                { "name", n => { Name = n.GetStringValue(); } },
                 { "object", n => { Object = n.GetStringValue(); } },
                 { "owned_by", n => { OwnedBy = n.GetStringValue(); } },
                 { "type", n => { Type = n.GetEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.BaseModelCard_type>(); } },
@@ -153,13 +141,13 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             writer.WriteCollectionOfPrimitiveValues<string>("aliases", Aliases);
             writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ModelCapabilities>("capabilities", Capabilities);
             writer.WriteIntValue("created", Created);
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.BaseModelCardDefaultModelTemperature>("default_model_temperature", DefaultModelTemperature);
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.BaseModelCardDeprecation>("deprecation", Deprecation);
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.BaseModelCardDeprecationReplacementModel>("deprecation_replacement_model", DeprecationReplacementModel);
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.BaseModelCardDescription>("description", Description);
+            writer.WriteDoubleValue("default_model_temperature", DefaultModelTemperature);
+            writer.WriteDateTimeOffsetValue("deprecation", Deprecation);
+            writer.WriteStringValue("deprecation_replacement_model", DeprecationReplacementModel);
+            writer.WriteStringValue("description", Description);
             writer.WriteStringValue("id", Id);
             writer.WriteIntValue("max_context_length", MaxContextLength);
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.BaseModelCardName>("name", Name);
+            writer.WriteStringValue("name", Name);
             writer.WriteStringValue("object", Object);
             writer.WriteStringValue("owned_by", OwnedBy);
             writer.WriteEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.BaseModelCard_type>("type", Type);

@@ -41,10 +41,10 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         /// <summary>The optional url of the icon you want to associate to the connector.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.ConnectorMcpCreateIconUrl? IconUrl { get; set; }
+        public string? IconUrl { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.ConnectorMcpCreateIconUrl IconUrl { get; set; }
+        public string IconUrl { get; set; }
 #endif
         /// <summary>The name of the connector. Should be 64 char length maximum, alphanumeric, only underscores/dashes.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -65,10 +65,10 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         /// <summary>Optional system prompt for the connector.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.ConnectorMcpCreateSystemPrompt? SystemPrompt { get; set; }
+        public string? SystemPrompt { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.ConnectorMcpCreateSystemPrompt SystemPrompt { get; set; }
+        public string SystemPrompt { get; set; }
 #endif
         /// <summary>The visibility property</summary>
         public global::Soenneker.Mistral.OpenApiClient.Models.ResourceVisibility? Visibility { get; set; }
@@ -100,10 +100,10 @@ namespace Soenneker.Mistral.OpenApiClient.Models
                 { "auth_data", n => { AuthData = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ConnectorMcpCreateAuthData>(global::Soenneker.Mistral.OpenApiClient.Models.ConnectorMcpCreateAuthData.CreateFromDiscriminatorValue); } },
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "headers", n => { Headers = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ConnectorMcpCreateHeaders>(global::Soenneker.Mistral.OpenApiClient.Models.ConnectorMcpCreateHeaders.CreateFromDiscriminatorValue); } },
-                { "icon_url", n => { IconUrl = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ConnectorMcpCreateIconUrl>(global::Soenneker.Mistral.OpenApiClient.Models.ConnectorMcpCreateIconUrl.CreateFromDiscriminatorValue); } },
+                { "icon_url", n => { IconUrl = n.GetStringValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "server", n => { Server = n.GetStringValue(); } },
-                { "system_prompt", n => { SystemPrompt = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ConnectorMcpCreateSystemPrompt>(global::Soenneker.Mistral.OpenApiClient.Models.ConnectorMcpCreateSystemPrompt.CreateFromDiscriminatorValue); } },
+                { "system_prompt", n => { SystemPrompt = n.GetStringValue(); } },
                 { "visibility", n => { Visibility = n.GetEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.ResourceVisibility>(); } },
             };
         }
@@ -117,10 +117,10 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ConnectorMcpCreateAuthData>("auth_data", AuthData);
             writer.WriteStringValue("description", Description);
             writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ConnectorMcpCreateHeaders>("headers", Headers);
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ConnectorMcpCreateIconUrl>("icon_url", IconUrl);
+            writer.WriteStringValue("icon_url", IconUrl);
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("server", Server);
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ConnectorMcpCreateSystemPrompt>("system_prompt", SystemPrompt);
+            writer.WriteStringValue("system_prompt", SystemPrompt);
             writer.WriteEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.ResourceVisibility>("visibility", Visibility);
             writer.WriteAdditionalData(AdditionalData);
         }

@@ -51,10 +51,10 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         /// <summary>The parent span ID of the scope</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.TempoTraceSpanParentSpanId? ParentSpanId { get; set; }
+        public string? ParentSpanId { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.TempoTraceSpanParentSpanId ParentSpanId { get; set; }
+        public string ParentSpanId { get; set; }
 #endif
         /// <summary>The span ID of the scope</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -110,7 +110,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
                 { "events", n => { Events = n.GetCollectionOfObjectValues<global::Soenneker.Mistral.OpenApiClient.Models.TempoTraceEvent>(global::Soenneker.Mistral.OpenApiClient.Models.TempoTraceEvent.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "kind", n => { Kind = n.GetEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.TempoTraceScopeKind>(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
-                { "parentSpanId", n => { ParentSpanId = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.TempoTraceSpanParentSpanId>(global::Soenneker.Mistral.OpenApiClient.Models.TempoTraceSpanParentSpanId.CreateFromDiscriminatorValue); } },
+                { "parentSpanId", n => { ParentSpanId = n.GetStringValue(); } },
                 { "spanId", n => { SpanId = n.GetStringValue(); } },
                 { "startTimeUnixNano", n => { StartTimeUnixNano = n.GetStringValue(); } },
                 { "traceId", n => { TraceId = n.GetStringValue(); } },
@@ -128,7 +128,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             writer.WriteCollectionOfObjectValues<global::Soenneker.Mistral.OpenApiClient.Models.TempoTraceEvent>("events", Events);
             writer.WriteEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.TempoTraceScopeKind>("kind", Kind);
             writer.WriteStringValue("name", Name);
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.TempoTraceSpanParentSpanId>("parentSpanId", ParentSpanId);
+            writer.WriteStringValue("parentSpanId", ParentSpanId);
             writer.WriteStringValue("spanId", SpanId);
             writer.WriteStringValue("startTimeUnixNano", StartTimeUnixNano);
             writer.WriteStringValue("traceId", TraceId);

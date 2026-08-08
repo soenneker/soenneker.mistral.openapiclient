@@ -15,21 +15,9 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The frequency_penalty property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.CompletionArgsFrequencyPenalty? FrequencyPenalty { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Mistral.OpenApiClient.Models.CompletionArgsFrequencyPenalty FrequencyPenalty { get; set; }
-#endif
+        public double? FrequencyPenalty { get; set; }
         /// <summary>The max_tokens property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.CompletionArgsMaxTokens? MaxTokens { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Mistral.OpenApiClient.Models.CompletionArgsMaxTokens MaxTokens { get; set; }
-#endif
+        public int? MaxTokens { get; set; }
         /// <summary>The prediction property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -39,29 +27,11 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         public global::Soenneker.Mistral.OpenApiClient.Models.CompletionArgsPrediction Prediction { get; set; }
 #endif
         /// <summary>The presence_penalty property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.CompletionArgsPresencePenalty? PresencePenalty { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Mistral.OpenApiClient.Models.CompletionArgsPresencePenalty PresencePenalty { get; set; }
-#endif
+        public double? PresencePenalty { get; set; }
         /// <summary>The random_seed property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.CompletionArgsRandomSeed? RandomSeed { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Mistral.OpenApiClient.Models.CompletionArgsRandomSeed RandomSeed { get; set; }
-#endif
+        public int? RandomSeed { get; set; }
         /// <summary>Controls the reasoning effort level for reasoning models. &quot;high&quot; enables comprehensive reasoning traces, &quot;none&quot; disables reasoning effort.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
         public global::Soenneker.Mistral.OpenApiClient.Models.CompletionArgsReasoningEffort? ReasoningEffort { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Mistral.OpenApiClient.Models.CompletionArgsReasoningEffort ReasoningEffort { get; set; }
-#endif
         /// <summary>The response_format property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -79,23 +49,11 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         public global::Soenneker.Mistral.OpenApiClient.Models.CompletionArgsStop Stop { get; set; }
 #endif
         /// <summary>The temperature property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.CompletionArgsTemperature? Temperature { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Mistral.OpenApiClient.Models.CompletionArgsTemperature Temperature { get; set; }
-#endif
+        public double? Temperature { get; set; }
         /// <summary>The tool_choice property</summary>
         public global::Soenneker.Mistral.OpenApiClient.Models.ToolChoiceEnum? ToolChoice { get; set; }
         /// <summary>The top_p property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.CompletionArgsTopP? TopP { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Mistral.OpenApiClient.Models.CompletionArgsTopP TopP { get; set; }
-#endif
+        public double? TopP { get; set; }
         /// <summary>Union discriminator</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -129,17 +87,17 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "frequency_penalty", n => { FrequencyPenalty = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.CompletionArgsFrequencyPenalty>(global::Soenneker.Mistral.OpenApiClient.Models.CompletionArgsFrequencyPenalty.CreateFromDiscriminatorValue); } },
-                { "max_tokens", n => { MaxTokens = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.CompletionArgsMaxTokens>(global::Soenneker.Mistral.OpenApiClient.Models.CompletionArgsMaxTokens.CreateFromDiscriminatorValue); } },
+                { "frequency_penalty", n => { FrequencyPenalty = n.GetDoubleValue(); } },
+                { "max_tokens", n => { MaxTokens = n.GetIntValue(); } },
                 { "prediction", n => { Prediction = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.CompletionArgsPrediction>(global::Soenneker.Mistral.OpenApiClient.Models.CompletionArgsPrediction.CreateFromDiscriminatorValue); } },
-                { "presence_penalty", n => { PresencePenalty = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.CompletionArgsPresencePenalty>(global::Soenneker.Mistral.OpenApiClient.Models.CompletionArgsPresencePenalty.CreateFromDiscriminatorValue); } },
-                { "random_seed", n => { RandomSeed = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.CompletionArgsRandomSeed>(global::Soenneker.Mistral.OpenApiClient.Models.CompletionArgsRandomSeed.CreateFromDiscriminatorValue); } },
-                { "reasoning_effort", n => { ReasoningEffort = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.CompletionArgsReasoningEffort>(global::Soenneker.Mistral.OpenApiClient.Models.CompletionArgsReasoningEffort.CreateFromDiscriminatorValue); } },
+                { "presence_penalty", n => { PresencePenalty = n.GetDoubleValue(); } },
+                { "random_seed", n => { RandomSeed = n.GetIntValue(); } },
+                { "reasoning_effort", n => { ReasoningEffort = n.GetEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.CompletionArgsReasoningEffort>(); } },
                 { "response_format", n => { ResponseFormat = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.CompletionArgsResponseFormat>(global::Soenneker.Mistral.OpenApiClient.Models.CompletionArgsResponseFormat.CreateFromDiscriminatorValue); } },
                 { "stop", n => { Stop = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.CompletionArgsStop>(global::Soenneker.Mistral.OpenApiClient.Models.CompletionArgsStop.CreateFromDiscriminatorValue); } },
-                { "temperature", n => { Temperature = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.CompletionArgsTemperature>(global::Soenneker.Mistral.OpenApiClient.Models.CompletionArgsTemperature.CreateFromDiscriminatorValue); } },
+                { "temperature", n => { Temperature = n.GetDoubleValue(); } },
                 { "tool_choice", n => { ToolChoice = n.GetEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.ToolChoiceEnum>(); } },
-                { "top_p", n => { TopP = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.CompletionArgsTopP>(global::Soenneker.Mistral.OpenApiClient.Models.CompletionArgsTopP.CreateFromDiscriminatorValue); } },
+                { "top_p", n => { TopP = n.GetDoubleValue(); } },
                 { "type", n => { Type = n.GetStringValue(); } },
             };
         }
@@ -150,17 +108,17 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.CompletionArgsFrequencyPenalty>("frequency_penalty", FrequencyPenalty);
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.CompletionArgsMaxTokens>("max_tokens", MaxTokens);
+            writer.WriteDoubleValue("frequency_penalty", FrequencyPenalty);
+            writer.WriteIntValue("max_tokens", MaxTokens);
             writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.CompletionArgsPrediction>("prediction", Prediction);
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.CompletionArgsPresencePenalty>("presence_penalty", PresencePenalty);
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.CompletionArgsRandomSeed>("random_seed", RandomSeed);
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.CompletionArgsReasoningEffort>("reasoning_effort", ReasoningEffort);
+            writer.WriteDoubleValue("presence_penalty", PresencePenalty);
+            writer.WriteIntValue("random_seed", RandomSeed);
+            writer.WriteEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.CompletionArgsReasoningEffort>("reasoning_effort", ReasoningEffort);
             writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.CompletionArgsResponseFormat>("response_format", ResponseFormat);
             writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.CompletionArgsStop>("stop", Stop);
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.CompletionArgsTemperature>("temperature", Temperature);
+            writer.WriteDoubleValue("temperature", Temperature);
             writer.WriteEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.ToolChoiceEnum>("tool_choice", ToolChoice);
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.CompletionArgsTopP>("top_p", TopP);
+            writer.WriteDoubleValue("top_p", TopP);
             writer.WriteStringValue("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }

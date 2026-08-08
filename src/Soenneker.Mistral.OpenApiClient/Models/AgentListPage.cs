@@ -23,10 +23,10 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         /// <summary>The next_page_token property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.AgentListPageNextPageToken? NextPageToken { get; set; }
+        public string? NextPageToken { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.AgentListPageNextPageToken NextPageToken { get; set; }
+        public string NextPageToken { get; set; }
 #endif
         /// <summary>The object property</summary>
         public global::Soenneker.Mistral.OpenApiClient.Models.AgentListPage_object? Object { get; set; }
@@ -49,7 +49,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "data", n => { Data = n.GetCollectionOfObjectValues<global::Soenneker.Mistral.OpenApiClient.Models.Agent>(global::Soenneker.Mistral.OpenApiClient.Models.Agent.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "next_page_token", n => { NextPageToken = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.AgentListPageNextPageToken>(global::Soenneker.Mistral.OpenApiClient.Models.AgentListPageNextPageToken.CreateFromDiscriminatorValue); } },
+                { "next_page_token", n => { NextPageToken = n.GetStringValue(); } },
                 { "object", n => { Object = n.GetEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.AgentListPage_object>(); } },
             };
         }
@@ -61,7 +61,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfObjectValues<global::Soenneker.Mistral.OpenApiClient.Models.Agent>("data", Data);
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.AgentListPageNextPageToken>("next_page_token", NextPageToken);
+            writer.WriteStringValue("next_page_token", NextPageToken);
             writer.WriteEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.AgentListPage_object>("object", Object);
         }
     }

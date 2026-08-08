@@ -15,10 +15,10 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         /// <summary>The language property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.TranscriptionResponseLanguage? Language { get; set; }
+        public string? Language { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.TranscriptionResponseLanguage Language { get; set; }
+        public string Language { get; set; }
 #endif
         /// <summary>The model property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -70,7 +70,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "language", n => { Language = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.TranscriptionResponseLanguage>(global::Soenneker.Mistral.OpenApiClient.Models.TranscriptionResponseLanguage.CreateFromDiscriminatorValue); } },
+                { "language", n => { Language = n.GetStringValue(); } },
                 { "model", n => { Model = n.GetStringValue(); } },
                 { "segments", n => { Segments = n.GetCollectionOfObjectValues<global::Soenneker.Mistral.OpenApiClient.Models.TranscriptionSegmentChunk>(global::Soenneker.Mistral.OpenApiClient.Models.TranscriptionSegmentChunk.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "text", n => { Text = n.GetStringValue(); } },
@@ -84,7 +84,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.TranscriptionResponseLanguage>("language", Language);
+            writer.WriteStringValue("language", Language);
             writer.WriteStringValue("model", Model);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Mistral.OpenApiClient.Models.TranscriptionSegmentChunk>("segments", Segments);
             writer.WriteStringValue("text", Text);

@@ -26,10 +26,10 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         /// <summary>The mimeType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.TextResourceContentsMimeType? MimeType { get; set; }
+        public string? MimeType { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.TextResourceContentsMimeType MimeType { get; set; }
+        public string MimeType { get; set; }
 #endif
         /// <summary>The text property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -73,7 +73,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "_meta", n => { Meta = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.TextResourceContentsMeta>(global::Soenneker.Mistral.OpenApiClient.Models.TextResourceContentsMeta.CreateFromDiscriminatorValue); } },
-                { "mimeType", n => { MimeType = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.TextResourceContentsMimeType>(global::Soenneker.Mistral.OpenApiClient.Models.TextResourceContentsMimeType.CreateFromDiscriminatorValue); } },
+                { "mimeType", n => { MimeType = n.GetStringValue(); } },
                 { "text", n => { Text = n.GetStringValue(); } },
                 { "uri", n => { Uri = n.GetStringValue(); } },
             };
@@ -86,7 +86,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.TextResourceContentsMeta>("_meta", Meta);
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.TextResourceContentsMimeType>("mimeType", MimeType);
+            writer.WriteStringValue("mimeType", MimeType);
             writer.WriteStringValue("text", Text);
             writer.WriteStringValue("uri", Uri);
             writer.WriteAdditionalData(AdditionalData);

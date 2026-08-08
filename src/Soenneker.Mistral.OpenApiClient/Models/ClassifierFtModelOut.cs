@@ -45,10 +45,10 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         /// <summary>The description property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.ClassifierFtModelOutDescription? Description { get; set; }
+        public string? Description { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.ClassifierFtModelOutDescription Description { get; set; }
+        public string Description { get; set; }
 #endif
         /// <summary>The id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -67,10 +67,10 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         /// <summary>The name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.ClassifierFtModelOutName? Name { get; set; }
+        public string? Name { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.ClassifierFtModelOutName Name { get; set; }
+        public string Name { get; set; }
 #endif
         /// <summary>The object property</summary>
         public global::Soenneker.Mistral.OpenApiClient.Models.ClassifierFtModelOut_object? Object { get; set; }
@@ -137,12 +137,12 @@ namespace Soenneker.Mistral.OpenApiClient.Models
                 { "capabilities", n => { Capabilities = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.FtModelCapabilitiesOut>(global::Soenneker.Mistral.OpenApiClient.Models.FtModelCapabilitiesOut.CreateFromDiscriminatorValue); } },
                 { "classifier_targets", n => { ClassifierTargets = n.GetCollectionOfObjectValues<global::Soenneker.Mistral.OpenApiClient.Models.ClassifierTargetOut>(global::Soenneker.Mistral.OpenApiClient.Models.ClassifierTargetOut.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "created", n => { Created = n.GetIntValue(); } },
-                { "description", n => { Description = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ClassifierFtModelOutDescription>(global::Soenneker.Mistral.OpenApiClient.Models.ClassifierFtModelOutDescription.CreateFromDiscriminatorValue); } },
+                { "description", n => { Description = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "job", n => { Job = n.GetGuidValue(); } },
                 { "max_context_length", n => { MaxContextLength = n.GetIntValue(); } },
                 { "model_type", n => { ModelType = n.GetEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.ClassifierFtModelOut_model_type>(); } },
-                { "name", n => { Name = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ClassifierFtModelOutName>(global::Soenneker.Mistral.OpenApiClient.Models.ClassifierFtModelOutName.CreateFromDiscriminatorValue); } },
+                { "name", n => { Name = n.GetStringValue(); } },
                 { "object", n => { Object = n.GetEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.ClassifierFtModelOut_object>(); } },
                 { "owned_by", n => { OwnedBy = n.GetStringValue(); } },
                 { "root", n => { Root = n.GetStringValue(); } },
@@ -162,12 +162,12 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.FtModelCapabilitiesOut>("capabilities", Capabilities);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Mistral.OpenApiClient.Models.ClassifierTargetOut>("classifier_targets", ClassifierTargets);
             writer.WriteIntValue("created", Created);
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ClassifierFtModelOutDescription>("description", Description);
+            writer.WriteStringValue("description", Description);
             writer.WriteStringValue("id", Id);
             writer.WriteGuidValue("job", Job);
             writer.WriteIntValue("max_context_length", MaxContextLength);
             writer.WriteEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.ClassifierFtModelOut_model_type>("model_type", ModelType);
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ClassifierFtModelOutName>("name", Name);
+            writer.WriteStringValue("name", Name);
             writer.WriteEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.ClassifierFtModelOut_object>("object", Object);
             writer.WriteStringValue("owned_by", OwnedBy);
             writer.WriteStringValue("root", Root);

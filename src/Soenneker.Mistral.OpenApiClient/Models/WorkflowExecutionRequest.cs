@@ -25,10 +25,10 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         /// <summary>Name of the deployment to route this execution to</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.WorkflowExecutionRequestDeploymentName? DeploymentName { get; set; }
+        public string? DeploymentName { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.WorkflowExecutionRequestDeploymentName DeploymentName { get; set; }
+        public string DeploymentName { get; set; }
 #endif
         /// <summary>Encoded input to the workflow, used when payload encoding is enabled.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -41,10 +41,10 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         /// <summary>Allows you to specify a custom execution ID. If not provided, a random ID will be generated.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.WorkflowExecutionRequestExecutionId? ExecutionId { get; set; }
+        public string? ExecutionId { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.WorkflowExecutionRequestExecutionId ExecutionId { get; set; }
+        public string ExecutionId { get; set; }
 #endif
         /// <summary>The input to the workflow. This should be a dictionary that matches the workflow&apos;s input schema.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -58,19 +58,13 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.WorkflowExecutionRequestTaskQueue? TaskQueue { get; set; }
+        public string? TaskQueue { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.WorkflowExecutionRequestTaskQueue TaskQueue { get; set; }
+        public string TaskQueue { get; set; }
 #endif
         /// <summary>Maximum time to wait for completion when wait_for_result is true.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.WorkflowExecutionRequestTimeoutSeconds? TimeoutSeconds { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Mistral.OpenApiClient.Models.WorkflowExecutionRequestTimeoutSeconds TimeoutSeconds { get; set; }
-#endif
+        public double? TimeoutSeconds { get; set; }
         /// <summary>If true, wait for the workflow to complete and return the result directly.</summary>
         public bool? WaitForResult { get; set; }
         /// <summary>
@@ -100,12 +94,12 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "custom_tracing_attributes", n => { CustomTracingAttributes = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.WorkflowExecutionRequestCustomTracingAttributes>(global::Soenneker.Mistral.OpenApiClient.Models.WorkflowExecutionRequestCustomTracingAttributes.CreateFromDiscriminatorValue); } },
-                { "deployment_name", n => { DeploymentName = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.WorkflowExecutionRequestDeploymentName>(global::Soenneker.Mistral.OpenApiClient.Models.WorkflowExecutionRequestDeploymentName.CreateFromDiscriminatorValue); } },
+                { "deployment_name", n => { DeploymentName = n.GetStringValue(); } },
                 { "encoded_input", n => { EncodedInput = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.WorkflowExecutionRequestEncodedInput>(global::Soenneker.Mistral.OpenApiClient.Models.WorkflowExecutionRequestEncodedInput.CreateFromDiscriminatorValue); } },
-                { "execution_id", n => { ExecutionId = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.WorkflowExecutionRequestExecutionId>(global::Soenneker.Mistral.OpenApiClient.Models.WorkflowExecutionRequestExecutionId.CreateFromDiscriminatorValue); } },
+                { "execution_id", n => { ExecutionId = n.GetStringValue(); } },
                 { "input", n => { Input = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.WorkflowExecutionRequestInput>(global::Soenneker.Mistral.OpenApiClient.Models.WorkflowExecutionRequestInput.CreateFromDiscriminatorValue); } },
-                { "task_queue", n => { TaskQueue = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.WorkflowExecutionRequestTaskQueue>(global::Soenneker.Mistral.OpenApiClient.Models.WorkflowExecutionRequestTaskQueue.CreateFromDiscriminatorValue); } },
-                { "timeout_seconds", n => { TimeoutSeconds = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.WorkflowExecutionRequestTimeoutSeconds>(global::Soenneker.Mistral.OpenApiClient.Models.WorkflowExecutionRequestTimeoutSeconds.CreateFromDiscriminatorValue); } },
+                { "task_queue", n => { TaskQueue = n.GetStringValue(); } },
+                { "timeout_seconds", n => { TimeoutSeconds = n.GetDoubleValue(); } },
                 { "wait_for_result", n => { WaitForResult = n.GetBoolValue(); } },
             };
         }
@@ -117,12 +111,12 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.WorkflowExecutionRequestCustomTracingAttributes>("custom_tracing_attributes", CustomTracingAttributes);
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.WorkflowExecutionRequestDeploymentName>("deployment_name", DeploymentName);
+            writer.WriteStringValue("deployment_name", DeploymentName);
             writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.WorkflowExecutionRequestEncodedInput>("encoded_input", EncodedInput);
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.WorkflowExecutionRequestExecutionId>("execution_id", ExecutionId);
+            writer.WriteStringValue("execution_id", ExecutionId);
             writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.WorkflowExecutionRequestInput>("input", Input);
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.WorkflowExecutionRequestTaskQueue>("task_queue", TaskQueue);
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.WorkflowExecutionRequestTimeoutSeconds>("timeout_seconds", TimeoutSeconds);
+            writer.WriteStringValue("task_queue", TaskQueue);
+            writer.WriteDoubleValue("timeout_seconds", TimeoutSeconds);
             writer.WriteBoolValue("wait_for_result", WaitForResult);
             writer.WriteAdditionalData(AdditionalData);
         }

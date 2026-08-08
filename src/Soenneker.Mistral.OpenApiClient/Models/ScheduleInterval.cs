@@ -17,13 +17,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         /// <summary>The every property</summary>
         public TimeSpan? Every { get; set; }
         /// <summary>The offset property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.ScheduleIntervalOffset? Offset { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Mistral.OpenApiClient.Models.ScheduleIntervalOffset Offset { get; set; }
-#endif
+        public TimeSpan? Offset { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Mistral.OpenApiClient.Models.ScheduleInterval"/> and sets the default values.
         /// </summary>
@@ -50,7 +44,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "every", n => { Every = n.GetTimeSpanValue(); } },
-                { "offset", n => { Offset = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ScheduleIntervalOffset>(global::Soenneker.Mistral.OpenApiClient.Models.ScheduleIntervalOffset.CreateFromDiscriminatorValue); } },
+                { "offset", n => { Offset = n.GetTimeSpanValue(); } },
             };
         }
         /// <summary>
@@ -61,7 +55,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteTimeSpanValue("every", Every);
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ScheduleIntervalOffset>("offset", Offset);
+            writer.WriteTimeSpanValue("offset", Offset);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

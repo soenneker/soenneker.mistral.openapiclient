@@ -38,10 +38,10 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         /// <summary>Execution ID of the parent workflow that initiated this execution. If this is a root workflow, this field is not set.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.ActivityTaskStartedResponseParentWorkflowExecId? ParentWorkflowExecId { get; set; }
+        public string? ParentWorkflowExecId { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.ActivityTaskStartedResponseParentWorkflowExecId ParentWorkflowExecId { get; set; }
+        public string ParentWorkflowExecId { get; set; }
 #endif
         /// <summary>Execution ID of the root workflow that initiated this execution chain.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -104,7 +104,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
                 { "event_id", n => { EventId = n.GetStringValue(); } },
                 { "event_timestamp", n => { EventTimestamp = n.GetIntValue(); } },
                 { "event_type", n => { EventType = n.GetEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.ActivityTaskStartedResponse_event_type>(); } },
-                { "parent_workflow_exec_id", n => { ParentWorkflowExecId = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ActivityTaskStartedResponseParentWorkflowExecId>(global::Soenneker.Mistral.OpenApiClient.Models.ActivityTaskStartedResponseParentWorkflowExecId.CreateFromDiscriminatorValue); } },
+                { "parent_workflow_exec_id", n => { ParentWorkflowExecId = n.GetStringValue(); } },
                 { "root_workflow_exec_id", n => { RootWorkflowExecId = n.GetStringValue(); } },
                 { "workflow_exec_id", n => { WorkflowExecId = n.GetStringValue(); } },
                 { "workflow_name", n => { WorkflowName = n.GetStringValue(); } },
@@ -122,7 +122,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             writer.WriteStringValue("event_id", EventId);
             writer.WriteIntValue("event_timestamp", EventTimestamp);
             writer.WriteEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.ActivityTaskStartedResponse_event_type>("event_type", EventType);
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ActivityTaskStartedResponseParentWorkflowExecId>("parent_workflow_exec_id", ParentWorkflowExecId);
+            writer.WriteStringValue("parent_workflow_exec_id", ParentWorkflowExecId);
             writer.WriteStringValue("root_workflow_exec_id", RootWorkflowExecId);
             writer.WriteStringValue("workflow_exec_id", WorkflowExecId);
             writer.WriteStringValue("workflow_name", WorkflowName);

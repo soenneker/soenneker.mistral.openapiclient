@@ -91,25 +91,11 @@ namespace Soenneker.Mistral.OpenApiClient.V1.Workflows.Item.Metrics
         public partial class MetricsRequestBuilderGetQueryParameters 
         {
             /// <summary>Filter workflows started before this time (ISO 8601)</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
             [QueryParameter("end_time")]
-            public string? EndTime { get; set; }
-#nullable restore
-#else
-            [QueryParameter("end_time")]
-            public string EndTime { get; set; }
-#endif
+            public DateTimeOffset? EndTime { get; set; }
             /// <summary>Filter workflows started after this time (ISO 8601)</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
             [QueryParameter("start_time")]
-            public string? StartTime { get; set; }
-#nullable restore
-#else
-            [QueryParameter("start_time")]
-            public string StartTime { get; set; }
-#endif
+            public DateTimeOffset? StartTime { get; set; }
         }
     }
 }

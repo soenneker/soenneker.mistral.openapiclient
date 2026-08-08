@@ -31,13 +31,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         public string Object { get; set; }
 #endif
         /// <summary>The total property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.ListFilesOutTotal? Total { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Mistral.OpenApiClient.Models.ListFilesOutTotal Total { get; set; }
-#endif
+        public int? Total { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Mistral.OpenApiClient.Models.ListFilesOut"/> and sets the default values.
         /// </summary>
@@ -65,7 +59,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             {
                 { "data", n => { Data = n.GetCollectionOfObjectValues<global::Soenneker.Mistral.OpenApiClient.Models.FileSchema>(global::Soenneker.Mistral.OpenApiClient.Models.FileSchema.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "object", n => { Object = n.GetStringValue(); } },
-                { "total", n => { Total = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ListFilesOutTotal>(global::Soenneker.Mistral.OpenApiClient.Models.ListFilesOutTotal.CreateFromDiscriminatorValue); } },
+                { "total", n => { Total = n.GetIntValue(); } },
             };
         }
         /// <summary>
@@ -77,7 +71,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfObjectValues<global::Soenneker.Mistral.OpenApiClient.Models.FileSchema>("data", Data);
             writer.WriteStringValue("object", Object);
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ListFilesOutTotal>("total", Total);
+            writer.WriteIntValue("total", Total);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

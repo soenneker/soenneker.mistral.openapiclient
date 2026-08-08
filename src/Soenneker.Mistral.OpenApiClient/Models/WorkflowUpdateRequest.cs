@@ -15,28 +15,22 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Whether to make the workflow available in the chat assistant</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.WorkflowUpdateRequestAvailableInChatAssistant? AvailableInChatAssistant { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Mistral.OpenApiClient.Models.WorkflowUpdateRequestAvailableInChatAssistant AvailableInChatAssistant { get; set; }
-#endif
+        public bool? AvailableInChatAssistant { get; set; }
         /// <summary>New description value</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.WorkflowUpdateRequestDescription? Description { get; set; }
+        public string? Description { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.WorkflowUpdateRequestDescription Description { get; set; }
+        public string Description { get; set; }
 #endif
         /// <summary>New display name value</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.WorkflowUpdateRequestDisplayName? DisplayName { get; set; }
+        public string? DisplayName { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.WorkflowUpdateRequestDisplayName DisplayName { get; set; }
+        public string DisplayName { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Mistral.OpenApiClient.Models.WorkflowUpdateRequest"/> and sets the default values.
@@ -63,9 +57,9 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "available_in_chat_assistant", n => { AvailableInChatAssistant = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.WorkflowUpdateRequestAvailableInChatAssistant>(global::Soenneker.Mistral.OpenApiClient.Models.WorkflowUpdateRequestAvailableInChatAssistant.CreateFromDiscriminatorValue); } },
-                { "description", n => { Description = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.WorkflowUpdateRequestDescription>(global::Soenneker.Mistral.OpenApiClient.Models.WorkflowUpdateRequestDescription.CreateFromDiscriminatorValue); } },
-                { "display_name", n => { DisplayName = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.WorkflowUpdateRequestDisplayName>(global::Soenneker.Mistral.OpenApiClient.Models.WorkflowUpdateRequestDisplayName.CreateFromDiscriminatorValue); } },
+                { "available_in_chat_assistant", n => { AvailableInChatAssistant = n.GetBoolValue(); } },
+                { "description", n => { Description = n.GetStringValue(); } },
+                { "display_name", n => { DisplayName = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -75,9 +69,9 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.WorkflowUpdateRequestAvailableInChatAssistant>("available_in_chat_assistant", AvailableInChatAssistant);
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.WorkflowUpdateRequestDescription>("description", Description);
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.WorkflowUpdateRequestDisplayName>("display_name", DisplayName);
+            writer.WriteBoolValue("available_in_chat_assistant", AvailableInChatAssistant);
+            writer.WriteStringValue("description", Description);
+            writer.WriteStringValue("display_name", DisplayName);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

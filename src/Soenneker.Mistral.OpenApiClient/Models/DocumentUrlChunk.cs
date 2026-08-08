@@ -15,10 +15,10 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         /// <summary>The filename of the document</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.DocumentUrlChunkDocumentName? DocumentName { get; set; }
+        public string? DocumentName { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.DocumentUrlChunkDocumentName DocumentName { get; set; }
+        public string DocumentName { get; set; }
 #endif
         /// <summary>The document_url property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -48,7 +48,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "document_name", n => { DocumentName = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.DocumentUrlChunkDocumentName>(global::Soenneker.Mistral.OpenApiClient.Models.DocumentUrlChunkDocumentName.CreateFromDiscriminatorValue); } },
+                { "document_name", n => { DocumentName = n.GetStringValue(); } },
                 { "document_url", n => { DocumentUrl = n.GetStringValue(); } },
                 { "type", n => { Type = n.GetEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.DocumentUrlChunk_type>(); } },
             };
@@ -60,7 +60,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.DocumentUrlChunkDocumentName>("document_name", DocumentName);
+            writer.WriteStringValue("document_name", DocumentName);
             writer.WriteStringValue("document_url", DocumentUrl);
             writer.WriteEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.DocumentUrlChunk_type>("type", Type);
         }
