@@ -25,7 +25,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         public string Id { get; set; }
 #endif
         /// <summary>The object property</summary>
-        public global::Soenneker.Mistral.OpenApiClient.Models.UnarchiveFtModelOut_object? Object { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.UnarchiveFtModelOutObject? Object { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Mistral.OpenApiClient.Models.UnarchiveFtModelOut"/> and sets the default values.
         /// </summary>
@@ -54,7 +54,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             {
                 { "archived", n => { Archived = n.GetBoolValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
-                { "object", n => { Object = n.GetEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.UnarchiveFtModelOut_object>(); } },
+                { "object", n => { Object = n.GetEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.UnarchiveFtModelOutObject>(); } },
             };
         }
         /// <summary>
@@ -66,7 +66,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("archived", Archived);
             writer.WriteStringValue("id", Id);
-            writer.WriteEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.UnarchiveFtModelOut_object>("object", Object);
+            writer.WriteEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.UnarchiveFtModelOutObject>("object", Object);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

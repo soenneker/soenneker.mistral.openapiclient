@@ -49,11 +49,11 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         public string Model { get; set; }
 #endif
         /// <summary>The object property</summary>
-        public global::Soenneker.Mistral.OpenApiClient.Models.MessageOutputEntry_object? Object { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.MessageOutputEntryObject? Object { get; set; }
         /// <summary>The role property</summary>
-        public global::Soenneker.Mistral.OpenApiClient.Models.MessageOutputEntry_role? Role { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.AssistantRole? Role { get; set; }
         /// <summary>The type property</summary>
-        public global::Soenneker.Mistral.OpenApiClient.Models.MessageOutputEntry_type? Type { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.MessageOutputType? Type { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -78,9 +78,9 @@ namespace Soenneker.Mistral.OpenApiClient.Models
                 { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "model", n => { Model = n.GetStringValue(); } },
-                { "object", n => { Object = n.GetEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.MessageOutputEntry_object>(); } },
-                { "role", n => { Role = n.GetEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.MessageOutputEntry_role>(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.MessageOutputEntry_type>(); } },
+                { "object", n => { Object = n.GetEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.MessageOutputEntryObject>(); } },
+                { "role", n => { Role = n.GetEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.AssistantRole>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.MessageOutputType>(); } },
             };
         }
         /// <summary>
@@ -96,9 +96,9 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             writer.WriteDateTimeOffsetValue("created_at", CreatedAt);
             writer.WriteStringValue("id", Id);
             writer.WriteStringValue("model", Model);
-            writer.WriteEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.MessageOutputEntry_object>("object", Object);
-            writer.WriteEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.MessageOutputEntry_role>("role", Role);
-            writer.WriteEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.MessageOutputEntry_type>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.MessageOutputEntryObject>("object", Object);
+            writer.WriteEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.AssistantRole>("role", Role);
+            writer.WriteEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.MessageOutputType>("type", Type);
         }
     }
 }

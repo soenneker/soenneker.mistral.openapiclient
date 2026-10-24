@@ -43,13 +43,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         /// <summary>The start time of the workflow execution</summary>
         public DateTimeOffset? StartTime { get; set; }
         /// <summary>The status of the workflow execution</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.WorkflowExecutionWithoutResultResponseStatus? Status { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Mistral.OpenApiClient.Models.WorkflowExecutionWithoutResultResponseStatus Status { get; set; }
-#endif
+        public global::Soenneker.Mistral.OpenApiClient.Models.WorkflowExecutionStatus? Status { get; set; }
         /// <summary>The total duration of the trace in milliseconds</summary>
         public int? TotalDurationMs { get; set; }
         /// <summary>The name of the workflow</summary>
@@ -90,7 +84,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
                 { "parent_execution_id", n => { ParentExecutionId = n.GetStringValue(); } },
                 { "root_execution_id", n => { RootExecutionId = n.GetStringValue(); } },
                 { "start_time", n => { StartTime = n.GetDateTimeOffsetValue(); } },
-                { "status", n => { Status = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.WorkflowExecutionWithoutResultResponseStatus>(global::Soenneker.Mistral.OpenApiClient.Models.WorkflowExecutionWithoutResultResponseStatus.CreateFromDiscriminatorValue); } },
+                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.WorkflowExecutionStatus>(); } },
                 { "total_duration_ms", n => { TotalDurationMs = n.GetIntValue(); } },
                 { "workflow_name", n => { WorkflowName = n.GetStringValue(); } },
             };
@@ -107,7 +101,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             writer.WriteStringValue("parent_execution_id", ParentExecutionId);
             writer.WriteStringValue("root_execution_id", RootExecutionId);
             writer.WriteDateTimeOffsetValue("start_time", StartTime);
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.WorkflowExecutionWithoutResultResponseStatus>("status", Status);
+            writer.WriteEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.WorkflowExecutionStatus>("status", Status);
             writer.WriteIntValue("total_duration_ms", TotalDurationMs);
             writer.WriteStringValue("workflow_name", WorkflowName);
             writer.WriteAdditionalData(AdditionalData);

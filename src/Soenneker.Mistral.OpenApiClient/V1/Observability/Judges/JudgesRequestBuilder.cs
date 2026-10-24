@@ -170,34 +170,42 @@ namespace Soenneker.Mistral.OpenApiClient.V1.Observability.Judges
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("model_filter")]
-            public string? ModelFilter { get; set; }
+            public string[]? ModelFilter { get; set; }
 #nullable restore
 #else
             [QueryParameter("model_filter")]
-            public string ModelFilter { get; set; }
+            public string[] ModelFilter { get; set; }
 #endif
+            #pragma warning disable CS1591
             [QueryParameter("page")]
             public int? Page { get; set; }
+            #pragma warning restore CS1591
+            #pragma warning disable CS1591
             [QueryParameter("page_size")]
             public int? PageSize { get; set; }
+            #pragma warning restore CS1591
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
+            #pragma warning disable CS1591
             [QueryParameter("q")]
             public string? Q { get; set; }
+            #pragma warning restore CS1591
 #nullable restore
 #else
+            #pragma warning disable CS1591
             [QueryParameter("q")]
             public string Q { get; set; }
+            #pragma warning restore CS1591
 #endif
             /// <summary>Filter by judge output types</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("type_filter")]
-            public string? TypeFilter { get; set; }
+            public global::Soenneker.Mistral.OpenApiClient.Models.JudgeOutputType[]? TypeFilter { get; set; }
 #nullable restore
 #else
             [QueryParameter("type_filter")]
-            public string TypeFilter { get; set; }
+            public global::Soenneker.Mistral.OpenApiClient.Models.JudgeOutputType[] TypeFilter { get; set; }
 #endif
         }
     }

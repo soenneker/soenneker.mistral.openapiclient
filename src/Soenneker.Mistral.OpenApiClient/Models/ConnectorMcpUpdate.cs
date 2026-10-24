@@ -17,26 +17,26 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         /// <summary>New authentication data for your mcp connector.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.ConnectorMcpUpdateAuthData? AuthData { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.AuthData? AuthData { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.ConnectorMcpUpdateAuthData AuthData { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.AuthData AuthData { get; set; }
 #endif
         /// <summary>Optional new connection config.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.ConnectorMcpUpdateConnectionConfig? ConnectionConfig { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.ConnectorMcpUpdateConnectionConfigProperty? ConnectionConfig { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.ConnectorMcpUpdateConnectionConfig ConnectionConfig { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.ConnectorMcpUpdateConnectionConfigProperty ConnectionConfig { get; set; }
 #endif
         /// <summary>Optional new connection secrets</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.ConnectorMcpUpdateConnectionSecrets? ConnectionSecrets { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.ConnectorMcpUpdateConnectionSecretsProperty? ConnectionSecrets { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.ConnectorMcpUpdateConnectionSecrets ConnectionSecrets { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.ConnectorMcpUpdateConnectionSecretsProperty ConnectionSecrets { get; set; }
 #endif
         /// <summary>The description of the connector.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -49,10 +49,10 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         /// <summary>New headers for your mcp connector.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.ConnectorMcpUpdateHeaders? Headers { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.ConnectorMcpUpdateHeadersProperty? Headers { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.ConnectorMcpUpdateHeaders Headers { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.ConnectorMcpUpdateHeadersProperty Headers { get; set; }
 #endif
         /// <summary>The optional url of the icon you want to associate to the connector.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -111,11 +111,11 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "auth_data", n => { AuthData = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ConnectorMcpUpdateAuthData>(global::Soenneker.Mistral.OpenApiClient.Models.ConnectorMcpUpdateAuthData.CreateFromDiscriminatorValue); } },
-                { "connection_config", n => { ConnectionConfig = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ConnectorMcpUpdateConnectionConfig>(global::Soenneker.Mistral.OpenApiClient.Models.ConnectorMcpUpdateConnectionConfig.CreateFromDiscriminatorValue); } },
-                { "connection_secrets", n => { ConnectionSecrets = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ConnectorMcpUpdateConnectionSecrets>(global::Soenneker.Mistral.OpenApiClient.Models.ConnectorMcpUpdateConnectionSecrets.CreateFromDiscriminatorValue); } },
+                { "auth_data", n => { AuthData = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.AuthData>(global::Soenneker.Mistral.OpenApiClient.Models.AuthData.CreateFromDiscriminatorValue); } },
+                { "connection_config", n => { ConnectionConfig = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ConnectorMcpUpdateConnectionConfigProperty>(global::Soenneker.Mistral.OpenApiClient.Models.ConnectorMcpUpdateConnectionConfigProperty.CreateFromDiscriminatorValue); } },
+                { "connection_secrets", n => { ConnectionSecrets = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ConnectorMcpUpdateConnectionSecretsProperty>(global::Soenneker.Mistral.OpenApiClient.Models.ConnectorMcpUpdateConnectionSecretsProperty.CreateFromDiscriminatorValue); } },
                 { "description", n => { Description = n.GetStringValue(); } },
-                { "headers", n => { Headers = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ConnectorMcpUpdateHeaders>(global::Soenneker.Mistral.OpenApiClient.Models.ConnectorMcpUpdateHeaders.CreateFromDiscriminatorValue); } },
+                { "headers", n => { Headers = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ConnectorMcpUpdateHeadersProperty>(global::Soenneker.Mistral.OpenApiClient.Models.ConnectorMcpUpdateHeadersProperty.CreateFromDiscriminatorValue); } },
                 { "icon_url", n => { IconUrl = n.GetStringValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "server", n => { Server = n.GetStringValue(); } },
@@ -129,11 +129,11 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ConnectorMcpUpdateAuthData>("auth_data", AuthData);
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ConnectorMcpUpdateConnectionConfig>("connection_config", ConnectionConfig);
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ConnectorMcpUpdateConnectionSecrets>("connection_secrets", ConnectionSecrets);
+            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.AuthData>("auth_data", AuthData);
+            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ConnectorMcpUpdateConnectionConfigProperty>("connection_config", ConnectionConfig);
+            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ConnectorMcpUpdateConnectionSecretsProperty>("connection_secrets", ConnectionSecrets);
             writer.WriteStringValue("description", Description);
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ConnectorMcpUpdateHeaders>("headers", Headers);
+            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ConnectorMcpUpdateHeadersProperty>("headers", Headers);
             writer.WriteStringValue("icon_url", IconUrl);
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("server", Server);

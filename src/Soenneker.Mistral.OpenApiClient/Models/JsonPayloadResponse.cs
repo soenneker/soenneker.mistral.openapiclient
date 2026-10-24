@@ -16,14 +16,14 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Discriminator indicating this is a raw JSON payload.</summary>
-        public global::Soenneker.Mistral.OpenApiClient.Models.JsonPayloadResponse_type? Type { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.JsonType? Type { get; set; }
         /// <summary>The JSON-serializable payload value.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.JsonPayloadResponseValue? Value { get; set; }
+        public UntypedNode? Value { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.JsonPayloadResponseValue Value { get; set; }
+        public UntypedNode Value { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Mistral.OpenApiClient.Models.JsonPayloadResponse"/> and sets the default values.
@@ -50,8 +50,8 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.JsonPayloadResponse_type>(); } },
-                { "value", n => { Value = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.JsonPayloadResponseValue>(global::Soenneker.Mistral.OpenApiClient.Models.JsonPayloadResponseValue.CreateFromDiscriminatorValue); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.JsonType>(); } },
+                { "value", n => { Value = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -61,8 +61,8 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.JsonPayloadResponse_type>("type", Type);
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.JsonPayloadResponseValue>("value", Value);
+            writer.WriteEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.JsonType>("type", Type);
+            writer.WriteObjectValue<UntypedNode>("value", Value);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

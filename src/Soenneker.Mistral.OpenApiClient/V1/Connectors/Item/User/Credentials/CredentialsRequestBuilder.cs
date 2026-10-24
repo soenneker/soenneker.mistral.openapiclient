@@ -152,15 +152,21 @@ namespace Soenneker.Mistral.OpenApiClient.V1.Connectors.Item.User.Credentials
         {
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
+            #pragma warning disable CS1591
             [QueryParameter("auth_type")]
             public string? AuthType { get; set; }
+            #pragma warning restore CS1591
 #nullable restore
 #else
+            #pragma warning disable CS1591
             [QueryParameter("auth_type")]
             public string AuthType { get; set; }
+            #pragma warning restore CS1591
 #endif
+            #pragma warning disable CS1591
             [QueryParameter("fetch_default")]
             public bool? FetchDefault { get; set; }
+            #pragma warning restore CS1591
         }
     }
 }

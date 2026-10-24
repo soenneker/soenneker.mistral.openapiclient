@@ -58,7 +58,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
 #else
         public string SharedNamespace { get; set; }
 #endif
-        /// <summary>The type property</summary>
+        /// <summary>Type of the workflow</summary>
         public global::Soenneker.Mistral.OpenApiClient.Models.WorkflowType? Type { get; set; }
         /// <summary>Workspace ID of the workflow</summary>
         public Guid? WorkspaceId { get; set; }

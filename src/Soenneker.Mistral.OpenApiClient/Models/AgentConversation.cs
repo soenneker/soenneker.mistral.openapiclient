@@ -63,7 +63,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         public string Name { get; set; }
 #endif
         /// <summary>The object property</summary>
-        public global::Soenneker.Mistral.OpenApiClient.Models.AgentConversation_object? Object { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.ConversationObject? Object { get; set; }
         /// <summary>The updated_at property</summary>
         public DateTimeOffset? UpdatedAt { get; set; }
         /// <summary>
@@ -91,7 +91,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "metadata", n => { Metadata = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.AgentConversationMetadata>(global::Soenneker.Mistral.OpenApiClient.Models.AgentConversationMetadata.CreateFromDiscriminatorValue); } },
                 { "name", n => { Name = n.GetStringValue(); } },
-                { "object", n => { Object = n.GetEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.AgentConversation_object>(); } },
+                { "object", n => { Object = n.GetEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.ConversationObject>(); } },
                 { "updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
             };
         }
@@ -109,7 +109,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             writer.WriteStringValue("id", Id);
             writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.AgentConversationMetadata>("metadata", Metadata);
             writer.WriteStringValue("name", Name);
-            writer.WriteEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.AgentConversation_object>("object", Object);
+            writer.WriteEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.ConversationObject>("object", Object);
             writer.WriteDateTimeOffsetValue("updated_at", UpdatedAt);
         }
     }

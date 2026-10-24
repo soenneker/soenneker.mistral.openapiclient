@@ -30,7 +30,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         public List<global::Soenneker.Mistral.OpenApiClient.Models.MessageEntriesItem> Messages { get; set; }
 #endif
         /// <summary>The object property</summary>
-        public global::Soenneker.Mistral.OpenApiClient.Models.ConversationMessages_object? Object { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.ConversationMessagesObject? Object { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -51,7 +51,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             {
                 { "conversation_id", n => { ConversationId = n.GetStringValue(); } },
                 { "messages", n => { Messages = n.GetCollectionOfObjectValues<global::Soenneker.Mistral.OpenApiClient.Models.MessageEntriesItem>(global::Soenneker.Mistral.OpenApiClient.Models.MessageEntriesItem.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "object", n => { Object = n.GetEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.ConversationMessages_object>(); } },
+                { "object", n => { Object = n.GetEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.ConversationMessagesObject>(); } },
             };
         }
         /// <summary>
@@ -63,7 +63,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("conversation_id", ConversationId);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Mistral.OpenApiClient.Models.MessageEntriesItem>("messages", Messages);
-            writer.WriteEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.ConversationMessages_object>("object", Object);
+            writer.WriteEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.ConversationMessagesObject>("object", Object);
         }
     }
 }

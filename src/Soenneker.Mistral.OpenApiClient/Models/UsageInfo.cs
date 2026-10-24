@@ -21,20 +21,20 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         /// <summary>The prompt_token_details property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.UsageInfoPromptTokenDetails? PromptTokenDetails { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.PromptTokensDetails? PromptTokenDetails { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.UsageInfoPromptTokenDetails PromptTokenDetails { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.PromptTokensDetails PromptTokenDetails { get; set; }
 #endif
         /// <summary>The prompt_tokens property</summary>
         public int? PromptTokens { get; set; }
         /// <summary>The prompt_tokens_details property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.UsageInfoPromptTokensDetails? PromptTokensDetails { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.PromptTokensDetails? PromptTokensDetails { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.UsageInfoPromptTokensDetails PromptTokensDetails { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.PromptTokensDetails PromptTokensDetails { get; set; }
 #endif
         /// <summary>The total_tokens property</summary>
         public int? TotalTokens { get; set; }
@@ -68,9 +68,9 @@ namespace Soenneker.Mistral.OpenApiClient.Models
                 { "completion_tokens", n => { CompletionTokens = n.GetIntValue(); } },
                 { "num_cached_tokens", n => { NumCachedTokens = n.GetIntValue(); } },
                 { "prompt_audio_seconds", n => { PromptAudioSeconds = n.GetIntValue(); } },
-                { "prompt_token_details", n => { PromptTokenDetails = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.UsageInfoPromptTokenDetails>(global::Soenneker.Mistral.OpenApiClient.Models.UsageInfoPromptTokenDetails.CreateFromDiscriminatorValue); } },
+                { "prompt_token_details", n => { PromptTokenDetails = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.PromptTokensDetails>(global::Soenneker.Mistral.OpenApiClient.Models.PromptTokensDetails.CreateFromDiscriminatorValue); } },
                 { "prompt_tokens", n => { PromptTokens = n.GetIntValue(); } },
-                { "prompt_tokens_details", n => { PromptTokensDetails = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.UsageInfoPromptTokensDetails>(global::Soenneker.Mistral.OpenApiClient.Models.UsageInfoPromptTokensDetails.CreateFromDiscriminatorValue); } },
+                { "prompt_tokens_details", n => { PromptTokensDetails = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.PromptTokensDetails>(global::Soenneker.Mistral.OpenApiClient.Models.PromptTokensDetails.CreateFromDiscriminatorValue); } },
                 { "total_tokens", n => { TotalTokens = n.GetIntValue(); } },
             };
         }
@@ -84,9 +84,9 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             writer.WriteIntValue("completion_tokens", CompletionTokens);
             writer.WriteIntValue("num_cached_tokens", NumCachedTokens);
             writer.WriteIntValue("prompt_audio_seconds", PromptAudioSeconds);
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.UsageInfoPromptTokenDetails>("prompt_token_details", PromptTokenDetails);
+            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.PromptTokensDetails>("prompt_token_details", PromptTokenDetails);
             writer.WriteIntValue("prompt_tokens", PromptTokens);
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.UsageInfoPromptTokensDetails>("prompt_tokens_details", PromptTokensDetails);
+            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.PromptTokensDetails>("prompt_tokens_details", PromptTokensDetails);
             writer.WriteIntValue("total_tokens", TotalTokens);
         }
     }

@@ -17,10 +17,10 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         /// <summary>The metadata property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.FimCompletionRequestMetadata? Metadata { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.FimCompletionRequestMetadataProperty? Metadata { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.FimCompletionRequestMetadata Metadata { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.FimCompletionRequestMetadataProperty Metadata { get; set; }
 #endif
         /// <summary>The minimum number of tokens to generate in the completion.</summary>
         public int? MinTokens { get; set; }
@@ -58,7 +58,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
 #else
         public global::Soenneker.Mistral.OpenApiClient.Models.FimCompletionRequestStop Stop { get; set; }
 #endif
-        /// <summary>&quot;Whether to stream back partial progress. If set, tokens will be sent as data-only server-side events as they become available, with the stream terminated by a data: [DONE] message. Otherwise, the server will hold the request open until the timeout or until completion, with the response containing the full result as JSON.&quot;</summary>
+        /// <summary>Whether to stream back partial progress. If set, tokens will be sent as data-only server-side events as they become available, with the stream terminated by a data: [DONE] message. Otherwise, the server will hold the request open until the timeout or until completion, with the response containing the full result as JSON.</summary>
         public bool? Stream { get; set; }
         /// <summary>Optional text/code that adds more context for the model. When given a `prompt` and a `suffix` the model will fill what is between them. When `suffix` is not provided, the model will simply execute completion starting with `prompt`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -100,7 +100,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "max_tokens", n => { MaxTokens = n.GetIntValue(); } },
-                { "metadata", n => { Metadata = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.FimCompletionRequestMetadata>(global::Soenneker.Mistral.OpenApiClient.Models.FimCompletionRequestMetadata.CreateFromDiscriminatorValue); } },
+                { "metadata", n => { Metadata = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.FimCompletionRequestMetadataProperty>(global::Soenneker.Mistral.OpenApiClient.Models.FimCompletionRequestMetadataProperty.CreateFromDiscriminatorValue); } },
                 { "min_tokens", n => { MinTokens = n.GetIntValue(); } },
                 { "model", n => { Model = n.GetStringValue(); } },
                 { "prompt", n => { Prompt = n.GetStringValue(); } },
@@ -121,7 +121,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteIntValue("max_tokens", MaxTokens);
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.FimCompletionRequestMetadata>("metadata", Metadata);
+            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.FimCompletionRequestMetadataProperty>("metadata", Metadata);
             writer.WriteIntValue("min_tokens", MinTokens);
             writer.WriteStringValue("model", Model);
             writer.WriteStringValue("prompt", Prompt);

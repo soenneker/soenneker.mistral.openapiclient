@@ -90,10 +90,14 @@ namespace Soenneker.Mistral.OpenApiClient.V1.Workflows.Executions.Item.Trace.Eve
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class EventsRequestBuilderGetQueryParameters 
         {
+            #pragma warning disable CS1591
             [QueryParameter("include_internal_events")]
             public bool? IncludeInternalEvents { get; set; }
+            #pragma warning restore CS1591
+            #pragma warning disable CS1591
             [QueryParameter("merge_same_id_events")]
             public bool? MergeSameIdEvents { get; set; }
+            #pragma warning restore CS1591
         }
     }
 }

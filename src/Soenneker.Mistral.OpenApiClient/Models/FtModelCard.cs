@@ -106,7 +106,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         public string Root { get; set; }
 #endif
         /// <summary>The type property</summary>
-        public global::Soenneker.Mistral.OpenApiClient.Models.FtModelCard_type? Type { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.FineTunedType? Type { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Mistral.OpenApiClient.Models.FtModelCard"/> and sets the default values.
         /// </summary>
@@ -151,7 +151,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
                 { "object", n => { Object = n.GetStringValue(); } },
                 { "owned_by", n => { OwnedBy = n.GetStringValue(); } },
                 { "root", n => { Root = n.GetStringValue(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.FtModelCard_type>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.FineTunedType>(); } },
             };
         }
         /// <summary>
@@ -176,7 +176,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             writer.WriteStringValue("object", Object);
             writer.WriteStringValue("owned_by", OwnedBy);
             writer.WriteStringValue("root", Root);
-            writer.WriteEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.FtModelCard_type>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.FineTunedType>("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

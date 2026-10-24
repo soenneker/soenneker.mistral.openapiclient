@@ -43,7 +43,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         /// <summary>The approximated time (in seconds) for the fine-tuning process to complete.</summary>
         public int? ExpectedDurationSeconds { get; set; }
         /// <summary>The object property</summary>
-        public global::Soenneker.Mistral.OpenApiClient.Models.LegacyJobMetadataOut_object? Object { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.JobMetadataObject? Object { get; set; }
         /// <summary>The number of training steps to perform. A training step refers to a single update of the model weights during the fine-tuning process. This update is typically calculated using a batch of samples from the training dataset.</summary>
         public int? TrainingSteps { get; set; }
         /// <summary>The total number of tokens used during the fine-tuning process.</summary>
@@ -84,7 +84,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
                 { "epochs", n => { Epochs = n.GetDoubleValue(); } },
                 { "estimated_start_time", n => { EstimatedStartTime = n.GetIntValue(); } },
                 { "expected_duration_seconds", n => { ExpectedDurationSeconds = n.GetIntValue(); } },
-                { "object", n => { Object = n.GetEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.LegacyJobMetadataOut_object>(); } },
+                { "object", n => { Object = n.GetEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.JobMetadataObject>(); } },
                 { "train_tokens", n => { TrainTokens = n.GetIntValue(); } },
                 { "train_tokens_per_step", n => { TrainTokensPerStep = n.GetIntValue(); } },
                 { "training_steps", n => { TrainingSteps = n.GetIntValue(); } },
@@ -105,7 +105,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             writer.WriteDoubleValue("epochs", Epochs);
             writer.WriteIntValue("estimated_start_time", EstimatedStartTime);
             writer.WriteIntValue("expected_duration_seconds", ExpectedDurationSeconds);
-            writer.WriteEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.LegacyJobMetadataOut_object>("object", Object);
+            writer.WriteEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.JobMetadataObject>("object", Object);
             writer.WriteIntValue("training_steps", TrainingSteps);
             writer.WriteIntValue("train_tokens", TrainTokens);
             writer.WriteIntValue("train_tokens_per_step", TrainTokensPerStep);

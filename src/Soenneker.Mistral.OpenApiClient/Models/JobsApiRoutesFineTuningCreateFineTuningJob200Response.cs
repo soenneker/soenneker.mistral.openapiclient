@@ -8,18 +8,18 @@ using System;
 namespace Soenneker.Mistral.OpenApiClient.Models
 {
     /// <summary>
-    /// Composed type wrapper for classes <see cref="global::Soenneker.Mistral.OpenApiClient.Models.JobsApiRoutesFineTuningCreateFineTuningJob200ResponseAnyOf1"/>, <see cref="global::Soenneker.Mistral.OpenApiClient.Models.LegacyJobMetadataOut"/>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Mistral.OpenApiClient.Models.ClassifierJobOut"/>, <see cref="global::Soenneker.Mistral.OpenApiClient.Models.LegacyJobMetadataOut"/>
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class JobsApiRoutesFineTuningCreateFineTuningJob200Response : IComposedTypeWrapper, IParsable
     {
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Mistral.OpenApiClient.Models.JobsApiRoutesFineTuningCreateFineTuningJob200ResponseAnyOf1"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Mistral.OpenApiClient.Models.ClassifierJobOut"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.JobsApiRoutesFineTuningCreateFineTuningJob200ResponseAnyOf1? JobsApiRoutesFineTuningCreateFineTuningJob200ResponseAnyOf1 { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.ClassifierJobOut? ClassifierJobOut { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.JobsApiRoutesFineTuningCreateFineTuningJob200ResponseAnyOf1 JobsApiRoutesFineTuningCreateFineTuningJob200ResponseAnyOf1 { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.ClassifierJobOut ClassifierJobOut { get; set; }
 #endif
         /// <summary>Composed type representation for type <see cref="global::Soenneker.Mistral.OpenApiClient.Models.LegacyJobMetadataOut"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -38,7 +38,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             var result = new global::Soenneker.Mistral.OpenApiClient.Models.JobsApiRoutesFineTuningCreateFineTuningJob200Response();
-            result.JobsApiRoutesFineTuningCreateFineTuningJob200ResponseAnyOf1 = new global::Soenneker.Mistral.OpenApiClient.Models.JobsApiRoutesFineTuningCreateFineTuningJob200ResponseAnyOf1();
+            result.ClassifierJobOut = new global::Soenneker.Mistral.OpenApiClient.Models.ClassifierJobOut();
             result.LegacyJobMetadataOut = new global::Soenneker.Mistral.OpenApiClient.Models.LegacyJobMetadataOut();
             return result;
         }
@@ -48,9 +48,9 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            if(JobsApiRoutesFineTuningCreateFineTuningJob200ResponseAnyOf1 != null || LegacyJobMetadataOut != null)
+            if(ClassifierJobOut != null || LegacyJobMetadataOut != null)
             {
-                return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(JobsApiRoutesFineTuningCreateFineTuningJob200ResponseAnyOf1, LegacyJobMetadataOut);
+                return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(ClassifierJobOut, LegacyJobMetadataOut);
             }
             return new Dictionary<string, Action<IParseNode>>();
         }
@@ -61,7 +61,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.JobsApiRoutesFineTuningCreateFineTuningJob200ResponseAnyOf1>(null, JobsApiRoutesFineTuningCreateFineTuningJob200ResponseAnyOf1, LegacyJobMetadataOut);
+            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ClassifierJobOut>(null, ClassifierJobOut, LegacyJobMetadataOut);
         }
     }
 }

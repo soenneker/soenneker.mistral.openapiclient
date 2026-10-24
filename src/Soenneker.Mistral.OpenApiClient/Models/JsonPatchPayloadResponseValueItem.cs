@@ -63,11 +63,11 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             {
                 result.JsonPatchAppend = new global::Soenneker.Mistral.OpenApiClient.Models.JsonPatchAppend();
             }
-            else if("JsonPatchRemove".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("remove".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.JsonPatchRemove = new global::Soenneker.Mistral.OpenApiClient.Models.JsonPatchRemove();
             }
-            else if("JsonPatchReplace".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("replace".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.JsonPatchReplace = new global::Soenneker.Mistral.OpenApiClient.Models.JsonPatchReplace();
             }

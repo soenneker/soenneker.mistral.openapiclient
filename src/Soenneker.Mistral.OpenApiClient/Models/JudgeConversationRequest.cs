@@ -25,10 +25,10 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         /// <summary>The properties property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.JudgeConversationRequestProperties? Properties { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.JudgeConversationRequestPropertiesProperty? Properties { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.JudgeConversationRequestProperties Properties { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.JudgeConversationRequestPropertiesProperty Properties { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Mistral.OpenApiClient.Models.JudgeConversationRequest"/> and sets the default values.
@@ -56,7 +56,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "messages", n => { Messages = n.GetCollectionOfObjectValues<global::Soenneker.Mistral.OpenApiClient.Models.JudgeConversationRequestMessagesItemProperty>(global::Soenneker.Mistral.OpenApiClient.Models.JudgeConversationRequestMessagesItemProperty.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "properties", n => { Properties = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.JudgeConversationRequestProperties>(global::Soenneker.Mistral.OpenApiClient.Models.JudgeConversationRequestProperties.CreateFromDiscriminatorValue); } },
+                { "properties", n => { Properties = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.JudgeConversationRequestPropertiesProperty>(global::Soenneker.Mistral.OpenApiClient.Models.JudgeConversationRequestPropertiesProperty.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -67,7 +67,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfObjectValues<global::Soenneker.Mistral.OpenApiClient.Models.JudgeConversationRequestMessagesItemProperty>("messages", Messages);
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.JudgeConversationRequestProperties>("properties", Properties);
+            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.JudgeConversationRequestPropertiesProperty>("properties", Properties);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

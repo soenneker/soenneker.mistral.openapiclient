@@ -17,18 +17,18 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         /// <summary>The AND property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.FilterGroupAnd? AND { get; set; }
+        public List<global::Soenneker.Mistral.OpenApiClient.Models.FilterGroupAndItem>? AND { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.FilterGroupAnd AND { get; set; }
+        public List<global::Soenneker.Mistral.OpenApiClient.Models.FilterGroupAndItem> AND { get; set; }
 #endif
         /// <summary>The OR property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.FilterGroupOr? OR { get; set; }
+        public List<global::Soenneker.Mistral.OpenApiClient.Models.FilterGroupOrItem>? OR { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.FilterGroupOr OR { get; set; }
+        public List<global::Soenneker.Mistral.OpenApiClient.Models.FilterGroupOrItem> OR { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Mistral.OpenApiClient.Models.FilterGroup"/> and sets the default values.
@@ -55,8 +55,8 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "AND", n => { AND = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.FilterGroupAnd>(global::Soenneker.Mistral.OpenApiClient.Models.FilterGroupAnd.CreateFromDiscriminatorValue); } },
-                { "OR", n => { OR = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.FilterGroupOr>(global::Soenneker.Mistral.OpenApiClient.Models.FilterGroupOr.CreateFromDiscriminatorValue); } },
+                { "AND", n => { AND = n.GetCollectionOfObjectValues<global::Soenneker.Mistral.OpenApiClient.Models.FilterGroupAndItem>(global::Soenneker.Mistral.OpenApiClient.Models.FilterGroupAndItem.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "OR", n => { OR = n.GetCollectionOfObjectValues<global::Soenneker.Mistral.OpenApiClient.Models.FilterGroupOrItem>(global::Soenneker.Mistral.OpenApiClient.Models.FilterGroupOrItem.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
         /// <summary>
@@ -66,8 +66,8 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.FilterGroupAnd>("AND", AND);
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.FilterGroupOr>("OR", OR);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Mistral.OpenApiClient.Models.FilterGroupAndItem>("AND", AND);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Mistral.OpenApiClient.Models.FilterGroupOrItem>("OR", OR);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

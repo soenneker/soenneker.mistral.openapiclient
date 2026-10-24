@@ -35,10 +35,10 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         /// <summary>The result of the workflow execution, if available</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.WorkflowExecutionResponseResult? Result { get; set; }
+        public UntypedNode? Result { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.WorkflowExecutionResponseResult Result { get; set; }
+        public UntypedNode Result { get; set; }
 #endif
         /// <summary>The root execution ID of the workflow execution</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -51,13 +51,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         /// <summary>The start time of the workflow execution</summary>
         public DateTimeOffset? StartTime { get; set; }
         /// <summary>The status of the workflow execution</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.WorkflowExecutionResponseStatus? Status { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Mistral.OpenApiClient.Models.WorkflowExecutionResponseStatus Status { get; set; }
-#endif
+        public global::Soenneker.Mistral.OpenApiClient.Models.WorkflowExecutionStatus? Status { get; set; }
         /// <summary>The total duration of the trace in milliseconds</summary>
         public int? TotalDurationMs { get; set; }
         /// <summary>The name of the workflow</summary>
@@ -96,10 +90,10 @@ namespace Soenneker.Mistral.OpenApiClient.Models
                 { "end_time", n => { EndTime = n.GetDateTimeOffsetValue(); } },
                 { "execution_id", n => { ExecutionId = n.GetStringValue(); } },
                 { "parent_execution_id", n => { ParentExecutionId = n.GetStringValue(); } },
-                { "result", n => { Result = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.WorkflowExecutionResponseResult>(global::Soenneker.Mistral.OpenApiClient.Models.WorkflowExecutionResponseResult.CreateFromDiscriminatorValue); } },
+                { "result", n => { Result = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
                 { "root_execution_id", n => { RootExecutionId = n.GetStringValue(); } },
                 { "start_time", n => { StartTime = n.GetDateTimeOffsetValue(); } },
-                { "status", n => { Status = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.WorkflowExecutionResponseStatus>(global::Soenneker.Mistral.OpenApiClient.Models.WorkflowExecutionResponseStatus.CreateFromDiscriminatorValue); } },
+                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.WorkflowExecutionStatus>(); } },
                 { "total_duration_ms", n => { TotalDurationMs = n.GetIntValue(); } },
                 { "workflow_name", n => { WorkflowName = n.GetStringValue(); } },
             };
@@ -114,10 +108,10 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             writer.WriteDateTimeOffsetValue("end_time", EndTime);
             writer.WriteStringValue("execution_id", ExecutionId);
             writer.WriteStringValue("parent_execution_id", ParentExecutionId);
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.WorkflowExecutionResponseResult>("result", Result);
+            writer.WriteObjectValue<UntypedNode>("result", Result);
             writer.WriteStringValue("root_execution_id", RootExecutionId);
             writer.WriteDateTimeOffsetValue("start_time", StartTime);
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.WorkflowExecutionResponseStatus>("status", Status);
+            writer.WriteEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.WorkflowExecutionStatus>("status", Status);
             writer.WriteIntValue("total_duration_ms", TotalDurationMs);
             writer.WriteStringValue("workflow_name", WorkflowName);
             writer.WriteAdditionalData(AdditionalData);

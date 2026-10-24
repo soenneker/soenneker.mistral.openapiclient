@@ -29,7 +29,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         public string DocumentUrl { get; set; }
 #endif
         /// <summary>The type property</summary>
-        public global::Soenneker.Mistral.OpenApiClient.Models.DocumentUrlChunk_type? Type { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.DocumentUrlType? Type { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -50,7 +50,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             {
                 { "document_name", n => { DocumentName = n.GetStringValue(); } },
                 { "document_url", n => { DocumentUrl = n.GetStringValue(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.DocumentUrlChunk_type>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.DocumentUrlType>(); } },
             };
         }
         /// <summary>
@@ -62,7 +62,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("document_name", DocumentName);
             writer.WriteStringValue("document_url", DocumentUrl);
-            writer.WriteEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.DocumentUrlChunk_type>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.DocumentUrlType>("type", Type);
         }
     }
 }

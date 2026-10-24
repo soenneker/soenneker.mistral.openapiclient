@@ -29,7 +29,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         public string Name { get; set; }
 #endif
         /// <summary>The role property</summary>
-        public global::Soenneker.Mistral.OpenApiClient.Models.ToolMessage_role? Role { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.ToolRole? Role { get; set; }
         /// <summary>The tool_call_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -58,7 +58,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             {
                 { "content", n => { Content = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ToolMessageContent>(global::Soenneker.Mistral.OpenApiClient.Models.ToolMessageContent.CreateFromDiscriminatorValue); } },
                 { "name", n => { Name = n.GetStringValue(); } },
-                { "role", n => { Role = n.GetEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.ToolMessage_role>(); } },
+                { "role", n => { Role = n.GetEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.ToolRole>(); } },
                 { "tool_call_id", n => { ToolCallId = n.GetStringValue(); } },
             };
         }
@@ -71,7 +71,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ToolMessageContent>("content", Content);
             writer.WriteStringValue("name", Name);
-            writer.WriteEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.ToolMessage_role>("role", Role);
+            writer.WriteEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.ToolRole>("role", Role);
             writer.WriteStringValue("tool_call_id", ToolCallId);
         }
     }

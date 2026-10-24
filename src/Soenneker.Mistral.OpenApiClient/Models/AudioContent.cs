@@ -18,10 +18,10 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         /// <summary>The annotations property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.AudioContentAnnotations? Annotations { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.Annotations? Annotations { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.AudioContentAnnotations Annotations { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.Annotations Annotations { get; set; }
 #endif
         /// <summary>The data property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -34,10 +34,10 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         /// <summary>The meta property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.AudioContentMeta? Meta { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.AudioContentMetaProperty? Meta { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.AudioContentMeta Meta { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.AudioContentMetaProperty Meta { get; set; }
 #endif
         /// <summary>The mimeType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -48,7 +48,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         public string MimeType { get; set; }
 #endif
         /// <summary>The type property</summary>
-        public global::Soenneker.Mistral.OpenApiClient.Models.AudioContent_type? Type { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.AudioType? Type { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Mistral.OpenApiClient.Models.AudioContent"/> and sets the default values.
         /// </summary>
@@ -74,11 +74,11 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "annotations", n => { Annotations = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.AudioContentAnnotations>(global::Soenneker.Mistral.OpenApiClient.Models.AudioContentAnnotations.CreateFromDiscriminatorValue); } },
+                { "annotations", n => { Annotations = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.Annotations>(global::Soenneker.Mistral.OpenApiClient.Models.Annotations.CreateFromDiscriminatorValue); } },
                 { "data", n => { Data = n.GetStringValue(); } },
-                { "_meta", n => { Meta = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.AudioContentMeta>(global::Soenneker.Mistral.OpenApiClient.Models.AudioContentMeta.CreateFromDiscriminatorValue); } },
+                { "_meta", n => { Meta = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.AudioContentMetaProperty>(global::Soenneker.Mistral.OpenApiClient.Models.AudioContentMetaProperty.CreateFromDiscriminatorValue); } },
                 { "mimeType", n => { MimeType = n.GetStringValue(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.AudioContent_type>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.AudioType>(); } },
             };
         }
         /// <summary>
@@ -88,11 +88,11 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.AudioContentAnnotations>("annotations", Annotations);
+            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.Annotations>("annotations", Annotations);
             writer.WriteStringValue("data", Data);
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.AudioContentMeta>("_meta", Meta);
+            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.AudioContentMetaProperty>("_meta", Meta);
             writer.WriteStringValue("mimeType", MimeType);
-            writer.WriteEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.AudioContent_type>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.AudioType>("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

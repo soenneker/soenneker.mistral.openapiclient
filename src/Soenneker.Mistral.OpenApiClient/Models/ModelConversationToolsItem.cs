@@ -79,7 +79,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
             var result = new global::Soenneker.Mistral.OpenApiClient.Models.ModelConversationToolsItem();
-            if("CodeInterpreterTool".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            if("code_interpreter".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.CodeInterpreterTool = new global::Soenneker.Mistral.OpenApiClient.Models.CodeInterpreterTool();
             }
@@ -87,7 +87,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             {
                 result.CustomConnector = new global::Soenneker.Mistral.OpenApiClient.Models.CustomConnector();
             }
-            else if("DocumentLibraryTool".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("document_library".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.DocumentLibraryTool = new global::Soenneker.Mistral.OpenApiClient.Models.DocumentLibraryTool();
             }
@@ -95,15 +95,15 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             {
                 result.FunctionTool = new global::Soenneker.Mistral.OpenApiClient.Models.FunctionTool();
             }
-            else if("ImageGenerationTool".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("image_generation".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.ImageGenerationTool = new global::Soenneker.Mistral.OpenApiClient.Models.ImageGenerationTool();
             }
-            else if("WebSearchPremiumTool".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("web_search_premium".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.WebSearchPremiumTool = new global::Soenneker.Mistral.OpenApiClient.Models.WebSearchPremiumTool();
             }
-            else if("WebSearchTool".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("web_search".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.WebSearchTool = new global::Soenneker.Mistral.OpenApiClient.Models.WebSearchTool();
             }

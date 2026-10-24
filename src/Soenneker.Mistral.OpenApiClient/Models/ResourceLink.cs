@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.Mistral.OpenApiClient.Models
 {
     /// <summary>
-    /// &quot;A resource that the server is capable of reading, included in a prompt or tool call result.Note: resource links returned by tools are not guaranteed to appear in the results of `resources/list` requests.&quot;
+    /// A resource that the server is capable of reading, included in a prompt or tool call result.Note: resource links returned by tools are not guaranteed to appear in the results of `resources/list` requests.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ResourceLink : IAdditionalDataHolder, IParsable
@@ -18,10 +18,10 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         /// <summary>The annotations property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.ResourceLinkAnnotations? Annotations { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.Annotations? Annotations { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.ResourceLinkAnnotations Annotations { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.Annotations Annotations { get; set; }
 #endif
         /// <summary>The description property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -34,18 +34,18 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         /// <summary>The icons property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.ResourceLinkIcons? Icons { get; set; }
+        public List<global::Soenneker.Mistral.OpenApiClient.Models.McpServerIcon>? Icons { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.ResourceLinkIcons Icons { get; set; }
+        public List<global::Soenneker.Mistral.OpenApiClient.Models.McpServerIcon> Icons { get; set; }
 #endif
         /// <summary>The meta property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.ResourceLinkMeta? Meta { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.ResourceLinkMetaProperty? Meta { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.ResourceLinkMeta Meta { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.ResourceLinkMetaProperty Meta { get; set; }
 #endif
         /// <summary>The mimeType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -74,7 +74,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         public string Title { get; set; }
 #endif
         /// <summary>The type property</summary>
-        public global::Soenneker.Mistral.OpenApiClient.Models.ResourceLink_type? Type { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.ResourceLinkType? Type { get; set; }
         /// <summary>The uri property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -108,15 +108,15 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "annotations", n => { Annotations = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ResourceLinkAnnotations>(global::Soenneker.Mistral.OpenApiClient.Models.ResourceLinkAnnotations.CreateFromDiscriminatorValue); } },
+                { "annotations", n => { Annotations = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.Annotations>(global::Soenneker.Mistral.OpenApiClient.Models.Annotations.CreateFromDiscriminatorValue); } },
                 { "description", n => { Description = n.GetStringValue(); } },
-                { "icons", n => { Icons = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ResourceLinkIcons>(global::Soenneker.Mistral.OpenApiClient.Models.ResourceLinkIcons.CreateFromDiscriminatorValue); } },
-                { "_meta", n => { Meta = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ResourceLinkMeta>(global::Soenneker.Mistral.OpenApiClient.Models.ResourceLinkMeta.CreateFromDiscriminatorValue); } },
+                { "icons", n => { Icons = n.GetCollectionOfObjectValues<global::Soenneker.Mistral.OpenApiClient.Models.McpServerIcon>(global::Soenneker.Mistral.OpenApiClient.Models.McpServerIcon.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "_meta", n => { Meta = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ResourceLinkMetaProperty>(global::Soenneker.Mistral.OpenApiClient.Models.ResourceLinkMetaProperty.CreateFromDiscriminatorValue); } },
                 { "mimeType", n => { MimeType = n.GetStringValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "size", n => { Size = n.GetIntValue(); } },
                 { "title", n => { Title = n.GetStringValue(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.ResourceLink_type>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.ResourceLinkType>(); } },
                 { "uri", n => { Uri = n.GetStringValue(); } },
             };
         }
@@ -127,15 +127,15 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ResourceLinkAnnotations>("annotations", Annotations);
+            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.Annotations>("annotations", Annotations);
             writer.WriteStringValue("description", Description);
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ResourceLinkIcons>("icons", Icons);
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ResourceLinkMeta>("_meta", Meta);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Mistral.OpenApiClient.Models.McpServerIcon>("icons", Icons);
+            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ResourceLinkMetaProperty>("_meta", Meta);
             writer.WriteStringValue("mimeType", MimeType);
             writer.WriteStringValue("name", Name);
             writer.WriteIntValue("size", Size);
             writer.WriteStringValue("title", Title);
-            writer.WriteEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.ResourceLink_type>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.ResourceLinkType>("type", Type);
             writer.WriteStringValue("uri", Uri);
             writer.WriteAdditionalData(AdditionalData);
         }

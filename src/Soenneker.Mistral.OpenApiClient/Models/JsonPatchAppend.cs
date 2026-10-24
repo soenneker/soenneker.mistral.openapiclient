@@ -15,7 +15,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>&apos;append&apos; is an extension for efficient string concatenation in streaming scenarios.</summary>
-        public global::Soenneker.Mistral.OpenApiClient.Models.JsonPatchAppend_op? Op { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.AppendOp? Op { get; set; }
         /// <summary>A JSON Pointer (RFC 6901) identifying the target location within the document. Can be a string path (e.g., &apos;/foo/bar&apos;), &apos;/&apos;, &apos;&apos;, or an empty list [] for root-level operations.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -57,7 +57,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "op", n => { Op = n.GetEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.JsonPatchAppend_op>(); } },
+                { "op", n => { Op = n.GetEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.AppendOp>(); } },
                 { "path", n => { Path = n.GetStringValue(); } },
                 { "value", n => { Value = n.GetStringValue(); } },
             };
@@ -69,7 +69,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.JsonPatchAppend_op>("op", Op);
+            writer.WriteEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.AppendOp>("op", Op);
             writer.WriteStringValue("path", Path);
             writer.WriteStringValue("value", Value);
             writer.WriteAdditionalData(AdditionalData);

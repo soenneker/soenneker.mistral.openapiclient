@@ -22,23 +22,23 @@ namespace Soenneker.Mistral.OpenApiClient.Models
 #else
         public string AgentId { get; set; }
 #endif
-        /// <summary>The endpoint property</summary>
+        /// <summary>The endpoint to be used for batch inference.</summary>
         public global::Soenneker.Mistral.OpenApiClient.Models.ApiEndpoint? Endpoint { get; set; }
-        /// <summary>&quot;The list of input files to be used for batch inference, these files should be `jsonl` files, containing the input data corresponding to the bory request for the batch inference in a \&quot;body\&quot; field. An example of such file is the following: ```json {\&quot;custom_id\&quot;: \&quot;0\&quot;, \&quot;body\&quot;: {\&quot;max_tokens\&quot;: 100, \&quot;messages\&quot;: [{\&quot;role\&quot;: \&quot;user\&quot;, \&quot;content\&quot;: \&quot;What is the best French cheese?\&quot;}]}} {\&quot;custom_id\&quot;: \&quot;1\&quot;, \&quot;body\&quot;: {\&quot;max_tokens\&quot;: 100, \&quot;messages\&quot;: [{\&quot;role\&quot;: \&quot;user\&quot;, \&quot;content\&quot;: \&quot;What is the best French wine?\&quot;}]}} ```&quot;</summary>
+        /// <summary>The list of input files to be used for batch inference, these files should be `jsonl` files, containing the input data corresponding to the bory request for the batch inference in a &quot;body&quot; field. An example of such file is the following: ```json {&quot;custom_id&quot;: &quot;0&quot;, &quot;body&quot;: {&quot;max_tokens&quot;: 100, &quot;messages&quot;: [{&quot;role&quot;: &quot;user&quot;, &quot;content&quot;: &quot;What is the best French cheese?&quot;}]}} {&quot;custom_id&quot;: &quot;1&quot;, &quot;body&quot;: {&quot;max_tokens&quot;: 100, &quot;messages&quot;: [{&quot;role&quot;: &quot;user&quot;, &quot;content&quot;: &quot;What is the best French wine?&quot;}]}} ```</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.BatchJobInInputFiles? InputFiles { get; set; }
+        public List<Guid?>? InputFiles { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.BatchJobInInputFiles InputFiles { get; set; }
+        public List<Guid?> InputFiles { get; set; }
 #endif
         /// <summary>The metadata of your choice to be associated with the batch inference job.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.BatchJobInMetadata? Metadata { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.BatchJobInMetadataAnyOf1? Metadata { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.BatchJobInMetadata Metadata { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.BatchJobInMetadataAnyOf1 Metadata { get; set; }
 #endif
         /// <summary>The model to be used for batch inference.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -51,10 +51,10 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         /// <summary>The requests property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.BatchJobInRequests? Requests { get; set; }
+        public List<global::Soenneker.Mistral.OpenApiClient.Models.BatchRequest>? Requests { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.BatchJobInRequests Requests { get; set; }
+        public List<global::Soenneker.Mistral.OpenApiClient.Models.BatchRequest> Requests { get; set; }
 #endif
         /// <summary>The timeout in hours for the batch inference job.</summary>
         public int? TimeoutHours { get; set; }
@@ -86,10 +86,10 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             {
                 { "agent_id", n => { AgentId = n.GetStringValue(); } },
                 { "endpoint", n => { Endpoint = n.GetEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.ApiEndpoint>(); } },
-                { "input_files", n => { InputFiles = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.BatchJobInInputFiles>(global::Soenneker.Mistral.OpenApiClient.Models.BatchJobInInputFiles.CreateFromDiscriminatorValue); } },
-                { "metadata", n => { Metadata = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.BatchJobInMetadata>(global::Soenneker.Mistral.OpenApiClient.Models.BatchJobInMetadata.CreateFromDiscriminatorValue); } },
+                { "input_files", n => { InputFiles = n.GetCollectionOfPrimitiveValues<Guid?>()?.AsList(); } },
+                { "metadata", n => { Metadata = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.BatchJobInMetadataAnyOf1>(global::Soenneker.Mistral.OpenApiClient.Models.BatchJobInMetadataAnyOf1.CreateFromDiscriminatorValue); } },
                 { "model", n => { Model = n.GetStringValue(); } },
-                { "requests", n => { Requests = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.BatchJobInRequests>(global::Soenneker.Mistral.OpenApiClient.Models.BatchJobInRequests.CreateFromDiscriminatorValue); } },
+                { "requests", n => { Requests = n.GetCollectionOfObjectValues<global::Soenneker.Mistral.OpenApiClient.Models.BatchRequest>(global::Soenneker.Mistral.OpenApiClient.Models.BatchRequest.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "timeout_hours", n => { TimeoutHours = n.GetIntValue(); } },
             };
         }
@@ -102,10 +102,10 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("agent_id", AgentId);
             writer.WriteEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.ApiEndpoint>("endpoint", Endpoint);
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.BatchJobInInputFiles>("input_files", InputFiles);
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.BatchJobInMetadata>("metadata", Metadata);
+            writer.WriteCollectionOfPrimitiveValues<Guid?>("input_files", InputFiles);
+            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.BatchJobInMetadataAnyOf1>("metadata", Metadata);
             writer.WriteStringValue("model", Model);
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.BatchJobInRequests>("requests", Requests);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Mistral.OpenApiClient.Models.BatchRequest>("requests", Requests);
             writer.WriteIntValue("timeout_hours", TimeoutHours);
             writer.WriteAdditionalData(AdditionalData);
         }

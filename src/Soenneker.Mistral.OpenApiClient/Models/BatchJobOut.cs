@@ -67,10 +67,10 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         /// <summary>The metadata property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.BatchJobOutMetadata? Metadata { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.BatchJobOutMetadataProperty? Metadata { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.BatchJobOutMetadata Metadata { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.BatchJobOutMetadataProperty Metadata { get; set; }
 #endif
         /// <summary>The model property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -81,16 +81,16 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         public string Model { get; set; }
 #endif
         /// <summary>The object property</summary>
-        public global::Soenneker.Mistral.OpenApiClient.Models.BatchJobOut_object? Object { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.BatchObject? Object { get; set; }
         /// <summary>The output_file property</summary>
         public Guid? OutputFile { get; set; }
         /// <summary>The outputs property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.BatchJobOutOutputs? Outputs { get; set; }
+        public List<global::Soenneker.Mistral.OpenApiClient.Models.BatchJobOutOutputsItemProperty>? Outputs { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.BatchJobOutOutputs Outputs { get; set; }
+        public List<global::Soenneker.Mistral.OpenApiClient.Models.BatchJobOutOutputsItemProperty> Outputs { get; set; }
 #endif
         /// <summary>The started_at property</summary>
         public int? StartedAt { get; set; }
@@ -135,11 +135,11 @@ namespace Soenneker.Mistral.OpenApiClient.Models
                 { "failed_requests", n => { FailedRequests = n.GetIntValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "input_files", n => { InputFiles = n.GetCollectionOfPrimitiveValues<Guid?>()?.AsList(); } },
-                { "metadata", n => { Metadata = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.BatchJobOutMetadata>(global::Soenneker.Mistral.OpenApiClient.Models.BatchJobOutMetadata.CreateFromDiscriminatorValue); } },
+                { "metadata", n => { Metadata = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.BatchJobOutMetadataProperty>(global::Soenneker.Mistral.OpenApiClient.Models.BatchJobOutMetadataProperty.CreateFromDiscriminatorValue); } },
                 { "model", n => { Model = n.GetStringValue(); } },
-                { "object", n => { Object = n.GetEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.BatchJobOut_object>(); } },
+                { "object", n => { Object = n.GetEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.BatchObject>(); } },
                 { "output_file", n => { OutputFile = n.GetGuidValue(); } },
-                { "outputs", n => { Outputs = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.BatchJobOutOutputs>(global::Soenneker.Mistral.OpenApiClient.Models.BatchJobOutOutputs.CreateFromDiscriminatorValue); } },
+                { "outputs", n => { Outputs = n.GetCollectionOfObjectValues<global::Soenneker.Mistral.OpenApiClient.Models.BatchJobOutOutputsItemProperty>(global::Soenneker.Mistral.OpenApiClient.Models.BatchJobOutOutputsItemProperty.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "started_at", n => { StartedAt = n.GetIntValue(); } },
                 { "status", n => { Status = n.GetEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.BatchJobStatus>(); } },
                 { "succeeded_requests", n => { SucceededRequests = n.GetIntValue(); } },
@@ -163,11 +163,11 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             writer.WriteIntValue("failed_requests", FailedRequests);
             writer.WriteStringValue("id", Id);
             writer.WriteCollectionOfPrimitiveValues<Guid?>("input_files", InputFiles);
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.BatchJobOutMetadata>("metadata", Metadata);
+            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.BatchJobOutMetadataProperty>("metadata", Metadata);
             writer.WriteStringValue("model", Model);
-            writer.WriteEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.BatchJobOut_object>("object", Object);
+            writer.WriteEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.BatchObject>("object", Object);
             writer.WriteGuidValue("output_file", OutputFile);
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.BatchJobOutOutputs>("outputs", Outputs);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Mistral.OpenApiClient.Models.BatchJobOutOutputsItemProperty>("outputs", Outputs);
             writer.WriteIntValue("started_at", StartedAt);
             writer.WriteEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.BatchJobStatus>("status", Status);
             writer.WriteIntValue("succeeded_requests", SucceededRequests);

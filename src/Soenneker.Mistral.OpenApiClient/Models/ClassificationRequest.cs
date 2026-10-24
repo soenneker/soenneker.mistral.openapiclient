@@ -23,10 +23,10 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         /// <summary>The metadata property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.ClassificationRequestMetadata? Metadata { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.ClassificationRequestMetadataProperty? Metadata { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.ClassificationRequestMetadata Metadata { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.ClassificationRequestMetadataProperty Metadata { get; set; }
 #endif
         /// <summary>ID of the model to use.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -55,7 +55,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "input", n => { Input = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ClassificationRequestInput>(global::Soenneker.Mistral.OpenApiClient.Models.ClassificationRequestInput.CreateFromDiscriminatorValue); } },
-                { "metadata", n => { Metadata = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ClassificationRequestMetadata>(global::Soenneker.Mistral.OpenApiClient.Models.ClassificationRequestMetadata.CreateFromDiscriminatorValue); } },
+                { "metadata", n => { Metadata = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ClassificationRequestMetadataProperty>(global::Soenneker.Mistral.OpenApiClient.Models.ClassificationRequestMetadataProperty.CreateFromDiscriminatorValue); } },
                 { "model", n => { Model = n.GetStringValue(); } },
             };
         }
@@ -67,7 +67,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ClassificationRequestInput>("input", Input);
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ClassificationRequestMetadata>("metadata", Metadata);
+            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ClassificationRequestMetadataProperty>("metadata", Metadata);
             writer.WriteStringValue("model", Model);
         }
     }

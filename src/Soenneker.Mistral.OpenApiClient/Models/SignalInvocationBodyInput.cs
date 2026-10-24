@@ -8,47 +8,35 @@ using System;
 namespace Soenneker.Mistral.OpenApiClient.Models
 {
     /// <summary>
-    /// Input data for the signal, matching its schema
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Mistral.OpenApiClient.Models.NetworkEncodedInput"/>, <see cref="global::Soenneker.Mistral.OpenApiClient.Models.SignalInvocationBodyInputMember1"/>, <see cref="global::Soenneker.Mistral.OpenApiClient.Models.SignalInvocationBodyInputMember2"/>
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class SignalInvocationBodyInput : IAdditionalDataHolder, IParsable
+    public partial class SignalInvocationBodyInput : IComposedTypeWrapper, IParsable
     {
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The encoded payload</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Mistral.OpenApiClient.Models.NetworkEncodedInput"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? B64payload { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.NetworkEncodedInput? NetworkEncodedInput { get; set; }
 #nullable restore
 #else
-        public string B64payload { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.NetworkEncodedInput NetworkEncodedInput { get; set; }
 #endif
-        /// <summary>Whether the payload is empty</summary>
-        public bool? Empty { get; set; }
-        /// <summary>The encoding of the payload</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Mistral.OpenApiClient.Models.SignalInvocationBodyInputMember1"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Mistral.OpenApiClient.Models.EncodedPayloadOptions?>? EncodingOptions { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.SignalInvocationBodyInputMember1? SignalInvocationBodyInputMember1 { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Mistral.OpenApiClient.Models.EncodedPayloadOptions?> EncodingOptions { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.SignalInvocationBodyInputMember1 SignalInvocationBodyInputMember1 { get; set; }
 #endif
-        /// <summary>Union discriminator</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Mistral.OpenApiClient.Models.SignalInvocationBodyInputMember2"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Type { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.SignalInvocationBodyInputMember2? SignalInvocationBodyInputMember2 { get; set; }
 #nullable restore
 #else
-        public string Type { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.SignalInvocationBodyInputMember2 SignalInvocationBodyInputMember2 { get; set; }
 #endif
-        /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Mistral.OpenApiClient.Models.SignalInvocationBodyInput"/> and sets the default values.
-        /// </summary>
-        public SignalInvocationBodyInput()
-        {
-            AdditionalData = new Dictionary<string, object>();
-            Empty = false;
-        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -57,7 +45,11 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         public static global::Soenneker.Mistral.OpenApiClient.Models.SignalInvocationBodyInput CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Mistral.OpenApiClient.Models.SignalInvocationBodyInput();
+            var result = new global::Soenneker.Mistral.OpenApiClient.Models.SignalInvocationBodyInput();
+            result.NetworkEncodedInput = new global::Soenneker.Mistral.OpenApiClient.Models.NetworkEncodedInput();
+            result.SignalInvocationBodyInputMember1 = new global::Soenneker.Mistral.OpenApiClient.Models.SignalInvocationBodyInputMember1();
+            result.SignalInvocationBodyInputMember2 = new global::Soenneker.Mistral.OpenApiClient.Models.SignalInvocationBodyInputMember2();
+            return result;
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -65,13 +57,11 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            if(NetworkEncodedInput != null || SignalInvocationBodyInputMember1 != null || SignalInvocationBodyInputMember2 != null)
             {
-                { "b64payload", n => { B64payload = n.GetStringValue(); } },
-                { "empty", n => { Empty = n.GetBoolValue(); } },
-                { "encoding_options", n => { EncodingOptions = n.GetCollectionOfEnumValues<global::Soenneker.Mistral.OpenApiClient.Models.EncodedPayloadOptions>()?.AsList(); } },
-                { "type", n => { Type = n.GetStringValue(); } },
-            };
+                return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(NetworkEncodedInput, SignalInvocationBodyInputMember1, SignalInvocationBodyInputMember2);
+            }
+            return new Dictionary<string, Action<IParseNode>>();
         }
         /// <summary>
         /// Serializes information the current object
@@ -80,11 +70,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("b64payload", B64payload);
-            writer.WriteBoolValue("empty", Empty);
-            writer.WriteCollectionOfEnumValues<global::Soenneker.Mistral.OpenApiClient.Models.EncodedPayloadOptions>("encoding_options", EncodingOptions);
-            writer.WriteStringValue("type", Type);
-            writer.WriteAdditionalData(AdditionalData);
+            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.NetworkEncodedInput>(null, NetworkEncodedInput, SignalInvocationBodyInputMember1, SignalInvocationBodyInputMember2);
         }
     }
 }

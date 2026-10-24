@@ -34,13 +34,13 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         public string Id { get; set; }
 #endif
         /// <summary>The object property</summary>
-        public global::Soenneker.Mistral.OpenApiClient.Models.MessageInputEntry_object? Object { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.MessageInputEntryObject? Object { get; set; }
         /// <summary>The prefix property</summary>
         public bool? Prefix { get; set; }
         /// <summary>The role property</summary>
         public global::Soenneker.Mistral.OpenApiClient.Models.MessageInputEntryRole? Role { get; set; }
         /// <summary>The type property</summary>
-        public global::Soenneker.Mistral.OpenApiClient.Models.MessageInputEntry_type? Type { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.MessageInputType? Type { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Mistral.OpenApiClient.Models.MessageInputEntry"/> and sets the default values.
         /// </summary>
@@ -70,10 +70,10 @@ namespace Soenneker.Mistral.OpenApiClient.Models
                 { "content", n => { Content = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.MessageInputEntryContent>(global::Soenneker.Mistral.OpenApiClient.Models.MessageInputEntryContent.CreateFromDiscriminatorValue); } },
                 { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
-                { "object", n => { Object = n.GetEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.MessageInputEntry_object>(); } },
+                { "object", n => { Object = n.GetEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.MessageInputEntryObject>(); } },
                 { "prefix", n => { Prefix = n.GetBoolValue(); } },
                 { "role", n => { Role = n.GetEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.MessageInputEntryRole>(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.MessageInputEntry_type>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.MessageInputType>(); } },
             };
         }
         /// <summary>
@@ -87,10 +87,10 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.MessageInputEntryContent>("content", Content);
             writer.WriteDateTimeOffsetValue("created_at", CreatedAt);
             writer.WriteStringValue("id", Id);
-            writer.WriteEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.MessageInputEntry_object>("object", Object);
+            writer.WriteEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.MessageInputEntryObject>("object", Object);
             writer.WriteBoolValue("prefix", Prefix);
             writer.WriteEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.MessageInputEntryRole>("role", Role);
-            writer.WriteEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.MessageInputEntry_type>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.MessageInputType>("type", Type);
         }
     }
 }

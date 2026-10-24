@@ -16,7 +16,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>After a Temporal server is unavailable, amount of time in seconds in the past to execute missed actions.</summary>
         public int? CatchupWindowSeconds { get; set; }
-        /// <summary>Controls what happens when a workflow would be started by a schedule butone is already running.</summary>
+        /// <summary>Policy controlling what to do when a workflow is already running.</summary>
         public int? Overlap { get; set; }
         /// <summary>Whether to pause the schedule after a workflow failure.</summary>
         public bool? PauseOnFailure { get; set; }
@@ -27,6 +27,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         {
             AdditionalData = new Dictionary<string, object>();
             CatchupWindowSeconds = 31536000;
+            Overlap = 1;
             PauseOnFailure = false;
         }
         /// <summary>

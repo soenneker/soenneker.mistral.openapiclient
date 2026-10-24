@@ -87,7 +87,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         public string OwnedBy { get; set; }
 #endif
         /// <summary>The type property</summary>
-        public global::Soenneker.Mistral.OpenApiClient.Models.BaseModelCard_type? Type { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.BaseValueType? Type { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Mistral.OpenApiClient.Models.BaseModelCard"/> and sets the default values.
         /// </summary>
@@ -128,7 +128,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "object", n => { Object = n.GetStringValue(); } },
                 { "owned_by", n => { OwnedBy = n.GetStringValue(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.BaseModelCard_type>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.BaseValueType>(); } },
             };
         }
         /// <summary>
@@ -150,7 +150,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("object", Object);
             writer.WriteStringValue("owned_by", OwnedBy);
-            writer.WriteEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.BaseModelCard_type>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.BaseValueType>("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

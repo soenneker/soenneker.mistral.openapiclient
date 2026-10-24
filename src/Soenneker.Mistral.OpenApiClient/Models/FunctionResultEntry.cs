@@ -25,7 +25,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         public string Id { get; set; }
 #endif
         /// <summary>The object property</summary>
-        public global::Soenneker.Mistral.OpenApiClient.Models.FunctionResultEntry_object? Object { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.FunctionResultEntryObject? Object { get; set; }
         /// <summary>The result property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -43,7 +43,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         public string ToolCallId { get; set; }
 #endif
         /// <summary>The type property</summary>
-        public global::Soenneker.Mistral.OpenApiClient.Models.FunctionResultEntry_type? Type { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.FunctionResultType? Type { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -65,10 +65,10 @@ namespace Soenneker.Mistral.OpenApiClient.Models
                 { "completed_at", n => { CompletedAt = n.GetDateTimeOffsetValue(); } },
                 { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
-                { "object", n => { Object = n.GetEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.FunctionResultEntry_object>(); } },
+                { "object", n => { Object = n.GetEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.FunctionResultEntryObject>(); } },
                 { "result", n => { Result = n.GetStringValue(); } },
                 { "tool_call_id", n => { ToolCallId = n.GetStringValue(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.FunctionResultEntry_type>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.FunctionResultType>(); } },
             };
         }
         /// <summary>
@@ -81,10 +81,10 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             writer.WriteDateTimeOffsetValue("completed_at", CompletedAt);
             writer.WriteDateTimeOffsetValue("created_at", CreatedAt);
             writer.WriteStringValue("id", Id);
-            writer.WriteEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.FunctionResultEntry_object>("object", Object);
+            writer.WriteEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.FunctionResultEntryObject>("object", Object);
             writer.WriteStringValue("result", Result);
             writer.WriteStringValue("tool_call_id", ToolCallId);
-            writer.WriteEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.FunctionResultEntry_type>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.FunctionResultType>("type", Type);
         }
     }
 }

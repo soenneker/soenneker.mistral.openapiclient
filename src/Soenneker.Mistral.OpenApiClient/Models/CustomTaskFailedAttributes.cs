@@ -31,7 +31,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
 #else
         public string CustomTaskType { get; set; }
 #endif
-        /// <summary>Represents an error or exception that occurred during execution.</summary>
+        /// <summary>Details about the failure that caused the task to fail.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Mistral.OpenApiClient.Models.Failure? Failure { get; set; }

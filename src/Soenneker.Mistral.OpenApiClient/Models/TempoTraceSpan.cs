@@ -38,7 +38,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
 #else
         public List<global::Soenneker.Mistral.OpenApiClient.Models.TempoTraceEvent> Events { get; set; }
 #endif
-        /// <summary>The kind property</summary>
+        /// <summary>The kind of the scope</summary>
         public global::Soenneker.Mistral.OpenApiClient.Models.TempoTraceScopeKind? Kind { get; set; }
         /// <summary>The name of the scope</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

@@ -38,7 +38,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
 #else
         public string RefAudio { get; set; }
 #endif
-        /// <summary>The response_format property</summary>
+        /// <summary>Output audio format. Defaults to mp3.</summary>
         public global::Soenneker.Mistral.OpenApiClient.Models.SpeechOutputFormat? ResponseFormat { get; set; }
         /// <summary>The stream property</summary>
         public bool? Stream { get; set; }
@@ -56,6 +56,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         public SpeechRequest()
         {
             AdditionalData = new Dictionary<string, object>();
+            ResponseFormat = global::Soenneker.Mistral.OpenApiClient.Models.SpeechOutputFormat.Mp3;
             Stream = false;
         }
         /// <summary>

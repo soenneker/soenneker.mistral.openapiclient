@@ -33,10 +33,10 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         /// <summary>Per-word confidence scores for the table content. Returned when confidence_scores_granularity is set to &apos;word&apos;.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.OcrTableObjectWordConfidenceScores? WordConfidenceScores { get; set; }
+        public List<global::Soenneker.Mistral.OpenApiClient.Models.OcrConfidenceScore>? WordConfidenceScores { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.OcrTableObjectWordConfidenceScores WordConfidenceScores { get; set; }
+        public List<global::Soenneker.Mistral.OpenApiClient.Models.OcrConfidenceScore> WordConfidenceScores { get; set; }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -59,7 +59,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
                 { "content", n => { Content = n.GetStringValue(); } },
                 { "format", n => { Format = n.GetEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.OcrTableObjectFormat>(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
-                { "word_confidence_scores", n => { WordConfidenceScores = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.OcrTableObjectWordConfidenceScores>(global::Soenneker.Mistral.OpenApiClient.Models.OcrTableObjectWordConfidenceScores.CreateFromDiscriminatorValue); } },
+                { "word_confidence_scores", n => { WordConfidenceScores = n.GetCollectionOfObjectValues<global::Soenneker.Mistral.OpenApiClient.Models.OcrConfidenceScore>(global::Soenneker.Mistral.OpenApiClient.Models.OcrConfidenceScore.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
         /// <summary>
@@ -72,7 +72,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             writer.WriteStringValue("content", Content);
             writer.WriteEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.OcrTableObjectFormat>("format", Format);
             writer.WriteStringValue("id", Id);
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.OcrTableObjectWordConfidenceScores>("word_confidence_scores", WordConfidenceScores);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Mistral.OpenApiClient.Models.OcrConfidenceScore>("word_confidence_scores", WordConfidenceScores);
         }
     }
 }

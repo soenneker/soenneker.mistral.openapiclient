@@ -143,8 +143,10 @@ namespace Soenneker.Mistral.OpenApiClient.V1.Fine_tuning.Jobs
             /// <summary>The date/time to filter on. When set, the results for previous creation times are not displayed.</summary>
             [QueryParameter("created_after")]
             public DateTimeOffset? CreatedAfter { get; set; }
+            #pragma warning disable CS1591
             [QueryParameter("created_before")]
             public DateTimeOffset? CreatedBefore { get; set; }
+            #pragma warning restore CS1591
             /// <summary>When set, only return results for jobs created by the API caller. Other results are not displayed.</summary>
             [QueryParameter("created_by_me")]
             public bool? CreatedByMe { get; set; }

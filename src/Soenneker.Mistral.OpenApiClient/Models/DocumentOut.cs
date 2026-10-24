@@ -17,10 +17,10 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         /// <summary>The attributes property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.DocumentOutAttributes? Attributes { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.DocumentOutAttributesProperty? Attributes { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.DocumentOutAttributes Attributes { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.DocumentOutAttributesProperty Attributes { get; set; }
 #endif
         /// <summary>The created_at property</summary>
         public DateTimeOffset? CreatedAt { get; set; }
@@ -133,7 +133,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "attributes", n => { Attributes = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.DocumentOutAttributes>(global::Soenneker.Mistral.OpenApiClient.Models.DocumentOutAttributes.CreateFromDiscriminatorValue); } },
+                { "attributes", n => { Attributes = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.DocumentOutAttributesProperty>(global::Soenneker.Mistral.OpenApiClient.Models.DocumentOutAttributesProperty.CreateFromDiscriminatorValue); } },
                 { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
                 { "extension", n => { Extension = n.GetStringValue(); } },
                 { "hash", n => { Hash = n.GetStringValue(); } },
@@ -162,7 +162,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.DocumentOutAttributes>("attributes", Attributes);
+            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.DocumentOutAttributesProperty>("attributes", Attributes);
             writer.WriteDateTimeOffsetValue("created_at", CreatedAt);
             writer.WriteStringValue("extension", Extension);
             writer.WriteStringValue("hash", Hash);

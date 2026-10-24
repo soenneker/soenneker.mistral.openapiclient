@@ -41,7 +41,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         public string NextAgentName { get; set; }
 #endif
         /// <summary>The object property</summary>
-        public global::Soenneker.Mistral.OpenApiClient.Models.AgentHandoffEntry_object? Object { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.EntryObject? Object { get; set; }
         /// <summary>The previous_agent_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -59,7 +59,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         public string PreviousAgentName { get; set; }
 #endif
         /// <summary>The type property</summary>
-        public global::Soenneker.Mistral.OpenApiClient.Models.AgentHandoffEntry_type? Type { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.AgentHandoffType? Type { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -83,10 +83,10 @@ namespace Soenneker.Mistral.OpenApiClient.Models
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "next_agent_id", n => { NextAgentId = n.GetStringValue(); } },
                 { "next_agent_name", n => { NextAgentName = n.GetStringValue(); } },
-                { "object", n => { Object = n.GetEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.AgentHandoffEntry_object>(); } },
+                { "object", n => { Object = n.GetEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.EntryObject>(); } },
                 { "previous_agent_id", n => { PreviousAgentId = n.GetStringValue(); } },
                 { "previous_agent_name", n => { PreviousAgentName = n.GetStringValue(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.AgentHandoffEntry_type>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.AgentHandoffType>(); } },
             };
         }
         /// <summary>
@@ -101,10 +101,10 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             writer.WriteStringValue("id", Id);
             writer.WriteStringValue("next_agent_id", NextAgentId);
             writer.WriteStringValue("next_agent_name", NextAgentName);
-            writer.WriteEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.AgentHandoffEntry_object>("object", Object);
+            writer.WriteEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.EntryObject>("object", Object);
             writer.WriteStringValue("previous_agent_id", PreviousAgentId);
             writer.WriteStringValue("previous_agent_name", PreviousAgentName);
-            writer.WriteEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.AgentHandoffEntry_type>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.AgentHandoffType>("type", Type);
         }
     }
 }

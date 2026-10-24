@@ -20,10 +20,10 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         /// <summary>The prediction property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.CompletionArgsPrediction? Prediction { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.Prediction? Prediction { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.CompletionArgsPrediction Prediction { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.Prediction Prediction { get; set; }
 #endif
         /// <summary>The presence_penalty property</summary>
         public double? PresencePenalty { get; set; }
@@ -34,10 +34,10 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         /// <summary>The response_format property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.CompletionArgsResponseFormat? ResponseFormat { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.ResponseFormat? ResponseFormat { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.CompletionArgsResponseFormat ResponseFormat { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.ResponseFormat ResponseFormat { get; set; }
 #endif
         /// <summary>The stop property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -53,6 +53,13 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         public global::Soenneker.Mistral.OpenApiClient.Models.ToolChoiceEnum? ToolChoice { get; set; }
         /// <summary>The top_p property</summary>
         public double? TopP { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Mistral.OpenApiClient.Models.CompletionArgs"/> and sets the default values.
+        /// </summary>
+        public CompletionArgs()
+        {
+            ToolChoice = global::Soenneker.Mistral.OpenApiClient.Models.ToolChoiceEnum.Auto;
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -73,11 +80,11 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             {
                 { "frequency_penalty", n => { FrequencyPenalty = n.GetDoubleValue(); } },
                 { "max_tokens", n => { MaxTokens = n.GetIntValue(); } },
-                { "prediction", n => { Prediction = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.CompletionArgsPrediction>(global::Soenneker.Mistral.OpenApiClient.Models.CompletionArgsPrediction.CreateFromDiscriminatorValue); } },
+                { "prediction", n => { Prediction = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.Prediction>(global::Soenneker.Mistral.OpenApiClient.Models.Prediction.CreateFromDiscriminatorValue); } },
                 { "presence_penalty", n => { PresencePenalty = n.GetDoubleValue(); } },
                 { "random_seed", n => { RandomSeed = n.GetIntValue(); } },
                 { "reasoning_effort", n => { ReasoningEffort = n.GetEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.CompletionArgsReasoningEffort>(); } },
-                { "response_format", n => { ResponseFormat = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.CompletionArgsResponseFormat>(global::Soenneker.Mistral.OpenApiClient.Models.CompletionArgsResponseFormat.CreateFromDiscriminatorValue); } },
+                { "response_format", n => { ResponseFormat = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ResponseFormat>(global::Soenneker.Mistral.OpenApiClient.Models.ResponseFormat.CreateFromDiscriminatorValue); } },
                 { "stop", n => { Stop = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.CompletionArgsStop>(global::Soenneker.Mistral.OpenApiClient.Models.CompletionArgsStop.CreateFromDiscriminatorValue); } },
                 { "temperature", n => { Temperature = n.GetDoubleValue(); } },
                 { "tool_choice", n => { ToolChoice = n.GetEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.ToolChoiceEnum>(); } },
@@ -93,11 +100,11 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteDoubleValue("frequency_penalty", FrequencyPenalty);
             writer.WriteIntValue("max_tokens", MaxTokens);
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.CompletionArgsPrediction>("prediction", Prediction);
+            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.Prediction>("prediction", Prediction);
             writer.WriteDoubleValue("presence_penalty", PresencePenalty);
             writer.WriteIntValue("random_seed", RandomSeed);
             writer.WriteEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.CompletionArgsReasoningEffort>("reasoning_effort", ReasoningEffort);
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.CompletionArgsResponseFormat>("response_format", ResponseFormat);
+            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ResponseFormat>("response_format", ResponseFormat);
             writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.CompletionArgsStop>("stop", Stop);
             writer.WriteDoubleValue("temperature", Temperature);
             writer.WriteEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.ToolChoiceEnum>("tool_choice", ToolChoice);

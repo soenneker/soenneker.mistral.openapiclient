@@ -21,7 +21,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         public global::Soenneker.Mistral.OpenApiClient.Models.UserMessageContent Content { get; set; }
 #endif
         /// <summary>The role property</summary>
-        public global::Soenneker.Mistral.OpenApiClient.Models.UserMessage_role? Role { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.UserRole? Role { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -41,7 +41,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "content", n => { Content = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.UserMessageContent>(global::Soenneker.Mistral.OpenApiClient.Models.UserMessageContent.CreateFromDiscriminatorValue); } },
-                { "role", n => { Role = n.GetEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.UserMessage_role>(); } },
+                { "role", n => { Role = n.GetEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.UserRole>(); } },
             };
         }
         /// <summary>
@@ -52,7 +52,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.UserMessageContent>("content", Content);
-            writer.WriteEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.UserMessage_role>("role", Role);
+            writer.WriteEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.UserRole>("role", Role);
         }
     }
 }

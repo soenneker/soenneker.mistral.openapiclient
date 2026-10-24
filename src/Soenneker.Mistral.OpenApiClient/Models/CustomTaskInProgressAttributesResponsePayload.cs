@@ -39,7 +39,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
             var result = new global::Soenneker.Mistral.OpenApiClient.Models.CustomTaskInProgressAttributesResponsePayload();
-            if("JsonPatchPayloadResponse".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            if("json_patch".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.JsonPatchPayloadResponse = new global::Soenneker.Mistral.OpenApiClient.Models.JsonPatchPayloadResponse();
             }

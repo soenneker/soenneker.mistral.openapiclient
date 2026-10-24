@@ -28,10 +28,10 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         /// <summary>The languages property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.VoiceUpdateRequestLanguages? Languages { get; set; }
+        public List<string>? Languages { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.VoiceUpdateRequestLanguages Languages { get; set; }
+        public List<string> Languages { get; set; }
 #endif
         /// <summary>The name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -44,10 +44,10 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         /// <summary>The tags property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.VoiceUpdateRequestTags? Tags { get; set; }
+        public List<string>? Tags { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.VoiceUpdateRequestTags Tags { get; set; }
+        public List<string> Tags { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Mistral.OpenApiClient.Models.VoiceUpdateRequest"/> and sets the default values.
@@ -76,9 +76,9 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             {
                 { "age", n => { Age = n.GetIntValue(); } },
                 { "gender", n => { Gender = n.GetStringValue(); } },
-                { "languages", n => { Languages = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.VoiceUpdateRequestLanguages>(global::Soenneker.Mistral.OpenApiClient.Models.VoiceUpdateRequestLanguages.CreateFromDiscriminatorValue); } },
+                { "languages", n => { Languages = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
-                { "tags", n => { Tags = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.VoiceUpdateRequestTags>(global::Soenneker.Mistral.OpenApiClient.Models.VoiceUpdateRequestTags.CreateFromDiscriminatorValue); } },
+                { "tags", n => { Tags = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
             };
         }
         /// <summary>
@@ -90,9 +90,9 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteIntValue("age", Age);
             writer.WriteStringValue("gender", Gender);
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.VoiceUpdateRequestLanguages>("languages", Languages);
+            writer.WriteCollectionOfPrimitiveValues<string>("languages", Languages);
             writer.WriteStringValue("name", Name);
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.VoiceUpdateRequestTags>("tags", Tags);
+            writer.WriteCollectionOfPrimitiveValues<string>("tags", Tags);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

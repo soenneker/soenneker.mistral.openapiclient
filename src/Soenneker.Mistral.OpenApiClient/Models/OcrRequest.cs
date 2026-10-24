@@ -15,12 +15,12 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         /// <summary>Structured output class for extracting useful information from each extracted bounding box / image from document. Only json_schema is valid for this field</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.OcrRequestBboxAnnotationFormat? BboxAnnotationFormat { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.ResponseFormat? BboxAnnotationFormat { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.OcrRequestBboxAnnotationFormat BboxAnnotationFormat { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.ResponseFormat BboxAnnotationFormat { get; set; }
 #endif
-        /// <summary>&quot;Granularity for confidence scores: &apos;word&apos; (per-word scores) or &apos;page&apos; (aggregate only). Defaults to None (no confidence scores) to keep response payload small.&quot;</summary>
+        /// <summary>Granularity for confidence scores: &apos;word&apos; (per-word scores) or &apos;page&apos; (aggregate only). Defaults to None (no confidence scores) to keep response payload small.</summary>
         public global::Soenneker.Mistral.OpenApiClient.Models.OcrRequestConfidenceScoresGranularity? ConfidenceScoresGranularity { get; set; }
         /// <summary>Document to run OCR on</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -33,10 +33,10 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         /// <summary>Structured output class for extracting useful information from the entire document. Only json_schema is valid for this field</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.OcrRequestDocumentAnnotationFormat? DocumentAnnotationFormat { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.ResponseFormat? DocumentAnnotationFormat { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.OcrRequestDocumentAnnotationFormat DocumentAnnotationFormat { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.ResponseFormat DocumentAnnotationFormat { get; set; }
 #endif
         /// <summary>Optional prompt to guide the model in extracting structured output from the entire document. A document_annotation_format must be provided.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -111,10 +111,10 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "bbox_annotation_format", n => { BboxAnnotationFormat = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.OcrRequestBboxAnnotationFormat>(global::Soenneker.Mistral.OpenApiClient.Models.OcrRequestBboxAnnotationFormat.CreateFromDiscriminatorValue); } },
+                { "bbox_annotation_format", n => { BboxAnnotationFormat = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ResponseFormat>(global::Soenneker.Mistral.OpenApiClient.Models.ResponseFormat.CreateFromDiscriminatorValue); } },
                 { "confidence_scores_granularity", n => { ConfidenceScoresGranularity = n.GetEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.OcrRequestConfidenceScoresGranularity>(); } },
                 { "document", n => { Document = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.OcrRequestDocument>(global::Soenneker.Mistral.OpenApiClient.Models.OcrRequestDocument.CreateFromDiscriminatorValue); } },
-                { "document_annotation_format", n => { DocumentAnnotationFormat = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.OcrRequestDocumentAnnotationFormat>(global::Soenneker.Mistral.OpenApiClient.Models.OcrRequestDocumentAnnotationFormat.CreateFromDiscriminatorValue); } },
+                { "document_annotation_format", n => { DocumentAnnotationFormat = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ResponseFormat>(global::Soenneker.Mistral.OpenApiClient.Models.ResponseFormat.CreateFromDiscriminatorValue); } },
                 { "document_annotation_prompt", n => { DocumentAnnotationPrompt = n.GetStringValue(); } },
                 { "extract_footer", n => { ExtractFooter = n.GetBoolValue(); } },
                 { "extract_header", n => { ExtractHeader = n.GetBoolValue(); } },
@@ -135,10 +135,10 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.OcrRequestBboxAnnotationFormat>("bbox_annotation_format", BboxAnnotationFormat);
+            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ResponseFormat>("bbox_annotation_format", BboxAnnotationFormat);
             writer.WriteEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.OcrRequestConfidenceScoresGranularity>("confidence_scores_granularity", ConfidenceScoresGranularity);
             writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.OcrRequestDocument>("document", Document);
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.OcrRequestDocumentAnnotationFormat>("document_annotation_format", DocumentAnnotationFormat);
+            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ResponseFormat>("document_annotation_format", DocumentAnnotationFormat);
             writer.WriteStringValue("document_annotation_prompt", DocumentAnnotationPrompt);
             writer.WriteBoolValue("extract_footer", ExtractFooter);
             writer.WriteBoolValue("extract_header", ExtractHeader);

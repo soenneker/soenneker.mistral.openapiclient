@@ -23,14 +23,14 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         /// <summary>Set this to `true` when adding an assistant message as prefix to condition the model response. The role of the prefix message is to force the model to start its answer by the content of the message.</summary>
         public bool? Prefix { get; set; }
         /// <summary>The role property</summary>
-        public global::Soenneker.Mistral.OpenApiClient.Models.AssistantMessage_role? Role { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.AssistantMessageRole? Role { get; set; }
         /// <summary>The tool_calls property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.AssistantMessageToolCalls? ToolCalls { get; set; }
+        public List<global::Soenneker.Mistral.OpenApiClient.Models.ToolCall>? ToolCalls { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.AssistantMessageToolCalls ToolCalls { get; set; }
+        public List<global::Soenneker.Mistral.OpenApiClient.Models.ToolCall> ToolCalls { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Mistral.OpenApiClient.Models.AssistantMessage"/> and sets the default values.
@@ -59,8 +59,8 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             {
                 { "content", n => { Content = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.AssistantMessageContent>(global::Soenneker.Mistral.OpenApiClient.Models.AssistantMessageContent.CreateFromDiscriminatorValue); } },
                 { "prefix", n => { Prefix = n.GetBoolValue(); } },
-                { "role", n => { Role = n.GetEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.AssistantMessage_role>(); } },
-                { "tool_calls", n => { ToolCalls = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.AssistantMessageToolCalls>(global::Soenneker.Mistral.OpenApiClient.Models.AssistantMessageToolCalls.CreateFromDiscriminatorValue); } },
+                { "role", n => { Role = n.GetEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.AssistantMessageRole>(); } },
+                { "tool_calls", n => { ToolCalls = n.GetCollectionOfObjectValues<global::Soenneker.Mistral.OpenApiClient.Models.ToolCall>(global::Soenneker.Mistral.OpenApiClient.Models.ToolCall.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
         /// <summary>
@@ -72,8 +72,8 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.AssistantMessageContent>("content", Content);
             writer.WriteBoolValue("prefix", Prefix);
-            writer.WriteEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.AssistantMessage_role>("role", Role);
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.AssistantMessageToolCalls>("tool_calls", ToolCalls);
+            writer.WriteEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.AssistantMessageRole>("role", Role);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Mistral.OpenApiClient.Models.ToolCall>("tool_calls", ToolCalls);
         }
     }
 }

@@ -92,21 +92,29 @@ namespace Soenneker.Mistral.OpenApiClient.V1.Workflows.Executions.Item.StreamNam
         {
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
+            #pragma warning disable CS1591
             [QueryParameter("event_source")]
             public string? EventSource { get; set; }
+            #pragma warning restore CS1591
 #nullable restore
 #else
+            #pragma warning disable CS1591
             [QueryParameter("event_source")]
             public string EventSource { get; set; }
+            #pragma warning restore CS1591
 #endif
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
+            #pragma warning disable CS1591
             [QueryParameter("last_event_id")]
             public string? LastEventId { get; set; }
+            #pragma warning restore CS1591
 #nullable restore
 #else
+            #pragma warning disable CS1591
             [QueryParameter("last_event_id")]
             public string LastEventId { get; set; }
+            #pragma warning restore CS1591
 #endif
         }
     }

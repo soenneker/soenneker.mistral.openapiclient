@@ -22,7 +22,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         public global::Soenneker.Mistral.OpenApiClient.Models.ImageUrlChunkImageUrl ImageUrl { get; set; }
 #endif
         /// <summary>The type property</summary>
-        public global::Soenneker.Mistral.OpenApiClient.Models.ImageUrlChunk_type? Type { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.ImageUrlType? Type { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -42,7 +42,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "image_url", n => { ImageUrl = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ImageUrlChunkImageUrl>(global::Soenneker.Mistral.OpenApiClient.Models.ImageUrlChunkImageUrl.CreateFromDiscriminatorValue); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.ImageUrlChunk_type>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.ImageUrlType>(); } },
             };
         }
         /// <summary>
@@ -53,7 +53,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ImageUrlChunkImageUrl>("image_url", ImageUrl);
-            writer.WriteEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.ImageUrlChunk_type>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.ImageUrlType>("type", Type);
         }
     }
 }

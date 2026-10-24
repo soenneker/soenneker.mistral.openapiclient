@@ -50,7 +50,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
 #else
         public string Object { get; set; }
 #endif
-        /// <summary>The purpose property</summary>
+        /// <summary>The intended purpose of the uploaded file, currently supports fine-tuning (`fine-tune`), OCR (`ocr`), Audio/Transcription (`audio`) and batch inference (`batch`).</summary>
         public global::Soenneker.Mistral.OpenApiClient.Models.FilePurpose? Purpose { get; set; }
         /// <summary>The sample_type property</summary>
         public global::Soenneker.Mistral.OpenApiClient.Models.SampleType? SampleType { get; set; }
@@ -65,13 +65,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         /// <summary>The source property</summary>
         public global::Soenneker.Mistral.OpenApiClient.Models.Source? Source { get; set; }
         /// <summary>The visibility property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.RetrieveFileOutVisibility? Visibility { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Mistral.OpenApiClient.Models.RetrieveFileOutVisibility Visibility { get; set; }
-#endif
+        public global::Soenneker.Mistral.OpenApiClient.Models.FileVisibility? Visibility { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Mistral.OpenApiClient.Models.RetrieveFileOut"/> and sets the default values.
         /// </summary>
@@ -110,7 +104,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
                 { "sample_type", n => { SampleType = n.GetEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.SampleType>(); } },
                 { "signature", n => { Signature = n.GetStringValue(); } },
                 { "source", n => { Source = n.GetEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.Source>(); } },
-                { "visibility", n => { Visibility = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.RetrieveFileOutVisibility>(global::Soenneker.Mistral.OpenApiClient.Models.RetrieveFileOutVisibility.CreateFromDiscriminatorValue); } },
+                { "visibility", n => { Visibility = n.GetEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.FileVisibility>(); } },
             };
         }
         /// <summary>
@@ -133,7 +127,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             writer.WriteEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.SampleType>("sample_type", SampleType);
             writer.WriteStringValue("signature", Signature);
             writer.WriteEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.Source>("source", Source);
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.RetrieveFileOutVisibility>("visibility", Visibility);
+            writer.WriteEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.FileVisibility>("visibility", Visibility);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

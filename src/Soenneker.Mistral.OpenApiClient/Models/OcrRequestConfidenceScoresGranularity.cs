@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Mistral.OpenApiClient.Models
 {
-    /// <summary>&quot;Granularity for confidence scores: &apos;word&apos; (per-word scores) or &apos;page&apos; (aggregate only). Defaults to None (no confidence scores) to keep response payload small.&quot;</summary>
+    /// <summary>Granularity for confidence scores: &apos;word&apos; (per-word scores) or &apos;page&apos; (aggregate only). Defaults to None (no confidence scores) to keep response payload small.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum OcrRequestConfidenceScoresGranularity
     {
@@ -14,6 +14,10 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         [EnumMember(Value = "page")]
         #pragma warning disable CS1591
         Page,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464")]
+        #pragma warning disable CS1591
+        OpenapiJsonNullSentinelValue2BF936000FE44250987AE5DDB203E464,
         #pragma warning restore CS1591
     }
 }

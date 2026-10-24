@@ -46,7 +46,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
 #else
         public string Ref { get; set; }
 #endif
-        /// <summary>Union discriminator</summary>
+        /// <summary>The type property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Type { get; set; }

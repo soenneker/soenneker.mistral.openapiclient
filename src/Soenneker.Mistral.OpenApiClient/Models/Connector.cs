@@ -55,10 +55,10 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         /// <summary>The tools property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.ConnectorTools? Tools { get; set; }
+        public List<global::Soenneker.Mistral.OpenApiClient.Models.IntegrationsSchemasApiToolTool>? Tools { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.ConnectorTools Tools { get; set; }
+        public List<global::Soenneker.Mistral.OpenApiClient.Models.IntegrationsSchemasApiToolTool> Tools { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Mistral.OpenApiClient.Models.Connector"/> and sets the default values.
@@ -92,7 +92,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
                 { "modified_at", n => { ModifiedAt = n.GetDateTimeOffsetValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "server", n => { Server = n.GetStringValue(); } },
-                { "tools", n => { Tools = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ConnectorTools>(global::Soenneker.Mistral.OpenApiClient.Models.ConnectorTools.CreateFromDiscriminatorValue); } },
+                { "tools", n => { Tools = n.GetCollectionOfObjectValues<global::Soenneker.Mistral.OpenApiClient.Models.IntegrationsSchemasApiToolTool>(global::Soenneker.Mistral.OpenApiClient.Models.IntegrationsSchemasApiToolTool.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
         /// <summary>
@@ -109,7 +109,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             writer.WriteDateTimeOffsetValue("modified_at", ModifiedAt);
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("server", Server);
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ConnectorTools>("tools", Tools);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Mistral.OpenApiClient.Models.IntegrationsSchemasApiToolTool>("tools", Tools);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -157,73 +157,73 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         public static global::Soenneker.Mistral.OpenApiClient.Models.ListWorkflowEventResponseEventsItem CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
+            var mappingValue = parseNode.GetChildNode("event_type")?.GetStringValue();
             var result = new global::Soenneker.Mistral.OpenApiClient.Models.ListWorkflowEventResponseEventsItem();
-            if("ActivityTaskCompletedResponse".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            if("ACTIVITY_TASK_COMPLETED".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.ActivityTaskCompletedResponse = new global::Soenneker.Mistral.OpenApiClient.Models.ActivityTaskCompletedResponse();
             }
-            else if("ActivityTaskFailedResponse".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("ACTIVITY_TASK_FAILED".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.ActivityTaskFailedResponse = new global::Soenneker.Mistral.OpenApiClient.Models.ActivityTaskFailedResponse();
             }
-            else if("ActivityTaskRetryingResponse".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("ACTIVITY_TASK_RETRYING".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.ActivityTaskRetryingResponse = new global::Soenneker.Mistral.OpenApiClient.Models.ActivityTaskRetryingResponse();
             }
-            else if("ActivityTaskStartedResponse".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("ACTIVITY_TASK_STARTED".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.ActivityTaskStartedResponse = new global::Soenneker.Mistral.OpenApiClient.Models.ActivityTaskStartedResponse();
             }
-            else if("CustomTaskCanceledResponse".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("CUSTOM_TASK_CANCELED".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.CustomTaskCanceledResponse = new global::Soenneker.Mistral.OpenApiClient.Models.CustomTaskCanceledResponse();
             }
-            else if("CustomTaskCompletedResponse".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("CUSTOM_TASK_COMPLETED".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.CustomTaskCompletedResponse = new global::Soenneker.Mistral.OpenApiClient.Models.CustomTaskCompletedResponse();
             }
-            else if("CustomTaskFailedResponse".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("CUSTOM_TASK_FAILED".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.CustomTaskFailedResponse = new global::Soenneker.Mistral.OpenApiClient.Models.CustomTaskFailedResponse();
             }
-            else if("CustomTaskInProgressResponse".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("CUSTOM_TASK_IN_PROGRESS".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.CustomTaskInProgressResponse = new global::Soenneker.Mistral.OpenApiClient.Models.CustomTaskInProgressResponse();
             }
-            else if("CustomTaskStartedResponse".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("CUSTOM_TASK_STARTED".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.CustomTaskStartedResponse = new global::Soenneker.Mistral.OpenApiClient.Models.CustomTaskStartedResponse();
             }
-            else if("CustomTaskTimedOutResponse".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("CUSTOM_TASK_TIMED_OUT".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.CustomTaskTimedOutResponse = new global::Soenneker.Mistral.OpenApiClient.Models.CustomTaskTimedOutResponse();
             }
-            else if("WorkflowExecutionCanceledResponse".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("WORKFLOW_EXECUTION_CANCELED".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.WorkflowExecutionCanceledResponse = new global::Soenneker.Mistral.OpenApiClient.Models.WorkflowExecutionCanceledResponse();
             }
-            else if("WorkflowExecutionCompletedResponse".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("WORKFLOW_EXECUTION_COMPLETED".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.WorkflowExecutionCompletedResponse = new global::Soenneker.Mistral.OpenApiClient.Models.WorkflowExecutionCompletedResponse();
             }
-            else if("WorkflowExecutionContinuedAsNewResponse".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("WORKFLOW_EXECUTION_CONTINUED_AS_NEW".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.WorkflowExecutionContinuedAsNewResponse = new global::Soenneker.Mistral.OpenApiClient.Models.WorkflowExecutionContinuedAsNewResponse();
             }
-            else if("WorkflowExecutionFailedResponse".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("WORKFLOW_EXECUTION_FAILED".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.WorkflowExecutionFailedResponse = new global::Soenneker.Mistral.OpenApiClient.Models.WorkflowExecutionFailedResponse();
             }
-            else if("WorkflowExecutionStartedResponse".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("WORKFLOW_EXECUTION_STARTED".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.WorkflowExecutionStartedResponse = new global::Soenneker.Mistral.OpenApiClient.Models.WorkflowExecutionStartedResponse();
             }
-            else if("WorkflowTaskFailedResponse".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("WORKFLOW_TASK_FAILED".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.WorkflowTaskFailedResponse = new global::Soenneker.Mistral.OpenApiClient.Models.WorkflowTaskFailedResponse();
             }
-            else if("WorkflowTaskTimedOutResponse".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("WORKFLOW_TASK_TIMED_OUT".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.WorkflowTaskTimedOutResponse = new global::Soenneker.Mistral.OpenApiClient.Models.WorkflowTaskTimedOutResponse();
             }

@@ -36,17 +36,16 @@ namespace Soenneker.Mistral.OpenApiClient.V1.Agents.Item.Aliases
         /// <summary>
         /// Delete an existing alias for an agent.
         /// </summary>
-        /// <returns>A <see cref="Stream"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Mistral.OpenApiClient.Models.HttpValidationError">When receiving a 422 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Stream?> DeleteAsync(Action<RequestConfiguration<global::Soenneker.Mistral.OpenApiClient.V1.Agents.Item.Aliases.AliasesRequestBuilder.AliasesRequestBuilderDeleteQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task DeleteAsync(Action<RequestConfiguration<global::Soenneker.Mistral.OpenApiClient.V1.Agents.Item.Aliases.AliasesRequestBuilder.AliasesRequestBuilderDeleteQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Stream> DeleteAsync(Action<RequestConfiguration<global::Soenneker.Mistral.OpenApiClient.V1.Agents.Item.Aliases.AliasesRequestBuilder.AliasesRequestBuilderDeleteQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task DeleteAsync(Action<RequestConfiguration<global::Soenneker.Mistral.OpenApiClient.V1.Agents.Item.Aliases.AliasesRequestBuilder.AliasesRequestBuilderDeleteQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
@@ -54,7 +53,7 @@ namespace Soenneker.Mistral.OpenApiClient.V1.Agents.Item.Aliases
             {
                 { "422", global::Soenneker.Mistral.OpenApiClient.Models.HttpValidationError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
+            await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Retrieve all version aliases for a specific agent.
@@ -177,12 +176,16 @@ namespace Soenneker.Mistral.OpenApiClient.V1.Agents.Item.Aliases
         {
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
+            #pragma warning disable CS1591
             [QueryParameter("alias")]
             public string? Alias { get; set; }
+            #pragma warning restore CS1591
 #nullable restore
 #else
+            #pragma warning disable CS1591
             [QueryParameter("alias")]
             public string Alias { get; set; }
+            #pragma warning restore CS1591
 #endif
         }
         /// <summary>
@@ -193,15 +196,21 @@ namespace Soenneker.Mistral.OpenApiClient.V1.Agents.Item.Aliases
         {
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
+            #pragma warning disable CS1591
             [QueryParameter("alias")]
             public string? Alias { get; set; }
+            #pragma warning restore CS1591
 #nullable restore
 #else
+            #pragma warning disable CS1591
             [QueryParameter("alias")]
             public string Alias { get; set; }
+            #pragma warning restore CS1591
 #endif
+            #pragma warning disable CS1591
             [QueryParameter("version")]
             public int? Version { get; set; }
+            #pragma warning restore CS1591
         }
     }
 }

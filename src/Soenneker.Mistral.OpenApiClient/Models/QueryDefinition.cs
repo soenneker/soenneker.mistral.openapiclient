@@ -41,10 +41,10 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         /// <summary>Output JSON schema of the query&apos;s model</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.QueryDefinitionOutputSchema? OutputSchema { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.QueryDefinitionOutputSchemaProperty? OutputSchema { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.QueryDefinitionOutputSchema OutputSchema { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.QueryDefinitionOutputSchemaProperty OutputSchema { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Mistral.OpenApiClient.Models.QueryDefinition"/> and sets the default values.
@@ -74,7 +74,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "input_schema", n => { InputSchema = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.QueryDefinitionInputSchemaProperty>(global::Soenneker.Mistral.OpenApiClient.Models.QueryDefinitionInputSchemaProperty.CreateFromDiscriminatorValue); } },
                 { "name", n => { Name = n.GetStringValue(); } },
-                { "output_schema", n => { OutputSchema = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.QueryDefinitionOutputSchema>(global::Soenneker.Mistral.OpenApiClient.Models.QueryDefinitionOutputSchema.CreateFromDiscriminatorValue); } },
+                { "output_schema", n => { OutputSchema = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.QueryDefinitionOutputSchemaProperty>(global::Soenneker.Mistral.OpenApiClient.Models.QueryDefinitionOutputSchemaProperty.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -87,7 +87,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             writer.WriteStringValue("description", Description);
             writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.QueryDefinitionInputSchemaProperty>("input_schema", InputSchema);
             writer.WriteStringValue("name", Name);
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.QueryDefinitionOutputSchema>("output_schema", OutputSchema);
+            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.QueryDefinitionOutputSchemaProperty>("output_schema", OutputSchema);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

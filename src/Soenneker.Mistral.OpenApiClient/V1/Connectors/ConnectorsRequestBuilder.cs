@@ -5,7 +5,7 @@ using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
 using Soenneker.Mistral.OpenApiClient.Models;
 using Soenneker.Mistral.OpenApiClient.V1.Connectors.Item;
-using Soenneker.Mistral.OpenApiClient.V1.Connectors.WithConnectorIdId;
+using Soenneker.Mistral.OpenApiClient.V1.Connectors.WithConnectorIdOrNameId;
 using Soenneker.Mistral.OpenApiClient.V1.Connectors.WithConnectorIdOrNameIdOrName;
 using System.Collections.Generic;
 using System.IO;
@@ -138,14 +138,14 @@ namespace Soenneker.Mistral.OpenApiClient.V1.Connectors
             return requestInfo;
         }
         /// <summary>
-        /// Builds and executes requests for operations under \v1\connectors\{connectorId}#id
+        /// Builds and executes requests for operations under \v1\connectors\{connectorIdOrName}#id
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Mistral.OpenApiClient.V1.Connectors.WithConnectorIdId.WithConnectorIdIdRequestBuilder"/></returns>
-        /// <param name="connectorId">The path parameter: connectorId</param>
-        public global::Soenneker.Mistral.OpenApiClient.V1.Connectors.WithConnectorIdId.WithConnectorIdIdRequestBuilder WithConnectorIdId(Guid? connectorId)
+        /// <returns>A <see cref="global::Soenneker.Mistral.OpenApiClient.V1.Connectors.WithConnectorIdOrNameId.WithConnectorIdOrNameIdRequestBuilder"/></returns>
+        /// <param name="connectorIdOrName">The path parameter: connectorIdOrName</param>
+        public global::Soenneker.Mistral.OpenApiClient.V1.Connectors.WithConnectorIdOrNameId.WithConnectorIdOrNameIdRequestBuilder WithConnectorIdOrNameId(Guid? connectorIdOrName)
         {
-            if(ReferenceEquals(connectorId, null)) throw new ArgumentNullException(nameof(connectorId));
-            return new global::Soenneker.Mistral.OpenApiClient.V1.Connectors.WithConnectorIdId.WithConnectorIdIdRequestBuilder(PathParameters, RequestAdapter, connectorId);
+            if(ReferenceEquals(connectorIdOrName, null)) throw new ArgumentNullException(nameof(connectorIdOrName));
+            return new global::Soenneker.Mistral.OpenApiClient.V1.Connectors.WithConnectorIdOrNameId.WithConnectorIdOrNameIdRequestBuilder(PathParameters, RequestAdapter, connectorIdOrName);
         }
         /// <summary>
         /// Builds and executes requests for operations under \v1\connectors\{connectorIdOrName}#idOrName
@@ -174,23 +174,33 @@ namespace Soenneker.Mistral.OpenApiClient.V1.Connectors
         {
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
+            #pragma warning disable CS1591
             [QueryParameter("cursor")]
             public string? Cursor { get; set; }
+            #pragma warning restore CS1591
 #nullable restore
 #else
+            #pragma warning disable CS1591
             [QueryParameter("cursor")]
             public string Cursor { get; set; }
+            #pragma warning restore CS1591
 #endif
+            #pragma warning disable CS1591
             [QueryParameter("page_size")]
             public int? PageSize { get; set; }
+            #pragma warning restore CS1591
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
+            #pragma warning disable CS1591
             [QueryParameter("query_filters")]
             public string? QueryFilters { get; set; }
+            #pragma warning restore CS1591
 #nullable restore
 #else
+            #pragma warning disable CS1591
             [QueryParameter("query_filters")]
             public string QueryFilters { get; set; }
+            #pragma warning restore CS1591
 #endif
         }
     }

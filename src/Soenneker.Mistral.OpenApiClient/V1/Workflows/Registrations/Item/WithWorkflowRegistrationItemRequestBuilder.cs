@@ -4,6 +4,7 @@ using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
 using Soenneker.Mistral.OpenApiClient.Models;
+using Soenneker.Mistral.OpenApiClient.V1.Workflows.Registrations.Item.Execute;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
@@ -17,6 +18,11 @@ namespace Soenneker.Mistral.OpenApiClient.V1.Workflows.Registrations.Item
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class WithWorkflowRegistrationItemRequestBuilder : BaseRequestBuilder
     {
+        /// <summary>The execute property</summary>
+        public global::Soenneker.Mistral.OpenApiClient.V1.Workflows.Registrations.Item.Execute.ExecuteRequestBuilder Execute
+        {
+            get => new global::Soenneker.Mistral.OpenApiClient.V1.Workflows.Registrations.Item.Execute.ExecuteRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Mistral.OpenApiClient.V1.Workflows.Registrations.Item.WithWorkflowRegistrationItemRequestBuilder"/> and sets the default values.
         /// </summary>

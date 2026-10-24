@@ -97,12 +97,16 @@ namespace Soenneker.Mistral.OpenApiClient.V1.Connectors.Item.Tools.Item.Call
         {
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
+            #pragma warning disable CS1591
             [QueryParameter("credentials_name")]
             public string? CredentialsName { get; set; }
+            #pragma warning restore CS1591
 #nullable restore
 #else
+            #pragma warning disable CS1591
             [QueryParameter("credentials_name")]
             public string CredentialsName { get; set; }
+            #pragma warning restore CS1591
 #endif
         }
     }

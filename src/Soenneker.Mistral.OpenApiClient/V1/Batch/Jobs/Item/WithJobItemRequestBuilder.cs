@@ -40,7 +40,7 @@ namespace Soenneker.Mistral.OpenApiClient.V1.Batch.Jobs.Item
         {
         }
         /// <summary>
-        /// &quot;Get a batch job details by its UUID.Args:    inline: If True, return results inline in the response.&quot;
+        /// Get a batch job details by its UUID.Args:    inline: If True, return results inline in the response.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Mistral.OpenApiClient.Models.BatchJobOut"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -58,7 +58,7 @@ namespace Soenneker.Mistral.OpenApiClient.V1.Batch.Jobs.Item
             return await RequestAdapter.SendAsync<global::Soenneker.Mistral.OpenApiClient.Models.BatchJobOut>(requestInfo, global::Soenneker.Mistral.OpenApiClient.Models.BatchJobOut.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// &quot;Get a batch job details by its UUID.Args:    inline: If True, return results inline in the response.&quot;
+        /// Get a batch job details by its UUID.Args:    inline: If True, return results inline in the response.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -86,13 +86,15 @@ namespace Soenneker.Mistral.OpenApiClient.V1.Batch.Jobs.Item
             return new global::Soenneker.Mistral.OpenApiClient.V1.Batch.Jobs.Item.WithJobItemRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// &quot;Get a batch job details by its UUID.Args:    inline: If True, return results inline in the response.&quot;
+        /// Get a batch job details by its UUID.Args:    inline: If True, return results inline in the response.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class WithJobItemRequestBuilderGetQueryParameters 
         {
+            #pragma warning disable CS1591
             [QueryParameter("inline")]
             public bool? Inline { get; set; }
+            #pragma warning restore CS1591
         }
     }
 }

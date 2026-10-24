@@ -65,9 +65,9 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         public global::Soenneker.Mistral.OpenApiClient.Models.ToolExecutionEntryName Name { get; set; }
 #endif
         /// <summary>The object property</summary>
-        public global::Soenneker.Mistral.OpenApiClient.Models.ToolExecutionEntry_object? Object { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.ToolExecutionEntryObject? Object { get; set; }
         /// <summary>The type property</summary>
-        public global::Soenneker.Mistral.OpenApiClient.Models.ToolExecutionEntry_type? Type { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.ToolExecutionType? Type { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -94,8 +94,8 @@ namespace Soenneker.Mistral.OpenApiClient.Models
                 { "info", n => { Info = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ToolExecutionEntryInfo>(global::Soenneker.Mistral.OpenApiClient.Models.ToolExecutionEntryInfo.CreateFromDiscriminatorValue); } },
                 { "model", n => { Model = n.GetStringValue(); } },
                 { "name", n => { Name = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ToolExecutionEntryName>(global::Soenneker.Mistral.OpenApiClient.Models.ToolExecutionEntryName.CreateFromDiscriminatorValue); } },
-                { "object", n => { Object = n.GetEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.ToolExecutionEntry_object>(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.ToolExecutionEntry_type>(); } },
+                { "object", n => { Object = n.GetEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.ToolExecutionEntryObject>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.ToolExecutionType>(); } },
             };
         }
         /// <summary>
@@ -113,8 +113,8 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ToolExecutionEntryInfo>("info", Info);
             writer.WriteStringValue("model", Model);
             writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ToolExecutionEntryName>("name", Name);
-            writer.WriteEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.ToolExecutionEntry_object>("object", Object);
-            writer.WriteEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.ToolExecutionEntry_type>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.ToolExecutionEntryObject>("object", Object);
+            writer.WriteEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.ToolExecutionType>("type", Type);
         }
     }
 }

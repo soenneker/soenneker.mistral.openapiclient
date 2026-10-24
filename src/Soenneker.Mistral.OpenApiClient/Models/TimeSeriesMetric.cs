@@ -18,10 +18,10 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         /// <summary>The value property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public UntypedNode? Value { get; set; }
+        public List<UntypedNode>? Value { get; set; }
 #nullable restore
 #else
-        public UntypedNode Value { get; set; }
+        public List<UntypedNode> Value { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Mistral.OpenApiClient.Models.TimeSeriesMetric"/> and sets the default values.
@@ -48,7 +48,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "value", n => { Value = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "value", n => { Value = n.GetCollectionOfPrimitiveValues<UntypedNode>()?.AsList(); } },
             };
         }
         /// <summary>
@@ -58,7 +58,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<UntypedNode>("value", Value);
+            writer.WriteCollectionOfPrimitiveValues<UntypedNode>("value", Value);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

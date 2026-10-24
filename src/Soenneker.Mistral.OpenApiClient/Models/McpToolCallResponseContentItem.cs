@@ -61,12 +61,28 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         public static global::Soenneker.Mistral.OpenApiClient.Models.McpToolCallResponseContentItem CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
+            var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
             var result = new global::Soenneker.Mistral.OpenApiClient.Models.McpToolCallResponseContentItem();
-            result.AudioContent = new global::Soenneker.Mistral.OpenApiClient.Models.AudioContent();
-            result.EmbeddedResource = new global::Soenneker.Mistral.OpenApiClient.Models.EmbeddedResource();
-            result.ImageContent = new global::Soenneker.Mistral.OpenApiClient.Models.ImageContent();
-            result.ResourceLink = new global::Soenneker.Mistral.OpenApiClient.Models.ResourceLink();
-            result.TextContent = new global::Soenneker.Mistral.OpenApiClient.Models.TextContent();
+            if("audio".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.AudioContent = new global::Soenneker.Mistral.OpenApiClient.Models.AudioContent();
+            }
+            else if("resource".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.EmbeddedResource = new global::Soenneker.Mistral.OpenApiClient.Models.EmbeddedResource();
+            }
+            else if("image".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.ImageContent = new global::Soenneker.Mistral.OpenApiClient.Models.ImageContent();
+            }
+            else if("resource_link".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.ResourceLink = new global::Soenneker.Mistral.OpenApiClient.Models.ResourceLink();
+            }
+            else if("text".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.TextContent = new global::Soenneker.Mistral.OpenApiClient.Models.TextContent();
+            }
             return result;
         }
         /// <summary>
@@ -75,9 +91,25 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            if(AudioContent != null || EmbeddedResource != null || ImageContent != null || ResourceLink != null || TextContent != null)
+            if(AudioContent != null)
             {
-                return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(AudioContent, EmbeddedResource, ImageContent, ResourceLink, TextContent);
+                return AudioContent.GetFieldDeserializers();
+            }
+            else if(EmbeddedResource != null)
+            {
+                return EmbeddedResource.GetFieldDeserializers();
+            }
+            else if(ImageContent != null)
+            {
+                return ImageContent.GetFieldDeserializers();
+            }
+            else if(ResourceLink != null)
+            {
+                return ResourceLink.GetFieldDeserializers();
+            }
+            else if(TextContent != null)
+            {
+                return TextContent.GetFieldDeserializers();
             }
             return new Dictionary<string, Action<IParseNode>>();
         }
@@ -88,7 +120,26 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.AudioContent>(null, AudioContent, EmbeddedResource, ImageContent, ResourceLink, TextContent);
+            if(AudioContent != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.AudioContent>(null, AudioContent);
+            }
+            else if(EmbeddedResource != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.EmbeddedResource>(null, EmbeddedResource);
+            }
+            else if(ImageContent != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ImageContent>(null, ImageContent);
+            }
+            else if(ResourceLink != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ResourceLink>(null, ResourceLink);
+            }
+            else if(TextContent != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.TextContent>(null, TextContent);
+            }
         }
     }
 }

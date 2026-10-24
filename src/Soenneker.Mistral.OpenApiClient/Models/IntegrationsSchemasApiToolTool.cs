@@ -12,8 +12,72 @@ namespace Soenneker.Mistral.OpenApiClient.Models
     public partial class IntegrationsSchemasApiToolTool : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>The active property</summary>
+        public bool? Active { get; set; }
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The created_at property</summary>
+        public DateTimeOffset? CreatedAt { get; set; }
+        /// <summary>The description property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Description { get; set; }
+#nullable restore
+#else
+        public string Description { get; set; }
+#endif
+        /// <summary>The execution_config property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Mistral.OpenApiClient.Models.ExecutionConfig? ExecutionConfig { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Mistral.OpenApiClient.Models.ExecutionConfig ExecutionConfig { get; set; }
+#endif
+        /// <summary>The id property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Id { get; set; }
+#nullable restore
+#else
+        public string Id { get; set; }
+#endif
+        /// <summary>The jsonschema property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Mistral.OpenApiClient.Models.IntegrationsSchemasApiToolToolJsonschemaProperty? Jsonschema { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Mistral.OpenApiClient.Models.IntegrationsSchemasApiToolToolJsonschemaProperty Jsonschema { get; set; }
+#endif
+        /// <summary>The locale property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Mistral.OpenApiClient.Models.IntegrationsSchemasTurbineToolLocale? Locale { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Mistral.OpenApiClient.Models.IntegrationsSchemasTurbineToolLocale Locale { get; set; }
+#endif
+        /// <summary>The modified_at property</summary>
+        public DateTimeOffset? ModifiedAt { get; set; }
+        /// <summary>The name property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Name { get; set; }
+#nullable restore
+#else
+        public string Name { get; set; }
+#endif
+        /// <summary>The system_prompt property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? SystemPrompt { get; set; }
+#nullable restore
+#else
+        public string SystemPrompt { get; set; }
+#endif
+        /// <summary>The visibility property</summary>
+        public global::Soenneker.Mistral.OpenApiClient.Models.ResourceVisibility? Visibility { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Mistral.OpenApiClient.Models.IntegrationsSchemasApiToolTool"/> and sets the default values.
         /// </summary>
@@ -39,6 +103,17 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "active", n => { Active = n.GetBoolValue(); } },
+                { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
+                { "description", n => { Description = n.GetStringValue(); } },
+                { "execution_config", n => { ExecutionConfig = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ExecutionConfig>(global::Soenneker.Mistral.OpenApiClient.Models.ExecutionConfig.CreateFromDiscriminatorValue); } },
+                { "id", n => { Id = n.GetStringValue(); } },
+                { "jsonschema", n => { Jsonschema = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.IntegrationsSchemasApiToolToolJsonschemaProperty>(global::Soenneker.Mistral.OpenApiClient.Models.IntegrationsSchemasApiToolToolJsonschemaProperty.CreateFromDiscriminatorValue); } },
+                { "locale", n => { Locale = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.IntegrationsSchemasTurbineToolLocale>(global::Soenneker.Mistral.OpenApiClient.Models.IntegrationsSchemasTurbineToolLocale.CreateFromDiscriminatorValue); } },
+                { "modified_at", n => { ModifiedAt = n.GetDateTimeOffsetValue(); } },
+                { "name", n => { Name = n.GetStringValue(); } },
+                { "system_prompt", n => { SystemPrompt = n.GetStringValue(); } },
+                { "visibility", n => { Visibility = n.GetEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.ResourceVisibility>(); } },
             };
         }
         /// <summary>
@@ -48,6 +123,17 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteBoolValue("active", Active);
+            writer.WriteDateTimeOffsetValue("created_at", CreatedAt);
+            writer.WriteStringValue("description", Description);
+            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ExecutionConfig>("execution_config", ExecutionConfig);
+            writer.WriteStringValue("id", Id);
+            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.IntegrationsSchemasApiToolToolJsonschemaProperty>("jsonschema", Jsonschema);
+            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.IntegrationsSchemasTurbineToolLocale>("locale", Locale);
+            writer.WriteDateTimeOffsetValue("modified_at", ModifiedAt);
+            writer.WriteStringValue("name", Name);
+            writer.WriteStringValue("system_prompt", SystemPrompt);
+            writer.WriteEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.ResourceVisibility>("visibility", Visibility);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

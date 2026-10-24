@@ -14,7 +14,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The workflow_registration property</summary>
+        /// <summary>The workflow registration</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Mistral.OpenApiClient.Models.WorkflowRegistrationWithWorkerStatus? WorkflowRegistration { get; set; }
@@ -22,13 +22,13 @@ namespace Soenneker.Mistral.OpenApiClient.Models
 #else
         public global::Soenneker.Mistral.OpenApiClient.Models.WorkflowRegistrationWithWorkerStatus WorkflowRegistration { get; set; }
 #endif
-        /// <summary>The workflow_version property</summary>
+        /// <summary>Deprecated: use workflow_registration</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.WorkflowRegistrationWithWorkerStatus? WorkflowVersion { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.WorkflowRegistrationWithWorkerStatus? WorkflowVersion { get; private set; }
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.WorkflowRegistrationWithWorkerStatus WorkflowVersion { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.WorkflowRegistrationWithWorkerStatus WorkflowVersion { get; private set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Mistral.OpenApiClient.Models.WorkflowRegistrationGetResponse"/> and sets the default values.
@@ -67,7 +67,6 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.WorkflowRegistrationWithWorkerStatus>("workflow_registration", WorkflowRegistration);
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.WorkflowRegistrationWithWorkerStatus>("workflow_version", WorkflowVersion);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

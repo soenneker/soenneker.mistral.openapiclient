@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.Mistral.OpenApiClient.Models
 {
     /// <summary>
-    /// &quot;Response from calling an MCP tool.We override mcp_types.CallToolResult because:- Models only support `content`, not `structuredContent` at top level- Downstream consumers (le-chat, etc.) need structuredContent/isError/_meta via metadataSYNC: Keep in sync with Harmattan (orchestrator) for harmonized tool result processing.&quot;
+    /// Response from calling an MCP tool.We override mcp_types.CallToolResult because:- Models only support `content`, not `structuredContent` at top level- Downstream consumers (le-chat, etc.) need structuredContent/isError/_meta via metadataSYNC: Keep in sync with Harmattan (orchestrator) for harmonized tool result processing.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class McpToolCallResponse : IAdditionalDataHolder, IParsable
@@ -26,10 +26,10 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         /// <summary>The metadata property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.McpToolCallResponseMetadata? Metadata { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.McpToolCallMetadata? Metadata { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.McpToolCallResponseMetadata Metadata { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.McpToolCallMetadata Metadata { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Mistral.OpenApiClient.Models.McpToolCallResponse"/> and sets the default values.
@@ -57,7 +57,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "content", n => { Content = n.GetCollectionOfObjectValues<global::Soenneker.Mistral.OpenApiClient.Models.McpToolCallResponseContentItem>(global::Soenneker.Mistral.OpenApiClient.Models.McpToolCallResponseContentItem.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "metadata", n => { Metadata = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.McpToolCallResponseMetadata>(global::Soenneker.Mistral.OpenApiClient.Models.McpToolCallResponseMetadata.CreateFromDiscriminatorValue); } },
+                { "metadata", n => { Metadata = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.McpToolCallMetadata>(global::Soenneker.Mistral.OpenApiClient.Models.McpToolCallMetadata.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -68,7 +68,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfObjectValues<global::Soenneker.Mistral.OpenApiClient.Models.McpToolCallResponseContentItem>("content", Content);
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.McpToolCallResponseMetadata>("metadata", Metadata);
+            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.McpToolCallMetadata>("metadata", Metadata);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

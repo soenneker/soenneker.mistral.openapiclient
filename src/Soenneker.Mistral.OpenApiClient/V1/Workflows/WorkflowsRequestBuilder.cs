@@ -59,14 +59,14 @@ namespace Soenneker.Mistral.OpenApiClient.V1.Workflows
         }
         /// <summary>Gets an item from the Soenneker.Mistral.OpenApiClient.v1.workflows.item collection</summary>
         /// <param name="position">Unique identifier of the item</param>
-        /// <returns>A <see cref="global::Soenneker.Mistral.OpenApiClient.V1.Workflows.Item.WorkflowIdentifierItemRequestBuilder"/></returns>
-        public global::Soenneker.Mistral.OpenApiClient.V1.Workflows.Item.WorkflowIdentifierItemRequestBuilder this[string position]
+        /// <returns>A <see cref="global::Soenneker.Mistral.OpenApiClient.V1.Workflows.Item.WithWorkflowNameItemRequestBuilder"/></returns>
+        public global::Soenneker.Mistral.OpenApiClient.V1.Workflows.Item.WithWorkflowNameItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
-                urlTplParams.Add("workflowIdentifier%2Did", position);
-                return new global::Soenneker.Mistral.OpenApiClient.V1.Workflows.Item.WorkflowIdentifierItemRequestBuilder(urlTplParams, RequestAdapter);
+                urlTplParams.Add("workflowName", position);
+                return new global::Soenneker.Mistral.OpenApiClient.V1.Workflows.Item.WithWorkflowNameItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>

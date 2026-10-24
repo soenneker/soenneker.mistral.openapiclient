@@ -15,7 +15,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Replace operation</summary>
-        public global::Soenneker.Mistral.OpenApiClient.Models.JsonPatchReplace_op? Op { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.ReplaceOp? Op { get; set; }
         /// <summary>A JSON Pointer (RFC 6901) identifying the target location within the document. Can be a string path (e.g., &apos;/foo/bar&apos;), &apos;/&apos;, &apos;&apos;, or an empty list [] for root-level operations.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -27,10 +27,10 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         /// <summary>The value to use for the operation</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.JsonPatchReplaceValue? Value { get; set; }
+        public UntypedNode? Value { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.JsonPatchReplaceValue Value { get; set; }
+        public UntypedNode Value { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Mistral.OpenApiClient.Models.JsonPatchReplace"/> and sets the default values.
@@ -57,9 +57,9 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "op", n => { Op = n.GetEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.JsonPatchReplace_op>(); } },
+                { "op", n => { Op = n.GetEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.ReplaceOp>(); } },
                 { "path", n => { Path = n.GetStringValue(); } },
-                { "value", n => { Value = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.JsonPatchReplaceValue>(global::Soenneker.Mistral.OpenApiClient.Models.JsonPatchReplaceValue.CreateFromDiscriminatorValue); } },
+                { "value", n => { Value = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -69,9 +69,9 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.JsonPatchReplace_op>("op", Op);
+            writer.WriteEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.ReplaceOp>("op", Op);
             writer.WriteStringValue("path", Path);
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.JsonPatchReplaceValue>("value", Value);
+            writer.WriteObjectValue<UntypedNode>("value", Value);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

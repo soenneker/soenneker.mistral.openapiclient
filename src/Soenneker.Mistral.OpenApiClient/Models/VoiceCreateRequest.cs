@@ -78,10 +78,10 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         /// <summary>The tags property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.VoiceCreateRequestTags? Tags { get; set; }
+        public List<string>? Tags { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.VoiceCreateRequestTags Tags { get; set; }
+        public List<string> Tags { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Mistral.OpenApiClient.Models.VoiceCreateRequest"/> and sets the default values.
@@ -118,7 +118,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
                 { "sample_audio", n => { SampleAudio = n.GetStringValue(); } },
                 { "sample_filename", n => { SampleFilename = n.GetStringValue(); } },
                 { "slug", n => { Slug = n.GetStringValue(); } },
-                { "tags", n => { Tags = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.VoiceCreateRequestTags>(global::Soenneker.Mistral.OpenApiClient.Models.VoiceCreateRequestTags.CreateFromDiscriminatorValue); } },
+                { "tags", n => { Tags = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
             };
         }
         /// <summary>
@@ -137,7 +137,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             writer.WriteStringValue("sample_audio", SampleAudio);
             writer.WriteStringValue("sample_filename", SampleFilename);
             writer.WriteStringValue("slug", Slug);
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.VoiceCreateRequestTags>("tags", Tags);
+            writer.WriteCollectionOfPrimitiveValues<string>("tags", Tags);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -12,7 +12,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
     public partial class ModelConversation : IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>White-listed arguments from the completion API</summary>
+        /// <summary>Completion arguments that will be used to generate assistant responses. Can be overridden at each message request.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Mistral.OpenApiClient.Models.CompletionArgs? CompletionArgs { get; set; }
@@ -33,10 +33,10 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         /// <summary>The guardrails property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.ModelConversationGuardrails? Guardrails { get; set; }
+        public List<global::Soenneker.Mistral.OpenApiClient.Models.GuardrailConfig>? Guardrails { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.ModelConversationGuardrails Guardrails { get; set; }
+        public List<global::Soenneker.Mistral.OpenApiClient.Models.GuardrailConfig> Guardrails { get; set; }
 #endif
         /// <summary>The id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -79,7 +79,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         public string Name { get; set; }
 #endif
         /// <summary>The object property</summary>
-        public global::Soenneker.Mistral.OpenApiClient.Models.ModelConversation_object? Object { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.ModelConversationObject? Object { get; set; }
         /// <summary>List of tools which are available to the model during the conversation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -111,13 +111,13 @@ namespace Soenneker.Mistral.OpenApiClient.Models
                 { "completion_args", n => { CompletionArgs = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.CompletionArgs>(global::Soenneker.Mistral.OpenApiClient.Models.CompletionArgs.CreateFromDiscriminatorValue); } },
                 { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
                 { "description", n => { Description = n.GetStringValue(); } },
-                { "guardrails", n => { Guardrails = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ModelConversationGuardrails>(global::Soenneker.Mistral.OpenApiClient.Models.ModelConversationGuardrails.CreateFromDiscriminatorValue); } },
+                { "guardrails", n => { Guardrails = n.GetCollectionOfObjectValues<global::Soenneker.Mistral.OpenApiClient.Models.GuardrailConfig>(global::Soenneker.Mistral.OpenApiClient.Models.GuardrailConfig.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "instructions", n => { Instructions = n.GetStringValue(); } },
                 { "metadata", n => { Metadata = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ModelConversationMetadata>(global::Soenneker.Mistral.OpenApiClient.Models.ModelConversationMetadata.CreateFromDiscriminatorValue); } },
                 { "model", n => { Model = n.GetStringValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
-                { "object", n => { Object = n.GetEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.ModelConversation_object>(); } },
+                { "object", n => { Object = n.GetEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.ModelConversationObject>(); } },
                 { "tools", n => { Tools = n.GetCollectionOfObjectValues<global::Soenneker.Mistral.OpenApiClient.Models.ModelConversationToolsItem>(global::Soenneker.Mistral.OpenApiClient.Models.ModelConversationToolsItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
             };
@@ -132,13 +132,13 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.CompletionArgs>("completion_args", CompletionArgs);
             writer.WriteDateTimeOffsetValue("created_at", CreatedAt);
             writer.WriteStringValue("description", Description);
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ModelConversationGuardrails>("guardrails", Guardrails);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Mistral.OpenApiClient.Models.GuardrailConfig>("guardrails", Guardrails);
             writer.WriteStringValue("id", Id);
             writer.WriteStringValue("instructions", Instructions);
             writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ModelConversationMetadata>("metadata", Metadata);
             writer.WriteStringValue("model", Model);
             writer.WriteStringValue("name", Name);
-            writer.WriteEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.ModelConversation_object>("object", Object);
+            writer.WriteEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.ModelConversationObject>("object", Object);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Mistral.OpenApiClient.Models.ModelConversationToolsItem>("tools", Tools);
             writer.WriteDateTimeOffsetValue("updated_at", UpdatedAt);
         }

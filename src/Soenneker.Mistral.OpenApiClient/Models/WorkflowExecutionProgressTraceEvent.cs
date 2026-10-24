@@ -52,7 +52,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
 #endif
         /// <summary>The start time of the event in milliseconds since the Unix epoch</summary>
         public int? StartTimeUnixMs { get; set; }
-        /// <summary>The status property</summary>
+        /// <summary>The progress message</summary>
         public global::Soenneker.Mistral.OpenApiClient.Models.EventProgressStatus? Status { get; set; }
         /// <summary>The timestamp of the event in nanoseconds since the Unix epoch</summary>
         public int? TimestampUnixNano { get; set; }
@@ -65,6 +65,8 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         {
             AdditionalData = new Dictionary<string, object>();
             Internal = false;
+            Status = global::Soenneker.Mistral.OpenApiClient.Models.EventProgressStatus.Running;
+            Type = global::Soenneker.Mistral.OpenApiClient.Models.EventType.EventProgress;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

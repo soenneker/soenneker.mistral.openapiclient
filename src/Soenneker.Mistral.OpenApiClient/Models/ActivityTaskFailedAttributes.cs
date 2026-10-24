@@ -25,7 +25,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The final attempt number that failed (1-indexed).</summary>
         public int? Attempt { get; set; }
-        /// <summary>Represents an error or exception that occurred during execution.</summary>
+        /// <summary>Details about the failure that caused the activity to fail.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Mistral.OpenApiClient.Models.Failure? Failure { get; set; }

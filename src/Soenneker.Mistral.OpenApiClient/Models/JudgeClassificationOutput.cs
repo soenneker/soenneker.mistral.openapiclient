@@ -23,7 +23,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         public List<global::Soenneker.Mistral.OpenApiClient.Models.JudgeClassificationOutputOption> Options { get; set; }
 #endif
         /// <summary>The type property</summary>
-        public global::Soenneker.Mistral.OpenApiClient.Models.JudgeClassificationOutput_type? Type { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.ClassificationType? Type { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Mistral.OpenApiClient.Models.JudgeClassificationOutput"/> and sets the default values.
         /// </summary>
@@ -50,7 +50,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "options", n => { Options = n.GetCollectionOfObjectValues<global::Soenneker.Mistral.OpenApiClient.Models.JudgeClassificationOutputOption>(global::Soenneker.Mistral.OpenApiClient.Models.JudgeClassificationOutputOption.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.JudgeClassificationOutput_type>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.ClassificationType>(); } },
             };
         }
         /// <summary>
@@ -61,7 +61,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfObjectValues<global::Soenneker.Mistral.OpenApiClient.Models.JudgeClassificationOutputOption>("options", Options);
-            writer.WriteEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.JudgeClassificationOutput_type>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.ClassificationType>("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.Mistral.OpenApiClient.Models
 {
     /// <summary>
-    /// Composed type wrapper for classes <see cref="global::Soenneker.Mistral.OpenApiClient.Models.ImageUrl"/>, <see cref="global::Soenneker.Mistral.OpenApiClient.Models.ImageUrlChunkImageUrlBranch2"/>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Mistral.OpenApiClient.Models.ImageUrl"/>, <see cref="string"/>
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ImageUrlChunkImageUrl : IComposedTypeWrapper, IParsable
@@ -21,13 +21,13 @@ namespace Soenneker.Mistral.OpenApiClient.Models
 #else
         public global::Soenneker.Mistral.OpenApiClient.Models.ImageUrl ImageUrl { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Mistral.OpenApiClient.Models.ImageUrlChunkImageUrlBranch2"/></summary>
+        /// <summary>Composed type representation for type <see cref="string"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.ImageUrlChunkImageUrlBranch2? ImageUrlChunkImageUrlBranch2 { get; set; }
+        public string? String { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.ImageUrlChunkImageUrlBranch2 ImageUrlChunkImageUrlBranch2 { get; set; }
+        public string String { get; set; }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -38,8 +38,13 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             var result = new global::Soenneker.Mistral.OpenApiClient.Models.ImageUrlChunkImageUrl();
-            result.ImageUrl = new global::Soenneker.Mistral.OpenApiClient.Models.ImageUrl();
-            result.ImageUrlChunkImageUrlBranch2 = new global::Soenneker.Mistral.OpenApiClient.Models.ImageUrlChunkImageUrlBranch2();
+            if(parseNode.GetStringValue() is string stringValue)
+            {
+                result.String = stringValue;
+            }
+            else {
+                result.ImageUrl = new global::Soenneker.Mistral.OpenApiClient.Models.ImageUrl();
+            }
             return result;
         }
         /// <summary>
@@ -48,9 +53,9 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            if(ImageUrl != null || ImageUrlChunkImageUrlBranch2 != null)
+            if(ImageUrl != null)
             {
-                return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(ImageUrl, ImageUrlChunkImageUrlBranch2);
+                return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(ImageUrl);
             }
             return new Dictionary<string, Action<IParseNode>>();
         }
@@ -61,7 +66,13 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ImageUrl>(null, ImageUrl, ImageUrlChunkImageUrlBranch2);
+            if(String != null)
+            {
+                writer.WriteStringValue(null, String);
+            }
+            else {
+                writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ImageUrl>(null, ImageUrl);
+            }
         }
     }
 }

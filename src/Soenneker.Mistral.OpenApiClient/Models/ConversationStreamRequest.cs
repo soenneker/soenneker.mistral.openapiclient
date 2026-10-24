@@ -33,10 +33,10 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         /// <summary>The completion_args property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.ConversationRequestBaseCompletionArgs? CompletionArgs { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.CompletionArgs? CompletionArgs { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.ConversationRequestBaseCompletionArgs CompletionArgs { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.CompletionArgs CompletionArgs { get; set; }
 #endif
         /// <summary>The description property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -49,10 +49,10 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         /// <summary>The guardrails property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.ConversationRequestBaseGuardrails? Guardrails { get; set; }
+        public List<global::Soenneker.Mistral.OpenApiClient.Models.GuardrailConfig>? Guardrails { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.ConversationRequestBaseGuardrails Guardrails { get; set; }
+        public List<global::Soenneker.Mistral.OpenApiClient.Models.GuardrailConfig> Guardrails { get; set; }
 #endif
         /// <summary>The handoff_execution property</summary>
         public global::Soenneker.Mistral.OpenApiClient.Models.ConversationRequestHandoffExecution? HandoffExecution { get; set; }
@@ -72,7 +72,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
 #else
         public string Instructions { get; set; }
 #endif
-        /// <summary>The metadata property</summary>
+        /// <summary>Custom type for metadata with embedded validation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Mistral.OpenApiClient.Models.ConversationRequestBaseMetadata? Metadata { get; set; }
@@ -103,10 +103,10 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         /// <summary>The tools property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.ConversationRequestBaseTools? Tools { get; set; }
+        public List<global::Soenneker.Mistral.OpenApiClient.Models.ConversationRequestBaseToolsItem>? Tools { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.ConversationRequestBaseTools Tools { get; set; }
+        public List<global::Soenneker.Mistral.OpenApiClient.Models.ConversationRequestBaseToolsItem> Tools { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Mistral.OpenApiClient.Models.ConversationStreamRequest"/> and sets the default values.
@@ -114,6 +114,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         public ConversationStreamRequest()
         {
             AdditionalData = new Dictionary<string, object>();
+            Stream = true;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -135,9 +136,9 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             {
                 { "agent_id", n => { AgentId = n.GetStringValue(); } },
                 { "agent_version", n => { AgentVersion = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ConversationRequestBaseAgentVersion>(global::Soenneker.Mistral.OpenApiClient.Models.ConversationRequestBaseAgentVersion.CreateFromDiscriminatorValue); } },
-                { "completion_args", n => { CompletionArgs = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ConversationRequestBaseCompletionArgs>(global::Soenneker.Mistral.OpenApiClient.Models.ConversationRequestBaseCompletionArgs.CreateFromDiscriminatorValue); } },
+                { "completion_args", n => { CompletionArgs = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.CompletionArgs>(global::Soenneker.Mistral.OpenApiClient.Models.CompletionArgs.CreateFromDiscriminatorValue); } },
                 { "description", n => { Description = n.GetStringValue(); } },
-                { "guardrails", n => { Guardrails = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ConversationRequestBaseGuardrails>(global::Soenneker.Mistral.OpenApiClient.Models.ConversationRequestBaseGuardrails.CreateFromDiscriminatorValue); } },
+                { "guardrails", n => { Guardrails = n.GetCollectionOfObjectValues<global::Soenneker.Mistral.OpenApiClient.Models.GuardrailConfig>(global::Soenneker.Mistral.OpenApiClient.Models.GuardrailConfig.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "handoff_execution", n => { HandoffExecution = n.GetEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.ConversationRequestHandoffExecution>(); } },
                 { "inputs", n => { Inputs = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ConversationInputs>(global::Soenneker.Mistral.OpenApiClient.Models.ConversationInputs.CreateFromDiscriminatorValue); } },
                 { "instructions", n => { Instructions = n.GetStringValue(); } },
@@ -146,7 +147,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "store", n => { Store = n.GetBoolValue(); } },
                 { "stream", n => { Stream = n.GetBoolValue(); } },
-                { "tools", n => { Tools = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ConversationRequestBaseTools>(global::Soenneker.Mistral.OpenApiClient.Models.ConversationRequestBaseTools.CreateFromDiscriminatorValue); } },
+                { "tools", n => { Tools = n.GetCollectionOfObjectValues<global::Soenneker.Mistral.OpenApiClient.Models.ConversationRequestBaseToolsItem>(global::Soenneker.Mistral.OpenApiClient.Models.ConversationRequestBaseToolsItem.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
         /// <summary>
@@ -158,9 +159,9 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("agent_id", AgentId);
             writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ConversationRequestBaseAgentVersion>("agent_version", AgentVersion);
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ConversationRequestBaseCompletionArgs>("completion_args", CompletionArgs);
+            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.CompletionArgs>("completion_args", CompletionArgs);
             writer.WriteStringValue("description", Description);
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ConversationRequestBaseGuardrails>("guardrails", Guardrails);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Mistral.OpenApiClient.Models.GuardrailConfig>("guardrails", Guardrails);
             writer.WriteEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.ConversationRequestHandoffExecution>("handoff_execution", HandoffExecution);
             writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ConversationInputs>("inputs", Inputs);
             writer.WriteStringValue("instructions", Instructions);
@@ -169,7 +170,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             writer.WriteStringValue("name", Name);
             writer.WriteBoolValue("store", Store);
             writer.WriteBoolValue("stream", Stream);
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ConversationRequestBaseTools>("tools", Tools);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Mistral.OpenApiClient.Models.ConversationRequestBaseToolsItem>("tools", Tools);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

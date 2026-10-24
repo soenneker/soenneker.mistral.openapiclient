@@ -23,13 +23,13 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         /// <summary>The tool_configuration property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.DocumentLibraryToolToolConfiguration? ToolConfiguration { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.ToolConfiguration? ToolConfiguration { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.DocumentLibraryToolToolConfiguration ToolConfiguration { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.ToolConfiguration ToolConfiguration { get; set; }
 #endif
         /// <summary>The type property</summary>
-        public global::Soenneker.Mistral.OpenApiClient.Models.DocumentLibraryToolType? Type { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.DocumentLibraryType? Type { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -49,8 +49,8 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "library_ids", n => { LibraryIds = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "tool_configuration", n => { ToolConfiguration = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.DocumentLibraryToolToolConfiguration>(global::Soenneker.Mistral.OpenApiClient.Models.DocumentLibraryToolToolConfiguration.CreateFromDiscriminatorValue); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.DocumentLibraryToolType>(); } },
+                { "tool_configuration", n => { ToolConfiguration = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ToolConfiguration>(global::Soenneker.Mistral.OpenApiClient.Models.ToolConfiguration.CreateFromDiscriminatorValue); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.DocumentLibraryType>(); } },
             };
         }
         /// <summary>
@@ -61,8 +61,8 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfPrimitiveValues<string>("library_ids", LibraryIds);
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.DocumentLibraryToolToolConfiguration>("tool_configuration", ToolConfiguration);
-            writer.WriteEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.DocumentLibraryToolType>("type", Type);
+            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ToolConfiguration>("tool_configuration", ToolConfiguration);
+            writer.WriteEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.DocumentLibraryType>("type", Type);
         }
     }
 }

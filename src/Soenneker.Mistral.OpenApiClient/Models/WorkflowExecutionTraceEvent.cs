@@ -51,6 +51,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         {
             AdditionalData = new Dictionary<string, object>();
             Internal = false;
+            Type = global::Soenneker.Mistral.OpenApiClient.Models.EventType.EventValue;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

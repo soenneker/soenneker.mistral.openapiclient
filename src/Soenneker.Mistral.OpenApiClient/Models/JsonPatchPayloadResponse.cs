@@ -16,7 +16,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Discriminator indicating this is a JSON Patch payload.</summary>
-        public global::Soenneker.Mistral.OpenApiClient.Models.JsonPatchPayloadResponse_type? Type { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.JsonPatchType? Type { get; set; }
         /// <summary>The list of JSON Patch operations to apply in order.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -50,7 +50,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.JsonPatchPayloadResponse_type>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.JsonPatchType>(); } },
                 { "value", n => { Value = n.GetCollectionOfObjectValues<global::Soenneker.Mistral.OpenApiClient.Models.JsonPatchPayloadResponseValueItem>(global::Soenneker.Mistral.OpenApiClient.Models.JsonPatchPayloadResponseValueItem.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
@@ -61,7 +61,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.JsonPatchPayloadResponse_type>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.JsonPatchType>("type", Type);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Mistral.OpenApiClient.Models.JsonPatchPayloadResponseValueItem>("value", Value);
             writer.WriteAdditionalData(AdditionalData);
         }

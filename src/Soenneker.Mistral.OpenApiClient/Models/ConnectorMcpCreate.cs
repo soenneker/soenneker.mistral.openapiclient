@@ -17,10 +17,10 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         /// <summary>Optional additional authentication data for the connector.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.ConnectorMcpCreateAuthData? AuthData { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.AuthData? AuthData { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.ConnectorMcpCreateAuthData AuthData { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.AuthData AuthData { get; set; }
 #endif
         /// <summary>The description of the connector.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -33,10 +33,10 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         /// <summary>Optional organization-level headers to be sent with the request to the mcp server.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.ConnectorMcpCreateHeaders? Headers { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.ConnectorMcpCreateHeadersProperty? Headers { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.ConnectorMcpCreateHeaders Headers { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.ConnectorMcpCreateHeadersProperty Headers { get; set; }
 #endif
         /// <summary>The optional url of the icon you want to associate to the connector.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -70,7 +70,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
 #else
         public string SystemPrompt { get; set; }
 #endif
-        /// <summary>The visibility property</summary>
+        /// <summary>Visibility of the connector. Use &apos;shared_workspace&apos; for workspace scoped connectors, or &apos;private&apos; for private connectors.</summary>
         public global::Soenneker.Mistral.OpenApiClient.Models.ResourceVisibility? Visibility { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Mistral.OpenApiClient.Models.ConnectorMcpCreate"/> and sets the default values.
@@ -78,6 +78,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         public ConnectorMcpCreate()
         {
             AdditionalData = new Dictionary<string, object>();
+            Visibility = global::Soenneker.Mistral.OpenApiClient.Models.ResourceVisibility.SharedOrg;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -97,9 +98,9 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "auth_data", n => { AuthData = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ConnectorMcpCreateAuthData>(global::Soenneker.Mistral.OpenApiClient.Models.ConnectorMcpCreateAuthData.CreateFromDiscriminatorValue); } },
+                { "auth_data", n => { AuthData = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.AuthData>(global::Soenneker.Mistral.OpenApiClient.Models.AuthData.CreateFromDiscriminatorValue); } },
                 { "description", n => { Description = n.GetStringValue(); } },
-                { "headers", n => { Headers = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ConnectorMcpCreateHeaders>(global::Soenneker.Mistral.OpenApiClient.Models.ConnectorMcpCreateHeaders.CreateFromDiscriminatorValue); } },
+                { "headers", n => { Headers = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ConnectorMcpCreateHeadersProperty>(global::Soenneker.Mistral.OpenApiClient.Models.ConnectorMcpCreateHeadersProperty.CreateFromDiscriminatorValue); } },
                 { "icon_url", n => { IconUrl = n.GetStringValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "server", n => { Server = n.GetStringValue(); } },
@@ -114,9 +115,9 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ConnectorMcpCreateAuthData>("auth_data", AuthData);
+            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.AuthData>("auth_data", AuthData);
             writer.WriteStringValue("description", Description);
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ConnectorMcpCreateHeaders>("headers", Headers);
+            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ConnectorMcpCreateHeadersProperty>("headers", Headers);
             writer.WriteStringValue("icon_url", IconUrl);
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("server", Server);

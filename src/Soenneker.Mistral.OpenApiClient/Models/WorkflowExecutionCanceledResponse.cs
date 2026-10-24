@@ -15,7 +15,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Attributes for workflow execution canceled events.</summary>
+        /// <summary>Event-specific attributes.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Mistral.OpenApiClient.Models.WorkflowExecutionCanceledAttributes? Attributes { get; set; }
@@ -34,7 +34,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         /// <summary>Unix timestamp in nanoseconds when the event was created.</summary>
         public int? EventTimestamp { get; set; }
         /// <summary>Event type discriminator.</summary>
-        public global::Soenneker.Mistral.OpenApiClient.Models.WorkflowExecutionCanceledResponse_event_type? EventType { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.WorkflowExecutionCanceledEventType? EventType { get; set; }
         /// <summary>Execution ID of the parent workflow that initiated this execution. If this is a root workflow, this field is not set.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -103,7 +103,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
                 { "attributes", n => { Attributes = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.WorkflowExecutionCanceledAttributes>(global::Soenneker.Mistral.OpenApiClient.Models.WorkflowExecutionCanceledAttributes.CreateFromDiscriminatorValue); } },
                 { "event_id", n => { EventId = n.GetStringValue(); } },
                 { "event_timestamp", n => { EventTimestamp = n.GetIntValue(); } },
-                { "event_type", n => { EventType = n.GetEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.WorkflowExecutionCanceledResponse_event_type>(); } },
+                { "event_type", n => { EventType = n.GetEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.WorkflowExecutionCanceledEventType>(); } },
                 { "parent_workflow_exec_id", n => { ParentWorkflowExecId = n.GetStringValue(); } },
                 { "root_workflow_exec_id", n => { RootWorkflowExecId = n.GetStringValue(); } },
                 { "workflow_exec_id", n => { WorkflowExecId = n.GetStringValue(); } },
@@ -121,7 +121,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.WorkflowExecutionCanceledAttributes>("attributes", Attributes);
             writer.WriteStringValue("event_id", EventId);
             writer.WriteIntValue("event_timestamp", EventTimestamp);
-            writer.WriteEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.WorkflowExecutionCanceledResponse_event_type>("event_type", EventType);
+            writer.WriteEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.WorkflowExecutionCanceledEventType>("event_type", EventType);
             writer.WriteStringValue("parent_workflow_exec_id", ParentWorkflowExecId);
             writer.WriteStringValue("root_workflow_exec_id", RootWorkflowExecId);
             writer.WriteStringValue("workflow_exec_id", WorkflowExecId);

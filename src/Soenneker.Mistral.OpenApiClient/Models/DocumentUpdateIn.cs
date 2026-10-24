@@ -17,10 +17,10 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         /// <summary>The attributes property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.DocumentUpdateInAttributes? Attributes { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.DocumentUpdateInAttributesProperty? Attributes { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.DocumentUpdateInAttributes Attributes { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.DocumentUpdateInAttributesProperty Attributes { get; set; }
 #endif
         /// <summary>The name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -55,7 +55,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "attributes", n => { Attributes = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.DocumentUpdateInAttributes>(global::Soenneker.Mistral.OpenApiClient.Models.DocumentUpdateInAttributes.CreateFromDiscriminatorValue); } },
+                { "attributes", n => { Attributes = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.DocumentUpdateInAttributesProperty>(global::Soenneker.Mistral.OpenApiClient.Models.DocumentUpdateInAttributesProperty.CreateFromDiscriminatorValue); } },
                 { "name", n => { Name = n.GetStringValue(); } },
             };
         }
@@ -66,7 +66,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.DocumentUpdateInAttributes>("attributes", Attributes);
+            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.DocumentUpdateInAttributesProperty>("attributes", Attributes);
             writer.WriteStringValue("name", Name);
             writer.WriteAdditionalData(AdditionalData);
         }

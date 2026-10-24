@@ -39,10 +39,10 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         /// <summary>Workflow of the workflow registration</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.WorkflowRegistrationWithWorkerStatusWorkflow? Workflow { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.Workflow? Workflow { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.WorkflowRegistrationWithWorkerStatusWorkflow Workflow { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.Workflow Workflow { get; set; }
 #endif
         /// <summary>Workflow ID of the workflow</summary>
         public Guid? WorkflowId { get; set; }
@@ -77,7 +77,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
                 { "definition", n => { Definition = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.WorkflowCodeDefinition>(global::Soenneker.Mistral.OpenApiClient.Models.WorkflowCodeDefinition.CreateFromDiscriminatorValue); } },
                 { "id", n => { Id = n.GetGuidValue(); } },
                 { "task_queue", n => { TaskQueue = n.GetStringValue(); } },
-                { "workflow", n => { Workflow = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.WorkflowRegistrationWithWorkerStatusWorkflow>(global::Soenneker.Mistral.OpenApiClient.Models.WorkflowRegistrationWithWorkerStatusWorkflow.CreateFromDiscriminatorValue); } },
+                { "workflow", n => { Workflow = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.Workflow>(global::Soenneker.Mistral.OpenApiClient.Models.Workflow.CreateFromDiscriminatorValue); } },
                 { "workflow_id", n => { WorkflowId = n.GetGuidValue(); } },
             };
         }
@@ -93,7 +93,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.WorkflowCodeDefinition>("definition", Definition);
             writer.WriteGuidValue("id", Id);
             writer.WriteStringValue("task_queue", TaskQueue);
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.WorkflowRegistrationWithWorkerStatusWorkflow>("workflow", Workflow);
+            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.Workflow>("workflow", Workflow);
             writer.WriteGuidValue("workflow_id", WorkflowId);
             writer.WriteAdditionalData(AdditionalData);
         }

@@ -55,7 +55,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         /// <summary>The max_context_length property</summary>
         public int? MaxContextLength { get; set; }
         /// <summary>The model_type property</summary>
-        public global::Soenneker.Mistral.OpenApiClient.Models.CompletionFtModelOut_model_type? ModelType { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.CompletionModelType? ModelType { get; set; }
         /// <summary>The name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -65,7 +65,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         public string Name { get; set; }
 #endif
         /// <summary>The object property</summary>
-        public global::Soenneker.Mistral.OpenApiClient.Models.CompletionFtModelOut_object? Object { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.CompletionFtModelOutObject? Object { get; set; }
         /// <summary>The owned_by property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -132,9 +132,9 @@ namespace Soenneker.Mistral.OpenApiClient.Models
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "job", n => { Job = n.GetGuidValue(); } },
                 { "max_context_length", n => { MaxContextLength = n.GetIntValue(); } },
-                { "model_type", n => { ModelType = n.GetEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.CompletionFtModelOut_model_type>(); } },
+                { "model_type", n => { ModelType = n.GetEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.CompletionModelType>(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
-                { "object", n => { Object = n.GetEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.CompletionFtModelOut_object>(); } },
+                { "object", n => { Object = n.GetEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.CompletionFtModelOutObject>(); } },
                 { "owned_by", n => { OwnedBy = n.GetStringValue(); } },
                 { "root", n => { Root = n.GetStringValue(); } },
                 { "root_version", n => { RootVersion = n.GetStringValue(); } },
@@ -156,9 +156,9 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             writer.WriteStringValue("id", Id);
             writer.WriteGuidValue("job", Job);
             writer.WriteIntValue("max_context_length", MaxContextLength);
-            writer.WriteEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.CompletionFtModelOut_model_type>("model_type", ModelType);
+            writer.WriteEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.CompletionModelType>("model_type", ModelType);
             writer.WriteStringValue("name", Name);
-            writer.WriteEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.CompletionFtModelOut_object>("object", Object);
+            writer.WriteEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.CompletionFtModelOutObject>("object", Object);
             writer.WriteStringValue("owned_by", OwnedBy);
             writer.WriteStringValue("root", Root);
             writer.WriteStringValue("root_version", RootVersion);

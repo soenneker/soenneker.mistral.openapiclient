@@ -24,13 +24,13 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         /// <summary>The guardrails property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.ConversationResponseGuardrails? Guardrails { get; set; }
+        public List<global::Soenneker.Mistral.OpenApiClient.Models.ConversationResponseGuardrailsItemProperty>? Guardrails { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.ConversationResponseGuardrails Guardrails { get; set; }
+        public List<global::Soenneker.Mistral.OpenApiClient.Models.ConversationResponseGuardrailsItemProperty> Guardrails { get; set; }
 #endif
         /// <summary>The object property</summary>
-        public global::Soenneker.Mistral.OpenApiClient.Models.ConversationResponse_object? Object { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.ConversationResponseObject? Object { get; set; }
         /// <summary>The outputs property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -66,8 +66,8 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "conversation_id", n => { ConversationId = n.GetStringValue(); } },
-                { "guardrails", n => { Guardrails = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ConversationResponseGuardrails>(global::Soenneker.Mistral.OpenApiClient.Models.ConversationResponseGuardrails.CreateFromDiscriminatorValue); } },
-                { "object", n => { Object = n.GetEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.ConversationResponse_object>(); } },
+                { "guardrails", n => { Guardrails = n.GetCollectionOfObjectValues<global::Soenneker.Mistral.OpenApiClient.Models.ConversationResponseGuardrailsItemProperty>(global::Soenneker.Mistral.OpenApiClient.Models.ConversationResponseGuardrailsItemProperty.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "object", n => { Object = n.GetEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.ConversationResponseObject>(); } },
                 { "outputs", n => { Outputs = n.GetCollectionOfObjectValues<global::Soenneker.Mistral.OpenApiClient.Models.ConversationResponseOutputsItem>(global::Soenneker.Mistral.OpenApiClient.Models.ConversationResponseOutputsItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "usage", n => { Usage = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ConversationUsageInfo>(global::Soenneker.Mistral.OpenApiClient.Models.ConversationUsageInfo.CreateFromDiscriminatorValue); } },
             };
@@ -80,8 +80,8 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("conversation_id", ConversationId);
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ConversationResponseGuardrails>("guardrails", Guardrails);
-            writer.WriteEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.ConversationResponse_object>("object", Object);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Mistral.OpenApiClient.Models.ConversationResponseGuardrailsItemProperty>("guardrails", Guardrails);
+            writer.WriteEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.ConversationResponseObject>("object", Object);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Mistral.OpenApiClient.Models.ConversationResponseOutputsItem>("outputs", Outputs);
             writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ConversationUsageInfo>("usage", Usage);
         }

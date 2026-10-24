@@ -90,25 +90,35 @@ namespace Soenneker.Mistral.OpenApiClient.V1.Agents.Pages
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class PagesRequestBuilderGetQueryParameters 
         {
+            #pragma warning disable CS1591
             [QueryParameter("deployment_chat")]
             public bool? DeploymentChat { get; set; }
+            #pragma warning restore CS1591
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
+            #pragma warning disable CS1591
             [QueryParameter("id")]
             public string? Id { get; set; }
+            #pragma warning restore CS1591
 #nullable restore
 #else
+            #pragma warning disable CS1591
             [QueryParameter("id")]
             public string Id { get; set; }
+            #pragma warning restore CS1591
 #endif
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
+            #pragma warning disable CS1591
             [QueryParameter("metadata")]
             public string? Metadata { get; set; }
+            #pragma warning restore CS1591
 #nullable restore
 #else
+            #pragma warning disable CS1591
             [QueryParameter("metadata")]
             public string Metadata { get; set; }
+            #pragma warning restore CS1591
 #endif
             /// <summary>Filter by agent name</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -145,12 +155,16 @@ namespace Soenneker.Mistral.OpenApiClient.V1.Agents.Pages
 #endif
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
+            #pragma warning disable CS1591
             [QueryParameter("sources")]
-            public string? Sources { get; set; }
+            public global::Soenneker.Mistral.OpenApiClient.Models.RequestSource[]? Sources { get; set; }
+            #pragma warning restore CS1591
 #nullable restore
 #else
+            #pragma warning disable CS1591
             [QueryParameter("sources")]
-            public string Sources { get; set; }
+            public global::Soenneker.Mistral.OpenApiClient.Models.RequestSource[] Sources { get; set; }
+            #pragma warning restore CS1591
 #endif
         }
     }

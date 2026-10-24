@@ -15,7 +15,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         /// <summary>The file_id property</summary>
         public Guid? FileId { get; set; }
         /// <summary>The type property</summary>
-        public global::Soenneker.Mistral.OpenApiClient.Models.FileChunk_type? Type { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.FileType? Type { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -35,7 +35,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "file_id", n => { FileId = n.GetGuidValue(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.FileChunk_type>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.FileType>(); } },
             };
         }
         /// <summary>
@@ -46,7 +46,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteGuidValue("file_id", FileId);
-            writer.WriteEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.FileChunk_type>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.FileType>("type", Type);
         }
     }
 }

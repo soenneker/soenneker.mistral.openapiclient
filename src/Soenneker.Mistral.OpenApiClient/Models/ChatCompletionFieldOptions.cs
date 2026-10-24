@@ -17,10 +17,10 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         /// <summary>The options property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.ChatCompletionFieldOptionsOptions? Options { get; set; }
+        public List<string>? Options { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.ChatCompletionFieldOptionsOptions Options { get; set; }
+        public List<string> Options { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Mistral.OpenApiClient.Models.ChatCompletionFieldOptions"/> and sets the default values.
@@ -47,7 +47,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "options", n => { Options = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ChatCompletionFieldOptionsOptions>(global::Soenneker.Mistral.OpenApiClient.Models.ChatCompletionFieldOptionsOptions.CreateFromDiscriminatorValue); } },
+                { "options", n => { Options = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
             };
         }
         /// <summary>
@@ -57,7 +57,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ChatCompletionFieldOptionsOptions>("options", Options);
+            writer.WriteCollectionOfPrimitiveValues<string>("options", Options);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -105,22 +105,32 @@ namespace Soenneker.Mistral.OpenApiClient.V1.Connectors.Item.Tools
         {
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
+            #pragma warning disable CS1591
             [QueryParameter("credentials_name")]
             public string? CredentialsName { get; set; }
+            #pragma warning restore CS1591
 #nullable restore
 #else
+            #pragma warning disable CS1591
             [QueryParameter("credentials_name")]
             public string CredentialsName { get; set; }
+            #pragma warning restore CS1591
 #endif
+            #pragma warning disable CS1591
             [QueryParameter("page")]
             public int? Page { get; set; }
+            #pragma warning restore CS1591
+            #pragma warning disable CS1591
             [QueryParameter("page_size")]
             public int? PageSize { get; set; }
+            #pragma warning restore CS1591
             /// <summary>Return a simplified payload with only name, description, annotations, and a compact inputSchema.</summary>
             [QueryParameter("pretty")]
             public bool? Pretty { get; set; }
+            #pragma warning disable CS1591
             [QueryParameter("refresh")]
             public bool? Refresh { get; set; }
+            #pragma warning restore CS1591
         }
     }
 }

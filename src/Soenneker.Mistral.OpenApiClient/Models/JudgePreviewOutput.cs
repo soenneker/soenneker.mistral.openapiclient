@@ -43,7 +43,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             {
                 result.JudgeClassificationOutput = new global::Soenneker.Mistral.OpenApiClient.Models.JudgeClassificationOutput();
             }
-            else if("JudgeRegressionOutput".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("REGRESSION".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.JudgeRegressionOutput = new global::Soenneker.Mistral.OpenApiClient.Models.JudgeRegressionOutput();
             }

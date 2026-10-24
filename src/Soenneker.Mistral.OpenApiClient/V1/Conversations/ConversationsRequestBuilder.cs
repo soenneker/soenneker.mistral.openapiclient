@@ -50,17 +50,17 @@ namespace Soenneker.Mistral.OpenApiClient.V1.Conversations
         /// <summary>
         /// Retrieve a list of conversation entities sorted by creation time.
         /// </summary>
-        /// <returns>A List&lt;global::Soenneker.Mistral.OpenApiClient.Models.ResponseV1ConversationsListItem&gt;</returns>
+        /// <returns>A List&lt;global::Soenneker.Mistral.OpenApiClient.Models.ResponseV1ConversationsListSchemaItem&gt;</returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Mistral.OpenApiClient.Models.HttpValidationError">When receiving a 422 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<List<global::Soenneker.Mistral.OpenApiClient.Models.ResponseV1ConversationsListItem>?> GetAsync(Action<RequestConfiguration<global::Soenneker.Mistral.OpenApiClient.V1.Conversations.ConversationsRequestBuilder.ConversationsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<List<global::Soenneker.Mistral.OpenApiClient.Models.ResponseV1ConversationsListSchemaItem>?> GetAsync(Action<RequestConfiguration<global::Soenneker.Mistral.OpenApiClient.V1.Conversations.ConversationsRequestBuilder.ConversationsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<List<global::Soenneker.Mistral.OpenApiClient.Models.ResponseV1ConversationsListItem>> GetAsync(Action<RequestConfiguration<global::Soenneker.Mistral.OpenApiClient.V1.Conversations.ConversationsRequestBuilder.ConversationsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<List<global::Soenneker.Mistral.OpenApiClient.Models.ResponseV1ConversationsListSchemaItem>> GetAsync(Action<RequestConfiguration<global::Soenneker.Mistral.OpenApiClient.V1.Conversations.ConversationsRequestBuilder.ConversationsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
@@ -68,7 +68,7 @@ namespace Soenneker.Mistral.OpenApiClient.V1.Conversations
             {
                 { "422", global::Soenneker.Mistral.OpenApiClient.Models.HttpValidationError.CreateFromDiscriminatorValue },
             };
-            var collectionResult = await RequestAdapter.SendCollectionAsync<global::Soenneker.Mistral.OpenApiClient.Models.ResponseV1ConversationsListItem>(requestInfo, global::Soenneker.Mistral.OpenApiClient.Models.ResponseV1ConversationsListItem.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            var collectionResult = await RequestAdapter.SendCollectionAsync<global::Soenneker.Mistral.OpenApiClient.Models.ResponseV1ConversationsListSchemaItem>(requestInfo, global::Soenneker.Mistral.OpenApiClient.Models.ResponseV1ConversationsListSchemaItem.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
             return collectionResult?.AsList();
         }
         /// <summary>
@@ -164,17 +164,25 @@ namespace Soenneker.Mistral.OpenApiClient.V1.Conversations
         {
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
+            #pragma warning disable CS1591
             [QueryParameter("metadata")]
             public string? Metadata { get; set; }
+            #pragma warning restore CS1591
 #nullable restore
 #else
+            #pragma warning disable CS1591
             [QueryParameter("metadata")]
             public string Metadata { get; set; }
+            #pragma warning restore CS1591
 #endif
+            #pragma warning disable CS1591
             [QueryParameter("page")]
             public int? Page { get; set; }
+            #pragma warning restore CS1591
+            #pragma warning disable CS1591
             [QueryParameter("page_size")]
             public int? PageSize { get; set; }
+            #pragma warning restore CS1591
         }
     }
 }

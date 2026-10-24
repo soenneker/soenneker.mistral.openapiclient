@@ -23,7 +23,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         public List<global::Soenneker.Mistral.OpenApiClient.Models.BatchJobOut> Data { get; set; }
 #endif
         /// <summary>The object property</summary>
-        public global::Soenneker.Mistral.OpenApiClient.Models.BatchJobsOut_object? Object { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.BatchJobsOutObject? Object { get; set; }
         /// <summary>The total property</summary>
         public int? Total { get; set; }
         /// <summary>
@@ -52,7 +52,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "data", n => { Data = n.GetCollectionOfObjectValues<global::Soenneker.Mistral.OpenApiClient.Models.BatchJobOut>(global::Soenneker.Mistral.OpenApiClient.Models.BatchJobOut.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "object", n => { Object = n.GetEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.BatchJobsOut_object>(); } },
+                { "object", n => { Object = n.GetEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.BatchJobsOutObject>(); } },
                 { "total", n => { Total = n.GetIntValue(); } },
             };
         }
@@ -64,7 +64,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfObjectValues<global::Soenneker.Mistral.OpenApiClient.Models.BatchJobOut>("data", Data);
-            writer.WriteEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.BatchJobsOut_object>("object", Object);
+            writer.WriteEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.BatchJobsOutObject>("object", Object);
             writer.WriteIntValue("total", Total);
             writer.WriteAdditionalData(AdditionalData);
         }

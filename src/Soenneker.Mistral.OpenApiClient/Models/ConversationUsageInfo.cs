@@ -17,10 +17,10 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         /// <summary>The connectors property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.ConversationUsageInfoConnectors? Connectors { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.ConversationUsageInfoConnectorsProperty? Connectors { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.ConversationUsageInfoConnectors Connectors { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.ConversationUsageInfoConnectorsProperty Connectors { get; set; }
 #endif
         /// <summary>The connector_tokens property</summary>
         public int? ConnectorTokens { get; set; }
@@ -57,7 +57,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             {
                 { "completion_tokens", n => { CompletionTokens = n.GetIntValue(); } },
                 { "connector_tokens", n => { ConnectorTokens = n.GetIntValue(); } },
-                { "connectors", n => { Connectors = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ConversationUsageInfoConnectors>(global::Soenneker.Mistral.OpenApiClient.Models.ConversationUsageInfoConnectors.CreateFromDiscriminatorValue); } },
+                { "connectors", n => { Connectors = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ConversationUsageInfoConnectorsProperty>(global::Soenneker.Mistral.OpenApiClient.Models.ConversationUsageInfoConnectorsProperty.CreateFromDiscriminatorValue); } },
                 { "prompt_tokens", n => { PromptTokens = n.GetIntValue(); } },
                 { "total_tokens", n => { TotalTokens = n.GetIntValue(); } },
             };
@@ -70,7 +70,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteIntValue("completion_tokens", CompletionTokens);
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ConversationUsageInfoConnectors>("connectors", Connectors);
+            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ConversationUsageInfoConnectorsProperty>("connectors", Connectors);
             writer.WriteIntValue("connector_tokens", ConnectorTokens);
             writer.WriteIntValue("prompt_tokens", PromptTokens);
             writer.WriteIntValue("total_tokens", TotalTokens);

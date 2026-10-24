@@ -18,18 +18,18 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         /// <summary>The annotations property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.TextContentAnnotations? Annotations { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.Annotations? Annotations { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.TextContentAnnotations Annotations { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.Annotations Annotations { get; set; }
 #endif
         /// <summary>The meta property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.TextContentMeta? Meta { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.TextContentMetaProperty? Meta { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.TextContentMeta Meta { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.TextContentMetaProperty Meta { get; set; }
 #endif
         /// <summary>The text property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -40,7 +40,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         public string Text { get; set; }
 #endif
         /// <summary>The type property</summary>
-        public global::Soenneker.Mistral.OpenApiClient.Models.TextContent_type? Type { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.TextContentType? Type { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Mistral.OpenApiClient.Models.TextContent"/> and sets the default values.
         /// </summary>
@@ -66,10 +66,10 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "annotations", n => { Annotations = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.TextContentAnnotations>(global::Soenneker.Mistral.OpenApiClient.Models.TextContentAnnotations.CreateFromDiscriminatorValue); } },
-                { "_meta", n => { Meta = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.TextContentMeta>(global::Soenneker.Mistral.OpenApiClient.Models.TextContentMeta.CreateFromDiscriminatorValue); } },
+                { "annotations", n => { Annotations = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.Annotations>(global::Soenneker.Mistral.OpenApiClient.Models.Annotations.CreateFromDiscriminatorValue); } },
+                { "_meta", n => { Meta = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.TextContentMetaProperty>(global::Soenneker.Mistral.OpenApiClient.Models.TextContentMetaProperty.CreateFromDiscriminatorValue); } },
                 { "text", n => { Text = n.GetStringValue(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.TextContent_type>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.TextContentType>(); } },
             };
         }
         /// <summary>
@@ -79,10 +79,10 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.TextContentAnnotations>("annotations", Annotations);
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.TextContentMeta>("_meta", Meta);
+            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.Annotations>("annotations", Annotations);
+            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.TextContentMetaProperty>("_meta", Meta);
             writer.WriteStringValue("text", Text);
-            writer.WriteEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.TextContent_type>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.TextContentType>("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

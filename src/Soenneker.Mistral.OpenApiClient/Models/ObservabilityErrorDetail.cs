@@ -15,13 +15,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The error_code property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.ObservabilityErrorDetailErrorCode? ErrorCode { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Mistral.OpenApiClient.Models.ObservabilityErrorDetailErrorCode ErrorCode { get; set; }
-#endif
+        public global::Soenneker.Mistral.OpenApiClient.Models.ObservabilityErrorCode? ErrorCode { get; set; }
         /// <summary>The message property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -55,7 +49,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "error_code", n => { ErrorCode = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ObservabilityErrorDetailErrorCode>(global::Soenneker.Mistral.OpenApiClient.Models.ObservabilityErrorDetailErrorCode.CreateFromDiscriminatorValue); } },
+                { "error_code", n => { ErrorCode = n.GetEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.ObservabilityErrorCode>(); } },
                 { "message", n => { Message = n.GetStringValue(); } },
             };
         }
@@ -66,7 +60,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ObservabilityErrorDetailErrorCode>("error_code", ErrorCode);
+            writer.WriteEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.ObservabilityErrorCode>("error_code", ErrorCode);
             writer.WriteStringValue("message", Message);
             writer.WriteAdditionalData(AdditionalData);
         }

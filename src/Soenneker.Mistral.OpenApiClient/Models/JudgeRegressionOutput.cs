@@ -35,7 +35,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         public string MinDescription { get; set; }
 #endif
         /// <summary>The type property</summary>
-        public global::Soenneker.Mistral.OpenApiClient.Models.JudgeRegressionOutput_type? Type { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.RegressionType? Type { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Mistral.OpenApiClient.Models.JudgeRegressionOutput"/> and sets the default values.
         /// </summary>
@@ -67,7 +67,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
                 { "max_description", n => { MaxDescription = n.GetStringValue(); } },
                 { "min", n => { Min = n.GetDoubleValue(); } },
                 { "min_description", n => { MinDescription = n.GetStringValue(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.JudgeRegressionOutput_type>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.RegressionType>(); } },
             };
         }
         /// <summary>
@@ -81,7 +81,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             writer.WriteStringValue("max_description", MaxDescription);
             writer.WriteDoubleValue("min", Min);
             writer.WriteStringValue("min_description", MinDescription);
-            writer.WriteEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.JudgeRegressionOutput_type>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.RegressionType>("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

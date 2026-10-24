@@ -12,7 +12,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
     public partial class AgentUpdateRequest : IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>White-listed arguments from the completion API</summary>
+        /// <summary>Completion arguments that will be used to generate assistant responses. Can be overridden at each message request.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Mistral.OpenApiClient.Models.CompletionArgs? CompletionArgs { get; set; }
@@ -33,18 +33,18 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         /// <summary>The guardrails property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.AgentUpdateRequestGuardrails? Guardrails { get; set; }
+        public List<global::Soenneker.Mistral.OpenApiClient.Models.GuardrailConfig>? Guardrails { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.AgentUpdateRequestGuardrails Guardrails { get; set; }
+        public List<global::Soenneker.Mistral.OpenApiClient.Models.GuardrailConfig> Guardrails { get; set; }
 #endif
         /// <summary>The handoffs property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.AgentUpdateRequestHandoffs? Handoffs { get; set; }
+        public List<string>? Handoffs { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.AgentUpdateRequestHandoffs Handoffs { get; set; }
+        public List<string> Handoffs { get; set; }
 #endif
         /// <summary>Instruction prompt the model will follow during the conversation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -54,7 +54,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
 #else
         public string Instructions { get; set; }
 #endif
-        /// <summary>The metadata property</summary>
+        /// <summary>Custom type for metadata with embedded validation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Mistral.OpenApiClient.Models.AgentUpdateRequestMetadata? Metadata { get; set; }
@@ -115,8 +115,8 @@ namespace Soenneker.Mistral.OpenApiClient.Models
                 { "completion_args", n => { CompletionArgs = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.CompletionArgs>(global::Soenneker.Mistral.OpenApiClient.Models.CompletionArgs.CreateFromDiscriminatorValue); } },
                 { "deployment_chat", n => { DeploymentChat = n.GetBoolValue(); } },
                 { "description", n => { Description = n.GetStringValue(); } },
-                { "guardrails", n => { Guardrails = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.AgentUpdateRequestGuardrails>(global::Soenneker.Mistral.OpenApiClient.Models.AgentUpdateRequestGuardrails.CreateFromDiscriminatorValue); } },
-                { "handoffs", n => { Handoffs = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.AgentUpdateRequestHandoffs>(global::Soenneker.Mistral.OpenApiClient.Models.AgentUpdateRequestHandoffs.CreateFromDiscriminatorValue); } },
+                { "guardrails", n => { Guardrails = n.GetCollectionOfObjectValues<global::Soenneker.Mistral.OpenApiClient.Models.GuardrailConfig>(global::Soenneker.Mistral.OpenApiClient.Models.GuardrailConfig.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "handoffs", n => { Handoffs = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "instructions", n => { Instructions = n.GetStringValue(); } },
                 { "metadata", n => { Metadata = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.AgentUpdateRequestMetadata>(global::Soenneker.Mistral.OpenApiClient.Models.AgentUpdateRequestMetadata.CreateFromDiscriminatorValue); } },
                 { "model", n => { Model = n.GetStringValue(); } },
@@ -135,8 +135,8 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.CompletionArgs>("completion_args", CompletionArgs);
             writer.WriteBoolValue("deployment_chat", DeploymentChat);
             writer.WriteStringValue("description", Description);
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.AgentUpdateRequestGuardrails>("guardrails", Guardrails);
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.AgentUpdateRequestHandoffs>("handoffs", Handoffs);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Mistral.OpenApiClient.Models.GuardrailConfig>("guardrails", Guardrails);
+            writer.WriteCollectionOfPrimitiveValues<string>("handoffs", Handoffs);
             writer.WriteStringValue("instructions", Instructions);
             writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.AgentUpdateRequestMetadata>("metadata", Metadata);
             writer.WriteStringValue("model", Model);

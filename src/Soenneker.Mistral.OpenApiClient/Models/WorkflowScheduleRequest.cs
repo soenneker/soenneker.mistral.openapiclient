@@ -22,7 +22,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
 #else
         public string DeploymentName { get; set; }
 #endif
-        /// <summary>Specification of the times scheduled actions may occur.The times are the union of :py:attr:`calendars`, :py:attr:`intervals`, and:py:attr:`cron_expressions` excluding anything in :py:attr:`skip`.Used for input where schedule_id is optional (can be provided or auto-generated).</summary>
+        /// <summary>The schedule definition</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Mistral.OpenApiClient.Models.ScheduleDefinition? Schedule { get; set; }
@@ -57,7 +57,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
 #else
         public string WorkflowTaskQueue { get; set; }
 #endif
-        /// <summary>&quot;Deprecated: use workflow_registration_id&quot;</summary>
+        /// <summary>Deprecated: use workflow_registration_id</summary>
         public Guid? WorkflowVersionId { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Mistral.OpenApiClient.Models.WorkflowScheduleRequest"/> and sets the default values.

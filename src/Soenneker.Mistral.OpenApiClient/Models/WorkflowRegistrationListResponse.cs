@@ -24,7 +24,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
 #else
         public List<global::Soenneker.Mistral.OpenApiClient.Models.WorkflowRegistration> WorkflowRegistrations { get; set; }
 #endif
-        /// <summary>&quot;Deprecated: use workflow_registrations&quot;</summary>
+        /// <summary>Deprecated: use workflow_registrations</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Soenneker.Mistral.OpenApiClient.Models.WorkflowRegistration>? WorkflowVersions { get; private set; }

@@ -35,7 +35,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         public string Text { get; set; }
 #endif
         /// <summary>The type property</summary>
-        public global::Soenneker.Mistral.OpenApiClient.Models.TranscriptionSegmentChunk_type? Type { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.TranscriptionSegmentType? Type { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -59,7 +59,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
                 { "speaker_id", n => { SpeakerId = n.GetStringValue(); } },
                 { "start", n => { Start = n.GetDoubleValue(); } },
                 { "text", n => { Text = n.GetStringValue(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.TranscriptionSegmentChunk_type>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.TranscriptionSegmentType>(); } },
             };
         }
         /// <summary>
@@ -74,7 +74,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             writer.WriteStringValue("speaker_id", SpeakerId);
             writer.WriteDoubleValue("start", Start);
             writer.WriteStringValue("text", Text);
-            writer.WriteEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.TranscriptionSegmentChunk_type>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.TranscriptionSegmentType>("type", Type);
         }
     }
 }

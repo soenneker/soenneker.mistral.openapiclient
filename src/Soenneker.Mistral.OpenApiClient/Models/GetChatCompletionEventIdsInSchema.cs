@@ -17,10 +17,10 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         /// <summary>The extra_fields property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.GetChatCompletionEventIdsInSchemaExtraFields? ExtraFields { get; set; }
+        public List<string>? ExtraFields { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.GetChatCompletionEventIdsInSchemaExtraFields ExtraFields { get; set; }
+        public List<string> ExtraFields { get; set; }
 #endif
         /// <summary>The search_params property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -55,7 +55,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "extra_fields", n => { ExtraFields = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.GetChatCompletionEventIdsInSchemaExtraFields>(global::Soenneker.Mistral.OpenApiClient.Models.GetChatCompletionEventIdsInSchemaExtraFields.CreateFromDiscriminatorValue); } },
+                { "extra_fields", n => { ExtraFields = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "search_params", n => { SearchParams = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.FilterPayload>(global::Soenneker.Mistral.OpenApiClient.Models.FilterPayload.CreateFromDiscriminatorValue); } },
             };
         }
@@ -66,7 +66,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.GetChatCompletionEventIdsInSchemaExtraFields>("extra_fields", ExtraFields);
+            writer.WriteCollectionOfPrimitiveValues<string>("extra_fields", ExtraFields);
             writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.FilterPayload>("search_params", SearchParams);
             writer.WriteAdditionalData(AdditionalData);
         }

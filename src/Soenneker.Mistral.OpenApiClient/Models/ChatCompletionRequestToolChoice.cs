@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.Mistral.OpenApiClient.Models
 {
     /// <summary>
-    /// Composed type wrapper for classes <see cref="global::Soenneker.Mistral.OpenApiClient.Models.ToolChoice"/>, <see cref="global::Soenneker.Mistral.OpenApiClient.Models.ToolChoiceEnumWrapper"/>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Mistral.OpenApiClient.Models.ToolChoice"/>, <see cref="global::Soenneker.Mistral.OpenApiClient.Models.ToolChoiceEnum"/>
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ChatCompletionRequestToolChoice : IComposedTypeWrapper, IParsable
@@ -21,14 +21,8 @@ namespace Soenneker.Mistral.OpenApiClient.Models
 #else
         public global::Soenneker.Mistral.OpenApiClient.Models.ToolChoice ToolChoice { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Mistral.OpenApiClient.Models.ToolChoiceEnumWrapper"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.ToolChoiceEnumWrapper? ToolChoiceEnumWrapper { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Mistral.OpenApiClient.Models.ToolChoiceEnumWrapper ToolChoiceEnumWrapper { get; set; }
-#endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Mistral.OpenApiClient.Models.ToolChoiceEnum"/></summary>
+        public global::Soenneker.Mistral.OpenApiClient.Models.ToolChoiceEnum? ToolChoiceEnum { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -38,8 +32,13 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             var result = new global::Soenneker.Mistral.OpenApiClient.Models.ChatCompletionRequestToolChoice();
-            result.ToolChoice = new global::Soenneker.Mistral.OpenApiClient.Models.ToolChoice();
-            result.ToolChoiceEnumWrapper = new global::Soenneker.Mistral.OpenApiClient.Models.ToolChoiceEnumWrapper();
+            if(parseNode.GetEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.ToolChoiceEnum>() is global::Soenneker.Mistral.OpenApiClient.Models.ToolChoiceEnum toolChoiceEnumValue)
+            {
+                result.ToolChoiceEnum = toolChoiceEnumValue;
+            }
+            else {
+                result.ToolChoice = new global::Soenneker.Mistral.OpenApiClient.Models.ToolChoice();
+            }
             return result;
         }
         /// <summary>
@@ -48,9 +47,9 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            if(ToolChoice != null || ToolChoiceEnumWrapper != null)
+            if(ToolChoice != null)
             {
-                return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(ToolChoice, ToolChoiceEnumWrapper);
+                return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(ToolChoice);
             }
             return new Dictionary<string, Action<IParseNode>>();
         }
@@ -61,7 +60,13 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ToolChoice>(null, ToolChoice, ToolChoiceEnumWrapper);
+            if(ToolChoiceEnum != null)
+            {
+                writer.WriteEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.ToolChoiceEnum>(null, ToolChoiceEnum);
+            }
+            else {
+                writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ToolChoice>(null, ToolChoice);
+            }
         }
     }
 }

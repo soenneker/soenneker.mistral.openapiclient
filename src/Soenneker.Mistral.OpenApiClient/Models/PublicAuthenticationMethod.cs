@@ -18,10 +18,10 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         /// <summary>The headers property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.PublicAuthenticationMethodHeaders? Headers { get; set; }
+        public List<global::Soenneker.Mistral.OpenApiClient.Models.ConnectorAuthenticationHeader>? Headers { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.PublicAuthenticationMethodHeaders Headers { get; set; }
+        public List<global::Soenneker.Mistral.OpenApiClient.Models.ConnectorAuthenticationHeader> Headers { get; set; }
 #endif
         /// <summary>The method_type property</summary>
         public global::Soenneker.Mistral.OpenApiClient.Models.OutboundAuthenticationType? MethodType { get; set; }
@@ -50,7 +50,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "headers", n => { Headers = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.PublicAuthenticationMethodHeaders>(global::Soenneker.Mistral.OpenApiClient.Models.PublicAuthenticationMethodHeaders.CreateFromDiscriminatorValue); } },
+                { "headers", n => { Headers = n.GetCollectionOfObjectValues<global::Soenneker.Mistral.OpenApiClient.Models.ConnectorAuthenticationHeader>(global::Soenneker.Mistral.OpenApiClient.Models.ConnectorAuthenticationHeader.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "method_type", n => { MethodType = n.GetEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.OutboundAuthenticationType>(); } },
             };
         }
@@ -61,7 +61,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.PublicAuthenticationMethodHeaders>("headers", Headers);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Mistral.OpenApiClient.Models.ConnectorAuthenticationHeader>("headers", Headers);
             writer.WriteEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.OutboundAuthenticationType>("method_type", MethodType);
             writer.WriteAdditionalData(AdditionalData);
         }

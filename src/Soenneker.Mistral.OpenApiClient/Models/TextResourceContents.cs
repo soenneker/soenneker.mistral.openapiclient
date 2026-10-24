@@ -18,10 +18,10 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         /// <summary>The meta property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.TextResourceContentsMeta? Meta { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.TextResourceContentsMetaProperty? Meta { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.TextResourceContentsMeta Meta { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.TextResourceContentsMetaProperty Meta { get; set; }
 #endif
         /// <summary>The mimeType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -72,7 +72,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "_meta", n => { Meta = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.TextResourceContentsMeta>(global::Soenneker.Mistral.OpenApiClient.Models.TextResourceContentsMeta.CreateFromDiscriminatorValue); } },
+                { "_meta", n => { Meta = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.TextResourceContentsMetaProperty>(global::Soenneker.Mistral.OpenApiClient.Models.TextResourceContentsMetaProperty.CreateFromDiscriminatorValue); } },
                 { "mimeType", n => { MimeType = n.GetStringValue(); } },
                 { "text", n => { Text = n.GetStringValue(); } },
                 { "uri", n => { Uri = n.GetStringValue(); } },
@@ -85,7 +85,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.TextResourceContentsMeta>("_meta", Meta);
+            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.TextResourceContentsMetaProperty>("_meta", Meta);
             writer.WriteStringValue("mimeType", MimeType);
             writer.WriteStringValue("text", Text);
             writer.WriteStringValue("uri", Uri);

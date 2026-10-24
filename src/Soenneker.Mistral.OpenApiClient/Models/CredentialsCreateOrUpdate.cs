@@ -18,12 +18,12 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         /// <summary>The credential data (headers, bearer_token).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.CredentialsCreateOrUpdateCredentials? Credentials { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.ConnectionCredentials? Credentials { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.CredentialsCreateOrUpdateCredentials Credentials { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.ConnectionCredentials Credentials { get; set; }
 #endif
-        /// <summary>&quot;Controls whether this credential is the default for its auth method. On creation: if no credential exists yet for this auth method, the credential is automatically set as default when is_default is true or omitted; setting is_default to false is rejected because a default must exist. If other credentials already exist, setting is_default to true promotes this credential (demoting the previous default); false or omitted creates it as non-default. On update: true promotes this credential, false is rejected if it is currently the default (promote another credential first), omitted leaves the default status unchanged.&quot;</summary>
+        /// <summary>Controls whether this credential is the default for its auth method. On creation: if no credential exists yet for this auth method, the credential is automatically set as default when is_default is true or omitted; setting is_default to false is rejected because a default must exist. If other credentials already exist, setting is_default to true promotes this credential (demoting the previous default); false or omitted creates it as non-default. On update: true promotes this credential, false is rejected if it is currently the default (promote another credential first), omitted leaves the default status unchanged.</summary>
         public bool? IsDefault { get; set; }
         /// <summary>Name of the credentials. Use this name to access or modify your credentials.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -58,7 +58,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "credentials", n => { Credentials = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.CredentialsCreateOrUpdateCredentials>(global::Soenneker.Mistral.OpenApiClient.Models.CredentialsCreateOrUpdateCredentials.CreateFromDiscriminatorValue); } },
+                { "credentials", n => { Credentials = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ConnectionCredentials>(global::Soenneker.Mistral.OpenApiClient.Models.ConnectionCredentials.CreateFromDiscriminatorValue); } },
                 { "is_default", n => { IsDefault = n.GetBoolValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
             };
@@ -70,7 +70,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.CredentialsCreateOrUpdateCredentials>("credentials", Credentials);
+            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ConnectionCredentials>("credentials", Credentials);
             writer.WriteBoolValue("is_default", IsDefault);
             writer.WriteStringValue("name", Name);
             writer.WriteAdditionalData(AdditionalData);

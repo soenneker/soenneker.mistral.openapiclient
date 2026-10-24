@@ -13,13 +13,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
     #pragma warning restore CS1591
     {
         /// <summary>The detail property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.ImageUrlDetail? Detail { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Mistral.OpenApiClient.Models.ImageUrlDetail Detail { get; set; }
-#endif
+        public global::Soenneker.Mistral.OpenApiClient.Models.ImageDetail? Detail { get; set; }
         /// <summary>The url property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -46,7 +40,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "detail", n => { Detail = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ImageUrlDetail>(global::Soenneker.Mistral.OpenApiClient.Models.ImageUrlDetail.CreateFromDiscriminatorValue); } },
+                { "detail", n => { Detail = n.GetEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.ImageDetail>(); } },
                 { "url", n => { Url = n.GetStringValue(); } },
             };
         }
@@ -57,7 +51,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ImageUrlDetail>("detail", Detail);
+            writer.WriteEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.ImageDetail>("detail", Detail);
             writer.WriteStringValue("url", Url);
         }
     }
