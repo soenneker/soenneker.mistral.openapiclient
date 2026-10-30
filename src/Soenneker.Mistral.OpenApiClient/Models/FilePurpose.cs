@@ -19,5 +19,9 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         #pragma warning disable CS1591
         Ocr,
         #pragma warning restore CS1591
+        [EnumMember(Value = "agentic_safety")]
+        #pragma warning disable CS1591
+        AgenticSafety,
+        #pragma warning restore CS1591
     }
 }

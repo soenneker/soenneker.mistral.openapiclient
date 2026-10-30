@@ -7,10 +7,11 @@ using System.IO;
 using System;
 namespace Soenneker.Mistral.OpenApiClient.Models
 {
+    /// <summary>
+    /// Optional annotations the client can use to inform how objects are used or displayed.
+    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public partial class Annotations : IAdditionalDataHolder, IParsable
-    #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
@@ -21,6 +22,14 @@ namespace Soenneker.Mistral.OpenApiClient.Models
 #nullable restore
 #else
         public List<global::Soenneker.Mistral.OpenApiClient.Models.AnnotationsAudienceItem?> Audience { get; set; }
+#endif
+        /// <summary>The lastModified property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? LastModified { get; set; }
+#nullable restore
+#else
+        public string LastModified { get; set; }
 #endif
         /// <summary>The priority property</summary>
         public double? Priority { get; set; }
@@ -50,6 +59,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "audience", n => { Audience = n.GetCollectionOfEnumValues<global::Soenneker.Mistral.OpenApiClient.Models.AnnotationsAudienceItem>()?.AsList(); } },
+                { "lastModified", n => { LastModified = n.GetStringValue(); } },
                 { "priority", n => { Priority = n.GetDoubleValue(); } },
             };
         }
@@ -61,6 +71,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfEnumValues<global::Soenneker.Mistral.OpenApiClient.Models.AnnotationsAudienceItem>("audience", Audience);
+            writer.WriteStringValue("lastModified", LastModified);
             writer.WriteDoubleValue("priority", Priority);
             writer.WriteAdditionalData(AdditionalData);
         }

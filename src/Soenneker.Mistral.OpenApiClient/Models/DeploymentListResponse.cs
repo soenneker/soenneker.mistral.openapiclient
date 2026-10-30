@@ -22,6 +22,16 @@ namespace Soenneker.Mistral.OpenApiClient.Models
 #else
         public List<global::Soenneker.Mistral.OpenApiClient.Models.DeploymentResponse> Deployments { get; set; }
 #endif
+        /// <summary>Cursor for the next page of results</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? NextCursor { get; set; }
+#nullable restore
+#else
+        public string NextCursor { get; set; }
+#endif
+        /// <summary>Workspace ID the results are scoped to</summary>
+        public Guid? WorkspaceId { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Mistral.OpenApiClient.Models.DeploymentListResponse"/> and sets the default values.
         /// </summary>
@@ -48,6 +58,8 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "deployments", n => { Deployments = n.GetCollectionOfObjectValues<global::Soenneker.Mistral.OpenApiClient.Models.DeploymentResponse>(global::Soenneker.Mistral.OpenApiClient.Models.DeploymentResponse.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "next_cursor", n => { NextCursor = n.GetStringValue(); } },
+                { "workspace_id", n => { WorkspaceId = n.GetGuidValue(); } },
             };
         }
         /// <summary>
@@ -58,6 +70,8 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfObjectValues<global::Soenneker.Mistral.OpenApiClient.Models.DeploymentResponse>("deployments", Deployments);
+            writer.WriteStringValue("next_cursor", NextCursor);
+            writer.WriteGuidValue("workspace_id", WorkspaceId);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

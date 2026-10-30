@@ -11,12 +11,22 @@ namespace Soenneker.Mistral.OpenApiClient.Models
     /// Signature region. ``content`` is the transcribed name when legible, else ``&quot;&quot;``.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class OcrSignatureBlock : IParsable
+    public partial class OcrSignatureBlock : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The bottom_right_x property</summary>
         public int? BottomRightX { get; set; }
         /// <summary>The bottom_right_y property</summary>
         public int? BottomRightY { get; set; }
+        /// <summary>Confidence scores for this block. Populated when confidence_scores_granularity is set to &apos;block&apos;.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Mistral.OpenApiClient.Models.OcrBlockConfidenceScores? ConfidenceScores { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Mistral.OpenApiClient.Models.OcrBlockConfidenceScores ConfidenceScores { get; set; }
+#endif
         /// <summary>Text/markdown/html content of this block</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -31,6 +41,13 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         public int? TopLeftY { get; set; }
         /// <summary>The type property</summary>
         public global::Soenneker.Mistral.OpenApiClient.Models.SignatureType? Type { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Mistral.OpenApiClient.Models.OcrSignatureBlock"/> and sets the default values.
+        /// </summary>
+        public OcrSignatureBlock()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -51,6 +68,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             {
                 { "bottom_right_x", n => { BottomRightX = n.GetIntValue(); } },
                 { "bottom_right_y", n => { BottomRightY = n.GetIntValue(); } },
+                { "confidence_scores", n => { ConfidenceScores = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.OcrBlockConfidenceScores>(global::Soenneker.Mistral.OpenApiClient.Models.OcrBlockConfidenceScores.CreateFromDiscriminatorValue); } },
                 { "content", n => { Content = n.GetStringValue(); } },
                 { "top_left_x", n => { TopLeftX = n.GetIntValue(); } },
                 { "top_left_y", n => { TopLeftY = n.GetIntValue(); } },
@@ -66,10 +84,12 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteIntValue("bottom_right_x", BottomRightX);
             writer.WriteIntValue("bottom_right_y", BottomRightY);
+            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.OcrBlockConfidenceScores>("confidence_scores", ConfidenceScores);
             writer.WriteStringValue("content", Content);
             writer.WriteIntValue("top_left_x", TopLeftX);
             writer.WriteIntValue("top_left_y", TopLeftY);
             writer.WriteEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.SignatureType>("type", Type);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

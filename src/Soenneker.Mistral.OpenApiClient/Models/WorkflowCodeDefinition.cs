@@ -26,6 +26,8 @@ namespace Soenneker.Mistral.OpenApiClient.Models
 #else
         public global::Soenneker.Mistral.OpenApiClient.Models.WorkflowCodeDefinitionInputSchemaProperty InputSchema { get; set; }
 #endif
+        /// <summary>Whether the workflow must run associated to a user&apos;s identity</summary>
+        public bool? OnBehalfOf { get; set; }
         /// <summary>Output schema of the workflow&apos;s run method</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -33,6 +35,14 @@ namespace Soenneker.Mistral.OpenApiClient.Models
 #nullable restore
 #else
         public global::Soenneker.Mistral.OpenApiClient.Models.WorkflowCodeDefinitionOutputSchemaProperty OutputSchema { get; set; }
+#endif
+        /// <summary>Plugin-specific metadata (e.g. connector declarations)</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Mistral.OpenApiClient.Models.WorkflowCodeDefinitionPluginMetadataProperty? PluginMetadata { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Mistral.OpenApiClient.Models.WorkflowCodeDefinitionPluginMetadataProperty PluginMetadata { get; set; }
 #endif
         /// <summary>Query handlers defined by the workflow</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -65,6 +75,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         {
             AdditionalData = new Dictionary<string, object>();
             EnforceDeterminism = false;
+            OnBehalfOf = false;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -87,7 +98,9 @@ namespace Soenneker.Mistral.OpenApiClient.Models
                 { "enforce_determinism", n => { EnforceDeterminism = n.GetBoolValue(); } },
                 { "execution_timeout", n => { ExecutionTimeout = n.GetDoubleValue(); } },
                 { "input_schema", n => { InputSchema = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.WorkflowCodeDefinitionInputSchemaProperty>(global::Soenneker.Mistral.OpenApiClient.Models.WorkflowCodeDefinitionInputSchemaProperty.CreateFromDiscriminatorValue); } },
+                { "on_behalf_of", n => { OnBehalfOf = n.GetBoolValue(); } },
                 { "output_schema", n => { OutputSchema = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.WorkflowCodeDefinitionOutputSchemaProperty>(global::Soenneker.Mistral.OpenApiClient.Models.WorkflowCodeDefinitionOutputSchemaProperty.CreateFromDiscriminatorValue); } },
+                { "plugin_metadata", n => { PluginMetadata = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.WorkflowCodeDefinitionPluginMetadataProperty>(global::Soenneker.Mistral.OpenApiClient.Models.WorkflowCodeDefinitionPluginMetadataProperty.CreateFromDiscriminatorValue); } },
                 { "queries", n => { Queries = n.GetCollectionOfObjectValues<global::Soenneker.Mistral.OpenApiClient.Models.QueryDefinition>(global::Soenneker.Mistral.OpenApiClient.Models.QueryDefinition.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "signals", n => { Signals = n.GetCollectionOfObjectValues<global::Soenneker.Mistral.OpenApiClient.Models.SignalDefinition>(global::Soenneker.Mistral.OpenApiClient.Models.SignalDefinition.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "updates", n => { Updates = n.GetCollectionOfObjectValues<global::Soenneker.Mistral.OpenApiClient.Models.UpdateDefinition>(global::Soenneker.Mistral.OpenApiClient.Models.UpdateDefinition.CreateFromDiscriminatorValue)?.AsList(); } },
@@ -103,7 +116,9 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             writer.WriteBoolValue("enforce_determinism", EnforceDeterminism);
             writer.WriteDoubleValue("execution_timeout", ExecutionTimeout);
             writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.WorkflowCodeDefinitionInputSchemaProperty>("input_schema", InputSchema);
+            writer.WriteBoolValue("on_behalf_of", OnBehalfOf);
             writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.WorkflowCodeDefinitionOutputSchemaProperty>("output_schema", OutputSchema);
+            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.WorkflowCodeDefinitionPluginMetadataProperty>("plugin_metadata", PluginMetadata);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Mistral.OpenApiClient.Models.QueryDefinition>("queries", Queries);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Mistral.OpenApiClient.Models.SignalDefinition>("signals", Signals);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Mistral.OpenApiClient.Models.UpdateDefinition>("updates", Updates);

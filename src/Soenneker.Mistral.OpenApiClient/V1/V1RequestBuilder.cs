@@ -2,11 +2,13 @@
 #pragma warning disable CS0618
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions;
+using Soenneker.Mistral.OpenApiClient.V1.Admin;
 using Soenneker.Mistral.OpenApiClient.V1.Agents;
 using Soenneker.Mistral.OpenApiClient.V1.Audio;
 using Soenneker.Mistral.OpenApiClient.V1.Batch;
 using Soenneker.Mistral.OpenApiClient.V1.Chat;
 using Soenneker.Mistral.OpenApiClient.V1.Classifications;
+using Soenneker.Mistral.OpenApiClient.V1.Client;
 using Soenneker.Mistral.OpenApiClient.V1.Connectors;
 using Soenneker.Mistral.OpenApiClient.V1.Conversations;
 using Soenneker.Mistral.OpenApiClient.V1.ConversationsStream;
@@ -19,6 +21,11 @@ using Soenneker.Mistral.OpenApiClient.V1.ModelsRequests;
 using Soenneker.Mistral.OpenApiClient.V1.Moderations;
 using Soenneker.Mistral.OpenApiClient.V1.Observability;
 using Soenneker.Mistral.OpenApiClient.V1.Ocr;
+using Soenneker.Mistral.OpenApiClient.V1.Rag;
+using Soenneker.Mistral.OpenApiClient.V1.Responses;
+using Soenneker.Mistral.OpenApiClient.V1.ServiceAccounts;
+using Soenneker.Mistral.OpenApiClient.V1.Users;
+using Soenneker.Mistral.OpenApiClient.V1.Whoami;
 using Soenneker.Mistral.OpenApiClient.V1.Workflows;
 using System.Collections.Generic;
 using System.IO;
@@ -32,6 +39,11 @@ namespace Soenneker.Mistral.OpenApiClient.V1
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class V1RequestBuilder : BaseRequestBuilder
     {
+        /// <summary>The admin property</summary>
+        public global::Soenneker.Mistral.OpenApiClient.V1.Admin.AdminRequestBuilder Admin
+        {
+            get => new global::Soenneker.Mistral.OpenApiClient.V1.Admin.AdminRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>The agents property</summary>
         public global::Soenneker.Mistral.OpenApiClient.V1.Agents.AgentsRequestBuilder Agents
         {
@@ -56,6 +68,11 @@ namespace Soenneker.Mistral.OpenApiClient.V1
         public global::Soenneker.Mistral.OpenApiClient.V1.Classifications.ClassificationsRequestBuilder Classifications
         {
             get => new global::Soenneker.Mistral.OpenApiClient.V1.Classifications.ClassificationsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The client property</summary>
+        public global::Soenneker.Mistral.OpenApiClient.V1.Client.ClientRequestBuilder Client
+        {
+            get => new global::Soenneker.Mistral.OpenApiClient.V1.Client.ClientRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The connectors property</summary>
         public global::Soenneker.Mistral.OpenApiClient.V1.Connectors.ConnectorsRequestBuilder Connectors
@@ -116,6 +133,31 @@ namespace Soenneker.Mistral.OpenApiClient.V1
         public global::Soenneker.Mistral.OpenApiClient.V1.Ocr.OcrRequestBuilder Ocr
         {
             get => new global::Soenneker.Mistral.OpenApiClient.V1.Ocr.OcrRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The rag property</summary>
+        public global::Soenneker.Mistral.OpenApiClient.V1.Rag.RagRequestBuilder Rag
+        {
+            get => new global::Soenneker.Mistral.OpenApiClient.V1.Rag.RagRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The responses property</summary>
+        public global::Soenneker.Mistral.OpenApiClient.V1.Responses.ResponsesRequestBuilder Responses
+        {
+            get => new global::Soenneker.Mistral.OpenApiClient.V1.Responses.ResponsesRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The serviceAccounts property</summary>
+        public global::Soenneker.Mistral.OpenApiClient.V1.ServiceAccounts.ServiceAccountsRequestBuilder ServiceAccounts
+        {
+            get => new global::Soenneker.Mistral.OpenApiClient.V1.ServiceAccounts.ServiceAccountsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The users property</summary>
+        public global::Soenneker.Mistral.OpenApiClient.V1.Users.UsersRequestBuilder Users
+        {
+            get => new global::Soenneker.Mistral.OpenApiClient.V1.Users.UsersRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The whoami property</summary>
+        public global::Soenneker.Mistral.OpenApiClient.V1.Whoami.WhoamiRequestBuilder Whoami
+        {
+            get => new global::Soenneker.Mistral.OpenApiClient.V1.Whoami.WhoamiRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The workflows property</summary>
         public global::Soenneker.Mistral.OpenApiClient.V1.Workflows.WorkflowsRequestBuilder Workflows

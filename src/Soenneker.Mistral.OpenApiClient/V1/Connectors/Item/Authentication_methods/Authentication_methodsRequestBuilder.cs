@@ -39,6 +39,7 @@ namespace Soenneker.Mistral.OpenApiClient.V1.Connectors.Item.Authentication_meth
         /// <returns>A List&lt;global::Soenneker.Mistral.OpenApiClient.Models.PublicAuthenticationMethod&gt;</returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="global::Soenneker.Mistral.OpenApiClient.Models.HttpValidationError">When receiving a 422 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<List<global::Soenneker.Mistral.OpenApiClient.Models.PublicAuthenticationMethod>?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -49,7 +50,11 @@ namespace Soenneker.Mistral.OpenApiClient.V1.Connectors.Item.Authentication_meth
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            var collectionResult = await RequestAdapter.SendCollectionAsync<global::Soenneker.Mistral.OpenApiClient.Models.PublicAuthenticationMethod>(requestInfo, global::Soenneker.Mistral.OpenApiClient.Models.PublicAuthenticationMethod.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
+                { "422", global::Soenneker.Mistral.OpenApiClient.Models.HttpValidationError.CreateFromDiscriminatorValue },
+            };
+            var collectionResult = await RequestAdapter.SendCollectionAsync<global::Soenneker.Mistral.OpenApiClient.Models.PublicAuthenticationMethod>(requestInfo, global::Soenneker.Mistral.OpenApiClient.Models.PublicAuthenticationMethod.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
             return collectionResult?.AsList();
         }
         /// <summary>

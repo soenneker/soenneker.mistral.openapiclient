@@ -24,9 +24,21 @@ namespace Soenneker.Mistral.OpenApiClient.Models
 #else
         public global::Soenneker.Mistral.OpenApiClient.Models.WorkflowCodeDefinition Definition { get; set; }
 #endif
+        /// <summary>Deprecated. Use deployment_name instead. Will be removed in a future release.</summary>
+        [Obsolete("")]
+        public Guid? DeploymentId { get; set; }
+        /// <summary>Name of the deployment this registration belongs to</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? DeploymentName { get; set; }
+#nullable restore
+#else
+        public string DeploymentName { get; set; }
+#endif
         /// <summary>Unique identifier of the workflow registration</summary>
         public Guid? Id { get; set; }
-        /// <summary>Project name of the workflow</summary>
+        /// <summary>Deprecated. Use deployment_name instead. Will be removed in a future release.</summary>
+        [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? TaskQueue { get; set; }
@@ -72,6 +84,8 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             {
                 { "compatible_with_chat_assistant", n => { CompatibleWithChatAssistant = n.GetBoolValue(); } },
                 { "definition", n => { Definition = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.WorkflowCodeDefinition>(global::Soenneker.Mistral.OpenApiClient.Models.WorkflowCodeDefinition.CreateFromDiscriminatorValue); } },
+                { "deployment_id", n => { DeploymentId = n.GetGuidValue(); } },
+                { "deployment_name", n => { DeploymentName = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetGuidValue(); } },
                 { "task_queue", n => { TaskQueue = n.GetStringValue(); } },
                 { "workflow", n => { Workflow = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.Workflow>(global::Soenneker.Mistral.OpenApiClient.Models.Workflow.CreateFromDiscriminatorValue); } },
@@ -87,6 +101,8 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("compatible_with_chat_assistant", CompatibleWithChatAssistant);
             writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.WorkflowCodeDefinition>("definition", Definition);
+            writer.WriteGuidValue("deployment_id", DeploymentId);
+            writer.WriteStringValue("deployment_name", DeploymentName);
             writer.WriteGuidValue("id", Id);
             writer.WriteStringValue("task_queue", TaskQueue);
             writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.Workflow>("workflow", Workflow);

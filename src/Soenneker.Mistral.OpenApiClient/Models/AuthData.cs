@@ -22,6 +22,14 @@ namespace Soenneker.Mistral.OpenApiClient.Models
 #else
         public string ClientId { get; set; }
 #endif
+        /// <summary>The client_scopes property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<string>? ClientScopes { get; set; }
+#nullable restore
+#else
+        public List<string> ClientScopes { get; set; }
+#endif
         /// <summary>The client_secret property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -56,6 +64,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "client_id", n => { ClientId = n.GetStringValue(); } },
+                { "client_scopes", n => { ClientScopes = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "client_secret", n => { ClientSecret = n.GetStringValue(); } },
             };
         }
@@ -67,6 +76,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("client_id", ClientId);
+            writer.WriteCollectionOfPrimitiveValues<string>("client_scopes", ClientScopes);
             writer.WriteStringValue("client_secret", ClientSecret);
             writer.WriteAdditionalData(AdditionalData);
         }

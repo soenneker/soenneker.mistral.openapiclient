@@ -35,10 +35,10 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         /// <summary>The results property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Mistral.OpenApiClient.Models.JudgePreview>? Results { get; set; }
+        public List<global::Soenneker.Mistral.OpenApiClient.Models.Judge>? Results { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Mistral.OpenApiClient.Models.JudgePreview> Results { get; set; }
+        public List<global::Soenneker.Mistral.OpenApiClient.Models.Judge> Results { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Mistral.OpenApiClient.Models.PaginatedResultJudgePreview"/> and sets the default values.
@@ -68,7 +68,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
                 { "count", n => { Count = n.GetIntValue(); } },
                 { "next", n => { Next = n.GetStringValue(); } },
                 { "previous", n => { Previous = n.GetStringValue(); } },
-                { "results", n => { Results = n.GetCollectionOfObjectValues<global::Soenneker.Mistral.OpenApiClient.Models.JudgePreview>(global::Soenneker.Mistral.OpenApiClient.Models.JudgePreview.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "results", n => { Results = n.GetCollectionOfObjectValues<global::Soenneker.Mistral.OpenApiClient.Models.Judge>(global::Soenneker.Mistral.OpenApiClient.Models.Judge.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
         /// <summary>
@@ -81,7 +81,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             writer.WriteIntValue("count", Count);
             writer.WriteStringValue("next", Next);
             writer.WriteStringValue("previous", Previous);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Mistral.OpenApiClient.Models.JudgePreview>("results", Results);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Mistral.OpenApiClient.Models.Judge>("results", Results);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

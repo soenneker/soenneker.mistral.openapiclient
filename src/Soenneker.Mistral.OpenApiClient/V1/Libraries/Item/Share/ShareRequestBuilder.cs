@@ -34,20 +34,20 @@ namespace Soenneker.Mistral.OpenApiClient.V1.Libraries.Item.Share
         {
         }
         /// <summary>
-        /// Given a library id, you can delete the access level of an entity. An owner cannot delete it&apos;s own access. You have to be the owner of the library to delete an acces other than yours.
+        /// Given a library id, you can delete the access level of an entity. An owner cannot delete their own access. You have to be the owner of the library to delete an access other than yours. Warning: the response will change from 200 (returning the deleted sharing) to 204 No Content in a future version.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Mistral.OpenApiClient.Models.SharingOut"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Mistral.OpenApiClient.Models.Sharing"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Mistral.OpenApiClient.Models.HttpValidationError">When receiving a 422 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Mistral.OpenApiClient.Models.SharingOut?> DeleteAsync(global::Soenneker.Mistral.OpenApiClient.Models.SharingDelete body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Mistral.OpenApiClient.Models.Sharing?> DeleteAsync(global::Soenneker.Mistral.OpenApiClient.Models.SharingDelete body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Mistral.OpenApiClient.Models.SharingOut> DeleteAsync(global::Soenneker.Mistral.OpenApiClient.Models.SharingDelete body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Mistral.OpenApiClient.Models.Sharing> DeleteAsync(global::Soenneker.Mistral.OpenApiClient.Models.SharingDelete body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -56,22 +56,22 @@ namespace Soenneker.Mistral.OpenApiClient.V1.Libraries.Item.Share
             {
                 { "422", global::Soenneker.Mistral.OpenApiClient.Models.HttpValidationError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Mistral.OpenApiClient.Models.SharingOut>(requestInfo, global::Soenneker.Mistral.OpenApiClient.Models.SharingOut.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Mistral.OpenApiClient.Models.Sharing>(requestInfo, global::Soenneker.Mistral.OpenApiClient.Models.Sharing.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Given a library, list all of the Entity that have access and to what level.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Mistral.OpenApiClient.Models.ListSharingOut"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Mistral.OpenApiClient.Models.ListSharingResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Mistral.OpenApiClient.Models.HttpValidationError">When receiving a 422 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Mistral.OpenApiClient.Models.ListSharingOut?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Mistral.OpenApiClient.Models.ListSharingResponse?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Mistral.OpenApiClient.Models.ListSharingOut> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Mistral.OpenApiClient.Models.ListSharingResponse> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
@@ -79,23 +79,23 @@ namespace Soenneker.Mistral.OpenApiClient.V1.Libraries.Item.Share
             {
                 { "422", global::Soenneker.Mistral.OpenApiClient.Models.HttpValidationError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Mistral.OpenApiClient.Models.ListSharingOut>(requestInfo, global::Soenneker.Mistral.OpenApiClient.Models.ListSharingOut.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Mistral.OpenApiClient.Models.ListSharingResponse>(requestInfo, global::Soenneker.Mistral.OpenApiClient.Models.ListSharingResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Given a library id, you can create or update the access level of an entity. You have to be owner of the library to share a library. An owner cannot change their own role. A library cannot be shared outside of the organization.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Mistral.OpenApiClient.Models.SharingOut"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Mistral.OpenApiClient.Models.Sharing"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Mistral.OpenApiClient.Models.HttpValidationError">When receiving a 422 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Mistral.OpenApiClient.Models.SharingOut?> PutAsync(global::Soenneker.Mistral.OpenApiClient.Models.SharingIn body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Mistral.OpenApiClient.Models.Sharing?> PutAsync(global::Soenneker.Mistral.OpenApiClient.Models.SharingRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Mistral.OpenApiClient.Models.SharingOut> PutAsync(global::Soenneker.Mistral.OpenApiClient.Models.SharingIn body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Mistral.OpenApiClient.Models.Sharing> PutAsync(global::Soenneker.Mistral.OpenApiClient.Models.SharingRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -104,10 +104,10 @@ namespace Soenneker.Mistral.OpenApiClient.V1.Libraries.Item.Share
             {
                 { "422", global::Soenneker.Mistral.OpenApiClient.Models.HttpValidationError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Mistral.OpenApiClient.Models.SharingOut>(requestInfo, global::Soenneker.Mistral.OpenApiClient.Models.SharingOut.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Mistral.OpenApiClient.Models.Sharing>(requestInfo, global::Soenneker.Mistral.OpenApiClient.Models.Sharing.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Given a library id, you can delete the access level of an entity. An owner cannot delete it&apos;s own access. You have to be the owner of the library to delete an acces other than yours.
+        /// Given a library id, you can delete the access level of an entity. An owner cannot delete their own access. You have to be the owner of the library to delete an access other than yours. Warning: the response will change from 200 (returning the deleted sharing) to 204 No Content in a future version.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -155,11 +155,11 @@ namespace Soenneker.Mistral.OpenApiClient.V1.Libraries.Item.Share
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPutRequestInformation(global::Soenneker.Mistral.OpenApiClient.Models.SharingIn body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPutRequestInformation(global::Soenneker.Mistral.OpenApiClient.Models.SharingRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPutRequestInformation(global::Soenneker.Mistral.OpenApiClient.Models.SharingIn body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPutRequestInformation(global::Soenneker.Mistral.OpenApiClient.Models.SharingRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));

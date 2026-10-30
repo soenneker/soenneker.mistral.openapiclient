@@ -21,7 +21,7 @@ namespace Soenneker.Mistral.OpenApiClient.V1.Audio.Voices
         /// <summary>Gets an item from the Soenneker.Mistral.OpenApiClient.v1.audio.voices.item collection</summary>
         /// <param name="position">Unique identifier of the item</param>
         /// <returns>A <see cref="global::Soenneker.Mistral.OpenApiClient.V1.Audio.Voices.Item.WithVoiceItemRequestBuilder"/></returns>
-        public global::Soenneker.Mistral.OpenApiClient.V1.Audio.Voices.Item.WithVoiceItemRequestBuilder this[string position]
+        public global::Soenneker.Mistral.OpenApiClient.V1.Audio.Voices.Item.WithVoiceItemRequestBuilder this[Guid position]
         {
             get
             {
@@ -35,7 +35,7 @@ namespace Soenneker.Mistral.OpenApiClient.V1.Audio.Voices
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public VoicesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/audio/voices{?limit*,offset*}", pathParameters)
+        public VoicesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/audio/voices{?limit*,offset*,type*}", pathParameters)
         {
         }
         /// <summary>
@@ -43,16 +43,17 @@ namespace Soenneker.Mistral.OpenApiClient.V1.Audio.Voices
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public VoicesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/audio/voices{?limit*,offset*}", rawUrl)
+        public VoicesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/audio/voices{?limit*,offset*,type*}", rawUrl)
         {
         }
         /// <summary>
-        /// List all voices (excluding sample data)
+        /// Offset pagination will not be supported anymore. Use GET /v2/audio/voices instead.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Mistral.OpenApiClient.Models.VoiceListResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Mistral.OpenApiClient.Models.HttpValidationError">When receiving a 422 status code</exception>
+        [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Soenneker.Mistral.OpenApiClient.Models.VoiceListResponse?> GetAsync(Action<RequestConfiguration<global::Soenneker.Mistral.OpenApiClient.V1.Audio.Voices.VoicesRequestBuilder.VoicesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -95,10 +96,11 @@ namespace Soenneker.Mistral.OpenApiClient.V1.Audio.Voices
             return await RequestAdapter.SendAsync<global::Soenneker.Mistral.OpenApiClient.Models.VoiceResponse>(requestInfo, global::Soenneker.Mistral.OpenApiClient.Models.VoiceResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// List all voices (excluding sample data)
+        /// Offset pagination will not be supported anymore. Use GET /v2/audio/voices instead.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Soenneker.Mistral.OpenApiClient.V1.Audio.Voices.VoicesRequestBuilder.VoicesRequestBuilderGetQueryParameters>>? requestConfiguration = default)
@@ -145,7 +147,7 @@ namespace Soenneker.Mistral.OpenApiClient.V1.Audio.Voices
             return new global::Soenneker.Mistral.OpenApiClient.V1.Audio.Voices.VoicesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// List all voices (excluding sample data)
+        /// Offset pagination will not be supported anymore. Use GET /v2/audio/voices instead.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class VoicesRequestBuilderGetQueryParameters 
@@ -156,6 +158,9 @@ namespace Soenneker.Mistral.OpenApiClient.V1.Audio.Voices
             /// <summary>Offset for pagination</summary>
             [QueryParameter("offset")]
             public int? Offset { get; set; }
+            /// <summary>Filter the voices between customs and presets</summary>
+            [QueryParameter("type")]
+            public global::Soenneker.Mistral.OpenApiClient.Models.ListVoicesV1AudioVoicesGetTypeParameter? Type { get; set; }
         }
     }
 }

@@ -32,6 +32,14 @@ namespace Soenneker.Mistral.OpenApiClient.Models
 #else
         public string DisplayName { get; set; }
 #endif
+        /// <summary>New tags. Replaces the existing tag list.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<string>? Tags { get; set; }
+#nullable restore
+#else
+        public List<string> Tags { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Mistral.OpenApiClient.Models.WorkflowUpdateRequest"/> and sets the default values.
         /// </summary>
@@ -60,6 +68,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
                 { "available_in_chat_assistant", n => { AvailableInChatAssistant = n.GetBoolValue(); } },
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "display_name", n => { DisplayName = n.GetStringValue(); } },
+                { "tags", n => { Tags = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
             };
         }
         /// <summary>
@@ -72,6 +81,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             writer.WriteBoolValue("available_in_chat_assistant", AvailableInChatAssistant);
             writer.WriteStringValue("description", Description);
             writer.WriteStringValue("display_name", DisplayName);
+            writer.WriteCollectionOfPrimitiveValues<string>("tags", Tags);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

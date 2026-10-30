@@ -16,6 +16,7 @@ namespace Soenneker.Mistral.OpenApiClient.V1.Connectors.Item.Tools.Item
     public partial class WithToolNameItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The call property</summary>
+        [Obsolete("")]
         public global::Soenneker.Mistral.OpenApiClient.V1.Connectors.Item.Tools.Item.Call.CallRequestBuilder Call
         {
             get => new global::Soenneker.Mistral.OpenApiClient.V1.Connectors.Item.Tools.Item.Call.CallRequestBuilder(PathParameters, RequestAdapter);

@@ -20,7 +20,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
 #else
         public global::Soenneker.Mistral.OpenApiClient.Models.ResponseFormat BboxAnnotationFormat { get; set; }
 #endif
-        /// <summary>Granularity for confidence scores: &apos;word&apos; (per-word scores) or &apos;page&apos; (aggregate only). Defaults to None (no confidence scores) to keep response payload small.</summary>
+        /// <summary>Granularity for confidence scores: &apos;page&apos; (aggregate only), &apos;word&apos; (per-word scores), or &apos;block&apos; (per-block scores). Defaults to None (no confidence scores) to keep response payload small.</summary>
         public global::Soenneker.Mistral.OpenApiClient.Models.OcrRequestConfidenceScoresGranularity? ConfidenceScoresGranularity { get; set; }
         /// <summary>Document to run OCR on</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -46,18 +46,10 @@ namespace Soenneker.Mistral.OpenApiClient.Models
 #else
         public string DocumentAnnotationPrompt { get; set; }
 #endif
-        /// <summary>The extract_footer property</summary>
+        /// <summary>Extract the page footer into the response&apos;s `footer` field and remove it from the markdown content</summary>
         public bool? ExtractFooter { get; set; }
-        /// <summary>The extract_header property</summary>
+        /// <summary>Extract the page header into the response&apos;s `header` field and remove it from the markdown content</summary>
         public bool? ExtractHeader { get; set; }
-        /// <summary>The id property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Id { get; set; }
-#nullable restore
-#else
-        public string Id { get; set; }
-#endif
         /// <summary>Max images to extract</summary>
         public int? ImageLimit { get; set; }
         /// <summary>Minimum height and width of image to extract</summary>
@@ -91,7 +83,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         {
             ExtractFooter = false;
             ExtractHeader = false;
-            IncludeBlocks = false;
+            IncludeBlocks = true;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -118,7 +110,6 @@ namespace Soenneker.Mistral.OpenApiClient.Models
                 { "document_annotation_prompt", n => { DocumentAnnotationPrompt = n.GetStringValue(); } },
                 { "extract_footer", n => { ExtractFooter = n.GetBoolValue(); } },
                 { "extract_header", n => { ExtractHeader = n.GetBoolValue(); } },
-                { "id", n => { Id = n.GetStringValue(); } },
                 { "image_limit", n => { ImageLimit = n.GetIntValue(); } },
                 { "image_min_size", n => { ImageMinSize = n.GetIntValue(); } },
                 { "include_blocks", n => { IncludeBlocks = n.GetBoolValue(); } },
@@ -142,7 +133,6 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             writer.WriteStringValue("document_annotation_prompt", DocumentAnnotationPrompt);
             writer.WriteBoolValue("extract_footer", ExtractFooter);
             writer.WriteBoolValue("extract_header", ExtractHeader);
-            writer.WriteStringValue("id", Id);
             writer.WriteIntValue("image_limit", ImageLimit);
             writer.WriteIntValue("image_min_size", ImageMinSize);
             writer.WriteBoolValue("include_blocks", IncludeBlocks);

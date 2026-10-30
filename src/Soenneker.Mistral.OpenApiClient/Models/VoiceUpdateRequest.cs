@@ -17,6 +17,14 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The age property</summary>
         public int? Age { get; set; }
+        /// <summary>The description property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Description { get; set; }
+#nullable restore
+#else
+        public string Description { get; set; }
+#endif
         /// <summary>The gender property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -41,6 +49,8 @@ namespace Soenneker.Mistral.OpenApiClient.Models
 #else
         public string Name { get; set; }
 #endif
+        /// <summary>The retention_notice property</summary>
+        public int? RetentionNotice { get; set; }
         /// <summary>The tags property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -75,9 +85,11 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "age", n => { Age = n.GetIntValue(); } },
+                { "description", n => { Description = n.GetStringValue(); } },
                 { "gender", n => { Gender = n.GetStringValue(); } },
                 { "languages", n => { Languages = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
+                { "retention_notice", n => { RetentionNotice = n.GetIntValue(); } },
                 { "tags", n => { Tags = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
             };
         }
@@ -89,9 +101,11 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteIntValue("age", Age);
+            writer.WriteStringValue("description", Description);
             writer.WriteStringValue("gender", Gender);
             writer.WriteCollectionOfPrimitiveValues<string>("languages", Languages);
             writer.WriteStringValue("name", Name);
+            writer.WriteIntValue("retention_notice", RetentionNotice);
             writer.WriteCollectionOfPrimitiveValues<string>("tags", Tags);
             writer.WriteAdditionalData(AdditionalData);
         }

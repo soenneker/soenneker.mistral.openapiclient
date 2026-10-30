@@ -38,6 +38,14 @@ namespace Soenneker.Mistral.OpenApiClient.Models
 #endif
         /// <summary>The owner_id property</summary>
         public Guid? OwnerId { get; set; }
+        /// <summary>The slug property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Slug { get; set; }
+#nullable restore
+#else
+        public string Slug { get; set; }
+#endif
         /// <summary>The updated_at property</summary>
         public DateTimeOffset? UpdatedAt { get; set; }
         /// <summary>The workspace_id property</summary>
@@ -73,6 +81,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
                 { "id", n => { Id = n.GetGuidValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "owner_id", n => { OwnerId = n.GetGuidValue(); } },
+                { "slug", n => { Slug = n.GetStringValue(); } },
                 { "updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
                 { "workspace_id", n => { WorkspaceId = n.GetGuidValue(); } },
             };
@@ -90,6 +99,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             writer.WriteGuidValue("id", Id);
             writer.WriteStringValue("name", Name);
             writer.WriteGuidValue("owner_id", OwnerId);
+            writer.WriteStringValue("slug", Slug);
             writer.WriteDateTimeOffsetValue("updated_at", UpdatedAt);
             writer.WriteGuidValue("workspace_id", WorkspaceId);
             writer.WriteAdditionalData(AdditionalData);

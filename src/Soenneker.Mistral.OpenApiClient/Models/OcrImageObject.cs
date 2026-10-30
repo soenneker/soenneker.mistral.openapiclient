@@ -9,9 +9,11 @@ namespace Soenneker.Mistral.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class OcrImageObject : IParsable
+    public partial class OcrImageObject : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>X coordinate of bottom-right corner of the extracted image</summary>
         public int? BottomRightX { get; set; }
         /// <summary>Y coordinate of bottom-right corner of the extracted image</summary>
@@ -44,6 +46,13 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         public int? TopLeftX { get; set; }
         /// <summary>Y coordinate of top-left corner of the extracted image</summary>
         public int? TopLeftY { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Mistral.OpenApiClient.Models.OcrImageObject"/> and sets the default values.
+        /// </summary>
+        public OcrImageObject()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -85,6 +94,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             writer.WriteStringValue("image_base64", ImageBase64);
             writer.WriteIntValue("top_left_x", TopLeftX);
             writer.WriteIntValue("top_left_y", TopLeftY);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

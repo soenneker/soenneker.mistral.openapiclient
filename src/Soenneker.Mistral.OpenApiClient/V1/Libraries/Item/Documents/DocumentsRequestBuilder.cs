@@ -49,17 +49,17 @@ namespace Soenneker.Mistral.OpenApiClient.V1.Libraries.Item.Documents
         /// <summary>
         /// Given a library, lists the document that have been uploaded to that library.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Mistral.OpenApiClient.Models.ListDocumentOut"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Mistral.OpenApiClient.Models.ListDocumentsResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Mistral.OpenApiClient.Models.HttpValidationError">When receiving a 422 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Mistral.OpenApiClient.Models.ListDocumentOut?> GetAsync(Action<RequestConfiguration<global::Soenneker.Mistral.OpenApiClient.V1.Libraries.Item.Documents.DocumentsRequestBuilder.DocumentsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Mistral.OpenApiClient.Models.ListDocumentsResponse?> GetAsync(Action<RequestConfiguration<global::Soenneker.Mistral.OpenApiClient.V1.Libraries.Item.Documents.DocumentsRequestBuilder.DocumentsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Mistral.OpenApiClient.Models.ListDocumentOut> GetAsync(Action<RequestConfiguration<global::Soenneker.Mistral.OpenApiClient.V1.Libraries.Item.Documents.DocumentsRequestBuilder.DocumentsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Mistral.OpenApiClient.Models.ListDocumentsResponse> GetAsync(Action<RequestConfiguration<global::Soenneker.Mistral.OpenApiClient.V1.Libraries.Item.Documents.DocumentsRequestBuilder.DocumentsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
@@ -67,23 +67,23 @@ namespace Soenneker.Mistral.OpenApiClient.V1.Libraries.Item.Documents
             {
                 { "422", global::Soenneker.Mistral.OpenApiClient.Models.HttpValidationError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Mistral.OpenApiClient.Models.ListDocumentOut>(requestInfo, global::Soenneker.Mistral.OpenApiClient.Models.ListDocumentOut.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Mistral.OpenApiClient.Models.ListDocumentsResponse>(requestInfo, global::Soenneker.Mistral.OpenApiClient.Models.ListDocumentsResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Given a library, upload a new document to that library. It is queued for processing, it status will change it has been processed. The processing has to be completed in order be discoverable for the library search
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Mistral.OpenApiClient.Models.DocumentOut"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Mistral.OpenApiClient.Models.Document"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Mistral.OpenApiClient.Models.HttpValidationError">When receiving a 422 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Mistral.OpenApiClient.Models.DocumentOut?> PostAsync(MultipartBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Mistral.OpenApiClient.Models.Document?> PostAsync(MultipartBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Mistral.OpenApiClient.Models.DocumentOut> PostAsync(MultipartBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Mistral.OpenApiClient.Models.Document> PostAsync(MultipartBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -92,7 +92,7 @@ namespace Soenneker.Mistral.OpenApiClient.V1.Libraries.Item.Documents
             {
                 { "422", global::Soenneker.Mistral.OpenApiClient.Models.HttpValidationError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Mistral.OpenApiClient.Models.DocumentOut>(requestInfo, global::Soenneker.Mistral.OpenApiClient.Models.DocumentOut.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Mistral.OpenApiClient.Models.Document>(requestInfo, global::Soenneker.Mistral.OpenApiClient.Models.Document.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Given a library, lists the document that have been uploaded to that library.
@@ -150,18 +150,16 @@ namespace Soenneker.Mistral.OpenApiClient.V1.Libraries.Item.Documents
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class DocumentsRequestBuilderGetQueryParameters 
         {
+            /// <summary>Deprecated: this parameter will be removed in a future version.</summary>
+            [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-            #pragma warning disable CS1591
             [QueryParameter("filters_attributes")]
             public string? FiltersAttributes { get; set; }
-            #pragma warning restore CS1591
 #nullable restore
 #else
-            #pragma warning disable CS1591
             [QueryParameter("filters_attributes")]
             public string FiltersAttributes { get; set; }
-            #pragma warning restore CS1591
 #endif
             #pragma warning disable CS1591
             [QueryParameter("page")]

@@ -20,14 +20,14 @@ namespace Soenneker.Mistral.OpenApiClient.V1.Workflows.Deployments
     {
         /// <summary>Gets an item from the Soenneker.Mistral.OpenApiClient.v1.workflows.deployments.item collection</summary>
         /// <param name="position">Unique identifier of the item</param>
-        /// <returns>A <see cref="global::Soenneker.Mistral.OpenApiClient.V1.Workflows.Deployments.Item.WithNameItemRequestBuilder"/></returns>
-        public global::Soenneker.Mistral.OpenApiClient.V1.Workflows.Deployments.Item.WithNameItemRequestBuilder this[string position]
+        /// <returns>A <see cref="global::Soenneker.Mistral.OpenApiClient.V1.Workflows.Deployments.Item.WithDeploymentItemRequestBuilder"/></returns>
+        public global::Soenneker.Mistral.OpenApiClient.V1.Workflows.Deployments.Item.WithDeploymentItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
-                urlTplParams.Add("name", position);
-                return new global::Soenneker.Mistral.OpenApiClient.V1.Workflows.Deployments.Item.WithNameItemRequestBuilder(urlTplParams, RequestAdapter);
+                urlTplParams.Add("deploymentId", position);
+                return new global::Soenneker.Mistral.OpenApiClient.V1.Workflows.Deployments.Item.WithDeploymentItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
@@ -35,7 +35,7 @@ namespace Soenneker.Mistral.OpenApiClient.V1.Workflows.Deployments
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public DeploymentsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/workflows/deployments{?active_only*,workflow_name*}", pathParameters)
+        public DeploymentsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/workflows/deployments{?active_only*,created_by*,cursor*,is_hardened*,limit*,location_types*,order*,order_by*,owner*,search*,workflow_name*,workspace_id*}", pathParameters)
         {
         }
         /// <summary>
@@ -43,7 +43,7 @@ namespace Soenneker.Mistral.OpenApiClient.V1.Workflows.Deployments
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public DeploymentsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/workflows/deployments{?active_only*,workflow_name*}", rawUrl)
+        public DeploymentsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/workflows/deployments{?active_only*,created_by*,cursor*,is_hardened*,limit*,location_types*,order*,order_by*,owner*,search*,workflow_name*,workspace_id*}", rawUrl)
         {
         }
         /// <summary>
@@ -70,6 +70,31 @@ namespace Soenneker.Mistral.OpenApiClient.V1.Workflows.Deployments
             return await RequestAdapter.SendAsync<global::Soenneker.Mistral.OpenApiClient.Models.DeploymentListResponse>(requestInfo, global::Soenneker.Mistral.OpenApiClient.Models.DeploymentListResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
+        /// Create Deployment
+        /// </summary>
+        /// <returns>A <see cref="global::Soenneker.Mistral.OpenApiClient.Models.ManagedDeploymentResponse"/></returns>
+        /// <param name="body">The request body</param>
+        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="global::Soenneker.Mistral.OpenApiClient.Models.HttpValidationError">When receiving a 422 status code</exception>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public async Task<global::Soenneker.Mistral.OpenApiClient.Models.ManagedDeploymentResponse?> PostAsync(global::Soenneker.Mistral.OpenApiClient.Models.CreateDeploymentRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
+#nullable restore
+#else
+        public async Task<global::Soenneker.Mistral.OpenApiClient.Models.ManagedDeploymentResponse> PostAsync(global::Soenneker.Mistral.OpenApiClient.Models.CreateDeploymentRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
+#endif
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
+            var requestInfo = ToPostRequestInformation(body, requestConfiguration);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
+                { "422", global::Soenneker.Mistral.OpenApiClient.Models.HttpValidationError.CreateFromDiscriminatorValue },
+            };
+            return await RequestAdapter.SendAsync<global::Soenneker.Mistral.OpenApiClient.Models.ManagedDeploymentResponse>(requestInfo, global::Soenneker.Mistral.OpenApiClient.Models.ManagedDeploymentResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+        }
+        /// <summary>
         /// List Deployments
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
@@ -86,6 +111,28 @@ namespace Soenneker.Mistral.OpenApiClient.V1.Workflows.Deployments
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
+            return requestInfo;
+        }
+        /// <summary>
+        /// Create Deployment
+        /// </summary>
+        /// <returns>A <see cref="RequestInformation"/></returns>
+        /// <param name="body">The request body</param>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Mistral.OpenApiClient.Models.CreateDeploymentRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        {
+#nullable restore
+#else
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Mistral.OpenApiClient.Models.CreateDeploymentRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        {
+#endif
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
+            var requestInfo = new RequestInformation(Method.POST, UrlTemplate, PathParameters);
+            requestInfo.Configure(requestConfiguration);
+            requestInfo.Headers.TryAdd("Accept", "application/json");
+            requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
             return requestInfo;
         }
         /// <summary>
@@ -107,6 +154,68 @@ namespace Soenneker.Mistral.OpenApiClient.V1.Workflows.Deployments
             [QueryParameter("active_only")]
             public bool? ActiveOnly { get; set; }
             #pragma warning restore CS1591
+            /// <summary>Filter deployments by creator&apos;s user id</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("created_by")]
+            public string? CreatedBy { get; set; }
+#nullable restore
+#else
+            [QueryParameter("created_by")]
+            public string CreatedBy { get; set; }
+#endif
+            /// <summary>Cursor from a previous response for pagination</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("cursor")]
+            public string? Cursor { get; set; }
+#nullable restore
+#else
+            [QueryParameter("cursor")]
+            public string Cursor { get; set; }
+#endif
+            /// <summary>Filter deployments by hardened status</summary>
+            [QueryParameter("is_hardened")]
+            public bool? IsHardened { get; set; }
+            /// <summary>Maximum number of deployments to return</summary>
+            [QueryParameter("limit")]
+            public int? Limit { get; set; }
+            /// <summary>Filter deployments with at least one worker on any of these location types (OR)</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("location_types")]
+            public global::Soenneker.Mistral.OpenApiClient.Models.LocationType[]? LocationTypes { get; set; }
+#nullable restore
+#else
+            [QueryParameter("location_types")]
+            public global::Soenneker.Mistral.OpenApiClient.Models.LocationType[] LocationTypes { get; set; }
+#endif
+            /// <summary>Sort direction. Applied to order_by when set, or within each activity group when omitted.</summary>
+            [QueryParameter("order")]
+            public global::Soenneker.Mistral.OpenApiClient.Models.ListDeploymentsV1WorkflowsDeploymentsGetOrderParameter? Order { get; set; }
+            /// <summary>Field to sort by. When omitted, active and managed deployments are grouped first, then sorted by created_at. When set, results are sorted purely by the specified field with no grouping.</summary>
+            [QueryParameter("order_by")]
+            public global::Soenneker.Mistral.OpenApiClient.Models.ListDeploymentsV1WorkflowsDeploymentsGetOrderByParameter? OrderBy { get; set; }
+            /// <summary>Filter deployments by owner&apos;s user id</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("owner")]
+            public string? Owner { get; set; }
+#nullable restore
+#else
+            [QueryParameter("owner")]
+            public string Owner { get; set; }
+#endif
+            /// <summary>Filter deployments by name or ID prefix</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("search")]
+            public string? Search { get; set; }
+#nullable restore
+#else
+            [QueryParameter("search")]
+            public string Search { get; set; }
+#endif
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             #pragma warning disable CS1591
@@ -120,6 +229,9 @@ namespace Soenneker.Mistral.OpenApiClient.V1.Workflows.Deployments
             public string WorkflowName { get; set; }
             #pragma warning restore CS1591
 #endif
+            /// <summary>Workspace ID to scope the request to. Defaults to the caller&apos;s context.</summary>
+            [QueryParameter("workspace_id")]
+            public Guid? WorkspaceId { get; set; }
         }
     }
 }

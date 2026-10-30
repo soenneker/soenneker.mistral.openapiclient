@@ -82,7 +82,7 @@ namespace Soenneker.Mistral.OpenApiClient.V1.Observability.DatasetRecords.Item
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get the content of a given conversation from a dataset
+        /// Get the content of a given dataset record
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Mistral.OpenApiClient.Models.DatasetRecord"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -132,7 +132,7 @@ namespace Soenneker.Mistral.OpenApiClient.V1.Observability.DatasetRecords.Item
             return requestInfo;
         }
         /// <summary>
-        /// Get the content of a given conversation from a dataset
+        /// Get the content of a given dataset record
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

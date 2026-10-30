@@ -3,10 +3,9 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Mistral.OpenApiClient.Models
 {
+    /// <summary>Processing status of the document. </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public enum ProcessStatus
-    #pragma warning restore CS1591
     {
         [EnumMember(Value = "self_managed")]
         #pragma warning disable CS1591

@@ -47,7 +47,8 @@ namespace Soenneker.Mistral.OpenApiClient.Models
 #else
         public global::Soenneker.Mistral.OpenApiClient.Models.TimeSeriesMetric LatencyOverTime { get; set; }
 #endif
-        /// <summary>Scalar metric with a single value.</summary>
+        /// <summary>Deprecated, always -1. Never measured retries; use error_count instead.</summary>
+        [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Mistral.OpenApiClient.Models.ScalarMetric? RetryRate { get; set; }

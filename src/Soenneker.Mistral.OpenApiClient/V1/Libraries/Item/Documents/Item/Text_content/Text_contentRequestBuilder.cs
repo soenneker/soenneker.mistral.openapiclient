@@ -22,7 +22,7 @@ namespace Soenneker.Mistral.OpenApiClient.V1.Libraries.Item.Documents.Item.Text_
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public Text_contentRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/libraries/{libraryId}/documents/{documentId}/text_content", pathParameters)
+        public Text_contentRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/libraries/{libraryId}/documents/{documentId}/text_content{?page_end*,page_start*}", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +30,7 @@ namespace Soenneker.Mistral.OpenApiClient.V1.Libraries.Item.Documents.Item.Text_
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public Text_contentRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/libraries/{libraryId}/documents/{documentId}/text_content", rawUrl)
+        public Text_contentRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/libraries/{libraryId}/documents/{documentId}/text_content{?page_end*,page_start*}", rawUrl)
         {
         }
         /// <summary>
@@ -42,11 +42,11 @@ namespace Soenneker.Mistral.OpenApiClient.V1.Libraries.Item.Documents.Item.Text_
         /// <exception cref="global::Soenneker.Mistral.OpenApiClient.Models.HttpValidationError">When receiving a 422 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Mistral.OpenApiClient.Models.DocumentTextContent?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Mistral.OpenApiClient.Models.DocumentTextContent?> GetAsync(Action<RequestConfiguration<global::Soenneker.Mistral.OpenApiClient.V1.Libraries.Item.Documents.Item.Text_content.Text_contentRequestBuilder.Text_contentRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Mistral.OpenApiClient.Models.DocumentTextContent> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Mistral.OpenApiClient.Models.DocumentTextContent> GetAsync(Action<RequestConfiguration<global::Soenneker.Mistral.OpenApiClient.V1.Libraries.Item.Documents.Item.Text_content.Text_contentRequestBuilder.Text_contentRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
@@ -63,11 +63,11 @@ namespace Soenneker.Mistral.OpenApiClient.V1.Libraries.Item.Documents.Item.Text_
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Soenneker.Mistral.OpenApiClient.V1.Libraries.Item.Documents.Item.Text_content.Text_contentRequestBuilder.Text_contentRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Soenneker.Mistral.OpenApiClient.V1.Libraries.Item.Documents.Item.Text_content.Text_contentRequestBuilder.Text_contentRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -83,6 +83,21 @@ namespace Soenneker.Mistral.OpenApiClient.V1.Libraries.Item.Documents.Item.Text_
         public global::Soenneker.Mistral.OpenApiClient.V1.Libraries.Item.Documents.Item.Text_content.Text_contentRequestBuilder WithUrl(string rawUrl)
         {
             return new global::Soenneker.Mistral.OpenApiClient.V1.Libraries.Item.Documents.Item.Text_content.Text_contentRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
+        /// Given a library and a document in that library, you can retrieve the text content of that document if it exists. For documents like pdf, docx and pptx the text content results from our processing using Mistral OCR.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
+        public partial class Text_contentRequestBuilderGetQueryParameters 
+        {
+            #pragma warning disable CS1591
+            [QueryParameter("page_end")]
+            public int? PageEnd { get; set; }
+            #pragma warning restore CS1591
+            #pragma warning disable CS1591
+            [QueryParameter("page_start")]
+            public int? PageStart { get; set; }
+            #pragma warning restore CS1591
         }
     }
 }

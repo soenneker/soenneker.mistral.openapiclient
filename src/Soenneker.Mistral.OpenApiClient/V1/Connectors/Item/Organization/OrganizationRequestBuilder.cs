@@ -3,6 +3,7 @@
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions;
 using Soenneker.Mistral.OpenApiClient.V1.Connectors.Item.Organization.Credentials;
+using Soenneker.Mistral.OpenApiClient.V1.Connectors.Item.Organization.Share;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
@@ -19,6 +20,11 @@ namespace Soenneker.Mistral.OpenApiClient.V1.Connectors.Item.Organization
         public global::Soenneker.Mistral.OpenApiClient.V1.Connectors.Item.Organization.Credentials.CredentialsRequestBuilder Credentials
         {
             get => new global::Soenneker.Mistral.OpenApiClient.V1.Connectors.Item.Organization.Credentials.CredentialsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The share property</summary>
+        public global::Soenneker.Mistral.OpenApiClient.V1.Connectors.Item.Organization.Share.ShareRequestBuilder Share
+        {
+            get => new global::Soenneker.Mistral.OpenApiClient.V1.Connectors.Item.Organization.Share.ShareRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Mistral.OpenApiClient.V1.Connectors.Item.Organization.OrganizationRequestBuilder"/> and sets the default values.

@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.Mistral.OpenApiClient.Models
 {
     /// <summary>
-    /// Text content for a message.
+    /// Text provided to or from an LLM.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class TextContent : IAdditionalDataHolder, IParsable

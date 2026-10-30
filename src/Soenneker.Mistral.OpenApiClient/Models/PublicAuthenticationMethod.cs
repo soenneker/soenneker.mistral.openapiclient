@@ -15,6 +15,18 @@ namespace Soenneker.Mistral.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The global_headers property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Mistral.OpenApiClient.Models.PublicAuthenticationMethodGlobalHeadersProperty? GlobalHeaders { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Mistral.OpenApiClient.Models.PublicAuthenticationMethodGlobalHeadersProperty GlobalHeaders { get; set; }
+#endif
+        /// <summary>The grant_type property</summary>
+        public global::Soenneker.Mistral.OpenApiClient.Models.OAuth2GrantType? GrantType { get; set; }
+        /// <summary>The has_default_credentials property</summary>
+        public bool? HasDefaultCredentials { get; set; }
         /// <summary>The headers property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -24,7 +36,17 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         public List<global::Soenneker.Mistral.OpenApiClient.Models.ConnectorAuthenticationHeader> Headers { get; set; }
 #endif
         /// <summary>The method_type property</summary>
-        public global::Soenneker.Mistral.OpenApiClient.Models.OutboundAuthenticationType? MethodType { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.AuthenticationType? MethodType { get; set; }
+        /// <summary>The oauth2_server_metadata property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Mistral.OpenApiClient.Models.ExtendedOAuthServerMetadata? Oauth2ServerMetadata { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Mistral.OpenApiClient.Models.ExtendedOAuthServerMetadata Oauth2ServerMetadata { get; set; }
+#endif
+        /// <summary>The token_endpoint_auth_method property</summary>
+        public global::Soenneker.Mistral.OpenApiClient.Models.OAuth2TokenEndpointAuthMethod? TokenEndpointAuthMethod { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Mistral.OpenApiClient.Models.PublicAuthenticationMethod"/> and sets the default values.
         /// </summary>
@@ -50,8 +72,13 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "global_headers", n => { GlobalHeaders = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.PublicAuthenticationMethodGlobalHeadersProperty>(global::Soenneker.Mistral.OpenApiClient.Models.PublicAuthenticationMethodGlobalHeadersProperty.CreateFromDiscriminatorValue); } },
+                { "grant_type", n => { GrantType = n.GetEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.OAuth2GrantType>(); } },
+                { "has_default_credentials", n => { HasDefaultCredentials = n.GetBoolValue(); } },
                 { "headers", n => { Headers = n.GetCollectionOfObjectValues<global::Soenneker.Mistral.OpenApiClient.Models.ConnectorAuthenticationHeader>(global::Soenneker.Mistral.OpenApiClient.Models.ConnectorAuthenticationHeader.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "method_type", n => { MethodType = n.GetEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.OutboundAuthenticationType>(); } },
+                { "method_type", n => { MethodType = n.GetEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.AuthenticationType>(); } },
+                { "oauth2_server_metadata", n => { Oauth2ServerMetadata = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ExtendedOAuthServerMetadata>(global::Soenneker.Mistral.OpenApiClient.Models.ExtendedOAuthServerMetadata.CreateFromDiscriminatorValue); } },
+                { "token_endpoint_auth_method", n => { TokenEndpointAuthMethod = n.GetEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.OAuth2TokenEndpointAuthMethod>(); } },
             };
         }
         /// <summary>
@@ -61,8 +88,13 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.PublicAuthenticationMethodGlobalHeadersProperty>("global_headers", GlobalHeaders);
+            writer.WriteEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.OAuth2GrantType>("grant_type", GrantType);
+            writer.WriteBoolValue("has_default_credentials", HasDefaultCredentials);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Mistral.OpenApiClient.Models.ConnectorAuthenticationHeader>("headers", Headers);
-            writer.WriteEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.OutboundAuthenticationType>("method_type", MethodType);
+            writer.WriteEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.AuthenticationType>("method_type", MethodType);
+            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ExtendedOAuthServerMetadata>("oauth2_server_metadata", Oauth2ServerMetadata);
+            writer.WriteEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.OAuth2TokenEndpointAuthMethod>("token_endpoint_auth_method", TokenEndpointAuthMethod);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

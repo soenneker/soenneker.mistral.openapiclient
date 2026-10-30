@@ -8,11 +8,19 @@ using System;
 namespace Soenneker.Mistral.OpenApiClient.Models
 {
     /// <summary>
-    /// Composed type wrapper for classes <see cref="string"/>, List&lt;string&gt;
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Mistral.OpenApiClient.Models.AgentsCompletionRequestStopMember1"/>, <see cref="string"/>, List&lt;string&gt;
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class AgentsCompletionRequestStop : IComposedTypeWrapper, IParsable
     {
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Mistral.OpenApiClient.Models.AgentsCompletionRequestStopMember1"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Mistral.OpenApiClient.Models.AgentsCompletionRequestStopMember1? AgentsCompletionRequestStopMember1 { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Mistral.OpenApiClient.Models.AgentsCompletionRequestStopMember1 AgentsCompletionRequestStopMember1 { get; set; }
+#endif
         /// <summary>Composed type representation for type <see cref="string"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -42,9 +50,12 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             {
                 result.AgentsCompletionRequestStopString = agentsCompletionRequestStopStringValue;
             }
-            else if(parseNode.GetCollectionOfPrimitiveValues<string>()?.AsList() is List<string> stringValue)
+            else if(parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedArray && parseNode.GetCollectionOfPrimitiveValues<string>()?.AsList() is List<string> stringValue)
             {
                 result.String = stringValue;
+            }
+            else {
+                result.AgentsCompletionRequestStopMember1 = new global::Soenneker.Mistral.OpenApiClient.Models.AgentsCompletionRequestStopMember1();
             }
             return result;
         }
@@ -54,6 +65,10 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
+            if(AgentsCompletionRequestStopMember1 != null)
+            {
+                return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(AgentsCompletionRequestStopMember1);
+            }
             return new Dictionary<string, Action<IParseNode>>();
         }
         /// <summary>
@@ -70,6 +85,9 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             else if(String != null)
             {
                 writer.WriteCollectionOfPrimitiveValues<string>(null, String);
+            }
+            else {
+                writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.AgentsCompletionRequestStopMember1>(null, AgentsCompletionRequestStopMember1);
             }
         }
     }

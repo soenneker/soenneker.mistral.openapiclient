@@ -49,40 +49,40 @@ namespace Soenneker.Mistral.OpenApiClient.V1.Batch.Jobs
         /// <summary>
         /// Get a list of batch jobs for your organization and user.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Mistral.OpenApiClient.Models.BatchJobsOut"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Mistral.OpenApiClient.Models.ListBatchJobsResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Mistral.OpenApiClient.Models.BatchJobsOut?> GetAsync(Action<RequestConfiguration<global::Soenneker.Mistral.OpenApiClient.V1.Batch.Jobs.JobsRequestBuilder.JobsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Mistral.OpenApiClient.Models.ListBatchJobsResponse?> GetAsync(Action<RequestConfiguration<global::Soenneker.Mistral.OpenApiClient.V1.Batch.Jobs.JobsRequestBuilder.JobsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Mistral.OpenApiClient.Models.BatchJobsOut> GetAsync(Action<RequestConfiguration<global::Soenneker.Mistral.OpenApiClient.V1.Batch.Jobs.JobsRequestBuilder.JobsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Mistral.OpenApiClient.Models.ListBatchJobsResponse> GetAsync(Action<RequestConfiguration<global::Soenneker.Mistral.OpenApiClient.V1.Batch.Jobs.JobsRequestBuilder.JobsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Mistral.OpenApiClient.Models.BatchJobsOut>(requestInfo, global::Soenneker.Mistral.OpenApiClient.Models.BatchJobsOut.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Mistral.OpenApiClient.Models.ListBatchJobsResponse>(requestInfo, global::Soenneker.Mistral.OpenApiClient.Models.ListBatchJobsResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create a new batch job, it will be queued for processing.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Mistral.OpenApiClient.Models.BatchJobOut"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Mistral.OpenApiClient.Models.BatchJob"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Mistral.OpenApiClient.Models.BatchJobOut?> PostAsync(global::Soenneker.Mistral.OpenApiClient.Models.BatchJobIn body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Mistral.OpenApiClient.Models.BatchJob?> PostAsync(global::Soenneker.Mistral.OpenApiClient.Models.CreateBatchJobRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Mistral.OpenApiClient.Models.BatchJobOut> PostAsync(global::Soenneker.Mistral.OpenApiClient.Models.BatchJobIn body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Mistral.OpenApiClient.Models.BatchJob> PostAsync(global::Soenneker.Mistral.OpenApiClient.Models.CreateBatchJobRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Mistral.OpenApiClient.Models.BatchJobOut>(requestInfo, global::Soenneker.Mistral.OpenApiClient.Models.BatchJobOut.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Mistral.OpenApiClient.Models.BatchJob>(requestInfo, global::Soenneker.Mistral.OpenApiClient.Models.BatchJob.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get a list of batch jobs for your organization and user.
@@ -111,11 +111,11 @@ namespace Soenneker.Mistral.OpenApiClient.V1.Batch.Jobs
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Mistral.OpenApiClient.Models.BatchJobIn body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Mistral.OpenApiClient.Models.CreateBatchJobRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Mistral.OpenApiClient.Models.BatchJobIn body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Mistral.OpenApiClient.Models.CreateBatchJobRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));

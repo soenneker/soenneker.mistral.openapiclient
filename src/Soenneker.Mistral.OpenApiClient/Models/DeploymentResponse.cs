@@ -12,6 +12,8 @@ namespace Soenneker.Mistral.OpenApiClient.Models
     public partial class DeploymentResponse : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Number of workers currently live within the liveness cutoff</summary>
+        public int? ActiveWorkerCount { get; set; }
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>When the deployment was first registered</summary>
@@ -20,6 +22,35 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         public Guid? Id { get; set; }
         /// <summary>Whether at least one worker is currently live</summary>
         public bool? IsActive { get; set; }
+        /// <summary>Whether the deployment only accepts registrations from authorized principals</summary>
+        public bool? IsHardened { get; set; }
+        /// <summary>When the deployment last saw a worker registration</summary>
+        public DateTimeOffset? LastHeartbeat { get; set; }
+        /// <summary>Where the deployment is running</summary>
+        [Obsolete("")]
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Mistral.OpenApiClient.Models.DeploymentLocation? Location { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Mistral.OpenApiClient.Models.DeploymentLocation Location { get; set; }
+#endif
+        /// <summary>Distinct location types reported by the deployment&apos;s workers</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.Mistral.OpenApiClient.Models.LocationType?>? Locations { get; set; }
+#nullable restore
+#else
+        public List<global::Soenneker.Mistral.OpenApiClient.Models.LocationType?> Locations { get; set; }
+#endif
+        /// <summary>Live managed service state for managed deployments; null for self-hosted deployments or when managed services are unavailable</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Mistral.OpenApiClient.Models.ManagedDeploymentResponse? Managed { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Mistral.OpenApiClient.Models.ManagedDeploymentResponse Managed { get; set; }
+#endif
         /// <summary>Deployment name</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -28,14 +59,28 @@ namespace Soenneker.Mistral.OpenApiClient.Models
 #else
         public string Name { get; set; }
 #endif
-        /// <summary>When the deployment was last updated</summary>
+        /// <summary>User id that owns the deployment, or null when it is administrator-managed</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Owner { get; set; }
+#nullable restore
+#else
+        public string Owner { get; set; }
+#endif
+        /// <summary>Deprecated alias of last_heartbeat</summary>
+        [Obsolete("")]
         public DateTimeOffset? UpdatedAt { get; set; }
+        /// <summary>Number of workers registered to the deployment</summary>
+        public int? WorkerCount { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Mistral.OpenApiClient.Models.DeploymentResponse"/> and sets the default values.
         /// </summary>
         public DeploymentResponse()
         {
             AdditionalData = new Dictionary<string, object>();
+            ActiveWorkerCount = 0;
+            IsHardened = false;
+            WorkerCount = 0;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -55,11 +100,19 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "active_worker_count", n => { ActiveWorkerCount = n.GetIntValue(); } },
                 { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
                 { "id", n => { Id = n.GetGuidValue(); } },
                 { "is_active", n => { IsActive = n.GetBoolValue(); } },
+                { "is_hardened", n => { IsHardened = n.GetBoolValue(); } },
+                { "last_heartbeat", n => { LastHeartbeat = n.GetDateTimeOffsetValue(); } },
+                { "location", n => { Location = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.DeploymentLocation>(global::Soenneker.Mistral.OpenApiClient.Models.DeploymentLocation.CreateFromDiscriminatorValue); } },
+                { "locations", n => { Locations = n.GetCollectionOfEnumValues<global::Soenneker.Mistral.OpenApiClient.Models.LocationType>()?.AsList(); } },
+                { "managed", n => { Managed = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ManagedDeploymentResponse>(global::Soenneker.Mistral.OpenApiClient.Models.ManagedDeploymentResponse.CreateFromDiscriminatorValue); } },
                 { "name", n => { Name = n.GetStringValue(); } },
+                { "owner", n => { Owner = n.GetStringValue(); } },
                 { "updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
+                { "worker_count", n => { WorkerCount = n.GetIntValue(); } },
             };
         }
         /// <summary>
@@ -69,11 +122,19 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteIntValue("active_worker_count", ActiveWorkerCount);
             writer.WriteDateTimeOffsetValue("created_at", CreatedAt);
             writer.WriteGuidValue("id", Id);
             writer.WriteBoolValue("is_active", IsActive);
+            writer.WriteBoolValue("is_hardened", IsHardened);
+            writer.WriteDateTimeOffsetValue("last_heartbeat", LastHeartbeat);
+            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.DeploymentLocation>("location", Location);
+            writer.WriteCollectionOfEnumValues<global::Soenneker.Mistral.OpenApiClient.Models.LocationType>("locations", Locations);
+            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ManagedDeploymentResponse>("managed", Managed);
             writer.WriteStringValue("name", Name);
+            writer.WriteStringValue("owner", Owner);
             writer.WriteDateTimeOffsetValue("updated_at", UpdatedAt);
+            writer.WriteIntValue("worker_count", WorkerCount);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

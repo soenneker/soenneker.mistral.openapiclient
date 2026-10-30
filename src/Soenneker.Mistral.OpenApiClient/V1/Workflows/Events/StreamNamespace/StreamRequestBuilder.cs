@@ -34,7 +34,7 @@ namespace Soenneker.Mistral.OpenApiClient.V1.Workflows.Events.StreamNamespace
         {
         }
         /// <summary>
-        /// Get Stream Events
+        /// Stream workflow events as Server-Sent Events (SSE).One of `root_workflow_exec_id`, `parent_workflow_exec_id` or `workflow_exec_id` is required.
         /// </summary>
         /// <returns>A <see cref="Stream"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -57,7 +57,7 @@ namespace Soenneker.Mistral.OpenApiClient.V1.Workflows.Events.StreamNamespace
             return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get Stream Events
+        /// Stream workflow events as Server-Sent Events (SSE).One of `root_workflow_exec_id`, `parent_workflow_exec_id` or `workflow_exec_id` is required.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -85,7 +85,7 @@ namespace Soenneker.Mistral.OpenApiClient.V1.Workflows.Events.StreamNamespace
             return new global::Soenneker.Mistral.OpenApiClient.V1.Workflows.Events.StreamNamespace.StreamRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get Stream Events
+        /// Stream workflow events as Server-Sent Events (SSE).One of `root_workflow_exec_id`, `parent_workflow_exec_id` or `workflow_exec_id` is required.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class StreamRequestBuilderGetQueryParameters 

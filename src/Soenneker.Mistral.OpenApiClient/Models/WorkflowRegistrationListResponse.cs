@@ -15,7 +15,13 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The next_cursor property</summary>
-        public Guid? NextCursor { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? NextCursor { get; set; }
+#nullable restore
+#else
+        public string NextCursor { get; set; }
+#endif
         /// <summary>A list of workflow registrations</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -57,7 +63,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "next_cursor", n => { NextCursor = n.GetGuidValue(); } },
+                { "next_cursor", n => { NextCursor = n.GetStringValue(); } },
                 { "workflow_registrations", n => { WorkflowRegistrations = n.GetCollectionOfObjectValues<global::Soenneker.Mistral.OpenApiClient.Models.WorkflowRegistration>(global::Soenneker.Mistral.OpenApiClient.Models.WorkflowRegistration.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "workflow_versions", n => { WorkflowVersions = n.GetCollectionOfObjectValues<global::Soenneker.Mistral.OpenApiClient.Models.WorkflowRegistration>(global::Soenneker.Mistral.OpenApiClient.Models.WorkflowRegistration.CreateFromDiscriminatorValue)?.AsList(); } },
             };
@@ -69,7 +75,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteGuidValue("next_cursor", NextCursor);
+            writer.WriteStringValue("next_cursor", NextCursor);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Mistral.OpenApiClient.Models.WorkflowRegistration>("workflow_registrations", WorkflowRegistrations);
             writer.WriteAdditionalData(AdditionalData);
         }

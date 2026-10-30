@@ -38,11 +38,11 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             var result = new global::Soenneker.Mistral.OpenApiClient.Models.ChatModerationRequestInput();
-            if(parseNode.GetCollectionOfObjectValues<global::Soenneker.Mistral.OpenApiClient.Models.ChatModerationRequestInputAnyOf1Item>(global::Soenneker.Mistral.OpenApiClient.Models.ChatModerationRequestInputAnyOf1Item.CreateFromDiscriminatorValue)?.AsList() is List<global::Soenneker.Mistral.OpenApiClient.Models.ChatModerationRequestInputAnyOf1Item> chatModerationRequestInputAnyOf1ItemValue)
+            if(parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedArray && parseNode.GetCollectionOfObjectValues<global::Soenneker.Mistral.OpenApiClient.Models.ChatModerationRequestInputAnyOf1Item>(global::Soenneker.Mistral.OpenApiClient.Models.ChatModerationRequestInputAnyOf1Item.CreateFromDiscriminatorValue)?.AsList() is List<global::Soenneker.Mistral.OpenApiClient.Models.ChatModerationRequestInputAnyOf1Item> chatModerationRequestInputAnyOf1ItemValue)
             {
                 result.ChatModerationRequestInputAnyOf1Item = chatModerationRequestInputAnyOf1ItemValue;
             }
-            else if(parseNode.GetCollectionOfObjectValues<global::Soenneker.Mistral.OpenApiClient.Models.ChatModerationRequestInputAnyOf2ItemItem>(global::Soenneker.Mistral.OpenApiClient.Models.ChatModerationRequestInputAnyOf2ItemItem.CreateFromDiscriminatorValue)?.AsList() is List<global::Soenneker.Mistral.OpenApiClient.Models.ChatModerationRequestInputAnyOf2ItemItem> chatModerationRequestInputAnyOf2ItemItemValue)
+            else if(parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedArray && parseNode.GetCollectionOfObjectValues<global::Soenneker.Mistral.OpenApiClient.Models.ChatModerationRequestInputAnyOf2ItemItem>(global::Soenneker.Mistral.OpenApiClient.Models.ChatModerationRequestInputAnyOf2ItemItem.CreateFromDiscriminatorValue)?.AsList() is List<global::Soenneker.Mistral.OpenApiClient.Models.ChatModerationRequestInputAnyOf2ItemItem> chatModerationRequestInputAnyOf2ItemItemValue)
             {
                 result.ChatModerationRequestInputAnyOf2ItemItem = chatModerationRequestInputAnyOf2ItemItemValue;
             }

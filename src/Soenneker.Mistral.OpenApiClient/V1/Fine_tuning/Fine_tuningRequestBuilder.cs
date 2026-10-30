@@ -2,7 +2,6 @@
 #pragma warning disable CS0618
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions;
-using Soenneker.Mistral.OpenApiClient.V1.Fine_tuning.Jobs;
 using Soenneker.Mistral.OpenApiClient.V1.Fine_tuning.ModelsRequests;
 using System.Collections.Generic;
 using System.IO;
@@ -16,11 +15,6 @@ namespace Soenneker.Mistral.OpenApiClient.V1.Fine_tuning
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class Fine_tuningRequestBuilder : BaseRequestBuilder
     {
-        /// <summary>The jobs property</summary>
-        public global::Soenneker.Mistral.OpenApiClient.V1.Fine_tuning.Jobs.JobsRequestBuilder Jobs
-        {
-            get => new global::Soenneker.Mistral.OpenApiClient.V1.Fine_tuning.Jobs.JobsRequestBuilder(PathParameters, RequestAdapter);
-        }
         /// <summary>The models property</summary>
         public global::Soenneker.Mistral.OpenApiClient.V1.Fine_tuning.ModelsRequests.ModelsRequestBuilder Models
         {

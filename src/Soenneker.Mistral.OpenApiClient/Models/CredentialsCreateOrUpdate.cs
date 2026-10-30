@@ -8,20 +8,20 @@ using System;
 namespace Soenneker.Mistral.OpenApiClient.Models
 {
     /// <summary>
-    /// Request to create or update non-OAuth2 credentials for a connector.
+    /// Request to create or update credentials for a connector.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class CredentialsCreateOrUpdate : IAdditionalDataHolder, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The credential data (headers, bearer_token).</summary>
+        /// <summary>The credential data (headers, bearer_token, or OAuth2 client credentials).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.ConnectionCredentials? Credentials { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.ConnectionCredentialsInput? Credentials { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.ConnectionCredentials Credentials { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.ConnectionCredentialsInput Credentials { get; set; }
 #endif
         /// <summary>Controls whether this credential is the default for its auth method. On creation: if no credential exists yet for this auth method, the credential is automatically set as default when is_default is true or omitted; setting is_default to false is rejected because a default must exist. If other credentials already exist, setting is_default to true promotes this credential (demoting the previous default); false or omitted creates it as non-default. On update: true promotes this credential, false is rejected if it is currently the default (promote another credential first), omitted leaves the default status unchanged.</summary>
         public bool? IsDefault { get; set; }
@@ -32,6 +32,14 @@ namespace Soenneker.Mistral.OpenApiClient.Models
 #nullable restore
 #else
         public string Name { get; set; }
+#endif
+        /// <summary>Human-readable title for the credentials.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Title { get; set; }
+#nullable restore
+#else
+        public string Title { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Mistral.OpenApiClient.Models.CredentialsCreateOrUpdate"/> and sets the default values.
@@ -58,9 +66,10 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "credentials", n => { Credentials = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ConnectionCredentials>(global::Soenneker.Mistral.OpenApiClient.Models.ConnectionCredentials.CreateFromDiscriminatorValue); } },
+                { "credentials", n => { Credentials = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ConnectionCredentialsInput>(global::Soenneker.Mistral.OpenApiClient.Models.ConnectionCredentialsInput.CreateFromDiscriminatorValue); } },
                 { "is_default", n => { IsDefault = n.GetBoolValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
+                { "title", n => { Title = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -70,9 +79,10 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ConnectionCredentials>("credentials", Credentials);
+            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ConnectionCredentialsInput>("credentials", Credentials);
             writer.WriteBoolValue("is_default", IsDefault);
             writer.WriteStringValue("name", Name);
+            writer.WriteStringValue("title", Title);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

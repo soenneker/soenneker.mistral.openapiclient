@@ -6,6 +6,7 @@ using Microsoft.Kiota.Abstractions;
 using Soenneker.Mistral.OpenApiClient.Models;
 using Soenneker.Mistral.OpenApiClient.V1.Workflows.Executions.Item.Cancel;
 using Soenneker.Mistral.OpenApiClient.V1.Workflows.Executions.Item.History;
+using Soenneker.Mistral.OpenApiClient.V1.Workflows.Executions.Item.Logs;
 using Soenneker.Mistral.OpenApiClient.V1.Workflows.Executions.Item.Queries;
 using Soenneker.Mistral.OpenApiClient.V1.Workflows.Executions.Item.Reset;
 using Soenneker.Mistral.OpenApiClient.V1.Workflows.Executions.Item.Signals;
@@ -35,6 +36,11 @@ namespace Soenneker.Mistral.OpenApiClient.V1.Workflows.Executions.Item
         public global::Soenneker.Mistral.OpenApiClient.V1.Workflows.Executions.Item.History.HistoryRequestBuilder History
         {
             get => new global::Soenneker.Mistral.OpenApiClient.V1.Workflows.Executions.Item.History.HistoryRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The logs property</summary>
+        public global::Soenneker.Mistral.OpenApiClient.V1.Workflows.Executions.Item.Logs.LogsRequestBuilder Logs
+        {
+            get => new global::Soenneker.Mistral.OpenApiClient.V1.Workflows.Executions.Item.Logs.LogsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The queries property</summary>
         public global::Soenneker.Mistral.OpenApiClient.V1.Workflows.Executions.Item.Queries.QueriesRequestBuilder Queries
@@ -76,7 +82,7 @@ namespace Soenneker.Mistral.OpenApiClient.V1.Workflows.Executions.Item
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithExecutionItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/workflows/executions/{executionId}", pathParameters)
+        public WithExecutionItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/workflows/executions/{executionId}{?include_search_keys*}", pathParameters)
         {
         }
         /// <summary>
@@ -84,7 +90,7 @@ namespace Soenneker.Mistral.OpenApiClient.V1.Workflows.Executions.Item
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithExecutionItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/workflows/executions/{executionId}", rawUrl)
+        public WithExecutionItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/workflows/executions/{executionId}{?include_search_keys*}", rawUrl)
         {
         }
         /// <summary>
@@ -96,11 +102,11 @@ namespace Soenneker.Mistral.OpenApiClient.V1.Workflows.Executions.Item
         /// <exception cref="global::Soenneker.Mistral.OpenApiClient.Models.HttpValidationError">When receiving a 422 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Mistral.OpenApiClient.Models.WorkflowExecutionResponse?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Mistral.OpenApiClient.Models.WorkflowExecutionResponse?> GetAsync(Action<RequestConfiguration<global::Soenneker.Mistral.OpenApiClient.V1.Workflows.Executions.Item.WithExecutionItemRequestBuilder.WithExecutionItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Mistral.OpenApiClient.Models.WorkflowExecutionResponse> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Mistral.OpenApiClient.Models.WorkflowExecutionResponse> GetAsync(Action<RequestConfiguration<global::Soenneker.Mistral.OpenApiClient.V1.Workflows.Executions.Item.WithExecutionItemRequestBuilder.WithExecutionItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
@@ -117,11 +123,11 @@ namespace Soenneker.Mistral.OpenApiClient.V1.Workflows.Executions.Item
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Soenneker.Mistral.OpenApiClient.V1.Workflows.Executions.Item.WithExecutionItemRequestBuilder.WithExecutionItemRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Soenneker.Mistral.OpenApiClient.V1.Workflows.Executions.Item.WithExecutionItemRequestBuilder.WithExecutionItemRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -137,6 +143,16 @@ namespace Soenneker.Mistral.OpenApiClient.V1.Workflows.Executions.Item
         public global::Soenneker.Mistral.OpenApiClient.V1.Workflows.Executions.Item.WithExecutionItemRequestBuilder WithUrl(string rawUrl)
         {
             return new global::Soenneker.Mistral.OpenApiClient.V1.Workflows.Executions.Item.WithExecutionItemRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
+        /// Get Workflow Execution
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
+        public partial class WithExecutionItemRequestBuilderGetQueryParameters 
+        {
+            /// <summary>Include the execution&apos;s search keys (metadata) in the response.</summary>
+            [QueryParameter("include_search_keys")]
+            public bool? IncludeSearchKeys { get; set; }
         }
     }
 }

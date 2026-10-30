@@ -2,11 +2,10 @@
 #pragma warning disable CS0618
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions;
-using Soenneker.Mistral.OpenApiClient.V1.Observability.Datasets.Item.Imports.FromCampaign;
 using Soenneker.Mistral.OpenApiClient.V1.Observability.Datasets.Item.Imports.FromDataset;
-using Soenneker.Mistral.OpenApiClient.V1.Observability.Datasets.Item.Imports.FromExplorer;
 using Soenneker.Mistral.OpenApiClient.V1.Observability.Datasets.Item.Imports.FromFile;
 using Soenneker.Mistral.OpenApiClient.V1.Observability.Datasets.Item.Imports.FromPlayground;
+using Soenneker.Mistral.OpenApiClient.V1.Observability.Datasets.Item.Imports.FromSpans;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
@@ -19,20 +18,10 @@ namespace Soenneker.Mistral.OpenApiClient.V1.Observability.Datasets.Item.Imports
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ImportsRequestBuilder : BaseRequestBuilder
     {
-        /// <summary>The fromCampaign property</summary>
-        public global::Soenneker.Mistral.OpenApiClient.V1.Observability.Datasets.Item.Imports.FromCampaign.FromCampaignRequestBuilder FromCampaign
-        {
-            get => new global::Soenneker.Mistral.OpenApiClient.V1.Observability.Datasets.Item.Imports.FromCampaign.FromCampaignRequestBuilder(PathParameters, RequestAdapter);
-        }
         /// <summary>The fromDataset property</summary>
         public global::Soenneker.Mistral.OpenApiClient.V1.Observability.Datasets.Item.Imports.FromDataset.FromDatasetRequestBuilder FromDataset
         {
             get => new global::Soenneker.Mistral.OpenApiClient.V1.Observability.Datasets.Item.Imports.FromDataset.FromDatasetRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>The fromExplorer property</summary>
-        public global::Soenneker.Mistral.OpenApiClient.V1.Observability.Datasets.Item.Imports.FromExplorer.FromExplorerRequestBuilder FromExplorer
-        {
-            get => new global::Soenneker.Mistral.OpenApiClient.V1.Observability.Datasets.Item.Imports.FromExplorer.FromExplorerRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The fromFile property</summary>
         public global::Soenneker.Mistral.OpenApiClient.V1.Observability.Datasets.Item.Imports.FromFile.FromFileRequestBuilder FromFile
@@ -43,6 +32,11 @@ namespace Soenneker.Mistral.OpenApiClient.V1.Observability.Datasets.Item.Imports
         public global::Soenneker.Mistral.OpenApiClient.V1.Observability.Datasets.Item.Imports.FromPlayground.FromPlaygroundRequestBuilder FromPlayground
         {
             get => new global::Soenneker.Mistral.OpenApiClient.V1.Observability.Datasets.Item.Imports.FromPlayground.FromPlaygroundRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The fromSpans property</summary>
+        public global::Soenneker.Mistral.OpenApiClient.V1.Observability.Datasets.Item.Imports.FromSpans.FromSpansRequestBuilder FromSpans
+        {
+            get => new global::Soenneker.Mistral.OpenApiClient.V1.Observability.Datasets.Item.Imports.FromSpans.FromSpansRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Mistral.OpenApiClient.V1.Observability.Datasets.Item.Imports.ImportsRequestBuilder"/> and sets the default values.

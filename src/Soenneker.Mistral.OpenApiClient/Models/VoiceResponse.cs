@@ -27,6 +27,14 @@ namespace Soenneker.Mistral.OpenApiClient.Models
 #endif
         /// <summary>The created_at property</summary>
         public DateTimeOffset? CreatedAt { get; set; }
+        /// <summary>The description property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Description { get; set; }
+#nullable restore
+#else
+        public string Description { get; set; }
+#endif
         /// <summary>The gender property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -37,6 +45,8 @@ namespace Soenneker.Mistral.OpenApiClient.Models
 #endif
         /// <summary>The id property</summary>
         public Guid? Id { get; set; }
+        /// <summary>Cloning technology behind the voice: ivc for instant cloning, pvc for professional cloning.</summary>
+        public global::Soenneker.Mistral.OpenApiClient.Models.VoiceKind? Kind { get; set; }
         /// <summary>The languages property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -71,6 +81,10 @@ namespace Soenneker.Mistral.OpenApiClient.Models
 #else
         public List<string> Tags { get; set; }
 #endif
+        /// <summary>The trimmed_seconds property</summary>
+        public double? TrimmedSeconds { get; set; }
+        /// <summary>The type property</summary>
+        public global::Soenneker.Mistral.OpenApiClient.Models.VoiceResponseType? Type { get; private set; }
         /// <summary>The user_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -85,6 +99,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         public VoiceResponse()
         {
             AdditionalData = new Dictionary<string, object>();
+            Kind = global::Soenneker.Mistral.OpenApiClient.Models.VoiceKind.Ivc;
             RetentionNotice = 30;
         }
         /// <summary>
@@ -108,13 +123,17 @@ namespace Soenneker.Mistral.OpenApiClient.Models
                 { "age", n => { Age = n.GetIntValue(); } },
                 { "color", n => { Color = n.GetStringValue(); } },
                 { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
+                { "description", n => { Description = n.GetStringValue(); } },
                 { "gender", n => { Gender = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetGuidValue(); } },
+                { "kind", n => { Kind = n.GetEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.VoiceKind>(); } },
                 { "languages", n => { Languages = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "retention_notice", n => { RetentionNotice = n.GetIntValue(); } },
                 { "slug", n => { Slug = n.GetStringValue(); } },
                 { "tags", n => { Tags = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "trimmed_seconds", n => { TrimmedSeconds = n.GetDoubleValue(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.VoiceResponseType>(); } },
                 { "user_id", n => { UserId = n.GetStringValue(); } },
             };
         }
@@ -128,13 +147,16 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             writer.WriteIntValue("age", Age);
             writer.WriteStringValue("color", Color);
             writer.WriteDateTimeOffsetValue("created_at", CreatedAt);
+            writer.WriteStringValue("description", Description);
             writer.WriteStringValue("gender", Gender);
             writer.WriteGuidValue("id", Id);
+            writer.WriteEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.VoiceKind>("kind", Kind);
             writer.WriteCollectionOfPrimitiveValues<string>("languages", Languages);
             writer.WriteStringValue("name", Name);
             writer.WriteIntValue("retention_notice", RetentionNotice);
             writer.WriteStringValue("slug", Slug);
             writer.WriteCollectionOfPrimitiveValues<string>("tags", Tags);
+            writer.WriteDoubleValue("trimmed_seconds", TrimmedSeconds);
             writer.WriteStringValue("user_id", UserId);
             writer.WriteAdditionalData(AdditionalData);
         }

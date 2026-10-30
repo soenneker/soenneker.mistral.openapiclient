@@ -14,27 +14,17 @@ namespace Soenneker.Mistral.OpenApiClient.Models
     {
         /// <summary>The completion_tokens property</summary>
         public int? CompletionTokens { get; set; }
-        /// <summary>The num_cached_tokens property</summary>
-        public int? NumCachedTokens { get; set; }
         /// <summary>The prompt_audio_seconds property</summary>
         public int? PromptAudioSeconds { get; set; }
-        /// <summary>The prompt_token_details property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.PromptTokensDetails? PromptTokenDetails { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Mistral.OpenApiClient.Models.PromptTokensDetails PromptTokenDetails { get; set; }
-#endif
         /// <summary>The prompt_tokens property</summary>
         public int? PromptTokens { get; set; }
-        /// <summary>The prompt_tokens_details property</summary>
+        /// <summary>The service tier at which the request was processed: standard or priority.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.PromptTokensDetails? PromptTokensDetails { get; set; }
+        public string? ServiceTier { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.PromptTokensDetails PromptTokensDetails { get; set; }
+        public string ServiceTier { get; set; }
 #endif
         /// <summary>The total_tokens property</summary>
         public int? TotalTokens { get; set; }
@@ -66,11 +56,9 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "completion_tokens", n => { CompletionTokens = n.GetIntValue(); } },
-                { "num_cached_tokens", n => { NumCachedTokens = n.GetIntValue(); } },
                 { "prompt_audio_seconds", n => { PromptAudioSeconds = n.GetIntValue(); } },
-                { "prompt_token_details", n => { PromptTokenDetails = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.PromptTokensDetails>(global::Soenneker.Mistral.OpenApiClient.Models.PromptTokensDetails.CreateFromDiscriminatorValue); } },
                 { "prompt_tokens", n => { PromptTokens = n.GetIntValue(); } },
-                { "prompt_tokens_details", n => { PromptTokensDetails = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.PromptTokensDetails>(global::Soenneker.Mistral.OpenApiClient.Models.PromptTokensDetails.CreateFromDiscriminatorValue); } },
+                { "service_tier", n => { ServiceTier = n.GetStringValue(); } },
                 { "total_tokens", n => { TotalTokens = n.GetIntValue(); } },
             };
         }
@@ -82,11 +70,9 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteIntValue("completion_tokens", CompletionTokens);
-            writer.WriteIntValue("num_cached_tokens", NumCachedTokens);
             writer.WriteIntValue("prompt_audio_seconds", PromptAudioSeconds);
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.PromptTokensDetails>("prompt_token_details", PromptTokenDetails);
             writer.WriteIntValue("prompt_tokens", PromptTokens);
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.PromptTokensDetails>("prompt_tokens_details", PromptTokensDetails);
+            writer.WriteStringValue("service_tier", ServiceTier);
             writer.WriteIntValue("total_tokens", TotalTokens);
         }
     }

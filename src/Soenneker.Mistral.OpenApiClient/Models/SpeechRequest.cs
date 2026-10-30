@@ -14,13 +14,21 @@ namespace Soenneker.Mistral.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Text to generate speech from.</summary>
+        /// <summary>Text to generate a speech from</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Input { get; set; }
 #nullable restore
 #else
         public string Input { get; set; }
+#endif
+        /// <summary>Custom type for metadata with embedded validation.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Mistral.OpenApiClient.Models.SpeechRequestMetadata? Metadata { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Mistral.OpenApiClient.Models.SpeechRequestMetadata Metadata { get; set; }
 #endif
         /// <summary>The model property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -30,13 +38,29 @@ namespace Soenneker.Mistral.OpenApiClient.Models
 #else
         public string Model { get; set; }
 #endif
-        /// <summary>The base64-encoded audio reference for zero-shot voice cloning.</summary>
+        /// <summary>Optional pronunciation hints mapping a (case-sensitive) word to its ordered list of IPA phones.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? RefAudio { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.SpeechRequestPhonemeHintsProperty? PhonemeHints { get; set; }
 #nullable restore
 #else
-        public string RefAudio { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.SpeechRequestPhonemeHintsProperty PhonemeHints { get; set; }
+#endif
+        /// <summary>The prompt_cache_key property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? PromptCacheKey { get; set; }
+#nullable restore
+#else
+        public string PromptCacheKey { get; set; }
+#endif
+        /// <summary>The audio reference for generating the speech.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Mistral.OpenApiClient.Models.SpeechRequestRefAudio? RefAudio { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Mistral.OpenApiClient.Models.SpeechRequestRefAudio RefAudio { get; set; }
 #endif
         /// <summary>Output audio format. Defaults to mp3.</summary>
         public global::Soenneker.Mistral.OpenApiClient.Models.SpeechOutputFormat? ResponseFormat { get; set; }
@@ -78,8 +102,11 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "input", n => { Input = n.GetStringValue(); } },
+                { "metadata", n => { Metadata = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.SpeechRequestMetadata>(global::Soenneker.Mistral.OpenApiClient.Models.SpeechRequestMetadata.CreateFromDiscriminatorValue); } },
                 { "model", n => { Model = n.GetStringValue(); } },
-                { "ref_audio", n => { RefAudio = n.GetStringValue(); } },
+                { "phoneme_hints", n => { PhonemeHints = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.SpeechRequestPhonemeHintsProperty>(global::Soenneker.Mistral.OpenApiClient.Models.SpeechRequestPhonemeHintsProperty.CreateFromDiscriminatorValue); } },
+                { "prompt_cache_key", n => { PromptCacheKey = n.GetStringValue(); } },
+                { "ref_audio", n => { RefAudio = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.SpeechRequestRefAudio>(global::Soenneker.Mistral.OpenApiClient.Models.SpeechRequestRefAudio.CreateFromDiscriminatorValue); } },
                 { "response_format", n => { ResponseFormat = n.GetEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.SpeechOutputFormat>(); } },
                 { "stream", n => { Stream = n.GetBoolValue(); } },
                 { "voice_id", n => { VoiceId = n.GetStringValue(); } },
@@ -93,8 +120,11 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("input", Input);
+            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.SpeechRequestMetadata>("metadata", Metadata);
             writer.WriteStringValue("model", Model);
-            writer.WriteStringValue("ref_audio", RefAudio);
+            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.SpeechRequestPhonemeHintsProperty>("phoneme_hints", PhonemeHints);
+            writer.WriteStringValue("prompt_cache_key", PromptCacheKey);
+            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.SpeechRequestRefAudio>("ref_audio", RefAudio);
             writer.WriteEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.SpeechOutputFormat>("response_format", ResponseFormat);
             writer.WriteBoolValue("stream", Stream);
             writer.WriteStringValue("voice_id", VoiceId);

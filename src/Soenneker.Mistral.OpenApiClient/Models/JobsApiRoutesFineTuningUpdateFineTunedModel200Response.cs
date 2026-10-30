@@ -8,26 +8,26 @@ using System;
 namespace Soenneker.Mistral.OpenApiClient.Models
 {
     /// <summary>
-    /// Composed type wrapper for classes <see cref="global::Soenneker.Mistral.OpenApiClient.Models.ClassifierFtModelOut"/>, <see cref="global::Soenneker.Mistral.OpenApiClient.Models.CompletionFtModelOut"/>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Mistral.OpenApiClient.Models.ClassifierFineTunedModel"/>, <see cref="global::Soenneker.Mistral.OpenApiClient.Models.CompletionFineTunedModel"/>
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class JobsApiRoutesFineTuningUpdateFineTunedModel200Response : IComposedTypeWrapper, IParsable
     {
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Mistral.OpenApiClient.Models.ClassifierFtModelOut"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Mistral.OpenApiClient.Models.ClassifierFineTunedModel"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.ClassifierFtModelOut? ClassifierFtModelOut { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.ClassifierFineTunedModel? ClassifierFineTunedModel { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.ClassifierFtModelOut ClassifierFtModelOut { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.ClassifierFineTunedModel ClassifierFineTunedModel { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Mistral.OpenApiClient.Models.CompletionFtModelOut"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Mistral.OpenApiClient.Models.CompletionFineTunedModel"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.CompletionFtModelOut? CompletionFtModelOut { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.CompletionFineTunedModel? CompletionFineTunedModel { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.CompletionFtModelOut CompletionFtModelOut { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.CompletionFineTunedModel CompletionFineTunedModel { get; set; }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -41,11 +41,11 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             var result = new global::Soenneker.Mistral.OpenApiClient.Models.JobsApiRoutesFineTuningUpdateFineTunedModel200Response();
             if("classifier".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.ClassifierFtModelOut = new global::Soenneker.Mistral.OpenApiClient.Models.ClassifierFtModelOut();
+                result.ClassifierFineTunedModel = new global::Soenneker.Mistral.OpenApiClient.Models.ClassifierFineTunedModel();
             }
             else if("completion".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.CompletionFtModelOut = new global::Soenneker.Mistral.OpenApiClient.Models.CompletionFtModelOut();
+                result.CompletionFineTunedModel = new global::Soenneker.Mistral.OpenApiClient.Models.CompletionFineTunedModel();
             }
             return result;
         }
@@ -55,13 +55,13 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            if(ClassifierFtModelOut != null)
+            if(ClassifierFineTunedModel != null)
             {
-                return ClassifierFtModelOut.GetFieldDeserializers();
+                return ClassifierFineTunedModel.GetFieldDeserializers();
             }
-            else if(CompletionFtModelOut != null)
+            else if(CompletionFineTunedModel != null)
             {
-                return CompletionFtModelOut.GetFieldDeserializers();
+                return CompletionFineTunedModel.GetFieldDeserializers();
             }
             return new Dictionary<string, Action<IParseNode>>();
         }
@@ -72,13 +72,13 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            if(ClassifierFtModelOut != null)
+            if(ClassifierFineTunedModel != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ClassifierFtModelOut>(null, ClassifierFtModelOut);
+                writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ClassifierFineTunedModel>(null, ClassifierFineTunedModel);
             }
-            else if(CompletionFtModelOut != null)
+            else if(CompletionFineTunedModel != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.CompletionFtModelOut>(null, CompletionFtModelOut);
+                writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.CompletionFineTunedModel>(null, CompletionFineTunedModel);
             }
         }
     }

@@ -31,8 +31,24 @@ namespace Soenneker.Mistral.OpenApiClient.Models
 #else
         public List<string> CronExpressions { get; set; }
 #endif
+        /// <summary>Name of the deployment this schedule targets.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? DeploymentName { get; set; }
+#nullable restore
+#else
+        public string DeploymentName { get; set; }
+#endif
         /// <summary>Time after which no more actions will be run.</summary>
         public DateTimeOffset? EndAt { get; set; }
+        /// <summary>Upcoming scheduled executions (10 next executions, earliest first).</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.Mistral.OpenApiClient.Models.ScheduleFutureExecution>? FutureExecutions { get; set; }
+#nullable restore
+#else
+        public List<global::Soenneker.Mistral.OpenApiClient.Models.ScheduleFutureExecution> FutureExecutions { get; set; }
+#endif
         /// <summary>Input to provide to the workflow when starting it.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -51,6 +67,16 @@ namespace Soenneker.Mistral.OpenApiClient.Models
 #endif
         /// <summary>Jitter to apply each action.An action&apos;s scheduled time will be incremented by a random value between 0and this value if present (but not past the next schedule).</summary>
         public TimeSpan? Jitter { get; set; }
+        /// <summary>Human-readable note associated with the current pause or resume state.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Note { get; set; }
+#nullable restore
+#else
+        public string Note { get; set; }
+#endif
+        /// <summary>Whether the schedule is currently paused.</summary>
+        public bool? Paused { get; set; }
         /// <summary>Policy for the schedule.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -59,6 +85,16 @@ namespace Soenneker.Mistral.OpenApiClient.Models
 #else
         public global::Soenneker.Mistral.OpenApiClient.Models.SchedulePolicy Policy { get; set; }
 #endif
+        /// <summary>Most recent scheduled executions (10 most recent, newest last).</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.Mistral.OpenApiClient.Models.ScheduleRecentExecution>? RecentExecutions { get; set; }
+#nullable restore
+#else
+        public List<global::Soenneker.Mistral.OpenApiClient.Models.ScheduleRecentExecution> RecentExecutions { get; set; }
+#endif
+        /// <summary>Remaining workflow executions before this schedule stops triggering automatically. null means unlimited; 0 means the limit has been reached and the schedule is exhausted.</summary>
+        public int? RemainingExecutions { get; set; }
         /// <summary>Unique identifier for the schedule.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -84,6 +120,14 @@ namespace Soenneker.Mistral.OpenApiClient.Models
 #nullable restore
 #else
         public string TimeZoneName { get; set; }
+#endif
+        /// <summary>Name of the workflow this schedule triggers.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? WorkflowName { get; set; }
+#nullable restore
+#else
+        public string WorkflowName { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Mistral.OpenApiClient.Models.ScheduleDefinitionOutput"/> and sets the default values.
@@ -112,15 +156,22 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             {
                 { "calendars", n => { Calendars = n.GetCollectionOfObjectValues<global::Soenneker.Mistral.OpenApiClient.Models.ScheduleCalendar>(global::Soenneker.Mistral.OpenApiClient.Models.ScheduleCalendar.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "cron_expressions", n => { CronExpressions = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "deployment_name", n => { DeploymentName = n.GetStringValue(); } },
                 { "end_at", n => { EndAt = n.GetDateTimeOffsetValue(); } },
+                { "future_executions", n => { FutureExecutions = n.GetCollectionOfObjectValues<global::Soenneker.Mistral.OpenApiClient.Models.ScheduleFutureExecution>(global::Soenneker.Mistral.OpenApiClient.Models.ScheduleFutureExecution.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "input", n => { Input = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
                 { "intervals", n => { Intervals = n.GetCollectionOfObjectValues<global::Soenneker.Mistral.OpenApiClient.Models.ScheduleInterval>(global::Soenneker.Mistral.OpenApiClient.Models.ScheduleInterval.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "jitter", n => { Jitter = n.GetTimeSpanValue(); } },
+                { "note", n => { Note = n.GetStringValue(); } },
+                { "paused", n => { Paused = n.GetBoolValue(); } },
                 { "policy", n => { Policy = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.SchedulePolicy>(global::Soenneker.Mistral.OpenApiClient.Models.SchedulePolicy.CreateFromDiscriminatorValue); } },
+                { "recent_executions", n => { RecentExecutions = n.GetCollectionOfObjectValues<global::Soenneker.Mistral.OpenApiClient.Models.ScheduleRecentExecution>(global::Soenneker.Mistral.OpenApiClient.Models.ScheduleRecentExecution.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "remaining_executions", n => { RemainingExecutions = n.GetIntValue(); } },
                 { "schedule_id", n => { ScheduleId = n.GetStringValue(); } },
                 { "skip", n => { Skip = n.GetCollectionOfObjectValues<global::Soenneker.Mistral.OpenApiClient.Models.ScheduleCalendar>(global::Soenneker.Mistral.OpenApiClient.Models.ScheduleCalendar.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "start_at", n => { StartAt = n.GetDateTimeOffsetValue(); } },
                 { "time_zone_name", n => { TimeZoneName = n.GetStringValue(); } },
+                { "workflow_name", n => { WorkflowName = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -132,15 +183,22 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfObjectValues<global::Soenneker.Mistral.OpenApiClient.Models.ScheduleCalendar>("calendars", Calendars);
             writer.WriteCollectionOfPrimitiveValues<string>("cron_expressions", CronExpressions);
+            writer.WriteStringValue("deployment_name", DeploymentName);
             writer.WriteDateTimeOffsetValue("end_at", EndAt);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Mistral.OpenApiClient.Models.ScheduleFutureExecution>("future_executions", FutureExecutions);
             writer.WriteObjectValue<UntypedNode>("input", Input);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Mistral.OpenApiClient.Models.ScheduleInterval>("intervals", Intervals);
             writer.WriteTimeSpanValue("jitter", Jitter);
+            writer.WriteStringValue("note", Note);
+            writer.WriteBoolValue("paused", Paused);
             writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.SchedulePolicy>("policy", Policy);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Mistral.OpenApiClient.Models.ScheduleRecentExecution>("recent_executions", RecentExecutions);
+            writer.WriteIntValue("remaining_executions", RemainingExecutions);
             writer.WriteStringValue("schedule_id", ScheduleId);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Mistral.OpenApiClient.Models.ScheduleCalendar>("skip", Skip);
             writer.WriteDateTimeOffsetValue("start_at", StartAt);
             writer.WriteStringValue("time_zone_name", TimeZoneName);
+            writer.WriteStringValue("workflow_name", WorkflowName);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

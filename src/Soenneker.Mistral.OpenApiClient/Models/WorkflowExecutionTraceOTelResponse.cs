@@ -22,6 +22,14 @@ namespace Soenneker.Mistral.OpenApiClient.Models
 #else
         public string DataSource { get; set; }
 #endif
+        /// <summary>The name of the deployment that ran this execution</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? DeploymentName { get; set; }
+#nullable restore
+#else
+        public string DeploymentName { get; set; }
+#endif
         /// <summary>The end time of the workflow execution, if available</summary>
         public DateTimeOffset? EndTime { get; set; }
         /// <summary>The ID of the workflow execution</summary>
@@ -72,12 +80,38 @@ namespace Soenneker.Mistral.OpenApiClient.Models
 #else
         public string RootExecutionId { get; set; }
 #endif
+        /// <summary>The unique run identifier (database UUID)</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? RunId { get; set; }
+#nullable restore
+#else
+        public string RunId { get; set; }
+#endif
+        /// <summary>The execution&apos;s search keys (metadata), if requested via include_search_keys.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Mistral.OpenApiClient.Models.WorkflowExecutionTraceOTelResponseSearchKeysProperty? SearchKeys { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Mistral.OpenApiClient.Models.WorkflowExecutionTraceOTelResponseSearchKeysProperty SearchKeys { get; set; }
+#endif
         /// <summary>The start time of the workflow execution</summary>
         public DateTimeOffset? StartTime { get; set; }
         /// <summary>The status of the workflow execution</summary>
         public global::Soenneker.Mistral.OpenApiClient.Models.WorkflowExecutionStatus? Status { get; set; }
         /// <summary>The total duration of the trace in milliseconds</summary>
         public int? TotalDurationMs { get; set; }
+        /// <summary>The ID of the user who triggered the execution</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? UserId { get; set; }
+#nullable restore
+#else
+        public string UserId { get; set; }
+#endif
+        /// <summary>The ID of the workflow</summary>
+        public Guid? WorkflowId { get; set; }
         /// <summary>The name of the workflow</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -112,6 +146,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "data_source", n => { DataSource = n.GetStringValue(); } },
+                { "deployment_name", n => { DeploymentName = n.GetStringValue(); } },
                 { "end_time", n => { EndTime = n.GetDateTimeOffsetValue(); } },
                 { "execution_id", n => { ExecutionId = n.GetStringValue(); } },
                 { "otel_trace_data", n => { OtelTraceData = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.TempoGetTraceResponse>(global::Soenneker.Mistral.OpenApiClient.Models.TempoGetTraceResponse.CreateFromDiscriminatorValue); } },
@@ -119,9 +154,13 @@ namespace Soenneker.Mistral.OpenApiClient.Models
                 { "parent_execution_id", n => { ParentExecutionId = n.GetStringValue(); } },
                 { "result", n => { Result = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
                 { "root_execution_id", n => { RootExecutionId = n.GetStringValue(); } },
+                { "run_id", n => { RunId = n.GetStringValue(); } },
+                { "search_keys", n => { SearchKeys = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.WorkflowExecutionTraceOTelResponseSearchKeysProperty>(global::Soenneker.Mistral.OpenApiClient.Models.WorkflowExecutionTraceOTelResponseSearchKeysProperty.CreateFromDiscriminatorValue); } },
                 { "start_time", n => { StartTime = n.GetDateTimeOffsetValue(); } },
                 { "status", n => { Status = n.GetEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.WorkflowExecutionStatus>(); } },
                 { "total_duration_ms", n => { TotalDurationMs = n.GetIntValue(); } },
+                { "user_id", n => { UserId = n.GetStringValue(); } },
+                { "workflow_id", n => { WorkflowId = n.GetGuidValue(); } },
                 { "workflow_name", n => { WorkflowName = n.GetStringValue(); } },
             };
         }
@@ -133,6 +172,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("data_source", DataSource);
+            writer.WriteStringValue("deployment_name", DeploymentName);
             writer.WriteDateTimeOffsetValue("end_time", EndTime);
             writer.WriteStringValue("execution_id", ExecutionId);
             writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.TempoGetTraceResponse>("otel_trace_data", OtelTraceData);
@@ -140,9 +180,13 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             writer.WriteStringValue("parent_execution_id", ParentExecutionId);
             writer.WriteObjectValue<UntypedNode>("result", Result);
             writer.WriteStringValue("root_execution_id", RootExecutionId);
+            writer.WriteStringValue("run_id", RunId);
+            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.WorkflowExecutionTraceOTelResponseSearchKeysProperty>("search_keys", SearchKeys);
             writer.WriteDateTimeOffsetValue("start_time", StartTime);
             writer.WriteEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.WorkflowExecutionStatus>("status", Status);
             writer.WriteIntValue("total_duration_ms", TotalDurationMs);
+            writer.WriteStringValue("user_id", UserId);
+            writer.WriteGuidValue("workflow_id", WorkflowId);
             writer.WriteStringValue("workflow_name", WorkflowName);
             writer.WriteAdditionalData(AdditionalData);
         }

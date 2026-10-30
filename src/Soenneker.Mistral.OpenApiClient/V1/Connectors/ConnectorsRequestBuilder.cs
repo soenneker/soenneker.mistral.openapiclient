@@ -72,7 +72,7 @@ namespace Soenneker.Mistral.OpenApiClient.V1.Connectors
             return await RequestAdapter.SendAsync<global::Soenneker.Mistral.OpenApiClient.Models.PaginatedConnectors>(requestInfo, global::Soenneker.Mistral.OpenApiClient.Models.PaginatedConnectors.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create a new MCP connector. You can customize its visibility, url and auth type.
+        /// Create a new MCP or HTTP connector. You can customize its visibility, URL, and auth type.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Mistral.OpenApiClient.Models.Connector"/></returns>
         /// <param name="body">The request body</param>
@@ -81,11 +81,11 @@ namespace Soenneker.Mistral.OpenApiClient.V1.Connectors
         /// <exception cref="global::Soenneker.Mistral.OpenApiClient.Models.HttpValidationError">When receiving a 422 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Mistral.OpenApiClient.Models.Connector?> PostAsync(global::Soenneker.Mistral.OpenApiClient.Models.ConnectorMcpCreate body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Mistral.OpenApiClient.Models.Connector?> PostAsync(global::Soenneker.Mistral.OpenApiClient.Models.ConnectorCreateV1Request body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Mistral.OpenApiClient.Models.Connector> PostAsync(global::Soenneker.Mistral.OpenApiClient.Models.ConnectorMcpCreate body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Mistral.OpenApiClient.Models.Connector> PostAsync(global::Soenneker.Mistral.OpenApiClient.Models.ConnectorCreateV1Request body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -116,18 +116,18 @@ namespace Soenneker.Mistral.OpenApiClient.V1.Connectors
             return requestInfo;
         }
         /// <summary>
-        /// Create a new MCP connector. You can customize its visibility, url and auth type.
+        /// Create a new MCP or HTTP connector. You can customize its visibility, URL, and auth type.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Mistral.OpenApiClient.Models.ConnectorMcpCreate body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Mistral.OpenApiClient.Models.ConnectorCreateV1Request body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Mistral.OpenApiClient.Models.ConnectorMcpCreate body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Mistral.OpenApiClient.Models.ConnectorCreateV1Request body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));

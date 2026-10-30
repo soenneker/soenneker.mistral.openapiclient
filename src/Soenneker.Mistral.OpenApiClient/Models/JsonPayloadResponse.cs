@@ -8,16 +8,24 @@ using System;
 namespace Soenneker.Mistral.OpenApiClient.Models
 {
     /// <summary>
-    /// A payload containing arbitrary JSON data.Used for complete state snapshots or final results.
+    /// A payload containing arbitrary JSON data.Used for complete state snapshots or final results.When encrypted, the value field contains base64-encoded encrypted dataand encoding_options indicates the type of encryption applied.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class JsonPayloadResponse : IAdditionalDataHolder, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>Encoding options applied to the payload.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.Mistral.OpenApiClient.Models.EncodedPayloadOptions?>? EncodingOptions { get; set; }
+#nullable restore
+#else
+        public List<global::Soenneker.Mistral.OpenApiClient.Models.EncodedPayloadOptions?> EncodingOptions { get; set; }
+#endif
         /// <summary>Discriminator indicating this is a raw JSON payload.</summary>
         public global::Soenneker.Mistral.OpenApiClient.Models.JsonType? Type { get; set; }
-        /// <summary>The JSON-serializable payload value.</summary>
+        /// <summary>The JSON-serializable payload value. When encrypted, contains base64-encoded data.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public UntypedNode? Value { get; set; }
@@ -50,6 +58,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "encoding_options", n => { EncodingOptions = n.GetCollectionOfEnumValues<global::Soenneker.Mistral.OpenApiClient.Models.EncodedPayloadOptions>()?.AsList(); } },
                 { "type", n => { Type = n.GetEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.JsonType>(); } },
                 { "value", n => { Value = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
             };
@@ -61,6 +70,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteCollectionOfEnumValues<global::Soenneker.Mistral.OpenApiClient.Models.EncodedPayloadOptions>("encoding_options", EncodingOptions);
             writer.WriteEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.JsonType>("type", Type);
             writer.WriteObjectValue<UntypedNode>("value", Value);
             writer.WriteAdditionalData(AdditionalData);

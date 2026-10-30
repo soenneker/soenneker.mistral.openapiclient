@@ -56,6 +56,14 @@ namespace Soenneker.Mistral.OpenApiClient.Models
 #else
         public string SharedNamespace { get; set; }
 #endif
+        /// <summary>Tags for filtering and discovery</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<string>? Tags { get; set; }
+#nullable restore
+#else
+        public List<string> Tags { get; set; }
+#endif
         /// <summary>Type of the workflow</summary>
         public global::Soenneker.Mistral.OpenApiClient.Models.WorkflowType? Type { get; set; }
         /// <summary>Workspace ID of the workflow</summary>
@@ -97,6 +105,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
                 { "is_technical", n => { IsTechnical = n.GetBoolValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "shared_namespace", n => { SharedNamespace = n.GetStringValue(); } },
+                { "tags", n => { Tags = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "type", n => { Type = n.GetEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.WorkflowType>(); } },
                 { "workspace_id", n => { WorkspaceId = n.GetGuidValue(); } },
             };
@@ -117,6 +126,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             writer.WriteBoolValue("is_technical", IsTechnical);
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("shared_namespace", SharedNamespace);
+            writer.WriteCollectionOfPrimitiveValues<string>("tags", Tags);
             writer.WriteEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.WorkflowType>("type", Type);
             writer.WriteGuidValue("workspace_id", WorkspaceId);
             writer.WriteAdditionalData(AdditionalData);

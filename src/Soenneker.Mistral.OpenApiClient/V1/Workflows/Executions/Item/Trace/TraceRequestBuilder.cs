@@ -3,6 +3,7 @@
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions;
 using Soenneker.Mistral.OpenApiClient.V1.Workflows.Executions.Item.Trace.Events;
+using Soenneker.Mistral.OpenApiClient.V1.Workflows.Executions.Item.Trace.Info;
 using Soenneker.Mistral.OpenApiClient.V1.Workflows.Executions.Item.Trace.Otel;
 using Soenneker.Mistral.OpenApiClient.V1.Workflows.Executions.Item.Trace.Summary;
 using System.Collections.Generic;
@@ -21,6 +22,11 @@ namespace Soenneker.Mistral.OpenApiClient.V1.Workflows.Executions.Item.Trace
         public global::Soenneker.Mistral.OpenApiClient.V1.Workflows.Executions.Item.Trace.Events.EventsRequestBuilder Events
         {
             get => new global::Soenneker.Mistral.OpenApiClient.V1.Workflows.Executions.Item.Trace.Events.EventsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The info property</summary>
+        public global::Soenneker.Mistral.OpenApiClient.V1.Workflows.Executions.Item.Trace.Info.InfoRequestBuilder Info
+        {
+            get => new global::Soenneker.Mistral.OpenApiClient.V1.Workflows.Executions.Item.Trace.Info.InfoRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The otel property</summary>
         public global::Soenneker.Mistral.OpenApiClient.V1.Workflows.Executions.Item.Trace.Otel.OtelRequestBuilder Otel

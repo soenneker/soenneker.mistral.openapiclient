@@ -8,19 +8,11 @@ using System;
 namespace Soenneker.Mistral.OpenApiClient.Models
 {
     /// <summary>
-    /// Composed type wrapper for classes List&lt;global::Soenneker.Mistral.OpenApiClient.Models.IntegrationsSchemasApiToolTool&gt;, List&lt;global::Soenneker.Mistral.OpenApiClient.Models.McpTool&gt;, List&lt;global::Soenneker.Mistral.OpenApiClient.Models.ResponseConnectorListToolsV1Member1&gt;
+    /// Composed type wrapper for classes List&lt;global::Soenneker.Mistral.OpenApiClient.Models.McpTool&gt;, List&lt;global::Soenneker.Mistral.OpenApiClient.Models.ResponseConnectorListToolsV1Member1&gt;
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ResponseConnectorListToolsV1 : IComposedTypeWrapper, IParsable
     {
-        /// <summary>Composed type representation for type List&lt;global::Soenneker.Mistral.OpenApiClient.Models.IntegrationsSchemasApiToolTool&gt;</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public List<global::Soenneker.Mistral.OpenApiClient.Models.IntegrationsSchemasApiToolTool>? IntegrationsSchemasApiToolTool { get; set; }
-#nullable restore
-#else
-        public List<global::Soenneker.Mistral.OpenApiClient.Models.IntegrationsSchemasApiToolTool> IntegrationsSchemasApiToolTool { get; set; }
-#endif
         /// <summary>Composed type representation for type List&lt;global::Soenneker.Mistral.OpenApiClient.Models.McpTool&gt;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -46,15 +38,11 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             var result = new global::Soenneker.Mistral.OpenApiClient.Models.ResponseConnectorListToolsV1();
-            if(parseNode.GetCollectionOfObjectValues<global::Soenneker.Mistral.OpenApiClient.Models.IntegrationsSchemasApiToolTool>(global::Soenneker.Mistral.OpenApiClient.Models.IntegrationsSchemasApiToolTool.CreateFromDiscriminatorValue)?.AsList() is List<global::Soenneker.Mistral.OpenApiClient.Models.IntegrationsSchemasApiToolTool> integrationsSchemasApiToolToolValue)
-            {
-                result.IntegrationsSchemasApiToolTool = integrationsSchemasApiToolToolValue;
-            }
-            else if(parseNode.GetCollectionOfObjectValues<global::Soenneker.Mistral.OpenApiClient.Models.McpTool>(global::Soenneker.Mistral.OpenApiClient.Models.McpTool.CreateFromDiscriminatorValue)?.AsList() is List<global::Soenneker.Mistral.OpenApiClient.Models.McpTool> mcpToolValue)
+            if(parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedArray && parseNode.GetCollectionOfObjectValues<global::Soenneker.Mistral.OpenApiClient.Models.McpTool>(global::Soenneker.Mistral.OpenApiClient.Models.McpTool.CreateFromDiscriminatorValue)?.AsList() is List<global::Soenneker.Mistral.OpenApiClient.Models.McpTool> mcpToolValue)
             {
                 result.McpTool = mcpToolValue;
             }
-            else if(parseNode.GetCollectionOfObjectValues<global::Soenneker.Mistral.OpenApiClient.Models.ResponseConnectorListToolsV1Member1>(global::Soenneker.Mistral.OpenApiClient.Models.ResponseConnectorListToolsV1Member1.CreateFromDiscriminatorValue)?.AsList() is List<global::Soenneker.Mistral.OpenApiClient.Models.ResponseConnectorListToolsV1Member1> responseConnectorListToolsV1Member1Value)
+            else if(parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedArray && parseNode.GetCollectionOfObjectValues<global::Soenneker.Mistral.OpenApiClient.Models.ResponseConnectorListToolsV1Member1>(global::Soenneker.Mistral.OpenApiClient.Models.ResponseConnectorListToolsV1Member1.CreateFromDiscriminatorValue)?.AsList() is List<global::Soenneker.Mistral.OpenApiClient.Models.ResponseConnectorListToolsV1Member1> responseConnectorListToolsV1Member1Value)
             {
                 result.ResponseConnectorListToolsV1Member1 = responseConnectorListToolsV1Member1Value;
             }
@@ -75,11 +63,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            if(IntegrationsSchemasApiToolTool != null)
-            {
-                writer.WriteCollectionOfObjectValues<global::Soenneker.Mistral.OpenApiClient.Models.IntegrationsSchemasApiToolTool>(null, IntegrationsSchemasApiToolTool);
-            }
-            else if(McpTool != null)
+            if(McpTool != null)
             {
                 writer.WriteCollectionOfObjectValues<global::Soenneker.Mistral.OpenApiClient.Models.McpTool>(null, McpTool);
             }

@@ -32,10 +32,6 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         #pragma warning disable CS1591
         AuthForbiddenRoleNotFound,
         #pragma warning restore CS1591
-        [EnumMember(Value = "AUTH_FORBIDDEN_ORG_NOT_WHITELISTED")]
-        #pragma warning disable CS1591
-        AuthForbiddenOrgNotWhitelisted,
-        #pragma warning restore CS1591
         [EnumMember(Value = "AUTH_UNAUTHORIZED")]
         #pragma warning disable CS1591
         AuthUnauthorized,
@@ -48,21 +44,9 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         #pragma warning disable CS1591
         FieldsBadRequest,
         #pragma warning restore CS1591
-        [EnumMember(Value = "FIELDS_NOT_FOUND")]
-        #pragma warning disable CS1591
-        FieldsNotFound,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "SEARCH_NOT_FOUND")]
-        #pragma warning disable CS1591
-        SearchNotFound,
-        #pragma warning restore CS1591
         [EnumMember(Value = "SEARCH_BAD_REQUEST")]
         #pragma warning disable CS1591
         SearchBadRequest,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "SEARCH_SERVICE_UNAVAILABLE")]
-        #pragma warning disable CS1591
-        SearchServiceUnavailable,
         #pragma warning restore CS1591
         [EnumMember(Value = "DATABASE_ERROR")]
         #pragma warning disable CS1591
@@ -104,25 +88,9 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         #pragma warning disable CS1591
         JudgeNotFound,
         #pragma warning restore CS1591
-        [EnumMember(Value = "JUDGE_ALREADY_HAS_NEW_VERSION")]
-        #pragma warning disable CS1591
-        JudgeAlreadyHasNewVersion,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "JUDGE_USED_IN_CAMPAIGN_CANNOT_BE_UPDATED")]
-        #pragma warning disable CS1591
-        JudgeUsedInCampaignCannotBeUpdated,
-        #pragma warning restore CS1591
         [EnumMember(Value = "JUDGE_DID_NOT_CHANGE")]
         #pragma warning disable CS1591
         JudgeDidNotChange,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "CAMPAIGN_NOT_FOUND")]
-        #pragma warning disable CS1591
-        CampaignNotFound,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "CAMPAIGN_NO_MATCHING_EVENTS")]
-        #pragma warning disable CS1591
-        CampaignNoMatchingEvents,
         #pragma warning restore CS1591
         [EnumMember(Value = "DATASET_NOT_FOUND")]
         #pragma warning disable CS1591
@@ -176,9 +144,77 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         #pragma warning disable CS1591
         EvaluationRunTransitionError,
         #pragma warning restore CS1591
+        [EnumMember(Value = "EVALUATION_RUN_OUTPUT_RECORD_CONFLICT")]
+        #pragma warning disable CS1591
+        EvaluationRunOutputRecordConflict,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "TEMPLATE_ERROR")]
+        #pragma warning disable CS1591
+        TemplateError,
+        #pragma warning restore CS1591
         [EnumMember(Value = "TEMPLATE_SYNTAX_ERROR")]
         #pragma warning disable CS1591
         TemplateSyntaxError,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "PROJECT_NOT_FOUND")]
+        #pragma warning disable CS1591
+        ProjectNotFound,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "PROJECT_NAME_ALREADY_EXISTS")]
+        #pragma warning disable CS1591
+        ProjectNameAlreadyExists,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "PIPELINE_CONFIG_NOT_FOUND")]
+        #pragma warning disable CS1591
+        PipelineConfigNotFound,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "PIPELINE_CONFIG_ALREADY_EXISTS")]
+        #pragma warning disable CS1591
+        PipelineConfigAlreadyExists,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "PIPELINE_NOT_FOUND")]
+        #pragma warning disable CS1591
+        PipelineNotFound,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "PIPELINE_ALREADY_EXISTS")]
+        #pragma warning disable CS1591
+        PipelineAlreadyExists,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "SCORER_NOT_FOUND")]
+        #pragma warning disable CS1591
+        ScorerNotFound,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "SCORER_ALREADY_EXISTS")]
+        #pragma warning disable CS1591
+        ScorerAlreadyExists,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "SCORER_CONFIG_KIND_MISMATCH")]
+        #pragma warning disable CS1591
+        ScorerConfigKindMismatch,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "EVALUATION_NAME_ALREADY_EXISTS")]
+        #pragma warning disable CS1591
+        EvaluationNameAlreadyExists,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "OPTIMIZATION_NOT_FOUND")]
+        #pragma warning disable CS1591
+        OptimizationNotFound,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "OPTIMIZATION_TRIAL_KEY_ALREADY_EXISTS")]
+        #pragma warning disable CS1591
+        OptimizationTrialKeyAlreadyExists,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "TRACES_FILTER_QUERY_PARSE_ERROR")]
+        #pragma warning disable CS1591
+        TracesFilterQueryParseError,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "TRACE_NOT_FOUND")]
+        #pragma warning disable CS1591
+        TraceNotFound,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "SPAN_NOT_FOUND")]
+        #pragma warning disable CS1591
+        SpanNotFound,
         #pragma warning restore CS1591
     }
 }

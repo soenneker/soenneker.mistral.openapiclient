@@ -15,6 +15,8 @@ namespace Soenneker.Mistral.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>Workflow retry attempt number. 1 on first run and CAN; &gt;1 on workflow-level retries.</summary>
+        public int? Attempt { get; set; }
         /// <summary>Details about the failure that caused the workflow to fail.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -37,6 +39,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         public WorkflowExecutionFailedAttributes()
         {
             AdditionalData = new Dictionary<string, object>();
+            Attempt = 1;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -56,6 +59,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "attempt", n => { Attempt = n.GetIntValue(); } },
                 { "failure", n => { Failure = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.Failure>(global::Soenneker.Mistral.OpenApiClient.Models.Failure.CreateFromDiscriminatorValue); } },
                 { "task_id", n => { TaskId = n.GetStringValue(); } },
             };
@@ -67,6 +71,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteIntValue("attempt", Attempt);
             writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.Failure>("failure", Failure);
             writer.WriteStringValue("task_id", TaskId);
             writer.WriteAdditionalData(AdditionalData);

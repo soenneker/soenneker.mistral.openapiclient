@@ -7,17 +7,22 @@ using System.IO;
 using System;
 namespace Soenneker.Mistral.OpenApiClient.Models
 {
+    /// <summary>
+    /// This is populated by Harmattan, but some fields have a namethat we don&apos;t want to expose in the API.
+    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public partial class ModelCapabilities : IAdditionalDataHolder, IParsable
-    #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The audio property</summary>
         public bool? Audio { get; set; }
+        /// <summary>The audio_speech property</summary>
+        public bool? AudioSpeech { get; set; }
         /// <summary>The audio_transcription property</summary>
         public bool? AudioTranscription { get; set; }
+        /// <summary>The audio_transcription_realtime property</summary>
+        public bool? AudioTranscriptionRealtime { get; set; }
         /// <summary>The classification property</summary>
         public bool? Classification { get; set; }
         /// <summary>The completion_chat property</summary>
@@ -32,6 +37,10 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         public bool? Moderation { get; set; }
         /// <summary>The ocr property</summary>
         public bool? Ocr { get; set; }
+        /// <summary>The reasoning property</summary>
+        public bool? Reasoning { get; set; }
+        /// <summary>The unified_resources property</summary>
+        public bool? UnifiedResources { get; set; }
         /// <summary>The vision property</summary>
         public bool? Vision { get; set; }
         /// <summary>
@@ -41,7 +50,9 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         {
             AdditionalData = new Dictionary<string, object>();
             Audio = false;
+            AudioSpeech = false;
             AudioTranscription = false;
+            AudioTranscriptionRealtime = false;
             Classification = false;
             CompletionChat = false;
             CompletionFim = false;
@@ -49,6 +60,8 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             FunctionCalling = false;
             Moderation = false;
             Ocr = false;
+            Reasoning = false;
+            UnifiedResources = false;
             Vision = false;
         }
         /// <summary>
@@ -70,7 +83,9 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "audio", n => { Audio = n.GetBoolValue(); } },
+                { "audio_speech", n => { AudioSpeech = n.GetBoolValue(); } },
                 { "audio_transcription", n => { AudioTranscription = n.GetBoolValue(); } },
+                { "audio_transcription_realtime", n => { AudioTranscriptionRealtime = n.GetBoolValue(); } },
                 { "classification", n => { Classification = n.GetBoolValue(); } },
                 { "completion_chat", n => { CompletionChat = n.GetBoolValue(); } },
                 { "completion_fim", n => { CompletionFim = n.GetBoolValue(); } },
@@ -78,6 +93,8 @@ namespace Soenneker.Mistral.OpenApiClient.Models
                 { "function_calling", n => { FunctionCalling = n.GetBoolValue(); } },
                 { "moderation", n => { Moderation = n.GetBoolValue(); } },
                 { "ocr", n => { Ocr = n.GetBoolValue(); } },
+                { "reasoning", n => { Reasoning = n.GetBoolValue(); } },
+                { "unified_resources", n => { UnifiedResources = n.GetBoolValue(); } },
                 { "vision", n => { Vision = n.GetBoolValue(); } },
             };
         }
@@ -89,7 +106,9 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("audio", Audio);
+            writer.WriteBoolValue("audio_speech", AudioSpeech);
             writer.WriteBoolValue("audio_transcription", AudioTranscription);
+            writer.WriteBoolValue("audio_transcription_realtime", AudioTranscriptionRealtime);
             writer.WriteBoolValue("classification", Classification);
             writer.WriteBoolValue("completion_chat", CompletionChat);
             writer.WriteBoolValue("completion_fim", CompletionFim);
@@ -97,6 +116,8 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             writer.WriteBoolValue("function_calling", FunctionCalling);
             writer.WriteBoolValue("moderation", Moderation);
             writer.WriteBoolValue("ocr", Ocr);
+            writer.WriteBoolValue("reasoning", Reasoning);
+            writer.WriteBoolValue("unified_resources", UnifiedResources);
             writer.WriteBoolValue("vision", Vision);
             writer.WriteAdditionalData(AdditionalData);
         }

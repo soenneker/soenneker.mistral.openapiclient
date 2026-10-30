@@ -11,8 +11,10 @@ namespace Soenneker.Mistral.OpenApiClient.Models
     /// Confidence score for a token or word in OCR output.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class OcrConfidenceScore : IParsable
+    public partial class OcrConfidenceScore : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Confidence score (0-1)</summary>
         public double? Confidence { get; set; }
         /// <summary>Start index of the text in the page markdown string</summary>
@@ -25,6 +27,13 @@ namespace Soenneker.Mistral.OpenApiClient.Models
 #else
         public string Text { get; set; }
 #endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Mistral.OpenApiClient.Models.OcrConfidenceScore"/> and sets the default values.
+        /// </summary>
+        public OcrConfidenceScore()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -58,6 +67,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             writer.WriteDoubleValue("confidence", Confidence);
             writer.WriteIntValue("start_index", StartIndex);
             writer.WriteStringValue("text", Text);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

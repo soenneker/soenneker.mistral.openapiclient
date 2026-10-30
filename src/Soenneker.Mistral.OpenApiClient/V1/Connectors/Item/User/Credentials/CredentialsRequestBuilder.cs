@@ -4,7 +4,6 @@ using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
 using Soenneker.Mistral.OpenApiClient.Models;
-using Soenneker.Mistral.OpenApiClient.V1.Connectors.Item.User.Credentials.Item;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
@@ -18,18 +17,6 @@ namespace Soenneker.Mistral.OpenApiClient.V1.Connectors.Item.User.Credentials
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class CredentialsRequestBuilder : BaseRequestBuilder
     {
-        /// <summary>Gets an item from the Soenneker.Mistral.OpenApiClient.v1.connectors.item.user.credentials.item collection</summary>
-        /// <param name="position">Unique identifier of the item</param>
-        /// <returns>A <see cref="global::Soenneker.Mistral.OpenApiClient.V1.Connectors.Item.User.Credentials.Item.WithCredentialsNameItemRequestBuilder"/></returns>
-        public global::Soenneker.Mistral.OpenApiClient.V1.Connectors.Item.User.Credentials.Item.WithCredentialsNameItemRequestBuilder this[string position]
-        {
-            get
-            {
-                var urlTplParams = new Dictionary<string, object>(PathParameters);
-                urlTplParams.Add("credentialsName", position);
-                return new global::Soenneker.Mistral.OpenApiClient.V1.Connectors.Item.User.Credentials.Item.WithCredentialsNameItemRequestBuilder(urlTplParams, RequestAdapter);
-            }
-        }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Mistral.OpenApiClient.V1.Connectors.Item.User.Credentials.CredentialsRequestBuilder"/> and sets the default values.
         /// </summary>
@@ -45,6 +32,29 @@ namespace Soenneker.Mistral.OpenApiClient.V1.Connectors.Item.User.Credentials
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
         public CredentialsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/connectors/{connectorIdOrName}/user/credentials{?auth_type*,fetch_default*}", rawUrl)
         {
+        }
+        /// <summary>
+        /// Delete all credentials configured at the user level for a given connector.
+        /// </summary>
+        /// <returns>A <see cref="global::Soenneker.Mistral.OpenApiClient.Models.MessageResponse"/></returns>
+        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="global::Soenneker.Mistral.OpenApiClient.Models.HttpValidationError">When receiving a 422 status code</exception>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public async Task<global::Soenneker.Mistral.OpenApiClient.Models.MessageResponse?> DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
+#nullable restore
+#else
+        public async Task<global::Soenneker.Mistral.OpenApiClient.Models.MessageResponse> DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
+#endif
+            var requestInfo = ToDeleteRequestInformation(requestConfiguration);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
+                { "422", global::Soenneker.Mistral.OpenApiClient.Models.HttpValidationError.CreateFromDiscriminatorValue },
+            };
+            return await RequestAdapter.SendAsync<global::Soenneker.Mistral.OpenApiClient.Models.MessageResponse>(requestInfo, global::Soenneker.Mistral.OpenApiClient.Models.MessageResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// List all credentials configured at the user level for a given connector.
@@ -70,29 +80,23 @@ namespace Soenneker.Mistral.OpenApiClient.V1.Connectors.Item.User.Credentials
             return await RequestAdapter.SendAsync<global::Soenneker.Mistral.OpenApiClient.Models.CredentialsResponse>(requestInfo, global::Soenneker.Mistral.OpenApiClient.Models.CredentialsResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create or update credentials at the user level for a given connector.
+        /// Delete all credentials configured at the user level for a given connector.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Mistral.OpenApiClient.Models.MessageResponse"/></returns>
-        /// <param name="body">Request to create or update non-OAuth2 credentials for a connector.</param>
-        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
+        /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Mistral.OpenApiClient.Models.HttpValidationError">When receiving a 422 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Mistral.OpenApiClient.Models.MessageResponse?> PostAsync(global::Soenneker.Mistral.OpenApiClient.Models.CredentialsCreateOrUpdate body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Mistral.OpenApiClient.Models.MessageResponse> PostAsync(global::Soenneker.Mistral.OpenApiClient.Models.CredentialsCreateOrUpdate body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
-            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
-            var requestInfo = ToPostRequestInformation(body, requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
-            {
-                { "422", global::Soenneker.Mistral.OpenApiClient.Models.HttpValidationError.CreateFromDiscriminatorValue },
-            };
-            return await RequestAdapter.SendAsync<global::Soenneker.Mistral.OpenApiClient.Models.MessageResponse>(requestInfo, global::Soenneker.Mistral.OpenApiClient.Models.MessageResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            var requestInfo = new RequestInformation(Method.DELETE, UrlTemplate, PathParameters);
+            requestInfo.Configure(requestConfiguration);
+            requestInfo.Headers.TryAdd("Accept", "application/json");
+            return requestInfo;
         }
         /// <summary>
         /// List all credentials configured at the user level for a given connector.
@@ -111,28 +115,6 @@ namespace Soenneker.Mistral.OpenApiClient.V1.Connectors.Item.User.Credentials
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
-            return requestInfo;
-        }
-        /// <summary>
-        /// Create or update credentials at the user level for a given connector.
-        /// </summary>
-        /// <returns>A <see cref="RequestInformation"/></returns>
-        /// <param name="body">Request to create or update non-OAuth2 credentials for a connector.</param>
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Mistral.OpenApiClient.Models.CredentialsCreateOrUpdate body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
-        {
-#nullable restore
-#else
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Mistral.OpenApiClient.Models.CredentialsCreateOrUpdate body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
-        {
-#endif
-            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
-            var requestInfo = new RequestInformation(Method.POST, UrlTemplate, PathParameters);
-            requestInfo.Configure(requestConfiguration);
-            requestInfo.Headers.TryAdd("Accept", "application/json");
-            requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
             return requestInfo;
         }
         /// <summary>

@@ -29,8 +29,8 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         public double? PresencePenalty { get; set; }
         /// <summary>The random_seed property</summary>
         public int? RandomSeed { get; set; }
-        /// <summary>Controls the reasoning effort level for reasoning models. &quot;high&quot; enables comprehensive reasoning traces, &quot;none&quot; disables reasoning effort.</summary>
-        public global::Soenneker.Mistral.OpenApiClient.Models.CompletionArgsReasoningEffort? ReasoningEffort { get; set; }
+        /// <summary>The reasoning_effort property</summary>
+        public global::Soenneker.Mistral.OpenApiClient.Models.ReasoningEffort? ReasoningEffort { get; set; }
         /// <summary>The response_format property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -83,7 +83,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
                 { "prediction", n => { Prediction = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.Prediction>(global::Soenneker.Mistral.OpenApiClient.Models.Prediction.CreateFromDiscriminatorValue); } },
                 { "presence_penalty", n => { PresencePenalty = n.GetDoubleValue(); } },
                 { "random_seed", n => { RandomSeed = n.GetIntValue(); } },
-                { "reasoning_effort", n => { ReasoningEffort = n.GetEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.CompletionArgsReasoningEffort>(); } },
+                { "reasoning_effort", n => { ReasoningEffort = n.GetEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.ReasoningEffort>(); } },
                 { "response_format", n => { ResponseFormat = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ResponseFormat>(global::Soenneker.Mistral.OpenApiClient.Models.ResponseFormat.CreateFromDiscriminatorValue); } },
                 { "stop", n => { Stop = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.CompletionArgsStop>(global::Soenneker.Mistral.OpenApiClient.Models.CompletionArgsStop.CreateFromDiscriminatorValue); } },
                 { "temperature", n => { Temperature = n.GetDoubleValue(); } },
@@ -103,7 +103,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.Prediction>("prediction", Prediction);
             writer.WriteDoubleValue("presence_penalty", PresencePenalty);
             writer.WriteIntValue("random_seed", RandomSeed);
-            writer.WriteEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.CompletionArgsReasoningEffort>("reasoning_effort", ReasoningEffort);
+            writer.WriteEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.ReasoningEffort>("reasoning_effort", ReasoningEffort);
             writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ResponseFormat>("response_format", ResponseFormat);
             writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.CompletionArgsStop>("stop", Stop);
             writer.WriteDoubleValue("temperature", Temperature);

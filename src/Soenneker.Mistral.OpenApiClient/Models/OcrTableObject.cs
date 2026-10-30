@@ -9,9 +9,11 @@ namespace Soenneker.Mistral.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class OcrTableObject : IParsable
+    public partial class OcrTableObject : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Content of the table in the given format</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -38,6 +40,13 @@ namespace Soenneker.Mistral.OpenApiClient.Models
 #else
         public List<global::Soenneker.Mistral.OpenApiClient.Models.OcrConfidenceScore> WordConfidenceScores { get; set; }
 #endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Mistral.OpenApiClient.Models.OcrTableObject"/> and sets the default values.
+        /// </summary>
+        public OcrTableObject()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -73,6 +82,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             writer.WriteEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.OcrTableObjectFormat>("format", Format);
             writer.WriteStringValue("id", Id);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Mistral.OpenApiClient.Models.OcrConfidenceScore>("word_confidence_scores", WordConfidenceScores);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

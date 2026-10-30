@@ -16,6 +16,18 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>When the worker first registered</summary>
         public DateTimeOffset? CreatedAt { get; set; }
+        /// <summary>Whether this worker&apos;s liveness key is currently alive</summary>
+        public bool? IsActive { get; set; }
+        /// <summary>When the worker last registered</summary>
+        public DateTimeOffset? LastHeartbeat { get; set; }
+        /// <summary>Where the worker is running; null if the worker did not report a location</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Mistral.OpenApiClient.Models.DeploymentLocation? Location { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Mistral.OpenApiClient.Models.DeploymentLocation Location { get; set; }
+#endif
         /// <summary>Worker name</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -24,7 +36,8 @@ namespace Soenneker.Mistral.OpenApiClient.Models
 #else
         public string Name { get; set; }
 #endif
-        /// <summary>When the worker last registered</summary>
+        /// <summary>Deprecated alias of last_heartbeat</summary>
+        [Obsolete("")]
         public DateTimeOffset? UpdatedAt { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Mistral.OpenApiClient.Models.DeploymentWorkerResponse"/> and sets the default values.
@@ -52,6 +65,9 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
+                { "is_active", n => { IsActive = n.GetBoolValue(); } },
+                { "last_heartbeat", n => { LastHeartbeat = n.GetDateTimeOffsetValue(); } },
+                { "location", n => { Location = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.DeploymentLocation>(global::Soenneker.Mistral.OpenApiClient.Models.DeploymentLocation.CreateFromDiscriminatorValue); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
             };
@@ -64,6 +80,9 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteDateTimeOffsetValue("created_at", CreatedAt);
+            writer.WriteBoolValue("is_active", IsActive);
+            writer.WriteDateTimeOffsetValue("last_heartbeat", LastHeartbeat);
+            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.DeploymentLocation>("location", Location);
             writer.WriteStringValue("name", Name);
             writer.WriteDateTimeOffsetValue("updated_at", UpdatedAt);
             writer.WriteAdditionalData(AdditionalData);

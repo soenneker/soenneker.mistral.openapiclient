@@ -7,6 +7,7 @@ using Microsoft.Kiota.Serialization.Json;
 using Microsoft.Kiota.Serialization.Multipart;
 using Microsoft.Kiota.Serialization.Text;
 using Soenneker.Mistral.OpenApiClient.V1;
+using Soenneker.Mistral.OpenApiClient.V2;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
@@ -23,6 +24,11 @@ namespace Soenneker.Mistral.OpenApiClient
         public global::Soenneker.Mistral.OpenApiClient.V1.V1RequestBuilder V1
         {
             get => new global::Soenneker.Mistral.OpenApiClient.V1.V1RequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The v2 property</summary>
+        public global::Soenneker.Mistral.OpenApiClient.V2.V2RequestBuilder V2
+        {
+            get => new global::Soenneker.Mistral.OpenApiClient.V2.V2RequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Mistral.OpenApiClient.MistralOpenApiClient"/> and sets the default values.

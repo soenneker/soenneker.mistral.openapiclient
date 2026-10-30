@@ -30,14 +30,6 @@ namespace Soenneker.Mistral.OpenApiClient.Models
 #else
         public string DeploymentName { get; set; }
 #endif
-        /// <summary>Encoded input to the workflow, used when payload encoding is enabled.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.NetworkEncodedInput? EncodedInput { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Mistral.OpenApiClient.Models.NetworkEncodedInput EncodedInput { get; set; }
-#endif
         /// <summary>Allows you to specify a custom execution ID. If not provided, a random ID will be generated.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -46,13 +38,23 @@ namespace Soenneker.Mistral.OpenApiClient.Models
 #else
         public string ExecutionId { get; set; }
 #endif
-        /// <summary>The input to the workflow. This should be a dictionary that matches the workflow&apos;s input schema.</summary>
+        /// <summary>Plugin-specific data to propagate into WorkflowContext.extensions at execution time.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.WorkflowExecutionRequestInputProperty? Input { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.WorkflowExecutionRequestExtensionsProperty? Extensions { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.WorkflowExecutionRequestInputProperty Input { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.WorkflowExecutionRequestExtensionsProperty Extensions { get; set; }
+#endif
+        /// <summary>If true, ignore the caller&apos;s trace context and start a new, independent trace for this execution instead of joining the caller&apos;s trace.</summary>
+        public bool? ForceNewTrace { get; set; }
+        /// <summary>The input to the workflow. This should be a dictionary or a BaseModel that matches the workflow&apos;s input schema.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public UntypedNode? Input { get; set; }
+#nullable restore
+#else
+        public UntypedNode Input { get; set; }
 #endif
         /// <summary>Deprecated. Use deployment_name instead.</summary>
         [Obsolete("")]
@@ -65,6 +67,14 @@ namespace Soenneker.Mistral.OpenApiClient.Models
 #endif
         /// <summary>Maximum time to wait for completion when wait_for_result is true.</summary>
         public double? TimeoutSeconds { get; set; }
+        /// <summary>W3C trace context to join this execution to the caller&apos;s trace. Ignored when force_new_trace is set.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Traceparent { get; set; }
+#nullable restore
+#else
+        public string Traceparent { get; set; }
+#endif
         /// <summary>If true, wait for the workflow to complete and return the result directly.</summary>
         public bool? WaitForResult { get; set; }
         /// <summary>
@@ -73,6 +83,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         public WorkflowExecutionRequest()
         {
             AdditionalData = new Dictionary<string, object>();
+            ForceNewTrace = false;
             WaitForResult = false;
         }
         /// <summary>
@@ -95,11 +106,13 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             {
                 { "custom_tracing_attributes", n => { CustomTracingAttributes = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.WorkflowExecutionRequestCustomTracingAttributesProperty>(global::Soenneker.Mistral.OpenApiClient.Models.WorkflowExecutionRequestCustomTracingAttributesProperty.CreateFromDiscriminatorValue); } },
                 { "deployment_name", n => { DeploymentName = n.GetStringValue(); } },
-                { "encoded_input", n => { EncodedInput = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.NetworkEncodedInput>(global::Soenneker.Mistral.OpenApiClient.Models.NetworkEncodedInput.CreateFromDiscriminatorValue); } },
                 { "execution_id", n => { ExecutionId = n.GetStringValue(); } },
-                { "input", n => { Input = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.WorkflowExecutionRequestInputProperty>(global::Soenneker.Mistral.OpenApiClient.Models.WorkflowExecutionRequestInputProperty.CreateFromDiscriminatorValue); } },
+                { "extensions", n => { Extensions = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.WorkflowExecutionRequestExtensionsProperty>(global::Soenneker.Mistral.OpenApiClient.Models.WorkflowExecutionRequestExtensionsProperty.CreateFromDiscriminatorValue); } },
+                { "force_new_trace", n => { ForceNewTrace = n.GetBoolValue(); } },
+                { "input", n => { Input = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
                 { "task_queue", n => { TaskQueue = n.GetStringValue(); } },
                 { "timeout_seconds", n => { TimeoutSeconds = n.GetDoubleValue(); } },
+                { "traceparent", n => { Traceparent = n.GetStringValue(); } },
                 { "wait_for_result", n => { WaitForResult = n.GetBoolValue(); } },
             };
         }
@@ -112,11 +125,13 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.WorkflowExecutionRequestCustomTracingAttributesProperty>("custom_tracing_attributes", CustomTracingAttributes);
             writer.WriteStringValue("deployment_name", DeploymentName);
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.NetworkEncodedInput>("encoded_input", EncodedInput);
             writer.WriteStringValue("execution_id", ExecutionId);
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.WorkflowExecutionRequestInputProperty>("input", Input);
+            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.WorkflowExecutionRequestExtensionsProperty>("extensions", Extensions);
+            writer.WriteBoolValue("force_new_trace", ForceNewTrace);
+            writer.WriteObjectValue<UntypedNode>("input", Input);
             writer.WriteStringValue("task_queue", TaskQueue);
             writer.WriteDoubleValue("timeout_seconds", TimeoutSeconds);
+            writer.WriteStringValue("traceparent", Traceparent);
             writer.WriteBoolValue("wait_for_result", WaitForResult);
             writer.WriteAdditionalData(AdditionalData);
         }

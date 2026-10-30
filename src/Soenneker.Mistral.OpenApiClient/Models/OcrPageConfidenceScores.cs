@@ -8,11 +8,13 @@ using System;
 namespace Soenneker.Mistral.OpenApiClient.Models
 {
     /// <summary>
-    /// Confidence scores for an OCR page at various granularities.
+    /// Confidence scores for an OCR page at various granularities.Note on page-level stats:- For &apos;page&apos; and &apos;block&apos; granularity: average/minimum are computed from per-token  exp(logprob). Neither ``word_confidence_scores`` nor ``token_scores`` is populated.  Per-block scores are attached to response blocks separately for &apos;block&apos; granularity.- For &apos;word&apos; granularity: average/minimum are computed from per-word confidence, where  each word&apos;s confidence is exp(mean(token_logprobs)) — a geometric mean over the  word&apos;s subword tokens. ``word_confidence_scores`` is populated.- For &apos;token&apos; granularity (internal): average/minimum are computed from  ``token_scores``; ``token_scores`` is populated.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class OcrPageConfidenceScores : IParsable
+    public partial class OcrPageConfidenceScores : IAdditionalDataHolder, IParsable
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Average confidence score for the page</summary>
         public double? AveragePageConfidenceScore { get; set; }
         /// <summary>Minimum confidence score for the page</summary>
@@ -25,6 +27,13 @@ namespace Soenneker.Mistral.OpenApiClient.Models
 #else
         public List<global::Soenneker.Mistral.OpenApiClient.Models.OcrConfidenceScore> WordConfidenceScores { get; set; }
 #endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Mistral.OpenApiClient.Models.OcrPageConfidenceScores"/> and sets the default values.
+        /// </summary>
+        public OcrPageConfidenceScores()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -58,6 +67,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             writer.WriteDoubleValue("average_page_confidence_score", AveragePageConfidenceScore);
             writer.WriteDoubleValue("minimum_page_confidence_score", MinimumPageConfidenceScore);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Mistral.OpenApiClient.Models.OcrConfidenceScore>("word_confidence_scores", WordConfidenceScores);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

@@ -8,22 +8,30 @@ using System;
 namespace Soenneker.Mistral.OpenApiClient.Models
 {
     /// <summary>
-    /// A payload containing a list of JSON Patch operations.Used for streaming incremental updates to workflow state.
+    /// A payload containing a list of JSON Patch operations.Used for streaming incremental updates to workflow state.When encrypted, the value field contains base64-encoded encrypted dataand encoding_options indicates the type of encryption applied.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class JsonPatchPayloadResponse : IAdditionalDataHolder, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Discriminator indicating this is a JSON Patch payload.</summary>
-        public global::Soenneker.Mistral.OpenApiClient.Models.JsonPatchType? Type { get; set; }
-        /// <summary>The list of JSON Patch operations to apply in order.</summary>
+        /// <summary>Encoding options applied to the payload.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Mistral.OpenApiClient.Models.JsonPatchPayloadResponseValueItem>? Value { get; set; }
+        public List<global::Soenneker.Mistral.OpenApiClient.Models.EncodedPayloadOptions?>? EncodingOptions { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Mistral.OpenApiClient.Models.JsonPatchPayloadResponseValueItem> Value { get; set; }
+        public List<global::Soenneker.Mistral.OpenApiClient.Models.EncodedPayloadOptions?> EncodingOptions { get; set; }
+#endif
+        /// <summary>Discriminator indicating this is a JSON Patch payload.</summary>
+        public global::Soenneker.Mistral.OpenApiClient.Models.JsonPatchType? Type { get; set; }
+        /// <summary>The value property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Mistral.OpenApiClient.Models.JsonPatchPayloadValueResponse? Value { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Mistral.OpenApiClient.Models.JsonPatchPayloadValueResponse Value { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Mistral.OpenApiClient.Models.JsonPatchPayloadResponse"/> and sets the default values.
@@ -50,8 +58,9 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "encoding_options", n => { EncodingOptions = n.GetCollectionOfEnumValues<global::Soenneker.Mistral.OpenApiClient.Models.EncodedPayloadOptions>()?.AsList(); } },
                 { "type", n => { Type = n.GetEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.JsonPatchType>(); } },
-                { "value", n => { Value = n.GetCollectionOfObjectValues<global::Soenneker.Mistral.OpenApiClient.Models.JsonPatchPayloadResponseValueItem>(global::Soenneker.Mistral.OpenApiClient.Models.JsonPatchPayloadResponseValueItem.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "value", n => { Value = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.JsonPatchPayloadValueResponse>(global::Soenneker.Mistral.OpenApiClient.Models.JsonPatchPayloadValueResponse.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -61,8 +70,9 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteCollectionOfEnumValues<global::Soenneker.Mistral.OpenApiClient.Models.EncodedPayloadOptions>("encoding_options", EncodingOptions);
             writer.WriteEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.JsonPatchType>("type", Type);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Mistral.OpenApiClient.Models.JsonPatchPayloadResponseValueItem>("value", Value);
+            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.JsonPatchPayloadValueResponse>("value", Value);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

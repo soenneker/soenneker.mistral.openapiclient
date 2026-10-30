@@ -7,66 +7,28 @@ using System.IO;
 using System;
 namespace Soenneker.Mistral.OpenApiClient.Models
 {
+    /// <summary>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Mistral.OpenApiClient.Models.HttpConnector"/>, <see cref="global::Soenneker.Mistral.OpenApiClient.Models.McpConnector"/>
+    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
-    public partial class Connector : IAdditionalDataHolder, IParsable
-    #pragma warning restore CS1591
+    public partial class Connector : IComposedTypeWrapper, IParsable
     {
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The auth_type property</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Mistral.OpenApiClient.Models.HttpConnector"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AuthType { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.HttpConnector? HttpConnector { get; set; }
 #nullable restore
 #else
-        public string AuthType { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.HttpConnector HttpConnector { get; set; }
 #endif
-        /// <summary>The created_at property</summary>
-        public DateTimeOffset? CreatedAt { get; set; }
-        /// <summary>The description property</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Mistral.OpenApiClient.Models.McpConnector"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Description { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.McpConnector? McpConnector { get; set; }
 #nullable restore
 #else
-        public string Description { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.McpConnector McpConnector { get; set; }
 #endif
-        /// <summary>The id property</summary>
-        public Guid? Id { get; set; }
-        /// <summary>The modified_at property</summary>
-        public DateTimeOffset? ModifiedAt { get; set; }
-        /// <summary>The name property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Name { get; set; }
-#nullable restore
-#else
-        public string Name { get; set; }
-#endif
-        /// <summary>The server property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Server { get; set; }
-#nullable restore
-#else
-        public string Server { get; set; }
-#endif
-        /// <summary>The tools property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public List<global::Soenneker.Mistral.OpenApiClient.Models.IntegrationsSchemasApiToolTool>? Tools { get; set; }
-#nullable restore
-#else
-        public List<global::Soenneker.Mistral.OpenApiClient.Models.IntegrationsSchemasApiToolTool> Tools { get; set; }
-#endif
-        /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Mistral.OpenApiClient.Models.Connector"/> and sets the default values.
-        /// </summary>
-        public Connector()
-        {
-            AdditionalData = new Dictionary<string, object>();
-        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -75,7 +37,17 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         public static global::Soenneker.Mistral.OpenApiClient.Models.Connector CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Mistral.OpenApiClient.Models.Connector();
+            var mappingValue = parseNode.GetChildNode("protocol")?.GetStringValue();
+            var result = new global::Soenneker.Mistral.OpenApiClient.Models.Connector();
+            if("http".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.HttpConnector = new global::Soenneker.Mistral.OpenApiClient.Models.HttpConnector();
+            }
+            else if("mcp".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.McpConnector = new global::Soenneker.Mistral.OpenApiClient.Models.McpConnector();
+            }
+            return result;
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -83,17 +55,15 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            if(HttpConnector != null)
             {
-                { "auth_type", n => { AuthType = n.GetStringValue(); } },
-                { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
-                { "description", n => { Description = n.GetStringValue(); } },
-                { "id", n => { Id = n.GetGuidValue(); } },
-                { "modified_at", n => { ModifiedAt = n.GetDateTimeOffsetValue(); } },
-                { "name", n => { Name = n.GetStringValue(); } },
-                { "server", n => { Server = n.GetStringValue(); } },
-                { "tools", n => { Tools = n.GetCollectionOfObjectValues<global::Soenneker.Mistral.OpenApiClient.Models.IntegrationsSchemasApiToolTool>(global::Soenneker.Mistral.OpenApiClient.Models.IntegrationsSchemasApiToolTool.CreateFromDiscriminatorValue)?.AsList(); } },
-            };
+                return HttpConnector.GetFieldDeserializers();
+            }
+            else if(McpConnector != null)
+            {
+                return McpConnector.GetFieldDeserializers();
+            }
+            return new Dictionary<string, Action<IParseNode>>();
         }
         /// <summary>
         /// Serializes information the current object
@@ -102,15 +72,14 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("auth_type", AuthType);
-            writer.WriteDateTimeOffsetValue("created_at", CreatedAt);
-            writer.WriteStringValue("description", Description);
-            writer.WriteGuidValue("id", Id);
-            writer.WriteDateTimeOffsetValue("modified_at", ModifiedAt);
-            writer.WriteStringValue("name", Name);
-            writer.WriteStringValue("server", Server);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Mistral.OpenApiClient.Models.IntegrationsSchemasApiToolTool>("tools", Tools);
-            writer.WriteAdditionalData(AdditionalData);
+            if(HttpConnector != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.HttpConnector>(null, HttpConnector);
+            }
+            else if(McpConnector != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.McpConnector>(null, McpConnector);
+            }
         }
     }
 }

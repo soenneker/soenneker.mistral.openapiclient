@@ -40,7 +40,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         public global::Soenneker.Mistral.OpenApiClient.Models.EmbeddedResourceResource Resource { get; set; }
 #endif
         /// <summary>The type property</summary>
-        public global::Soenneker.Mistral.OpenApiClient.Models.ResourceType? Type { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.EmbeddedResourceType? Type { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Mistral.OpenApiClient.Models.EmbeddedResource"/> and sets the default values.
         /// </summary>
@@ -69,7 +69,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
                 { "annotations", n => { Annotations = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.Annotations>(global::Soenneker.Mistral.OpenApiClient.Models.Annotations.CreateFromDiscriminatorValue); } },
                 { "_meta", n => { Meta = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.EmbeddedResourceMetaProperty>(global::Soenneker.Mistral.OpenApiClient.Models.EmbeddedResourceMetaProperty.CreateFromDiscriminatorValue); } },
                 { "resource", n => { Resource = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.EmbeddedResourceResource>(global::Soenneker.Mistral.OpenApiClient.Models.EmbeddedResourceResource.CreateFromDiscriminatorValue); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.ResourceType>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.EmbeddedResourceType>(); } },
             };
         }
         /// <summary>
@@ -82,7 +82,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.Annotations>("annotations", Annotations);
             writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.EmbeddedResourceMetaProperty>("_meta", Meta);
             writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.EmbeddedResourceResource>("resource", Resource);
-            writer.WriteEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.ResourceType>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.EmbeddedResourceType>("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

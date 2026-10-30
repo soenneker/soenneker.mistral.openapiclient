@@ -22,7 +22,7 @@ namespace Soenneker.Mistral.OpenApiClient.V1.Connectors.Item.Auth_url
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public Auth_urlRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/connectors/{connectorIdOrName}/auth_url{?app_return_url*,credentials_name*}", pathParameters)
+        public Auth_urlRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/connectors/{connectorIdOrName}/auth_url{?app_return_url*,credentials_name*,credentials_title*,github_installation_link*,method_type*}", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +30,7 @@ namespace Soenneker.Mistral.OpenApiClient.V1.Connectors.Item.Auth_url
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public Auth_urlRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/connectors/{connectorIdOrName}/auth_url{?app_return_url*,credentials_name*}", rawUrl)
+        public Auth_urlRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/connectors/{connectorIdOrName}/auth_url{?app_return_url*,credentials_name*,credentials_title*,github_installation_link*,method_type*}", rawUrl)
         {
         }
         /// <summary>
@@ -116,6 +116,25 @@ namespace Soenneker.Mistral.OpenApiClient.V1.Connectors.Item.Auth_url
             public string CredentialsName { get; set; }
             #pragma warning restore CS1591
 #endif
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            #pragma warning disable CS1591
+            [QueryParameter("credentials_title")]
+            public string? CredentialsTitle { get; set; }
+            #pragma warning restore CS1591
+#nullable restore
+#else
+            #pragma warning disable CS1591
+            [QueryParameter("credentials_title")]
+            public string CredentialsTitle { get; set; }
+            #pragma warning restore CS1591
+#endif
+            /// <summary>Only valid with method_type=oauth2. When true, returns a GitHub App installation URL (https://github.com/apps/&lt;slug&gt;/installations/new) if the connector has the proper configuration The Github application needs to have &apos;Request user authorization (OAuth) during installation&apos; enabled to perform the proper auth loop.</summary>
+            [QueryParameter("github_installation_link")]
+            public bool? GithubInstallationLink { get; set; }
+            /// <summary>Auth method type to use for the authorization URL. Required when the connector supports multiple interactive auth methods; otherwise the sole method is selected automatically. Use this to pick a specific method (e.g. &apos;oauth2&apos; vs &apos;github_app&apos;).</summary>
+            [QueryParameter("method_type")]
+            public global::Soenneker.Mistral.OpenApiClient.Models.AuthenticationType? MethodType { get; set; }
         }
     }
 }

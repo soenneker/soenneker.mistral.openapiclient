@@ -23,7 +23,7 @@ namespace Soenneker.Mistral.OpenApiClient.V1.Connectors.WithConnectorIdOrNameIdO
         /// <param name="connectorIdOrName">The path parameter: connectorIdOrName</param>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithConnectorIdOrNameIdOrNameRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter, string connectorIdOrName = "") : base(requestAdapter, "{+baseurl}/v1/connectors/{connectorIdOrName}#idOrName{?fetch_connection_secrets*,fetch_customer_data*}", pathParameters)
+        public WithConnectorIdOrNameIdOrNameRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter, string connectorIdOrName = "") : base(requestAdapter, "{+baseurl}/v1/connectors/{connectorIdOrName}#idOrName{?fetch_user_data*}", pathParameters)
         {
             if (!string.IsNullOrWhiteSpace(connectorIdOrName)) PathParameters.Add("connectorIdOrName", connectorIdOrName);
         }
@@ -32,7 +32,7 @@ namespace Soenneker.Mistral.OpenApiClient.V1.Connectors.WithConnectorIdOrNameIdO
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithConnectorIdOrNameIdOrNameRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/connectors/{connectorIdOrName}#idOrName{?fetch_connection_secrets*,fetch_customer_data*}", rawUrl)
+        public WithConnectorIdOrNameIdOrNameRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/connectors/{connectorIdOrName}#idOrName{?fetch_user_data*}", rawUrl)
         {
         }
         /// <summary>
@@ -92,12 +92,9 @@ namespace Soenneker.Mistral.OpenApiClient.V1.Connectors.WithConnectorIdOrNameIdO
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class WithConnectorIdOrNameIdOrNameRequestBuilderGetQueryParameters 
         {
-            /// <summary>Fetch the general connection secrets associated with the connector.</summary>
-            [QueryParameter("fetch_connection_secrets")]
-            public bool? FetchConnectionSecrets { get; set; }
-            /// <summary>Fetch the customer data associated with the connector (e.g. customer secrets / config).</summary>
-            [QueryParameter("fetch_customer_data")]
-            public bool? FetchCustomerData { get; set; }
+            /// <summary>Fetch the user-level data associated with the connector (e.g. connection credentials).</summary>
+            [QueryParameter("fetch_user_data")]
+            public bool? FetchUserData { get; set; }
         }
     }
 }

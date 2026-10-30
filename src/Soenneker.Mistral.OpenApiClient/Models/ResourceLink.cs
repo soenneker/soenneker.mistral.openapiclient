@@ -74,7 +74,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         public string Title { get; set; }
 #endif
         /// <summary>The type property</summary>
-        public global::Soenneker.Mistral.OpenApiClient.Models.ResourceLinkType? Type { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.ResourceLinkTypeEnum? Type { get; set; }
         /// <summary>The uri property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -116,7 +116,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "size", n => { Size = n.GetIntValue(); } },
                 { "title", n => { Title = n.GetStringValue(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.ResourceLinkType>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.ResourceLinkTypeEnum>(); } },
                 { "uri", n => { Uri = n.GetStringValue(); } },
             };
         }
@@ -135,7 +135,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             writer.WriteStringValue("name", Name);
             writer.WriteIntValue("size", Size);
             writer.WriteStringValue("title", Title);
-            writer.WriteEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.ResourceLinkType>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.ResourceLinkTypeEnum>("type", Type);
             writer.WriteStringValue("uri", Uri);
             writer.WriteAdditionalData(AdditionalData);
         }

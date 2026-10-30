@@ -34,7 +34,7 @@ namespace Soenneker.Mistral.OpenApiClient.V1.Audio.Speech
         {
         }
         /// <summary>
-        /// Generate speech from text using a saved voice or a reference audio clip.
+        /// Speech
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Mistral.OpenApiClient.Models.SpeechResponse"/></returns>
         /// <param name="body">The request body</param>
@@ -59,7 +59,7 @@ namespace Soenneker.Mistral.OpenApiClient.V1.Audio.Speech
             return await RequestAdapter.SendAsync<global::Soenneker.Mistral.OpenApiClient.Models.SpeechResponse>(requestInfo, global::Soenneker.Mistral.OpenApiClient.Models.SpeechResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Generate speech from text using a saved voice or a reference audio clip.
+        /// Speech
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

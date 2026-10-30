@@ -20,5 +20,9 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         #pragma warning disable CS1591
         EncryptedPartial,
         #pragma warning restore CS1591
+        [EnumMember(Value = "compressed")]
+        #pragma warning disable CS1591
+        Compressed,
+        #pragma warning restore CS1591
     }
 }

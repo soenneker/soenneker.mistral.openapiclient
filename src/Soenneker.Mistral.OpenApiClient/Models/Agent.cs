@@ -90,6 +90,14 @@ namespace Soenneker.Mistral.OpenApiClient.Models
 #endif
         /// <summary>The object property</summary>
         public global::Soenneker.Mistral.OpenApiClient.Models.AgentObject? Object { get; set; }
+        /// <summary>The owner_id property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? OwnerId { get; set; }
+#nullable restore
+#else
+        public string OwnerId { get; set; }
+#endif
         /// <summary>The source property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -156,6 +164,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
                 { "model", n => { Model = n.GetStringValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "object", n => { Object = n.GetEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.AgentObject>(); } },
+                { "owner_id", n => { OwnerId = n.GetStringValue(); } },
                 { "source", n => { Source = n.GetStringValue(); } },
                 { "tools", n => { Tools = n.GetCollectionOfObjectValues<global::Soenneker.Mistral.OpenApiClient.Models.AgentToolsItem>(global::Soenneker.Mistral.OpenApiClient.Models.AgentToolsItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
@@ -183,6 +192,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             writer.WriteStringValue("model", Model);
             writer.WriteStringValue("name", Name);
             writer.WriteEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.AgentObject>("object", Object);
+            writer.WriteStringValue("owner_id", OwnerId);
             writer.WriteStringValue("source", Source);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Mistral.OpenApiClient.Models.AgentToolsItem>("tools", Tools);
             writer.WriteDateTimeOffsetValue("updated_at", UpdatedAt);

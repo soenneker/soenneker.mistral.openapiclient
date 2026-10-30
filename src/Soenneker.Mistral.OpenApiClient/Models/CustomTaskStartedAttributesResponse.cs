@@ -31,7 +31,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
 #else
         public string CustomTaskType { get; set; }
 #endif
-        /// <summary>A payload containing arbitrary JSON data.Used for complete state snapshots or final results.</summary>
+        /// <summary>A payload containing arbitrary JSON data.Used for complete state snapshots or final results.When encrypted, the value field contains base64-encoded encrypted dataand encoding_options indicates the type of encryption applied.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Mistral.OpenApiClient.Models.JsonPayloadResponse? Payload { get; set; }

@@ -14,7 +14,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
     {
         /// <summary>The `frequency_penalty` penalizes the repetition of words based on their frequency in the generated text. A higher frequency penalty discourages the model from repeating words that have already appeared frequently in the output, promoting diversity and reducing repetition.</summary>
         public double? FrequencyPenalty { get; set; }
-        /// <summary>A list of guardrail configurations to apply to this request. Each guardrail specifies a moderation type, categories with thresholds to evaluate, and an action to take on violation.</summary>
+        /// <summary>The guardrails property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Soenneker.Mistral.OpenApiClient.Models.GuardrailConfig>? Guardrails { get; set; }
@@ -22,6 +22,8 @@ namespace Soenneker.Mistral.OpenApiClient.Models
 #else
         public List<global::Soenneker.Mistral.OpenApiClient.Models.GuardrailConfig> Guardrails { get; set; }
 #endif
+        /// <summary>The logprobs property</summary>
+        public bool? Logprobs { get; set; }
         /// <summary>The maximum number of tokens to generate in the completion. The token count of your prompt plus `max_tokens` cannot exceed the model&apos;s context length.</summary>
         public int? MaxTokens { get; set; }
         /// <summary>The prompt(s) to generate completions for, encoded as a list of dict with role and content.</summary>
@@ -40,6 +42,8 @@ namespace Soenneker.Mistral.OpenApiClient.Models
 #else
         public global::Soenneker.Mistral.OpenApiClient.Models.ChatCompletionRequestMetadataProperty Metadata { get; set; }
 #endif
+        /// <summary>The min_tokens property</summary>
+        public int? MinTokens { get; set; }
         /// <summary>ID of the model to use. You can use the [List Available Models](/api/#tag/models/operation/list_models_v1_models_get) API to see all of your available models, or see our [Model overview](/models) for model descriptions.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -62,7 +66,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
 #endif
         /// <summary>The `presence_penalty` determines how much the model penalizes the repetition of words or phrases. A higher presence penalty encourages the model to use a wider variety of words and phrases, making the output more diverse and creative.</summary>
         public double? PresencePenalty { get; set; }
-        /// <summary>A cache key to enable prompt caching. When provided, the API will attempt to reuse previously computed tokens for requests sharing the same prefix (e.g. multi-turn conversations or requests with a similar system prompt). Cached tokens are billed at 10% of the standard input token price.</summary>
+        /// <summary>The prompt_cache_key property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? PromptCacheKey { get; set; }
@@ -70,12 +74,16 @@ namespace Soenneker.Mistral.OpenApiClient.Models
 #else
         public string PromptCacheKey { get; set; }
 #endif
-        /// <summary>Allows toggling between the reasoning mode and no system prompt. When set to `reasoning` the system prompt for reasoning models will be used. **Deprecated for reasoning models - use `reasoning_effort` parameter instead.**</summary>
+        /// <summary>The prompt_logprobs property</summary>
+        public bool? PromptLogprobs { get; set; }
+        /// <summary>Allows toggling between the reasoning mode and no system prompt. When set to `reasoning` the system prompt for reasoning models will be used.</summary>
         public global::Soenneker.Mistral.OpenApiClient.Models.MistralPromptMode? PromptMode { get; set; }
         /// <summary>The seed to use for random sampling. If set, different calls will generate deterministic results.</summary>
         public int? RandomSeed { get; set; }
-        /// <summary>Controls the reasoning effort level for reasoning models. &quot;high&quot; enables comprehensive reasoning traces, &quot;none&quot; disables reasoning effort.</summary>
-        public global::Soenneker.Mistral.OpenApiClient.Models.ChatCompletionRequestReasoningEffort? ReasoningEffort { get; set; }
+        /// <summary>The reasoning_effort property</summary>
+        public global::Soenneker.Mistral.OpenApiClient.Models.ReasoningEffort? ReasoningEffort { get; set; }
+        /// <summary>The repetition_penalty property</summary>
+        public double? RepetitionPenalty { get; set; }
         /// <summary>Specify the format that the model must output. By default it will use `{ &quot;type&quot;: &quot;text&quot; }`. Setting to `{ &quot;type&quot;: &quot;json_object&quot; }` enables JSON mode, which guarantees the message the model generates is in JSON. When using JSON mode you MUST also instruct the model to produce JSON yourself with a system or a user message. Setting to `{ &quot;type&quot;: &quot;json_schema&quot; }` enables JSON schema mode, which guarantees the message the model generates is in JSON and follows the schema you provide.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -86,6 +94,8 @@ namespace Soenneker.Mistral.OpenApiClient.Models
 #endif
         /// <summary>Whether to inject a safety prompt before all conversations.</summary>
         public bool? SafePrompt { get; set; }
+        /// <summary>Determines whether to serve the request using priority or standard capacity.</summary>
+        public global::Soenneker.Mistral.OpenApiClient.Models.RequestedServiceTier? ServiceTier { get; set; }
         /// <summary>Stop generation if this token is detected. Or if one of these tokens is detected when providing an array</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -109,24 +119,27 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         /// <summary>A list of tools the model may call. Use this to provide a list of functions the model may generate JSON inputs for.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Mistral.OpenApiClient.Models.Tool>? Tools { get; set; }
+        public List<global::Soenneker.Mistral.OpenApiClient.Models.ChatCompletionRequestToolsItem>? Tools { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Mistral.OpenApiClient.Models.Tool> Tools { get; set; }
+        public List<global::Soenneker.Mistral.OpenApiClient.Models.ChatCompletionRequestToolsItem> Tools { get; set; }
 #endif
+        /// <summary>The top_k property</summary>
+        public int? TopK { get; set; }
+        /// <summary>The top_logprobs property</summary>
+        public int? TopLogprobs { get; set; }
         /// <summary>Nucleus sampling, where the model considers the results of the tokens with `top_p` probability mass. So 0.1 means only the tokens comprising the top 10% probability mass are considered. We generally recommend altering this or `temperature` but not both.</summary>
         public double? TopP { get; set; }
+        /// <summary>The top_prompt_logprobs property</summary>
+        public int? TopPromptLogprobs { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Mistral.OpenApiClient.Models.ChatCompletionRequest"/> and sets the default values.
         /// </summary>
         public ChatCompletionRequest()
         {
-            FrequencyPenalty = 0;
             ParallelToolCalls = true;
-            PresencePenalty = 0;
             SafePrompt = false;
             Stream = false;
-            TopP = 1;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -148,26 +161,34 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             {
                 { "frequency_penalty", n => { FrequencyPenalty = n.GetDoubleValue(); } },
                 { "guardrails", n => { Guardrails = n.GetCollectionOfObjectValues<global::Soenneker.Mistral.OpenApiClient.Models.GuardrailConfig>(global::Soenneker.Mistral.OpenApiClient.Models.GuardrailConfig.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "logprobs", n => { Logprobs = n.GetBoolValue(); } },
                 { "max_tokens", n => { MaxTokens = n.GetIntValue(); } },
                 { "messages", n => { Messages = n.GetCollectionOfObjectValues<global::Soenneker.Mistral.OpenApiClient.Models.ChatCompletionRequestMessagesItem>(global::Soenneker.Mistral.OpenApiClient.Models.ChatCompletionRequestMessagesItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "metadata", n => { Metadata = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ChatCompletionRequestMetadataProperty>(global::Soenneker.Mistral.OpenApiClient.Models.ChatCompletionRequestMetadataProperty.CreateFromDiscriminatorValue); } },
+                { "min_tokens", n => { MinTokens = n.GetIntValue(); } },
                 { "model", n => { Model = n.GetStringValue(); } },
                 { "n", n => { N = n.GetIntValue(); } },
                 { "parallel_tool_calls", n => { ParallelToolCalls = n.GetBoolValue(); } },
                 { "prediction", n => { Prediction = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.Prediction>(global::Soenneker.Mistral.OpenApiClient.Models.Prediction.CreateFromDiscriminatorValue); } },
                 { "presence_penalty", n => { PresencePenalty = n.GetDoubleValue(); } },
                 { "prompt_cache_key", n => { PromptCacheKey = n.GetStringValue(); } },
+                { "prompt_logprobs", n => { PromptLogprobs = n.GetBoolValue(); } },
                 { "prompt_mode", n => { PromptMode = n.GetEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.MistralPromptMode>(); } },
                 { "random_seed", n => { RandomSeed = n.GetIntValue(); } },
-                { "reasoning_effort", n => { ReasoningEffort = n.GetEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.ChatCompletionRequestReasoningEffort>(); } },
+                { "reasoning_effort", n => { ReasoningEffort = n.GetEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.ReasoningEffort>(); } },
+                { "repetition_penalty", n => { RepetitionPenalty = n.GetDoubleValue(); } },
                 { "response_format", n => { ResponseFormat = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ResponseFormat>(global::Soenneker.Mistral.OpenApiClient.Models.ResponseFormat.CreateFromDiscriminatorValue); } },
                 { "safe_prompt", n => { SafePrompt = n.GetBoolValue(); } },
+                { "service_tier", n => { ServiceTier = n.GetEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.RequestedServiceTier>(); } },
                 { "stop", n => { Stop = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ChatCompletionRequestStop>(global::Soenneker.Mistral.OpenApiClient.Models.ChatCompletionRequestStop.CreateFromDiscriminatorValue); } },
                 { "stream", n => { Stream = n.GetBoolValue(); } },
                 { "temperature", n => { Temperature = n.GetDoubleValue(); } },
                 { "tool_choice", n => { ToolChoice = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ChatCompletionRequestToolChoice>(global::Soenneker.Mistral.OpenApiClient.Models.ChatCompletionRequestToolChoice.CreateFromDiscriminatorValue); } },
-                { "tools", n => { Tools = n.GetCollectionOfObjectValues<global::Soenneker.Mistral.OpenApiClient.Models.Tool>(global::Soenneker.Mistral.OpenApiClient.Models.Tool.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "tools", n => { Tools = n.GetCollectionOfObjectValues<global::Soenneker.Mistral.OpenApiClient.Models.ChatCompletionRequestToolsItem>(global::Soenneker.Mistral.OpenApiClient.Models.ChatCompletionRequestToolsItem.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "top_k", n => { TopK = n.GetIntValue(); } },
+                { "top_logprobs", n => { TopLogprobs = n.GetIntValue(); } },
                 { "top_p", n => { TopP = n.GetDoubleValue(); } },
+                { "top_prompt_logprobs", n => { TopPromptLogprobs = n.GetIntValue(); } },
             };
         }
         /// <summary>
@@ -179,26 +200,34 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteDoubleValue("frequency_penalty", FrequencyPenalty);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Mistral.OpenApiClient.Models.GuardrailConfig>("guardrails", Guardrails);
+            writer.WriteBoolValue("logprobs", Logprobs);
             writer.WriteIntValue("max_tokens", MaxTokens);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Mistral.OpenApiClient.Models.ChatCompletionRequestMessagesItem>("messages", Messages);
             writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ChatCompletionRequestMetadataProperty>("metadata", Metadata);
+            writer.WriteIntValue("min_tokens", MinTokens);
             writer.WriteStringValue("model", Model);
             writer.WriteIntValue("n", N);
             writer.WriteBoolValue("parallel_tool_calls", ParallelToolCalls);
             writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.Prediction>("prediction", Prediction);
             writer.WriteDoubleValue("presence_penalty", PresencePenalty);
             writer.WriteStringValue("prompt_cache_key", PromptCacheKey);
+            writer.WriteBoolValue("prompt_logprobs", PromptLogprobs);
             writer.WriteEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.MistralPromptMode>("prompt_mode", PromptMode);
             writer.WriteIntValue("random_seed", RandomSeed);
-            writer.WriteEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.ChatCompletionRequestReasoningEffort>("reasoning_effort", ReasoningEffort);
+            writer.WriteEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.ReasoningEffort>("reasoning_effort", ReasoningEffort);
+            writer.WriteDoubleValue("repetition_penalty", RepetitionPenalty);
             writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ResponseFormat>("response_format", ResponseFormat);
             writer.WriteBoolValue("safe_prompt", SafePrompt);
+            writer.WriteEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.RequestedServiceTier>("service_tier", ServiceTier);
             writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ChatCompletionRequestStop>("stop", Stop);
             writer.WriteBoolValue("stream", Stream);
             writer.WriteDoubleValue("temperature", Temperature);
             writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ChatCompletionRequestToolChoice>("tool_choice", ToolChoice);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Mistral.OpenApiClient.Models.Tool>("tools", Tools);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Mistral.OpenApiClient.Models.ChatCompletionRequestToolsItem>("tools", Tools);
+            writer.WriteIntValue("top_k", TopK);
+            writer.WriteIntValue("top_logprobs", TopLogprobs);
             writer.WriteDoubleValue("top_p", TopP);
+            writer.WriteIntValue("top_prompt_logprobs", TopPromptLogprobs);
         }
     }
 }

@@ -23,6 +23,22 @@ namespace Soenneker.Mistral.OpenApiClient.Models
 #else
         public global::Soenneker.Mistral.OpenApiClient.Models.CustomTaskInProgressAttributesResponse Attributes { get; set; }
 #endif
+        /// <summary>Identifies one start of an execution. Shared by its continue-as-new, retry and reset runs, and by every sub-workflow below it. Starting the same execution ID again gives a new value.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ChainRunId { get; set; }
+#nullable restore
+#else
+        public string ChainRunId { get; set; }
+#endif
+        /// <summary>Run ID of the execution this run continued from. Non-null for continue-as-new runs.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ContinuedRunId { get; set; }
+#nullable restore
+#else
+        public string ContinuedRunId { get; set; }
+#endif
         /// <summary>Unique identifier for this event instance.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -35,6 +51,14 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         public int? EventTimestamp { get; set; }
         /// <summary>Event type discriminator.</summary>
         public global::Soenneker.Mistral.OpenApiClient.Models.CustomTaskInProgressEventType? EventType { get; set; }
+        /// <summary>Run ID of the first execution in this workflow chain. Equals workflow_run_id on a fresh start. Continue-as-new, retry and reset runs keep the original value.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? FirstExecutionRunId { get; set; }
+#nullable restore
+#else
+        public string FirstExecutionRunId { get; set; }
+#endif
         /// <summary>Execution ID of the parent workflow that initiated this execution. If this is a root workflow, this field is not set.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -50,6 +74,14 @@ namespace Soenneker.Mistral.OpenApiClient.Models
 #nullable restore
 #else
         public string RootWorkflowExecId { get; set; }
+#endif
+        /// <summary>Temporal schedule ID that triggered this execution, if any.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ScheduleId { get; set; }
+#nullable restore
+#else
+        public string ScheduleId { get; set; }
 #endif
         /// <summary>Execution ID of the workflow that emitted this event.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -101,11 +133,15 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "attributes", n => { Attributes = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.CustomTaskInProgressAttributesResponse>(global::Soenneker.Mistral.OpenApiClient.Models.CustomTaskInProgressAttributesResponse.CreateFromDiscriminatorValue); } },
+                { "chain_run_id", n => { ChainRunId = n.GetStringValue(); } },
+                { "continued_run_id", n => { ContinuedRunId = n.GetStringValue(); } },
                 { "event_id", n => { EventId = n.GetStringValue(); } },
                 { "event_timestamp", n => { EventTimestamp = n.GetIntValue(); } },
                 { "event_type", n => { EventType = n.GetEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.CustomTaskInProgressEventType>(); } },
+                { "first_execution_run_id", n => { FirstExecutionRunId = n.GetStringValue(); } },
                 { "parent_workflow_exec_id", n => { ParentWorkflowExecId = n.GetStringValue(); } },
                 { "root_workflow_exec_id", n => { RootWorkflowExecId = n.GetStringValue(); } },
+                { "schedule_id", n => { ScheduleId = n.GetStringValue(); } },
                 { "workflow_exec_id", n => { WorkflowExecId = n.GetStringValue(); } },
                 { "workflow_name", n => { WorkflowName = n.GetStringValue(); } },
                 { "workflow_run_id", n => { WorkflowRunId = n.GetStringValue(); } },
@@ -119,11 +155,15 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.CustomTaskInProgressAttributesResponse>("attributes", Attributes);
+            writer.WriteStringValue("chain_run_id", ChainRunId);
+            writer.WriteStringValue("continued_run_id", ContinuedRunId);
             writer.WriteStringValue("event_id", EventId);
             writer.WriteIntValue("event_timestamp", EventTimestamp);
             writer.WriteEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.CustomTaskInProgressEventType>("event_type", EventType);
+            writer.WriteStringValue("first_execution_run_id", FirstExecutionRunId);
             writer.WriteStringValue("parent_workflow_exec_id", ParentWorkflowExecId);
             writer.WriteStringValue("root_workflow_exec_id", RootWorkflowExecId);
+            writer.WriteStringValue("schedule_id", ScheduleId);
             writer.WriteStringValue("workflow_exec_id", WorkflowExecId);
             writer.WriteStringValue("workflow_name", WorkflowName);
             writer.WriteStringValue("workflow_run_id", WorkflowRunId);

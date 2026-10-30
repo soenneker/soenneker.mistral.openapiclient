@@ -8,11 +8,19 @@ using System;
 namespace Soenneker.Mistral.OpenApiClient.Models
 {
     /// <summary>
-    /// Composed type wrapper for classes <see cref="global::Soenneker.Mistral.OpenApiClient.Models.TempoTraceAttributeBoolValue"/>, <see cref="global::Soenneker.Mistral.OpenApiClient.Models.TempoTraceAttributeIntValue"/>, <see cref="global::Soenneker.Mistral.OpenApiClient.Models.TempoTraceAttributeStringValue"/>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Mistral.OpenApiClient.Models.TempoTraceAttributeArrayValue"/>, <see cref="global::Soenneker.Mistral.OpenApiClient.Models.TempoTraceAttributeBoolValue"/>, <see cref="global::Soenneker.Mistral.OpenApiClient.Models.TempoTraceAttributeDoubleValue"/>, <see cref="global::Soenneker.Mistral.OpenApiClient.Models.TempoTraceAttributeIntValue"/>, <see cref="global::Soenneker.Mistral.OpenApiClient.Models.TempoTraceAttributeStringValue"/>
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class TempoTraceAttributeValue : IComposedTypeWrapper, IParsable
     {
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Mistral.OpenApiClient.Models.TempoTraceAttributeArrayValue"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Mistral.OpenApiClient.Models.TempoTraceAttributeArrayValue? TempoTraceAttributeArrayValue { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Mistral.OpenApiClient.Models.TempoTraceAttributeArrayValue TempoTraceAttributeArrayValue { get; set; }
+#endif
         /// <summary>Composed type representation for type <see cref="global::Soenneker.Mistral.OpenApiClient.Models.TempoTraceAttributeBoolValue"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -20,6 +28,14 @@ namespace Soenneker.Mistral.OpenApiClient.Models
 #nullable restore
 #else
         public global::Soenneker.Mistral.OpenApiClient.Models.TempoTraceAttributeBoolValue TempoTraceAttributeBoolValue { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Mistral.OpenApiClient.Models.TempoTraceAttributeDoubleValue"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Mistral.OpenApiClient.Models.TempoTraceAttributeDoubleValue? TempoTraceAttributeDoubleValue { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Mistral.OpenApiClient.Models.TempoTraceAttributeDoubleValue TempoTraceAttributeDoubleValue { get; set; }
 #endif
         /// <summary>Composed type representation for type <see cref="global::Soenneker.Mistral.OpenApiClient.Models.TempoTraceAttributeIntValue"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -46,7 +62,9 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             var result = new global::Soenneker.Mistral.OpenApiClient.Models.TempoTraceAttributeValue();
+            result.TempoTraceAttributeArrayValue = new global::Soenneker.Mistral.OpenApiClient.Models.TempoTraceAttributeArrayValue();
             result.TempoTraceAttributeBoolValue = new global::Soenneker.Mistral.OpenApiClient.Models.TempoTraceAttributeBoolValue();
+            result.TempoTraceAttributeDoubleValue = new global::Soenneker.Mistral.OpenApiClient.Models.TempoTraceAttributeDoubleValue();
             result.TempoTraceAttributeIntValue = new global::Soenneker.Mistral.OpenApiClient.Models.TempoTraceAttributeIntValue();
             result.TempoTraceAttributeStringValue = new global::Soenneker.Mistral.OpenApiClient.Models.TempoTraceAttributeStringValue();
             return result;
@@ -57,9 +75,9 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            if(TempoTraceAttributeBoolValue != null || TempoTraceAttributeIntValue != null || TempoTraceAttributeStringValue != null)
+            if(TempoTraceAttributeArrayValue != null || TempoTraceAttributeBoolValue != null || TempoTraceAttributeDoubleValue != null || TempoTraceAttributeIntValue != null || TempoTraceAttributeStringValue != null)
             {
-                return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(TempoTraceAttributeBoolValue, TempoTraceAttributeIntValue, TempoTraceAttributeStringValue);
+                return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(TempoTraceAttributeArrayValue, TempoTraceAttributeBoolValue, TempoTraceAttributeDoubleValue, TempoTraceAttributeIntValue, TempoTraceAttributeStringValue);
             }
             return new Dictionary<string, Action<IParseNode>>();
         }
@@ -70,7 +88,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.TempoTraceAttributeBoolValue>(null, TempoTraceAttributeBoolValue, TempoTraceAttributeIntValue, TempoTraceAttributeStringValue);
+            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.TempoTraceAttributeArrayValue>(null, TempoTraceAttributeArrayValue, TempoTraceAttributeBoolValue, TempoTraceAttributeDoubleValue, TempoTraceAttributeIntValue, TempoTraceAttributeStringValue);
         }
     }
 }

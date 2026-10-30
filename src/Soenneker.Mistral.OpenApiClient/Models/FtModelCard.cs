@@ -25,7 +25,15 @@ namespace Soenneker.Mistral.OpenApiClient.Models
 #endif
         /// <summary>The archived property</summary>
         public bool? Archived { get; set; }
-        /// <summary>The capabilities property</summary>
+        /// <summary>The billing_model_name property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? BillingModelName { get; set; }
+#nullable restore
+#else
+        public string BillingModelName { get; set; }
+#endif
+        /// <summary>This is populated by Harmattan, but some fields have a namethat we don&apos;t want to expose in the API.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Mistral.OpenApiClient.Models.ModelCapabilities? Capabilities { get; set; }
@@ -63,6 +71,8 @@ namespace Soenneker.Mistral.OpenApiClient.Models
 #else
         public string Id { get; set; }
 #endif
+        /// <summary>The internal property</summary>
+        public bool? Internal { get; set; }
         /// <summary>The job property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -114,6 +124,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         {
             AdditionalData = new Dictionary<string, object>();
             Archived = false;
+            Internal = false;
             MaxContextLength = 32768;
             Object = "model";
             OwnedBy = "mistralai";
@@ -138,6 +149,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             {
                 { "aliases", n => { Aliases = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "archived", n => { Archived = n.GetBoolValue(); } },
+                { "billing_model_name", n => { BillingModelName = n.GetStringValue(); } },
                 { "capabilities", n => { Capabilities = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ModelCapabilities>(global::Soenneker.Mistral.OpenApiClient.Models.ModelCapabilities.CreateFromDiscriminatorValue); } },
                 { "created", n => { Created = n.GetIntValue(); } },
                 { "default_model_temperature", n => { DefaultModelTemperature = n.GetDoubleValue(); } },
@@ -145,6 +157,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
                 { "deprecation_replacement_model", n => { DeprecationReplacementModel = n.GetStringValue(); } },
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
+                { "internal", n => { Internal = n.GetBoolValue(); } },
                 { "job", n => { Job = n.GetStringValue(); } },
                 { "max_context_length", n => { MaxContextLength = n.GetIntValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
@@ -163,6 +176,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfPrimitiveValues<string>("aliases", Aliases);
             writer.WriteBoolValue("archived", Archived);
+            writer.WriteStringValue("billing_model_name", BillingModelName);
             writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ModelCapabilities>("capabilities", Capabilities);
             writer.WriteIntValue("created", Created);
             writer.WriteDoubleValue("default_model_temperature", DefaultModelTemperature);
@@ -170,6 +184,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             writer.WriteStringValue("deprecation_replacement_model", DeprecationReplacementModel);
             writer.WriteStringValue("description", Description);
             writer.WriteStringValue("id", Id);
+            writer.WriteBoolValue("internal", Internal);
             writer.WriteStringValue("job", Job);
             writer.WriteIntValue("max_context_length", MaxContextLength);
             writer.WriteStringValue("name", Name);

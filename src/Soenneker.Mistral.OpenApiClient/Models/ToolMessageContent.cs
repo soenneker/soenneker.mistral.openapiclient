@@ -50,7 +50,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             {
                 result.String = stringValue;
             }
-            else if(parseNode.GetCollectionOfObjectValues<global::Soenneker.Mistral.OpenApiClient.Models.ContentChunk>(global::Soenneker.Mistral.OpenApiClient.Models.ContentChunk.CreateFromDiscriminatorValue)?.AsList() is List<global::Soenneker.Mistral.OpenApiClient.Models.ContentChunk> contentChunkValue)
+            else if(parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedArray && parseNode.GetCollectionOfObjectValues<global::Soenneker.Mistral.OpenApiClient.Models.ContentChunk>(global::Soenneker.Mistral.OpenApiClient.Models.ContentChunk.CreateFromDiscriminatorValue)?.AsList() is List<global::Soenneker.Mistral.OpenApiClient.Models.ContentChunk> contentChunkValue)
             {
                 result.ContentChunk = contentChunkValue;
             }

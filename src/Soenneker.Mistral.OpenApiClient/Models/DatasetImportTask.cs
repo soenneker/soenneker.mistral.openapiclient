@@ -34,6 +34,14 @@ namespace Soenneker.Mistral.OpenApiClient.Models
 #endif
         /// <summary>The progress property</summary>
         public int? Progress { get; set; }
+        /// <summary>The result property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Mistral.OpenApiClient.Models.DatasetImportResult? Result { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Mistral.OpenApiClient.Models.DatasetImportResult Result { get; set; }
+#endif
         /// <summary>The status property</summary>
         public global::Soenneker.Mistral.OpenApiClient.Models.BaseTaskStatus? Status { get; set; }
         /// <summary>The updated_at property</summary>
@@ -72,6 +80,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
                 { "id", n => { Id = n.GetGuidValue(); } },
                 { "message", n => { Message = n.GetStringValue(); } },
                 { "progress", n => { Progress = n.GetIntValue(); } },
+                { "result", n => { Result = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.DatasetImportResult>(global::Soenneker.Mistral.OpenApiClient.Models.DatasetImportResult.CreateFromDiscriminatorValue); } },
                 { "status", n => { Status = n.GetEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.BaseTaskStatus>(); } },
                 { "updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
                 { "workspace_id", n => { WorkspaceId = n.GetGuidValue(); } },
@@ -91,6 +100,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             writer.WriteGuidValue("id", Id);
             writer.WriteStringValue("message", Message);
             writer.WriteIntValue("progress", Progress);
+            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.DatasetImportResult>("result", Result);
             writer.WriteEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.BaseTaskStatus>("status", Status);
             writer.WriteDateTimeOffsetValue("updated_at", UpdatedAt);
             writer.WriteGuidValue("workspace_id", WorkspaceId);

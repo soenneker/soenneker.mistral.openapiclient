@@ -36,20 +36,20 @@ namespace Soenneker.Mistral.OpenApiClient.V1.Files.Item.Url
         /// <summary>
         /// Get Signed Url
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Mistral.OpenApiClient.Models.FileSignedUrl"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Mistral.OpenApiClient.Models.GetSignedUrlResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Mistral.OpenApiClient.Models.FileSignedUrl?> GetAsync(Action<RequestConfiguration<global::Soenneker.Mistral.OpenApiClient.V1.Files.Item.Url.UrlRequestBuilder.UrlRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Mistral.OpenApiClient.Models.GetSignedUrlResponse?> GetAsync(Action<RequestConfiguration<global::Soenneker.Mistral.OpenApiClient.V1.Files.Item.Url.UrlRequestBuilder.UrlRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Mistral.OpenApiClient.Models.FileSignedUrl> GetAsync(Action<RequestConfiguration<global::Soenneker.Mistral.OpenApiClient.V1.Files.Item.Url.UrlRequestBuilder.UrlRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Mistral.OpenApiClient.Models.GetSignedUrlResponse> GetAsync(Action<RequestConfiguration<global::Soenneker.Mistral.OpenApiClient.V1.Files.Item.Url.UrlRequestBuilder.UrlRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Mistral.OpenApiClient.Models.FileSignedUrl>(requestInfo, global::Soenneker.Mistral.OpenApiClient.Models.FileSignedUrl.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Mistral.OpenApiClient.Models.GetSignedUrlResponse>(requestInfo, global::Soenneker.Mistral.OpenApiClient.Models.GetSignedUrlResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get Signed Url
@@ -85,7 +85,7 @@ namespace Soenneker.Mistral.OpenApiClient.V1.Files.Item.Url
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class UrlRequestBuilderGetQueryParameters 
         {
-            /// <summary>Number of hours before the url becomes invalid. Defaults to 24h</summary>
+            /// <summary>Number of hours before the URL becomes invalid. Defaults to 24h. Must be between 1h and 168h.</summary>
             [QueryParameter("expiry")]
             public int? Expiry { get; set; }
         }

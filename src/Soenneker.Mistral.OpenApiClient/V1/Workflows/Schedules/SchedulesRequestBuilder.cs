@@ -35,7 +35,7 @@ namespace Soenneker.Mistral.OpenApiClient.V1.Workflows.Schedules
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public SchedulesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/workflows/schedules", pathParameters)
+        public SchedulesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/workflows/schedules{?next_page_token*,page_size*,search*,status*,user_id*,workflow_name*}", pathParameters)
         {
         }
         /// <summary>
@@ -43,7 +43,7 @@ namespace Soenneker.Mistral.OpenApiClient.V1.Workflows.Schedules
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public SchedulesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/workflows/schedules", rawUrl)
+        public SchedulesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/workflows/schedules{?next_page_token*,page_size*,search*,status*,user_id*,workflow_name*}", rawUrl)
         {
         }
         /// <summary>
@@ -52,17 +52,22 @@ namespace Soenneker.Mistral.OpenApiClient.V1.Workflows.Schedules
         /// <returns>A <see cref="global::Soenneker.Mistral.OpenApiClient.Models.WorkflowScheduleListResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="global::Soenneker.Mistral.OpenApiClient.Models.HttpValidationError">When receiving a 422 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Mistral.OpenApiClient.Models.WorkflowScheduleListResponse?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Mistral.OpenApiClient.Models.WorkflowScheduleListResponse?> GetAsync(Action<RequestConfiguration<global::Soenneker.Mistral.OpenApiClient.V1.Workflows.Schedules.SchedulesRequestBuilder.SchedulesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Mistral.OpenApiClient.Models.WorkflowScheduleListResponse> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Mistral.OpenApiClient.Models.WorkflowScheduleListResponse> GetAsync(Action<RequestConfiguration<global::Soenneker.Mistral.OpenApiClient.V1.Workflows.Schedules.SchedulesRequestBuilder.SchedulesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Mistral.OpenApiClient.Models.WorkflowScheduleListResponse>(requestInfo, global::Soenneker.Mistral.OpenApiClient.Models.WorkflowScheduleListResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
+                { "422", global::Soenneker.Mistral.OpenApiClient.Models.HttpValidationError.CreateFromDiscriminatorValue },
+            };
+            return await RequestAdapter.SendAsync<global::Soenneker.Mistral.OpenApiClient.Models.WorkflowScheduleListResponse>(requestInfo, global::Soenneker.Mistral.OpenApiClient.Models.WorkflowScheduleListResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Schedule Workflow
@@ -96,11 +101,11 @@ namespace Soenneker.Mistral.OpenApiClient.V1.Workflows.Schedules
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Soenneker.Mistral.OpenApiClient.V1.Workflows.Schedules.SchedulesRequestBuilder.SchedulesRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Soenneker.Mistral.OpenApiClient.V1.Workflows.Schedules.SchedulesRequestBuilder.SchedulesRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -138,6 +143,59 @@ namespace Soenneker.Mistral.OpenApiClient.V1.Workflows.Schedules
         public global::Soenneker.Mistral.OpenApiClient.V1.Workflows.Schedules.SchedulesRequestBuilder WithUrl(string rawUrl)
         {
             return new global::Soenneker.Mistral.OpenApiClient.V1.Workflows.Schedules.SchedulesRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
+        /// Get Schedules
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
+        public partial class SchedulesRequestBuilderGetQueryParameters 
+        {
+            /// <summary>Token for the next page of results</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("next_page_token")]
+            public string? NextPageToken { get; set; }
+#nullable restore
+#else
+            [QueryParameter("next_page_token")]
+            public string NextPageToken { get; set; }
+#endif
+            /// <summary>Number of items per page. Omitting this parameter fetches all results at once (deprecated — pass page_size to use pagination).</summary>
+            [QueryParameter("page_size")]
+            public int? PageSize { get; set; }
+            /// <summary>Prefix search query for workflow name</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("search")]
+            public string? Search { get; set; }
+#nullable restore
+#else
+            [QueryParameter("search")]
+            public string Search { get; set; }
+#endif
+            /// <summary>Filter by schedule status: &apos;active&apos; or &apos;paused&apos;</summary>
+            [QueryParameter("status")]
+            public global::Soenneker.Mistral.OpenApiClient.Models.GetSchedulesV1WorkflowsSchedulesGetStatusParameter? Status { get; set; }
+            /// <summary>Filter by user ID. Pass &apos;current&apos; to resolve to the authenticated user&apos;s ID.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("user_id")]
+            public string? UserId { get; set; }
+#nullable restore
+#else
+            [QueryParameter("user_id")]
+            public string UserId { get; set; }
+#endif
+            /// <summary>Filter by exact workflow name</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("workflow_name")]
+            public string? WorkflowName { get; set; }
+#nullable restore
+#else
+            [QueryParameter("workflow_name")]
+            public string WorkflowName { get; set; }
+#endif
         }
     }
 }

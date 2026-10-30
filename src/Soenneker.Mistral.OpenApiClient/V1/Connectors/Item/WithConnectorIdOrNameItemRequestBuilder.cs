@@ -4,7 +4,9 @@ using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions;
 using Soenneker.Mistral.OpenApiClient.V1.Connectors.Item.Auth_url;
 using Soenneker.Mistral.OpenApiClient.V1.Connectors.Item.Authentication_methods;
+using Soenneker.Mistral.OpenApiClient.V1.Connectors.Item.Item;
 using Soenneker.Mistral.OpenApiClient.V1.Connectors.Item.Organization;
+using Soenneker.Mistral.OpenApiClient.V1.Connectors.Item.Share;
 using Soenneker.Mistral.OpenApiClient.V1.Connectors.Item.Tools;
 using Soenneker.Mistral.OpenApiClient.V1.Connectors.Item.User;
 using Soenneker.Mistral.OpenApiClient.V1.Connectors.Item.Workspace;
@@ -35,6 +37,11 @@ namespace Soenneker.Mistral.OpenApiClient.V1.Connectors.Item
         {
             get => new global::Soenneker.Mistral.OpenApiClient.V1.Connectors.Item.Organization.OrganizationRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>The share property</summary>
+        public global::Soenneker.Mistral.OpenApiClient.V1.Connectors.Item.Share.ShareRequestBuilder Share
+        {
+            get => new global::Soenneker.Mistral.OpenApiClient.V1.Connectors.Item.Share.ShareRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>The tools property</summary>
         public global::Soenneker.Mistral.OpenApiClient.V1.Connectors.Item.Tools.ToolsRequestBuilder Tools
         {
@@ -49,6 +56,18 @@ namespace Soenneker.Mistral.OpenApiClient.V1.Connectors.Item
         public global::Soenneker.Mistral.OpenApiClient.V1.Connectors.Item.Workspace.WorkspaceRequestBuilder Workspace
         {
             get => new global::Soenneker.Mistral.OpenApiClient.V1.Connectors.Item.Workspace.WorkspaceRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Gets an item from the Soenneker.Mistral.OpenApiClient.v1.connectors.item.item collection</summary>
+        /// <param name="position">Unique identifier of the item</param>
+        /// <returns>A <see cref="global::Soenneker.Mistral.OpenApiClient.V1.Connectors.Item.Item.WithConsumerScopeItemRequestBuilder"/></returns>
+        public global::Soenneker.Mistral.OpenApiClient.V1.Connectors.Item.Item.WithConsumerScopeItemRequestBuilder this[string position]
+        {
+            get
+            {
+                var urlTplParams = new Dictionary<string, object>(PathParameters);
+                urlTplParams.Add("consumerScope", position);
+                return new global::Soenneker.Mistral.OpenApiClient.V1.Connectors.Item.Item.WithConsumerScopeItemRequestBuilder(urlTplParams, RequestAdapter);
+            }
         }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Mistral.OpenApiClient.V1.Connectors.Item.WithConnectorIdOrNameItemRequestBuilder"/> and sets the default values.

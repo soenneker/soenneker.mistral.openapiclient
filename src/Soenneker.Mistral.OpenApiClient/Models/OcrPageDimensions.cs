@@ -9,15 +9,24 @@ namespace Soenneker.Mistral.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class OcrPageDimensions : IParsable
+    public partial class OcrPageDimensions : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Dots per inch of the page-image</summary>
         public int? Dpi { get; set; }
         /// <summary>Height of the image in pixels</summary>
         public int? Height { get; set; }
         /// <summary>Width of the image in pixels</summary>
         public int? Width { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Mistral.OpenApiClient.Models.OcrPageDimensions"/> and sets the default values.
+        /// </summary>
+        public OcrPageDimensions()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -51,6 +60,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             writer.WriteIntValue("dpi", Dpi);
             writer.WriteIntValue("height", Height);
             writer.WriteIntValue("width", Width);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

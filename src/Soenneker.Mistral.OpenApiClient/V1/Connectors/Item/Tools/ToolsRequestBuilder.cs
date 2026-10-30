@@ -35,7 +35,7 @@ namespace Soenneker.Mistral.OpenApiClient.V1.Connectors.Item.Tools
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ToolsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/connectors/{connectorIdOrName}/tools{?credentials_name*,page*,page_size*,pretty*,refresh*}", pathParameters)
+        public ToolsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/connectors/{connectorIdOrName}/tools{?credentials_name*,page_size*,pretty*,refresh*}", pathParameters)
         {
         }
         /// <summary>
@@ -43,7 +43,7 @@ namespace Soenneker.Mistral.OpenApiClient.V1.Connectors.Item.Tools
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ToolsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/connectors/{connectorIdOrName}/tools{?credentials_name*,page*,page_size*,pretty*,refresh*}", rawUrl)
+        public ToolsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/connectors/{connectorIdOrName}/tools{?credentials_name*,page_size*,pretty*,refresh*}", rawUrl)
         {
         }
         /// <summary>
@@ -116,10 +116,6 @@ namespace Soenneker.Mistral.OpenApiClient.V1.Connectors.Item.Tools
             public string CredentialsName { get; set; }
             #pragma warning restore CS1591
 #endif
-            #pragma warning disable CS1591
-            [QueryParameter("page")]
-            public int? Page { get; set; }
-            #pragma warning restore CS1591
             #pragma warning disable CS1591
             [QueryParameter("page_size")]
             public int? PageSize { get; set; }

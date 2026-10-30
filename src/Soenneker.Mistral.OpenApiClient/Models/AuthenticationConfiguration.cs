@@ -15,7 +15,9 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The authentication_type property</summary>
-        public global::Soenneker.Mistral.OpenApiClient.Models.OutboundAuthenticationType? AuthenticationType { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.AuthenticationType? AuthenticationType { get; set; }
+        /// <summary>The creator_id property</summary>
+        public Guid? CreatorId { get; set; }
         /// <summary>The is_default property</summary>
         public bool? IsDefault { get; set; }
         /// <summary>The name property</summary>
@@ -25,6 +27,24 @@ namespace Soenneker.Mistral.OpenApiClient.Models
 #nullable restore
 #else
         public string Name { get; set; }
+#endif
+        /// <summary>The scope property</summary>
+        public global::Soenneker.Mistral.OpenApiClient.Models.ConsumerType? Scope { get; set; }
+        /// <summary>The status property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Mistral.OpenApiClient.Models.CredentialsStatus? Status { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Mistral.OpenApiClient.Models.CredentialsStatus Status { get; set; }
+#endif
+        /// <summary>The title property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Title { get; set; }
+#nullable restore
+#else
+        public string Title { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Mistral.OpenApiClient.Models.AuthenticationConfiguration"/> and sets the default values.
@@ -52,9 +72,13 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "authentication_type", n => { AuthenticationType = n.GetEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.OutboundAuthenticationType>(); } },
+                { "authentication_type", n => { AuthenticationType = n.GetEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.AuthenticationType>(); } },
+                { "creator_id", n => { CreatorId = n.GetGuidValue(); } },
                 { "is_default", n => { IsDefault = n.GetBoolValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
+                { "scope", n => { Scope = n.GetEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.ConsumerType>(); } },
+                { "status", n => { Status = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.CredentialsStatus>(global::Soenneker.Mistral.OpenApiClient.Models.CredentialsStatus.CreateFromDiscriminatorValue); } },
+                { "title", n => { Title = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -64,9 +88,13 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.OutboundAuthenticationType>("authentication_type", AuthenticationType);
+            writer.WriteEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.AuthenticationType>("authentication_type", AuthenticationType);
+            writer.WriteGuidValue("creator_id", CreatorId);
             writer.WriteBoolValue("is_default", IsDefault);
             writer.WriteStringValue("name", Name);
+            writer.WriteEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.ConsumerType>("scope", Scope);
+            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.CredentialsStatus>("status", Status);
+            writer.WriteStringValue("title", Title);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

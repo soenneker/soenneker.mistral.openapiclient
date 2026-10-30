@@ -2,12 +2,18 @@
 #pragma warning disable CS0618
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions;
-using Soenneker.Mistral.OpenApiClient.V1.Observability.Campaigns;
-using Soenneker.Mistral.OpenApiClient.V1.Observability.ChatCompletionEvents;
-using Soenneker.Mistral.OpenApiClient.V1.Observability.ChatCompletionFields;
 using Soenneker.Mistral.OpenApiClient.V1.Observability.DatasetRecords;
 using Soenneker.Mistral.OpenApiClient.V1.Observability.Datasets;
+using Soenneker.Mistral.OpenApiClient.V1.Observability.EvaluationRuns_v2;
+using Soenneker.Mistral.OpenApiClient.V1.Observability.Evaluations_v2;
 using Soenneker.Mistral.OpenApiClient.V1.Observability.Judges;
+using Soenneker.Mistral.OpenApiClient.V1.Observability.Logs;
+using Soenneker.Mistral.OpenApiClient.V1.Observability.Optimizations;
+using Soenneker.Mistral.OpenApiClient.V1.Observability.PipelineResults;
+using Soenneker.Mistral.OpenApiClient.V1.Observability.Pipelines;
+using Soenneker.Mistral.OpenApiClient.V1.Observability.Projects;
+using Soenneker.Mistral.OpenApiClient.V1.Observability.Spans;
+using Soenneker.Mistral.OpenApiClient.V1.Observability.Traces;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
@@ -20,21 +26,6 @@ namespace Soenneker.Mistral.OpenApiClient.V1.Observability
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ObservabilityRequestBuilder : BaseRequestBuilder
     {
-        /// <summary>The campaigns property</summary>
-        public global::Soenneker.Mistral.OpenApiClient.V1.Observability.Campaigns.CampaignsRequestBuilder Campaigns
-        {
-            get => new global::Soenneker.Mistral.OpenApiClient.V1.Observability.Campaigns.CampaignsRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>The chatCompletionEvents property</summary>
-        public global::Soenneker.Mistral.OpenApiClient.V1.Observability.ChatCompletionEvents.ChatCompletionEventsRequestBuilder ChatCompletionEvents
-        {
-            get => new global::Soenneker.Mistral.OpenApiClient.V1.Observability.ChatCompletionEvents.ChatCompletionEventsRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>The chatCompletionFields property</summary>
-        public global::Soenneker.Mistral.OpenApiClient.V1.Observability.ChatCompletionFields.ChatCompletionFieldsRequestBuilder ChatCompletionFields
-        {
-            get => new global::Soenneker.Mistral.OpenApiClient.V1.Observability.ChatCompletionFields.ChatCompletionFieldsRequestBuilder(PathParameters, RequestAdapter);
-        }
         /// <summary>The datasetRecords property</summary>
         public global::Soenneker.Mistral.OpenApiClient.V1.Observability.DatasetRecords.DatasetRecordsRequestBuilder DatasetRecords
         {
@@ -45,10 +36,55 @@ namespace Soenneker.Mistral.OpenApiClient.V1.Observability
         {
             get => new global::Soenneker.Mistral.OpenApiClient.V1.Observability.Datasets.DatasetsRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>The evaluationRuns_v2 property</summary>
+        public global::Soenneker.Mistral.OpenApiClient.V1.Observability.EvaluationRuns_v2.EvaluationRuns_v2RequestBuilder EvaluationRuns_v2
+        {
+            get => new global::Soenneker.Mistral.OpenApiClient.V1.Observability.EvaluationRuns_v2.EvaluationRuns_v2RequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The evaluations_v2 property</summary>
+        public global::Soenneker.Mistral.OpenApiClient.V1.Observability.Evaluations_v2.Evaluations_v2RequestBuilder Evaluations_v2
+        {
+            get => new global::Soenneker.Mistral.OpenApiClient.V1.Observability.Evaluations_v2.Evaluations_v2RequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>The judges property</summary>
         public global::Soenneker.Mistral.OpenApiClient.V1.Observability.Judges.JudgesRequestBuilder Judges
         {
             get => new global::Soenneker.Mistral.OpenApiClient.V1.Observability.Judges.JudgesRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The logs property</summary>
+        public global::Soenneker.Mistral.OpenApiClient.V1.Observability.Logs.LogsRequestBuilder Logs
+        {
+            get => new global::Soenneker.Mistral.OpenApiClient.V1.Observability.Logs.LogsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The optimizations property</summary>
+        public global::Soenneker.Mistral.OpenApiClient.V1.Observability.Optimizations.OptimizationsRequestBuilder Optimizations
+        {
+            get => new global::Soenneker.Mistral.OpenApiClient.V1.Observability.Optimizations.OptimizationsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The pipelineResults property</summary>
+        public global::Soenneker.Mistral.OpenApiClient.V1.Observability.PipelineResults.PipelineResultsRequestBuilder PipelineResults
+        {
+            get => new global::Soenneker.Mistral.OpenApiClient.V1.Observability.PipelineResults.PipelineResultsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The pipelines property</summary>
+        public global::Soenneker.Mistral.OpenApiClient.V1.Observability.Pipelines.PipelinesRequestBuilder Pipelines
+        {
+            get => new global::Soenneker.Mistral.OpenApiClient.V1.Observability.Pipelines.PipelinesRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The projects property</summary>
+        public global::Soenneker.Mistral.OpenApiClient.V1.Observability.Projects.ProjectsRequestBuilder Projects
+        {
+            get => new global::Soenneker.Mistral.OpenApiClient.V1.Observability.Projects.ProjectsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The spans property</summary>
+        public global::Soenneker.Mistral.OpenApiClient.V1.Observability.Spans.SpansRequestBuilder Spans
+        {
+            get => new global::Soenneker.Mistral.OpenApiClient.V1.Observability.Spans.SpansRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The traces property</summary>
+        public global::Soenneker.Mistral.OpenApiClient.V1.Observability.Traces.TracesRequestBuilder Traces
+        {
+            get => new global::Soenneker.Mistral.OpenApiClient.V1.Observability.Traces.TracesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Mistral.OpenApiClient.V1.Observability.ObservabilityRequestBuilder"/> and sets the default values.

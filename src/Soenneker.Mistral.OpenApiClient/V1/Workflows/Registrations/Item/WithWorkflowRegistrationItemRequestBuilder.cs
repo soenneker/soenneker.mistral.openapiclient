@@ -19,6 +19,7 @@ namespace Soenneker.Mistral.OpenApiClient.V1.Workflows.Registrations.Item
     public partial class WithWorkflowRegistrationItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The execute property</summary>
+        [Obsolete("")]
         public global::Soenneker.Mistral.OpenApiClient.V1.Workflows.Registrations.Item.Execute.ExecuteRequestBuilder Execute
         {
             get => new global::Soenneker.Mistral.OpenApiClient.V1.Workflows.Registrations.Item.Execute.ExecuteRequestBuilder(PathParameters, RequestAdapter);

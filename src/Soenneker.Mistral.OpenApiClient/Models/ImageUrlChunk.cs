@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.Mistral.OpenApiClient.Models
 {
     /// <summary>
-    /// {&quot;type&quot;:&quot;image_url&quot;,&quot;image_url&quot;:{&quot;url&quot;:&quot;data:image/png;base64,iVBORw0
+    /// {&quot;type&quot;:&quot;image_url&quot;,&quot;image_url&quot;:&quot;data:image/png;base64,iVBORw0&quot;}
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ImageUrlChunk : IParsable

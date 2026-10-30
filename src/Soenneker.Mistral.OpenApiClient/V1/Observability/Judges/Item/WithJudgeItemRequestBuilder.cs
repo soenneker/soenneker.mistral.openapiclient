@@ -72,7 +72,7 @@ namespace Soenneker.Mistral.OpenApiClient.V1.Observability.Judges.Item
         /// <summary>
         /// Get judge by id
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Mistral.OpenApiClient.Models.JudgePreview"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Mistral.OpenApiClient.Models.Judge"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Mistral.OpenApiClient.Models.ObservabilityError">When receiving a 400 status code</exception>
@@ -82,11 +82,11 @@ namespace Soenneker.Mistral.OpenApiClient.V1.Observability.Judges.Item
         /// <exception cref="global::Soenneker.Mistral.OpenApiClient.Models.ObservabilityError">When receiving a 422 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Mistral.OpenApiClient.Models.JudgePreview?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Mistral.OpenApiClient.Models.Judge?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Mistral.OpenApiClient.Models.JudgePreview> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Mistral.OpenApiClient.Models.Judge> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
@@ -98,7 +98,7 @@ namespace Soenneker.Mistral.OpenApiClient.V1.Observability.Judges.Item
                 { "409", global::Soenneker.Mistral.OpenApiClient.Models.ObservabilityError.CreateFromDiscriminatorValue },
                 { "422", global::Soenneker.Mistral.OpenApiClient.Models.ObservabilityError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Mistral.OpenApiClient.Models.JudgePreview>(requestInfo, global::Soenneker.Mistral.OpenApiClient.Models.JudgePreview.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Mistral.OpenApiClient.Models.Judge>(requestInfo, global::Soenneker.Mistral.OpenApiClient.Models.Judge.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Update a judge
@@ -113,11 +113,11 @@ namespace Soenneker.Mistral.OpenApiClient.V1.Observability.Judges.Item
         /// <exception cref="global::Soenneker.Mistral.OpenApiClient.Models.ObservabilityError">When receiving a 422 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task PutAsync(global::Soenneker.Mistral.OpenApiClient.Models.PutJudgeInSchema body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task PutAsync(global::Soenneker.Mistral.OpenApiClient.Models.UpdateJudgeRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task PutAsync(global::Soenneker.Mistral.OpenApiClient.Models.PutJudgeInSchema body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task PutAsync(global::Soenneker.Mistral.OpenApiClient.Models.UpdateJudgeRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -178,11 +178,11 @@ namespace Soenneker.Mistral.OpenApiClient.V1.Observability.Judges.Item
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPutRequestInformation(global::Soenneker.Mistral.OpenApiClient.Models.PutJudgeInSchema body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPutRequestInformation(global::Soenneker.Mistral.OpenApiClient.Models.UpdateJudgeRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPutRequestInformation(global::Soenneker.Mistral.OpenApiClient.Models.PutJudgeInSchema body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPutRequestInformation(global::Soenneker.Mistral.OpenApiClient.Models.UpdateJudgeRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));

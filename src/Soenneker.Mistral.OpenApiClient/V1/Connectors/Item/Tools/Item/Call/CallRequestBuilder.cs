@@ -36,18 +36,19 @@ namespace Soenneker.Mistral.OpenApiClient.V1.Connectors.Item.Tools.Item.Call
         /// <summary>
         /// Call a tool on an MCP connector.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Mistral.OpenApiClient.Models.McpToolCallResponse"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Mistral.OpenApiClient.Models.ConnectorToolCallResponse"/></returns>
         /// <param name="body">Request body for calling an MCP tool.</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Mistral.OpenApiClient.Models.HttpValidationError">When receiving a 422 status code</exception>
+        [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Mistral.OpenApiClient.Models.McpToolCallResponse?> PostAsync(global::Soenneker.Mistral.OpenApiClient.Models.McpToolCallRequest body, Action<RequestConfiguration<global::Soenneker.Mistral.OpenApiClient.V1.Connectors.Item.Tools.Item.Call.CallRequestBuilder.CallRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Mistral.OpenApiClient.Models.ConnectorToolCallResponse?> PostAsync(global::Soenneker.Mistral.OpenApiClient.Models.ConnectorCallToolRequest body, Action<RequestConfiguration<global::Soenneker.Mistral.OpenApiClient.V1.Connectors.Item.Tools.Item.Call.CallRequestBuilder.CallRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Mistral.OpenApiClient.Models.McpToolCallResponse> PostAsync(global::Soenneker.Mistral.OpenApiClient.Models.McpToolCallRequest body, Action<RequestConfiguration<global::Soenneker.Mistral.OpenApiClient.V1.Connectors.Item.Tools.Item.Call.CallRequestBuilder.CallRequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Mistral.OpenApiClient.Models.ConnectorToolCallResponse> PostAsync(global::Soenneker.Mistral.OpenApiClient.Models.ConnectorCallToolRequest body, Action<RequestConfiguration<global::Soenneker.Mistral.OpenApiClient.V1.Connectors.Item.Tools.Item.Call.CallRequestBuilder.CallRequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -56,7 +57,7 @@ namespace Soenneker.Mistral.OpenApiClient.V1.Connectors.Item.Tools.Item.Call
             {
                 { "422", global::Soenneker.Mistral.OpenApiClient.Models.HttpValidationError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Mistral.OpenApiClient.Models.McpToolCallResponse>(requestInfo, global::Soenneker.Mistral.OpenApiClient.Models.McpToolCallResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Mistral.OpenApiClient.Models.ConnectorToolCallResponse>(requestInfo, global::Soenneker.Mistral.OpenApiClient.Models.ConnectorToolCallResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Call a tool on an MCP connector.
@@ -64,13 +65,14 @@ namespace Soenneker.Mistral.OpenApiClient.V1.Connectors.Item.Tools.Item.Call
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">Request body for calling an MCP tool.</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Mistral.OpenApiClient.Models.McpToolCallRequest body, Action<RequestConfiguration<global::Soenneker.Mistral.OpenApiClient.V1.Connectors.Item.Tools.Item.Call.CallRequestBuilder.CallRequestBuilderPostQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Mistral.OpenApiClient.Models.ConnectorCallToolRequest body, Action<RequestConfiguration<global::Soenneker.Mistral.OpenApiClient.V1.Connectors.Item.Tools.Item.Call.CallRequestBuilder.CallRequestBuilderPostQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Mistral.OpenApiClient.Models.McpToolCallRequest body, Action<RequestConfiguration<global::Soenneker.Mistral.OpenApiClient.V1.Connectors.Item.Tools.Item.Call.CallRequestBuilder.CallRequestBuilderPostQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Mistral.OpenApiClient.Models.ConnectorCallToolRequest body, Action<RequestConfiguration<global::Soenneker.Mistral.OpenApiClient.V1.Connectors.Item.Tools.Item.Call.CallRequestBuilder.CallRequestBuilderPostQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -85,6 +87,7 @@ namespace Soenneker.Mistral.OpenApiClient.V1.Connectors.Item.Tools.Item.Call
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Mistral.OpenApiClient.V1.Connectors.Item.Tools.Item.Call.CallRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        [Obsolete("")]
         public global::Soenneker.Mistral.OpenApiClient.V1.Connectors.Item.Tools.Item.Call.CallRequestBuilder WithUrl(string rawUrl)
         {
             return new global::Soenneker.Mistral.OpenApiClient.V1.Connectors.Item.Tools.Item.Call.CallRequestBuilder(rawUrl, RequestAdapter);

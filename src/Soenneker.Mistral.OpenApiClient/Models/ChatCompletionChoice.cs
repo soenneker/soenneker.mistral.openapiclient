@@ -18,6 +18,14 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         public global::Soenneker.Mistral.OpenApiClient.Models.ChatCompletionChoiceFinishReason? FinishReason { get; set; }
         /// <summary>The index property</summary>
         public int? Index { get; set; }
+        /// <summary>The logprobs property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Mistral.OpenApiClient.Models.ChatCompletionResponseChoiceLogprobs? Logprobs { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Mistral.OpenApiClient.Models.ChatCompletionResponseChoiceLogprobs Logprobs { get; set; }
+#endif
         /// <summary>The message property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -25,6 +33,22 @@ namespace Soenneker.Mistral.OpenApiClient.Models
 #nullable restore
 #else
         public global::Soenneker.Mistral.OpenApiClient.Models.AssistantMessage Message { get; set; }
+#endif
+        /// <summary>The messages property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.Mistral.OpenApiClient.Models.DeltaMessage>? Messages { get; set; }
+#nullable restore
+#else
+        public List<global::Soenneker.Mistral.OpenApiClient.Models.DeltaMessage> Messages { get; set; }
+#endif
+        /// <summary>The prompt_logprobs property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Mistral.OpenApiClient.Models.ChatCompletionResponseChoiceLogprobs? PromptLogprobs { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Mistral.OpenApiClient.Models.ChatCompletionResponseChoiceLogprobs PromptLogprobs { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Mistral.OpenApiClient.Models.ChatCompletionChoice"/> and sets the default values.
@@ -53,7 +77,10 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             {
                 { "finish_reason", n => { FinishReason = n.GetEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.ChatCompletionChoiceFinishReason>(); } },
                 { "index", n => { Index = n.GetIntValue(); } },
+                { "logprobs", n => { Logprobs = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ChatCompletionResponseChoiceLogprobs>(global::Soenneker.Mistral.OpenApiClient.Models.ChatCompletionResponseChoiceLogprobs.CreateFromDiscriminatorValue); } },
                 { "message", n => { Message = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.AssistantMessage>(global::Soenneker.Mistral.OpenApiClient.Models.AssistantMessage.CreateFromDiscriminatorValue); } },
+                { "messages", n => { Messages = n.GetCollectionOfObjectValues<global::Soenneker.Mistral.OpenApiClient.Models.DeltaMessage>(global::Soenneker.Mistral.OpenApiClient.Models.DeltaMessage.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "prompt_logprobs", n => { PromptLogprobs = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ChatCompletionResponseChoiceLogprobs>(global::Soenneker.Mistral.OpenApiClient.Models.ChatCompletionResponseChoiceLogprobs.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -65,7 +92,10 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.ChatCompletionChoiceFinishReason>("finish_reason", FinishReason);
             writer.WriteIntValue("index", Index);
+            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ChatCompletionResponseChoiceLogprobs>("logprobs", Logprobs);
             writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.AssistantMessage>("message", Message);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Mistral.OpenApiClient.Models.DeltaMessage>("messages", Messages);
+            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ChatCompletionResponseChoiceLogprobs>("prompt_logprobs", PromptLogprobs);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

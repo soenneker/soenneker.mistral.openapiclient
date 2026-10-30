@@ -51,6 +51,8 @@ namespace Soenneker.Mistral.OpenApiClient.Models
 #endif
         /// <summary>Jitter to apply each action.An action&apos;s scheduled time will be incremented by a random value between 0and this value if present (but not past the next schedule).</summary>
         public TimeSpan? Jitter { get; set; }
+        /// <summary>Maximum number of times this schedule will trigger a workflow execution. Once this limit is reached, no further executions are triggered automatically. null means unlimited.</summary>
+        public int? MaxExecutions { get; set; }
         /// <summary>Policy for the schedule.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -116,6 +118,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
                 { "input", n => { Input = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
                 { "intervals", n => { Intervals = n.GetCollectionOfObjectValues<global::Soenneker.Mistral.OpenApiClient.Models.ScheduleInterval>(global::Soenneker.Mistral.OpenApiClient.Models.ScheduleInterval.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "jitter", n => { Jitter = n.GetTimeSpanValue(); } },
+                { "max_executions", n => { MaxExecutions = n.GetIntValue(); } },
                 { "policy", n => { Policy = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.SchedulePolicy>(global::Soenneker.Mistral.OpenApiClient.Models.SchedulePolicy.CreateFromDiscriminatorValue); } },
                 { "schedule_id", n => { ScheduleId = n.GetStringValue(); } },
                 { "skip", n => { Skip = n.GetCollectionOfObjectValues<global::Soenneker.Mistral.OpenApiClient.Models.ScheduleCalendar>(global::Soenneker.Mistral.OpenApiClient.Models.ScheduleCalendar.CreateFromDiscriminatorValue)?.AsList(); } },
@@ -136,6 +139,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             writer.WriteObjectValue<UntypedNode>("input", Input);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Mistral.OpenApiClient.Models.ScheduleInterval>("intervals", Intervals);
             writer.WriteTimeSpanValue("jitter", Jitter);
+            writer.WriteIntValue("max_executions", MaxExecutions);
             writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.SchedulePolicy>("policy", Policy);
             writer.WriteStringValue("schedule_id", ScheduleId);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Mistral.OpenApiClient.Models.ScheduleCalendar>("skip", Skip);

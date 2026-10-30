@@ -28,5 +28,9 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         #pragma warning disable CS1591
         DocumentLibrary,
         #pragma warning restore CS1591
+        [EnumMember(Value = "mistral_mcp")]
+        #pragma warning disable CS1591
+        MistralMcp,
+        #pragma warning restore CS1591
     }
 }

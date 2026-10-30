@@ -35,7 +35,7 @@ namespace Soenneker.Mistral.OpenApiClient.V1.Libraries
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public LibrariesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/libraries", pathParameters)
+        public LibrariesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/libraries{?filter_owned_by_me*,page*,page_size*,page_token*,search*}", pathParameters)
         {
         }
         /// <summary>
@@ -43,42 +43,47 @@ namespace Soenneker.Mistral.OpenApiClient.V1.Libraries
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public LibrariesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/libraries", rawUrl)
+        public LibrariesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/libraries{?filter_owned_by_me*,page*,page_size*,page_token*,search*}", rawUrl)
         {
         }
         /// <summary>
         /// List all libraries that you have created or have been shared with you.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Mistral.OpenApiClient.Models.ListLibraryOut"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Mistral.OpenApiClient.Models.ListLibrariesResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="global::Soenneker.Mistral.OpenApiClient.Models.HttpValidationError">When receiving a 422 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Mistral.OpenApiClient.Models.ListLibraryOut?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Mistral.OpenApiClient.Models.ListLibrariesResponse?> GetAsync(Action<RequestConfiguration<global::Soenneker.Mistral.OpenApiClient.V1.Libraries.LibrariesRequestBuilder.LibrariesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Mistral.OpenApiClient.Models.ListLibraryOut> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Mistral.OpenApiClient.Models.ListLibrariesResponse> GetAsync(Action<RequestConfiguration<global::Soenneker.Mistral.OpenApiClient.V1.Libraries.LibrariesRequestBuilder.LibrariesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Mistral.OpenApiClient.Models.ListLibraryOut>(requestInfo, global::Soenneker.Mistral.OpenApiClient.Models.ListLibraryOut.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
+                { "422", global::Soenneker.Mistral.OpenApiClient.Models.HttpValidationError.CreateFromDiscriminatorValue },
+            };
+            return await RequestAdapter.SendAsync<global::Soenneker.Mistral.OpenApiClient.Models.ListLibrariesResponse>(requestInfo, global::Soenneker.Mistral.OpenApiClient.Models.ListLibrariesResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create a new Library, you will be marked as the owner and only you will have the possibility to share it with others. When first created this will only be accessible by you.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Mistral.OpenApiClient.Models.LibraryOut"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Mistral.OpenApiClient.Models.Library"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Mistral.OpenApiClient.Models.HttpValidationError">When receiving a 422 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Mistral.OpenApiClient.Models.LibraryOut?> PostAsync(global::Soenneker.Mistral.OpenApiClient.Models.LibraryIn body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Mistral.OpenApiClient.Models.Library?> PostAsync(global::Soenneker.Mistral.OpenApiClient.Models.CreateLibraryRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Mistral.OpenApiClient.Models.LibraryOut> PostAsync(global::Soenneker.Mistral.OpenApiClient.Models.LibraryIn body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Mistral.OpenApiClient.Models.Library> PostAsync(global::Soenneker.Mistral.OpenApiClient.Models.CreateLibraryRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -87,7 +92,7 @@ namespace Soenneker.Mistral.OpenApiClient.V1.Libraries
             {
                 { "422", global::Soenneker.Mistral.OpenApiClient.Models.HttpValidationError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Mistral.OpenApiClient.Models.LibraryOut>(requestInfo, global::Soenneker.Mistral.OpenApiClient.Models.LibraryOut.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Mistral.OpenApiClient.Models.Library>(requestInfo, global::Soenneker.Mistral.OpenApiClient.Models.Library.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// List all libraries that you have created or have been shared with you.
@@ -96,11 +101,11 @@ namespace Soenneker.Mistral.OpenApiClient.V1.Libraries
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Soenneker.Mistral.OpenApiClient.V1.Libraries.LibrariesRequestBuilder.LibrariesRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Soenneker.Mistral.OpenApiClient.V1.Libraries.LibrariesRequestBuilder.LibrariesRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -116,11 +121,11 @@ namespace Soenneker.Mistral.OpenApiClient.V1.Libraries
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Mistral.OpenApiClient.Models.LibraryIn body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Mistral.OpenApiClient.Models.CreateLibraryRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Mistral.OpenApiClient.Models.LibraryIn body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Mistral.OpenApiClient.Models.CreateLibraryRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -138,6 +143,45 @@ namespace Soenneker.Mistral.OpenApiClient.V1.Libraries
         public global::Soenneker.Mistral.OpenApiClient.V1.Libraries.LibrariesRequestBuilder WithUrl(string rawUrl)
         {
             return new global::Soenneker.Mistral.OpenApiClient.V1.Libraries.LibrariesRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
+        /// List all libraries that you have created or have been shared with you.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
+        public partial class LibrariesRequestBuilderGetQueryParameters 
+        {
+            /// <summary>Deprecated: this parameter will be removed in a future version.</summary>
+            [Obsolete("")]
+            [QueryParameter("filter_owned_by_me")]
+            public bool? FilterOwnedByMe { get; set; }
+            /// <summary>Deprecated: use page_token. Offset paging re-scans earlier pages and is being phased out.</summary>
+            [Obsolete("")]
+            [QueryParameter("page")]
+            public int? Page { get; set; }
+            #pragma warning disable CS1591
+            [QueryParameter("page_size")]
+            public int? PageSize { get; set; }
+            #pragma warning restore CS1591
+            /// <summary>Continuation token from a previous response&apos;s next_page_token. Preferred over `page`.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("page_token")]
+            public string? PageToken { get; set; }
+#nullable restore
+#else
+            [QueryParameter("page_token")]
+            public string PageToken { get; set; }
+#endif
+            /// <summary>Case-insensitive search on the library name.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("search")]
+            public string? Search { get; set; }
+#nullable restore
+#else
+            [QueryParameter("search")]
+            public string Search { get; set; }
+#endif
         }
     }
 }

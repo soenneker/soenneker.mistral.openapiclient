@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.Mistral.OpenApiClient.Models
 {
     /// <summary>
-    /// Audio content for a message.
+    /// Audio provided to or from an LLM.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class AudioContent : IAdditionalDataHolder, IParsable

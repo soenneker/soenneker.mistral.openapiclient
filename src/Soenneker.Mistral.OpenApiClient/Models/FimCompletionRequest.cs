@@ -40,7 +40,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
 #else
         public string Prompt { get; set; }
 #endif
-        /// <summary>A cache key to enable prompt caching. When provided, the API will attempt to reuse previously computed tokens for requests sharing the same prefix (e.g. multi-turn conversations or requests with a similar system prompt). Cached tokens are billed at 10% of the standard input token price.</summary>
+        /// <summary>The prompt_cache_key property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? PromptCacheKey { get; set; }
@@ -79,7 +79,6 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         {
             Model = "codestral-2404";
             Stream = false;
-            TopP = 1;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.Mistral.OpenApiClient.Models
 {
     /// <summary>
-    /// An icon for display in user interfaces.
+    /// An optionally-sized icon for display in a user interface (2025-11-25+).
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class McpServerIcon : IAdditionalDataHolder, IParsable
@@ -39,6 +39,8 @@ namespace Soenneker.Mistral.OpenApiClient.Models
 #else
         public string Src { get; set; }
 #endif
+        /// <summary>The theme property</summary>
+        public global::Soenneker.Mistral.OpenApiClient.Models.McpServerIconTheme? Theme { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Mistral.OpenApiClient.Models.McpServerIcon"/> and sets the default values.
         /// </summary>
@@ -67,6 +69,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
                 { "mimeType", n => { MimeType = n.GetStringValue(); } },
                 { "sizes", n => { Sizes = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "src", n => { Src = n.GetStringValue(); } },
+                { "theme", n => { Theme = n.GetEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.McpServerIconTheme>(); } },
             };
         }
         /// <summary>
@@ -79,6 +82,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             writer.WriteStringValue("mimeType", MimeType);
             writer.WriteCollectionOfPrimitiveValues<string>("sizes", Sizes);
             writer.WriteStringValue("src", Src);
+            writer.WriteEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.McpServerIconTheme>("theme", Theme);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

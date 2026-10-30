@@ -19,9 +19,9 @@ namespace Soenneker.Mistral.OpenApiClient.V1.Observability.Datasets
     public partial class DatasetsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Soenneker.Mistral.OpenApiClient.v1.observability.datasets.item collection</summary>
-        /// <param name="position">Unique identifier of the item</param>
+        /// <param name="position">Dataset UUID or workspace-scoped slug. UUID-shaped values are always interpreted as dataset IDs.</param>
         /// <returns>A <see cref="global::Soenneker.Mistral.OpenApiClient.V1.Observability.Datasets.Item.WithDatasetItemRequestBuilder"/></returns>
-        public global::Soenneker.Mistral.OpenApiClient.V1.Observability.Datasets.Item.WithDatasetItemRequestBuilder this[Guid position]
+        public global::Soenneker.Mistral.OpenApiClient.V1.Observability.Datasets.Item.WithDatasetItemRequestBuilder this[string position]
         {
             get
             {
@@ -49,7 +49,7 @@ namespace Soenneker.Mistral.OpenApiClient.V1.Observability.Datasets
         /// <summary>
         /// List existing datasets
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Mistral.OpenApiClient.Models.DatasetPreviews"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Mistral.OpenApiClient.Models.ListDatasetsResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Mistral.OpenApiClient.Models.ObservabilityError">When receiving a 400 status code</exception>
@@ -59,11 +59,11 @@ namespace Soenneker.Mistral.OpenApiClient.V1.Observability.Datasets
         /// <exception cref="global::Soenneker.Mistral.OpenApiClient.Models.ObservabilityError">When receiving a 422 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Mistral.OpenApiClient.Models.DatasetPreviews?> GetAsync(Action<RequestConfiguration<global::Soenneker.Mistral.OpenApiClient.V1.Observability.Datasets.DatasetsRequestBuilder.DatasetsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Mistral.OpenApiClient.Models.ListDatasetsResponse?> GetAsync(Action<RequestConfiguration<global::Soenneker.Mistral.OpenApiClient.V1.Observability.Datasets.DatasetsRequestBuilder.DatasetsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Mistral.OpenApiClient.Models.DatasetPreviews> GetAsync(Action<RequestConfiguration<global::Soenneker.Mistral.OpenApiClient.V1.Observability.Datasets.DatasetsRequestBuilder.DatasetsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Mistral.OpenApiClient.Models.ListDatasetsResponse> GetAsync(Action<RequestConfiguration<global::Soenneker.Mistral.OpenApiClient.V1.Observability.Datasets.DatasetsRequestBuilder.DatasetsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
@@ -75,7 +75,7 @@ namespace Soenneker.Mistral.OpenApiClient.V1.Observability.Datasets
                 { "409", global::Soenneker.Mistral.OpenApiClient.Models.ObservabilityError.CreateFromDiscriminatorValue },
                 { "422", global::Soenneker.Mistral.OpenApiClient.Models.ObservabilityError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Mistral.OpenApiClient.Models.DatasetPreviews>(requestInfo, global::Soenneker.Mistral.OpenApiClient.Models.DatasetPreviews.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Mistral.OpenApiClient.Models.ListDatasetsResponse>(requestInfo, global::Soenneker.Mistral.OpenApiClient.Models.ListDatasetsResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create a new empty dataset
@@ -91,11 +91,11 @@ namespace Soenneker.Mistral.OpenApiClient.V1.Observability.Datasets
         /// <exception cref="global::Soenneker.Mistral.OpenApiClient.Models.ObservabilityError">When receiving a 422 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Mistral.OpenApiClient.Models.Dataset?> PostAsync(global::Soenneker.Mistral.OpenApiClient.Models.PostDatasetInSchema body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Mistral.OpenApiClient.Models.Dataset?> PostAsync(global::Soenneker.Mistral.OpenApiClient.Models.CreateDatasetRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Mistral.OpenApiClient.Models.Dataset> PostAsync(global::Soenneker.Mistral.OpenApiClient.Models.PostDatasetInSchema body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Mistral.OpenApiClient.Models.Dataset> PostAsync(global::Soenneker.Mistral.OpenApiClient.Models.CreateDatasetRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -137,11 +137,11 @@ namespace Soenneker.Mistral.OpenApiClient.V1.Observability.Datasets
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Mistral.OpenApiClient.Models.PostDatasetInSchema body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Mistral.OpenApiClient.Models.CreateDatasetRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Mistral.OpenApiClient.Models.PostDatasetInSchema body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Mistral.OpenApiClient.Models.CreateDatasetRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));

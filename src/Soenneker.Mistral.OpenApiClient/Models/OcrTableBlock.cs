@@ -9,13 +9,23 @@ namespace Soenneker.Mistral.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class OcrTableBlock : IParsable
+    public partial class OcrTableBlock : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The bottom_right_x property</summary>
         public int? BottomRightX { get; set; }
         /// <summary>The bottom_right_y property</summary>
         public int? BottomRightY { get; set; }
+        /// <summary>Confidence scores for this block. Populated when confidence_scores_granularity is set to &apos;block&apos;.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Mistral.OpenApiClient.Models.OcrBlockConfidenceScores? ConfidenceScores { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Mistral.OpenApiClient.Models.OcrBlockConfidenceScores ConfidenceScores { get; set; }
+#endif
         /// <summary>Text/markdown/html content of this block</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -39,6 +49,13 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         /// <summary>The type property</summary>
         public global::Soenneker.Mistral.OpenApiClient.Models.TableType? Type { get; set; }
         /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Mistral.OpenApiClient.Models.OcrTableBlock"/> and sets the default values.
+        /// </summary>
+        public OcrTableBlock()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
+        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Mistral.OpenApiClient.Models.OcrTableBlock"/></returns>
@@ -58,6 +75,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             {
                 { "bottom_right_x", n => { BottomRightX = n.GetIntValue(); } },
                 { "bottom_right_y", n => { BottomRightY = n.GetIntValue(); } },
+                { "confidence_scores", n => { ConfidenceScores = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.OcrBlockConfidenceScores>(global::Soenneker.Mistral.OpenApiClient.Models.OcrBlockConfidenceScores.CreateFromDiscriminatorValue); } },
                 { "content", n => { Content = n.GetStringValue(); } },
                 { "table_id", n => { TableId = n.GetStringValue(); } },
                 { "top_left_x", n => { TopLeftX = n.GetIntValue(); } },
@@ -74,11 +92,13 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteIntValue("bottom_right_x", BottomRightX);
             writer.WriteIntValue("bottom_right_y", BottomRightY);
+            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.OcrBlockConfidenceScores>("confidence_scores", ConfidenceScores);
             writer.WriteStringValue("content", Content);
             writer.WriteStringValue("table_id", TableId);
             writer.WriteIntValue("top_left_x", TopLeftX);
             writer.WriteIntValue("top_left_y", TopLeftY);
             writer.WriteEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.TableType>("type", Type);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

@@ -35,7 +35,7 @@ namespace Soenneker.Mistral.OpenApiClient.V1.Workflows.Runs
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public RunsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/workflows/runs{?next_page_token*,page_size*,search*,status*,workflow_identifier*}", pathParameters)
+        public RunsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/workflows/runs{?deployment_name*,end_time_after*,end_time_before*,include_internal*,next_page_token*,order*,page_size*,root_execution_id*,search*,search_key*,sort_by*,start_time_after*,start_time_before*,status*,user_id*,workflow_identifier*,workflow_tags*}", pathParameters)
         {
         }
         /// <summary>
@@ -43,7 +43,7 @@ namespace Soenneker.Mistral.OpenApiClient.V1.Workflows.Runs
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public RunsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/workflows/runs{?next_page_token*,page_size*,search*,status*,workflow_identifier*}", rawUrl)
+        public RunsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/workflows/runs{?deployment_name*,end_time_after*,end_time_before*,include_internal*,next_page_token*,order*,page_size*,root_execution_id*,search*,search_key*,sort_by*,start_time_after*,start_time_before*,status*,user_id*,workflow_identifier*,workflow_tags*}", rawUrl)
         {
         }
         /// <summary>
@@ -103,6 +103,25 @@ namespace Soenneker.Mistral.OpenApiClient.V1.Workflows.Runs
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class RunsRequestBuilderGetQueryParameters 
         {
+            /// <summary>Filter by deployment name</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("deployment_name")]
+            public string? DeploymentName { get; set; }
+#nullable restore
+#else
+            [QueryParameter("deployment_name")]
+            public string DeploymentName { get; set; }
+#endif
+            /// <summary>Include runs with end_time &gt;= value. Running executions (no end_time) are excluded; use the status filter to include them.</summary>
+            [QueryParameter("end_time_after")]
+            public DateTimeOffset? EndTimeAfter { get; set; }
+            /// <summary>Include runs with end_time &lt;= value. Running executions (no end_time) are excluded; use the status filter to include them.</summary>
+            [QueryParameter("end_time_before")]
+            public DateTimeOffset? EndTimeBefore { get; set; }
+            /// <summary>Include runs of internal/technical workflows (e.g. parallel-execution)</summary>
+            [QueryParameter("include_internal")]
+            public bool? IncludeInternal { get; set; }
             /// <summary>Token for the next page of results</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -113,10 +132,23 @@ namespace Soenneker.Mistral.OpenApiClient.V1.Workflows.Runs
             [QueryParameter("next_page_token")]
             public string NextPageToken { get; set; }
 #endif
+            /// <summary>Sort direction</summary>
+            [QueryParameter("order")]
+            public global::Soenneker.Mistral.OpenApiClient.Models.ListRunsV1WorkflowsRunsGetOrderParameter? Order { get; set; }
             /// <summary>Number of items per page</summary>
             [QueryParameter("page_size")]
             public int? PageSize { get; set; }
-            /// <summary>Search by workflow name, display name or id</summary>
+            /// <summary>Filter by root execution id; returns the whole execution tree (the root and all its descendant sub-workflows).</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("root_execution_id")]
+            public string? RootExecutionId { get; set; }
+#nullable restore
+#else
+            [QueryParameter("root_execution_id")]
+            public string RootExecutionId { get; set; }
+#endif
+            /// <summary>Search by workflow name, display name, or ID</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("search")]
@@ -126,6 +158,25 @@ namespace Soenneker.Mistral.OpenApiClient.V1.Workflows.Runs
             [QueryParameter("search")]
             public string Search { get; set; }
 #endif
+            /// <summary>Filter executions by search key as repeated entries (max 3, AND&apos;d together). &apos;key:value&apos; matches a similar value, &apos;key==:value&apos; matches the exact value, a bare &apos;key&apos; matches executions that have the key set at all, and &apos;key==&apos; matches executions whose value for the key is null.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("search_key")]
+            public string[]? SearchKey { get; set; }
+#nullable restore
+#else
+            [QueryParameter("search_key")]
+            public string[] SearchKey { get; set; }
+#endif
+            /// <summary>Field to sort by</summary>
+            [QueryParameter("sort_by")]
+            public global::Soenneker.Mistral.OpenApiClient.Models.ListRunsV1WorkflowsRunsGetSortByParameter? SortBy { get; set; }
+            /// <summary>Include runs with start_time &gt;= value</summary>
+            [QueryParameter("start_time_after")]
+            public DateTimeOffset? StartTimeAfter { get; set; }
+            /// <summary>Include runs with start_time &lt;= value</summary>
+            [QueryParameter("start_time_before")]
+            public DateTimeOffset? StartTimeBefore { get; set; }
             /// <summary>Filter by workflow status</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -136,6 +187,16 @@ namespace Soenneker.Mistral.OpenApiClient.V1.Workflows.Runs
             [QueryParameter("status")]
             public string Status { get; set; }
 #endif
+            /// <summary>Filter by user id. Use &apos;current&apos; to filter by the authenticated user</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("user_id")]
+            public string? UserId { get; set; }
+#nullable restore
+#else
+            [QueryParameter("user_id")]
+            public string UserId { get; set; }
+#endif
             /// <summary>Filter by workflow name or id</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -145,6 +206,16 @@ namespace Soenneker.Mistral.OpenApiClient.V1.Workflows.Runs
 #else
             [QueryParameter("workflow_identifier")]
             public string WorkflowIdentifier { get; set; }
+#endif
+            /// <summary>Filter to runs of workflows tagged with all listed tags (AND).</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("workflow_tags")]
+            public string[]? WorkflowTags { get; set; }
+#nullable restore
+#else
+            [QueryParameter("workflow_tags")]
+            public string[] WorkflowTags { get; set; }
 #endif
         }
     }

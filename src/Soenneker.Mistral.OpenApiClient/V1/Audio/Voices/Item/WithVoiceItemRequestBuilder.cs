@@ -86,7 +86,7 @@ namespace Soenneker.Mistral.OpenApiClient.V1.Audio.Voices.Item
             return await RequestAdapter.SendAsync<global::Soenneker.Mistral.OpenApiClient.Models.VoiceResponse>(requestInfo, global::Soenneker.Mistral.OpenApiClient.Models.VoiceResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update voice metadata (name, gender, languages, age, tags).
+        /// Update voice metadata (name, gender, languages, age, tags, retention notice).
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Mistral.OpenApiClient.Models.VoiceResponse"/></returns>
         /// <param name="body">Request model for partially updating voice metadata.</param>
@@ -149,7 +149,7 @@ namespace Soenneker.Mistral.OpenApiClient.V1.Audio.Voices.Item
             return requestInfo;
         }
         /// <summary>
-        /// Update voice metadata (name, gender, languages, age, tags).
+        /// Update voice metadata (name, gender, languages, age, tags, retention notice).
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">Request model for partially updating voice metadata.</param>

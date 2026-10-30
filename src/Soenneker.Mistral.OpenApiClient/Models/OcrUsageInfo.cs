@@ -9,13 +9,22 @@ namespace Soenneker.Mistral.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class OcrUsageInfo : IParsable
+    public partial class OcrUsageInfo : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Document size in bytes</summary>
         public int? DocSizeBytes { get; set; }
         /// <summary>Number of pages processed</summary>
         public int? PagesProcessed { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Mistral.OpenApiClient.Models.OcrUsageInfo"/> and sets the default values.
+        /// </summary>
+        public OcrUsageInfo()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -47,6 +56,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteIntValue("doc_size_bytes", DocSizeBytes);
             writer.WriteIntValue("pages_processed", PagesProcessed);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

@@ -4,6 +4,9 @@ using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
 using Soenneker.Mistral.OpenApiClient.Models;
+using Soenneker.Mistral.OpenApiClient.V1.Workflows.Schedules.Item.Pause;
+using Soenneker.Mistral.OpenApiClient.V1.Workflows.Schedules.Item.Resume;
+using Soenneker.Mistral.OpenApiClient.V1.Workflows.Schedules.Item.Trigger;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
@@ -17,6 +20,21 @@ namespace Soenneker.Mistral.OpenApiClient.V1.Workflows.Schedules.Item
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class WithScheduleItemRequestBuilder : BaseRequestBuilder
     {
+        /// <summary>The pause property</summary>
+        public global::Soenneker.Mistral.OpenApiClient.V1.Workflows.Schedules.Item.Pause.PauseRequestBuilder Pause
+        {
+            get => new global::Soenneker.Mistral.OpenApiClient.V1.Workflows.Schedules.Item.Pause.PauseRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The resume property</summary>
+        public global::Soenneker.Mistral.OpenApiClient.V1.Workflows.Schedules.Item.Resume.ResumeRequestBuilder Resume
+        {
+            get => new global::Soenneker.Mistral.OpenApiClient.V1.Workflows.Schedules.Item.Resume.ResumeRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The trigger property</summary>
+        public global::Soenneker.Mistral.OpenApiClient.V1.Workflows.Schedules.Item.Trigger.TriggerRequestBuilder Trigger
+        {
+            get => new global::Soenneker.Mistral.OpenApiClient.V1.Workflows.Schedules.Item.Trigger.TriggerRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Mistral.OpenApiClient.V1.Workflows.Schedules.Item.WithScheduleItemRequestBuilder"/> and sets the default values.
         /// </summary>
@@ -56,6 +74,54 @@ namespace Soenneker.Mistral.OpenApiClient.V1.Workflows.Schedules.Item
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
+        /// Get Schedule
+        /// </summary>
+        /// <returns>A <see cref="global::Soenneker.Mistral.OpenApiClient.Models.ScheduleDefinitionOutput"/></returns>
+        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="global::Soenneker.Mistral.OpenApiClient.Models.HttpValidationError">When receiving a 422 status code</exception>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public async Task<global::Soenneker.Mistral.OpenApiClient.Models.ScheduleDefinitionOutput?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
+#nullable restore
+#else
+        public async Task<global::Soenneker.Mistral.OpenApiClient.Models.ScheduleDefinitionOutput> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
+#endif
+            var requestInfo = ToGetRequestInformation(requestConfiguration);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
+                { "422", global::Soenneker.Mistral.OpenApiClient.Models.HttpValidationError.CreateFromDiscriminatorValue },
+            };
+            return await RequestAdapter.SendAsync<global::Soenneker.Mistral.OpenApiClient.Models.ScheduleDefinitionOutput>(requestInfo, global::Soenneker.Mistral.OpenApiClient.Models.ScheduleDefinitionOutput.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+        }
+        /// <summary>
+        /// Update Schedule
+        /// </summary>
+        /// <returns>A <see cref="global::Soenneker.Mistral.OpenApiClient.Models.WorkflowScheduleResponse"/></returns>
+        /// <param name="body">The request body</param>
+        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="global::Soenneker.Mistral.OpenApiClient.Models.HttpValidationError">When receiving a 422 status code</exception>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public async Task<global::Soenneker.Mistral.OpenApiClient.Models.WorkflowScheduleResponse?> PatchAsync(global::Soenneker.Mistral.OpenApiClient.Models.WorkflowScheduleUpdateRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
+#nullable restore
+#else
+        public async Task<global::Soenneker.Mistral.OpenApiClient.Models.WorkflowScheduleResponse> PatchAsync(global::Soenneker.Mistral.OpenApiClient.Models.WorkflowScheduleUpdateRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
+#endif
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
+            var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
+                { "422", global::Soenneker.Mistral.OpenApiClient.Models.HttpValidationError.CreateFromDiscriminatorValue },
+            };
+            return await RequestAdapter.SendAsync<global::Soenneker.Mistral.OpenApiClient.Models.WorkflowScheduleResponse>(requestInfo, global::Soenneker.Mistral.OpenApiClient.Models.WorkflowScheduleResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+        }
+        /// <summary>
         /// Unschedule Workflow
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
@@ -72,6 +138,47 @@ namespace Soenneker.Mistral.OpenApiClient.V1.Workflows.Schedules.Item
             var requestInfo = new RequestInformation(Method.DELETE, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
+            return requestInfo;
+        }
+        /// <summary>
+        /// Get Schedule
+        /// </summary>
+        /// <returns>A <see cref="RequestInformation"/></returns>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        {
+#nullable restore
+#else
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        {
+#endif
+            var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
+            requestInfo.Configure(requestConfiguration);
+            requestInfo.Headers.TryAdd("Accept", "application/json");
+            return requestInfo;
+        }
+        /// <summary>
+        /// Update Schedule
+        /// </summary>
+        /// <returns>A <see cref="RequestInformation"/></returns>
+        /// <param name="body">The request body</param>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public RequestInformation ToPatchRequestInformation(global::Soenneker.Mistral.OpenApiClient.Models.WorkflowScheduleUpdateRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        {
+#nullable restore
+#else
+        public RequestInformation ToPatchRequestInformation(global::Soenneker.Mistral.OpenApiClient.Models.WorkflowScheduleUpdateRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        {
+#endif
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
+            var requestInfo = new RequestInformation(Method.PATCH, UrlTemplate, PathParameters);
+            requestInfo.Configure(requestConfiguration);
+            requestInfo.Headers.TryAdd("Accept", "application/json");
+            requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
             return requestInfo;
         }
         /// <summary>

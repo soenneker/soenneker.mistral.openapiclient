@@ -36,7 +36,7 @@ namespace Soenneker.Mistral.OpenApiClient.V1.Observability.Datasets.Item.Exports
         /// <summary>
         /// Export to the Files API and retrieve presigned URL to download the resulting JSONL file
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Mistral.OpenApiClient.Models.DatasetExport"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Mistral.OpenApiClient.Models.ExportDatasetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Mistral.OpenApiClient.Models.ObservabilityError">When receiving a 400 status code</exception>
@@ -46,11 +46,11 @@ namespace Soenneker.Mistral.OpenApiClient.V1.Observability.Datasets.Item.Exports
         /// <exception cref="global::Soenneker.Mistral.OpenApiClient.Models.ObservabilityError">When receiving a 422 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Mistral.OpenApiClient.Models.DatasetExport?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Mistral.OpenApiClient.Models.ExportDatasetResponse?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Mistral.OpenApiClient.Models.DatasetExport> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Mistral.OpenApiClient.Models.ExportDatasetResponse> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
@@ -62,7 +62,7 @@ namespace Soenneker.Mistral.OpenApiClient.V1.Observability.Datasets.Item.Exports
                 { "409", global::Soenneker.Mistral.OpenApiClient.Models.ObservabilityError.CreateFromDiscriminatorValue },
                 { "422", global::Soenneker.Mistral.OpenApiClient.Models.ObservabilityError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Mistral.OpenApiClient.Models.DatasetExport>(requestInfo, global::Soenneker.Mistral.OpenApiClient.Models.DatasetExport.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Mistral.OpenApiClient.Models.ExportDatasetResponse>(requestInfo, global::Soenneker.Mistral.OpenApiClient.Models.ExportDatasetResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Export to the Files API and retrieve presigned URL to download the resulting JSONL file

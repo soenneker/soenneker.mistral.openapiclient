@@ -34,7 +34,7 @@ namespace Soenneker.Mistral.OpenApiClient.V1.Observability.Datasets.Item.Imports
         {
         }
         /// <summary>
-        /// Populate the dataset with samples from an uploaded file
+        /// Populate the dataset with records from an uploaded file
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Mistral.OpenApiClient.Models.DatasetImportTask"/></returns>
         /// <param name="body">The request body</param>
@@ -47,11 +47,11 @@ namespace Soenneker.Mistral.OpenApiClient.V1.Observability.Datasets.Item.Imports
         /// <exception cref="global::Soenneker.Mistral.OpenApiClient.Models.ObservabilityError">When receiving a 422 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Mistral.OpenApiClient.Models.DatasetImportTask?> PostAsync(global::Soenneker.Mistral.OpenApiClient.Models.PostDatasetImportFromFileInSchema body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Mistral.OpenApiClient.Models.DatasetImportTask?> PostAsync(global::Soenneker.Mistral.OpenApiClient.Models.ImportDatasetFromFileRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Mistral.OpenApiClient.Models.DatasetImportTask> PostAsync(global::Soenneker.Mistral.OpenApiClient.Models.PostDatasetImportFromFileInSchema body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Mistral.OpenApiClient.Models.DatasetImportTask> PostAsync(global::Soenneker.Mistral.OpenApiClient.Models.ImportDatasetFromFileRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -67,18 +67,18 @@ namespace Soenneker.Mistral.OpenApiClient.V1.Observability.Datasets.Item.Imports
             return await RequestAdapter.SendAsync<global::Soenneker.Mistral.OpenApiClient.Models.DatasetImportTask>(requestInfo, global::Soenneker.Mistral.OpenApiClient.Models.DatasetImportTask.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Populate the dataset with samples from an uploaded file
+        /// Populate the dataset with records from an uploaded file
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Mistral.OpenApiClient.Models.PostDatasetImportFromFileInSchema body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Mistral.OpenApiClient.Models.ImportDatasetFromFileRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Mistral.OpenApiClient.Models.PostDatasetImportFromFileInSchema body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Mistral.OpenApiClient.Models.ImportDatasetFromFileRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));

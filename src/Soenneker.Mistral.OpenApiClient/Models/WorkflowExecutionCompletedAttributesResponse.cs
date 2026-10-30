@@ -15,7 +15,9 @@ namespace Soenneker.Mistral.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>A payload containing arbitrary JSON data.Used for complete state snapshots or final results.</summary>
+        /// <summary>Workflow retry attempt number. 1 on first run and CAN; &gt;1 on workflow-level retries.</summary>
+        public int? Attempt { get; set; }
+        /// <summary>A payload containing arbitrary JSON data.Used for complete state snapshots or final results.When encrypted, the value field contains base64-encoded encrypted dataand encoding_options indicates the type of encryption applied.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Mistral.OpenApiClient.Models.JsonPayloadResponse? Result { get; set; }
@@ -37,6 +39,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         public WorkflowExecutionCompletedAttributesResponse()
         {
             AdditionalData = new Dictionary<string, object>();
+            Attempt = 1;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -56,6 +59,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "attempt", n => { Attempt = n.GetIntValue(); } },
                 { "result", n => { Result = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.JsonPayloadResponse>(global::Soenneker.Mistral.OpenApiClient.Models.JsonPayloadResponse.CreateFromDiscriminatorValue); } },
                 { "task_id", n => { TaskId = n.GetStringValue(); } },
             };
@@ -67,6 +71,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteIntValue("attempt", Attempt);
             writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.JsonPayloadResponse>("result", Result);
             writer.WriteStringValue("task_id", TaskId);
             writer.WriteAdditionalData(AdditionalData);

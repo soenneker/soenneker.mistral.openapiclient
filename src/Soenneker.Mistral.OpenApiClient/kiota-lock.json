@@ -1,8 +1,8 @@
 {
-  "descriptionHash": "F71A1925F9360CC8A3638CA0907B3BB38DF8CE36B592E522410A518A3A52A4862E01C8E9ECA2C6A98E33C252FB5A5E946947AA87769724852E877801D452A897",
+  "descriptionHash": "406B2882C03908E75CE04C1F325B14C7DCA60988F92BFE5AAC3A781BF59D0C2F44AEC6C7EB78EB15842D7E23527A26809E0DC60A9DF513EA7365B046D5C6C793",
   "descriptionLocation": "../../fixed.json",
   "lockFileVersion": "1.0.0",
-  "kiotaVersion": "1.36.1",
+  "kiotaVersion": "1.37.0",
   "clientClassName": "MistralOpenApiClient",
   "typeAccessModifier": "Public",
   "clientNamespaceName": "Soenneker.Mistral.OpenApiClient",
