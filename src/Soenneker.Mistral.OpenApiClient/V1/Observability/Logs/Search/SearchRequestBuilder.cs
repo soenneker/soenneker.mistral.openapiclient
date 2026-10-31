@@ -63,6 +63,8 @@ namespace Soenneker.Mistral.OpenApiClient.V1.Observability.Logs.Search
                 { "408", global::Soenneker.Mistral.OpenApiClient.Models.ObservabilityError.CreateFromDiscriminatorValue },
                 { "409", global::Soenneker.Mistral.OpenApiClient.Models.ObservabilityError.CreateFromDiscriminatorValue },
                 { "422", global::Soenneker.Mistral.OpenApiClient.Models.ObservabilityError.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Mistral.OpenApiClient.Models.GetLogs>(requestInfo, global::Soenneker.Mistral.OpenApiClient.Models.GetLogs.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -101,7 +103,7 @@ namespace Soenneker.Mistral.OpenApiClient.V1.Observability.Logs.Search
         /// Search logs
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class SearchRequestBuilderPostQueryParameters
+        public partial class SearchRequestBuilderPostQueryParameters 
         {
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable

@@ -53,6 +53,8 @@ namespace Soenneker.Mistral.OpenApiClient.V1.Workflows.Deployments.Item.Logs.Str
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
                 { "422", global::Soenneker.Mistral.OpenApiClient.Models.HttpValidationError.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -88,7 +90,7 @@ namespace Soenneker.Mistral.OpenApiClient.V1.Workflows.Deployments.Item.Logs.Str
         /// Stream logs for a deployment (all of its workers) via SSE.Resume cursor comes from the `Last-Event-ID` header or `last_event_id` query param (header wins)and takes precedence over `after`; omit all to tail from the deployment start.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class StreamRequestBuilderGetQueryParameters
+        public partial class StreamRequestBuilderGetQueryParameters 
         {
             /// <summary>Start a fresh stream at this timestamp (ignored when resuming via last_event_id)</summary>
             [QueryParameter("after")]

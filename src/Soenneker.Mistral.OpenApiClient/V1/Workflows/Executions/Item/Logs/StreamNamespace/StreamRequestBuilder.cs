@@ -53,6 +53,8 @@ namespace Soenneker.Mistral.OpenApiClient.V1.Workflows.Executions.Item.Logs.Stre
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
                 { "422", global::Soenneker.Mistral.OpenApiClient.Models.HttpValidationError.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -88,7 +90,7 @@ namespace Soenneker.Mistral.OpenApiClient.V1.Workflows.Executions.Item.Logs.Stre
         /// Stream logs for a workflow execution via SSE.Resume cursor comes from the `Last-Event-ID` header or `last_event_id` query param (header wins)and takes precedence over `after`; omit all to tail from the execution start.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class StreamRequestBuilderGetQueryParameters
+        public partial class StreamRequestBuilderGetQueryParameters 
         {
             /// <summary>Filter logs by activity ID</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

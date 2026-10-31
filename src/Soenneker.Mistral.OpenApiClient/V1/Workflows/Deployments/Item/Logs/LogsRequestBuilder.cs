@@ -59,6 +59,8 @@ namespace Soenneker.Mistral.OpenApiClient.V1.Workflows.Deployments.Item.Logs
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
                 { "422", global::Soenneker.Mistral.OpenApiClient.Models.HttpValidationError.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Mistral.OpenApiClient.Models.DeploymentLogSearchResponse>(requestInfo, global::Soenneker.Mistral.OpenApiClient.Models.DeploymentLogSearchResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -94,7 +96,7 @@ namespace Soenneker.Mistral.OpenApiClient.V1.Workflows.Deployments.Item.Logs
         /// Retrieve logs for a deployment (across all of its workers).Use `after`/`before`/`order` on the first request to set the time range and sort order; forthe next pages pass the `cursor` from the previous response (it remembers the range and order).`log_type=build` serves the managed build pipeline&apos;s output instead. It pages the same way,and a null `next_cursor` means the window is drained.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class LogsRequestBuilderGetQueryParameters
+        public partial class LogsRequestBuilderGetQueryParameters 
         {
             /// <summary>Only return logs at or after this timestamp</summary>
             [QueryParameter("after")]

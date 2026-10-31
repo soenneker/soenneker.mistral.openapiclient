@@ -61,6 +61,8 @@ namespace Soenneker.Mistral.OpenApiClient.V1.Observability.Logs.Fields.Item.Opti
                 { "408", global::Soenneker.Mistral.OpenApiClient.Models.ObservabilityError.CreateFromDiscriminatorValue },
                 { "409", global::Soenneker.Mistral.OpenApiClient.Models.ObservabilityError.CreateFromDiscriminatorValue },
                 { "422", global::Soenneker.Mistral.OpenApiClient.Models.ObservabilityError.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Mistral.OpenApiClient.Models.GetLogFieldOptions>(requestInfo, global::Soenneker.Mistral.OpenApiClient.Models.GetLogFieldOptions.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -96,7 +98,7 @@ namespace Soenneker.Mistral.OpenApiClient.V1.Observability.Logs.Fields.Item.Opti
         /// Get options for a log field
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class OptionsRequestBuilderGetQueryParameters
+        public partial class OptionsRequestBuilderGetQueryParameters 
         {
             #pragma warning disable CS1591
             [QueryParameter("from")]

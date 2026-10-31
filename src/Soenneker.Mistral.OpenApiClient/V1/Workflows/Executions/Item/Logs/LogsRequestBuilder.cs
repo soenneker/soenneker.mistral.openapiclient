@@ -59,6 +59,8 @@ namespace Soenneker.Mistral.OpenApiClient.V1.Workflows.Executions.Item.Logs
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
                 { "422", global::Soenneker.Mistral.OpenApiClient.Models.HttpValidationError.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Mistral.OpenApiClient.Models.ExecutionLogSearchResponse>(requestInfo, global::Soenneker.Mistral.OpenApiClient.Models.ExecutionLogSearchResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -94,7 +96,7 @@ namespace Soenneker.Mistral.OpenApiClient.V1.Workflows.Executions.Item.Logs
         /// Retrieve logs for a workflow execution.Use `after`/`before`/`order` on the first request to set the time range and sort order; forthe next pages pass the `cursor` from the previous response (it remembers the range and order).
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class LogsRequestBuilderGetQueryParameters
+        public partial class LogsRequestBuilderGetQueryParameters 
         {
             /// <summary>Filter logs by activity ID</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
