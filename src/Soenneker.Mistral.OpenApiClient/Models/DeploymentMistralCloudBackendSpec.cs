@@ -12,33 +12,55 @@ namespace Soenneker.Mistral.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class DeploymentMistralCloudBackendSpec : IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("build_directory") is null) { _explicitNullValueBuildDirectory = default!; _explicitNullProperties?.Remove("build_directory"); }
+            else if (parseNode.GetChildNode("build_directory") is { } nullNodeBuildDirectory && nullNodeBuildDirectory.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BuildDirectory = null;
+            if (parseNode.GetChildNode("dockerfile_path") is null) { _explicitNullValueDockerfilePath = default!; _explicitNullProperties?.Remove("dockerfile_path"); }
+            else if (parseNode.GetChildNode("dockerfile_path") is { } nullNodeDockerfilePath && nullNodeDockerfilePath.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DockerfilePath = null;
+            if (parseNode.GetChildNode("secrets") is null) { _explicitNullValueSecrets = default!; _explicitNullProperties?.Remove("secrets"); }
+            else if (parseNode.GetChildNode("secrets") is { } nullNodeSecrets && nullNodeSecrets.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Secrets = null;
+            if (parseNode.GetChildNode("type") is null) { _explicitNullValueType = default!; _explicitNullProperties?.Remove("type"); }
+            else if (parseNode.GetChildNode("type") is { } nullNodeType && nullNodeType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Type = null;
+        }
+
         /// <summary>Docker build context, as a path in the repo. Defaults to the repo root.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? BuildDirectory { get; set; }
+        public string? BuildDirectory { get => _explicitNullValueBuildDirectory; set { _explicitNullValueBuildDirectory = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("build_directory"); else _explicitNullProperties?.Remove("build_directory"); } }
+        private string? _explicitNullValueBuildDirectory = default!;
 #nullable restore
 #else
-        public string BuildDirectory { get; set; }
+        public string BuildDirectory { get => _explicitNullValueBuildDirectory; set { _explicitNullValueBuildDirectory = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("build_directory"); else _explicitNullProperties?.Remove("build_directory"); } }
+        private string _explicitNullValueBuildDirectory = default!;
 #endif
         /// <summary>Path to the Dockerfile, relative to &apos;build_directory&apos;. Defaults to &apos;Dockerfile&apos;.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DockerfilePath { get; set; }
+        public string? DockerfilePath { get => _explicitNullValueDockerfilePath; set { _explicitNullValueDockerfilePath = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dockerfile_path"); else _explicitNullProperties?.Remove("dockerfile_path"); } }
+        private string? _explicitNullValueDockerfilePath = default!;
 #nullable restore
 #else
-        public string DockerfilePath { get; set; }
+        public string DockerfilePath { get => _explicitNullValueDockerfilePath; set { _explicitNullValueDockerfilePath = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dockerfile_path"); else _explicitNullProperties?.Remove("dockerfile_path"); } }
+        private string _explicitNullValueDockerfilePath = default!;
 #endif
         /// <summary>Secrets to bind to the worker, as &apos;secret:workspace:&lt;NAME&gt;&apos; references. Each is available during build and run: as a Dockerfile build arg (declare a matching &apos;ARG&apos;) and as an env var. On update, the field carries the complete set: send the full list to rebind, an empty list to unbind all, omit it to leave the bindings unchanged.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Mistral.OpenApiClient.Models.DeploymentSecretBinding>? Secrets { get; set; }
+        public List<global::Soenneker.Mistral.OpenApiClient.Models.DeploymentSecretBinding>? Secrets { get => _explicitNullValueSecrets; set { _explicitNullValueSecrets = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("secrets"); else _explicitNullProperties?.Remove("secrets"); } }
+        private List<global::Soenneker.Mistral.OpenApiClient.Models.DeploymentSecretBinding>? _explicitNullValueSecrets = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Mistral.OpenApiClient.Models.DeploymentSecretBinding> Secrets { get; set; }
+        public List<global::Soenneker.Mistral.OpenApiClient.Models.DeploymentSecretBinding> Secrets { get => _explicitNullValueSecrets; set { _explicitNullValueSecrets = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("secrets"); else _explicitNullProperties?.Remove("secrets"); } }
+        private List<global::Soenneker.Mistral.OpenApiClient.Models.DeploymentSecretBinding> _explicitNullValueSecrets = default!;
 #endif
         /// <summary>The type property</summary>
-        public global::Soenneker.Mistral.OpenApiClient.Models.DeploymentMistralCloudBackendSpecType? Type { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.DeploymentMistralCloudBackendSpecType? Type { get => _explicitNullValueType; set { _explicitNullValueType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.DeploymentMistralCloudBackendSpecType? _explicitNullValueType = default!;
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -47,7 +69,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         public static global::Soenneker.Mistral.OpenApiClient.Models.DeploymentMistralCloudBackendSpec CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Mistral.OpenApiClient.Models.DeploymentMistralCloudBackendSpec();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Mistral.OpenApiClient.Models.DeploymentMistralCloudBackendSpec(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -73,7 +95,8 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             writer.WriteStringValue("build_directory", BuildDirectory);
             writer.WriteStringValue("dockerfile_path", DockerfilePath);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Mistral.OpenApiClient.Models.DeploymentSecretBinding>("secrets", Secrets);
-            writer.WriteEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.DeploymentMistralCloudBackendSpecType>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.DeploymentMistralCloudBackendSpecType>("type", Type);if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
+            
         }
     }
 }

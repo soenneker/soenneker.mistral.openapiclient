@@ -53,6 +53,8 @@ namespace Soenneker.Mistral.OpenApiClient.V1.Admin.Analytics.Vibe.Code.Usage.By_
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
                 { "422", global::Soenneker.Mistral.OpenApiClient.Models.HttpValidationError.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Mistral.OpenApiClient.Models.VibeWorkspaceStatsOut>(requestInfo, global::Soenneker.Mistral.OpenApiClient.Models.VibeWorkspaceStatsOut.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

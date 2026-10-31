@@ -11,27 +11,45 @@ namespace Soenneker.Mistral.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class DeploymentLocation : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("k8s_cluster") is null) { _explicitNullValueK8sCluster = default!; _explicitNullProperties?.Remove("k8s_cluster"); }
+            else if (parseNode.GetChildNode("k8s_cluster") is { } nullNodeK8sCluster && nullNodeK8sCluster.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) K8sCluster = null;
+            if (parseNode.GetChildNode("k8s_namespace") is null) { _explicitNullValueK8sNamespace = default!; _explicitNullProperties?.Remove("k8s_namespace"); }
+            else if (parseNode.GetChildNode("k8s_namespace") is { } nullNodeK8sNamespace && nullNodeK8sNamespace.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) K8sNamespace = null;
+            if (parseNode.GetChildNode("location_type") is null) { _explicitNullValueLocationType = default!; _explicitNullProperties?.Remove("location_type"); }
+            else if (parseNode.GetChildNode("location_type") is { } nullNodeLocationType && nullNodeLocationType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LocationType = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>K8s cluster name, if applicable</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? K8sCluster { get; set; }
+        public string? K8sCluster { get => _explicitNullValueK8sCluster; set { _explicitNullValueK8sCluster = value; AdditionalData?.Remove("k8s_cluster"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("k8s_cluster"); else _explicitNullProperties?.Remove("k8s_cluster"); } }
+        private string? _explicitNullValueK8sCluster = default!;
 #nullable restore
 #else
-        public string K8sCluster { get; set; }
+        public string K8sCluster { get => _explicitNullValueK8sCluster; set { _explicitNullValueK8sCluster = value; AdditionalData?.Remove("k8s_cluster"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("k8s_cluster"); else _explicitNullProperties?.Remove("k8s_cluster"); } }
+        private string _explicitNullValueK8sCluster = default!;
 #endif
         /// <summary>K8s namespace, if applicable</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? K8sNamespace { get; set; }
+        public string? K8sNamespace { get => _explicitNullValueK8sNamespace; set { _explicitNullValueK8sNamespace = value; AdditionalData?.Remove("k8s_namespace"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("k8s_namespace"); else _explicitNullProperties?.Remove("k8s_namespace"); } }
+        private string? _explicitNullValueK8sNamespace = default!;
 #nullable restore
 #else
-        public string K8sNamespace { get; set; }
+        public string K8sNamespace { get => _explicitNullValueK8sNamespace; set { _explicitNullValueK8sNamespace = value; AdditionalData?.Remove("k8s_namespace"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("k8s_namespace"); else _explicitNullProperties?.Remove("k8s_namespace"); } }
+        private string _explicitNullValueK8sNamespace = default!;
 #endif
         /// <summary>Where the deployment runs: &apos;local&apos;, &apos;k8s&apos;, or &apos;managed&apos;</summary>
-        public global::Soenneker.Mistral.OpenApiClient.Models.LocationType? LocationType { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.LocationType? LocationType { get => _explicitNullValueLocationType; set { _explicitNullValueLocationType = value; AdditionalData?.Remove("location_type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("location_type"); else _explicitNullProperties?.Remove("location_type"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.LocationType? _explicitNullValueLocationType = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Mistral.OpenApiClient.Models.DeploymentLocation"/> and sets the default values.
         /// </summary>
@@ -47,7 +65,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         public static global::Soenneker.Mistral.OpenApiClient.Models.DeploymentLocation CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Mistral.OpenApiClient.Models.DeploymentLocation();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Mistral.OpenApiClient.Models.DeploymentLocation(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -59,7 +77,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             {
                 { "k8s_cluster", n => { K8sCluster = n.GetStringValue(); } },
                 { "k8s_namespace", n => { K8sNamespace = n.GetStringValue(); } },
-                { "location_type", n => { LocationType = n.GetEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.LocationType>(); } },
+                { "location_type", n => { var parsed = n.GetEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.LocationType>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueLocationType = default; _explicitNullProperties?.Remove("location_type"); AdditionalData["location_type"] = unknown; } else { LocationType = parsed; AdditionalData.Remove("location_type"); } } },
             };
         }
         /// <summary>
@@ -72,6 +90,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             writer.WriteStringValue("k8s_cluster", K8sCluster);
             writer.WriteStringValue("k8s_namespace", K8sNamespace);
             writer.WriteEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.LocationType>("location_type", LocationType);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

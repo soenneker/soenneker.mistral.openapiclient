@@ -11,127 +11,234 @@ namespace Soenneker.Mistral.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class ChatCompletionRequest : IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("frequency_penalty") is null) { _explicitNullValueFrequencyPenalty = default!; _explicitNullProperties?.Remove("frequency_penalty"); }
+            else if (parseNode.GetChildNode("frequency_penalty") is { } nullNodeFrequencyPenalty && nullNodeFrequencyPenalty.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FrequencyPenalty = null;
+            if (parseNode.GetChildNode("guardrails") is null) { _explicitNullValueGuardrails = default!; _explicitNullProperties?.Remove("guardrails"); }
+            else if (parseNode.GetChildNode("guardrails") is { } nullNodeGuardrails && nullNodeGuardrails.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Guardrails = null;
+            if (parseNode.GetChildNode("logprobs") is null) { _explicitNullValueLogprobs = default!; _explicitNullProperties?.Remove("logprobs"); }
+            else if (parseNode.GetChildNode("logprobs") is { } nullNodeLogprobs && nullNodeLogprobs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Logprobs = null;
+            if (parseNode.GetChildNode("max_tokens") is null) { _explicitNullValueMaxTokens = default!; _explicitNullProperties?.Remove("max_tokens"); }
+            else if (parseNode.GetChildNode("max_tokens") is { } nullNodeMaxTokens && nullNodeMaxTokens.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MaxTokens = null;
+            if (parseNode.GetChildNode("messages") is null) { _explicitNullValueMessages = default!; _explicitNullProperties?.Remove("messages"); }
+            else if (parseNode.GetChildNode("messages") is { } nullNodeMessages && nullNodeMessages.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Messages = null;
+            if (parseNode.GetChildNode("metadata") is null) { _explicitNullValueMetadata = default!; _explicitNullProperties?.Remove("metadata"); }
+            else if (parseNode.GetChildNode("metadata") is { } nullNodeMetadata && nullNodeMetadata.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Metadata = null;
+            if (parseNode.GetChildNode("min_tokens") is null) { _explicitNullValueMinTokens = default!; _explicitNullProperties?.Remove("min_tokens"); }
+            else if (parseNode.GetChildNode("min_tokens") is { } nullNodeMinTokens && nullNodeMinTokens.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MinTokens = null;
+            if (parseNode.GetChildNode("model") is null) { _explicitNullValueModel = default!; _explicitNullProperties?.Remove("model"); }
+            else if (parseNode.GetChildNode("model") is { } nullNodeModel && nullNodeModel.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Model = null;
+            if (parseNode.GetChildNode("n") is null) { _explicitNullValueN = default!; _explicitNullProperties?.Remove("n"); }
+            else if (parseNode.GetChildNode("n") is { } nullNodeN && nullNodeN.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) N = null;
+            if (parseNode.GetChildNode("parallel_tool_calls") is null) { _explicitNullValueParallelToolCalls = default!; _explicitNullProperties?.Remove("parallel_tool_calls"); }
+            else if (parseNode.GetChildNode("parallel_tool_calls") is { } nullNodeParallelToolCalls && nullNodeParallelToolCalls.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ParallelToolCalls = null;
+            if (parseNode.GetChildNode("prediction") is null) { _explicitNullValuePrediction = default!; _explicitNullProperties?.Remove("prediction"); }
+            else if (parseNode.GetChildNode("prediction") is { } nullNodePrediction && nullNodePrediction.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Prediction = null;
+            if (parseNode.GetChildNode("presence_penalty") is null) { _explicitNullValuePresencePenalty = default!; _explicitNullProperties?.Remove("presence_penalty"); }
+            else if (parseNode.GetChildNode("presence_penalty") is { } nullNodePresencePenalty && nullNodePresencePenalty.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PresencePenalty = null;
+            if (parseNode.GetChildNode("prompt_cache_key") is null) { _explicitNullValuePromptCacheKey = default!; _explicitNullProperties?.Remove("prompt_cache_key"); }
+            else if (parseNode.GetChildNode("prompt_cache_key") is { } nullNodePromptCacheKey && nullNodePromptCacheKey.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PromptCacheKey = null;
+            if (parseNode.GetChildNode("prompt_logprobs") is null) { _explicitNullValuePromptLogprobs = default!; _explicitNullProperties?.Remove("prompt_logprobs"); }
+            else if (parseNode.GetChildNode("prompt_logprobs") is { } nullNodePromptLogprobs && nullNodePromptLogprobs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PromptLogprobs = null;
+            if (parseNode.GetChildNode("prompt_mode") is null) { _explicitNullValuePromptMode = default!; _explicitNullProperties?.Remove("prompt_mode"); }
+            else if (parseNode.GetChildNode("prompt_mode") is { } nullNodePromptMode && nullNodePromptMode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PromptMode = null;
+            if (parseNode.GetChildNode("random_seed") is null) { _explicitNullValueRandomSeed = default!; _explicitNullProperties?.Remove("random_seed"); }
+            else if (parseNode.GetChildNode("random_seed") is { } nullNodeRandomSeed && nullNodeRandomSeed.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RandomSeed = null;
+            if (parseNode.GetChildNode("reasoning_effort") is null) { _explicitNullValueReasoningEffort = default!; _explicitNullProperties?.Remove("reasoning_effort"); }
+            else if (parseNode.GetChildNode("reasoning_effort") is { } nullNodeReasoningEffort && nullNodeReasoningEffort.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ReasoningEffort = null;
+            if (parseNode.GetChildNode("repetition_penalty") is null) { _explicitNullValueRepetitionPenalty = default!; _explicitNullProperties?.Remove("repetition_penalty"); }
+            else if (parseNode.GetChildNode("repetition_penalty") is { } nullNodeRepetitionPenalty && nullNodeRepetitionPenalty.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RepetitionPenalty = null;
+            if (parseNode.GetChildNode("response_format") is null) { _explicitNullValueResponseFormat = default!; _explicitNullProperties?.Remove("response_format"); }
+            else if (parseNode.GetChildNode("response_format") is { } nullNodeResponseFormat && nullNodeResponseFormat.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ResponseFormat = null;
+            if (parseNode.GetChildNode("safe_prompt") is null) { _explicitNullValueSafePrompt = default!; _explicitNullProperties?.Remove("safe_prompt"); }
+            else if (parseNode.GetChildNode("safe_prompt") is { } nullNodeSafePrompt && nullNodeSafePrompt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SafePrompt = null;
+            if (parseNode.GetChildNode("service_tier") is null) { _explicitNullValueServiceTier = default!; _explicitNullProperties?.Remove("service_tier"); }
+            else if (parseNode.GetChildNode("service_tier") is { } nullNodeServiceTier && nullNodeServiceTier.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ServiceTier = null;
+            if (parseNode.GetChildNode("stop") is null) { _explicitNullValueStop = default!; _explicitNullProperties?.Remove("stop"); }
+            else if (parseNode.GetChildNode("stop") is { } nullNodeStop && nullNodeStop.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Stop = null;
+            if (parseNode.GetChildNode("stream") is null) { _explicitNullValueStream = default!; _explicitNullProperties?.Remove("stream"); }
+            else if (parseNode.GetChildNode("stream") is { } nullNodeStream && nullNodeStream.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Stream = null;
+            if (parseNode.GetChildNode("temperature") is null) { _explicitNullValueTemperature = default!; _explicitNullProperties?.Remove("temperature"); }
+            else if (parseNode.GetChildNode("temperature") is { } nullNodeTemperature && nullNodeTemperature.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Temperature = null;
+            if (parseNode.GetChildNode("tool_choice") is null) { _explicitNullValueToolChoice = default!; _explicitNullProperties?.Remove("tool_choice"); }
+            else if (parseNode.GetChildNode("tool_choice") is { } nullNodeToolChoice && nullNodeToolChoice.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ToolChoice = null;
+            if (parseNode.GetChildNode("tools") is null) { _explicitNullValueTools = default!; _explicitNullProperties?.Remove("tools"); }
+            else if (parseNode.GetChildNode("tools") is { } nullNodeTools && nullNodeTools.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Tools = null;
+            if (parseNode.GetChildNode("top_k") is null) { _explicitNullValueTopK = default!; _explicitNullProperties?.Remove("top_k"); }
+            else if (parseNode.GetChildNode("top_k") is { } nullNodeTopK && nullNodeTopK.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TopK = null;
+            if (parseNode.GetChildNode("top_logprobs") is null) { _explicitNullValueTopLogprobs = default!; _explicitNullProperties?.Remove("top_logprobs"); }
+            else if (parseNode.GetChildNode("top_logprobs") is { } nullNodeTopLogprobs && nullNodeTopLogprobs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TopLogprobs = null;
+            if (parseNode.GetChildNode("top_p") is null) { _explicitNullValueTopP = default!; _explicitNullProperties?.Remove("top_p"); }
+            else if (parseNode.GetChildNode("top_p") is { } nullNodeTopP && nullNodeTopP.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TopP = null;
+            if (parseNode.GetChildNode("top_prompt_logprobs") is null) { _explicitNullValueTopPromptLogprobs = default!; _explicitNullProperties?.Remove("top_prompt_logprobs"); }
+            else if (parseNode.GetChildNode("top_prompt_logprobs") is { } nullNodeTopPromptLogprobs && nullNodeTopPromptLogprobs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TopPromptLogprobs = null;
+        }
+
         /// <summary>The `frequency_penalty` penalizes the repetition of words based on their frequency in the generated text. A higher frequency penalty discourages the model from repeating words that have already appeared frequently in the output, promoting diversity and reducing repetition.</summary>
-        public double? FrequencyPenalty { get; set; }
+        public double? FrequencyPenalty { get => _explicitNullValueFrequencyPenalty; set { _explicitNullValueFrequencyPenalty = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("frequency_penalty"); else _explicitNullProperties?.Remove("frequency_penalty"); } }
+        private double? _explicitNullValueFrequencyPenalty = default!;
         /// <summary>The guardrails property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Mistral.OpenApiClient.Models.GuardrailConfig>? Guardrails { get; set; }
+        public List<global::Soenneker.Mistral.OpenApiClient.Models.GuardrailConfig>? Guardrails { get => _explicitNullValueGuardrails; set { _explicitNullValueGuardrails = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("guardrails"); else _explicitNullProperties?.Remove("guardrails"); } }
+        private List<global::Soenneker.Mistral.OpenApiClient.Models.GuardrailConfig>? _explicitNullValueGuardrails = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Mistral.OpenApiClient.Models.GuardrailConfig> Guardrails { get; set; }
+        public List<global::Soenneker.Mistral.OpenApiClient.Models.GuardrailConfig> Guardrails { get => _explicitNullValueGuardrails; set { _explicitNullValueGuardrails = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("guardrails"); else _explicitNullProperties?.Remove("guardrails"); } }
+        private List<global::Soenneker.Mistral.OpenApiClient.Models.GuardrailConfig> _explicitNullValueGuardrails = default!;
 #endif
         /// <summary>The logprobs property</summary>
-        public bool? Logprobs { get; set; }
+        public bool? Logprobs { get => _explicitNullValueLogprobs; set { _explicitNullValueLogprobs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("logprobs"); else _explicitNullProperties?.Remove("logprobs"); } }
+        private bool? _explicitNullValueLogprobs = default!;
         /// <summary>The maximum number of tokens to generate in the completion. The token count of your prompt plus `max_tokens` cannot exceed the model&apos;s context length.</summary>
-        public int? MaxTokens { get; set; }
+        public int? MaxTokens { get => _explicitNullValueMaxTokens; set { _explicitNullValueMaxTokens = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("max_tokens"); else _explicitNullProperties?.Remove("max_tokens"); } }
+        private int? _explicitNullValueMaxTokens = default!;
         /// <summary>The prompt(s) to generate completions for, encoded as a list of dict with role and content.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Mistral.OpenApiClient.Models.ChatCompletionRequestMessagesItem>? Messages { get; set; }
+        public List<global::Soenneker.Mistral.OpenApiClient.Models.AgentsCompletionRequestMessagesItem>? Messages { get => _explicitNullValueMessages; set { _explicitNullValueMessages = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("messages"); else _explicitNullProperties?.Remove("messages"); } }
+        private List<global::Soenneker.Mistral.OpenApiClient.Models.AgentsCompletionRequestMessagesItem>? _explicitNullValueMessages = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Mistral.OpenApiClient.Models.ChatCompletionRequestMessagesItem> Messages { get; set; }
+        public List<global::Soenneker.Mistral.OpenApiClient.Models.AgentsCompletionRequestMessagesItem> Messages { get => _explicitNullValueMessages; set { _explicitNullValueMessages = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("messages"); else _explicitNullProperties?.Remove("messages"); } }
+        private List<global::Soenneker.Mistral.OpenApiClient.Models.AgentsCompletionRequestMessagesItem> _explicitNullValueMessages = default!;
 #endif
         /// <summary>The metadata property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.ChatCompletionRequestMetadataProperty? Metadata { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.ChatCompletionRequestMetadataProperty? Metadata { get => _explicitNullValueMetadata; set { _explicitNullValueMetadata = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("metadata"); else _explicitNullProperties?.Remove("metadata"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.ChatCompletionRequestMetadataProperty? _explicitNullValueMetadata = default!;
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.ChatCompletionRequestMetadataProperty Metadata { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.ChatCompletionRequestMetadataProperty Metadata { get => _explicitNullValueMetadata; set { _explicitNullValueMetadata = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("metadata"); else _explicitNullProperties?.Remove("metadata"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.ChatCompletionRequestMetadataProperty _explicitNullValueMetadata = default!;
 #endif
         /// <summary>The min_tokens property</summary>
-        public int? MinTokens { get; set; }
+        public int? MinTokens { get => _explicitNullValueMinTokens; set { _explicitNullValueMinTokens = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("min_tokens"); else _explicitNullProperties?.Remove("min_tokens"); } }
+        private int? _explicitNullValueMinTokens = default!;
         /// <summary>ID of the model to use. You can use the [List Available Models](/api/#tag/models/operation/list_models_v1_models_get) API to see all of your available models, or see our [Model overview](/models) for model descriptions.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Model { get; set; }
+        public string? Model { get => _explicitNullValueModel; set { _explicitNullValueModel = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("model"); else _explicitNullProperties?.Remove("model"); } }
+        private string? _explicitNullValueModel = default!;
 #nullable restore
 #else
-        public string Model { get; set; }
+        public string Model { get => _explicitNullValueModel; set { _explicitNullValueModel = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("model"); else _explicitNullProperties?.Remove("model"); } }
+        private string _explicitNullValueModel = default!;
 #endif
         /// <summary>Number of completions to return for each request, input tokens are only billed once.</summary>
-        public int? N { get; set; }
+        public int? N { get => _explicitNullValueN; set { _explicitNullValueN = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("n"); else _explicitNullProperties?.Remove("n"); } }
+        private int? _explicitNullValueN = default!;
         /// <summary>Whether to enable parallel function calling during tool use, when enabled the model can call multiple tools in parallel.</summary>
-        public bool? ParallelToolCalls { get; set; }
+        public bool? ParallelToolCalls { get => _explicitNullValueParallelToolCalls; set { _explicitNullValueParallelToolCalls = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("parallel_tool_calls"); else _explicitNullProperties?.Remove("parallel_tool_calls"); } }
+        private bool? _explicitNullValueParallelToolCalls = default!;
         /// <summary>Enable users to specify expected results, optimizing response times by leveraging known or predictable content. This approach is especially effective for updating text documents or code files with minimal changes, reducing latency while maintaining high-quality results.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.Prediction? Prediction { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.Prediction? Prediction { get => _explicitNullValuePrediction; set { _explicitNullValuePrediction = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("prediction"); else _explicitNullProperties?.Remove("prediction"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.Prediction? _explicitNullValuePrediction = default!;
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.Prediction Prediction { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.Prediction Prediction { get => _explicitNullValuePrediction; set { _explicitNullValuePrediction = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("prediction"); else _explicitNullProperties?.Remove("prediction"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.Prediction _explicitNullValuePrediction = default!;
 #endif
         /// <summary>The `presence_penalty` determines how much the model penalizes the repetition of words or phrases. A higher presence penalty encourages the model to use a wider variety of words and phrases, making the output more diverse and creative.</summary>
-        public double? PresencePenalty { get; set; }
+        public double? PresencePenalty { get => _explicitNullValuePresencePenalty; set { _explicitNullValuePresencePenalty = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("presence_penalty"); else _explicitNullProperties?.Remove("presence_penalty"); } }
+        private double? _explicitNullValuePresencePenalty = default!;
         /// <summary>The prompt_cache_key property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PromptCacheKey { get; set; }
+        public string? PromptCacheKey { get => _explicitNullValuePromptCacheKey; set { _explicitNullValuePromptCacheKey = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("prompt_cache_key"); else _explicitNullProperties?.Remove("prompt_cache_key"); } }
+        private string? _explicitNullValuePromptCacheKey = default!;
 #nullable restore
 #else
-        public string PromptCacheKey { get; set; }
+        public string PromptCacheKey { get => _explicitNullValuePromptCacheKey; set { _explicitNullValuePromptCacheKey = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("prompt_cache_key"); else _explicitNullProperties?.Remove("prompt_cache_key"); } }
+        private string _explicitNullValuePromptCacheKey = default!;
 #endif
         /// <summary>The prompt_logprobs property</summary>
-        public bool? PromptLogprobs { get; set; }
+        public bool? PromptLogprobs { get => _explicitNullValuePromptLogprobs; set { _explicitNullValuePromptLogprobs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("prompt_logprobs"); else _explicitNullProperties?.Remove("prompt_logprobs"); } }
+        private bool? _explicitNullValuePromptLogprobs = default!;
         /// <summary>Allows toggling between the reasoning mode and no system prompt. When set to `reasoning` the system prompt for reasoning models will be used.</summary>
-        public global::Soenneker.Mistral.OpenApiClient.Models.MistralPromptMode? PromptMode { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.MistralPromptMode? PromptMode { get => _explicitNullValuePromptMode; set { _explicitNullValuePromptMode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("prompt_mode"); else _explicitNullProperties?.Remove("prompt_mode"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.MistralPromptMode? _explicitNullValuePromptMode = default!;
         /// <summary>The seed to use for random sampling. If set, different calls will generate deterministic results.</summary>
-        public int? RandomSeed { get; set; }
+        public int? RandomSeed { get => _explicitNullValueRandomSeed; set { _explicitNullValueRandomSeed = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("random_seed"); else _explicitNullProperties?.Remove("random_seed"); } }
+        private int? _explicitNullValueRandomSeed = default!;
         /// <summary>The reasoning_effort property</summary>
-        public global::Soenneker.Mistral.OpenApiClient.Models.ReasoningEffort? ReasoningEffort { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.ReasoningEffort? ReasoningEffort { get => _explicitNullValueReasoningEffort; set { _explicitNullValueReasoningEffort = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("reasoning_effort"); else _explicitNullProperties?.Remove("reasoning_effort"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.ReasoningEffort? _explicitNullValueReasoningEffort = default!;
         /// <summary>The repetition_penalty property</summary>
-        public double? RepetitionPenalty { get; set; }
+        public double? RepetitionPenalty { get => _explicitNullValueRepetitionPenalty; set { _explicitNullValueRepetitionPenalty = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("repetition_penalty"); else _explicitNullProperties?.Remove("repetition_penalty"); } }
+        private double? _explicitNullValueRepetitionPenalty = default!;
         /// <summary>Specify the format that the model must output. By default it will use `{ &quot;type&quot;: &quot;text&quot; }`. Setting to `{ &quot;type&quot;: &quot;json_object&quot; }` enables JSON mode, which guarantees the message the model generates is in JSON. When using JSON mode you MUST also instruct the model to produce JSON yourself with a system or a user message. Setting to `{ &quot;type&quot;: &quot;json_schema&quot; }` enables JSON schema mode, which guarantees the message the model generates is in JSON and follows the schema you provide.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.ResponseFormat? ResponseFormat { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.ResponseFormat? ResponseFormat { get => _explicitNullValueResponseFormat; set { _explicitNullValueResponseFormat = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("response_format"); else _explicitNullProperties?.Remove("response_format"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.ResponseFormat? _explicitNullValueResponseFormat = default!;
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.ResponseFormat ResponseFormat { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.ResponseFormat ResponseFormat { get => _explicitNullValueResponseFormat; set { _explicitNullValueResponseFormat = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("response_format"); else _explicitNullProperties?.Remove("response_format"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.ResponseFormat _explicitNullValueResponseFormat = default!;
 #endif
         /// <summary>Whether to inject a safety prompt before all conversations.</summary>
-        public bool? SafePrompt { get; set; }
+        public bool? SafePrompt { get => _explicitNullValueSafePrompt; set { _explicitNullValueSafePrompt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("safe_prompt"); else _explicitNullProperties?.Remove("safe_prompt"); } }
+        private bool? _explicitNullValueSafePrompt = default!;
         /// <summary>Determines whether to serve the request using priority or standard capacity.</summary>
-        public global::Soenneker.Mistral.OpenApiClient.Models.RequestedServiceTier? ServiceTier { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.RequestedServiceTier? ServiceTier { get => _explicitNullValueServiceTier; set { _explicitNullValueServiceTier = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("service_tier"); else _explicitNullProperties?.Remove("service_tier"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.RequestedServiceTier? _explicitNullValueServiceTier = default!;
         /// <summary>Stop generation if this token is detected. Or if one of these tokens is detected when providing an array</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.ChatCompletionRequestStop? Stop { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.AgentsCompletionRequestStop? Stop { get => _explicitNullValueStop; set { _explicitNullValueStop = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("stop"); else _explicitNullProperties?.Remove("stop"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.AgentsCompletionRequestStop? _explicitNullValueStop = default!;
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.ChatCompletionRequestStop Stop { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.AgentsCompletionRequestStop Stop { get => _explicitNullValueStop; set { _explicitNullValueStop = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("stop"); else _explicitNullProperties?.Remove("stop"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.AgentsCompletionRequestStop _explicitNullValueStop = default!;
 #endif
         /// <summary>Whether to stream back partial progress. If set, tokens will be sent as data-only server-side events as they become available, with the stream terminated by a data: [DONE] message. Otherwise, the server will hold the request open until the timeout or until completion, with the response containing the full result as JSON.</summary>
-        public bool? Stream { get; set; }
+        public bool? Stream { get => _explicitNullValueStream; set { _explicitNullValueStream = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("stream"); else _explicitNullProperties?.Remove("stream"); } }
+        private bool? _explicitNullValueStream = default!;
         /// <summary>What sampling temperature to use, we recommend between 0.0 and 0.7. Higher values like 0.7 will make the output more random, while lower values like 0.2 will make it more focused and deterministic. We generally recommend altering this or `top_p` but not both. The default value varies depending on the model you are targeting. Call the `/models` endpoint to retrieve the appropriate value.</summary>
-        public double? Temperature { get; set; }
+        public double? Temperature { get => _explicitNullValueTemperature; set { _explicitNullValueTemperature = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("temperature"); else _explicitNullProperties?.Remove("temperature"); } }
+        private double? _explicitNullValueTemperature = default!;
         /// <summary>Controls which (if any) tool is called by the model. `none` means the model will not call any tool and instead generates a message. `auto` means the model can pick between generating a message or calling one or more tools. `any` or `required` means the model must call one or more tools. Specifying a particular tool via `{&quot;type&quot;: &quot;function&quot;, &quot;function&quot;: {&quot;name&quot;: &quot;my_function&quot;}}` forces the model to call that tool.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.ChatCompletionRequestToolChoice? ToolChoice { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.ChatCompletionRequestToolChoice? ToolChoice { get => _explicitNullValueToolChoice; set { _explicitNullValueToolChoice = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tool_choice"); else _explicitNullProperties?.Remove("tool_choice"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.ChatCompletionRequestToolChoice? _explicitNullValueToolChoice = default!;
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.ChatCompletionRequestToolChoice ToolChoice { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.ChatCompletionRequestToolChoice ToolChoice { get => _explicitNullValueToolChoice; set { _explicitNullValueToolChoice = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tool_choice"); else _explicitNullProperties?.Remove("tool_choice"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.ChatCompletionRequestToolChoice _explicitNullValueToolChoice = default!;
 #endif
         /// <summary>A list of tools the model may call. Use this to provide a list of functions the model may generate JSON inputs for.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Mistral.OpenApiClient.Models.ChatCompletionRequestToolsItem>? Tools { get; set; }
+        public List<global::Soenneker.Mistral.OpenApiClient.Models.AgentsCompletionRequestToolsItem>? Tools { get => _explicitNullValueTools; set { _explicitNullValueTools = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tools"); else _explicitNullProperties?.Remove("tools"); } }
+        private List<global::Soenneker.Mistral.OpenApiClient.Models.AgentsCompletionRequestToolsItem>? _explicitNullValueTools = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Mistral.OpenApiClient.Models.ChatCompletionRequestToolsItem> Tools { get; set; }
+        public List<global::Soenneker.Mistral.OpenApiClient.Models.AgentsCompletionRequestToolsItem> Tools { get => _explicitNullValueTools; set { _explicitNullValueTools = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tools"); else _explicitNullProperties?.Remove("tools"); } }
+        private List<global::Soenneker.Mistral.OpenApiClient.Models.AgentsCompletionRequestToolsItem> _explicitNullValueTools = default!;
 #endif
         /// <summary>The top_k property</summary>
-        public int? TopK { get; set; }
+        public int? TopK { get => _explicitNullValueTopK; set { _explicitNullValueTopK = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("top_k"); else _explicitNullProperties?.Remove("top_k"); } }
+        private int? _explicitNullValueTopK = default!;
         /// <summary>The top_logprobs property</summary>
-        public int? TopLogprobs { get; set; }
+        public int? TopLogprobs { get => _explicitNullValueTopLogprobs; set { _explicitNullValueTopLogprobs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("top_logprobs"); else _explicitNullProperties?.Remove("top_logprobs"); } }
+        private int? _explicitNullValueTopLogprobs = default!;
         /// <summary>Nucleus sampling, where the model considers the results of the tokens with `top_p` probability mass. So 0.1 means only the tokens comprising the top 10% probability mass are considered. We generally recommend altering this or `temperature` but not both.</summary>
-        public double? TopP { get; set; }
+        public double? TopP { get => _explicitNullValueTopP; set { _explicitNullValueTopP = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("top_p"); else _explicitNullProperties?.Remove("top_p"); } }
+        private double? _explicitNullValueTopP = default!;
         /// <summary>The top_prompt_logprobs property</summary>
-        public int? TopPromptLogprobs { get; set; }
+        public int? TopPromptLogprobs { get => _explicitNullValueTopPromptLogprobs; set { _explicitNullValueTopPromptLogprobs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("top_prompt_logprobs"); else _explicitNullProperties?.Remove("top_prompt_logprobs"); } }
+        private int? _explicitNullValueTopPromptLogprobs = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Mistral.OpenApiClient.Models.ChatCompletionRequest"/> and sets the default values.
         /// </summary>
@@ -149,7 +256,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         public static global::Soenneker.Mistral.OpenApiClient.Models.ChatCompletionRequest CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Mistral.OpenApiClient.Models.ChatCompletionRequest();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Mistral.OpenApiClient.Models.ChatCompletionRequest(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -163,7 +270,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
                 { "guardrails", n => { Guardrails = n.GetCollectionOfObjectValues<global::Soenneker.Mistral.OpenApiClient.Models.GuardrailConfig>(global::Soenneker.Mistral.OpenApiClient.Models.GuardrailConfig.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "logprobs", n => { Logprobs = n.GetBoolValue(); } },
                 { "max_tokens", n => { MaxTokens = n.GetIntValue(); } },
-                { "messages", n => { Messages = n.GetCollectionOfObjectValues<global::Soenneker.Mistral.OpenApiClient.Models.ChatCompletionRequestMessagesItem>(global::Soenneker.Mistral.OpenApiClient.Models.ChatCompletionRequestMessagesItem.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "messages", n => { Messages = n.GetCollectionOfObjectValues<global::Soenneker.Mistral.OpenApiClient.Models.AgentsCompletionRequestMessagesItem>(global::Soenneker.Mistral.OpenApiClient.Models.AgentsCompletionRequestMessagesItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "metadata", n => { Metadata = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ChatCompletionRequestMetadataProperty>(global::Soenneker.Mistral.OpenApiClient.Models.ChatCompletionRequestMetadataProperty.CreateFromDiscriminatorValue); } },
                 { "min_tokens", n => { MinTokens = n.GetIntValue(); } },
                 { "model", n => { Model = n.GetStringValue(); } },
@@ -180,11 +287,11 @@ namespace Soenneker.Mistral.OpenApiClient.Models
                 { "response_format", n => { ResponseFormat = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ResponseFormat>(global::Soenneker.Mistral.OpenApiClient.Models.ResponseFormat.CreateFromDiscriminatorValue); } },
                 { "safe_prompt", n => { SafePrompt = n.GetBoolValue(); } },
                 { "service_tier", n => { ServiceTier = n.GetEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.RequestedServiceTier>(); } },
-                { "stop", n => { Stop = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ChatCompletionRequestStop>(global::Soenneker.Mistral.OpenApiClient.Models.ChatCompletionRequestStop.CreateFromDiscriminatorValue); } },
+                { "stop", n => { Stop = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.AgentsCompletionRequestStop>(global::Soenneker.Mistral.OpenApiClient.Models.AgentsCompletionRequestStop.CreateFromDiscriminatorValue); } },
                 { "stream", n => { Stream = n.GetBoolValue(); } },
                 { "temperature", n => { Temperature = n.GetDoubleValue(); } },
                 { "tool_choice", n => { ToolChoice = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ChatCompletionRequestToolChoice>(global::Soenneker.Mistral.OpenApiClient.Models.ChatCompletionRequestToolChoice.CreateFromDiscriminatorValue); } },
-                { "tools", n => { Tools = n.GetCollectionOfObjectValues<global::Soenneker.Mistral.OpenApiClient.Models.ChatCompletionRequestToolsItem>(global::Soenneker.Mistral.OpenApiClient.Models.ChatCompletionRequestToolsItem.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "tools", n => { Tools = n.GetCollectionOfObjectValues<global::Soenneker.Mistral.OpenApiClient.Models.AgentsCompletionRequestToolsItem>(global::Soenneker.Mistral.OpenApiClient.Models.AgentsCompletionRequestToolsItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "top_k", n => { TopK = n.GetIntValue(); } },
                 { "top_logprobs", n => { TopLogprobs = n.GetIntValue(); } },
                 { "top_p", n => { TopP = n.GetDoubleValue(); } },
@@ -202,7 +309,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             writer.WriteCollectionOfObjectValues<global::Soenneker.Mistral.OpenApiClient.Models.GuardrailConfig>("guardrails", Guardrails);
             writer.WriteBoolValue("logprobs", Logprobs);
             writer.WriteIntValue("max_tokens", MaxTokens);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Mistral.OpenApiClient.Models.ChatCompletionRequestMessagesItem>("messages", Messages);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Mistral.OpenApiClient.Models.AgentsCompletionRequestMessagesItem>("messages", Messages);
             writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ChatCompletionRequestMetadataProperty>("metadata", Metadata);
             writer.WriteIntValue("min_tokens", MinTokens);
             writer.WriteStringValue("model", Model);
@@ -219,15 +326,16 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ResponseFormat>("response_format", ResponseFormat);
             writer.WriteBoolValue("safe_prompt", SafePrompt);
             writer.WriteEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.RequestedServiceTier>("service_tier", ServiceTier);
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ChatCompletionRequestStop>("stop", Stop);
+            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.AgentsCompletionRequestStop>("stop", Stop);
             writer.WriteBoolValue("stream", Stream);
             writer.WriteDoubleValue("temperature", Temperature);
             writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ChatCompletionRequestToolChoice>("tool_choice", ToolChoice);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Mistral.OpenApiClient.Models.ChatCompletionRequestToolsItem>("tools", Tools);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Mistral.OpenApiClient.Models.AgentsCompletionRequestToolsItem>("tools", Tools);
             writer.WriteIntValue("top_k", TopK);
             writer.WriteIntValue("top_logprobs", TopLogprobs);
             writer.WriteDoubleValue("top_p", TopP);
-            writer.WriteIntValue("top_prompt_logprobs", TopPromptLogprobs);
+            writer.WriteIntValue("top_prompt_logprobs", TopPromptLogprobs);if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
+            
         }
     }
 }

@@ -8,34 +8,39 @@ using System;
 namespace Soenneker.Mistral.OpenApiClient.Models
 {
     /// <summary>
-    /// Composed type wrapper for classes <see cref="global::Soenneker.Mistral.OpenApiClient.Models.EvaluationBooleanResultSpec"/>, <see cref="global::Soenneker.Mistral.OpenApiClient.Models.EvaluationCategoricalResultSpec"/>, <see cref="global::Soenneker.Mistral.OpenApiClient.Models.EvaluationNumericResultSpec"/>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Mistral.OpenApiClient.Models.EvaluationResultSpecOneOf1"/>, <see cref="global::Soenneker.Mistral.OpenApiClient.Models.EvaluationResultSpecOneOf2"/>, <see cref="global::Soenneker.Mistral.OpenApiClient.Models.EvaluationResultSpecOneOf3"/>
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class EvaluationResultSpec : IComposedTypeWrapper, IParsable
-    {
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Mistral.OpenApiClient.Models.EvaluationBooleanResultSpec"/></summary>
+    , global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder {
+        // Preserve ambiguous union payloads without inventing a discriminator.
+        /// <summary>The complete payload when no unique typed union branch can be selected.</summary>
+        public global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode UnrecognizedValue { get; set; } = null!;
+        public global::System.Collections.Generic.IDictionary<string, object> AdditionalData { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Mistral.OpenApiClient.Models.EvaluationResultSpecOneOf1"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.EvaluationBooleanResultSpec? EvaluationBooleanResultSpec { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.EvaluationResultSpecOneOf1? EvaluationResultSpecOneOf1 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.EvaluationBooleanResultSpec EvaluationBooleanResultSpec { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.EvaluationResultSpecOneOf1 EvaluationResultSpecOneOf1 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Mistral.OpenApiClient.Models.EvaluationCategoricalResultSpec"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Mistral.OpenApiClient.Models.EvaluationResultSpecOneOf2"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.EvaluationCategoricalResultSpec? EvaluationCategoricalResultSpec { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.EvaluationResultSpecOneOf2? EvaluationResultSpecOneOf2 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.EvaluationCategoricalResultSpec EvaluationCategoricalResultSpec { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.EvaluationResultSpecOneOf2 EvaluationResultSpecOneOf2 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Mistral.OpenApiClient.Models.EvaluationNumericResultSpec"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Mistral.OpenApiClient.Models.EvaluationResultSpecOneOf3"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.EvaluationNumericResultSpec? EvaluationNumericResultSpec { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.EvaluationResultSpecOneOf3? EvaluationResultSpecOneOf3 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.EvaluationNumericResultSpec EvaluationNumericResultSpec { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.EvaluationResultSpecOneOf3 EvaluationResultSpecOneOf3 { get; set; }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -45,21 +50,35 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         public static global::Soenneker.Mistral.OpenApiClient.Models.EvaluationResultSpec CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
+            var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
             var result = new global::Soenneker.Mistral.OpenApiClient.Models.EvaluationResultSpec();
-            if("boolean".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            if("EvaluationResultSpecOneOf1".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.EvaluationBooleanResultSpec = new global::Soenneker.Mistral.OpenApiClient.Models.EvaluationBooleanResultSpec();
+                
             }
-            else if("categorical".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("EvaluationResultSpecOneOf2".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.EvaluationCategoricalResultSpec = new global::Soenneker.Mistral.OpenApiClient.Models.EvaluationCategoricalResultSpec();
+                
             }
-            else if("numeric".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("EvaluationResultSpecOneOf3".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.EvaluationNumericResultSpec = new global::Soenneker.Mistral.OpenApiClient.Models.EvaluationNumericResultSpec();
+                
             }
-            return result;
+            
+            var unionPayload = parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue);
+            bool matchesUnionBranch0 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => ((unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject)) && (unionPayload is not global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject shapeObject0 || (shapeObject0.GetValue() is var shapeMembers1 && (shapeMembers1.ContainsKey("type") && (!shapeMembers1.ContainsKey("type") || (((shapeMembers1["type"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString)) && (shapeMembers1["type"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString literal2 && "boolean".Equals(literal2.GetValue(), global::System.StringComparison.Ordinal)) && ((shapeMembers1["type"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString literal3 && "boolean".Equals(literal3.GetValue(), global::System.StringComparison.Ordinal))))))))))();
+            bool matchesUnionBranch1 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => ((unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject)) && (unionPayload is not global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject shapeObject0 || (shapeObject0.GetValue() is var shapeMembers1 && (shapeMembers1.ContainsKey("labels") && shapeMembers1.ContainsKey("type") && (!shapeMembers1.ContainsKey("type") || (((shapeMembers1["type"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString)) && (shapeMembers1["type"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString literal2 && "categorical".Equals(literal2.GetValue(), global::System.StringComparison.Ordinal)) && ((shapeMembers1["type"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString literal3 && "categorical".Equals(literal3.GetValue(), global::System.StringComparison.Ordinal))))) && (!shapeMembers1.ContainsKey("labels") || (((shapeMembers1["labels"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedArray)))))))))();
+            bool matchesUnionBranch2 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => ((unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject)) && (unionPayload is not global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject shapeObject0 || (shapeObject0.GetValue() is var shapeMembers1 && (shapeMembers1.ContainsKey("min") && shapeMembers1.ContainsKey("max") && shapeMembers1.ContainsKey("type") && (!shapeMembers1.ContainsKey("type") || (((shapeMembers1["type"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString)) && (shapeMembers1["type"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString literal2 && "numeric".Equals(literal2.GetValue(), global::System.StringComparison.Ordinal)) && ((shapeMembers1["type"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString literal3 && "numeric".Equals(literal3.GetValue(), global::System.StringComparison.Ordinal))))) && (!shapeMembers1.ContainsKey("min") || (((shapeMembers1["min"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedInteger or global::Microsoft.Kiota.Abstractions.Serialization.UntypedLong or global::Microsoft.Kiota.Abstractions.Serialization.UntypedFloat or global::Microsoft.Kiota.Abstractions.Serialization.UntypedDouble or global::Microsoft.Kiota.Abstractions.Serialization.UntypedDecimal)))) && (!shapeMembers1.ContainsKey("max") || (((shapeMembers1["max"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedInteger or global::Microsoft.Kiota.Abstractions.Serialization.UntypedLong or global::Microsoft.Kiota.Abstractions.Serialization.UntypedFloat or global::Microsoft.Kiota.Abstractions.Serialization.UntypedDouble or global::Microsoft.Kiota.Abstractions.Serialization.UntypedDecimal)))))))))();
+            int matchingUnionBranches = 0;
+            if (matchesUnionBranch0) matchingUnionBranches++;
+            if (matchesUnionBranch1) matchingUnionBranches++;
+            if (matchesUnionBranch2) matchingUnionBranches++;
+            bool noSelectedUnionBranch = result.EvaluationResultSpecOneOf1 == null && result.EvaluationResultSpecOneOf2 == null && result.EvaluationResultSpecOneOf3 == null;
+            if (noSelectedUnionBranch && matchesUnionBranch0 && matchingUnionBranches == 1) result.EvaluationResultSpecOneOf1 = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Mistral.OpenApiClient.Models.EvaluationResultSpecOneOf1(), parseNode);
+            if (noSelectedUnionBranch && matchesUnionBranch1 && matchingUnionBranches == 1) result.EvaluationResultSpecOneOf2 = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Mistral.OpenApiClient.Models.EvaluationResultSpecOneOf2(), parseNode);
+            if (noSelectedUnionBranch && matchesUnionBranch2 && matchingUnionBranches == 1) result.EvaluationResultSpecOneOf3 = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Mistral.OpenApiClient.Models.EvaluationResultSpecOneOf3(), parseNode);
+            if (result.EvaluationResultSpecOneOf1 == null && result.EvaluationResultSpecOneOf2 == null && result.EvaluationResultSpecOneOf3 == null) result.UnrecognizedValue = unionPayload;
+return result;
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -67,17 +86,19 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            if(EvaluationBooleanResultSpec != null)
+            if (UnrecognizedValue is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject rawFields) { var fields = new global::System.Collections.Generic.Dictionary<string, global::System.Action<IParseNode>>(); foreach (var entry in rawFields.GetValue()) fields[entry.Key] = _ => { }; return fields; }
+
+            if(EvaluationResultSpecOneOf1 != null)
             {
-                return EvaluationBooleanResultSpec.GetFieldDeserializers();
+                return EvaluationResultSpecOneOf1.GetFieldDeserializers();
             }
-            else if(EvaluationCategoricalResultSpec != null)
+            else if(EvaluationResultSpecOneOf2 != null)
             {
-                return EvaluationCategoricalResultSpec.GetFieldDeserializers();
+                return EvaluationResultSpecOneOf2.GetFieldDeserializers();
             }
-            else if(EvaluationNumericResultSpec != null)
+            else if(EvaluationResultSpecOneOf3 != null)
             {
-                return EvaluationNumericResultSpec.GetFieldDeserializers();
+                return EvaluationResultSpecOneOf3.GetFieldDeserializers();
             }
             return new Dictionary<string, Action<IParseNode>>();
         }
@@ -87,18 +108,31 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public virtual void Serialize(ISerializationWriter writer)
         {
+            if (global::System.Object.ReferenceEquals(writer, null)) throw new global::System.ArgumentNullException(nameof(writer));
+            if (EvaluationResultSpecOneOf1 == null && EvaluationResultSpecOneOf2 == null && EvaluationResultSpecOneOf3 == null) { if (UnrecognizedValue is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject rawObject) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData, rawObject)); else if (UnrecognizedValue != null) writer.WriteObjectValue(null, UnrecognizedValue); else if (AdditionalData.Count > 0) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData)); else writer.WriteNullValue(null); return; }
+            int selectedUnionBranches = 0;
+            if (EvaluationResultSpecOneOf1 != null) selectedUnionBranches++;
+            if (EvaluationResultSpecOneOf2 != null) selectedUnionBranches++;
+            if (EvaluationResultSpecOneOf3 != null) selectedUnionBranches++;
+            if (EvaluationResultSpecOneOf1 != null && selectedUnionBranches == 1) { if (EvaluationResultSpecOneOf1 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, EvaluationResultSpecOneOf1); return; }
+            if (EvaluationResultSpecOneOf2 != null && selectedUnionBranches == 1) { if (EvaluationResultSpecOneOf2 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, EvaluationResultSpecOneOf2); return; }
+            if (EvaluationResultSpecOneOf3 != null && selectedUnionBranches == 1) { if (EvaluationResultSpecOneOf3 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, EvaluationResultSpecOneOf3); return; }
+
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            if(EvaluationBooleanResultSpec != null)
+            if(EvaluationResultSpecOneOf1 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.EvaluationBooleanResultSpec>(null, EvaluationBooleanResultSpec);
+                if (EvaluationResultSpecOneOf1 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
+                writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.EvaluationResultSpecOneOf1>(null, EvaluationResultSpecOneOf1);
             }
-            else if(EvaluationCategoricalResultSpec != null)
+            else if(EvaluationResultSpecOneOf2 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.EvaluationCategoricalResultSpec>(null, EvaluationCategoricalResultSpec);
+                if (EvaluationResultSpecOneOf2 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
+                writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.EvaluationResultSpecOneOf2>(null, EvaluationResultSpecOneOf2);
             }
-            else if(EvaluationNumericResultSpec != null)
+            else if(EvaluationResultSpecOneOf3 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.EvaluationNumericResultSpec>(null, EvaluationNumericResultSpec);
+                if (EvaluationResultSpecOneOf3 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
+                writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.EvaluationResultSpecOneOf3>(null, EvaluationResultSpecOneOf3);
             }
         }
     }

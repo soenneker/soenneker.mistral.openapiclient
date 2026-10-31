@@ -11,41 +11,72 @@ namespace Soenneker.Mistral.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class OrganizationInviteOut : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("created_at") is null) { _explicitNullValueCreatedAt = default!; _explicitNullProperties?.Remove("created_at"); }
+            else if (parseNode.GetChildNode("created_at") is { } nullNodeCreatedAt && nullNodeCreatedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CreatedAt = null;
+            if (parseNode.GetChildNode("email") is null) { _explicitNullValueEmail = default!; _explicitNullProperties?.Remove("email"); }
+            else if (parseNode.GetChildNode("email") is { } nullNodeEmail && nullNodeEmail.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Email = null;
+            if (parseNode.GetChildNode("expired") is null) { _explicitNullValueExpired = default!; _explicitNullProperties?.Remove("expired"); }
+            else if (parseNode.GetChildNode("expired") is { } nullNodeExpired && nullNodeExpired.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Expired = null;
+            if (parseNode.GetChildNode("raw_role") is null) { _explicitNullValueRawRole = default!; _explicitNullProperties?.Remove("raw_role"); }
+            else if (parseNode.GetChildNode("raw_role") is { } nullNodeRawRole && nullNodeRawRole.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RawRole = null;
+            if (parseNode.GetChildNode("raw_roles") is null) { _explicitNullValueRawRoles = default!; _explicitNullProperties?.Remove("raw_roles"); }
+            else if (parseNode.GetChildNode("raw_roles") is { } nullNodeRawRoles && nullNodeRawRoles.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RawRoles = null;
+            if (parseNode.GetChildNode("uuid") is null) { _explicitNullValueUuid = default!; _explicitNullProperties?.Remove("uuid"); }
+            else if (parseNode.GetChildNode("uuid") is { } nullNodeUuid && nullNodeUuid.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Uuid = null;
+            if (parseNode.GetChildNode("workspace_uuids") is null) { _explicitNullValueWorkspaceUuids = default!; _explicitNullProperties?.Remove("workspace_uuids"); }
+            else if (parseNode.GetChildNode("workspace_uuids") is { } nullNodeWorkspaceUuids && nullNodeWorkspaceUuids.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WorkspaceUuids = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Time when the invitation was created.</summary>
-        public DateTimeOffset? CreatedAt { get; set; }
+        public DateTimeOffset? CreatedAt { get => _explicitNullValueCreatedAt; set { _explicitNullValueCreatedAt = value; AdditionalData?.Remove("created_at"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("created_at"); else _explicitNullProperties?.Remove("created_at"); } }
+        private DateTimeOffset? _explicitNullValueCreatedAt = default!;
         /// <summary>Email address invited to the Organization.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Email { get; set; }
+        public string? Email { get => _explicitNullValueEmail; set { _explicitNullValueEmail = value; AdditionalData?.Remove("email"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("email"); else _explicitNullProperties?.Remove("email"); } }
+        private string? _explicitNullValueEmail = default!;
 #nullable restore
 #else
-        public string Email { get; set; }
+        public string Email { get => _explicitNullValueEmail; set { _explicitNullValueEmail = value; AdditionalData?.Remove("email"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("email"); else _explicitNullProperties?.Remove("email"); } }
+        private string _explicitNullValueEmail = default!;
 #endif
         /// <summary>Whether the invitation has expired.</summary>
-        public bool? Expired { get; set; }
+        public bool? Expired { get => _explicitNullValueExpired; set { _explicitNullValueExpired = value; AdditionalData?.Remove("expired"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("expired"); else _explicitNullProperties?.Remove("expired"); } }
+        private bool? _explicitNullValueExpired = default!;
         /// <summary>Deprecated single invite role. Use &apos;raw_roles&apos; instead.</summary>
         [Obsolete("")]
-        public global::Soenneker.Mistral.OpenApiClient.Models.OrganizationInviteOutRawRole? RawRole { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.OrganizationInviteOutRawRole? RawRole { get => _explicitNullValueRawRole; set { _explicitNullValueRawRole = value; AdditionalData?.Remove("raw_role"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("raw_role"); else _explicitNullProperties?.Remove("raw_role"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.OrganizationInviteOutRawRole? _explicitNullValueRawRole = default!;
         /// <summary>Organization roles assigned by the invite.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.OrganizationInviteOutRawRoles? RawRoles { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.OrganizationInviteOutRawRoles? RawRoles { get => _explicitNullValueRawRoles; set { _explicitNullValueRawRoles = value; AdditionalData?.Remove("raw_roles"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("raw_roles"); else _explicitNullProperties?.Remove("raw_roles"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.OrganizationInviteOutRawRoles? _explicitNullValueRawRoles = default!;
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.OrganizationInviteOutRawRoles RawRoles { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.OrganizationInviteOutRawRoles RawRoles { get => _explicitNullValueRawRoles; set { _explicitNullValueRawRoles = value; AdditionalData?.Remove("raw_roles"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("raw_roles"); else _explicitNullProperties?.Remove("raw_roles"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.OrganizationInviteOutRawRoles _explicitNullValueRawRoles = default!;
 #endif
         /// <summary>Organization invitation ID.</summary>
-        public Guid? Uuid { get; set; }
+        public Guid? Uuid { get => _explicitNullValueUuid; set { _explicitNullValueUuid = value; AdditionalData?.Remove("uuid"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("uuid"); else _explicitNullProperties?.Remove("uuid"); } }
+        private Guid? _explicitNullValueUuid = default!;
         /// <summary>Workspace IDs the invited user will join.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Guid?>? WorkspaceUuids { get; set; }
+        public List<Guid?>? WorkspaceUuids { get => _explicitNullValueWorkspaceUuids; set { _explicitNullValueWorkspaceUuids = value; AdditionalData?.Remove("workspace_uuids"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("workspace_uuids"); else _explicitNullProperties?.Remove("workspace_uuids"); } }
+        private List<Guid?>? _explicitNullValueWorkspaceUuids = default!;
 #nullable restore
 #else
-        public List<Guid?> WorkspaceUuids { get; set; }
+        public List<Guid?> WorkspaceUuids { get => _explicitNullValueWorkspaceUuids; set { _explicitNullValueWorkspaceUuids = value; AdditionalData?.Remove("workspace_uuids"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("workspace_uuids"); else _explicitNullProperties?.Remove("workspace_uuids"); } }
+        private List<Guid?> _explicitNullValueWorkspaceUuids = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Mistral.OpenApiClient.Models.OrganizationInviteOut"/> and sets the default values.
@@ -62,7 +93,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         public static global::Soenneker.Mistral.OpenApiClient.Models.OrganizationInviteOut CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Mistral.OpenApiClient.Models.OrganizationInviteOut();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Mistral.OpenApiClient.Models.OrganizationInviteOut(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -75,7 +106,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
                 { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
                 { "email", n => { Email = n.GetStringValue(); } },
                 { "expired", n => { Expired = n.GetBoolValue(); } },
-                { "raw_role", n => { RawRole = n.GetEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.OrganizationInviteOutRawRole>(); } },
+                { "raw_role", n => { var parsed = n.GetEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.OrganizationInviteOutRawRole>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueRawRole = default; _explicitNullProperties?.Remove("raw_role"); AdditionalData["raw_role"] = unknown; } else { RawRole = parsed; AdditionalData.Remove("raw_role"); } } },
                 { "raw_roles", n => { RawRoles = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.OrganizationInviteOutRawRoles>(global::Soenneker.Mistral.OpenApiClient.Models.OrganizationInviteOutRawRoles.CreateFromDiscriminatorValue); } },
                 { "uuid", n => { Uuid = n.GetGuidValue(); } },
                 { "workspace_uuids", n => { WorkspaceUuids = n.GetCollectionOfPrimitiveValues<Guid?>()?.AsList(); } },
@@ -95,6 +126,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.OrganizationInviteOutRawRoles>("raw_roles", RawRoles);
             writer.WriteGuidValue("uuid", Uuid);
             writer.WriteCollectionOfPrimitiveValues<Guid?>("workspace_uuids", WorkspaceUuids);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

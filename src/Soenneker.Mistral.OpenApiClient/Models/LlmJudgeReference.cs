@@ -12,30 +12,49 @@ namespace Soenneker.Mistral.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class LlmJudgeReference : IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("mapping") is null) { _explicitNullValueMapping = default!; _explicitNullProperties?.Remove("mapping"); }
+            else if (parseNode.GetChildNode("mapping") is { } nullNodeMapping && nullNodeMapping.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Mapping = null;
+            if (parseNode.GetChildNode("sampling") is null) { _explicitNullValueSampling = default!; _explicitNullProperties?.Remove("sampling"); }
+            else if (parseNode.GetChildNode("sampling") is { } nullNodeSampling && nullNodeSampling.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Sampling = null;
+            if (parseNode.GetChildNode("slug") is null) { _explicitNullValueSlug = default!; _explicitNullProperties?.Remove("slug"); }
+            else if (parseNode.GetChildNode("slug") is { } nullNodeSlug && nullNodeSlug.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Slug = null;
+        }
+
         /// <summary>The mapping property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.LlmJudgeReferenceMappingProperty? Mapping { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.LlmJudgeReferenceMappingProperty? Mapping { get => _explicitNullValueMapping; set { _explicitNullValueMapping = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mapping"); else _explicitNullProperties?.Remove("mapping"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.LlmJudgeReferenceMappingProperty? _explicitNullValueMapping = default!;
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.LlmJudgeReferenceMappingProperty Mapping { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.LlmJudgeReferenceMappingProperty Mapping { get => _explicitNullValueMapping; set { _explicitNullValueMapping = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mapping"); else _explicitNullProperties?.Remove("mapping"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.LlmJudgeReferenceMappingProperty _explicitNullValueMapping = default!;
 #endif
         /// <summary>The sampling property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.PipelineConfigSampling? Sampling { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.PipelineConfigSampling? Sampling { get => _explicitNullValueSampling; set { _explicitNullValueSampling = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sampling"); else _explicitNullProperties?.Remove("sampling"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.PipelineConfigSampling? _explicitNullValueSampling = default!;
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.PipelineConfigSampling Sampling { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.PipelineConfigSampling Sampling { get => _explicitNullValueSampling; set { _explicitNullValueSampling = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sampling"); else _explicitNullProperties?.Remove("sampling"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.PipelineConfigSampling _explicitNullValueSampling = default!;
 #endif
         /// <summary>The slug property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Slug { get; set; }
+        public string? Slug { get => _explicitNullValueSlug; set { _explicitNullValueSlug = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("slug"); else _explicitNullProperties?.Remove("slug"); } }
+        private string? _explicitNullValueSlug = default!;
 #nullable restore
 #else
-        public string Slug { get; set; }
+        public string Slug { get => _explicitNullValueSlug; set { _explicitNullValueSlug = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("slug"); else _explicitNullProperties?.Remove("slug"); } }
+        private string _explicitNullValueSlug = default!;
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -45,7 +64,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         public static global::Soenneker.Mistral.OpenApiClient.Models.LlmJudgeReference CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Mistral.OpenApiClient.Models.LlmJudgeReference();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Mistral.OpenApiClient.Models.LlmJudgeReference(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -69,7 +88,8 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.LlmJudgeReferenceMappingProperty>("mapping", Mapping);
             writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.PipelineConfigSampling>("sampling", Sampling);
-            writer.WriteStringValue("slug", Slug);
+            writer.WriteStringValue("slug", Slug);if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
+            
         }
     }
 }

@@ -12,37 +12,86 @@ namespace Soenneker.Mistral.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ModelCapabilities : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("audio") is null) { _explicitNullValueAudio = default!; _explicitNullProperties?.Remove("audio"); }
+            else if (parseNode.GetChildNode("audio") is { } nullNodeAudio && nullNodeAudio.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Audio = null;
+            if (parseNode.GetChildNode("audio_speech") is null) { _explicitNullValueAudioSpeech = default!; _explicitNullProperties?.Remove("audio_speech"); }
+            else if (parseNode.GetChildNode("audio_speech") is { } nullNodeAudioSpeech && nullNodeAudioSpeech.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AudioSpeech = null;
+            if (parseNode.GetChildNode("audio_transcription") is null) { _explicitNullValueAudioTranscription = default!; _explicitNullProperties?.Remove("audio_transcription"); }
+            else if (parseNode.GetChildNode("audio_transcription") is { } nullNodeAudioTranscription && nullNodeAudioTranscription.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AudioTranscription = null;
+            if (parseNode.GetChildNode("audio_transcription_realtime") is null) { _explicitNullValueAudioTranscriptionRealtime = default!; _explicitNullProperties?.Remove("audio_transcription_realtime"); }
+            else if (parseNode.GetChildNode("audio_transcription_realtime") is { } nullNodeAudioTranscriptionRealtime && nullNodeAudioTranscriptionRealtime.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AudioTranscriptionRealtime = null;
+            if (parseNode.GetChildNode("classification") is null) { _explicitNullValueClassification = default!; _explicitNullProperties?.Remove("classification"); }
+            else if (parseNode.GetChildNode("classification") is { } nullNodeClassification && nullNodeClassification.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Classification = null;
+            if (parseNode.GetChildNode("completion_chat") is null) { _explicitNullValueCompletionChat = default!; _explicitNullProperties?.Remove("completion_chat"); }
+            else if (parseNode.GetChildNode("completion_chat") is { } nullNodeCompletionChat && nullNodeCompletionChat.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CompletionChat = null;
+            if (parseNode.GetChildNode("completion_fim") is null) { _explicitNullValueCompletionFim = default!; _explicitNullProperties?.Remove("completion_fim"); }
+            else if (parseNode.GetChildNode("completion_fim") is { } nullNodeCompletionFim && nullNodeCompletionFim.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CompletionFim = null;
+            if (parseNode.GetChildNode("fine_tuning") is null) { _explicitNullValueFineTuning = default!; _explicitNullProperties?.Remove("fine_tuning"); }
+            else if (parseNode.GetChildNode("fine_tuning") is { } nullNodeFineTuning && nullNodeFineTuning.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FineTuning = null;
+            if (parseNode.GetChildNode("function_calling") is null) { _explicitNullValueFunctionCalling = default!; _explicitNullProperties?.Remove("function_calling"); }
+            else if (parseNode.GetChildNode("function_calling") is { } nullNodeFunctionCalling && nullNodeFunctionCalling.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FunctionCalling = null;
+            if (parseNode.GetChildNode("moderation") is null) { _explicitNullValueModeration = default!; _explicitNullProperties?.Remove("moderation"); }
+            else if (parseNode.GetChildNode("moderation") is { } nullNodeModeration && nullNodeModeration.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Moderation = null;
+            if (parseNode.GetChildNode("ocr") is null) { _explicitNullValueOcr = default!; _explicitNullProperties?.Remove("ocr"); }
+            else if (parseNode.GetChildNode("ocr") is { } nullNodeOcr && nullNodeOcr.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Ocr = null;
+            if (parseNode.GetChildNode("reasoning") is null) { _explicitNullValueReasoning = default!; _explicitNullProperties?.Remove("reasoning"); }
+            else if (parseNode.GetChildNode("reasoning") is { } nullNodeReasoning && nullNodeReasoning.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Reasoning = null;
+            if (parseNode.GetChildNode("unified_resources") is null) { _explicitNullValueUnifiedResources = default!; _explicitNullProperties?.Remove("unified_resources"); }
+            else if (parseNode.GetChildNode("unified_resources") is { } nullNodeUnifiedResources && nullNodeUnifiedResources.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UnifiedResources = null;
+            if (parseNode.GetChildNode("vision") is null) { _explicitNullValueVision = default!; _explicitNullProperties?.Remove("vision"); }
+            else if (parseNode.GetChildNode("vision") is { } nullNodeVision && nullNodeVision.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Vision = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The audio property</summary>
-        public bool? Audio { get; set; }
+        public bool? Audio { get => _explicitNullValueAudio; set { _explicitNullValueAudio = value; AdditionalData?.Remove("audio"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("audio"); else _explicitNullProperties?.Remove("audio"); } }
+        private bool? _explicitNullValueAudio = default!;
         /// <summary>The audio_speech property</summary>
-        public bool? AudioSpeech { get; set; }
+        public bool? AudioSpeech { get => _explicitNullValueAudioSpeech; set { _explicitNullValueAudioSpeech = value; AdditionalData?.Remove("audio_speech"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("audio_speech"); else _explicitNullProperties?.Remove("audio_speech"); } }
+        private bool? _explicitNullValueAudioSpeech = default!;
         /// <summary>The audio_transcription property</summary>
-        public bool? AudioTranscription { get; set; }
+        public bool? AudioTranscription { get => _explicitNullValueAudioTranscription; set { _explicitNullValueAudioTranscription = value; AdditionalData?.Remove("audio_transcription"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("audio_transcription"); else _explicitNullProperties?.Remove("audio_transcription"); } }
+        private bool? _explicitNullValueAudioTranscription = default!;
         /// <summary>The audio_transcription_realtime property</summary>
-        public bool? AudioTranscriptionRealtime { get; set; }
+        public bool? AudioTranscriptionRealtime { get => _explicitNullValueAudioTranscriptionRealtime; set { _explicitNullValueAudioTranscriptionRealtime = value; AdditionalData?.Remove("audio_transcription_realtime"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("audio_transcription_realtime"); else _explicitNullProperties?.Remove("audio_transcription_realtime"); } }
+        private bool? _explicitNullValueAudioTranscriptionRealtime = default!;
         /// <summary>The classification property</summary>
-        public bool? Classification { get; set; }
+        public bool? Classification { get => _explicitNullValueClassification; set { _explicitNullValueClassification = value; AdditionalData?.Remove("classification"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("classification"); else _explicitNullProperties?.Remove("classification"); } }
+        private bool? _explicitNullValueClassification = default!;
         /// <summary>The completion_chat property</summary>
-        public bool? CompletionChat { get; set; }
+        public bool? CompletionChat { get => _explicitNullValueCompletionChat; set { _explicitNullValueCompletionChat = value; AdditionalData?.Remove("completion_chat"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("completion_chat"); else _explicitNullProperties?.Remove("completion_chat"); } }
+        private bool? _explicitNullValueCompletionChat = default!;
         /// <summary>The completion_fim property</summary>
-        public bool? CompletionFim { get; set; }
+        public bool? CompletionFim { get => _explicitNullValueCompletionFim; set { _explicitNullValueCompletionFim = value; AdditionalData?.Remove("completion_fim"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("completion_fim"); else _explicitNullProperties?.Remove("completion_fim"); } }
+        private bool? _explicitNullValueCompletionFim = default!;
         /// <summary>The fine_tuning property</summary>
-        public bool? FineTuning { get; set; }
+        public bool? FineTuning { get => _explicitNullValueFineTuning; set { _explicitNullValueFineTuning = value; AdditionalData?.Remove("fine_tuning"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("fine_tuning"); else _explicitNullProperties?.Remove("fine_tuning"); } }
+        private bool? _explicitNullValueFineTuning = default!;
         /// <summary>The function_calling property</summary>
-        public bool? FunctionCalling { get; set; }
+        public bool? FunctionCalling { get => _explicitNullValueFunctionCalling; set { _explicitNullValueFunctionCalling = value; AdditionalData?.Remove("function_calling"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("function_calling"); else _explicitNullProperties?.Remove("function_calling"); } }
+        private bool? _explicitNullValueFunctionCalling = default!;
         /// <summary>The moderation property</summary>
-        public bool? Moderation { get; set; }
+        public bool? Moderation { get => _explicitNullValueModeration; set { _explicitNullValueModeration = value; AdditionalData?.Remove("moderation"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("moderation"); else _explicitNullProperties?.Remove("moderation"); } }
+        private bool? _explicitNullValueModeration = default!;
         /// <summary>The ocr property</summary>
-        public bool? Ocr { get; set; }
+        public bool? Ocr { get => _explicitNullValueOcr; set { _explicitNullValueOcr = value; AdditionalData?.Remove("ocr"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ocr"); else _explicitNullProperties?.Remove("ocr"); } }
+        private bool? _explicitNullValueOcr = default!;
         /// <summary>The reasoning property</summary>
-        public bool? Reasoning { get; set; }
+        public bool? Reasoning { get => _explicitNullValueReasoning; set { _explicitNullValueReasoning = value; AdditionalData?.Remove("reasoning"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("reasoning"); else _explicitNullProperties?.Remove("reasoning"); } }
+        private bool? _explicitNullValueReasoning = default!;
         /// <summary>The unified_resources property</summary>
-        public bool? UnifiedResources { get; set; }
+        public bool? UnifiedResources { get => _explicitNullValueUnifiedResources; set { _explicitNullValueUnifiedResources = value; AdditionalData?.Remove("unified_resources"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("unified_resources"); else _explicitNullProperties?.Remove("unified_resources"); } }
+        private bool? _explicitNullValueUnifiedResources = default!;
         /// <summary>The vision property</summary>
-        public bool? Vision { get; set; }
+        public bool? Vision { get => _explicitNullValueVision; set { _explicitNullValueVision = value; AdditionalData?.Remove("vision"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("vision"); else _explicitNullProperties?.Remove("vision"); } }
+        private bool? _explicitNullValueVision = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Mistral.OpenApiClient.Models.ModelCapabilities"/> and sets the default values.
         /// </summary>
@@ -72,7 +121,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         public static global::Soenneker.Mistral.OpenApiClient.Models.ModelCapabilities CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Mistral.OpenApiClient.Models.ModelCapabilities();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Mistral.OpenApiClient.Models.ModelCapabilities(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -119,6 +168,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             writer.WriteBoolValue("reasoning", Reasoning);
             writer.WriteBoolValue("unified_resources", UnifiedResources);
             writer.WriteBoolValue("vision", Vision);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

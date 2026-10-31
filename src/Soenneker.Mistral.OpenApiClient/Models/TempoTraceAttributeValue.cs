@@ -12,7 +12,12 @@ namespace Soenneker.Mistral.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class TempoTraceAttributeValue : IComposedTypeWrapper, IParsable
-    {
+    , global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder {
+        // Preserve ambiguous union payloads without inventing a discriminator.
+        /// <summary>The complete payload when no unique typed union branch can be selected.</summary>
+        public global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode UnrecognizedValue { get; set; } = null!;
+        public global::System.Collections.Generic.IDictionary<string, object> AdditionalData { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+
         /// <summary>Composed type representation for type <see cref="global::Soenneker.Mistral.OpenApiClient.Models.TempoTraceAttributeArrayValue"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -62,12 +67,32 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             var result = new global::Soenneker.Mistral.OpenApiClient.Models.TempoTraceAttributeValue();
-            result.TempoTraceAttributeArrayValue = new global::Soenneker.Mistral.OpenApiClient.Models.TempoTraceAttributeArrayValue();
-            result.TempoTraceAttributeBoolValue = new global::Soenneker.Mistral.OpenApiClient.Models.TempoTraceAttributeBoolValue();
-            result.TempoTraceAttributeDoubleValue = new global::Soenneker.Mistral.OpenApiClient.Models.TempoTraceAttributeDoubleValue();
-            result.TempoTraceAttributeIntValue = new global::Soenneker.Mistral.OpenApiClient.Models.TempoTraceAttributeIntValue();
-            result.TempoTraceAttributeStringValue = new global::Soenneker.Mistral.OpenApiClient.Models.TempoTraceAttributeStringValue();
-            return result;
+            
+            
+            
+            
+            
+            
+            var unionPayload = parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue);
+            bool matchesUnionBranch0 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => ((unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject)) && (unionPayload is not global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject shapeObject0 || (shapeObject0.GetValue() is var shapeMembers1 && (shapeMembers1.ContainsKey("stringValue") && (!shapeMembers1.ContainsKey("stringValue") || (((shapeMembers1["stringValue"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString)))))))))();
+            bool matchesUnionBranch1 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => ((unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject)) && (unionPayload is not global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject shapeObject0 || (shapeObject0.GetValue() is var shapeMembers1 && (shapeMembers1.ContainsKey("intValue") && (!shapeMembers1.ContainsKey("intValue") || (((shapeMembers1["intValue"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString)))))))))();
+            bool matchesUnionBranch2 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => ((unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject)) && (unionPayload is not global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject shapeObject0 || (shapeObject0.GetValue() is var shapeMembers1 && (shapeMembers1.ContainsKey("doubleValue") && (!shapeMembers1.ContainsKey("doubleValue") || (((shapeMembers1["doubleValue"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedInteger or global::Microsoft.Kiota.Abstractions.Serialization.UntypedLong or global::Microsoft.Kiota.Abstractions.Serialization.UntypedFloat or global::Microsoft.Kiota.Abstractions.Serialization.UntypedDouble or global::Microsoft.Kiota.Abstractions.Serialization.UntypedDecimal)))))))))();
+            bool matchesUnionBranch3 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => ((unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject)) && (unionPayload is not global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject shapeObject0 || (shapeObject0.GetValue() is var shapeMembers1 && (shapeMembers1.ContainsKey("boolValue") && (!shapeMembers1.ContainsKey("boolValue") || (((shapeMembers1["boolValue"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedBoolean)))))))))();
+            bool matchesUnionBranch4 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => ((unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject)) && (unionPayload is not global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject shapeObject0 || (shapeObject0.GetValue() is var shapeMembers1 && (shapeMembers1.ContainsKey("arrayValue") && (!shapeMembers1.ContainsKey("arrayValue") || (((shapeMembers1["arrayValue"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject)) && (shapeMembers1["arrayValue"] is not global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject shapeObject2 || (shapeObject2.GetValue() is var shapeMembers3 && ((!shapeMembers3.ContainsKey("values") || (((shapeMembers3["values"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedArray))))))))))))))();
+            int matchingUnionBranches = 0;
+            if (matchesUnionBranch0) matchingUnionBranches++;
+            if (matchesUnionBranch1) matchingUnionBranches++;
+            if (matchesUnionBranch2) matchingUnionBranches++;
+            if (matchesUnionBranch3) matchingUnionBranches++;
+            if (matchesUnionBranch4) matchingUnionBranches++;
+            bool noSelectedUnionBranch = result.TempoTraceAttributeArrayValue == null && result.TempoTraceAttributeBoolValue == null && result.TempoTraceAttributeDoubleValue == null && result.TempoTraceAttributeIntValue == null && result.TempoTraceAttributeStringValue == null;
+            if (noSelectedUnionBranch && matchesUnionBranch0 && matchingUnionBranches == 1) result.TempoTraceAttributeStringValue = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Mistral.OpenApiClient.Models.TempoTraceAttributeStringValue(), parseNode);
+            if (noSelectedUnionBranch && matchesUnionBranch1 && matchingUnionBranches == 1) result.TempoTraceAttributeIntValue = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Mistral.OpenApiClient.Models.TempoTraceAttributeIntValue(), parseNode);
+            if (noSelectedUnionBranch && matchesUnionBranch2 && matchingUnionBranches == 1) result.TempoTraceAttributeDoubleValue = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Mistral.OpenApiClient.Models.TempoTraceAttributeDoubleValue(), parseNode);
+            if (noSelectedUnionBranch && matchesUnionBranch3 && matchingUnionBranches == 1) result.TempoTraceAttributeBoolValue = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Mistral.OpenApiClient.Models.TempoTraceAttributeBoolValue(), parseNode);
+            if (noSelectedUnionBranch && matchesUnionBranch4 && matchingUnionBranches == 1) result.TempoTraceAttributeArrayValue = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Mistral.OpenApiClient.Models.TempoTraceAttributeArrayValue(), parseNode);
+            if (result.TempoTraceAttributeArrayValue == null && result.TempoTraceAttributeBoolValue == null && result.TempoTraceAttributeDoubleValue == null && result.TempoTraceAttributeIntValue == null && result.TempoTraceAttributeStringValue == null) result.UnrecognizedValue = unionPayload;
+return result;
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -75,6 +100,8 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
+            if (UnrecognizedValue is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject rawFields) { var fields = new global::System.Collections.Generic.Dictionary<string, global::System.Action<IParseNode>>(); foreach (var entry in rawFields.GetValue()) fields[entry.Key] = _ => { }; return fields; }
+
             if(TempoTraceAttributeArrayValue != null || TempoTraceAttributeBoolValue != null || TempoTraceAttributeDoubleValue != null || TempoTraceAttributeIntValue != null || TempoTraceAttributeStringValue != null)
             {
                 return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(TempoTraceAttributeArrayValue, TempoTraceAttributeBoolValue, TempoTraceAttributeDoubleValue, TempoTraceAttributeIntValue, TempoTraceAttributeStringValue);
@@ -87,6 +114,20 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public virtual void Serialize(ISerializationWriter writer)
         {
+            if (global::System.Object.ReferenceEquals(writer, null)) throw new global::System.ArgumentNullException(nameof(writer));
+            if (TempoTraceAttributeArrayValue == null && TempoTraceAttributeBoolValue == null && TempoTraceAttributeDoubleValue == null && TempoTraceAttributeIntValue == null && TempoTraceAttributeStringValue == null) { if (UnrecognizedValue is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject rawObject) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData, rawObject)); else if (UnrecognizedValue != null) writer.WriteObjectValue(null, UnrecognizedValue); else if (AdditionalData.Count > 0) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData)); else writer.WriteNullValue(null); return; }
+            int selectedUnionBranches = 0;
+            if (TempoTraceAttributeArrayValue != null) selectedUnionBranches++;
+            if (TempoTraceAttributeBoolValue != null) selectedUnionBranches++;
+            if (TempoTraceAttributeDoubleValue != null) selectedUnionBranches++;
+            if (TempoTraceAttributeIntValue != null) selectedUnionBranches++;
+            if (TempoTraceAttributeStringValue != null) selectedUnionBranches++;
+            if (TempoTraceAttributeArrayValue != null && selectedUnionBranches == 1) { if (TempoTraceAttributeArrayValue is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, TempoTraceAttributeArrayValue); return; }
+            if (TempoTraceAttributeBoolValue != null && selectedUnionBranches == 1) { if (TempoTraceAttributeBoolValue is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, TempoTraceAttributeBoolValue); return; }
+            if (TempoTraceAttributeDoubleValue != null && selectedUnionBranches == 1) { if (TempoTraceAttributeDoubleValue is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, TempoTraceAttributeDoubleValue); return; }
+            if (TempoTraceAttributeIntValue != null && selectedUnionBranches == 1) { if (TempoTraceAttributeIntValue is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, TempoTraceAttributeIntValue); return; }
+            if (TempoTraceAttributeStringValue != null && selectedUnionBranches == 1) { if (TempoTraceAttributeStringValue is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, TempoTraceAttributeStringValue); return; }
+
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.TempoTraceAttributeArrayValue>(null, TempoTraceAttributeArrayValue, TempoTraceAttributeBoolValue, TempoTraceAttributeDoubleValue, TempoTraceAttributeIntValue, TempoTraceAttributeStringValue);
         }

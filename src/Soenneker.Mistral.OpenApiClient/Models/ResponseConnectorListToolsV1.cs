@@ -7,28 +7,27 @@ using System.IO;
 using System;
 namespace Soenneker.Mistral.OpenApiClient.Models
 {
-    /// <summary>
-    /// Composed type wrapper for classes List&lt;global::Soenneker.Mistral.OpenApiClient.Models.McpTool&gt;, List&lt;global::Soenneker.Mistral.OpenApiClient.Models.ResponseConnectorListToolsV1Member1&gt;
-    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class ResponseConnectorListToolsV1 : IComposedTypeWrapper, IParsable
-    {
-        /// <summary>Composed type representation for type List&lt;global::Soenneker.Mistral.OpenApiClient.Models.McpTool&gt;</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public List<global::Soenneker.Mistral.OpenApiClient.Models.McpTool>? McpTool { get; set; }
-#nullable restore
-#else
-        public List<global::Soenneker.Mistral.OpenApiClient.Models.McpTool> McpTool { get; set; }
-#endif
-        /// <summary>Composed type representation for type List&lt;global::Soenneker.Mistral.OpenApiClient.Models.ResponseConnectorListToolsV1Member1&gt;</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public List<global::Soenneker.Mistral.OpenApiClient.Models.ResponseConnectorListToolsV1Member1>? ResponseConnectorListToolsV1Member1 { get; set; }
-#nullable restore
-#else
-        public List<global::Soenneker.Mistral.OpenApiClient.Models.ResponseConnectorListToolsV1Member1> ResponseConnectorListToolsV1Member1 { get; set; }
-#endif
+    #pragma warning disable CS1591
+    public partial class ResponseConnectorListToolsV1 : IAdditionalDataHolder, IParsable
+    #pragma warning restore CS1591
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+        }
+
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Mistral.OpenApiClient.Models.ResponseConnectorListToolsV1"/> and sets the default values.
+        /// </summary>
+        public ResponseConnectorListToolsV1()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -37,16 +36,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         public static global::Soenneker.Mistral.OpenApiClient.Models.ResponseConnectorListToolsV1 CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            var result = new global::Soenneker.Mistral.OpenApiClient.Models.ResponseConnectorListToolsV1();
-            if(parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedArray && parseNode.GetCollectionOfObjectValues<global::Soenneker.Mistral.OpenApiClient.Models.McpTool>(global::Soenneker.Mistral.OpenApiClient.Models.McpTool.CreateFromDiscriminatorValue)?.AsList() is List<global::Soenneker.Mistral.OpenApiClient.Models.McpTool> mcpToolValue)
-            {
-                result.McpTool = mcpToolValue;
-            }
-            else if(parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedArray && parseNode.GetCollectionOfObjectValues<global::Soenneker.Mistral.OpenApiClient.Models.ResponseConnectorListToolsV1Member1>(global::Soenneker.Mistral.OpenApiClient.Models.ResponseConnectorListToolsV1Member1.CreateFromDiscriminatorValue)?.AsList() is List<global::Soenneker.Mistral.OpenApiClient.Models.ResponseConnectorListToolsV1Member1> responseConnectorListToolsV1Member1Value)
-            {
-                result.ResponseConnectorListToolsV1Member1 = responseConnectorListToolsV1Member1Value;
-            }
-            return result;
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Mistral.OpenApiClient.Models.ResponseConnectorListToolsV1(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -54,7 +44,9 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>();
+            return new Dictionary<string, Action<IParseNode>>
+            {
+            };
         }
         /// <summary>
         /// Serializes information the current object
@@ -63,14 +55,8 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            if(McpTool != null)
-            {
-                writer.WriteCollectionOfObjectValues<global::Soenneker.Mistral.OpenApiClient.Models.McpTool>(null, McpTool);
-            }
-            else if(ResponseConnectorListToolsV1Member1 != null)
-            {
-                writer.WriteCollectionOfObjectValues<global::Soenneker.Mistral.OpenApiClient.Models.ResponseConnectorListToolsV1Member1>(null, ResponseConnectorListToolsV1Member1);
-            }
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

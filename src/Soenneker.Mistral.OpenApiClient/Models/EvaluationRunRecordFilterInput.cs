@@ -11,48 +11,75 @@ namespace Soenneker.Mistral.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class EvaluationRunRecordFilterInput : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("goal_filters") is null) { _explicitNullValueGoalFilters = default!; _explicitNullProperties?.Remove("goal_filters"); }
+            else if (parseNode.GetChildNode("goal_filters") is { } nullNodeGoalFilters && nullNodeGoalFilters.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) GoalFilters = null;
+            if (parseNode.GetChildNode("input_filters") is null) { _explicitNullValueInputFilters = default!; _explicitNullProperties?.Remove("input_filters"); }
+            else if (parseNode.GetChildNode("input_filters") is { } nullNodeInputFilters && nullNodeInputFilters.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) InputFilters = null;
+            if (parseNode.GetChildNode("output_filters") is null) { _explicitNullValueOutputFilters = default!; _explicitNullProperties?.Remove("output_filters"); }
+            else if (parseNode.GetChildNode("output_filters") is { } nullNodeOutputFilters && nullNodeOutputFilters.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OutputFilters = null;
+            if (parseNode.GetChildNode("score_filters") is null) { _explicitNullValueScoreFilters = default!; _explicitNullProperties?.Remove("score_filters"); }
+            else if (parseNode.GetChildNode("score_filters") is { } nullNodeScoreFilters && nullNodeScoreFilters.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ScoreFilters = null;
+            if (parseNode.GetChildNode("sort") is null) { _explicitNullValueSort = default!; _explicitNullProperties?.Remove("sort"); }
+            else if (parseNode.GetChildNode("sort") is { } nullNodeSort && nullNodeSort.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Sort = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The goal_filters property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.GoalStatusFilterGroup? GoalFilters { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.GoalStatusFilterGroup? GoalFilters { get => _explicitNullValueGoalFilters; set { _explicitNullValueGoalFilters = value; AdditionalData?.Remove("goal_filters"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("goal_filters"); else _explicitNullProperties?.Remove("goal_filters"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.GoalStatusFilterGroup? _explicitNullValueGoalFilters = default!;
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.GoalStatusFilterGroup GoalFilters { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.GoalStatusFilterGroup GoalFilters { get => _explicitNullValueGoalFilters; set { _explicitNullValueGoalFilters = value; AdditionalData?.Remove("goal_filters"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("goal_filters"); else _explicitNullProperties?.Remove("goal_filters"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.GoalStatusFilterGroup _explicitNullValueGoalFilters = default!;
 #endif
         /// <summary>The input_filters property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.ContentSearchFilterGroup? InputFilters { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.ContentSearchFilterGroup? InputFilters { get => _explicitNullValueInputFilters; set { _explicitNullValueInputFilters = value; AdditionalData?.Remove("input_filters"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("input_filters"); else _explicitNullProperties?.Remove("input_filters"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.ContentSearchFilterGroup? _explicitNullValueInputFilters = default!;
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.ContentSearchFilterGroup InputFilters { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.ContentSearchFilterGroup InputFilters { get => _explicitNullValueInputFilters; set { _explicitNullValueInputFilters = value; AdditionalData?.Remove("input_filters"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("input_filters"); else _explicitNullProperties?.Remove("input_filters"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.ContentSearchFilterGroup _explicitNullValueInputFilters = default!;
 #endif
         /// <summary>The output_filters property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.ContentSearchFilterGroup? OutputFilters { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.ContentSearchFilterGroup? OutputFilters { get => _explicitNullValueOutputFilters; set { _explicitNullValueOutputFilters = value; AdditionalData?.Remove("output_filters"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("output_filters"); else _explicitNullProperties?.Remove("output_filters"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.ContentSearchFilterGroup? _explicitNullValueOutputFilters = default!;
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.ContentSearchFilterGroup OutputFilters { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.ContentSearchFilterGroup OutputFilters { get => _explicitNullValueOutputFilters; set { _explicitNullValueOutputFilters = value; AdditionalData?.Remove("output_filters"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("output_filters"); else _explicitNullProperties?.Remove("output_filters"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.ContentSearchFilterGroup _explicitNullValueOutputFilters = default!;
 #endif
         /// <summary>The score_filters property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.ScoreFilterGroup? ScoreFilters { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.ScoreFilterGroup? ScoreFilters { get => _explicitNullValueScoreFilters; set { _explicitNullValueScoreFilters = value; AdditionalData?.Remove("score_filters"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("score_filters"); else _explicitNullProperties?.Remove("score_filters"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.ScoreFilterGroup? _explicitNullValueScoreFilters = default!;
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.ScoreFilterGroup ScoreFilters { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.ScoreFilterGroup ScoreFilters { get => _explicitNullValueScoreFilters; set { _explicitNullValueScoreFilters = value; AdditionalData?.Remove("score_filters"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("score_filters"); else _explicitNullProperties?.Remove("score_filters"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.ScoreFilterGroup _explicitNullValueScoreFilters = default!;
 #endif
         /// <summary>The sort property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.ScoreSortInput? Sort { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.ScoreSortInput? Sort { get => _explicitNullValueSort; set { _explicitNullValueSort = value; AdditionalData?.Remove("sort"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sort"); else _explicitNullProperties?.Remove("sort"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.ScoreSortInput? _explicitNullValueSort = default!;
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.ScoreSortInput Sort { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.ScoreSortInput Sort { get => _explicitNullValueSort; set { _explicitNullValueSort = value; AdditionalData?.Remove("sort"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sort"); else _explicitNullProperties?.Remove("sort"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.ScoreSortInput _explicitNullValueSort = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Mistral.OpenApiClient.Models.EvaluationRunRecordFilterInput"/> and sets the default values.
@@ -69,7 +96,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         public static global::Soenneker.Mistral.OpenApiClient.Models.EvaluationRunRecordFilterInput CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Mistral.OpenApiClient.Models.EvaluationRunRecordFilterInput();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Mistral.OpenApiClient.Models.EvaluationRunRecordFilterInput(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -98,6 +125,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ContentSearchFilterGroup>("output_filters", OutputFilters);
             writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ScoreFilterGroup>("score_filters", ScoreFilters);
             writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ScoreSortInput>("sort", Sort);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

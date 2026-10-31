@@ -12,7 +12,12 @@ namespace Soenneker.Mistral.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class JsonPatchPayloadValueResponse : IComposedTypeWrapper, IParsable
-    {
+    , global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder {
+        // Preserve ambiguous union payloads without inventing a discriminator.
+        /// <summary>The complete payload when no unique typed union branch can be selected.</summary>
+        public global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode UnrecognizedValue { get; set; } = null!;
+        public global::System.Collections.Generic.IDictionary<string, object> AdditionalData { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+
         /// <summary>Composed type representation for type List&lt;global::Soenneker.Mistral.OpenApiClient.Models.JsonPatch&gt;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -38,15 +43,18 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             var result = new global::Soenneker.Mistral.OpenApiClient.Models.JsonPatchPayloadValueResponse();
-            if(parseNode.GetStringValue() is string stringValue)
+            if(parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString && parseNode.GetStringValue() is string stringValue)
             {
                 result.String = stringValue;
             }
-            else if(parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedArray && parseNode.GetCollectionOfObjectValues<global::Soenneker.Mistral.OpenApiClient.Models.JsonPatch>(global::Soenneker.Mistral.OpenApiClient.Models.JsonPatch.CreateFromDiscriminatorValue)?.AsList() is List<global::Soenneker.Mistral.OpenApiClient.Models.JsonPatch> jsonPatchValue)
+            else if(parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedArray && global::System.Linq.Enumerable.All(((global::Microsoft.Kiota.Abstractions.Serialization.UntypedArray)parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue)).GetValue(), item => (((((item is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject)) && (item is not global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject shapeObject2 || (shapeObject2.GetValue() is var shapeMembers3 && (shapeMembers3.ContainsKey("path") && shapeMembers3.ContainsKey("value") && shapeMembers3.ContainsKey("op") && (!shapeMembers3.ContainsKey("path") || (((shapeMembers3["path"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString)))) && (!shapeMembers3.ContainsKey("value") || (((((shapeMembers3["value"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString))) || (((shapeMembers3["value"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject)) && (shapeMembers3["value"] is not global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject shapeObject10 || (shapeObject10.GetValue() is var shapeMembers11 && (shapeMembers11.ContainsKey("type") && shapeMembers11.ContainsKey("value") && (!shapeMembers11.ContainsKey("type") || (((shapeMembers11["type"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString)) && (shapeMembers11["type"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString literal12 && "__encrypted__".Equals(literal12.GetValue(), global::System.StringComparison.Ordinal)) && ((shapeMembers11["type"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString literal13 && "__encrypted__".Equals(literal13.GetValue(), global::System.StringComparison.Ordinal))))) && (!shapeMembers11.ContainsKey("value") || (((shapeMembers11["value"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString))))))))))) && (!shapeMembers3.ContainsKey("op") || (((shapeMembers3["op"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString)) && (shapeMembers3["op"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString literal18 && "append".Equals(literal18.GetValue(), global::System.StringComparison.Ordinal)) && ((shapeMembers3["op"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString literal19 && "append".Equals(literal19.GetValue(), global::System.StringComparison.Ordinal))))))))) ? 1 : 0) + ((((item is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject)) && (item is not global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject shapeObject22 || (shapeObject22.GetValue() is var shapeMembers23 && (shapeMembers23.ContainsKey("path") && shapeMembers23.ContainsKey("value") && shapeMembers23.ContainsKey("op") && (!shapeMembers23.ContainsKey("path") || (((shapeMembers23["path"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString)))) && (!shapeMembers23.ContainsKey("value") || (true)) && (!shapeMembers23.ContainsKey("op") || (((shapeMembers23["op"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString)) && (shapeMembers23["op"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString literal28 && "add".Equals(literal28.GetValue(), global::System.StringComparison.Ordinal)) && ((shapeMembers23["op"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString literal29 && "add".Equals(literal29.GetValue(), global::System.StringComparison.Ordinal))))))))) ? 1 : 0) + ((((item is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject)) && (item is not global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject shapeObject32 || (shapeObject32.GetValue() is var shapeMembers33 && (shapeMembers33.ContainsKey("path") && shapeMembers33.ContainsKey("value") && shapeMembers33.ContainsKey("op") && (!shapeMembers33.ContainsKey("path") || (((shapeMembers33["path"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString)))) && (!shapeMembers33.ContainsKey("value") || (true)) && (!shapeMembers33.ContainsKey("op") || (((shapeMembers33["op"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString)) && (shapeMembers33["op"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString literal38 && "replace".Equals(literal38.GetValue(), global::System.StringComparison.Ordinal)) && ((shapeMembers33["op"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString literal39 && "replace".Equals(literal39.GetValue(), global::System.StringComparison.Ordinal))))))))) ? 1 : 0) + ((((item is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject)) && (item is not global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject shapeObject42 || (shapeObject42.GetValue() is var shapeMembers43 && (shapeMembers43.ContainsKey("path") && shapeMembers43.ContainsKey("value") && shapeMembers43.ContainsKey("op") && (!shapeMembers43.ContainsKey("path") || (((shapeMembers43["path"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString)))) && (!shapeMembers43.ContainsKey("value") || (true)) && (!shapeMembers43.ContainsKey("op") || (((shapeMembers43["op"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString)) && (shapeMembers43["op"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString literal48 && "remove".Equals(literal48.GetValue(), global::System.StringComparison.Ordinal)) && ((shapeMembers43["op"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString literal49 && "remove".Equals(literal49.GetValue(), global::System.StringComparison.Ordinal))))))))) ? 1 : 0) == 1)) && parseNode.GetCollectionOfObjectValues<global::Soenneker.Mistral.OpenApiClient.Models.JsonPatch>(global::Soenneker.Mistral.OpenApiClient.Models.JsonPatch.CreateFromDiscriminatorValue)?.AsList() is List<global::Soenneker.Mistral.OpenApiClient.Models.JsonPatch> jsonPatchValue)
             {
                 result.JsonPatch = jsonPatchValue;
             }
-            return result;
+            
+            var unionPayload = parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue);
+            if (result.JsonPatch == null && result.String == null) result.UnrecognizedValue = unionPayload;
+return result;
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -54,6 +62,8 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
+            if (UnrecognizedValue is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject rawFields) { var fields = new global::System.Collections.Generic.Dictionary<string, global::System.Action<IParseNode>>(); foreach (var entry in rawFields.GetValue()) fields[entry.Key] = _ => { }; return fields; }
+
             return new Dictionary<string, Action<IParseNode>>();
         }
         /// <summary>
@@ -62,6 +72,9 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public virtual void Serialize(ISerializationWriter writer)
         {
+            if (global::System.Object.ReferenceEquals(writer, null)) throw new global::System.ArgumentNullException(nameof(writer));
+            if (JsonPatch == null && String == null) { if (UnrecognizedValue is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject rawObject) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData, rawObject)); else if (UnrecognizedValue != null) writer.WriteObjectValue(null, UnrecognizedValue); else if (AdditionalData.Count > 0) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData)); else writer.WriteNullValue(null); return; }
+
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             if(String != null)
             {

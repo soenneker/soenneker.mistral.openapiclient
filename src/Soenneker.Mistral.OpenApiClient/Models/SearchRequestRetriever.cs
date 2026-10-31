@@ -8,34 +8,39 @@ using System;
 namespace Soenneker.Mistral.OpenApiClient.Models
 {
     /// <summary>
-    /// Composed type wrapper for classes <see cref="global::Soenneker.Mistral.OpenApiClient.Models.KeywordRetriever"/>, <see cref="global::Soenneker.Mistral.OpenApiClient.Models.NearestNeighbourRetriever"/>, <see cref="global::Soenneker.Mistral.OpenApiClient.Models.RrfRetriever"/>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Mistral.OpenApiClient.Models.SearchRequestRetrieverOneOf1"/>, <see cref="global::Soenneker.Mistral.OpenApiClient.Models.SearchRequestRetrieverOneOf2"/>, <see cref="global::Soenneker.Mistral.OpenApiClient.Models.SearchRequestRetrieverOneOf3"/>
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class SearchRequestRetriever : IComposedTypeWrapper, IParsable
-    {
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Mistral.OpenApiClient.Models.KeywordRetriever"/></summary>
+    , global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder {
+        // Preserve ambiguous union payloads without inventing a discriminator.
+        /// <summary>The complete payload when no unique typed union branch can be selected.</summary>
+        public global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode UnrecognizedValue { get; set; } = null!;
+        public global::System.Collections.Generic.IDictionary<string, object> AdditionalData { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Mistral.OpenApiClient.Models.SearchRequestRetrieverOneOf1"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.KeywordRetriever? KeywordRetriever { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.SearchRequestRetrieverOneOf1? SearchRequestRetrieverOneOf1 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.KeywordRetriever KeywordRetriever { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.SearchRequestRetrieverOneOf1 SearchRequestRetrieverOneOf1 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Mistral.OpenApiClient.Models.NearestNeighbourRetriever"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Mistral.OpenApiClient.Models.SearchRequestRetrieverOneOf2"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.NearestNeighbourRetriever? NearestNeighbourRetriever { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.SearchRequestRetrieverOneOf2? SearchRequestRetrieverOneOf2 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.NearestNeighbourRetriever NearestNeighbourRetriever { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.SearchRequestRetrieverOneOf2 SearchRequestRetrieverOneOf2 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Mistral.OpenApiClient.Models.RrfRetriever"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Mistral.OpenApiClient.Models.SearchRequestRetrieverOneOf3"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.RrfRetriever? RrfRetriever { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.SearchRequestRetrieverOneOf3? SearchRequestRetrieverOneOf3 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.RrfRetriever RrfRetriever { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.SearchRequestRetrieverOneOf3 SearchRequestRetrieverOneOf3 { get; set; }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -45,21 +50,35 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         public static global::Soenneker.Mistral.OpenApiClient.Models.SearchRequestRetriever CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
+            var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
             var result = new global::Soenneker.Mistral.OpenApiClient.Models.SearchRequestRetriever();
-            if("keyword".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            if("SearchRequestRetrieverOneOf1".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.KeywordRetriever = new global::Soenneker.Mistral.OpenApiClient.Models.KeywordRetriever();
+                
             }
-            else if("nearest_neighbour".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("SearchRequestRetrieverOneOf2".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.NearestNeighbourRetriever = new global::Soenneker.Mistral.OpenApiClient.Models.NearestNeighbourRetriever();
+                
             }
-            else if("rrf".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("SearchRequestRetrieverOneOf3".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.RrfRetriever = new global::Soenneker.Mistral.OpenApiClient.Models.RrfRetriever();
+                
             }
-            return result;
+            
+            var unionPayload = parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue);
+            bool matchesUnionBranch0 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => ((unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject)) && (unionPayload is not global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject shapeObject0 || (shapeObject0.GetValue() is var shapeMembers1 && (shapeMembers1.ContainsKey("query") && shapeMembers1.ContainsKey("type") && (!shapeMembers1.ContainsKey("top_k") || ((((shapeMembers1["top_k"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedInteger or global::Microsoft.Kiota.Abstractions.Serialization.UntypedLong || (shapeMembers1["top_k"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedDouble integral2 && integral2.GetValue() % 1 == 0) || (shapeMembers1["top_k"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedDecimal integral3 && integral3.GetValue() % 1 == 0) || (shapeMembers1["top_k"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedFloat integral4 && integral4.GetValue() % 1 == 0)))))) && (!shapeMembers1.ContainsKey("type") || (((shapeMembers1["type"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString)) && (shapeMembers1["type"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString literal7 && "keyword".Equals(literal7.GetValue(), global::System.StringComparison.Ordinal)) && ((shapeMembers1["type"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString literal8 && "keyword".Equals(literal8.GetValue(), global::System.StringComparison.Ordinal))))) && (!shapeMembers1.ContainsKey("query") || (((shapeMembers1["query"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString)))) && (!shapeMembers1.ContainsKey("field") || ((((shapeMembers1["field"] == null || shapeMembers1["field"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull)) || (shapeMembers1["field"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString)))))))))();
+            bool matchesUnionBranch1 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => ((unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject)) && (unionPayload is not global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject shapeObject0 || (shapeObject0.GetValue() is var shapeMembers1 && (shapeMembers1.ContainsKey("type") && (!shapeMembers1.ContainsKey("top_k") || ((((shapeMembers1["top_k"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedInteger or global::Microsoft.Kiota.Abstractions.Serialization.UntypedLong || (shapeMembers1["top_k"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedDouble integral2 && integral2.GetValue() % 1 == 0) || (shapeMembers1["top_k"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedDecimal integral3 && integral3.GetValue() % 1 == 0) || (shapeMembers1["top_k"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedFloat integral4 && integral4.GetValue() % 1 == 0)))))) && (!shapeMembers1.ContainsKey("type") || (((shapeMembers1["type"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString)) && (shapeMembers1["type"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString literal7 && "nearest_neighbour".Equals(literal7.GetValue(), global::System.StringComparison.Ordinal)) && ((shapeMembers1["type"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString literal8 && "nearest_neighbour".Equals(literal8.GetValue(), global::System.StringComparison.Ordinal))))) && (!shapeMembers1.ContainsKey("query") || ((((shapeMembers1["query"] == null || shapeMembers1["query"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull)) || (shapeMembers1["query"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString)))) && (!shapeMembers1.ContainsKey("query_embedding") || ((((shapeMembers1["query_embedding"] == null || shapeMembers1["query_embedding"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull)) || (shapeMembers1["query_embedding"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedArray)))) && (!shapeMembers1.ContainsKey("field") || ((((shapeMembers1["field"] == null || shapeMembers1["field"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull)) || (shapeMembers1["field"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString)))) && (!shapeMembers1.ContainsKey("max_candidates") || ((((shapeMembers1["max_candidates"] == null || shapeMembers1["max_candidates"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull)) || ((shapeMembers1["max_candidates"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedInteger or global::Microsoft.Kiota.Abstractions.Serialization.UntypedLong || (shapeMembers1["max_candidates"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedDouble integral135 && integral135.GetValue() % 1 == 0) || (shapeMembers1["max_candidates"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedDecimal integral136 && integral136.GetValue() % 1 == 0) || (shapeMembers1["max_candidates"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedFloat integral137 && integral137.GetValue() % 1 == 0)))))))))))();
+            bool matchesUnionBranch2 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => ((unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject)) && (unionPayload is not global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject shapeObject0 || (shapeObject0.GetValue() is var shapeMembers1 && (shapeMembers1.ContainsKey("retrievers") && shapeMembers1.ContainsKey("type") && (!shapeMembers1.ContainsKey("top_k") || ((((shapeMembers1["top_k"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedInteger or global::Microsoft.Kiota.Abstractions.Serialization.UntypedLong || (shapeMembers1["top_k"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedDouble integral2 && integral2.GetValue() % 1 == 0) || (shapeMembers1["top_k"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedDecimal integral3 && integral3.GetValue() % 1 == 0) || (shapeMembers1["top_k"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedFloat integral4 && integral4.GetValue() % 1 == 0)))))) && (!shapeMembers1.ContainsKey("type") || (((shapeMembers1["type"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString)) && (shapeMembers1["type"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString literal7 && "rrf".Equals(literal7.GetValue(), global::System.StringComparison.Ordinal)) && ((shapeMembers1["type"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString literal8 && "rrf".Equals(literal8.GetValue(), global::System.StringComparison.Ordinal))))) && (!shapeMembers1.ContainsKey("retrievers") || (((shapeMembers1["retrievers"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedArray)))) && (!shapeMembers1.ContainsKey("weights") || ((((shapeMembers1["weights"] == null || shapeMembers1["weights"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull)) || (shapeMembers1["weights"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedArray)))) && (!shapeMembers1.ContainsKey("rank_constant") || ((((shapeMembers1["rank_constant"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedInteger or global::Microsoft.Kiota.Abstractions.Serialization.UntypedLong || (shapeMembers1["rank_constant"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedDouble integral15 && integral15.GetValue() % 1 == 0) || (shapeMembers1["rank_constant"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedDecimal integral16 && integral16.GetValue() % 1 == 0) || (shapeMembers1["rank_constant"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedFloat integral17 && integral17.GetValue() % 1 == 0)))))))))))();
+            int matchingUnionBranches = 0;
+            if (matchesUnionBranch0) matchingUnionBranches++;
+            if (matchesUnionBranch1) matchingUnionBranches++;
+            if (matchesUnionBranch2) matchingUnionBranches++;
+            bool noSelectedUnionBranch = result.SearchRequestRetrieverOneOf1 == null && result.SearchRequestRetrieverOneOf2 == null && result.SearchRequestRetrieverOneOf3 == null;
+            if (noSelectedUnionBranch && matchesUnionBranch0 && matchingUnionBranches == 1) result.SearchRequestRetrieverOneOf1 = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Mistral.OpenApiClient.Models.SearchRequestRetrieverOneOf1(), parseNode);
+            if (noSelectedUnionBranch && matchesUnionBranch1 && matchingUnionBranches == 1) result.SearchRequestRetrieverOneOf2 = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Mistral.OpenApiClient.Models.SearchRequestRetrieverOneOf2(), parseNode);
+            if (noSelectedUnionBranch && matchesUnionBranch2 && matchingUnionBranches == 1) result.SearchRequestRetrieverOneOf3 = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Mistral.OpenApiClient.Models.SearchRequestRetrieverOneOf3(), parseNode);
+            if (result.SearchRequestRetrieverOneOf1 == null && result.SearchRequestRetrieverOneOf2 == null && result.SearchRequestRetrieverOneOf3 == null) result.UnrecognizedValue = unionPayload;
+return result;
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -67,17 +86,19 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            if(KeywordRetriever != null)
+            if (UnrecognizedValue is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject rawFields) { var fields = new global::System.Collections.Generic.Dictionary<string, global::System.Action<IParseNode>>(); foreach (var entry in rawFields.GetValue()) fields[entry.Key] = _ => { }; return fields; }
+
+            if(SearchRequestRetrieverOneOf1 != null)
             {
-                return KeywordRetriever.GetFieldDeserializers();
+                return SearchRequestRetrieverOneOf1.GetFieldDeserializers();
             }
-            else if(NearestNeighbourRetriever != null)
+            else if(SearchRequestRetrieverOneOf2 != null)
             {
-                return NearestNeighbourRetriever.GetFieldDeserializers();
+                return SearchRequestRetrieverOneOf2.GetFieldDeserializers();
             }
-            else if(RrfRetriever != null)
+            else if(SearchRequestRetrieverOneOf3 != null)
             {
-                return RrfRetriever.GetFieldDeserializers();
+                return SearchRequestRetrieverOneOf3.GetFieldDeserializers();
             }
             return new Dictionary<string, Action<IParseNode>>();
         }
@@ -87,18 +108,31 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public virtual void Serialize(ISerializationWriter writer)
         {
+            if (global::System.Object.ReferenceEquals(writer, null)) throw new global::System.ArgumentNullException(nameof(writer));
+            if (SearchRequestRetrieverOneOf1 == null && SearchRequestRetrieverOneOf2 == null && SearchRequestRetrieverOneOf3 == null) { if (UnrecognizedValue is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject rawObject) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData, rawObject)); else if (UnrecognizedValue != null) writer.WriteObjectValue(null, UnrecognizedValue); else if (AdditionalData.Count > 0) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData)); else writer.WriteNullValue(null); return; }
+            int selectedUnionBranches = 0;
+            if (SearchRequestRetrieverOneOf1 != null) selectedUnionBranches++;
+            if (SearchRequestRetrieverOneOf2 != null) selectedUnionBranches++;
+            if (SearchRequestRetrieverOneOf3 != null) selectedUnionBranches++;
+            if (SearchRequestRetrieverOneOf1 != null && selectedUnionBranches == 1) { if (SearchRequestRetrieverOneOf1 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, SearchRequestRetrieverOneOf1); return; }
+            if (SearchRequestRetrieverOneOf2 != null && selectedUnionBranches == 1) { if (SearchRequestRetrieverOneOf2 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, SearchRequestRetrieverOneOf2); return; }
+            if (SearchRequestRetrieverOneOf3 != null && selectedUnionBranches == 1) { if (SearchRequestRetrieverOneOf3 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, SearchRequestRetrieverOneOf3); return; }
+
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            if(KeywordRetriever != null)
+            if(SearchRequestRetrieverOneOf1 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.KeywordRetriever>(null, KeywordRetriever);
+                if (SearchRequestRetrieverOneOf1 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
+                writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.SearchRequestRetrieverOneOf1>(null, SearchRequestRetrieverOneOf1);
             }
-            else if(NearestNeighbourRetriever != null)
+            else if(SearchRequestRetrieverOneOf2 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.NearestNeighbourRetriever>(null, NearestNeighbourRetriever);
+                if (SearchRequestRetrieverOneOf2 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
+                writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.SearchRequestRetrieverOneOf2>(null, SearchRequestRetrieverOneOf2);
             }
-            else if(RrfRetriever != null)
+            else if(SearchRequestRetrieverOneOf3 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.RrfRetriever>(null, RrfRetriever);
+                if (SearchRequestRetrieverOneOf3 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
+                writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.SearchRequestRetrieverOneOf3>(null, SearchRequestRetrieverOneOf3);
             }
         }
     }

@@ -11,47 +11,87 @@ namespace Soenneker.Mistral.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class AuditLogOut : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("actor_metadata") is null) { _explicitNullValueActorMetadata = default!; _explicitNullProperties?.Remove("actor_metadata"); }
+            else if (parseNode.GetChildNode("actor_metadata") is { } nullNodeActorMetadata && nullNodeActorMetadata.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ActorMetadata = null;
+            if (parseNode.GetChildNode("actor_type") is null) { _explicitNullValueActorType = default!; _explicitNullProperties?.Remove("actor_type"); }
+            else if (parseNode.GetChildNode("actor_type") is { } nullNodeActorType && nullNodeActorType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ActorType = null;
+            if (parseNode.GetChildNode("created_at") is null) { _explicitNullValueCreatedAt = default!; _explicitNullProperties?.Remove("created_at"); }
+            else if (parseNode.GetChildNode("created_at") is { } nullNodeCreatedAt && nullNodeCreatedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CreatedAt = null;
+            if (parseNode.GetChildNode("event_metadata") is null) { _explicitNullValueEventMetadata = default!; _explicitNullProperties?.Remove("event_metadata"); }
+            else if (parseNode.GetChildNode("event_metadata") is { } nullNodeEventMetadata && nullNodeEventMetadata.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EventMetadata = null;
+            if (parseNode.GetChildNode("event_type") is null) { _explicitNullValueEventType = default!; _explicitNullProperties?.Remove("event_type"); }
+            else if (parseNode.GetChildNode("event_type") is { } nullNodeEventType && nullNodeEventType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EventType = null;
+            if (parseNode.GetChildNode("log_id") is null) { _explicitNullValueLogId = default!; _explicitNullProperties?.Remove("log_id"); }
+            else if (parseNode.GetChildNode("log_id") is { } nullNodeLogId && nullNodeLogId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LogId = null;
+            if (parseNode.GetChildNode("organization_uuid") is null) { _explicitNullValueOrganizationUuid = default!; _explicitNullProperties?.Remove("organization_uuid"); }
+            else if (parseNode.GetChildNode("organization_uuid") is { } nullNodeOrganizationUuid && nullNodeOrganizationUuid.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OrganizationUuid = null;
+            if (parseNode.GetChildNode("target_metadata") is null) { _explicitNullValueTargetMetadata = default!; _explicitNullProperties?.Remove("target_metadata"); }
+            else if (parseNode.GetChildNode("target_metadata") is { } nullNodeTargetMetadata && nullNodeTargetMetadata.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TargetMetadata = null;
+            if (parseNode.GetChildNode("target_type") is null) { _explicitNullValueTargetType = default!; _explicitNullProperties?.Remove("target_type"); }
+            else if (parseNode.GetChildNode("target_type") is { } nullNodeTargetType && nullNodeTargetType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TargetType = null;
+            if (parseNode.GetChildNode("workspace_uuid") is null) { _explicitNullValueWorkspaceUuid = default!; _explicitNullProperties?.Remove("workspace_uuid"); }
+            else if (parseNode.GetChildNode("workspace_uuid") is { } nullNodeWorkspaceUuid && nullNodeWorkspaceUuid.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WorkspaceUuid = null;
+        }
+
         /// <summary>Details about who performed the action.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.AuditLogOutActorMetadataProperty? ActorMetadata { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.AuditLogOutActorMetadataProperty? ActorMetadata { get => _explicitNullValueActorMetadata; set { _explicitNullValueActorMetadata = value; AdditionalData?.Remove("actor_metadata"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("actor_metadata"); else _explicitNullProperties?.Remove("actor_metadata"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.AuditLogOutActorMetadataProperty? _explicitNullValueActorMetadata = default!;
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.AuditLogOutActorMetadataProperty ActorMetadata { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.AuditLogOutActorMetadataProperty ActorMetadata { get => _explicitNullValueActorMetadata; set { _explicitNullValueActorMetadata = value; AdditionalData?.Remove("actor_metadata"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("actor_metadata"); else _explicitNullProperties?.Remove("actor_metadata"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.AuditLogOutActorMetadataProperty _explicitNullValueActorMetadata = default!;
 #endif
         /// <summary>Type of actor that performed the action.</summary>
-        public global::Soenneker.Mistral.OpenApiClient.Models.ActorType? ActorType { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.ActorType? ActorType { get => _explicitNullValueActorType; set { _explicitNullValueActorType = value; AdditionalData?.Remove("actor_type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("actor_type"); else _explicitNullProperties?.Remove("actor_type"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.ActorType? _explicitNullValueActorType = default!;
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Time when the audit log entry was created.</summary>
-        public DateTimeOffset? CreatedAt { get; set; }
+        public DateTimeOffset? CreatedAt { get => _explicitNullValueCreatedAt; set { _explicitNullValueCreatedAt = value; AdditionalData?.Remove("created_at"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("created_at"); else _explicitNullProperties?.Remove("created_at"); } }
+        private DateTimeOffset? _explicitNullValueCreatedAt = default!;
         /// <summary>Details about the recorded action.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.AuditLogOutEventMetadataProperty? EventMetadata { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.AuditLogOutEventMetadataProperty? EventMetadata { get => _explicitNullValueEventMetadata; set { _explicitNullValueEventMetadata = value; AdditionalData?.Remove("event_metadata"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("event_metadata"); else _explicitNullProperties?.Remove("event_metadata"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.AuditLogOutEventMetadataProperty? _explicitNullValueEventMetadata = default!;
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.AuditLogOutEventMetadataProperty EventMetadata { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.AuditLogOutEventMetadataProperty EventMetadata { get => _explicitNullValueEventMetadata; set { _explicitNullValueEventMetadata = value; AdditionalData?.Remove("event_metadata"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("event_metadata"); else _explicitNullProperties?.Remove("event_metadata"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.AuditLogOutEventMetadataProperty _explicitNullValueEventMetadata = default!;
 #endif
         /// <summary>Type of action recorded in the audit log.</summary>
-        public global::Soenneker.Mistral.OpenApiClient.Models.AuditLogEventType? EventType { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.AuditLogEventType? EventType { get => _explicitNullValueEventType; set { _explicitNullValueEventType = value; AdditionalData?.Remove("event_type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("event_type"); else _explicitNullProperties?.Remove("event_type"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.AuditLogEventType? _explicitNullValueEventType = default!;
         /// <summary>Audit log entry ID.</summary>
-        public int? LogId { get; set; }
+        public int? LogId { get => _explicitNullValueLogId; set { _explicitNullValueLogId = value; AdditionalData?.Remove("log_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("log_id"); else _explicitNullProperties?.Remove("log_id"); } }
+        private int? _explicitNullValueLogId = default!;
         /// <summary>Organization ID for the audit log entry.</summary>
-        public Guid? OrganizationUuid { get; set; }
+        public Guid? OrganizationUuid { get => _explicitNullValueOrganizationUuid; set { _explicitNullValueOrganizationUuid = value; AdditionalData?.Remove("organization_uuid"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("organization_uuid"); else _explicitNullProperties?.Remove("organization_uuid"); } }
+        private Guid? _explicitNullValueOrganizationUuid = default!;
         /// <summary>Details about the affected resource.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.AuditLogOutTargetMetadataProperty? TargetMetadata { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.AuditLogOutTargetMetadataProperty? TargetMetadata { get => _explicitNullValueTargetMetadata; set { _explicitNullValueTargetMetadata = value; AdditionalData?.Remove("target_metadata"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("target_metadata"); else _explicitNullProperties?.Remove("target_metadata"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.AuditLogOutTargetMetadataProperty? _explicitNullValueTargetMetadata = default!;
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.AuditLogOutTargetMetadataProperty TargetMetadata { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.AuditLogOutTargetMetadataProperty TargetMetadata { get => _explicitNullValueTargetMetadata; set { _explicitNullValueTargetMetadata = value; AdditionalData?.Remove("target_metadata"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("target_metadata"); else _explicitNullProperties?.Remove("target_metadata"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.AuditLogOutTargetMetadataProperty _explicitNullValueTargetMetadata = default!;
 #endif
         /// <summary>Type of resource affected by the action.</summary>
-        public global::Soenneker.Mistral.OpenApiClient.Models.TargetType? TargetType { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.TargetType? TargetType { get => _explicitNullValueTargetType; set { _explicitNullValueTargetType = value; AdditionalData?.Remove("target_type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("target_type"); else _explicitNullProperties?.Remove("target_type"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.TargetType? _explicitNullValueTargetType = default!;
         /// <summary>Workspace ID for the audit log entry.</summary>
-        public Guid? WorkspaceUuid { get; set; }
+        public Guid? WorkspaceUuid { get => _explicitNullValueWorkspaceUuid; set { _explicitNullValueWorkspaceUuid = value; AdditionalData?.Remove("workspace_uuid"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("workspace_uuid"); else _explicitNullProperties?.Remove("workspace_uuid"); } }
+        private Guid? _explicitNullValueWorkspaceUuid = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Mistral.OpenApiClient.Models.AuditLogOut"/> and sets the default values.
         /// </summary>
@@ -67,7 +107,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         public static global::Soenneker.Mistral.OpenApiClient.Models.AuditLogOut CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Mistral.OpenApiClient.Models.AuditLogOut();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Mistral.OpenApiClient.Models.AuditLogOut(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -78,14 +118,14 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "actor_metadata", n => { ActorMetadata = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.AuditLogOutActorMetadataProperty>(global::Soenneker.Mistral.OpenApiClient.Models.AuditLogOutActorMetadataProperty.CreateFromDiscriminatorValue); } },
-                { "actor_type", n => { ActorType = n.GetEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.ActorType>(); } },
+                { "actor_type", n => { var parsed = n.GetEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.ActorType>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueActorType = default; _explicitNullProperties?.Remove("actor_type"); AdditionalData["actor_type"] = unknown; } else { ActorType = parsed; AdditionalData.Remove("actor_type"); } } },
                 { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
                 { "event_metadata", n => { EventMetadata = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.AuditLogOutEventMetadataProperty>(global::Soenneker.Mistral.OpenApiClient.Models.AuditLogOutEventMetadataProperty.CreateFromDiscriminatorValue); } },
-                { "event_type", n => { EventType = n.GetEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.AuditLogEventType>(); } },
+                { "event_type", n => { var parsed = n.GetEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.AuditLogEventType>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueEventType = default; _explicitNullProperties?.Remove("event_type"); AdditionalData["event_type"] = unknown; } else { EventType = parsed; AdditionalData.Remove("event_type"); } } },
                 { "log_id", n => { LogId = n.GetIntValue(); } },
                 { "organization_uuid", n => { OrganizationUuid = n.GetGuidValue(); } },
                 { "target_metadata", n => { TargetMetadata = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.AuditLogOutTargetMetadataProperty>(global::Soenneker.Mistral.OpenApiClient.Models.AuditLogOutTargetMetadataProperty.CreateFromDiscriminatorValue); } },
-                { "target_type", n => { TargetType = n.GetEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.TargetType>(); } },
+                { "target_type", n => { var parsed = n.GetEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.TargetType>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueTargetType = default; _explicitNullProperties?.Remove("target_type"); AdditionalData["target_type"] = unknown; } else { TargetType = parsed; AdditionalData.Remove("target_type"); } } },
                 { "workspace_uuid", n => { WorkspaceUuid = n.GetGuidValue(); } },
             };
         }
@@ -106,6 +146,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.AuditLogOutTargetMetadataProperty>("target_metadata", TargetMetadata);
             writer.WriteEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.TargetType>("target_type", TargetType);
             writer.WriteGuidValue("workspace_uuid", WorkspaceUuid);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

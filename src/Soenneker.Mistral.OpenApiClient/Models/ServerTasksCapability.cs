@@ -12,32 +12,51 @@ namespace Soenneker.Mistral.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ServerTasksCapability : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("cancel") is null) { _explicitNullValueCancel = default!; _explicitNullProperties?.Remove("cancel"); }
+            else if (parseNode.GetChildNode("cancel") is { } nullNodeCancel && nullNodeCancel.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Cancel = null;
+            if (parseNode.GetChildNode("list") is null) { _explicitNullValueList = default!; _explicitNullProperties?.Remove("list"); }
+            else if (parseNode.GetChildNode("list") is { } nullNodeList && nullNodeList.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) List = null;
+            if (parseNode.GetChildNode("requests") is null) { _explicitNullValueRequests = default!; _explicitNullProperties?.Remove("requests"); }
+            else if (parseNode.GetChildNode("requests") is { } nullNodeRequests && nullNodeRequests.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Requests = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Capability for tasks cancel operations (2025-11-25 only).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.ServerTasksCapabilityCancel? Cancel { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.ServerTasksCapabilityCancel? Cancel { get => _explicitNullValueCancel; set { _explicitNullValueCancel = value; AdditionalData?.Remove("cancel"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cancel"); else _explicitNullProperties?.Remove("cancel"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.ServerTasksCapabilityCancel? _explicitNullValueCancel = default!;
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.ServerTasksCapabilityCancel Cancel { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.ServerTasksCapabilityCancel Cancel { get => _explicitNullValueCancel; set { _explicitNullValueCancel = value; AdditionalData?.Remove("cancel"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cancel"); else _explicitNullProperties?.Remove("cancel"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.ServerTasksCapabilityCancel _explicitNullValueCancel = default!;
 #endif
         /// <summary>Capability for tasks listing operations (2025-11-25 only).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.ServerTasksCapabilityList? List { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.ServerTasksCapabilityList? List { get => _explicitNullValueList; set { _explicitNullValueList = value; AdditionalData?.Remove("list"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("list"); else _explicitNullProperties?.Remove("list"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.ServerTasksCapabilityList? _explicitNullValueList = default!;
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.ServerTasksCapabilityList List { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.ServerTasksCapabilityList List { get => _explicitNullValueList; set { _explicitNullValueList = value; AdditionalData?.Remove("list"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("list"); else _explicitNullProperties?.Remove("list"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.ServerTasksCapabilityList _explicitNullValueList = default!;
 #endif
         /// <summary>The requests property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.ServerTasksRequestsCapability? Requests { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.ServerTasksRequestsCapability? Requests { get => _explicitNullValueRequests; set { _explicitNullValueRequests = value; AdditionalData?.Remove("requests"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("requests"); else _explicitNullProperties?.Remove("requests"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.ServerTasksRequestsCapability? _explicitNullValueRequests = default!;
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.ServerTasksRequestsCapability Requests { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.ServerTasksRequestsCapability Requests { get => _explicitNullValueRequests; set { _explicitNullValueRequests = value; AdditionalData?.Remove("requests"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("requests"); else _explicitNullProperties?.Remove("requests"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.ServerTasksRequestsCapability _explicitNullValueRequests = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Mistral.OpenApiClient.Models.ServerTasksCapability"/> and sets the default values.
@@ -54,7 +73,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         public static global::Soenneker.Mistral.OpenApiClient.Models.ServerTasksCapability CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Mistral.OpenApiClient.Models.ServerTasksCapability();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Mistral.OpenApiClient.Models.ServerTasksCapability(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -79,6 +98,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ServerTasksCapabilityCancel>("cancel", Cancel);
             writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ServerTasksCapabilityList>("list", List);
             writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ServerTasksRequestsCapability>("requests", Requests);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

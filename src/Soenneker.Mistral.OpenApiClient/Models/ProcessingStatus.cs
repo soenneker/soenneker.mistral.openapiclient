@@ -11,11 +11,23 @@ namespace Soenneker.Mistral.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class ProcessingStatus : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("document_id") is null) { _explicitNullValueDocumentId = default!; _explicitNullProperties?.Remove("document_id"); }
+            else if (parseNode.GetChildNode("document_id") is { } nullNodeDocumentId && nullNodeDocumentId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DocumentId = null;
+            if (parseNode.GetChildNode("process_status") is null) { _explicitNullValueProcessStatus = default!; _explicitNullProperties?.Remove("process_status"); }
+            else if (parseNode.GetChildNode("process_status") is { } nullNodeProcessStatus && nullNodeProcessStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ProcessStatus = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The document_id property</summary>
-        public Guid? DocumentId { get; set; }
+        public Guid? DocumentId { get => _explicitNullValueDocumentId; set { _explicitNullValueDocumentId = value; AdditionalData?.Remove("document_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("document_id"); else _explicitNullProperties?.Remove("document_id"); } }
+        private Guid? _explicitNullValueDocumentId = default!;
         /// <summary>The processing_status property</summary>
         [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -26,7 +38,8 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         public string ProcessingStatusProp { get; private set; }
 #endif
         /// <summary>Processing status of the document.</summary>
-        public global::Soenneker.Mistral.OpenApiClient.Models.ProcessStatus? ProcessStatus { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.ProcessStatus? ProcessStatus { get => _explicitNullValueProcessStatus; set { _explicitNullValueProcessStatus = value; AdditionalData?.Remove("process_status"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("process_status"); else _explicitNullProperties?.Remove("process_status"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.ProcessStatus? _explicitNullValueProcessStatus = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Mistral.OpenApiClient.Models.ProcessingStatus"/> and sets the default values.
         /// </summary>
@@ -42,7 +55,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         public static global::Soenneker.Mistral.OpenApiClient.Models.ProcessingStatus CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Mistral.OpenApiClient.Models.ProcessingStatus();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Mistral.OpenApiClient.Models.ProcessingStatus(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -53,7 +66,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "document_id", n => { DocumentId = n.GetGuidValue(); } },
-                { "process_status", n => { ProcessStatus = n.GetEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.ProcessStatus>(); } },
+                { "process_status", n => { var parsed = n.GetEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.ProcessStatus>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueProcessStatus = default; _explicitNullProperties?.Remove("process_status"); AdditionalData["process_status"] = unknown; } else { ProcessStatus = parsed; AdditionalData.Remove("process_status"); } } },
                 { "processing_status", n => { ProcessingStatusProp = n.GetStringValue(); } },
             };
         }
@@ -66,6 +79,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteGuidValue("document_id", DocumentId);
             writer.WriteEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.ProcessStatus>("process_status", ProcessStatus);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

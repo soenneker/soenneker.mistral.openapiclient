@@ -11,60 +11,97 @@ namespace Soenneker.Mistral.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class PipelineResult : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("duration_ns") is null) { _explicitNullValueDurationNs = default!; _explicitNullProperties?.Remove("duration_ns"); }
+            else if (parseNode.GetChildNode("duration_ns") is { } nullNodeDurationNs && nullNodeDurationNs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DurationNs = null;
+            if (parseNode.GetChildNode("evaluated_at") is null) { _explicitNullValueEvaluatedAt = default!; _explicitNullProperties?.Remove("evaluated_at"); }
+            else if (parseNode.GetChildNode("evaluated_at") is { } nullNodeEvaluatedAt && nullNodeEvaluatedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EvaluatedAt = null;
+            if (parseNode.GetChildNode("judge_explanations") is null) { _explicitNullValueJudgeExplanations = default!; _explicitNullProperties?.Remove("judge_explanations"); }
+            else if (parseNode.GetChildNode("judge_explanations") is { } nullNodeJudgeExplanations && nullNodeJudgeExplanations.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) JudgeExplanations = null;
+            if (parseNode.GetChildNode("judge_labels") is null) { _explicitNullValueJudgeLabels = default!; _explicitNullProperties?.Remove("judge_labels"); }
+            else if (parseNode.GetChildNode("judge_labels") is { } nullNodeJudgeLabels && nullNodeJudgeLabels.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) JudgeLabels = null;
+            if (parseNode.GetChildNode("judge_scores") is null) { _explicitNullValueJudgeScores = default!; _explicitNullProperties?.Remove("judge_scores"); }
+            else if (parseNode.GetChildNode("judge_scores") is { } nullNodeJudgeScores && nullNodeJudgeScores.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) JudgeScores = null;
+            if (parseNode.GetChildNode("span_id") is null) { _explicitNullValueSpanId = default!; _explicitNullProperties?.Remove("span_id"); }
+            else if (parseNode.GetChildNode("span_id") is { } nullNodeSpanId && nullNodeSpanId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SpanId = null;
+            if (parseNode.GetChildNode("span_name") is null) { _explicitNullValueSpanName = default!; _explicitNullProperties?.Remove("span_name"); }
+            else if (parseNode.GetChildNode("span_name") is { } nullNodeSpanName && nullNodeSpanName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SpanName = null;
+            if (parseNode.GetChildNode("trace_id") is null) { _explicitNullValueTraceId = default!; _explicitNullProperties?.Remove("trace_id"); }
+            else if (parseNode.GetChildNode("trace_id") is { } nullNodeTraceId && nullNodeTraceId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TraceId = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The duration_ns property</summary>
-        public int? DurationNs { get; set; }
+        public int? DurationNs { get => _explicitNullValueDurationNs; set { _explicitNullValueDurationNs = value; AdditionalData?.Remove("duration_ns"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("duration_ns"); else _explicitNullProperties?.Remove("duration_ns"); } }
+        private int? _explicitNullValueDurationNs = default!;
         /// <summary>The evaluated_at property</summary>
-        public DateTimeOffset? EvaluatedAt { get; set; }
+        public DateTimeOffset? EvaluatedAt { get => _explicitNullValueEvaluatedAt; set { _explicitNullValueEvaluatedAt = value; AdditionalData?.Remove("evaluated_at"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("evaluated_at"); else _explicitNullProperties?.Remove("evaluated_at"); } }
+        private DateTimeOffset? _explicitNullValueEvaluatedAt = default!;
         /// <summary>The judge_explanations property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.PipelineResultJudgeExplanationsProperty? JudgeExplanations { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.PipelineResultJudgeExplanationsProperty? JudgeExplanations { get => _explicitNullValueJudgeExplanations; set { _explicitNullValueJudgeExplanations = value; AdditionalData?.Remove("judge_explanations"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("judge_explanations"); else _explicitNullProperties?.Remove("judge_explanations"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.PipelineResultJudgeExplanationsProperty? _explicitNullValueJudgeExplanations = default!;
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.PipelineResultJudgeExplanationsProperty JudgeExplanations { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.PipelineResultJudgeExplanationsProperty JudgeExplanations { get => _explicitNullValueJudgeExplanations; set { _explicitNullValueJudgeExplanations = value; AdditionalData?.Remove("judge_explanations"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("judge_explanations"); else _explicitNullProperties?.Remove("judge_explanations"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.PipelineResultJudgeExplanationsProperty _explicitNullValueJudgeExplanations = default!;
 #endif
         /// <summary>The judge_labels property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.PipelineResultJudgeLabelsProperty? JudgeLabels { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.PipelineResultJudgeLabelsProperty? JudgeLabels { get => _explicitNullValueJudgeLabels; set { _explicitNullValueJudgeLabels = value; AdditionalData?.Remove("judge_labels"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("judge_labels"); else _explicitNullProperties?.Remove("judge_labels"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.PipelineResultJudgeLabelsProperty? _explicitNullValueJudgeLabels = default!;
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.PipelineResultJudgeLabelsProperty JudgeLabels { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.PipelineResultJudgeLabelsProperty JudgeLabels { get => _explicitNullValueJudgeLabels; set { _explicitNullValueJudgeLabels = value; AdditionalData?.Remove("judge_labels"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("judge_labels"); else _explicitNullProperties?.Remove("judge_labels"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.PipelineResultJudgeLabelsProperty _explicitNullValueJudgeLabels = default!;
 #endif
         /// <summary>The judge_scores property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.PipelineResultJudgeScoresProperty? JudgeScores { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.PipelineResultJudgeScoresProperty? JudgeScores { get => _explicitNullValueJudgeScores; set { _explicitNullValueJudgeScores = value; AdditionalData?.Remove("judge_scores"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("judge_scores"); else _explicitNullProperties?.Remove("judge_scores"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.PipelineResultJudgeScoresProperty? _explicitNullValueJudgeScores = default!;
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.PipelineResultJudgeScoresProperty JudgeScores { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.PipelineResultJudgeScoresProperty JudgeScores { get => _explicitNullValueJudgeScores; set { _explicitNullValueJudgeScores = value; AdditionalData?.Remove("judge_scores"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("judge_scores"); else _explicitNullProperties?.Remove("judge_scores"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.PipelineResultJudgeScoresProperty _explicitNullValueJudgeScores = default!;
 #endif
         /// <summary>The span_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SpanId { get; set; }
+        public string? SpanId { get => _explicitNullValueSpanId; set { _explicitNullValueSpanId = value; AdditionalData?.Remove("span_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("span_id"); else _explicitNullProperties?.Remove("span_id"); } }
+        private string? _explicitNullValueSpanId = default!;
 #nullable restore
 #else
-        public string SpanId { get; set; }
+        public string SpanId { get => _explicitNullValueSpanId; set { _explicitNullValueSpanId = value; AdditionalData?.Remove("span_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("span_id"); else _explicitNullProperties?.Remove("span_id"); } }
+        private string _explicitNullValueSpanId = default!;
 #endif
         /// <summary>The span_name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SpanName { get; set; }
+        public string? SpanName { get => _explicitNullValueSpanName; set { _explicitNullValueSpanName = value; AdditionalData?.Remove("span_name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("span_name"); else _explicitNullProperties?.Remove("span_name"); } }
+        private string? _explicitNullValueSpanName = default!;
 #nullable restore
 #else
-        public string SpanName { get; set; }
+        public string SpanName { get => _explicitNullValueSpanName; set { _explicitNullValueSpanName = value; AdditionalData?.Remove("span_name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("span_name"); else _explicitNullProperties?.Remove("span_name"); } }
+        private string _explicitNullValueSpanName = default!;
 #endif
         /// <summary>The trace_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TraceId { get; set; }
+        public string? TraceId { get => _explicitNullValueTraceId; set { _explicitNullValueTraceId = value; AdditionalData?.Remove("trace_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("trace_id"); else _explicitNullProperties?.Remove("trace_id"); } }
+        private string? _explicitNullValueTraceId = default!;
 #nullable restore
 #else
-        public string TraceId { get; set; }
+        public string TraceId { get => _explicitNullValueTraceId; set { _explicitNullValueTraceId = value; AdditionalData?.Remove("trace_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("trace_id"); else _explicitNullProperties?.Remove("trace_id"); } }
+        private string _explicitNullValueTraceId = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Mistral.OpenApiClient.Models.PipelineResult"/> and sets the default values.
@@ -81,7 +118,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         public static global::Soenneker.Mistral.OpenApiClient.Models.PipelineResult CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Mistral.OpenApiClient.Models.PipelineResult();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Mistral.OpenApiClient.Models.PipelineResult(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -116,6 +153,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             writer.WriteStringValue("span_id", SpanId);
             writer.WriteStringValue("span_name", SpanName);
             writer.WriteStringValue("trace_id", TraceId);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

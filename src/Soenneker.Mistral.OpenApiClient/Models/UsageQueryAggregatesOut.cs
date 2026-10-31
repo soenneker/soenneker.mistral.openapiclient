@@ -11,19 +11,41 @@ namespace Soenneker.Mistral.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class UsageQueryAggregatesOut : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("customer_count") is null) { _explicitNullValueCustomerCount = default!; _explicitNullProperties?.Remove("customer_count"); }
+            else if (parseNode.GetChildNode("customer_count") is { } nullNodeCustomerCount && nullNodeCustomerCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CustomerCount = null;
+            if (parseNode.GetChildNode("total_api_calls") is null) { _explicitNullValueTotalApiCalls = default!; _explicitNullProperties?.Remove("total_api_calls"); }
+            else if (parseNode.GetChildNode("total_api_calls") is { } nullNodeTotalApiCalls && nullNodeTotalApiCalls.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TotalApiCalls = null;
+            if (parseNode.GetChildNode("total_count") is null) { _explicitNullValueTotalCount = default!; _explicitNullProperties?.Remove("total_count"); }
+            else if (parseNode.GetChildNode("total_count") is { } nullNodeTotalCount && nullNodeTotalCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TotalCount = null;
+            if (parseNode.GetChildNode("total_value") is null) { _explicitNullValueTotalValue = default!; _explicitNullProperties?.Remove("total_value"); }
+            else if (parseNode.GetChildNode("total_value") is { } nullNodeTotalValue && nullNodeTotalValue.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TotalValue = null;
+            if (parseNode.GetChildNode("usage_type_count") is null) { _explicitNullValueUsageTypeCount = default!; _explicitNullProperties?.Remove("usage_type_count"); }
+            else if (parseNode.GetChildNode("usage_type_count") is { } nullNodeUsageTypeCount && nullNodeUsageTypeCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UsageTypeCount = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Number of matching customers.</summary>
-        public int? CustomerCount { get; set; }
+        public int? CustomerCount { get => _explicitNullValueCustomerCount; set { _explicitNullValueCustomerCount = value; AdditionalData?.Remove("customer_count"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("customer_count"); else _explicitNullProperties?.Remove("customer_count"); } }
+        private int? _explicitNullValueCustomerCount = default!;
         /// <summary>Total number of distinct API calls.</summary>
-        public int? TotalApiCalls { get; set; }
+        public int? TotalApiCalls { get => _explicitNullValueTotalApiCalls; set { _explicitNullValueTotalApiCalls = value; AdditionalData?.Remove("total_api_calls"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("total_api_calls"); else _explicitNullProperties?.Remove("total_api_calls"); } }
+        private int? _explicitNullValueTotalApiCalls = default!;
         /// <summary>Total number of matching usage records.</summary>
-        public int? TotalCount { get; set; }
+        public int? TotalCount { get => _explicitNullValueTotalCount; set { _explicitNullValueTotalCount = value; AdditionalData?.Remove("total_count"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("total_count"); else _explicitNullProperties?.Remove("total_count"); } }
+        private int? _explicitNullValueTotalCount = default!;
         /// <summary>Total usage value across all matching rows.</summary>
-        public double? TotalValue { get; set; }
+        public double? TotalValue { get => _explicitNullValueTotalValue; set { _explicitNullValueTotalValue = value; AdditionalData?.Remove("total_value"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("total_value"); else _explicitNullProperties?.Remove("total_value"); } }
+        private double? _explicitNullValueTotalValue = default!;
         /// <summary>Number of matching usage types.</summary>
-        public int? UsageTypeCount { get; set; }
+        public int? UsageTypeCount { get => _explicitNullValueUsageTypeCount; set { _explicitNullValueUsageTypeCount = value; AdditionalData?.Remove("usage_type_count"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("usage_type_count"); else _explicitNullProperties?.Remove("usage_type_count"); } }
+        private int? _explicitNullValueUsageTypeCount = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Mistral.OpenApiClient.Models.UsageQueryAggregatesOut"/> and sets the default values.
         /// </summary>
@@ -39,7 +61,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         public static global::Soenneker.Mistral.OpenApiClient.Models.UsageQueryAggregatesOut CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Mistral.OpenApiClient.Models.UsageQueryAggregatesOut();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Mistral.OpenApiClient.Models.UsageQueryAggregatesOut(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -68,6 +90,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             writer.WriteIntValue("total_count", TotalCount);
             writer.WriteDoubleValue("total_value", TotalValue);
             writer.WriteIntValue("usage_type_count", UsageTypeCount);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

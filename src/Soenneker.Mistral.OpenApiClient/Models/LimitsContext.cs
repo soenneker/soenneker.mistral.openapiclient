@@ -11,29 +11,50 @@ namespace Soenneker.Mistral.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class LimitsContext : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("completion") is null) { _explicitNullValueCompletion = default!; _explicitNullProperties?.Remove("completion"); }
+            else if (parseNode.GetChildNode("completion") is { } nullNodeCompletion && nullNodeCompletion.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Completion = null;
+            if (parseNode.GetChildNode("currency") is null) { _explicitNullValueCurrency = default!; _explicitNullProperties?.Remove("currency"); }
+            else if (parseNode.GetChildNode("currency") is { } nullNodeCurrency && nullNodeCurrency.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Currency = null;
+            if (parseNode.GetChildNode("last_payment_failure") is null) { _explicitNullValueLastPaymentFailure = default!; _explicitNullProperties?.Remove("last_payment_failure"); }
+            else if (parseNode.GetChildNode("last_payment_failure") is { } nullNodeLastPaymentFailure && nullNodeLastPaymentFailure.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LastPaymentFailure = null;
+            if (parseNode.GetChildNode("last_payment_failure_protection") is null) { _explicitNullValueLastPaymentFailureProtection = default!; _explicitNullProperties?.Remove("last_payment_failure_protection"); }
+            else if (parseNode.GetChildNode("last_payment_failure_protection") is { } nullNodeLastPaymentFailureProtection && nullNodeLastPaymentFailureProtection.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LastPaymentFailureProtection = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Completion usage and rate limits.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.UsageLimits? Completion { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.UsageLimits? Completion { get => _explicitNullValueCompletion; set { _explicitNullValueCompletion = value; AdditionalData?.Remove("completion"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("completion"); else _explicitNullProperties?.Remove("completion"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.UsageLimits? _explicitNullValueCompletion = default!;
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.UsageLimits Completion { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.UsageLimits Completion { get => _explicitNullValueCompletion; set { _explicitNullValueCompletion = value; AdditionalData?.Remove("completion"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("completion"); else _explicitNullProperties?.Remove("completion"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.UsageLimits _explicitNullValueCompletion = default!;
 #endif
         /// <summary>Currency used for usage and limit amounts.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Currency { get; set; }
+        public string? Currency { get => _explicitNullValueCurrency; set { _explicitNullValueCurrency = value; AdditionalData?.Remove("currency"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("currency"); else _explicitNullProperties?.Remove("currency"); } }
+        private string? _explicitNullValueCurrency = default!;
 #nullable restore
 #else
-        public string Currency { get; set; }
+        public string Currency { get => _explicitNullValueCurrency; set { _explicitNullValueCurrency = value; AdditionalData?.Remove("currency"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("currency"); else _explicitNullProperties?.Remove("currency"); } }
+        private string _explicitNullValueCurrency = default!;
 #endif
         /// <summary>Whether the latest payment attempt failed.</summary>
-        public bool? LastPaymentFailure { get; set; }
+        public bool? LastPaymentFailure { get => _explicitNullValueLastPaymentFailure; set { _explicitNullValueLastPaymentFailure = value; AdditionalData?.Remove("last_payment_failure"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("last_payment_failure"); else _explicitNullProperties?.Remove("last_payment_failure"); } }
+        private bool? _explicitNullValueLastPaymentFailure = default!;
         /// <summary>Whether payment failure protection is enabled.</summary>
-        public bool? LastPaymentFailureProtection { get; set; }
+        public bool? LastPaymentFailureProtection { get => _explicitNullValueLastPaymentFailureProtection; set { _explicitNullValueLastPaymentFailureProtection = value; AdditionalData?.Remove("last_payment_failure_protection"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("last_payment_failure_protection"); else _explicitNullProperties?.Remove("last_payment_failure_protection"); } }
+        private bool? _explicitNullValueLastPaymentFailureProtection = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Mistral.OpenApiClient.Models.LimitsContext"/> and sets the default values.
         /// </summary>
@@ -49,7 +70,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         public static global::Soenneker.Mistral.OpenApiClient.Models.LimitsContext CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Mistral.OpenApiClient.Models.LimitsContext();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Mistral.OpenApiClient.Models.LimitsContext(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -76,6 +97,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             writer.WriteStringValue("currency", Currency);
             writer.WriteBoolValue("last_payment_failure", LastPaymentFailure);
             writer.WriteBoolValue("last_payment_failure_protection", LastPaymentFailureProtection);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -11,40 +11,63 @@ namespace Soenneker.Mistral.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class OcrResponse : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("document_annotation") is null) { _explicitNullValueDocumentAnnotation = default!; _explicitNullProperties?.Remove("document_annotation"); }
+            else if (parseNode.GetChildNode("document_annotation") is { } nullNodeDocumentAnnotation && nullNodeDocumentAnnotation.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DocumentAnnotation = null;
+            if (parseNode.GetChildNode("model") is null) { _explicitNullValueModel = default!; _explicitNullProperties?.Remove("model"); }
+            else if (parseNode.GetChildNode("model") is { } nullNodeModel && nullNodeModel.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Model = null;
+            if (parseNode.GetChildNode("pages") is null) { _explicitNullValuePages = default!; _explicitNullProperties?.Remove("pages"); }
+            else if (parseNode.GetChildNode("pages") is { } nullNodePages && nullNodePages.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Pages = null;
+            if (parseNode.GetChildNode("usage_info") is null) { _explicitNullValueUsageInfo = default!; _explicitNullProperties?.Remove("usage_info"); }
+            else if (parseNode.GetChildNode("usage_info") is { } nullNodeUsageInfo && nullNodeUsageInfo.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UsageInfo = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Formatted response in the request_format if provided in json str</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DocumentAnnotation { get; set; }
+        public string? DocumentAnnotation { get => _explicitNullValueDocumentAnnotation; set { _explicitNullValueDocumentAnnotation = value; AdditionalData?.Remove("document_annotation"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("document_annotation"); else _explicitNullProperties?.Remove("document_annotation"); } }
+        private string? _explicitNullValueDocumentAnnotation = default!;
 #nullable restore
 #else
-        public string DocumentAnnotation { get; set; }
+        public string DocumentAnnotation { get => _explicitNullValueDocumentAnnotation; set { _explicitNullValueDocumentAnnotation = value; AdditionalData?.Remove("document_annotation"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("document_annotation"); else _explicitNullProperties?.Remove("document_annotation"); } }
+        private string _explicitNullValueDocumentAnnotation = default!;
 #endif
         /// <summary>The model used to generate the OCR.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Model { get; set; }
+        public string? Model { get => _explicitNullValueModel; set { _explicitNullValueModel = value; AdditionalData?.Remove("model"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("model"); else _explicitNullProperties?.Remove("model"); } }
+        private string? _explicitNullValueModel = default!;
 #nullable restore
 #else
-        public string Model { get; set; }
+        public string Model { get => _explicitNullValueModel; set { _explicitNullValueModel = value; AdditionalData?.Remove("model"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("model"); else _explicitNullProperties?.Remove("model"); } }
+        private string _explicitNullValueModel = default!;
 #endif
         /// <summary>List of OCR info for pages.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Mistral.OpenApiClient.Models.OcrPageObject>? Pages { get; set; }
+        public List<global::Soenneker.Mistral.OpenApiClient.Models.OcrPageObject>? Pages { get => _explicitNullValuePages; set { _explicitNullValuePages = value; AdditionalData?.Remove("pages"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pages"); else _explicitNullProperties?.Remove("pages"); } }
+        private List<global::Soenneker.Mistral.OpenApiClient.Models.OcrPageObject>? _explicitNullValuePages = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Mistral.OpenApiClient.Models.OcrPageObject> Pages { get; set; }
+        public List<global::Soenneker.Mistral.OpenApiClient.Models.OcrPageObject> Pages { get => _explicitNullValuePages; set { _explicitNullValuePages = value; AdditionalData?.Remove("pages"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pages"); else _explicitNullProperties?.Remove("pages"); } }
+        private List<global::Soenneker.Mistral.OpenApiClient.Models.OcrPageObject> _explicitNullValuePages = default!;
 #endif
         /// <summary>The usage_info property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.OcrUsageInfo? UsageInfo { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.OcrUsageInfo? UsageInfo { get => _explicitNullValueUsageInfo; set { _explicitNullValueUsageInfo = value; AdditionalData?.Remove("usage_info"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("usage_info"); else _explicitNullProperties?.Remove("usage_info"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.OcrUsageInfo? _explicitNullValueUsageInfo = default!;
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.OcrUsageInfo UsageInfo { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.OcrUsageInfo UsageInfo { get => _explicitNullValueUsageInfo; set { _explicitNullValueUsageInfo = value; AdditionalData?.Remove("usage_info"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("usage_info"); else _explicitNullProperties?.Remove("usage_info"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.OcrUsageInfo _explicitNullValueUsageInfo = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Mistral.OpenApiClient.Models.OcrResponse"/> and sets the default values.
@@ -61,7 +84,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         public static global::Soenneker.Mistral.OpenApiClient.Models.OcrResponse CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Mistral.OpenApiClient.Models.OcrResponse();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Mistral.OpenApiClient.Models.OcrResponse(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -88,6 +111,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             writer.WriteStringValue("model", Model);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Mistral.OpenApiClient.Models.OcrPageObject>("pages", Pages);
             writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.OcrUsageInfo>("usage_info", UsageInfo);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

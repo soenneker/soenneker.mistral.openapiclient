@@ -11,45 +11,82 @@ namespace Soenneker.Mistral.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class IngestionPipelineConfiguration : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("author_id") is null) { _explicitNullValueAuthorId = default!; _explicitNullProperties?.Remove("author_id"); }
+            else if (parseNode.GetChildNode("author_id") is { } nullNodeAuthorId && nullNodeAuthorId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AuthorId = null;
+            if (parseNode.GetChildNode("created_at") is null) { _explicitNullValueCreatedAt = default!; _explicitNullProperties?.Remove("created_at"); }
+            else if (parseNode.GetChildNode("created_at") is { } nullNodeCreatedAt && nullNodeCreatedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CreatedAt = null;
+            if (parseNode.GetChildNode("id") is null) { _explicitNullValueId = default!; _explicitNullProperties?.Remove("id"); }
+            else if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
+            if (parseNode.GetChildNode("last_run_chunks_count") is null) { _explicitNullValueLastRunChunksCount = default!; _explicitNullProperties?.Remove("last_run_chunks_count"); }
+            else if (parseNode.GetChildNode("last_run_chunks_count") is { } nullNodeLastRunChunksCount && nullNodeLastRunChunksCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LastRunChunksCount = null;
+            if (parseNode.GetChildNode("last_run_time") is null) { _explicitNullValueLastRunTime = default!; _explicitNullProperties?.Remove("last_run_time"); }
+            else if (parseNode.GetChildNode("last_run_time") is { } nullNodeLastRunTime && nullNodeLastRunTime.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LastRunTime = null;
+            if (parseNode.GetChildNode("modified_at") is null) { _explicitNullValueModifiedAt = default!; _explicitNullProperties?.Remove("modified_at"); }
+            else if (parseNode.GetChildNode("modified_at") is { } nullNodeModifiedAt && nullNodeModifiedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ModifiedAt = null;
+            if (parseNode.GetChildNode("name") is null) { _explicitNullValueName = default!; _explicitNullProperties?.Remove("name"); }
+            else if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
+            if (parseNode.GetChildNode("pipeline_composition") is null) { _explicitNullValuePipelineComposition = default!; _explicitNullProperties?.Remove("pipeline_composition"); }
+            else if (parseNode.GetChildNode("pipeline_composition") is { } nullNodePipelineComposition && nullNodePipelineComposition.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PipelineComposition = null;
+            if (parseNode.GetChildNode("total_chunks_count") is null) { _explicitNullValueTotalChunksCount = default!; _explicitNullProperties?.Remove("total_chunks_count"); }
+            else if (parseNode.GetChildNode("total_chunks_count") is { } nullNodeTotalChunksCount && nullNodeTotalChunksCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TotalChunksCount = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The author_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AuthorId { get; set; }
+        public string? AuthorId { get => _explicitNullValueAuthorId; set { _explicitNullValueAuthorId = value; AdditionalData?.Remove("author_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("author_id"); else _explicitNullProperties?.Remove("author_id"); } }
+        private string? _explicitNullValueAuthorId = default!;
 #nullable restore
 #else
-        public string AuthorId { get; set; }
+        public string AuthorId { get => _explicitNullValueAuthorId; set { _explicitNullValueAuthorId = value; AdditionalData?.Remove("author_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("author_id"); else _explicitNullProperties?.Remove("author_id"); } }
+        private string _explicitNullValueAuthorId = default!;
 #endif
         /// <summary>The created_at property</summary>
-        public DateTimeOffset? CreatedAt { get; set; }
+        public DateTimeOffset? CreatedAt { get => _explicitNullValueCreatedAt; set { _explicitNullValueCreatedAt = value; AdditionalData?.Remove("created_at"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("created_at"); else _explicitNullProperties?.Remove("created_at"); } }
+        private DateTimeOffset? _explicitNullValueCreatedAt = default!;
         /// <summary>The id property</summary>
-        public Guid? Id { get; set; }
+        public Guid? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; AdditionalData?.Remove("id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        private Guid? _explicitNullValueId = default!;
         /// <summary>The last_run_chunks_count property</summary>
-        public int? LastRunChunksCount { get; set; }
+        public int? LastRunChunksCount { get => _explicitNullValueLastRunChunksCount; set { _explicitNullValueLastRunChunksCount = value; AdditionalData?.Remove("last_run_chunks_count"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("last_run_chunks_count"); else _explicitNullProperties?.Remove("last_run_chunks_count"); } }
+        private int? _explicitNullValueLastRunChunksCount = default!;
         /// <summary>The last_run_time property</summary>
-        public DateTimeOffset? LastRunTime { get; set; }
+        public DateTimeOffset? LastRunTime { get => _explicitNullValueLastRunTime; set { _explicitNullValueLastRunTime = value; AdditionalData?.Remove("last_run_time"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("last_run_time"); else _explicitNullProperties?.Remove("last_run_time"); } }
+        private DateTimeOffset? _explicitNullValueLastRunTime = default!;
         /// <summary>The modified_at property</summary>
-        public DateTimeOffset? ModifiedAt { get; set; }
+        public DateTimeOffset? ModifiedAt { get => _explicitNullValueModifiedAt; set { _explicitNullValueModifiedAt = value; AdditionalData?.Remove("modified_at"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("modified_at"); else _explicitNullProperties?.Remove("modified_at"); } }
+        private DateTimeOffset? _explicitNullValueModifiedAt = default!;
         /// <summary>The name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Name { get; set; }
+        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        private string? _explicitNullValueName = default!;
 #nullable restore
 #else
-        public string Name { get; set; }
+        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        private string _explicitNullValueName = default!;
 #endif
         /// <summary>The pipeline_composition property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.IngestionPipelineConfigurationPipelineCompositionProperty? PipelineComposition { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.IngestionPipelineConfigurationPipelineCompositionProperty? PipelineComposition { get => _explicitNullValuePipelineComposition; set { _explicitNullValuePipelineComposition = value; AdditionalData?.Remove("pipeline_composition"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pipeline_composition"); else _explicitNullProperties?.Remove("pipeline_composition"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.IngestionPipelineConfigurationPipelineCompositionProperty? _explicitNullValuePipelineComposition = default!;
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.IngestionPipelineConfigurationPipelineCompositionProperty PipelineComposition { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.IngestionPipelineConfigurationPipelineCompositionProperty PipelineComposition { get => _explicitNullValuePipelineComposition; set { _explicitNullValuePipelineComposition = value; AdditionalData?.Remove("pipeline_composition"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pipeline_composition"); else _explicitNullProperties?.Remove("pipeline_composition"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.IngestionPipelineConfigurationPipelineCompositionProperty _explicitNullValuePipelineComposition = default!;
 #endif
         /// <summary>The total_chunks_count property</summary>
-        public int? TotalChunksCount { get; set; }
+        public int? TotalChunksCount { get => _explicitNullValueTotalChunksCount; set { _explicitNullValueTotalChunksCount = value; AdditionalData?.Remove("total_chunks_count"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("total_chunks_count"); else _explicitNullProperties?.Remove("total_chunks_count"); } }
+        private int? _explicitNullValueTotalChunksCount = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Mistral.OpenApiClient.Models.IngestionPipelineConfiguration"/> and sets the default values.
         /// </summary>
@@ -65,7 +102,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         public static global::Soenneker.Mistral.OpenApiClient.Models.IngestionPipelineConfiguration CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Mistral.OpenApiClient.Models.IngestionPipelineConfiguration();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Mistral.OpenApiClient.Models.IngestionPipelineConfiguration(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -102,6 +139,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             writer.WriteStringValue("name", Name);
             writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.IngestionPipelineConfigurationPipelineCompositionProperty>("pipeline_composition", PipelineComposition);
             writer.WriteIntValue("total_chunks_count", TotalChunksCount);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

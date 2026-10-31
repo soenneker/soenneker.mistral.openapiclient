@@ -11,37 +11,65 @@ namespace Soenneker.Mistral.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class EmbeddingRequest : IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("encoding_format") is null) { _explicitNullValueEncodingFormat = default!; _explicitNullProperties?.Remove("encoding_format"); }
+            else if (parseNode.GetChildNode("encoding_format") is { } nullNodeEncodingFormat && nullNodeEncodingFormat.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EncodingFormat = null;
+            if (parseNode.GetChildNode("input") is null) { _explicitNullValueInput = default!; _explicitNullProperties?.Remove("input"); }
+            else if (parseNode.GetChildNode("input") is { } nullNodeInput && nullNodeInput.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Input = null;
+            if (parseNode.GetChildNode("metadata") is null) { _explicitNullValueMetadata = default!; _explicitNullProperties?.Remove("metadata"); }
+            else if (parseNode.GetChildNode("metadata") is { } nullNodeMetadata && nullNodeMetadata.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Metadata = null;
+            if (parseNode.GetChildNode("model") is null) { _explicitNullValueModel = default!; _explicitNullProperties?.Remove("model"); }
+            else if (parseNode.GetChildNode("model") is { } nullNodeModel && nullNodeModel.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Model = null;
+            if (parseNode.GetChildNode("output_dimension") is null) { _explicitNullValueOutputDimension = default!; _explicitNullProperties?.Remove("output_dimension"); }
+            else if (parseNode.GetChildNode("output_dimension") is { } nullNodeOutputDimension && nullNodeOutputDimension.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OutputDimension = null;
+            if (parseNode.GetChildNode("output_dtype") is null) { _explicitNullValueOutputDtype = default!; _explicitNullProperties?.Remove("output_dtype"); }
+            else if (parseNode.GetChildNode("output_dtype") is { } nullNodeOutputDtype && nullNodeOutputDtype.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OutputDtype = null;
+        }
+
         /// <summary>The format of embeddings in the response.</summary>
-        public global::Soenneker.Mistral.OpenApiClient.Models.EncodingFormat? EncodingFormat { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.EncodingFormat? EncodingFormat { get => _explicitNullValueEncodingFormat; set { _explicitNullValueEncodingFormat = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("encoding_format"); else _explicitNullProperties?.Remove("encoding_format"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.EncodingFormat? _explicitNullValueEncodingFormat = default!;
         /// <summary>Text to embed.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.EmbeddingRequestInput? Input { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.EmbeddingRequestInput? Input { get => _explicitNullValueInput; set { _explicitNullValueInput = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("input"); else _explicitNullProperties?.Remove("input"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.EmbeddingRequestInput? _explicitNullValueInput = default!;
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.EmbeddingRequestInput Input { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.EmbeddingRequestInput Input { get => _explicitNullValueInput; set { _explicitNullValueInput = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("input"); else _explicitNullProperties?.Remove("input"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.EmbeddingRequestInput _explicitNullValueInput = default!;
 #endif
         /// <summary>The metadata property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.EmbeddingRequestMetadataProperty? Metadata { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.EmbeddingRequestMetadataProperty? Metadata { get => _explicitNullValueMetadata; set { _explicitNullValueMetadata = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("metadata"); else _explicitNullProperties?.Remove("metadata"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.EmbeddingRequestMetadataProperty? _explicitNullValueMetadata = default!;
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.EmbeddingRequestMetadataProperty Metadata { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.EmbeddingRequestMetadataProperty Metadata { get => _explicitNullValueMetadata; set { _explicitNullValueMetadata = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("metadata"); else _explicitNullProperties?.Remove("metadata"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.EmbeddingRequestMetadataProperty _explicitNullValueMetadata = default!;
 #endif
         /// <summary>ID of the model to use.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Model { get; set; }
+        public string? Model { get => _explicitNullValueModel; set { _explicitNullValueModel = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("model"); else _explicitNullProperties?.Remove("model"); } }
+        private string? _explicitNullValueModel = default!;
 #nullable restore
 #else
-        public string Model { get; set; }
+        public string Model { get => _explicitNullValueModel; set { _explicitNullValueModel = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("model"); else _explicitNullProperties?.Remove("model"); } }
+        private string _explicitNullValueModel = default!;
 #endif
         /// <summary>The dimension of the output embeddings when feature available. If not provided, a default output dimension will be used.</summary>
-        public int? OutputDimension { get; set; }
+        public int? OutputDimension { get => _explicitNullValueOutputDimension; set { _explicitNullValueOutputDimension = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("output_dimension"); else _explicitNullProperties?.Remove("output_dimension"); } }
+        private int? _explicitNullValueOutputDimension = default!;
         /// <summary>The data type of the output embeddings when feature available. If not provided, a default output data type will be used.</summary>
-        public global::Soenneker.Mistral.OpenApiClient.Models.EmbeddingDtype? OutputDtype { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.EmbeddingDtype? OutputDtype { get => _explicitNullValueOutputDtype; set { _explicitNullValueOutputDtype = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("output_dtype"); else _explicitNullProperties?.Remove("output_dtype"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.EmbeddingDtype? _explicitNullValueOutputDtype = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Mistral.OpenApiClient.Models.EmbeddingRequest"/> and sets the default values.
         /// </summary>
@@ -58,7 +86,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         public static global::Soenneker.Mistral.OpenApiClient.Models.EmbeddingRequest CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Mistral.OpenApiClient.Models.EmbeddingRequest();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Mistral.OpenApiClient.Models.EmbeddingRequest(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -88,7 +116,8 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.EmbeddingRequestMetadataProperty>("metadata", Metadata);
             writer.WriteStringValue("model", Model);
             writer.WriteIntValue("output_dimension", OutputDimension);
-            writer.WriteEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.EmbeddingDtype>("output_dtype", OutputDtype);
+            writer.WriteEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.EmbeddingDtype>("output_dtype", OutputDtype);if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
+            
         }
     }
 }

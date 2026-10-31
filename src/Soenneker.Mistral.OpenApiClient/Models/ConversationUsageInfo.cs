@@ -11,23 +11,46 @@ namespace Soenneker.Mistral.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class ConversationUsageInfo : IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("completion_tokens") is null) { _explicitNullValueCompletionTokens = default!; _explicitNullProperties?.Remove("completion_tokens"); }
+            else if (parseNode.GetChildNode("completion_tokens") is { } nullNodeCompletionTokens && nullNodeCompletionTokens.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CompletionTokens = null;
+            if (parseNode.GetChildNode("connectors") is null) { _explicitNullValueConnectors = default!; _explicitNullProperties?.Remove("connectors"); }
+            else if (parseNode.GetChildNode("connectors") is { } nullNodeConnectors && nullNodeConnectors.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Connectors = null;
+            if (parseNode.GetChildNode("connector_tokens") is null) { _explicitNullValueConnectorTokens = default!; _explicitNullProperties?.Remove("connector_tokens"); }
+            else if (parseNode.GetChildNode("connector_tokens") is { } nullNodeConnectorTokens && nullNodeConnectorTokens.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ConnectorTokens = null;
+            if (parseNode.GetChildNode("prompt_tokens") is null) { _explicitNullValuePromptTokens = default!; _explicitNullProperties?.Remove("prompt_tokens"); }
+            else if (parseNode.GetChildNode("prompt_tokens") is { } nullNodePromptTokens && nullNodePromptTokens.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PromptTokens = null;
+            if (parseNode.GetChildNode("total_tokens") is null) { _explicitNullValueTotalTokens = default!; _explicitNullProperties?.Remove("total_tokens"); }
+            else if (parseNode.GetChildNode("total_tokens") is { } nullNodeTotalTokens && nullNodeTotalTokens.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TotalTokens = null;
+        }
+
         /// <summary>The completion_tokens property</summary>
-        public int? CompletionTokens { get; set; }
+        public int? CompletionTokens { get => _explicitNullValueCompletionTokens; set { _explicitNullValueCompletionTokens = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("completion_tokens"); else _explicitNullProperties?.Remove("completion_tokens"); } }
+        private int? _explicitNullValueCompletionTokens = default!;
         /// <summary>The connectors property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.ConversationUsageInfoConnectorsProperty? Connectors { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.ConversationUsageInfoConnectorsProperty? Connectors { get => _explicitNullValueConnectors; set { _explicitNullValueConnectors = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("connectors"); else _explicitNullProperties?.Remove("connectors"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.ConversationUsageInfoConnectorsProperty? _explicitNullValueConnectors = default!;
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.ConversationUsageInfoConnectorsProperty Connectors { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.ConversationUsageInfoConnectorsProperty Connectors { get => _explicitNullValueConnectors; set { _explicitNullValueConnectors = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("connectors"); else _explicitNullProperties?.Remove("connectors"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.ConversationUsageInfoConnectorsProperty _explicitNullValueConnectors = default!;
 #endif
         /// <summary>The connector_tokens property</summary>
-        public int? ConnectorTokens { get; set; }
+        public int? ConnectorTokens { get => _explicitNullValueConnectorTokens; set { _explicitNullValueConnectorTokens = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("connector_tokens"); else _explicitNullProperties?.Remove("connector_tokens"); } }
+        private int? _explicitNullValueConnectorTokens = default!;
         /// <summary>The prompt_tokens property</summary>
-        public int? PromptTokens { get; set; }
+        public int? PromptTokens { get => _explicitNullValuePromptTokens; set { _explicitNullValuePromptTokens = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("prompt_tokens"); else _explicitNullProperties?.Remove("prompt_tokens"); } }
+        private int? _explicitNullValuePromptTokens = default!;
         /// <summary>The total_tokens property</summary>
-        public int? TotalTokens { get; set; }
+        public int? TotalTokens { get => _explicitNullValueTotalTokens; set { _explicitNullValueTotalTokens = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("total_tokens"); else _explicitNullProperties?.Remove("total_tokens"); } }
+        private int? _explicitNullValueTotalTokens = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Mistral.OpenApiClient.Models.ConversationUsageInfo"/> and sets the default values.
         /// </summary>
@@ -45,7 +68,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         public static global::Soenneker.Mistral.OpenApiClient.Models.ConversationUsageInfo CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Mistral.OpenApiClient.Models.ConversationUsageInfo();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Mistral.OpenApiClient.Models.ConversationUsageInfo(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -73,7 +96,8 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ConversationUsageInfoConnectorsProperty>("connectors", Connectors);
             writer.WriteIntValue("connector_tokens", ConnectorTokens);
             writer.WriteIntValue("prompt_tokens", PromptTokens);
-            writer.WriteIntValue("total_tokens", TotalTokens);
+            writer.WriteIntValue("total_tokens", TotalTokens);if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
+            
         }
     }
 }

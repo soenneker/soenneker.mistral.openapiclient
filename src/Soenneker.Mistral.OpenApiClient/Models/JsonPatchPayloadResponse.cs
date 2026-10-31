@@ -12,26 +12,44 @@ namespace Soenneker.Mistral.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class JsonPatchPayloadResponse : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("encoding_options") is null) { _explicitNullValueEncodingOptions = default!; _explicitNullProperties?.Remove("encoding_options"); }
+            else if (parseNode.GetChildNode("encoding_options") is { } nullNodeEncodingOptions && nullNodeEncodingOptions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EncodingOptions = null;
+            if (parseNode.GetChildNode("type") is null) { _explicitNullValueType = default!; _explicitNullProperties?.Remove("type"); }
+            else if (parseNode.GetChildNode("type") is { } nullNodeType && nullNodeType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Type = null;
+            if (parseNode.GetChildNode("value") is null) { _explicitNullValueValue = default!; _explicitNullProperties?.Remove("value"); }
+            else if (parseNode.GetChildNode("value") is { } nullNodeValue && nullNodeValue.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Value = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Encoding options applied to the payload.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Mistral.OpenApiClient.Models.EncodedPayloadOptions?>? EncodingOptions { get; set; }
+        public List<global::Soenneker.Mistral.OpenApiClient.Models.EncodedPayloadOptions?>? EncodingOptions { get => _explicitNullValueEncodingOptions; set { _explicitNullValueEncodingOptions = value; AdditionalData?.Remove("encoding_options"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("encoding_options"); else _explicitNullProperties?.Remove("encoding_options"); } }
+        private List<global::Soenneker.Mistral.OpenApiClient.Models.EncodedPayloadOptions?>? _explicitNullValueEncodingOptions = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Mistral.OpenApiClient.Models.EncodedPayloadOptions?> EncodingOptions { get; set; }
+        public List<global::Soenneker.Mistral.OpenApiClient.Models.EncodedPayloadOptions?> EncodingOptions { get => _explicitNullValueEncodingOptions; set { _explicitNullValueEncodingOptions = value; AdditionalData?.Remove("encoding_options"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("encoding_options"); else _explicitNullProperties?.Remove("encoding_options"); } }
+        private List<global::Soenneker.Mistral.OpenApiClient.Models.EncodedPayloadOptions?> _explicitNullValueEncodingOptions = default!;
 #endif
         /// <summary>Discriminator indicating this is a JSON Patch payload.</summary>
-        public global::Soenneker.Mistral.OpenApiClient.Models.JsonPatchType? Type { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.JsonPatchType? Type { get => _explicitNullValueType; set { _explicitNullValueType = value; AdditionalData?.Remove("type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.JsonPatchType? _explicitNullValueType = default!;
         /// <summary>The value property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.JsonPatchPayloadValueResponse? Value { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.JsonPatchPayloadValueResponse? Value { get => _explicitNullValueValue; set { _explicitNullValueValue = value; AdditionalData?.Remove("value"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("value"); else _explicitNullProperties?.Remove("value"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.JsonPatchPayloadValueResponse? _explicitNullValueValue = default!;
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.JsonPatchPayloadValueResponse Value { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.JsonPatchPayloadValueResponse Value { get => _explicitNullValueValue; set { _explicitNullValueValue = value; AdditionalData?.Remove("value"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("value"); else _explicitNullProperties?.Remove("value"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.JsonPatchPayloadValueResponse _explicitNullValueValue = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Mistral.OpenApiClient.Models.JsonPatchPayloadResponse"/> and sets the default values.
@@ -48,7 +66,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         public static global::Soenneker.Mistral.OpenApiClient.Models.JsonPatchPayloadResponse CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Mistral.OpenApiClient.Models.JsonPatchPayloadResponse();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Mistral.OpenApiClient.Models.JsonPatchPayloadResponse(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -59,7 +77,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "encoding_options", n => { EncodingOptions = n.GetCollectionOfEnumValues<global::Soenneker.Mistral.OpenApiClient.Models.EncodedPayloadOptions>()?.AsList(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.JsonPatchType>(); } },
+                { "type", n => { var parsed = n.GetEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.JsonPatchType>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueType = default; _explicitNullProperties?.Remove("type"); AdditionalData["type"] = unknown; } else { Type = parsed; AdditionalData.Remove("type"); } } },
                 { "value", n => { Value = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.JsonPatchPayloadValueResponse>(global::Soenneker.Mistral.OpenApiClient.Models.JsonPatchPayloadValueResponse.CreateFromDiscriminatorValue); } },
             };
         }
@@ -73,6 +91,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             writer.WriteCollectionOfEnumValues<global::Soenneker.Mistral.OpenApiClient.Models.EncodedPayloadOptions>("encoding_options", EncodingOptions);
             writer.WriteEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.JsonPatchType>("type", Type);
             writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.JsonPatchPayloadValueResponse>("value", Value);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

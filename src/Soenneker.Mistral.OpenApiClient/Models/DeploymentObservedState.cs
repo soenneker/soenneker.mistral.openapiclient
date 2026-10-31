@@ -11,57 +11,96 @@ namespace Soenneker.Mistral.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class DeploymentObservedState : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("available_replicas") is null) { _explicitNullValueAvailableReplicas = default!; _explicitNullProperties?.Remove("available_replicas"); }
+            else if (parseNode.GetChildNode("available_replicas") is { } nullNodeAvailableReplicas && nullNodeAvailableReplicas.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AvailableReplicas = null;
+            if (parseNode.GetChildNode("build_state") is null) { _explicitNullValueBuildState = default!; _explicitNullProperties?.Remove("build_state"); }
+            else if (parseNode.GetChildNode("build_state") is { } nullNodeBuildState && nullNodeBuildState.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BuildState = null;
+            if (parseNode.GetChildNode("deployed_revision") is null) { _explicitNullValueDeployedRevision = default!; _explicitNullProperties?.Remove("deployed_revision"); }
+            else if (parseNode.GetChildNode("deployed_revision") is { } nullNodeDeployedRevision && nullNodeDeployedRevision.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DeployedRevision = null;
+            if (parseNode.GetChildNode("endpoint") is null) { _explicitNullValueEndpoint = default!; _explicitNullProperties?.Remove("endpoint"); }
+            else if (parseNode.GetChildNode("endpoint") is { } nullNodeEndpoint && nullNodeEndpoint.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Endpoint = null;
+            if (parseNode.GetChildNode("generation") is null) { _explicitNullValueGeneration = default!; _explicitNullProperties?.Remove("generation"); }
+            else if (parseNode.GetChildNode("generation") is { } nullNodeGeneration && nullNodeGeneration.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Generation = null;
+            if (parseNode.GetChildNode("last_seen") is null) { _explicitNullValueLastSeen = default!; _explicitNullProperties?.Remove("last_seen"); }
+            else if (parseNode.GetChildNode("last_seen") is { } nullNodeLastSeen && nullNodeLastSeen.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LastSeen = null;
+            if (parseNode.GetChildNode("message") is null) { _explicitNullValueMessage = default!; _explicitNullProperties?.Remove("message"); }
+            else if (parseNode.GetChildNode("message") is { } nullNodeMessage && nullNodeMessage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Message = null;
+            if (parseNode.GetChildNode("phase") is null) { _explicitNullValuePhase = default!; _explicitNullProperties?.Remove("phase"); }
+            else if (parseNode.GetChildNode("phase") is { } nullNodePhase && nullNodePhase.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Phase = null;
+            if (parseNode.GetChildNode("ready_replicas") is null) { _explicitNullValueReadyReplicas = default!; _explicitNullProperties?.Remove("ready_replicas"); }
+            else if (parseNode.GetChildNode("ready_replicas") is { } nullNodeReadyReplicas && nullNodeReadyReplicas.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ReadyReplicas = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The available_replicas property</summary>
-        public int? AvailableReplicas { get; set; }
+        public int? AvailableReplicas { get => _explicitNullValueAvailableReplicas; set { _explicitNullValueAvailableReplicas = value; AdditionalData?.Remove("available_replicas"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("available_replicas"); else _explicitNullProperties?.Remove("available_replicas"); } }
+        private int? _explicitNullValueAvailableReplicas = default!;
         /// <summary>The build_state property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.DeploymentBuildState? BuildState { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.DeploymentBuildState? BuildState { get => _explicitNullValueBuildState; set { _explicitNullValueBuildState = value; AdditionalData?.Remove("build_state"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("build_state"); else _explicitNullProperties?.Remove("build_state"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.DeploymentBuildState? _explicitNullValueBuildState = default!;
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.DeploymentBuildState BuildState { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.DeploymentBuildState BuildState { get => _explicitNullValueBuildState; set { _explicitNullValueBuildState = value; AdditionalData?.Remove("build_state"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("build_state"); else _explicitNullProperties?.Remove("build_state"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.DeploymentBuildState _explicitNullValueBuildState = default!;
 #endif
         /// <summary>The deployed_revision property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DeployedRevision { get; set; }
+        public string? DeployedRevision { get => _explicitNullValueDeployedRevision; set { _explicitNullValueDeployedRevision = value; AdditionalData?.Remove("deployed_revision"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("deployed_revision"); else _explicitNullProperties?.Remove("deployed_revision"); } }
+        private string? _explicitNullValueDeployedRevision = default!;
 #nullable restore
 #else
-        public string DeployedRevision { get; set; }
+        public string DeployedRevision { get => _explicitNullValueDeployedRevision; set { _explicitNullValueDeployedRevision = value; AdditionalData?.Remove("deployed_revision"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("deployed_revision"); else _explicitNullProperties?.Remove("deployed_revision"); } }
+        private string _explicitNullValueDeployedRevision = default!;
 #endif
         /// <summary>The endpoint property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Endpoint { get; set; }
+        public string? Endpoint { get => _explicitNullValueEndpoint; set { _explicitNullValueEndpoint = value; AdditionalData?.Remove("endpoint"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("endpoint"); else _explicitNullProperties?.Remove("endpoint"); } }
+        private string? _explicitNullValueEndpoint = default!;
 #nullable restore
 #else
-        public string Endpoint { get; set; }
+        public string Endpoint { get => _explicitNullValueEndpoint; set { _explicitNullValueEndpoint = value; AdditionalData?.Remove("endpoint"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("endpoint"); else _explicitNullProperties?.Remove("endpoint"); } }
+        private string _explicitNullValueEndpoint = default!;
 #endif
         /// <summary>The generation property</summary>
-        public int? Generation { get; set; }
+        public int? Generation { get => _explicitNullValueGeneration; set { _explicitNullValueGeneration = value; AdditionalData?.Remove("generation"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("generation"); else _explicitNullProperties?.Remove("generation"); } }
+        private int? _explicitNullValueGeneration = default!;
         /// <summary>The last_seen property</summary>
-        public DateTimeOffset? LastSeen { get; set; }
+        public DateTimeOffset? LastSeen { get => _explicitNullValueLastSeen; set { _explicitNullValueLastSeen = value; AdditionalData?.Remove("last_seen"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("last_seen"); else _explicitNullProperties?.Remove("last_seen"); } }
+        private DateTimeOffset? _explicitNullValueLastSeen = default!;
         /// <summary>The message property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Message { get; set; }
+        public string? Message { get => _explicitNullValueMessage; set { _explicitNullValueMessage = value; AdditionalData?.Remove("message"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("message"); else _explicitNullProperties?.Remove("message"); } }
+        private string? _explicitNullValueMessage = default!;
 #nullable restore
 #else
-        public string Message { get; set; }
+        public string Message { get => _explicitNullValueMessage; set { _explicitNullValueMessage = value; AdditionalData?.Remove("message"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("message"); else _explicitNullProperties?.Remove("message"); } }
+        private string _explicitNullValueMessage = default!;
 #endif
         /// <summary>The phase property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Phase { get; set; }
+        public string? Phase { get => _explicitNullValuePhase; set { _explicitNullValuePhase = value; AdditionalData?.Remove("phase"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("phase"); else _explicitNullProperties?.Remove("phase"); } }
+        private string? _explicitNullValuePhase = default!;
 #nullable restore
 #else
-        public string Phase { get; set; }
+        public string Phase { get => _explicitNullValuePhase; set { _explicitNullValuePhase = value; AdditionalData?.Remove("phase"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("phase"); else _explicitNullProperties?.Remove("phase"); } }
+        private string _explicitNullValuePhase = default!;
 #endif
         /// <summary>The ready_replicas property</summary>
-        public int? ReadyReplicas { get; set; }
+        public int? ReadyReplicas { get => _explicitNullValueReadyReplicas; set { _explicitNullValueReadyReplicas = value; AdditionalData?.Remove("ready_replicas"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ready_replicas"); else _explicitNullProperties?.Remove("ready_replicas"); } }
+        private int? _explicitNullValueReadyReplicas = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Mistral.OpenApiClient.Models.DeploymentObservedState"/> and sets the default values.
         /// </summary>
@@ -79,7 +118,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         public static global::Soenneker.Mistral.OpenApiClient.Models.DeploymentObservedState CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Mistral.OpenApiClient.Models.DeploymentObservedState();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Mistral.OpenApiClient.Models.DeploymentObservedState(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -116,6 +155,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             writer.WriteStringValue("message", Message);
             writer.WriteStringValue("phase", Phase);
             writer.WriteIntValue("ready_replicas", ReadyReplicas);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

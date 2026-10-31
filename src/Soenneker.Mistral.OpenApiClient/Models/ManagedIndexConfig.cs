@@ -11,14 +11,25 @@ namespace Soenneker.Mistral.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class ManagedIndexConfig : IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("embedding") is null) { _explicitNullValueEmbedding = default!; _explicitNullProperties?.Remove("embedding"); }
+            else if (parseNode.GetChildNode("embedding") is { } nullNodeEmbedding && nullNodeEmbedding.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Embedding = null;
+        }
+
         /// <summary>The embedding property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.ManagedIndexConfigEmbedding? Embedding { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.ManagedIndexConfigEmbedding? Embedding { get => _explicitNullValueEmbedding; set { _explicitNullValueEmbedding = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("embedding"); else _explicitNullProperties?.Remove("embedding"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.ManagedIndexConfigEmbedding? _explicitNullValueEmbedding = default!;
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.ManagedIndexConfigEmbedding Embedding { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.ManagedIndexConfigEmbedding Embedding { get => _explicitNullValueEmbedding; set { _explicitNullValueEmbedding = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("embedding"); else _explicitNullProperties?.Remove("embedding"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.ManagedIndexConfigEmbedding _explicitNullValueEmbedding = default!;
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -28,7 +39,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         public static global::Soenneker.Mistral.OpenApiClient.Models.ManagedIndexConfig CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Mistral.OpenApiClient.Models.ManagedIndexConfig();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Mistral.OpenApiClient.Models.ManagedIndexConfig(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -48,7 +59,8 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ManagedIndexConfigEmbedding>("embedding", Embedding);
+            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ManagedIndexConfigEmbedding>("embedding", Embedding);if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
+            
         }
     }
 }

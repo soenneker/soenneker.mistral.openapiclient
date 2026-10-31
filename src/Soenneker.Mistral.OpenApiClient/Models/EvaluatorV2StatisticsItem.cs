@@ -8,11 +8,16 @@ using System;
 namespace Soenneker.Mistral.OpenApiClient.Models
 {
     /// <summary>
-    /// Composed type wrapper for classes <see cref="global::Soenneker.Mistral.OpenApiClient.Models.ClassificationStatisticSpec"/>, <see cref="global::Soenneker.Mistral.OpenApiClient.Models.PercentileStatisticSpec"/>, <see cref="global::Soenneker.Mistral.OpenApiClient.Models.SimpleNumericStatisticSpec"/>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Mistral.OpenApiClient.Models.ClassificationStatisticSpec"/>, <see cref="global::Soenneker.Mistral.OpenApiClient.Models.EvaluatorV2StatisticsItemOneOf2"/>, <see cref="global::Soenneker.Mistral.OpenApiClient.Models.SimpleNumericStatisticSpec"/>
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class EvaluatorV2StatisticsItem : IComposedTypeWrapper, IParsable
-    {
+    , global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder {
+        // Preserve ambiguous union payloads without inventing a discriminator.
+        /// <summary>The complete payload when no unique typed union branch can be selected.</summary>
+        public global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode UnrecognizedValue { get; set; } = null!;
+        public global::System.Collections.Generic.IDictionary<string, object> AdditionalData { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+
         /// <summary>Composed type representation for type <see cref="global::Soenneker.Mistral.OpenApiClient.Models.ClassificationStatisticSpec"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -21,13 +26,13 @@ namespace Soenneker.Mistral.OpenApiClient.Models
 #else
         public global::Soenneker.Mistral.OpenApiClient.Models.ClassificationStatisticSpec ClassificationStatisticSpec { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Mistral.OpenApiClient.Models.PercentileStatisticSpec"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Mistral.OpenApiClient.Models.EvaluatorV2StatisticsItemOneOf2"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.PercentileStatisticSpec? PercentileStatisticSpec { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.EvaluatorV2StatisticsItemOneOf2? EvaluatorV2StatisticsItemOneOf2 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.PercentileStatisticSpec PercentileStatisticSpec { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.EvaluatorV2StatisticsItemOneOf2 EvaluatorV2StatisticsItemOneOf2 { get; set; }
 #endif
         /// <summary>Composed type representation for type <see cref="global::Soenneker.Mistral.OpenApiClient.Models.SimpleNumericStatisticSpec"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -45,21 +50,35 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         public static global::Soenneker.Mistral.OpenApiClient.Models.EvaluatorV2StatisticsItem CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            var mappingValue = parseNode.GetChildNode("kind")?.GetStringValue();
+            var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
             var result = new global::Soenneker.Mistral.OpenApiClient.Models.EvaluatorV2StatisticsItem();
-            if("f1".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            if("ClassificationStatisticSpec".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.ClassificationStatisticSpec = new global::Soenneker.Mistral.OpenApiClient.Models.ClassificationStatisticSpec();
+                
             }
-            else if("percentile".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("EvaluatorV2StatisticsItemOneOf2".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.PercentileStatisticSpec = new global::Soenneker.Mistral.OpenApiClient.Models.PercentileStatisticSpec();
+                
             }
-            else if("avg".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("SimpleNumericStatisticSpec".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.SimpleNumericStatisticSpec = new global::Soenneker.Mistral.OpenApiClient.Models.SimpleNumericStatisticSpec();
+                
             }
-            return result;
+            
+            var unionPayload = parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue);
+            bool matchesUnionBranch0 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => ((unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject)) && (unionPayload is not global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject shapeObject0 || (shapeObject0.GetValue() is var shapeMembers1 && (shapeMembers1.ContainsKey("kind") && (!shapeMembers1.ContainsKey("kind") || (((shapeMembers1["kind"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString)) && ((shapeMembers1["kind"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString literal2 && "avg".Equals(literal2.GetValue(), global::System.StringComparison.Ordinal)) || (shapeMembers1["kind"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString literal3 && "sum".Equals(literal3.GetValue(), global::System.StringComparison.Ordinal)) || (shapeMembers1["kind"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString literal4 && "min".Equals(literal4.GetValue(), global::System.StringComparison.Ordinal)) || (shapeMembers1["kind"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString literal5 && "max".Equals(literal5.GetValue(), global::System.StringComparison.Ordinal)) || (shapeMembers1["kind"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString literal6 && "std".Equals(literal6.GetValue(), global::System.StringComparison.Ordinal)) || (shapeMembers1["kind"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString literal7 && "count".Equals(literal7.GetValue(), global::System.StringComparison.Ordinal))))) && (!shapeMembers1.ContainsKey("goal") || (((((shapeMembers1["goal"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject)) && (shapeMembers1["goal"] is not global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject shapeObject12 || (shapeObject12.GetValue() is var shapeMembers13 && ((!shapeMembers13.ContainsKey("operator") || ((((shapeMembers13["operator"] == null || shapeMembers13["operator"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull)) || (shapeMembers13["operator"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString)))) && (!shapeMembers13.ContainsKey("value") || (true)) && (!shapeMembers13.ContainsKey("min") || ((((shapeMembers13["min"] == null || shapeMembers13["min"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull)) || (shapeMembers13["min"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedInteger or global::Microsoft.Kiota.Abstractions.Serialization.UntypedLong or global::Microsoft.Kiota.Abstractions.Serialization.UntypedFloat or global::Microsoft.Kiota.Abstractions.Serialization.UntypedDouble or global::Microsoft.Kiota.Abstractions.Serialization.UntypedDecimal)))) && (!shapeMembers13.ContainsKey("max") || ((((shapeMembers13["max"] == null || shapeMembers13["max"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull)) || (shapeMembers13["max"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedInteger or global::Microsoft.Kiota.Abstractions.Serialization.UntypedLong or global::Microsoft.Kiota.Abstractions.Serialization.UntypedFloat or global::Microsoft.Kiota.Abstractions.Serialization.UntypedDouble or global::Microsoft.Kiota.Abstractions.Serialization.UntypedDecimal)))) && (!shapeMembers13.ContainsKey("values") || ((((shapeMembers13["values"] == null || shapeMembers13["values"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull)) || (shapeMembers13["values"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedArray)))) && (!shapeMembers13.ContainsKey("metric") || ((((shapeMembers13["metric"] == null || shapeMembers13["metric"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull)) || (shapeMembers13["metric"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString)))))))) || ((((shapeMembers1["goal"] == null || shapeMembers1["goal"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull))))))))))))();
+            bool matchesUnionBranch1 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => ((unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject)) && (unionPayload is not global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject shapeObject0 || (shapeObject0.GetValue() is var shapeMembers1 && (shapeMembers1.ContainsKey("percentile") && shapeMembers1.ContainsKey("kind") && (!shapeMembers1.ContainsKey("kind") || (((shapeMembers1["kind"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString)) && (shapeMembers1["kind"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString literal2 && "percentile".Equals(literal2.GetValue(), global::System.StringComparison.Ordinal)) && ((shapeMembers1["kind"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString literal3 && "percentile".Equals(literal3.GetValue(), global::System.StringComparison.Ordinal))))) && (!shapeMembers1.ContainsKey("percentile") || (((shapeMembers1["percentile"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedInteger or global::Microsoft.Kiota.Abstractions.Serialization.UntypedLong or global::Microsoft.Kiota.Abstractions.Serialization.UntypedFloat or global::Microsoft.Kiota.Abstractions.Serialization.UntypedDouble or global::Microsoft.Kiota.Abstractions.Serialization.UntypedDecimal)))) && (!shapeMembers1.ContainsKey("goal") || (((((shapeMembers1["goal"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject)) && (shapeMembers1["goal"] is not global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject shapeObject10 || (shapeObject10.GetValue() is var shapeMembers11 && ((!shapeMembers11.ContainsKey("operator") || ((((shapeMembers11["operator"] == null || shapeMembers11["operator"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull)) || (shapeMembers11["operator"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString)))) && (!shapeMembers11.ContainsKey("value") || (true)) && (!shapeMembers11.ContainsKey("min") || ((((shapeMembers11["min"] == null || shapeMembers11["min"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull)) || (shapeMembers11["min"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedInteger or global::Microsoft.Kiota.Abstractions.Serialization.UntypedLong or global::Microsoft.Kiota.Abstractions.Serialization.UntypedFloat or global::Microsoft.Kiota.Abstractions.Serialization.UntypedDouble or global::Microsoft.Kiota.Abstractions.Serialization.UntypedDecimal)))) && (!shapeMembers11.ContainsKey("max") || ((((shapeMembers11["max"] == null || shapeMembers11["max"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull)) || (shapeMembers11["max"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedInteger or global::Microsoft.Kiota.Abstractions.Serialization.UntypedLong or global::Microsoft.Kiota.Abstractions.Serialization.UntypedFloat or global::Microsoft.Kiota.Abstractions.Serialization.UntypedDouble or global::Microsoft.Kiota.Abstractions.Serialization.UntypedDecimal)))) && (!shapeMembers11.ContainsKey("values") || ((((shapeMembers11["values"] == null || shapeMembers11["values"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull)) || (shapeMembers11["values"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedArray)))) && (!shapeMembers11.ContainsKey("metric") || ((((shapeMembers11["metric"] == null || shapeMembers11["metric"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull)) || (shapeMembers11["metric"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString)))))))) || ((((shapeMembers1["goal"] == null || shapeMembers1["goal"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull))))))))))))();
+            bool matchesUnionBranch2 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => ((unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject)) && (unionPayload is not global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject shapeObject0 || (shapeObject0.GetValue() is var shapeMembers1 && (shapeMembers1.ContainsKey("kind") && (!shapeMembers1.ContainsKey("kind") || (((shapeMembers1["kind"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString)) && ((shapeMembers1["kind"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString literal2 && "precision".Equals(literal2.GetValue(), global::System.StringComparison.Ordinal)) || (shapeMembers1["kind"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString literal3 && "recall".Equals(literal3.GetValue(), global::System.StringComparison.Ordinal)) || (shapeMembers1["kind"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString literal4 && "f1".Equals(literal4.GetValue(), global::System.StringComparison.Ordinal))))) && (!shapeMembers1.ContainsKey("positive_label") || ((((shapeMembers1["positive_label"] == null || shapeMembers1["positive_label"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull)) || (shapeMembers1["positive_label"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString)))) && (!shapeMembers1.ContainsKey("average") || ((((shapeMembers1["average"] == null || shapeMembers1["average"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull)) || (shapeMembers1["average"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString)) && ((shapeMembers1["average"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString literal9 && "macro".Equals(literal9.GetValue(), global::System.StringComparison.Ordinal)) || (shapeMembers1["average"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString literal10 && "micro".Equals(literal10.GetValue(), global::System.StringComparison.Ordinal)) || (shapeMembers1["average"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString literal11 && "weighted".Equals(literal11.GetValue(), global::System.StringComparison.Ordinal)) || (shapeMembers1["average"] == null || shapeMembers1["average"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull)))) && (!shapeMembers1.ContainsKey("expected_key") || (((shapeMembers1["expected_key"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString)))) && (!shapeMembers1.ContainsKey("labels") || ((((shapeMembers1["labels"] == null || shapeMembers1["labels"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull)) || (shapeMembers1["labels"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedArray)))) && (!shapeMembers1.ContainsKey("goal") || (((((shapeMembers1["goal"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject)) && (shapeMembers1["goal"] is not global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject shapeObject20 || (shapeObject20.GetValue() is var shapeMembers21 && ((!shapeMembers21.ContainsKey("operator") || ((((shapeMembers21["operator"] == null || shapeMembers21["operator"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull)) || (shapeMembers21["operator"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString)))) && (!shapeMembers21.ContainsKey("value") || (true)) && (!shapeMembers21.ContainsKey("min") || ((((shapeMembers21["min"] == null || shapeMembers21["min"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull)) || (shapeMembers21["min"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedInteger or global::Microsoft.Kiota.Abstractions.Serialization.UntypedLong or global::Microsoft.Kiota.Abstractions.Serialization.UntypedFloat or global::Microsoft.Kiota.Abstractions.Serialization.UntypedDouble or global::Microsoft.Kiota.Abstractions.Serialization.UntypedDecimal)))) && (!shapeMembers21.ContainsKey("max") || ((((shapeMembers21["max"] == null || shapeMembers21["max"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull)) || (shapeMembers21["max"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedInteger or global::Microsoft.Kiota.Abstractions.Serialization.UntypedLong or global::Microsoft.Kiota.Abstractions.Serialization.UntypedFloat or global::Microsoft.Kiota.Abstractions.Serialization.UntypedDouble or global::Microsoft.Kiota.Abstractions.Serialization.UntypedDecimal)))) && (!shapeMembers21.ContainsKey("values") || ((((shapeMembers21["values"] == null || shapeMembers21["values"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull)) || (shapeMembers21["values"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedArray)))) && (!shapeMembers21.ContainsKey("metric") || ((((shapeMembers21["metric"] == null || shapeMembers21["metric"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull)) || (shapeMembers21["metric"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString)))))))) || ((((shapeMembers1["goal"] == null || shapeMembers1["goal"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull))))))))))))();
+            int matchingUnionBranches = 0;
+            if (matchesUnionBranch0) matchingUnionBranches++;
+            if (matchesUnionBranch1) matchingUnionBranches++;
+            if (matchesUnionBranch2) matchingUnionBranches++;
+            bool noSelectedUnionBranch = result.ClassificationStatisticSpec == null && result.EvaluatorV2StatisticsItemOneOf2 == null && result.SimpleNumericStatisticSpec == null;
+            if (noSelectedUnionBranch && matchesUnionBranch0 && matchingUnionBranches == 1) result.SimpleNumericStatisticSpec = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Mistral.OpenApiClient.Models.SimpleNumericStatisticSpec(), parseNode);
+            if (noSelectedUnionBranch && matchesUnionBranch1 && matchingUnionBranches == 1) result.EvaluatorV2StatisticsItemOneOf2 = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Mistral.OpenApiClient.Models.EvaluatorV2StatisticsItemOneOf2(), parseNode);
+            if (noSelectedUnionBranch && matchesUnionBranch2 && matchingUnionBranches == 1) result.ClassificationStatisticSpec = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Mistral.OpenApiClient.Models.ClassificationStatisticSpec(), parseNode);
+            if (result.ClassificationStatisticSpec == null && result.EvaluatorV2StatisticsItemOneOf2 == null && result.SimpleNumericStatisticSpec == null) result.UnrecognizedValue = unionPayload;
+return result;
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -67,13 +86,15 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
+            if (UnrecognizedValue is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject rawFields) { var fields = new global::System.Collections.Generic.Dictionary<string, global::System.Action<IParseNode>>(); foreach (var entry in rawFields.GetValue()) fields[entry.Key] = _ => { }; return fields; }
+
             if(ClassificationStatisticSpec != null)
             {
                 return ClassificationStatisticSpec.GetFieldDeserializers();
             }
-            else if(PercentileStatisticSpec != null)
+            else if(EvaluatorV2StatisticsItemOneOf2 != null)
             {
-                return PercentileStatisticSpec.GetFieldDeserializers();
+                return EvaluatorV2StatisticsItemOneOf2.GetFieldDeserializers();
             }
             else if(SimpleNumericStatisticSpec != null)
             {
@@ -87,17 +108,30 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public virtual void Serialize(ISerializationWriter writer)
         {
+            if (global::System.Object.ReferenceEquals(writer, null)) throw new global::System.ArgumentNullException(nameof(writer));
+            if (ClassificationStatisticSpec == null && EvaluatorV2StatisticsItemOneOf2 == null && SimpleNumericStatisticSpec == null) { if (UnrecognizedValue is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject rawObject) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData, rawObject)); else if (UnrecognizedValue != null) writer.WriteObjectValue(null, UnrecognizedValue); else if (AdditionalData.Count > 0) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData)); else writer.WriteNullValue(null); return; }
+            int selectedUnionBranches = 0;
+            if (ClassificationStatisticSpec != null) selectedUnionBranches++;
+            if (EvaluatorV2StatisticsItemOneOf2 != null) selectedUnionBranches++;
+            if (SimpleNumericStatisticSpec != null) selectedUnionBranches++;
+            if (ClassificationStatisticSpec != null && selectedUnionBranches == 1) { if (ClassificationStatisticSpec is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, ClassificationStatisticSpec); return; }
+            if (EvaluatorV2StatisticsItemOneOf2 != null && selectedUnionBranches == 1) { if (EvaluatorV2StatisticsItemOneOf2 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, EvaluatorV2StatisticsItemOneOf2); return; }
+            if (SimpleNumericStatisticSpec != null && selectedUnionBranches == 1) { if (SimpleNumericStatisticSpec is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, SimpleNumericStatisticSpec); return; }
+
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             if(ClassificationStatisticSpec != null)
             {
+                if (ClassificationStatisticSpec is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ClassificationStatisticSpec>(null, ClassificationStatisticSpec);
             }
-            else if(PercentileStatisticSpec != null)
+            else if(EvaluatorV2StatisticsItemOneOf2 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.PercentileStatisticSpec>(null, PercentileStatisticSpec);
+                if (EvaluatorV2StatisticsItemOneOf2 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
+                writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.EvaluatorV2StatisticsItemOneOf2>(null, EvaluatorV2StatisticsItemOneOf2);
             }
             else if(SimpleNumericStatisticSpec != null)
             {
+                if (SimpleNumericStatisticSpec is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.SimpleNumericStatisticSpec>(null, SimpleNumericStatisticSpec);
             }
         }

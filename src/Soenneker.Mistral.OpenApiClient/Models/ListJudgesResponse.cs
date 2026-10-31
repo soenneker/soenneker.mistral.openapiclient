@@ -11,16 +11,27 @@ namespace Soenneker.Mistral.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class ListJudgesResponse : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("judges") is null) { _explicitNullValueJudges = default!; _explicitNullProperties?.Remove("judges"); }
+            else if (parseNode.GetChildNode("judges") is { } nullNodeJudges && nullNodeJudges.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Judges = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The judges property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.PaginatedResultJudgePreview? Judges { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.PaginatedResultJudgePreview? Judges { get => _explicitNullValueJudges; set { _explicitNullValueJudges = value; AdditionalData?.Remove("judges"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("judges"); else _explicitNullProperties?.Remove("judges"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.PaginatedResultJudgePreview? _explicitNullValueJudges = default!;
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.PaginatedResultJudgePreview Judges { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.PaginatedResultJudgePreview Judges { get => _explicitNullValueJudges; set { _explicitNullValueJudges = value; AdditionalData?.Remove("judges"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("judges"); else _explicitNullProperties?.Remove("judges"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.PaginatedResultJudgePreview _explicitNullValueJudges = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Mistral.OpenApiClient.Models.ListJudgesResponse"/> and sets the default values.
@@ -37,7 +48,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         public static global::Soenneker.Mistral.OpenApiClient.Models.ListJudgesResponse CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Mistral.OpenApiClient.Models.ListJudgesResponse();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Mistral.OpenApiClient.Models.ListJudgesResponse(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -58,6 +69,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.PaginatedResultJudgePreview>("judges", Judges);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

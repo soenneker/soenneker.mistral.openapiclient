@@ -11,32 +11,51 @@ namespace Soenneker.Mistral.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class ScimSyncGroupsSummaryOut : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("create") is null) { _explicitNullValueCreate = default!; _explicitNullProperties?.Remove("create"); }
+            else if (parseNode.GetChildNode("create") is { } nullNodeCreate && nullNodeCreate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Create = null;
+            if (parseNode.GetChildNode("delete") is null) { _explicitNullValueDelete = default!; _explicitNullProperties?.Remove("delete"); }
+            else if (parseNode.GetChildNode("delete") is { } nullNodeDelete && nullNodeDelete.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Delete = null;
+            if (parseNode.GetChildNode("update") is null) { _explicitNullValueUpdate = default!; _explicitNullProperties?.Remove("update"); }
+            else if (parseNode.GetChildNode("update") is { } nullNodeUpdate && nullNodeUpdate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Update = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The create property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Mistral.OpenApiClient.Models.ScimSyncGroupActionOut>? Create { get; set; }
+        public List<global::Soenneker.Mistral.OpenApiClient.Models.ScimSyncGroupActionOut>? Create { get => _explicitNullValueCreate; set { _explicitNullValueCreate = value; AdditionalData?.Remove("create"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("create"); else _explicitNullProperties?.Remove("create"); } }
+        private List<global::Soenneker.Mistral.OpenApiClient.Models.ScimSyncGroupActionOut>? _explicitNullValueCreate = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Mistral.OpenApiClient.Models.ScimSyncGroupActionOut> Create { get; set; }
+        public List<global::Soenneker.Mistral.OpenApiClient.Models.ScimSyncGroupActionOut> Create { get => _explicitNullValueCreate; set { _explicitNullValueCreate = value; AdditionalData?.Remove("create"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("create"); else _explicitNullProperties?.Remove("create"); } }
+        private List<global::Soenneker.Mistral.OpenApiClient.Models.ScimSyncGroupActionOut> _explicitNullValueCreate = default!;
 #endif
         /// <summary>The delete property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Mistral.OpenApiClient.Models.ScimSyncGroupActionOut>? Delete { get; set; }
+        public List<global::Soenneker.Mistral.OpenApiClient.Models.ScimSyncGroupActionOut>? Delete { get => _explicitNullValueDelete; set { _explicitNullValueDelete = value; AdditionalData?.Remove("delete"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("delete"); else _explicitNullProperties?.Remove("delete"); } }
+        private List<global::Soenneker.Mistral.OpenApiClient.Models.ScimSyncGroupActionOut>? _explicitNullValueDelete = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Mistral.OpenApiClient.Models.ScimSyncGroupActionOut> Delete { get; set; }
+        public List<global::Soenneker.Mistral.OpenApiClient.Models.ScimSyncGroupActionOut> Delete { get => _explicitNullValueDelete; set { _explicitNullValueDelete = value; AdditionalData?.Remove("delete"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("delete"); else _explicitNullProperties?.Remove("delete"); } }
+        private List<global::Soenneker.Mistral.OpenApiClient.Models.ScimSyncGroupActionOut> _explicitNullValueDelete = default!;
 #endif
         /// <summary>The update property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Mistral.OpenApiClient.Models.ScimSyncGroupUpdateActionOut>? Update { get; set; }
+        public List<global::Soenneker.Mistral.OpenApiClient.Models.ScimSyncGroupUpdateActionOut>? Update { get => _explicitNullValueUpdate; set { _explicitNullValueUpdate = value; AdditionalData?.Remove("update"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("update"); else _explicitNullProperties?.Remove("update"); } }
+        private List<global::Soenneker.Mistral.OpenApiClient.Models.ScimSyncGroupUpdateActionOut>? _explicitNullValueUpdate = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Mistral.OpenApiClient.Models.ScimSyncGroupUpdateActionOut> Update { get; set; }
+        public List<global::Soenneker.Mistral.OpenApiClient.Models.ScimSyncGroupUpdateActionOut> Update { get => _explicitNullValueUpdate; set { _explicitNullValueUpdate = value; AdditionalData?.Remove("update"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("update"); else _explicitNullProperties?.Remove("update"); } }
+        private List<global::Soenneker.Mistral.OpenApiClient.Models.ScimSyncGroupUpdateActionOut> _explicitNullValueUpdate = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Mistral.OpenApiClient.Models.ScimSyncGroupsSummaryOut"/> and sets the default values.
@@ -53,7 +72,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         public static global::Soenneker.Mistral.OpenApiClient.Models.ScimSyncGroupsSummaryOut CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Mistral.OpenApiClient.Models.ScimSyncGroupsSummaryOut();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Mistral.OpenApiClient.Models.ScimSyncGroupsSummaryOut(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -78,6 +97,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             writer.WriteCollectionOfObjectValues<global::Soenneker.Mistral.OpenApiClient.Models.ScimSyncGroupActionOut>("create", Create);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Mistral.OpenApiClient.Models.ScimSyncGroupActionOut>("delete", Delete);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Mistral.OpenApiClient.Models.ScimSyncGroupUpdateActionOut>("update", Update);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

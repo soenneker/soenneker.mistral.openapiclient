@@ -11,28 +11,49 @@ namespace Soenneker.Mistral.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class ConnectionPreference : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("consumer_type") is null) { _explicitNullValueConsumerType = default!; _explicitNullProperties?.Remove("consumer_type"); }
+            else if (parseNode.GetChildNode("consumer_type") is { } nullNodeConsumerType && nullNodeConsumerType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ConsumerType = null;
+            if (parseNode.GetChildNode("is_default") is null) { _explicitNullValueIsDefault = default!; _explicitNullProperties?.Remove("is_default"); }
+            else if (parseNode.GetChildNode("is_default") is { } nullNodeIsDefault && nullNodeIsDefault.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IsDefault = null;
+            if (parseNode.GetChildNode("name") is null) { _explicitNullValueName = default!; _explicitNullProperties?.Remove("name"); }
+            else if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
+            if (parseNode.GetChildNode("tool_configuration") is null) { _explicitNullValueToolConfiguration = default!; _explicitNullProperties?.Remove("tool_configuration"); }
+            else if (parseNode.GetChildNode("tool_configuration") is { } nullNodeToolConfiguration && nullNodeToolConfiguration.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ToolConfiguration = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The consumer_type property</summary>
-        public global::Soenneker.Mistral.OpenApiClient.Models.ConsumerType? ConsumerType { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.ConsumerType? ConsumerType { get => _explicitNullValueConsumerType; set { _explicitNullValueConsumerType = value; AdditionalData?.Remove("consumer_type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("consumer_type"); else _explicitNullProperties?.Remove("consumer_type"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.ConsumerType? _explicitNullValueConsumerType = default!;
         /// <summary>The is_default property</summary>
-        public bool? IsDefault { get; set; }
+        public bool? IsDefault { get => _explicitNullValueIsDefault; set { _explicitNullValueIsDefault = value; AdditionalData?.Remove("is_default"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("is_default"); else _explicitNullProperties?.Remove("is_default"); } }
+        private bool? _explicitNullValueIsDefault = default!;
         /// <summary>The name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Name { get; set; }
+        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        private string? _explicitNullValueName = default!;
 #nullable restore
 #else
-        public string Name { get; set; }
+        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        private string _explicitNullValueName = default!;
 #endif
         /// <summary>The tool_configuration property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.ToolExecutionConfiguration? ToolConfiguration { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.ToolExecutionConfiguration? ToolConfiguration { get => _explicitNullValueToolConfiguration; set { _explicitNullValueToolConfiguration = value; AdditionalData?.Remove("tool_configuration"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tool_configuration"); else _explicitNullProperties?.Remove("tool_configuration"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.ToolExecutionConfiguration? _explicitNullValueToolConfiguration = default!;
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.ToolExecutionConfiguration ToolConfiguration { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.ToolExecutionConfiguration ToolConfiguration { get => _explicitNullValueToolConfiguration; set { _explicitNullValueToolConfiguration = value; AdditionalData?.Remove("tool_configuration"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tool_configuration"); else _explicitNullProperties?.Remove("tool_configuration"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.ToolExecutionConfiguration _explicitNullValueToolConfiguration = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Mistral.OpenApiClient.Models.ConnectionPreference"/> and sets the default values.
@@ -49,7 +70,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         public static global::Soenneker.Mistral.OpenApiClient.Models.ConnectionPreference CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Mistral.OpenApiClient.Models.ConnectionPreference();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Mistral.OpenApiClient.Models.ConnectionPreference(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -59,7 +80,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "consumer_type", n => { ConsumerType = n.GetEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.ConsumerType>(); } },
+                { "consumer_type", n => { var parsed = n.GetEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.ConsumerType>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueConsumerType = default; _explicitNullProperties?.Remove("consumer_type"); AdditionalData["consumer_type"] = unknown; } else { ConsumerType = parsed; AdditionalData.Remove("consumer_type"); } } },
                 { "is_default", n => { IsDefault = n.GetBoolValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "tool_configuration", n => { ToolConfiguration = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ToolExecutionConfiguration>(global::Soenneker.Mistral.OpenApiClient.Models.ToolExecutionConfiguration.CreateFromDiscriminatorValue); } },
@@ -76,6 +97,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             writer.WriteBoolValue("is_default", IsDefault);
             writer.WriteStringValue("name", Name);
             writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ToolExecutionConfiguration>("tool_configuration", ToolConfiguration);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

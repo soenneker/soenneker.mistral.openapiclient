@@ -11,32 +11,67 @@ namespace Soenneker.Mistral.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class VibeWorkByUserStat : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("files_count") is null) { _explicitNullValueFilesCount = default!; _explicitNullProperties?.Remove("files_count"); }
+            else if (parseNode.GetChildNode("files_count") is { } nullNodeFilesCount && nullNodeFilesCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FilesCount = null;
+            if (parseNode.GetChildNode("images_count") is null) { _explicitNullValueImagesCount = default!; _explicitNullProperties?.Remove("images_count"); }
+            else if (parseNode.GetChildNode("images_count") is { } nullNodeImagesCount && nullNodeImagesCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ImagesCount = null;
+            if (parseNode.GetChildNode("last_message_at") is null) { _explicitNullValueLastMessageAt = default!; _explicitNullProperties?.Remove("last_message_at"); }
+            else if (parseNode.GetChildNode("last_message_at") is { } nullNodeLastMessageAt && nullNodeLastMessageAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LastMessageAt = null;
+            if (parseNode.GetChildNode("messages_count") is null) { _explicitNullValueMessagesCount = default!; _explicitNullProperties?.Remove("messages_count"); }
+            else if (parseNode.GetChildNode("messages_count") is { } nullNodeMessagesCount && nullNodeMessagesCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MessagesCount = null;
+            if (parseNode.GetChildNode("messages_to_agents_count") is null) { _explicitNullValueMessagesToAgentsCount = default!; _explicitNullProperties?.Remove("messages_to_agents_count"); }
+            else if (parseNode.GetChildNode("messages_to_agents_count") is { } nullNodeMessagesToAgentsCount && nullNodeMessagesToAgentsCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MessagesToAgentsCount = null;
+            if (parseNode.GetChildNode("spreadsheets_count") is null) { _explicitNullValueSpreadsheetsCount = default!; _explicitNullProperties?.Remove("spreadsheets_count"); }
+            else if (parseNode.GetChildNode("spreadsheets_count") is { } nullNodeSpreadsheetsCount && nullNodeSpreadsheetsCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SpreadsheetsCount = null;
+            if (parseNode.GetChildNode("unique_agents_count") is null) { _explicitNullValueUniqueAgentsCount = default!; _explicitNullProperties?.Remove("unique_agents_count"); }
+            else if (parseNode.GetChildNode("unique_agents_count") is { } nullNodeUniqueAgentsCount && nullNodeUniqueAgentsCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UniqueAgentsCount = null;
+            if (parseNode.GetChildNode("unique_conversations_count") is null) { _explicitNullValueUniqueConversationsCount = default!; _explicitNullProperties?.Remove("unique_conversations_count"); }
+            else if (parseNode.GetChildNode("unique_conversations_count") is { } nullNodeUniqueConversationsCount && nullNodeUniqueConversationsCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UniqueConversationsCount = null;
+            if (parseNode.GetChildNode("user_id") is null) { _explicitNullValueUserId = default!; _explicitNullProperties?.Remove("user_id"); }
+            else if (parseNode.GetChildNode("user_id") is { } nullNodeUserId && nullNodeUserId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UserId = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The files_count property</summary>
-        public int? FilesCount { get; set; }
+        public int? FilesCount { get => _explicitNullValueFilesCount; set { _explicitNullValueFilesCount = value; AdditionalData?.Remove("files_count"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("files_count"); else _explicitNullProperties?.Remove("files_count"); } }
+        private int? _explicitNullValueFilesCount = default!;
         /// <summary>The images_count property</summary>
-        public int? ImagesCount { get; set; }
+        public int? ImagesCount { get => _explicitNullValueImagesCount; set { _explicitNullValueImagesCount = value; AdditionalData?.Remove("images_count"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("images_count"); else _explicitNullProperties?.Remove("images_count"); } }
+        private int? _explicitNullValueImagesCount = default!;
         /// <summary>The last_message_at property</summary>
-        public DateTimeOffset? LastMessageAt { get; set; }
+        public DateTimeOffset? LastMessageAt { get => _explicitNullValueLastMessageAt; set { _explicitNullValueLastMessageAt = value; AdditionalData?.Remove("last_message_at"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("last_message_at"); else _explicitNullProperties?.Remove("last_message_at"); } }
+        private DateTimeOffset? _explicitNullValueLastMessageAt = default!;
         /// <summary>The messages_count property</summary>
-        public int? MessagesCount { get; set; }
+        public int? MessagesCount { get => _explicitNullValueMessagesCount; set { _explicitNullValueMessagesCount = value; AdditionalData?.Remove("messages_count"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("messages_count"); else _explicitNullProperties?.Remove("messages_count"); } }
+        private int? _explicitNullValueMessagesCount = default!;
         /// <summary>The messages_to_agents_count property</summary>
-        public int? MessagesToAgentsCount { get; set; }
+        public int? MessagesToAgentsCount { get => _explicitNullValueMessagesToAgentsCount; set { _explicitNullValueMessagesToAgentsCount = value; AdditionalData?.Remove("messages_to_agents_count"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("messages_to_agents_count"); else _explicitNullProperties?.Remove("messages_to_agents_count"); } }
+        private int? _explicitNullValueMessagesToAgentsCount = default!;
         /// <summary>The spreadsheets_count property</summary>
-        public int? SpreadsheetsCount { get; set; }
+        public int? SpreadsheetsCount { get => _explicitNullValueSpreadsheetsCount; set { _explicitNullValueSpreadsheetsCount = value; AdditionalData?.Remove("spreadsheets_count"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("spreadsheets_count"); else _explicitNullProperties?.Remove("spreadsheets_count"); } }
+        private int? _explicitNullValueSpreadsheetsCount = default!;
         /// <summary>The unique_agents_count property</summary>
-        public int? UniqueAgentsCount { get; set; }
+        public int? UniqueAgentsCount { get => _explicitNullValueUniqueAgentsCount; set { _explicitNullValueUniqueAgentsCount = value; AdditionalData?.Remove("unique_agents_count"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("unique_agents_count"); else _explicitNullProperties?.Remove("unique_agents_count"); } }
+        private int? _explicitNullValueUniqueAgentsCount = default!;
         /// <summary>The unique_conversations_count property</summary>
-        public int? UniqueConversationsCount { get; set; }
+        public int? UniqueConversationsCount { get => _explicitNullValueUniqueConversationsCount; set { _explicitNullValueUniqueConversationsCount = value; AdditionalData?.Remove("unique_conversations_count"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("unique_conversations_count"); else _explicitNullProperties?.Remove("unique_conversations_count"); } }
+        private int? _explicitNullValueUniqueConversationsCount = default!;
         /// <summary>The user_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? UserId { get; set; }
+        public string? UserId { get => _explicitNullValueUserId; set { _explicitNullValueUserId = value; AdditionalData?.Remove("user_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("user_id"); else _explicitNullProperties?.Remove("user_id"); } }
+        private string? _explicitNullValueUserId = default!;
 #nullable restore
 #else
-        public string UserId { get; set; }
+        public string UserId { get => _explicitNullValueUserId; set { _explicitNullValueUserId = value; AdditionalData?.Remove("user_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("user_id"); else _explicitNullProperties?.Remove("user_id"); } }
+        private string _explicitNullValueUserId = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Mistral.OpenApiClient.Models.VibeWorkByUserStat"/> and sets the default values.
@@ -53,7 +88,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         public static global::Soenneker.Mistral.OpenApiClient.Models.VibeWorkByUserStat CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Mistral.OpenApiClient.Models.VibeWorkByUserStat();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Mistral.OpenApiClient.Models.VibeWorkByUserStat(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -90,6 +125,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             writer.WriteIntValue("unique_agents_count", UniqueAgentsCount);
             writer.WriteIntValue("unique_conversations_count", UniqueConversationsCount);
             writer.WriteStringValue("user_id", UserId);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

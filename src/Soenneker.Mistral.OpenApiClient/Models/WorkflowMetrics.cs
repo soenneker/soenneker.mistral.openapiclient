@@ -12,57 +12,88 @@ namespace Soenneker.Mistral.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class WorkflowMetrics : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("average_latency_ms") is null) { _explicitNullValueAverageLatencyMs = default!; _explicitNullProperties?.Remove("average_latency_ms"); }
+            else if (parseNode.GetChildNode("average_latency_ms") is { } nullNodeAverageLatencyMs && nullNodeAverageLatencyMs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AverageLatencyMs = null;
+            if (parseNode.GetChildNode("error_count") is null) { _explicitNullValueErrorCount = default!; _explicitNullProperties?.Remove("error_count"); }
+            else if (parseNode.GetChildNode("error_count") is { } nullNodeErrorCount && nullNodeErrorCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ErrorCount = null;
+            if (parseNode.GetChildNode("execution_count") is null) { _explicitNullValueExecutionCount = default!; _explicitNullProperties?.Remove("execution_count"); }
+            else if (parseNode.GetChildNode("execution_count") is { } nullNodeExecutionCount && nullNodeExecutionCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExecutionCount = null;
+            if (parseNode.GetChildNode("latency_over_time") is null) { _explicitNullValueLatencyOverTime = default!; _explicitNullProperties?.Remove("latency_over_time"); }
+            else if (parseNode.GetChildNode("latency_over_time") is { } nullNodeLatencyOverTime && nullNodeLatencyOverTime.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LatencyOverTime = null;
+            if (parseNode.GetChildNode("retry_rate") is null) { _explicitNullValueRetryRate = default!; _explicitNullProperties?.Remove("retry_rate"); }
+            else if (parseNode.GetChildNode("retry_rate") is { } nullNodeRetryRate && nullNodeRetryRate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RetryRate = null;
+            if (parseNode.GetChildNode("success_count") is null) { _explicitNullValueSuccessCount = default!; _explicitNullProperties?.Remove("success_count"); }
+            else if (parseNode.GetChildNode("success_count") is { } nullNodeSuccessCount && nullNodeSuccessCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SuccessCount = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Scalar metric with a single value.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.ScalarMetric? AverageLatencyMs { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.ScalarMetric? AverageLatencyMs { get => _explicitNullValueAverageLatencyMs; set { _explicitNullValueAverageLatencyMs = value; AdditionalData?.Remove("average_latency_ms"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("average_latency_ms"); else _explicitNullProperties?.Remove("average_latency_ms"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.ScalarMetric? _explicitNullValueAverageLatencyMs = default!;
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.ScalarMetric AverageLatencyMs { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.ScalarMetric AverageLatencyMs { get => _explicitNullValueAverageLatencyMs; set { _explicitNullValueAverageLatencyMs = value; AdditionalData?.Remove("average_latency_ms"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("average_latency_ms"); else _explicitNullProperties?.Remove("average_latency_ms"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.ScalarMetric _explicitNullValueAverageLatencyMs = default!;
 #endif
         /// <summary>Scalar metric with a single value.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.ScalarMetric? ErrorCount { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.ScalarMetric? ErrorCount { get => _explicitNullValueErrorCount; set { _explicitNullValueErrorCount = value; AdditionalData?.Remove("error_count"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("error_count"); else _explicitNullProperties?.Remove("error_count"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.ScalarMetric? _explicitNullValueErrorCount = default!;
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.ScalarMetric ErrorCount { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.ScalarMetric ErrorCount { get => _explicitNullValueErrorCount; set { _explicitNullValueErrorCount = value; AdditionalData?.Remove("error_count"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("error_count"); else _explicitNullProperties?.Remove("error_count"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.ScalarMetric _explicitNullValueErrorCount = default!;
 #endif
         /// <summary>Scalar metric with a single value.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.ScalarMetric? ExecutionCount { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.ScalarMetric? ExecutionCount { get => _explicitNullValueExecutionCount; set { _explicitNullValueExecutionCount = value; AdditionalData?.Remove("execution_count"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("execution_count"); else _explicitNullProperties?.Remove("execution_count"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.ScalarMetric? _explicitNullValueExecutionCount = default!;
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.ScalarMetric ExecutionCount { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.ScalarMetric ExecutionCount { get => _explicitNullValueExecutionCount; set { _explicitNullValueExecutionCount = value; AdditionalData?.Remove("execution_count"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("execution_count"); else _explicitNullProperties?.Remove("execution_count"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.ScalarMetric _explicitNullValueExecutionCount = default!;
 #endif
         /// <summary>Time-series metric with timestamp-value pairs.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.TimeSeriesMetric? LatencyOverTime { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.TimeSeriesMetric? LatencyOverTime { get => _explicitNullValueLatencyOverTime; set { _explicitNullValueLatencyOverTime = value; AdditionalData?.Remove("latency_over_time"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("latency_over_time"); else _explicitNullProperties?.Remove("latency_over_time"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.TimeSeriesMetric? _explicitNullValueLatencyOverTime = default!;
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.TimeSeriesMetric LatencyOverTime { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.TimeSeriesMetric LatencyOverTime { get => _explicitNullValueLatencyOverTime; set { _explicitNullValueLatencyOverTime = value; AdditionalData?.Remove("latency_over_time"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("latency_over_time"); else _explicitNullProperties?.Remove("latency_over_time"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.TimeSeriesMetric _explicitNullValueLatencyOverTime = default!;
 #endif
         /// <summary>Deprecated, always -1. Never measured retries; use error_count instead.</summary>
         [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.ScalarMetric? RetryRate { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.ScalarMetric? RetryRate { get => _explicitNullValueRetryRate; set { _explicitNullValueRetryRate = value; AdditionalData?.Remove("retry_rate"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("retry_rate"); else _explicitNullProperties?.Remove("retry_rate"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.ScalarMetric? _explicitNullValueRetryRate = default!;
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.ScalarMetric RetryRate { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.ScalarMetric RetryRate { get => _explicitNullValueRetryRate; set { _explicitNullValueRetryRate = value; AdditionalData?.Remove("retry_rate"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("retry_rate"); else _explicitNullProperties?.Remove("retry_rate"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.ScalarMetric _explicitNullValueRetryRate = default!;
 #endif
         /// <summary>Scalar metric with a single value.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.ScalarMetric? SuccessCount { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.ScalarMetric? SuccessCount { get => _explicitNullValueSuccessCount; set { _explicitNullValueSuccessCount = value; AdditionalData?.Remove("success_count"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("success_count"); else _explicitNullProperties?.Remove("success_count"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.ScalarMetric? _explicitNullValueSuccessCount = default!;
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.ScalarMetric SuccessCount { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.ScalarMetric SuccessCount { get => _explicitNullValueSuccessCount; set { _explicitNullValueSuccessCount = value; AdditionalData?.Remove("success_count"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("success_count"); else _explicitNullProperties?.Remove("success_count"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.ScalarMetric _explicitNullValueSuccessCount = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Mistral.OpenApiClient.Models.WorkflowMetrics"/> and sets the default values.
@@ -79,7 +110,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         public static global::Soenneker.Mistral.OpenApiClient.Models.WorkflowMetrics CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Mistral.OpenApiClient.Models.WorkflowMetrics();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Mistral.OpenApiClient.Models.WorkflowMetrics(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -110,6 +141,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.TimeSeriesMetric>("latency_over_time", LatencyOverTime);
             writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ScalarMetric>("retry_rate", RetryRate);
             writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ScalarMetric>("success_count", SuccessCount);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

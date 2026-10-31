@@ -12,20 +12,37 @@ namespace Soenneker.Mistral.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class OcrPageConfidenceScores : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("average_page_confidence_score") is null) { _explicitNullValueAveragePageConfidenceScore = default!; _explicitNullProperties?.Remove("average_page_confidence_score"); }
+            else if (parseNode.GetChildNode("average_page_confidence_score") is { } nullNodeAveragePageConfidenceScore && nullNodeAveragePageConfidenceScore.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AveragePageConfidenceScore = null;
+            if (parseNode.GetChildNode("minimum_page_confidence_score") is null) { _explicitNullValueMinimumPageConfidenceScore = default!; _explicitNullProperties?.Remove("minimum_page_confidence_score"); }
+            else if (parseNode.GetChildNode("minimum_page_confidence_score") is { } nullNodeMinimumPageConfidenceScore && nullNodeMinimumPageConfidenceScore.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MinimumPageConfidenceScore = null;
+            if (parseNode.GetChildNode("word_confidence_scores") is null) { _explicitNullValueWordConfidenceScores = default!; _explicitNullProperties?.Remove("word_confidence_scores"); }
+            else if (parseNode.GetChildNode("word_confidence_scores") is { } nullNodeWordConfidenceScores && nullNodeWordConfidenceScores.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WordConfidenceScores = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Average confidence score for the page</summary>
-        public double? AveragePageConfidenceScore { get; set; }
+        public double? AveragePageConfidenceScore { get => _explicitNullValueAveragePageConfidenceScore; set { _explicitNullValueAveragePageConfidenceScore = value; AdditionalData?.Remove("average_page_confidence_score"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("average_page_confidence_score"); else _explicitNullProperties?.Remove("average_page_confidence_score"); } }
+        private double? _explicitNullValueAveragePageConfidenceScore = default!;
         /// <summary>Minimum confidence score for the page</summary>
-        public double? MinimumPageConfidenceScore { get; set; }
+        public double? MinimumPageConfidenceScore { get => _explicitNullValueMinimumPageConfidenceScore; set { _explicitNullValueMinimumPageConfidenceScore = value; AdditionalData?.Remove("minimum_page_confidence_score"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("minimum_page_confidence_score"); else _explicitNullProperties?.Remove("minimum_page_confidence_score"); } }
+        private double? _explicitNullValueMinimumPageConfidenceScore = default!;
         /// <summary>Word-level confidence scores (populated only for &apos;word&apos; granularity)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Mistral.OpenApiClient.Models.OcrConfidenceScore>? WordConfidenceScores { get; set; }
+        public List<global::Soenneker.Mistral.OpenApiClient.Models.OcrConfidenceScore>? WordConfidenceScores { get => _explicitNullValueWordConfidenceScores; set { _explicitNullValueWordConfidenceScores = value; AdditionalData?.Remove("word_confidence_scores"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("word_confidence_scores"); else _explicitNullProperties?.Remove("word_confidence_scores"); } }
+        private List<global::Soenneker.Mistral.OpenApiClient.Models.OcrConfidenceScore>? _explicitNullValueWordConfidenceScores = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Mistral.OpenApiClient.Models.OcrConfidenceScore> WordConfidenceScores { get; set; }
+        public List<global::Soenneker.Mistral.OpenApiClient.Models.OcrConfidenceScore> WordConfidenceScores { get => _explicitNullValueWordConfidenceScores; set { _explicitNullValueWordConfidenceScores = value; AdditionalData?.Remove("word_confidence_scores"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("word_confidence_scores"); else _explicitNullProperties?.Remove("word_confidence_scores"); } }
+        private List<global::Soenneker.Mistral.OpenApiClient.Models.OcrConfidenceScore> _explicitNullValueWordConfidenceScores = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Mistral.OpenApiClient.Models.OcrPageConfidenceScores"/> and sets the default values.
@@ -42,7 +59,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         public static global::Soenneker.Mistral.OpenApiClient.Models.OcrPageConfidenceScores CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Mistral.OpenApiClient.Models.OcrPageConfidenceScores();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Mistral.OpenApiClient.Models.OcrPageConfidenceScores(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -67,6 +84,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             writer.WriteDoubleValue("average_page_confidence_score", AveragePageConfidenceScore);
             writer.WriteDoubleValue("minimum_page_confidence_score", MinimumPageConfidenceScore);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Mistral.OpenApiClient.Models.OcrConfidenceScore>("word_confidence_scores", WordConfidenceScores);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

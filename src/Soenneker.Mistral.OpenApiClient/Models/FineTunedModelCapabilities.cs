@@ -11,19 +11,41 @@ namespace Soenneker.Mistral.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class FineTunedModelCapabilities : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("classification") is null) { _explicitNullValueClassification = default!; _explicitNullProperties?.Remove("classification"); }
+            else if (parseNode.GetChildNode("classification") is { } nullNodeClassification && nullNodeClassification.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Classification = null;
+            if (parseNode.GetChildNode("completion_chat") is null) { _explicitNullValueCompletionChat = default!; _explicitNullProperties?.Remove("completion_chat"); }
+            else if (parseNode.GetChildNode("completion_chat") is { } nullNodeCompletionChat && nullNodeCompletionChat.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CompletionChat = null;
+            if (parseNode.GetChildNode("completion_fim") is null) { _explicitNullValueCompletionFim = default!; _explicitNullProperties?.Remove("completion_fim"); }
+            else if (parseNode.GetChildNode("completion_fim") is { } nullNodeCompletionFim && nullNodeCompletionFim.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CompletionFim = null;
+            if (parseNode.GetChildNode("fine_tuning") is null) { _explicitNullValueFineTuning = default!; _explicitNullProperties?.Remove("fine_tuning"); }
+            else if (parseNode.GetChildNode("fine_tuning") is { } nullNodeFineTuning && nullNodeFineTuning.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FineTuning = null;
+            if (parseNode.GetChildNode("function_calling") is null) { _explicitNullValueFunctionCalling = default!; _explicitNullProperties?.Remove("function_calling"); }
+            else if (parseNode.GetChildNode("function_calling") is { } nullNodeFunctionCalling && nullNodeFunctionCalling.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FunctionCalling = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The classification property</summary>
-        public bool? Classification { get; set; }
+        public bool? Classification { get => _explicitNullValueClassification; set { _explicitNullValueClassification = value; AdditionalData?.Remove("classification"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("classification"); else _explicitNullProperties?.Remove("classification"); } }
+        private bool? _explicitNullValueClassification = default!;
         /// <summary>The completion_chat property</summary>
-        public bool? CompletionChat { get; set; }
+        public bool? CompletionChat { get => _explicitNullValueCompletionChat; set { _explicitNullValueCompletionChat = value; AdditionalData?.Remove("completion_chat"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("completion_chat"); else _explicitNullProperties?.Remove("completion_chat"); } }
+        private bool? _explicitNullValueCompletionChat = default!;
         /// <summary>The completion_fim property</summary>
-        public bool? CompletionFim { get; set; }
+        public bool? CompletionFim { get => _explicitNullValueCompletionFim; set { _explicitNullValueCompletionFim = value; AdditionalData?.Remove("completion_fim"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("completion_fim"); else _explicitNullProperties?.Remove("completion_fim"); } }
+        private bool? _explicitNullValueCompletionFim = default!;
         /// <summary>The fine_tuning property</summary>
-        public bool? FineTuning { get; set; }
+        public bool? FineTuning { get => _explicitNullValueFineTuning; set { _explicitNullValueFineTuning = value; AdditionalData?.Remove("fine_tuning"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("fine_tuning"); else _explicitNullProperties?.Remove("fine_tuning"); } }
+        private bool? _explicitNullValueFineTuning = default!;
         /// <summary>The function_calling property</summary>
-        public bool? FunctionCalling { get; set; }
+        public bool? FunctionCalling { get => _explicitNullValueFunctionCalling; set { _explicitNullValueFunctionCalling = value; AdditionalData?.Remove("function_calling"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("function_calling"); else _explicitNullProperties?.Remove("function_calling"); } }
+        private bool? _explicitNullValueFunctionCalling = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Mistral.OpenApiClient.Models.FineTunedModelCapabilities"/> and sets the default values.
         /// </summary>
@@ -44,7 +66,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         public static global::Soenneker.Mistral.OpenApiClient.Models.FineTunedModelCapabilities CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Mistral.OpenApiClient.Models.FineTunedModelCapabilities();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Mistral.OpenApiClient.Models.FineTunedModelCapabilities(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -73,6 +95,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             writer.WriteBoolValue("completion_fim", CompletionFim);
             writer.WriteBoolValue("fine_tuning", FineTuning);
             writer.WriteBoolValue("function_calling", FunctionCalling);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

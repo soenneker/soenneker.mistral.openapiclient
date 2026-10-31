@@ -11,21 +11,46 @@ namespace Soenneker.Mistral.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class UsageLimits : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("monthly_limit_reached") is null) { _explicitNullValueMonthlyLimitReached = default!; _explicitNullProperties?.Remove("monthly_limit_reached"); }
+            else if (parseNode.GetChildNode("monthly_limit_reached") is { } nullNodeMonthlyLimitReached && nullNodeMonthlyLimitReached.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MonthlyLimitReached = null;
+            if (parseNode.GetChildNode("no_monthly_limit") is null) { _explicitNullValueNoMonthlyLimit = default!; _explicitNullProperties?.Remove("no_monthly_limit"); }
+            else if (parseNode.GetChildNode("no_monthly_limit") is { } nullNodeNoMonthlyLimit && nullNodeNoMonthlyLimit.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NoMonthlyLimit = null;
+            if (parseNode.GetChildNode("total_usage") is null) { _explicitNullValueTotalUsage = default!; _explicitNullProperties?.Remove("total_usage"); }
+            else if (parseNode.GetChildNode("total_usage") is { } nullNodeTotalUsage && nullNodeTotalUsage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TotalUsage = null;
+            if (parseNode.GetChildNode("usage") is null) { _explicitNullValueUsage = default!; _explicitNullProperties?.Remove("usage"); }
+            else if (parseNode.GetChildNode("usage") is { } nullNodeUsage && nullNodeUsage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Usage = null;
+            if (parseNode.GetChildNode("usage_limit") is null) { _explicitNullValueUsageLimit = default!; _explicitNullProperties?.Remove("usage_limit"); }
+            else if (parseNode.GetChildNode("usage_limit") is { } nullNodeUsageLimit && nullNodeUsageLimit.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UsageLimit = null;
+            if (parseNode.GetChildNode("vibe_usage") is null) { _explicitNullValueVibeUsage = default!; _explicitNullProperties?.Remove("vibe_usage"); }
+            else if (parseNode.GetChildNode("vibe_usage") is { } nullNodeVibeUsage && nullNodeVibeUsage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) VibeUsage = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Whether the monthly usage limit has been reached.</summary>
-        public bool? MonthlyLimitReached { get; set; }
+        public bool? MonthlyLimitReached { get => _explicitNullValueMonthlyLimitReached; set { _explicitNullValueMonthlyLimitReached = value; AdditionalData?.Remove("monthly_limit_reached"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("monthly_limit_reached"); else _explicitNullProperties?.Remove("monthly_limit_reached"); } }
+        private bool? _explicitNullValueMonthlyLimitReached = default!;
         /// <summary>Whether no monthly usage limit is configured.</summary>
-        public bool? NoMonthlyLimit { get; set; }
+        public bool? NoMonthlyLimit { get => _explicitNullValueNoMonthlyLimit; set { _explicitNullValueNoMonthlyLimit = value; AdditionalData?.Remove("no_monthly_limit"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("no_monthly_limit"); else _explicitNullProperties?.Remove("no_monthly_limit"); } }
+        private bool? _explicitNullValueNoMonthlyLimit = default!;
         /// <summary>Total current usage counted against the limit.</summary>
-        public double? TotalUsage { get; set; }
+        public double? TotalUsage { get => _explicitNullValueTotalUsage; set { _explicitNullValueTotalUsage = value; AdditionalData?.Remove("total_usage"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("total_usage"); else _explicitNullProperties?.Remove("total_usage"); } }
+        private double? _explicitNullValueTotalUsage = default!;
         /// <summary>Current usage counted against the limit.</summary>
-        public double? Usage { get; set; }
+        public double? Usage { get => _explicitNullValueUsage; set { _explicitNullValueUsage = value; AdditionalData?.Remove("usage"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("usage"); else _explicitNullProperties?.Remove("usage"); } }
+        private double? _explicitNullValueUsage = default!;
         /// <summary>Current usage limit.</summary>
-        public double? UsageLimit { get; set; }
+        public double? UsageLimit { get => _explicitNullValueUsageLimit; set { _explicitNullValueUsageLimit = value; AdditionalData?.Remove("usage_limit"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("usage_limit"); else _explicitNullProperties?.Remove("usage_limit"); } }
+        private double? _explicitNullValueUsageLimit = default!;
         /// <summary>Current Vibe usage counted against the limit.</summary>
-        public double? VibeUsage { get; set; }
+        public double? VibeUsage { get => _explicitNullValueVibeUsage; set { _explicitNullValueVibeUsage = value; AdditionalData?.Remove("vibe_usage"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("vibe_usage"); else _explicitNullProperties?.Remove("vibe_usage"); } }
+        private double? _explicitNullValueVibeUsage = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Mistral.OpenApiClient.Models.UsageLimits"/> and sets the default values.
         /// </summary>
@@ -42,7 +67,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         public static global::Soenneker.Mistral.OpenApiClient.Models.UsageLimits CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Mistral.OpenApiClient.Models.UsageLimits();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Mistral.OpenApiClient.Models.UsageLimits(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -73,6 +98,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             writer.WriteDoubleValue("usage", Usage);
             writer.WriteDoubleValue("usage_limit", UsageLimit);
             writer.WriteDoubleValue("vibe_usage", VibeUsage);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

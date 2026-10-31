@@ -12,80 +12,131 @@ namespace Soenneker.Mistral.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ScheduleDefinition : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("calendars") is null) { _explicitNullValueCalendars = default!; _explicitNullProperties?.Remove("calendars"); }
+            else if (parseNode.GetChildNode("calendars") is { } nullNodeCalendars && nullNodeCalendars.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Calendars = null;
+            if (parseNode.GetChildNode("cron_expressions") is null) { _explicitNullValueCronExpressions = default!; _explicitNullProperties?.Remove("cron_expressions"); }
+            else if (parseNode.GetChildNode("cron_expressions") is { } nullNodeCronExpressions && nullNodeCronExpressions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CronExpressions = null;
+            if (parseNode.GetChildNode("end_at") is null) { _explicitNullValueEndAt = default!; _explicitNullProperties?.Remove("end_at"); }
+            else if (parseNode.GetChildNode("end_at") is { } nullNodeEndAt && nullNodeEndAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EndAt = null;
+            if (parseNode.GetChildNode("input") is null) { _explicitNullValueInput = default!; _explicitNullProperties?.Remove("input"); }
+            else if (parseNode.GetChildNode("input") is { } nullNodeInput && nullNodeInput.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Input = null;
+            if (parseNode.GetChildNode("intervals") is null) { _explicitNullValueIntervals = default!; _explicitNullProperties?.Remove("intervals"); }
+            else if (parseNode.GetChildNode("intervals") is { } nullNodeIntervals && nullNodeIntervals.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Intervals = null;
+            if (parseNode.GetChildNode("jitter") is null) { _explicitNullValueJitter = default!; _explicitNullProperties?.Remove("jitter"); }
+            else if (parseNode.GetChildNode("jitter") is { } nullNodeJitter && nullNodeJitter.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Jitter = null;
+            if (parseNode.GetChildNode("max_executions") is null) { _explicitNullValueMaxExecutions = default!; _explicitNullProperties?.Remove("max_executions"); }
+            else if (parseNode.GetChildNode("max_executions") is { } nullNodeMaxExecutions && nullNodeMaxExecutions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MaxExecutions = null;
+            if (parseNode.GetChildNode("policy") is null) { _explicitNullValuePolicy = default!; _explicitNullProperties?.Remove("policy"); }
+            else if (parseNode.GetChildNode("policy") is { } nullNodePolicy && nullNodePolicy.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Policy = null;
+            if (parseNode.GetChildNode("schedule_id") is null) { _explicitNullValueScheduleId = default!; _explicitNullProperties?.Remove("schedule_id"); }
+            else if (parseNode.GetChildNode("schedule_id") is { } nullNodeScheduleId && nullNodeScheduleId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ScheduleId = null;
+            if (parseNode.GetChildNode("skip") is null) { _explicitNullValueSkip = default!; _explicitNullProperties?.Remove("skip"); }
+            else if (parseNode.GetChildNode("skip") is { } nullNodeSkip && nullNodeSkip.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Skip = null;
+            if (parseNode.GetChildNode("start_at") is null) { _explicitNullValueStartAt = default!; _explicitNullProperties?.Remove("start_at"); }
+            else if (parseNode.GetChildNode("start_at") is { } nullNodeStartAt && nullNodeStartAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) StartAt = null;
+            if (parseNode.GetChildNode("time_zone_name") is null) { _explicitNullValueTimeZoneName = default!; _explicitNullProperties?.Remove("time_zone_name"); }
+            else if (parseNode.GetChildNode("time_zone_name") is { } nullNodeTimeZoneName && nullNodeTimeZoneName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TimeZoneName = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Calendar-based specification of times.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Mistral.OpenApiClient.Models.ScheduleCalendar>? Calendars { get; set; }
+        public List<global::Soenneker.Mistral.OpenApiClient.Models.ScheduleCalendar>? Calendars { get => _explicitNullValueCalendars; set { _explicitNullValueCalendars = value; AdditionalData?.Remove("calendars"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("calendars"); else _explicitNullProperties?.Remove("calendars"); } }
+        private List<global::Soenneker.Mistral.OpenApiClient.Models.ScheduleCalendar>? _explicitNullValueCalendars = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Mistral.OpenApiClient.Models.ScheduleCalendar> Calendars { get; set; }
+        public List<global::Soenneker.Mistral.OpenApiClient.Models.ScheduleCalendar> Calendars { get => _explicitNullValueCalendars; set { _explicitNullValueCalendars = value; AdditionalData?.Remove("calendars"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("calendars"); else _explicitNullProperties?.Remove("calendars"); } }
+        private List<global::Soenneker.Mistral.OpenApiClient.Models.ScheduleCalendar> _explicitNullValueCalendars = default!;
 #endif
         /// <summary>Cron-based specification of times.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? CronExpressions { get; set; }
+        public List<string>? CronExpressions { get => _explicitNullValueCronExpressions; set { _explicitNullValueCronExpressions = value; AdditionalData?.Remove("cron_expressions"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cron_expressions"); else _explicitNullProperties?.Remove("cron_expressions"); } }
+        private List<string>? _explicitNullValueCronExpressions = default!;
 #nullable restore
 #else
-        public List<string> CronExpressions { get; set; }
+        public List<string> CronExpressions { get => _explicitNullValueCronExpressions; set { _explicitNullValueCronExpressions = value; AdditionalData?.Remove("cron_expressions"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cron_expressions"); else _explicitNullProperties?.Remove("cron_expressions"); } }
+        private List<string> _explicitNullValueCronExpressions = default!;
 #endif
         /// <summary>Time after which no more actions will be run.</summary>
-        public DateTimeOffset? EndAt { get; set; }
+        public DateTimeOffset? EndAt { get => _explicitNullValueEndAt; set { _explicitNullValueEndAt = value; AdditionalData?.Remove("end_at"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("end_at"); else _explicitNullProperties?.Remove("end_at"); } }
+        private DateTimeOffset? _explicitNullValueEndAt = default!;
         /// <summary>Input to provide to the workflow when starting it.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public UntypedNode? Input { get; set; }
+        public UntypedNode? Input { get => _explicitNullValueInput; set { _explicitNullValueInput = value; AdditionalData?.Remove("input"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("input"); else _explicitNullProperties?.Remove("input"); } }
+        private UntypedNode? _explicitNullValueInput = default!;
 #nullable restore
 #else
-        public UntypedNode Input { get; set; }
+        public UntypedNode Input { get => _explicitNullValueInput; set { _explicitNullValueInput = value; AdditionalData?.Remove("input"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("input"); else _explicitNullProperties?.Remove("input"); } }
+        private UntypedNode _explicitNullValueInput = default!;
 #endif
         /// <summary>Interval-based specification of times.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Mistral.OpenApiClient.Models.ScheduleInterval>? Intervals { get; set; }
+        public List<global::Soenneker.Mistral.OpenApiClient.Models.ScheduleInterval>? Intervals { get => _explicitNullValueIntervals; set { _explicitNullValueIntervals = value; AdditionalData?.Remove("intervals"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("intervals"); else _explicitNullProperties?.Remove("intervals"); } }
+        private List<global::Soenneker.Mistral.OpenApiClient.Models.ScheduleInterval>? _explicitNullValueIntervals = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Mistral.OpenApiClient.Models.ScheduleInterval> Intervals { get; set; }
+        public List<global::Soenneker.Mistral.OpenApiClient.Models.ScheduleInterval> Intervals { get => _explicitNullValueIntervals; set { _explicitNullValueIntervals = value; AdditionalData?.Remove("intervals"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("intervals"); else _explicitNullProperties?.Remove("intervals"); } }
+        private List<global::Soenneker.Mistral.OpenApiClient.Models.ScheduleInterval> _explicitNullValueIntervals = default!;
 #endif
         /// <summary>Jitter to apply each action.An action&apos;s scheduled time will be incremented by a random value between 0and this value if present (but not past the next schedule).</summary>
-        public TimeSpan? Jitter { get; set; }
+        public TimeSpan? Jitter { get => _explicitNullValueJitter; set { _explicitNullValueJitter = value; AdditionalData?.Remove("jitter"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("jitter"); else _explicitNullProperties?.Remove("jitter"); } }
+        private TimeSpan? _explicitNullValueJitter = default!;
         /// <summary>Maximum number of times this schedule will trigger a workflow execution. Once this limit is reached, no further executions are triggered automatically. null means unlimited.</summary>
-        public int? MaxExecutions { get; set; }
+        public int? MaxExecutions { get => _explicitNullValueMaxExecutions; set { _explicitNullValueMaxExecutions = value; AdditionalData?.Remove("max_executions"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("max_executions"); else _explicitNullProperties?.Remove("max_executions"); } }
+        private int? _explicitNullValueMaxExecutions = default!;
         /// <summary>Policy for the schedule.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.SchedulePolicy? Policy { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.SchedulePolicy? Policy { get => _explicitNullValuePolicy; set { _explicitNullValuePolicy = value; AdditionalData?.Remove("policy"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("policy"); else _explicitNullProperties?.Remove("policy"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.SchedulePolicy? _explicitNullValuePolicy = default!;
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.SchedulePolicy Policy { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.SchedulePolicy Policy { get => _explicitNullValuePolicy; set { _explicitNullValuePolicy = value; AdditionalData?.Remove("policy"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("policy"); else _explicitNullProperties?.Remove("policy"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.SchedulePolicy _explicitNullValuePolicy = default!;
 #endif
         /// <summary>Unique identifier for the schedule.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ScheduleId { get; set; }
+        public string? ScheduleId { get => _explicitNullValueScheduleId; set { _explicitNullValueScheduleId = value; AdditionalData?.Remove("schedule_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("schedule_id"); else _explicitNullProperties?.Remove("schedule_id"); } }
+        private string? _explicitNullValueScheduleId = default!;
 #nullable restore
 #else
-        public string ScheduleId { get; set; }
+        public string ScheduleId { get => _explicitNullValueScheduleId; set { _explicitNullValueScheduleId = value; AdditionalData?.Remove("schedule_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("schedule_id"); else _explicitNullProperties?.Remove("schedule_id"); } }
+        private string _explicitNullValueScheduleId = default!;
 #endif
         /// <summary>Set of calendar times to skip.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Mistral.OpenApiClient.Models.ScheduleCalendar>? Skip { get; set; }
+        public List<global::Soenneker.Mistral.OpenApiClient.Models.ScheduleCalendar>? Skip { get => _explicitNullValueSkip; set { _explicitNullValueSkip = value; AdditionalData?.Remove("skip"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("skip"); else _explicitNullProperties?.Remove("skip"); } }
+        private List<global::Soenneker.Mistral.OpenApiClient.Models.ScheduleCalendar>? _explicitNullValueSkip = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Mistral.OpenApiClient.Models.ScheduleCalendar> Skip { get; set; }
+        public List<global::Soenneker.Mistral.OpenApiClient.Models.ScheduleCalendar> Skip { get => _explicitNullValueSkip; set { _explicitNullValueSkip = value; AdditionalData?.Remove("skip"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("skip"); else _explicitNullProperties?.Remove("skip"); } }
+        private List<global::Soenneker.Mistral.OpenApiClient.Models.ScheduleCalendar> _explicitNullValueSkip = default!;
 #endif
         /// <summary>Time after which the first action may be run.</summary>
-        public DateTimeOffset? StartAt { get; set; }
+        public DateTimeOffset? StartAt { get => _explicitNullValueStartAt; set { _explicitNullValueStartAt = value; AdditionalData?.Remove("start_at"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("start_at"); else _explicitNullProperties?.Remove("start_at"); } }
+        private DateTimeOffset? _explicitNullValueStartAt = default!;
         /// <summary>IANA time zone name, for example ``US/Central``.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TimeZoneName { get; set; }
+        public string? TimeZoneName { get => _explicitNullValueTimeZoneName; set { _explicitNullValueTimeZoneName = value; AdditionalData?.Remove("time_zone_name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("time_zone_name"); else _explicitNullProperties?.Remove("time_zone_name"); } }
+        private string? _explicitNullValueTimeZoneName = default!;
 #nullable restore
 #else
-        public string TimeZoneName { get; set; }
+        public string TimeZoneName { get => _explicitNullValueTimeZoneName; set { _explicitNullValueTimeZoneName = value; AdditionalData?.Remove("time_zone_name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("time_zone_name"); else _explicitNullProperties?.Remove("time_zone_name"); } }
+        private string _explicitNullValueTimeZoneName = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Mistral.OpenApiClient.Models.ScheduleDefinition"/> and sets the default values.
@@ -102,7 +153,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         public static global::Soenneker.Mistral.OpenApiClient.Models.ScheduleDefinition CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Mistral.OpenApiClient.Models.ScheduleDefinition();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Mistral.OpenApiClient.Models.ScheduleDefinition(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -145,6 +196,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             writer.WriteCollectionOfObjectValues<global::Soenneker.Mistral.OpenApiClient.Models.ScheduleCalendar>("skip", Skip);
             writer.WriteDateTimeOffsetValue("start_at", StartAt);
             writer.WriteStringValue("time_zone_name", TimeZoneName);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

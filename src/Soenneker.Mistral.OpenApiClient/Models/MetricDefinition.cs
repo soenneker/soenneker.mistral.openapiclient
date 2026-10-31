@@ -11,18 +11,32 @@ namespace Soenneker.Mistral.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class MetricDefinition : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("aggregation") is null) { _explicitNullValueAggregation = default!; _explicitNullProperties?.Remove("aggregation"); }
+            else if (parseNode.GetChildNode("aggregation") is { } nullNodeAggregation && nullNodeAggregation.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Aggregation = null;
+            if (parseNode.GetChildNode("measure") is null) { _explicitNullValueMeasure = default!; _explicitNullProperties?.Remove("measure"); }
+            else if (parseNode.GetChildNode("measure") is { } nullNodeMeasure && nullNodeMeasure.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Measure = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The aggregation property</summary>
-        public global::Soenneker.Mistral.OpenApiClient.Models.MetricAggregation? Aggregation { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.MetricAggregation? Aggregation { get => _explicitNullValueAggregation; set { _explicitNullValueAggregation = value; AdditionalData?.Remove("aggregation"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("aggregation"); else _explicitNullProperties?.Remove("aggregation"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.MetricAggregation? _explicitNullValueAggregation = default!;
         /// <summary>The measure property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Measure { get; set; }
+        public string? Measure { get => _explicitNullValueMeasure; set { _explicitNullValueMeasure = value; AdditionalData?.Remove("measure"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("measure"); else _explicitNullProperties?.Remove("measure"); } }
+        private string? _explicitNullValueMeasure = default!;
 #nullable restore
 #else
-        public string Measure { get; set; }
+        public string Measure { get => _explicitNullValueMeasure; set { _explicitNullValueMeasure = value; AdditionalData?.Remove("measure"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("measure"); else _explicitNullProperties?.Remove("measure"); } }
+        private string _explicitNullValueMeasure = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Mistral.OpenApiClient.Models.MetricDefinition"/> and sets the default values.
@@ -39,7 +53,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         public static global::Soenneker.Mistral.OpenApiClient.Models.MetricDefinition CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Mistral.OpenApiClient.Models.MetricDefinition();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Mistral.OpenApiClient.Models.MetricDefinition(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -49,7 +63,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "aggregation", n => { Aggregation = n.GetEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.MetricAggregation>(); } },
+                { "aggregation", n => { var parsed = n.GetEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.MetricAggregation>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueAggregation = default; _explicitNullProperties?.Remove("aggregation"); AdditionalData["aggregation"] = unknown; } else { Aggregation = parsed; AdditionalData.Remove("aggregation"); } } },
                 { "measure", n => { Measure = n.GetStringValue(); } },
             };
         }
@@ -62,6 +76,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.MetricAggregation>("aggregation", Aggregation);
             writer.WriteStringValue("measure", Measure);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

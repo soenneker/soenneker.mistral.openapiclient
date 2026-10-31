@@ -11,18 +11,32 @@ namespace Soenneker.Mistral.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class RateLimitsOut : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("requests_per_second") is null) { _explicitNullValueRequestsPerSecond = default!; _explicitNullProperties?.Remove("requests_per_second"); }
+            else if (parseNode.GetChildNode("requests_per_second") is { } nullNodeRequestsPerSecond && nullNodeRequestsPerSecond.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RequestsPerSecond = null;
+            if (parseNode.GetChildNode("tokens_limits_by_model") is null) { _explicitNullValueTokensLimitsByModel = default!; _explicitNullProperties?.Remove("tokens_limits_by_model"); }
+            else if (parseNode.GetChildNode("tokens_limits_by_model") is { } nullNodeTokensLimitsByModel && nullNodeTokensLimitsByModel.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TokensLimitsByModel = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Maximum API requests allowed per second.</summary>
-        public int? RequestsPerSecond { get; set; }
+        public int? RequestsPerSecond { get => _explicitNullValueRequestsPerSecond; set { _explicitNullValueRequestsPerSecond = value; AdditionalData?.Remove("requests_per_second"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("requests_per_second"); else _explicitNullProperties?.Remove("requests_per_second"); } }
+        private int? _explicitNullValueRequestsPerSecond = default!;
         /// <summary>Token limits for each model.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.RateLimitsOutTokensLimitsByModelProperty? TokensLimitsByModel { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.RateLimitsOutTokensLimitsByModelProperty? TokensLimitsByModel { get => _explicitNullValueTokensLimitsByModel; set { _explicitNullValueTokensLimitsByModel = value; AdditionalData?.Remove("tokens_limits_by_model"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tokens_limits_by_model"); else _explicitNullProperties?.Remove("tokens_limits_by_model"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.RateLimitsOutTokensLimitsByModelProperty? _explicitNullValueTokensLimitsByModel = default!;
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.RateLimitsOutTokensLimitsByModelProperty TokensLimitsByModel { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.RateLimitsOutTokensLimitsByModelProperty TokensLimitsByModel { get => _explicitNullValueTokensLimitsByModel; set { _explicitNullValueTokensLimitsByModel = value; AdditionalData?.Remove("tokens_limits_by_model"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tokens_limits_by_model"); else _explicitNullProperties?.Remove("tokens_limits_by_model"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.RateLimitsOutTokensLimitsByModelProperty _explicitNullValueTokensLimitsByModel = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Mistral.OpenApiClient.Models.RateLimitsOut"/> and sets the default values.
@@ -39,7 +53,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         public static global::Soenneker.Mistral.OpenApiClient.Models.RateLimitsOut CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Mistral.OpenApiClient.Models.RateLimitsOut();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Mistral.OpenApiClient.Models.RateLimitsOut(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -62,6 +76,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteIntValue("requests_per_second", RequestsPerSecond);
             writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.RateLimitsOutTokensLimitsByModelProperty>("tokens_limits_by_model", TokensLimitsByModel);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

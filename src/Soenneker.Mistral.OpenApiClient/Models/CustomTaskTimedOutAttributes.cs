@@ -12,32 +12,51 @@ namespace Soenneker.Mistral.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class CustomTaskTimedOutAttributes : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("custom_task_id") is null) { _explicitNullValueCustomTaskId = default!; _explicitNullProperties?.Remove("custom_task_id"); }
+            else if (parseNode.GetChildNode("custom_task_id") is { } nullNodeCustomTaskId && nullNodeCustomTaskId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CustomTaskId = null;
+            if (parseNode.GetChildNode("custom_task_type") is null) { _explicitNullValueCustomTaskType = default!; _explicitNullProperties?.Remove("custom_task_type"); }
+            else if (parseNode.GetChildNode("custom_task_type") is { } nullNodeCustomTaskType && nullNodeCustomTaskType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CustomTaskType = null;
+            if (parseNode.GetChildNode("timeout_type") is null) { _explicitNullValueTimeoutType = default!; _explicitNullProperties?.Remove("timeout_type"); }
+            else if (parseNode.GetChildNode("timeout_type") is { } nullNodeTimeoutType && nullNodeTimeoutType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TimeoutType = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Unique identifier for the custom task within the workflow.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CustomTaskId { get; set; }
+        public string? CustomTaskId { get => _explicitNullValueCustomTaskId; set { _explicitNullValueCustomTaskId = value; AdditionalData?.Remove("custom_task_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("custom_task_id"); else _explicitNullProperties?.Remove("custom_task_id"); } }
+        private string? _explicitNullValueCustomTaskId = default!;
 #nullable restore
 #else
-        public string CustomTaskId { get; set; }
+        public string CustomTaskId { get => _explicitNullValueCustomTaskId; set { _explicitNullValueCustomTaskId = value; AdditionalData?.Remove("custom_task_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("custom_task_id"); else _explicitNullProperties?.Remove("custom_task_id"); } }
+        private string _explicitNullValueCustomTaskId = default!;
 #endif
         /// <summary>The type/category of the custom task (e.g., &apos;llm_call&apos;, &apos;api_request&apos;).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CustomTaskType { get; set; }
+        public string? CustomTaskType { get => _explicitNullValueCustomTaskType; set { _explicitNullValueCustomTaskType = value; AdditionalData?.Remove("custom_task_type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("custom_task_type"); else _explicitNullProperties?.Remove("custom_task_type"); } }
+        private string? _explicitNullValueCustomTaskType = default!;
 #nullable restore
 #else
-        public string CustomTaskType { get; set; }
+        public string CustomTaskType { get => _explicitNullValueCustomTaskType; set { _explicitNullValueCustomTaskType = value; AdditionalData?.Remove("custom_task_type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("custom_task_type"); else _explicitNullProperties?.Remove("custom_task_type"); } }
+        private string _explicitNullValueCustomTaskType = default!;
 #endif
         /// <summary>The type of timeout that occurred.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TimeoutType { get; set; }
+        public string? TimeoutType { get => _explicitNullValueTimeoutType; set { _explicitNullValueTimeoutType = value; AdditionalData?.Remove("timeout_type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("timeout_type"); else _explicitNullProperties?.Remove("timeout_type"); } }
+        private string? _explicitNullValueTimeoutType = default!;
 #nullable restore
 #else
-        public string TimeoutType { get; set; }
+        public string TimeoutType { get => _explicitNullValueTimeoutType; set { _explicitNullValueTimeoutType = value; AdditionalData?.Remove("timeout_type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("timeout_type"); else _explicitNullProperties?.Remove("timeout_type"); } }
+        private string _explicitNullValueTimeoutType = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Mistral.OpenApiClient.Models.CustomTaskTimedOutAttributes"/> and sets the default values.
@@ -54,7 +73,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         public static global::Soenneker.Mistral.OpenApiClient.Models.CustomTaskTimedOutAttributes CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Mistral.OpenApiClient.Models.CustomTaskTimedOutAttributes();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Mistral.OpenApiClient.Models.CustomTaskTimedOutAttributes(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -79,6 +98,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             writer.WriteStringValue("custom_task_id", CustomTaskId);
             writer.WriteStringValue("custom_task_type", CustomTaskType);
             writer.WriteStringValue("timeout_type", TimeoutType);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

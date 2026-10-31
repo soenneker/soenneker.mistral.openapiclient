@@ -42,22 +42,22 @@ namespace Soenneker.Mistral.OpenApiClient.V1.Responses
         /// <summary>
         /// Create a response.Generate a model response from text or image inputs. The response caninclude text, reasoning, and function calls. Set stream to true toreceive Server-Sent Events.For multi-turn conversations, send the full history in input, includingprior output items and function results. Responses are not stored. Onlyclient-executed function tools are supported.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Mistral.OpenApiClient.Models.CreateResponseResponse"/></returns>
+        /// <returns>A <see cref="Stream"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Mistral.OpenApiClient.Models.CreateResponseResponse?> PostAsync(global::Soenneker.Mistral.OpenApiClient.Models.CreateResponseRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Stream?> PostAsync(global::Soenneker.Mistral.OpenApiClient.Models.CreateResponseRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Mistral.OpenApiClient.Models.CreateResponseResponse> PostAsync(global::Soenneker.Mistral.OpenApiClient.Models.CreateResponseRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Stream> PostAsync(global::Soenneker.Mistral.OpenApiClient.Models.CreateResponseRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Mistral.OpenApiClient.Models.CreateResponseResponse>(requestInfo, global::Soenneker.Mistral.OpenApiClient.Models.CreateResponseResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create a response.Generate a model response from text or image inputs. The response caninclude text, reasoning, and function calls. Set stream to true toreceive Server-Sent Events.For multi-turn conversations, send the full history in input, includingprior output items and function results. Responses are not stored. Onlyclient-executed function tools are supported.

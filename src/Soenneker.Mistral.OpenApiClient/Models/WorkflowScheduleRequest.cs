@@ -11,54 +11,87 @@ namespace Soenneker.Mistral.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class WorkflowScheduleRequest : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("deployment_name") is null) { _explicitNullValueDeploymentName = default!; _explicitNullProperties?.Remove("deployment_name"); }
+            else if (parseNode.GetChildNode("deployment_name") is { } nullNodeDeploymentName && nullNodeDeploymentName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DeploymentName = null;
+            if (parseNode.GetChildNode("schedule") is null) { _explicitNullValueSchedule = default!; _explicitNullProperties?.Remove("schedule"); }
+            else if (parseNode.GetChildNode("schedule") is { } nullNodeSchedule && nullNodeSchedule.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Schedule = null;
+            if (parseNode.GetChildNode("schedule_id") is null) { _explicitNullValueScheduleId = default!; _explicitNullProperties?.Remove("schedule_id"); }
+            else if (parseNode.GetChildNode("schedule_id") is { } nullNodeScheduleId && nullNodeScheduleId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ScheduleId = null;
+            if (parseNode.GetChildNode("workflow_identifier") is null) { _explicitNullValueWorkflowIdentifier = default!; _explicitNullProperties?.Remove("workflow_identifier"); }
+            else if (parseNode.GetChildNode("workflow_identifier") is { } nullNodeWorkflowIdentifier && nullNodeWorkflowIdentifier.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WorkflowIdentifier = null;
+            if (parseNode.GetChildNode("workflow_registration_id") is null) { _explicitNullValueWorkflowRegistrationId = default!; _explicitNullProperties?.Remove("workflow_registration_id"); }
+            else if (parseNode.GetChildNode("workflow_registration_id") is { } nullNodeWorkflowRegistrationId && nullNodeWorkflowRegistrationId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WorkflowRegistrationId = null;
+            if (parseNode.GetChildNode("workflow_task_queue") is null) { _explicitNullValueWorkflowTaskQueue = default!; _explicitNullProperties?.Remove("workflow_task_queue"); }
+            else if (parseNode.GetChildNode("workflow_task_queue") is { } nullNodeWorkflowTaskQueue && nullNodeWorkflowTaskQueue.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WorkflowTaskQueue = null;
+            if (parseNode.GetChildNode("workflow_version_id") is null) { _explicitNullValueWorkflowVersionId = default!; _explicitNullProperties?.Remove("workflow_version_id"); }
+            else if (parseNode.GetChildNode("workflow_version_id") is { } nullNodeWorkflowVersionId && nullNodeWorkflowVersionId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WorkflowVersionId = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Name of the deployment to route this schedule to</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DeploymentName { get; set; }
+        public string? DeploymentName { get => _explicitNullValueDeploymentName; set { _explicitNullValueDeploymentName = value; AdditionalData?.Remove("deployment_name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("deployment_name"); else _explicitNullProperties?.Remove("deployment_name"); } }
+        private string? _explicitNullValueDeploymentName = default!;
 #nullable restore
 #else
-        public string DeploymentName { get; set; }
+        public string DeploymentName { get => _explicitNullValueDeploymentName; set { _explicitNullValueDeploymentName = value; AdditionalData?.Remove("deployment_name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("deployment_name"); else _explicitNullProperties?.Remove("deployment_name"); } }
+        private string _explicitNullValueDeploymentName = default!;
 #endif
         /// <summary>The schedule definition</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.ScheduleDefinition? Schedule { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.ScheduleDefinition? Schedule { get => _explicitNullValueSchedule; set { _explicitNullValueSchedule = value; AdditionalData?.Remove("schedule"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("schedule"); else _explicitNullProperties?.Remove("schedule"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.ScheduleDefinition? _explicitNullValueSchedule = default!;
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.ScheduleDefinition Schedule { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.ScheduleDefinition Schedule { get => _explicitNullValueSchedule; set { _explicitNullValueSchedule = value; AdditionalData?.Remove("schedule"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("schedule"); else _explicitNullProperties?.Remove("schedule"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.ScheduleDefinition _explicitNullValueSchedule = default!;
 #endif
         /// <summary>Allows you to specify a custom schedule ID. If not provided, a random ID will be generated.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ScheduleId { get; set; }
+        public string? ScheduleId { get => _explicitNullValueScheduleId; set { _explicitNullValueScheduleId = value; AdditionalData?.Remove("schedule_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("schedule_id"); else _explicitNullProperties?.Remove("schedule_id"); } }
+        private string? _explicitNullValueScheduleId = default!;
 #nullable restore
 #else
-        public string ScheduleId { get; set; }
+        public string ScheduleId { get => _explicitNullValueScheduleId; set { _explicitNullValueScheduleId = value; AdditionalData?.Remove("schedule_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("schedule_id"); else _explicitNullProperties?.Remove("schedule_id"); } }
+        private string _explicitNullValueScheduleId = default!;
 #endif
         /// <summary>The name or ID of the workflow to schedule</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? WorkflowIdentifier { get; set; }
+        public string? WorkflowIdentifier { get => _explicitNullValueWorkflowIdentifier; set { _explicitNullValueWorkflowIdentifier = value; AdditionalData?.Remove("workflow_identifier"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("workflow_identifier"); else _explicitNullProperties?.Remove("workflow_identifier"); } }
+        private string? _explicitNullValueWorkflowIdentifier = default!;
 #nullable restore
 #else
-        public string WorkflowIdentifier { get; set; }
+        public string WorkflowIdentifier { get => _explicitNullValueWorkflowIdentifier; set { _explicitNullValueWorkflowIdentifier = value; AdditionalData?.Remove("workflow_identifier"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("workflow_identifier"); else _explicitNullProperties?.Remove("workflow_identifier"); } }
+        private string _explicitNullValueWorkflowIdentifier = default!;
 #endif
         /// <summary>The ID of the workflow registration to schedule</summary>
-        public Guid? WorkflowRegistrationId { get; set; }
+        public Guid? WorkflowRegistrationId { get => _explicitNullValueWorkflowRegistrationId; set { _explicitNullValueWorkflowRegistrationId = value; AdditionalData?.Remove("workflow_registration_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("workflow_registration_id"); else _explicitNullProperties?.Remove("workflow_registration_id"); } }
+        private Guid? _explicitNullValueWorkflowRegistrationId = default!;
         /// <summary>Deprecated. Use deployment_name instead.</summary>
         [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? WorkflowTaskQueue { get; set; }
+        public string? WorkflowTaskQueue { get => _explicitNullValueWorkflowTaskQueue; set { _explicitNullValueWorkflowTaskQueue = value; AdditionalData?.Remove("workflow_task_queue"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("workflow_task_queue"); else _explicitNullProperties?.Remove("workflow_task_queue"); } }
+        private string? _explicitNullValueWorkflowTaskQueue = default!;
 #nullable restore
 #else
-        public string WorkflowTaskQueue { get; set; }
+        public string WorkflowTaskQueue { get => _explicitNullValueWorkflowTaskQueue; set { _explicitNullValueWorkflowTaskQueue = value; AdditionalData?.Remove("workflow_task_queue"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("workflow_task_queue"); else _explicitNullProperties?.Remove("workflow_task_queue"); } }
+        private string _explicitNullValueWorkflowTaskQueue = default!;
 #endif
         /// <summary>Deprecated: use workflow_registration_id</summary>
-        public Guid? WorkflowVersionId { get; set; }
+        public Guid? WorkflowVersionId { get => _explicitNullValueWorkflowVersionId; set { _explicitNullValueWorkflowVersionId = value; AdditionalData?.Remove("workflow_version_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("workflow_version_id"); else _explicitNullProperties?.Remove("workflow_version_id"); } }
+        private Guid? _explicitNullValueWorkflowVersionId = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Mistral.OpenApiClient.Models.WorkflowScheduleRequest"/> and sets the default values.
         /// </summary>
@@ -74,7 +107,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         public static global::Soenneker.Mistral.OpenApiClient.Models.WorkflowScheduleRequest CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Mistral.OpenApiClient.Models.WorkflowScheduleRequest();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Mistral.OpenApiClient.Models.WorkflowScheduleRequest(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -107,6 +140,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             writer.WriteGuidValue("workflow_registration_id", WorkflowRegistrationId);
             writer.WriteStringValue("workflow_task_queue", WorkflowTaskQueue);
             writer.WriteGuidValue("workflow_version_id", WorkflowVersionId);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

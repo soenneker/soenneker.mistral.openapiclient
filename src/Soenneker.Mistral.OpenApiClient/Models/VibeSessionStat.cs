@@ -12,19 +12,41 @@ namespace Soenneker.Mistral.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class VibeSessionStat : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("day") is null) { _explicitNullValueDay = default!; _explicitNullProperties?.Remove("day"); }
+            else if (parseNode.GetChildNode("day") is { } nullNodeDay && nullNodeDay.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Day = null;
+            if (parseNode.GetChildNode("nb_sessions") is null) { _explicitNullValueNbSessions = default!; _explicitNullProperties?.Remove("nb_sessions"); }
+            else if (parseNode.GetChildNode("nb_sessions") is { } nullNodeNbSessions && nullNodeNbSessions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NbSessions = null;
+            if (parseNode.GetChildNode("nb_sessions_acp") is null) { _explicitNullValueNbSessionsAcp = default!; _explicitNullProperties?.Remove("nb_sessions_acp"); }
+            else if (parseNode.GetChildNode("nb_sessions_acp") is { } nullNodeNbSessionsAcp && nullNodeNbSessionsAcp.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NbSessionsAcp = null;
+            if (parseNode.GetChildNode("nb_sessions_cli") is null) { _explicitNullValueNbSessionsCli = default!; _explicitNullProperties?.Remove("nb_sessions_cli"); }
+            else if (parseNode.GetChildNode("nb_sessions_cli") is { } nullNodeNbSessionsCli && nullNodeNbSessionsCli.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NbSessionsCli = null;
+            if (parseNode.GetChildNode("nb_sessions_programmatic") is null) { _explicitNullValueNbSessionsProgrammatic = default!; _explicitNullProperties?.Remove("nb_sessions_programmatic"); }
+            else if (parseNode.GetChildNode("nb_sessions_programmatic") is { } nullNodeNbSessionsProgrammatic && nullNodeNbSessionsProgrammatic.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NbSessionsProgrammatic = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The day property</summary>
-        public Date? Day { get; set; }
+        public Date? Day { get => _explicitNullValueDay; set { _explicitNullValueDay = value; AdditionalData?.Remove("day"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("day"); else _explicitNullProperties?.Remove("day"); } }
+        private Date? _explicitNullValueDay = default!;
         /// <summary>The nb_sessions property</summary>
-        public int? NbSessions { get; set; }
+        public int? NbSessions { get => _explicitNullValueNbSessions; set { _explicitNullValueNbSessions = value; AdditionalData?.Remove("nb_sessions"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("nb_sessions"); else _explicitNullProperties?.Remove("nb_sessions"); } }
+        private int? _explicitNullValueNbSessions = default!;
         /// <summary>The nb_sessions_acp property</summary>
-        public int? NbSessionsAcp { get; set; }
+        public int? NbSessionsAcp { get => _explicitNullValueNbSessionsAcp; set { _explicitNullValueNbSessionsAcp = value; AdditionalData?.Remove("nb_sessions_acp"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("nb_sessions_acp"); else _explicitNullProperties?.Remove("nb_sessions_acp"); } }
+        private int? _explicitNullValueNbSessionsAcp = default!;
         /// <summary>The nb_sessions_cli property</summary>
-        public int? NbSessionsCli { get; set; }
+        public int? NbSessionsCli { get => _explicitNullValueNbSessionsCli; set { _explicitNullValueNbSessionsCli = value; AdditionalData?.Remove("nb_sessions_cli"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("nb_sessions_cli"); else _explicitNullProperties?.Remove("nb_sessions_cli"); } }
+        private int? _explicitNullValueNbSessionsCli = default!;
         /// <summary>The nb_sessions_programmatic property</summary>
-        public int? NbSessionsProgrammatic { get; set; }
+        public int? NbSessionsProgrammatic { get => _explicitNullValueNbSessionsProgrammatic; set { _explicitNullValueNbSessionsProgrammatic = value; AdditionalData?.Remove("nb_sessions_programmatic"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("nb_sessions_programmatic"); else _explicitNullProperties?.Remove("nb_sessions_programmatic"); } }
+        private int? _explicitNullValueNbSessionsProgrammatic = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Mistral.OpenApiClient.Models.VibeSessionStat"/> and sets the default values.
         /// </summary>
@@ -40,7 +62,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         public static global::Soenneker.Mistral.OpenApiClient.Models.VibeSessionStat CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Mistral.OpenApiClient.Models.VibeSessionStat();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Mistral.OpenApiClient.Models.VibeSessionStat(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -69,6 +91,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             writer.WriteIntValue("nb_sessions_acp", NbSessionsAcp);
             writer.WriteIntValue("nb_sessions_cli", NbSessionsCli);
             writer.WriteIntValue("nb_sessions_programmatic", NbSessionsProgrammatic);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

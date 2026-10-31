@@ -11,27 +11,53 @@ namespace Soenneker.Mistral.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class RegisterDeploymentRequestVespaField : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("index_type") is null) { _explicitNullValueIndexType = default!; _explicitNullProperties?.Remove("index_type"); }
+            else if (parseNode.GetChildNode("index_type") is { } nullNodeIndexType && nullNodeIndexType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IndexType = null;
+            if (parseNode.GetChildNode("multidimensional") is null) { _explicitNullValueMultidimensional = default!; _explicitNullProperties?.Remove("multidimensional"); }
+            else if (parseNode.GetChildNode("multidimensional") is { } nullNodeMultidimensional && nullNodeMultidimensional.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Multidimensional = null;
+            if (parseNode.GetChildNode("name") is null) { _explicitNullValueName = default!; _explicitNullProperties?.Remove("name"); }
+            else if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
+            if (parseNode.GetChildNode("ranking") is null) { _explicitNullValueRanking = default!; _explicitNullProperties?.Remove("ranking"); }
+            else if (parseNode.GetChildNode("ranking") is { } nullNodeRanking && nullNodeRanking.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Ranking = null;
+            if (parseNode.GetChildNode("storage") is null) { _explicitNullValueStorage = default!; _explicitNullProperties?.Remove("storage"); }
+            else if (parseNode.GetChildNode("storage") is { } nullNodeStorage && nullNodeStorage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Storage = null;
+            if (parseNode.GetChildNode("type") is null) { _explicitNullValueType = default!; _explicitNullProperties?.Remove("type"); }
+            else if (parseNode.GetChildNode("type") is { } nullNodeType && nullNodeType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Type = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The index_type property</summary>
-        public global::Soenneker.Mistral.OpenApiClient.Models.SchemaFieldIndex? IndexType { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.SchemaFieldIndex? IndexType { get => _explicitNullValueIndexType; set { _explicitNullValueIndexType = value; AdditionalData?.Remove("index_type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("index_type"); else _explicitNullProperties?.Remove("index_type"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.SchemaFieldIndex? _explicitNullValueIndexType = default!;
         /// <summary>The multidimensional property</summary>
-        public bool? Multidimensional { get; set; }
+        public bool? Multidimensional { get => _explicitNullValueMultidimensional; set { _explicitNullValueMultidimensional = value; AdditionalData?.Remove("multidimensional"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("multidimensional"); else _explicitNullProperties?.Remove("multidimensional"); } }
+        private bool? _explicitNullValueMultidimensional = default!;
         /// <summary>The name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Name { get; set; }
+        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        private string? _explicitNullValueName = default!;
 #nullable restore
 #else
-        public string Name { get; set; }
+        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        private string _explicitNullValueName = default!;
 #endif
         /// <summary>The ranking property</summary>
-        public global::Soenneker.Mistral.OpenApiClient.Models.SchemaFieldRankingType? Ranking { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.SchemaFieldRankingType? Ranking { get => _explicitNullValueRanking; set { _explicitNullValueRanking = value; AdditionalData?.Remove("ranking"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ranking"); else _explicitNullProperties?.Remove("ranking"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.SchemaFieldRankingType? _explicitNullValueRanking = default!;
         /// <summary>The storage property</summary>
-        public global::Soenneker.Mistral.OpenApiClient.Models.SchemaFieldStorage? Storage { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.SchemaFieldStorage? Storage { get => _explicitNullValueStorage; set { _explicitNullValueStorage = value; AdditionalData?.Remove("storage"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("storage"); else _explicitNullProperties?.Remove("storage"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.SchemaFieldStorage? _explicitNullValueStorage = default!;
         /// <summary>The type property</summary>
-        public global::Soenneker.Mistral.OpenApiClient.Models.SchemaFieldDataType? Type { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.SchemaFieldDataType? Type { get => _explicitNullValueType; set { _explicitNullValueType = value; AdditionalData?.Remove("type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.SchemaFieldDataType? _explicitNullValueType = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Mistral.OpenApiClient.Models.RegisterDeploymentRequestVespaField"/> and sets the default values.
         /// </summary>
@@ -47,7 +73,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         public static global::Soenneker.Mistral.OpenApiClient.Models.RegisterDeploymentRequestVespaField CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Mistral.OpenApiClient.Models.RegisterDeploymentRequestVespaField();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Mistral.OpenApiClient.Models.RegisterDeploymentRequestVespaField(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -57,12 +83,12 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "index_type", n => { IndexType = n.GetEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.SchemaFieldIndex>(); } },
+                { "index_type", n => { var parsed = n.GetEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.SchemaFieldIndex>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueIndexType = default; _explicitNullProperties?.Remove("index_type"); AdditionalData["index_type"] = unknown; } else { IndexType = parsed; AdditionalData.Remove("index_type"); } } },
                 { "multidimensional", n => { Multidimensional = n.GetBoolValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
-                { "ranking", n => { Ranking = n.GetEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.SchemaFieldRankingType>(); } },
-                { "storage", n => { Storage = n.GetEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.SchemaFieldStorage>(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.SchemaFieldDataType>(); } },
+                { "ranking", n => { var parsed = n.GetEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.SchemaFieldRankingType>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueRanking = default; _explicitNullProperties?.Remove("ranking"); AdditionalData["ranking"] = unknown; } else { Ranking = parsed; AdditionalData.Remove("ranking"); } } },
+                { "storage", n => { var parsed = n.GetEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.SchemaFieldStorage>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueStorage = default; _explicitNullProperties?.Remove("storage"); AdditionalData["storage"] = unknown; } else { Storage = parsed; AdditionalData.Remove("storage"); } } },
+                { "type", n => { var parsed = n.GetEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.SchemaFieldDataType>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueType = default; _explicitNullProperties?.Remove("type"); AdditionalData["type"] = unknown; } else { Type = parsed; AdditionalData.Remove("type"); } } },
             };
         }
         /// <summary>
@@ -78,6 +104,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             writer.WriteEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.SchemaFieldRankingType>("ranking", Ranking);
             writer.WriteEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.SchemaFieldStorage>("storage", Storage);
             writer.WriteEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.SchemaFieldDataType>("type", Type);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

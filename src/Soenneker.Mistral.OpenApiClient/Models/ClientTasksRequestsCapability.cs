@@ -12,24 +12,39 @@ namespace Soenneker.Mistral.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ClientTasksRequestsCapability : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("elicitation") is null) { _explicitNullValueElicitation = default!; _explicitNullProperties?.Remove("elicitation"); }
+            else if (parseNode.GetChildNode("elicitation") is { } nullNodeElicitation && nullNodeElicitation.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Elicitation = null;
+            if (parseNode.GetChildNode("sampling") is null) { _explicitNullValueSampling = default!; _explicitNullProperties?.Remove("sampling"); }
+            else if (parseNode.GetChildNode("sampling") is { } nullNodeSampling && nullNodeSampling.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Sampling = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The elicitation property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.TasksElicitationCapability? Elicitation { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.TasksElicitationCapability? Elicitation { get => _explicitNullValueElicitation; set { _explicitNullValueElicitation = value; AdditionalData?.Remove("elicitation"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("elicitation"); else _explicitNullProperties?.Remove("elicitation"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.TasksElicitationCapability? _explicitNullValueElicitation = default!;
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.TasksElicitationCapability Elicitation { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.TasksElicitationCapability Elicitation { get => _explicitNullValueElicitation; set { _explicitNullValueElicitation = value; AdditionalData?.Remove("elicitation"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("elicitation"); else _explicitNullProperties?.Remove("elicitation"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.TasksElicitationCapability _explicitNullValueElicitation = default!;
 #endif
         /// <summary>The sampling property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.TasksSamplingCapability? Sampling { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.TasksSamplingCapability? Sampling { get => _explicitNullValueSampling; set { _explicitNullValueSampling = value; AdditionalData?.Remove("sampling"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sampling"); else _explicitNullProperties?.Remove("sampling"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.TasksSamplingCapability? _explicitNullValueSampling = default!;
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.TasksSamplingCapability Sampling { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.TasksSamplingCapability Sampling { get => _explicitNullValueSampling; set { _explicitNullValueSampling = value; AdditionalData?.Remove("sampling"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sampling"); else _explicitNullProperties?.Remove("sampling"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.TasksSamplingCapability _explicitNullValueSampling = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Mistral.OpenApiClient.Models.ClientTasksRequestsCapability"/> and sets the default values.
@@ -46,7 +61,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         public static global::Soenneker.Mistral.OpenApiClient.Models.ClientTasksRequestsCapability CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Mistral.OpenApiClient.Models.ClientTasksRequestsCapability();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Mistral.OpenApiClient.Models.ClientTasksRequestsCapability(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -69,6 +84,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.TasksElicitationCapability>("elicitation", Elicitation);
             writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.TasksSamplingCapability>("sampling", Sampling);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

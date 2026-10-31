@@ -11,26 +11,44 @@ namespace Soenneker.Mistral.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class GuardrailConfig : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("block_on_error") is null) { _explicitNullValueBlockOnError = default!; _explicitNullProperties?.Remove("block_on_error"); }
+            else if (parseNode.GetChildNode("block_on_error") is { } nullNodeBlockOnError && nullNodeBlockOnError.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BlockOnError = null;
+            if (parseNode.GetChildNode("moderation_llm_v1") is null) { _explicitNullValueModerationLlmV1 = default!; _explicitNullProperties?.Remove("moderation_llm_v1"); }
+            else if (parseNode.GetChildNode("moderation_llm_v1") is { } nullNodeModerationLlmV1 && nullNodeModerationLlmV1.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ModerationLlmV1 = null;
+            if (parseNode.GetChildNode("moderation_llm_v2") is null) { _explicitNullValueModerationLlmV2 = default!; _explicitNullProperties?.Remove("moderation_llm_v2"); }
+            else if (parseNode.GetChildNode("moderation_llm_v2") is { } nullNodeModerationLlmV2 && nullNodeModerationLlmV2.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ModerationLlmV2 = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>If true, return HTTP 403 and block request in the event of a server-side error</summary>
-        public bool? BlockOnError { get; set; }
+        public bool? BlockOnError { get => _explicitNullValueBlockOnError; set { _explicitNullValueBlockOnError = value; AdditionalData?.Remove("block_on_error"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("block_on_error"); else _explicitNullProperties?.Remove("block_on_error"); } }
+        private bool? _explicitNullValueBlockOnError = default!;
         /// <summary>The moderation_llm_v1 property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.ModerationLlmv1Config? ModerationLlmV1 { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.ModerationLlmv1Config? ModerationLlmV1 { get => _explicitNullValueModerationLlmV1; set { _explicitNullValueModerationLlmV1 = value; AdditionalData?.Remove("moderation_llm_v1"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("moderation_llm_v1"); else _explicitNullProperties?.Remove("moderation_llm_v1"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.ModerationLlmv1Config? _explicitNullValueModerationLlmV1 = default!;
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.ModerationLlmv1Config ModerationLlmV1 { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.ModerationLlmv1Config ModerationLlmV1 { get => _explicitNullValueModerationLlmV1; set { _explicitNullValueModerationLlmV1 = value; AdditionalData?.Remove("moderation_llm_v1"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("moderation_llm_v1"); else _explicitNullProperties?.Remove("moderation_llm_v1"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.ModerationLlmv1Config _explicitNullValueModerationLlmV1 = default!;
 #endif
         /// <summary>The moderation_llm_v2 property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.ModerationLlmv2Config? ModerationLlmV2 { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.ModerationLlmv2Config? ModerationLlmV2 { get => _explicitNullValueModerationLlmV2; set { _explicitNullValueModerationLlmV2 = value; AdditionalData?.Remove("moderation_llm_v2"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("moderation_llm_v2"); else _explicitNullProperties?.Remove("moderation_llm_v2"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.ModerationLlmv2Config? _explicitNullValueModerationLlmV2 = default!;
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.ModerationLlmv2Config ModerationLlmV2 { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.ModerationLlmv2Config ModerationLlmV2 { get => _explicitNullValueModerationLlmV2; set { _explicitNullValueModerationLlmV2 = value; AdditionalData?.Remove("moderation_llm_v2"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("moderation_llm_v2"); else _explicitNullProperties?.Remove("moderation_llm_v2"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.ModerationLlmv2Config _explicitNullValueModerationLlmV2 = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Mistral.OpenApiClient.Models.GuardrailConfig"/> and sets the default values.
@@ -48,7 +66,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         public static global::Soenneker.Mistral.OpenApiClient.Models.GuardrailConfig CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Mistral.OpenApiClient.Models.GuardrailConfig();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Mistral.OpenApiClient.Models.GuardrailConfig(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -73,6 +91,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             writer.WriteBoolValue("block_on_error", BlockOnError);
             writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ModerationLlmv1Config>("moderation_llm_v1", ModerationLlmV1);
             writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ModerationLlmv2Config>("moderation_llm_v2", ModerationLlmV2);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

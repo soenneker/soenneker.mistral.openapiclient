@@ -12,31 +12,71 @@ namespace Soenneker.Mistral.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class VibeNextEditSuggestionStat : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("day") is null) { _explicitNullValueDay = default!; _explicitNullProperties?.Remove("day"); }
+            else if (parseNode.GetChildNode("day") is { } nullNodeDay && nullNodeDay.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Day = null;
+            if (parseNode.GetChildNode("force_generated_false") is null) { _explicitNullValueForceGeneratedFalse = default!; _explicitNullProperties?.Remove("force_generated_false"); }
+            else if (parseNode.GetChildNode("force_generated_false") is { } nullNodeForceGeneratedFalse && nullNodeForceGeneratedFalse.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ForceGeneratedFalse = null;
+            if (parseNode.GetChildNode("force_generated_true") is null) { _explicitNullValueForceGeneratedTrue = default!; _explicitNullProperties?.Remove("force_generated_true"); }
+            else if (parseNode.GetChildNode("force_generated_true") is { } nullNodeForceGeneratedTrue && nullNodeForceGeneratedTrue.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ForceGeneratedTrue = null;
+            if (parseNode.GetChildNode("outcome_aborted") is null) { _explicitNullValueOutcomeAborted = default!; _explicitNullProperties?.Remove("outcome_aborted"); }
+            else if (parseNode.GetChildNode("outcome_aborted") is { } nullNodeOutcomeAborted && nullNodeOutcomeAborted.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OutcomeAborted = null;
+            if (parseNode.GetChildNode("outcome_accepted") is null) { _explicitNullValueOutcomeAccepted = default!; _explicitNullProperties?.Remove("outcome_accepted"); }
+            else if (parseNode.GetChildNode("outcome_accepted") is { } nullNodeOutcomeAccepted && nullNodeOutcomeAccepted.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OutcomeAccepted = null;
+            if (parseNode.GetChildNode("outcome_dismissed") is null) { _explicitNullValueOutcomeDismissed = default!; _explicitNullProperties?.Remove("outcome_dismissed"); }
+            else if (parseNode.GetChildNode("outcome_dismissed") is { } nullNodeOutcomeDismissed && nullNodeOutcomeDismissed.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OutcomeDismissed = null;
+            if (parseNode.GetChildNode("outcome_rejected") is null) { _explicitNullValueOutcomeRejected = default!; _explicitNullProperties?.Remove("outcome_rejected"); }
+            else if (parseNode.GetChildNode("outcome_rejected") is { } nullNodeOutcomeRejected && nullNodeOutcomeRejected.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OutcomeRejected = null;
+            if (parseNode.GetChildNode("outcome_timeout") is null) { _explicitNullValueOutcomeTimeout = default!; _explicitNullProperties?.Remove("outcome_timeout"); }
+            else if (parseNode.GetChildNode("outcome_timeout") is { } nullNodeOutcomeTimeout && nullNodeOutcomeTimeout.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OutcomeTimeout = null;
+            if (parseNode.GetChildNode("surface_ghost_text") is null) { _explicitNullValueSurfaceGhostText = default!; _explicitNullProperties?.Remove("surface_ghost_text"); }
+            else if (parseNode.GetChildNode("surface_ghost_text") is { } nullNodeSurfaceGhostText && nullNodeSurfaceGhostText.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SurfaceGhostText = null;
+            if (parseNode.GetChildNode("surface_widget") is null) { _explicitNullValueSurfaceWidget = default!; _explicitNullProperties?.Remove("surface_widget"); }
+            else if (parseNode.GetChildNode("surface_widget") is { } nullNodeSurfaceWidget && nullNodeSurfaceWidget.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SurfaceWidget = null;
+            if (parseNode.GetChildNode("total_suggestions") is null) { _explicitNullValueTotalSuggestions = default!; _explicitNullProperties?.Remove("total_suggestions"); }
+            else if (parseNode.GetChildNode("total_suggestions") is { } nullNodeTotalSuggestions && nullNodeTotalSuggestions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TotalSuggestions = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The day property</summary>
-        public Date? Day { get; set; }
+        public Date? Day { get => _explicitNullValueDay; set { _explicitNullValueDay = value; AdditionalData?.Remove("day"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("day"); else _explicitNullProperties?.Remove("day"); } }
+        private Date? _explicitNullValueDay = default!;
         /// <summary>The force_generated_false property</summary>
-        public int? ForceGeneratedFalse { get; set; }
+        public int? ForceGeneratedFalse { get => _explicitNullValueForceGeneratedFalse; set { _explicitNullValueForceGeneratedFalse = value; AdditionalData?.Remove("force_generated_false"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("force_generated_false"); else _explicitNullProperties?.Remove("force_generated_false"); } }
+        private int? _explicitNullValueForceGeneratedFalse = default!;
         /// <summary>The force_generated_true property</summary>
-        public int? ForceGeneratedTrue { get; set; }
+        public int? ForceGeneratedTrue { get => _explicitNullValueForceGeneratedTrue; set { _explicitNullValueForceGeneratedTrue = value; AdditionalData?.Remove("force_generated_true"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("force_generated_true"); else _explicitNullProperties?.Remove("force_generated_true"); } }
+        private int? _explicitNullValueForceGeneratedTrue = default!;
         /// <summary>The outcome_aborted property</summary>
-        public int? OutcomeAborted { get; set; }
+        public int? OutcomeAborted { get => _explicitNullValueOutcomeAborted; set { _explicitNullValueOutcomeAborted = value; AdditionalData?.Remove("outcome_aborted"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("outcome_aborted"); else _explicitNullProperties?.Remove("outcome_aborted"); } }
+        private int? _explicitNullValueOutcomeAborted = default!;
         /// <summary>The outcome_accepted property</summary>
-        public int? OutcomeAccepted { get; set; }
+        public int? OutcomeAccepted { get => _explicitNullValueOutcomeAccepted; set { _explicitNullValueOutcomeAccepted = value; AdditionalData?.Remove("outcome_accepted"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("outcome_accepted"); else _explicitNullProperties?.Remove("outcome_accepted"); } }
+        private int? _explicitNullValueOutcomeAccepted = default!;
         /// <summary>The outcome_dismissed property</summary>
-        public int? OutcomeDismissed { get; set; }
+        public int? OutcomeDismissed { get => _explicitNullValueOutcomeDismissed; set { _explicitNullValueOutcomeDismissed = value; AdditionalData?.Remove("outcome_dismissed"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("outcome_dismissed"); else _explicitNullProperties?.Remove("outcome_dismissed"); } }
+        private int? _explicitNullValueOutcomeDismissed = default!;
         /// <summary>The outcome_rejected property</summary>
-        public int? OutcomeRejected { get; set; }
+        public int? OutcomeRejected { get => _explicitNullValueOutcomeRejected; set { _explicitNullValueOutcomeRejected = value; AdditionalData?.Remove("outcome_rejected"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("outcome_rejected"); else _explicitNullProperties?.Remove("outcome_rejected"); } }
+        private int? _explicitNullValueOutcomeRejected = default!;
         /// <summary>The outcome_timeout property</summary>
-        public int? OutcomeTimeout { get; set; }
+        public int? OutcomeTimeout { get => _explicitNullValueOutcomeTimeout; set { _explicitNullValueOutcomeTimeout = value; AdditionalData?.Remove("outcome_timeout"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("outcome_timeout"); else _explicitNullProperties?.Remove("outcome_timeout"); } }
+        private int? _explicitNullValueOutcomeTimeout = default!;
         /// <summary>The surface_ghost_text property</summary>
-        public int? SurfaceGhostText { get; set; }
+        public int? SurfaceGhostText { get => _explicitNullValueSurfaceGhostText; set { _explicitNullValueSurfaceGhostText = value; AdditionalData?.Remove("surface_ghost_text"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("surface_ghost_text"); else _explicitNullProperties?.Remove("surface_ghost_text"); } }
+        private int? _explicitNullValueSurfaceGhostText = default!;
         /// <summary>The surface_widget property</summary>
-        public int? SurfaceWidget { get; set; }
+        public int? SurfaceWidget { get => _explicitNullValueSurfaceWidget; set { _explicitNullValueSurfaceWidget = value; AdditionalData?.Remove("surface_widget"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("surface_widget"); else _explicitNullProperties?.Remove("surface_widget"); } }
+        private int? _explicitNullValueSurfaceWidget = default!;
         /// <summary>The total_suggestions property</summary>
-        public int? TotalSuggestions { get; set; }
+        public int? TotalSuggestions { get => _explicitNullValueTotalSuggestions; set { _explicitNullValueTotalSuggestions = value; AdditionalData?.Remove("total_suggestions"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("total_suggestions"); else _explicitNullProperties?.Remove("total_suggestions"); } }
+        private int? _explicitNullValueTotalSuggestions = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Mistral.OpenApiClient.Models.VibeNextEditSuggestionStat"/> and sets the default values.
         /// </summary>
@@ -52,7 +92,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         public static global::Soenneker.Mistral.OpenApiClient.Models.VibeNextEditSuggestionStat CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Mistral.OpenApiClient.Models.VibeNextEditSuggestionStat();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Mistral.OpenApiClient.Models.VibeNextEditSuggestionStat(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -93,6 +133,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             writer.WriteIntValue("surface_ghost_text", SurfaceGhostText);
             writer.WriteIntValue("surface_widget", SurfaceWidget);
             writer.WriteIntValue("total_suggestions", TotalSuggestions);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

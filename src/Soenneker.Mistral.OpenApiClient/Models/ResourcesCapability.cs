@@ -12,13 +12,26 @@ namespace Soenneker.Mistral.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ResourcesCapability : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("listChanged") is null) { _explicitNullValueListChanged = default!; _explicitNullProperties?.Remove("listChanged"); }
+            else if (parseNode.GetChildNode("listChanged") is { } nullNodeListChanged && nullNodeListChanged.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ListChanged = null;
+            if (parseNode.GetChildNode("subscribe") is null) { _explicitNullValueSubscribe = default!; _explicitNullProperties?.Remove("subscribe"); }
+            else if (parseNode.GetChildNode("subscribe") is { } nullNodeSubscribe && nullNodeSubscribe.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Subscribe = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The listChanged property</summary>
-        public bool? ListChanged { get; set; }
+        public bool? ListChanged { get => _explicitNullValueListChanged; set { _explicitNullValueListChanged = value; AdditionalData?.Remove("listChanged"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("listChanged"); else _explicitNullProperties?.Remove("listChanged"); } }
+        private bool? _explicitNullValueListChanged = default!;
         /// <summary>The subscribe property</summary>
-        public bool? Subscribe { get; set; }
+        public bool? Subscribe { get => _explicitNullValueSubscribe; set { _explicitNullValueSubscribe = value; AdditionalData?.Remove("subscribe"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("subscribe"); else _explicitNullProperties?.Remove("subscribe"); } }
+        private bool? _explicitNullValueSubscribe = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Mistral.OpenApiClient.Models.ResourcesCapability"/> and sets the default values.
         /// </summary>
@@ -34,7 +47,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         public static global::Soenneker.Mistral.OpenApiClient.Models.ResourcesCapability CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Mistral.OpenApiClient.Models.ResourcesCapability();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Mistral.OpenApiClient.Models.ResourcesCapability(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -57,6 +70,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("listChanged", ListChanged);
             writer.WriteBoolValue("subscribe", Subscribe);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

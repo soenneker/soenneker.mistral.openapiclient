@@ -11,32 +11,51 @@ namespace Soenneker.Mistral.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class ScimSyncMembershipActionOut : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("group") is null) { _explicitNullValueGroup = default!; _explicitNullProperties?.Remove("group"); }
+            else if (parseNode.GetChildNode("group") is { } nullNodeGroup && nullNodeGroup.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Group = null;
+            if (parseNode.GetChildNode("users_added") is null) { _explicitNullValueUsersAdded = default!; _explicitNullProperties?.Remove("users_added"); }
+            else if (parseNode.GetChildNode("users_added") is { } nullNodeUsersAdded && nullNodeUsersAdded.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UsersAdded = null;
+            if (parseNode.GetChildNode("users_removed") is null) { _explicitNullValueUsersRemoved = default!; _explicitNullProperties?.Remove("users_removed"); }
+            else if (parseNode.GetChildNode("users_removed") is { } nullNodeUsersRemoved && nullNodeUsersRemoved.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UsersRemoved = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The group property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.ScimSyncGroupRefOut? Group { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.ScimSyncGroupRefOut? Group { get => _explicitNullValueGroup; set { _explicitNullValueGroup = value; AdditionalData?.Remove("group"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("group"); else _explicitNullProperties?.Remove("group"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.ScimSyncGroupRefOut? _explicitNullValueGroup = default!;
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.ScimSyncGroupRefOut Group { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.ScimSyncGroupRefOut Group { get => _explicitNullValueGroup; set { _explicitNullValueGroup = value; AdditionalData?.Remove("group"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("group"); else _explicitNullProperties?.Remove("group"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.ScimSyncGroupRefOut _explicitNullValueGroup = default!;
 #endif
         /// <summary>The users_added property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Mistral.OpenApiClient.Models.ScimSyncUserRefOut>? UsersAdded { get; set; }
+        public List<global::Soenneker.Mistral.OpenApiClient.Models.ScimSyncUserRefOut>? UsersAdded { get => _explicitNullValueUsersAdded; set { _explicitNullValueUsersAdded = value; AdditionalData?.Remove("users_added"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("users_added"); else _explicitNullProperties?.Remove("users_added"); } }
+        private List<global::Soenneker.Mistral.OpenApiClient.Models.ScimSyncUserRefOut>? _explicitNullValueUsersAdded = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Mistral.OpenApiClient.Models.ScimSyncUserRefOut> UsersAdded { get; set; }
+        public List<global::Soenneker.Mistral.OpenApiClient.Models.ScimSyncUserRefOut> UsersAdded { get => _explicitNullValueUsersAdded; set { _explicitNullValueUsersAdded = value; AdditionalData?.Remove("users_added"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("users_added"); else _explicitNullProperties?.Remove("users_added"); } }
+        private List<global::Soenneker.Mistral.OpenApiClient.Models.ScimSyncUserRefOut> _explicitNullValueUsersAdded = default!;
 #endif
         /// <summary>The users_removed property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Mistral.OpenApiClient.Models.ScimSyncUserRefOut>? UsersRemoved { get; set; }
+        public List<global::Soenneker.Mistral.OpenApiClient.Models.ScimSyncUserRefOut>? UsersRemoved { get => _explicitNullValueUsersRemoved; set { _explicitNullValueUsersRemoved = value; AdditionalData?.Remove("users_removed"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("users_removed"); else _explicitNullProperties?.Remove("users_removed"); } }
+        private List<global::Soenneker.Mistral.OpenApiClient.Models.ScimSyncUserRefOut>? _explicitNullValueUsersRemoved = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Mistral.OpenApiClient.Models.ScimSyncUserRefOut> UsersRemoved { get; set; }
+        public List<global::Soenneker.Mistral.OpenApiClient.Models.ScimSyncUserRefOut> UsersRemoved { get => _explicitNullValueUsersRemoved; set { _explicitNullValueUsersRemoved = value; AdditionalData?.Remove("users_removed"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("users_removed"); else _explicitNullProperties?.Remove("users_removed"); } }
+        private List<global::Soenneker.Mistral.OpenApiClient.Models.ScimSyncUserRefOut> _explicitNullValueUsersRemoved = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Mistral.OpenApiClient.Models.ScimSyncMembershipActionOut"/> and sets the default values.
@@ -53,7 +72,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         public static global::Soenneker.Mistral.OpenApiClient.Models.ScimSyncMembershipActionOut CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Mistral.OpenApiClient.Models.ScimSyncMembershipActionOut();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Mistral.OpenApiClient.Models.ScimSyncMembershipActionOut(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -78,6 +97,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ScimSyncGroupRefOut>("group", Group);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Mistral.OpenApiClient.Models.ScimSyncUserRefOut>("users_added", UsersAdded);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Mistral.OpenApiClient.Models.ScimSyncUserRefOut>("users_removed", UsersRemoved);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -11,13 +11,26 @@ namespace Soenneker.Mistral.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class UpdateRunInfo : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("chunks_count") is null) { _explicitNullValueChunksCount = default!; _explicitNullProperties?.Remove("chunks_count"); }
+            else if (parseNode.GetChildNode("chunks_count") is { } nullNodeChunksCount && nullNodeChunksCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ChunksCount = null;
+            if (parseNode.GetChildNode("execution_time") is null) { _explicitNullValueExecutionTime = default!; _explicitNullProperties?.Remove("execution_time"); }
+            else if (parseNode.GetChildNode("execution_time") is { } nullNodeExecutionTime && nullNodeExecutionTime.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExecutionTime = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The chunks_count property</summary>
-        public int? ChunksCount { get; set; }
+        public int? ChunksCount { get => _explicitNullValueChunksCount; set { _explicitNullValueChunksCount = value; AdditionalData?.Remove("chunks_count"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("chunks_count"); else _explicitNullProperties?.Remove("chunks_count"); } }
+        private int? _explicitNullValueChunksCount = default!;
         /// <summary>The execution_time property</summary>
-        public DateTimeOffset? ExecutionTime { get; set; }
+        public DateTimeOffset? ExecutionTime { get => _explicitNullValueExecutionTime; set { _explicitNullValueExecutionTime = value; AdditionalData?.Remove("execution_time"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("execution_time"); else _explicitNullProperties?.Remove("execution_time"); } }
+        private DateTimeOffset? _explicitNullValueExecutionTime = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Mistral.OpenApiClient.Models.UpdateRunInfo"/> and sets the default values.
         /// </summary>
@@ -33,7 +46,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         public static global::Soenneker.Mistral.OpenApiClient.Models.UpdateRunInfo CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Mistral.OpenApiClient.Models.UpdateRunInfo();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Mistral.OpenApiClient.Models.UpdateRunInfo(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -56,6 +69,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteIntValue("chunks_count", ChunksCount);
             writer.WriteDateTimeOffsetValue("execution_time", ExecutionTime);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

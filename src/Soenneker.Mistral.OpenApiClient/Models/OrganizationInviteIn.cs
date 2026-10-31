@@ -11,66 +11,109 @@ namespace Soenneker.Mistral.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class OrganizationInviteIn : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("email") is null) { _explicitNullValueEmail = default!; _explicitNullProperties?.Remove("email"); }
+            else if (parseNode.GetChildNode("email") is { } nullNodeEmail && nullNodeEmail.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Email = null;
+            if (parseNode.GetChildNode("email_language") is null) { _explicitNullValueEmailLanguage = default!; _explicitNullProperties?.Remove("email_language"); }
+            else if (parseNode.GetChildNode("email_language") is { } nullNodeEmailLanguage && nullNodeEmailLanguage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EmailLanguage = null;
+            if (parseNode.GetChildNode("role") is null) { _explicitNullValueRole = default!; _explicitNullProperties?.Remove("role"); }
+            else if (parseNode.GetChildNode("role") is { } nullNodeRole && nullNodeRole.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Role = null;
+            if (parseNode.GetChildNode("role_name") is null) { _explicitNullValueRoleName = default!; _explicitNullProperties?.Remove("role_name"); }
+            else if (parseNode.GetChildNode("role_name") is { } nullNodeRoleName && nullNodeRoleName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RoleName = null;
+            if (parseNode.GetChildNode("role_names") is null) { _explicitNullValueRoleNames = default!; _explicitNullProperties?.Remove("role_names"); }
+            else if (parseNode.GetChildNode("role_names") is { } nullNodeRoleNames && nullNodeRoleNames.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RoleNames = null;
+            if (parseNode.GetChildNode("roles") is null) { _explicitNullValueRoles = default!; _explicitNullProperties?.Remove("roles"); }
+            else if (parseNode.GetChildNode("roles") is { } nullNodeRoles && nullNodeRoles.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Roles = null;
+            if (parseNode.GetChildNode("subscription_seat_automatic_granting") is null) { _explicitNullValueSubscriptionSeatAutomaticGranting = default!; _explicitNullProperties?.Remove("subscription_seat_automatic_granting"); }
+            else if (parseNode.GetChildNode("subscription_seat_automatic_granting") is { } nullNodeSubscriptionSeatAutomaticGranting && nullNodeSubscriptionSeatAutomaticGranting.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SubscriptionSeatAutomaticGranting = null;
+            if (parseNode.GetChildNode("subscription_type") is null) { _explicitNullValueSubscriptionType = default!; _explicitNullProperties?.Remove("subscription_type"); }
+            else if (parseNode.GetChildNode("subscription_type") is { } nullNodeSubscriptionType && nullNodeSubscriptionType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SubscriptionType = null;
+            if (parseNode.GetChildNode("subscription_types") is null) { _explicitNullValueSubscriptionTypes = default!; _explicitNullProperties?.Remove("subscription_types"); }
+            else if (parseNode.GetChildNode("subscription_types") is { } nullNodeSubscriptionTypes && nullNodeSubscriptionTypes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SubscriptionTypes = null;
+            if (parseNode.GetChildNode("workspace_uuids") is null) { _explicitNullValueWorkspaceUuids = default!; _explicitNullProperties?.Remove("workspace_uuids"); }
+            else if (parseNode.GetChildNode("workspace_uuids") is { } nullNodeWorkspaceUuids && nullNodeWorkspaceUuids.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WorkspaceUuids = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Email address, comma-separated emails, or newline-separated emails to invite.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Email { get; set; }
+        public string? Email { get => _explicitNullValueEmail; set { _explicitNullValueEmail = value; AdditionalData?.Remove("email"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("email"); else _explicitNullProperties?.Remove("email"); } }
+        private string? _explicitNullValueEmail = default!;
 #nullable restore
 #else
-        public string Email { get; set; }
+        public string Email { get => _explicitNullValueEmail; set { _explicitNullValueEmail = value; AdditionalData?.Remove("email"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("email"); else _explicitNullProperties?.Remove("email"); } }
+        private string _explicitNullValueEmail = default!;
 #endif
         /// <summary>Language used for invitation emails.</summary>
-        public global::Soenneker.Mistral.OpenApiClient.Models.OrganizationInviteInEmailLanguage? EmailLanguage { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.OrganizationInviteInEmailLanguage? EmailLanguage { get => _explicitNullValueEmailLanguage; set { _explicitNullValueEmailLanguage = value; AdditionalData?.Remove("email_language"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("email_language"); else _explicitNullProperties?.Remove("email_language"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.OrganizationInviteInEmailLanguage? _explicitNullValueEmailLanguage = default!;
         /// <summary>Deprecated legacy single role value, kept for backward compatibility. Mutually exclusive with &apos;role_name&apos;.</summary>
         [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.OrganizationInviteInRole? Role { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.AdminOrganizationMemberUpdateRole? Role { get => _explicitNullValueRole; set { _explicitNullValueRole = value; AdditionalData?.Remove("role"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("role"); else _explicitNullProperties?.Remove("role"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.AdminOrganizationMemberUpdateRole? _explicitNullValueRole = default!;
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.OrganizationInviteInRole Role { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.AdminOrganizationMemberUpdateRole Role { get => _explicitNullValueRole; set { _explicitNullValueRole = value; AdditionalData?.Remove("role"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("role"); else _explicitNullProperties?.Remove("role"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.AdminOrganizationMemberUpdateRole _explicitNullValueRole = default!;
 #endif
         /// <summary>Deprecated single role name, kept for backward compatibility. Mutually exclusive with &apos;role&apos;.</summary>
         [Obsolete("")]
-        public global::Soenneker.Mistral.OpenApiClient.Models.OrganizationInviteInRoleName? RoleName { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.OrganizationInviteInRoleName? RoleName { get => _explicitNullValueRoleName; set { _explicitNullValueRoleName = value; AdditionalData?.Remove("role_name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("role_name"); else _explicitNullProperties?.Remove("role_name"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.OrganizationInviteInRoleName? _explicitNullValueRoleName = default!;
         /// <summary>Simplified role names to assign. Mutually exclusive with &apos;roles&apos;.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Mistral.OpenApiClient.Models.OrganizationInviteInRoleNamesItem?>? RoleNames { get; set; }
+        public List<global::Soenneker.Mistral.OpenApiClient.Models.OrganizationInviteInRoleNamesItem?>? RoleNames { get => _explicitNullValueRoleNames; set { _explicitNullValueRoleNames = value; AdditionalData?.Remove("role_names"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("role_names"); else _explicitNullProperties?.Remove("role_names"); } }
+        private List<global::Soenneker.Mistral.OpenApiClient.Models.OrganizationInviteInRoleNamesItem?>? _explicitNullValueRoleNames = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Mistral.OpenApiClient.Models.OrganizationInviteInRoleNamesItem?> RoleNames { get; set; }
+        public List<global::Soenneker.Mistral.OpenApiClient.Models.OrganizationInviteInRoleNamesItem?> RoleNames { get => _explicitNullValueRoleNames; set { _explicitNullValueRoleNames = value; AdditionalData?.Remove("role_names"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("role_names"); else _explicitNullProperties?.Remove("role_names"); } }
+        private List<global::Soenneker.Mistral.OpenApiClient.Models.OrganizationInviteInRoleNamesItem?> _explicitNullValueRoleNames = default!;
 #endif
         /// <summary>Role values to assign. Mutually exclusive with &apos;role_names&apos;.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.OrganizationInviteInRoles? Roles { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.AdminOrganizationMemberUpdateRoles? Roles { get => _explicitNullValueRoles; set { _explicitNullValueRoles = value; AdditionalData?.Remove("roles"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("roles"); else _explicitNullProperties?.Remove("roles"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.AdminOrganizationMemberUpdateRoles? _explicitNullValueRoles = default!;
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.OrganizationInviteInRoles Roles { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.AdminOrganizationMemberUpdateRoles Roles { get => _explicitNullValueRoles; set { _explicitNullValueRoles = value; AdditionalData?.Remove("roles"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("roles"); else _explicitNullProperties?.Remove("roles"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.AdminOrganizationMemberUpdateRoles _explicitNullValueRoles = default!;
 #endif
         /// <summary>Whether to grant subscription seats automatically.</summary>
-        public bool? SubscriptionSeatAutomaticGranting { get; set; }
+        public bool? SubscriptionSeatAutomaticGranting { get => _explicitNullValueSubscriptionSeatAutomaticGranting; set { _explicitNullValueSubscriptionSeatAutomaticGranting = value; AdditionalData?.Remove("subscription_seat_automatic_granting"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("subscription_seat_automatic_granting"); else _explicitNullProperties?.Remove("subscription_seat_automatic_granting"); } }
+        private bool? _explicitNullValueSubscriptionSeatAutomaticGranting = default!;
         /// <summary>Deprecated single product seat to assign.</summary>
-        public global::Soenneker.Mistral.OpenApiClient.Models.PlanType? SubscriptionType { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.PlanType? SubscriptionType { get => _explicitNullValueSubscriptionType; set { _explicitNullValueSubscriptionType = value; AdditionalData?.Remove("subscription_type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("subscription_type"); else _explicitNullProperties?.Remove("subscription_type"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.PlanType? _explicitNullValueSubscriptionType = default!;
         /// <summary>Product seats to assign to invited users.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Mistral.OpenApiClient.Models.PlanType?>? SubscriptionTypes { get; set; }
+        public List<global::Soenneker.Mistral.OpenApiClient.Models.PlanType?>? SubscriptionTypes { get => _explicitNullValueSubscriptionTypes; set { _explicitNullValueSubscriptionTypes = value; AdditionalData?.Remove("subscription_types"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("subscription_types"); else _explicitNullProperties?.Remove("subscription_types"); } }
+        private List<global::Soenneker.Mistral.OpenApiClient.Models.PlanType?>? _explicitNullValueSubscriptionTypes = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Mistral.OpenApiClient.Models.PlanType?> SubscriptionTypes { get; set; }
+        public List<global::Soenneker.Mistral.OpenApiClient.Models.PlanType?> SubscriptionTypes { get => _explicitNullValueSubscriptionTypes; set { _explicitNullValueSubscriptionTypes = value; AdditionalData?.Remove("subscription_types"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("subscription_types"); else _explicitNullProperties?.Remove("subscription_types"); } }
+        private List<global::Soenneker.Mistral.OpenApiClient.Models.PlanType?> _explicitNullValueSubscriptionTypes = default!;
 #endif
         /// <summary>Workspace IDs the invited users should join.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Guid?>? WorkspaceUuids { get; set; }
+        public List<Guid?>? WorkspaceUuids { get => _explicitNullValueWorkspaceUuids; set { _explicitNullValueWorkspaceUuids = value; AdditionalData?.Remove("workspace_uuids"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("workspace_uuids"); else _explicitNullProperties?.Remove("workspace_uuids"); } }
+        private List<Guid?>? _explicitNullValueWorkspaceUuids = default!;
 #nullable restore
 #else
-        public List<Guid?> WorkspaceUuids { get; set; }
+        public List<Guid?> WorkspaceUuids { get => _explicitNullValueWorkspaceUuids; set { _explicitNullValueWorkspaceUuids = value; AdditionalData?.Remove("workspace_uuids"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("workspace_uuids"); else _explicitNullProperties?.Remove("workspace_uuids"); } }
+        private List<Guid?> _explicitNullValueWorkspaceUuids = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Mistral.OpenApiClient.Models.OrganizationInviteIn"/> and sets the default values.
@@ -88,7 +131,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         public static global::Soenneker.Mistral.OpenApiClient.Models.OrganizationInviteIn CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Mistral.OpenApiClient.Models.OrganizationInviteIn();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Mistral.OpenApiClient.Models.OrganizationInviteIn(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -99,13 +142,13 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "email", n => { Email = n.GetStringValue(); } },
-                { "email_language", n => { EmailLanguage = n.GetEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.OrganizationInviteInEmailLanguage>(); } },
-                { "role", n => { Role = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.OrganizationInviteInRole>(global::Soenneker.Mistral.OpenApiClient.Models.OrganizationInviteInRole.CreateFromDiscriminatorValue); } },
-                { "role_name", n => { RoleName = n.GetEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.OrganizationInviteInRoleName>(); } },
+                { "email_language", n => { var parsed = n.GetEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.OrganizationInviteInEmailLanguage>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueEmailLanguage = default; _explicitNullProperties?.Remove("email_language"); AdditionalData["email_language"] = unknown; } else { EmailLanguage = parsed; AdditionalData.Remove("email_language"); } } },
+                { "role", n => { Role = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.AdminOrganizationMemberUpdateRole>(global::Soenneker.Mistral.OpenApiClient.Models.AdminOrganizationMemberUpdateRole.CreateFromDiscriminatorValue); } },
+                { "role_name", n => { var parsed = n.GetEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.OrganizationInviteInRoleName>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueRoleName = default; _explicitNullProperties?.Remove("role_name"); AdditionalData["role_name"] = unknown; } else { RoleName = parsed; AdditionalData.Remove("role_name"); } } },
                 { "role_names", n => { RoleNames = n.GetCollectionOfEnumValues<global::Soenneker.Mistral.OpenApiClient.Models.OrganizationInviteInRoleNamesItem>()?.AsList(); } },
-                { "roles", n => { Roles = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.OrganizationInviteInRoles>(global::Soenneker.Mistral.OpenApiClient.Models.OrganizationInviteInRoles.CreateFromDiscriminatorValue); } },
+                { "roles", n => { Roles = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.AdminOrganizationMemberUpdateRoles>(global::Soenneker.Mistral.OpenApiClient.Models.AdminOrganizationMemberUpdateRoles.CreateFromDiscriminatorValue); } },
                 { "subscription_seat_automatic_granting", n => { SubscriptionSeatAutomaticGranting = n.GetBoolValue(); } },
-                { "subscription_type", n => { SubscriptionType = n.GetEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.PlanType>(); } },
+                { "subscription_type", n => { var parsed = n.GetEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.PlanType>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueSubscriptionType = default; _explicitNullProperties?.Remove("subscription_type"); AdditionalData["subscription_type"] = unknown; } else { SubscriptionType = parsed; AdditionalData.Remove("subscription_type"); } } },
                 { "subscription_types", n => { SubscriptionTypes = n.GetCollectionOfEnumValues<global::Soenneker.Mistral.OpenApiClient.Models.PlanType>()?.AsList(); } },
                 { "workspace_uuids", n => { WorkspaceUuids = n.GetCollectionOfPrimitiveValues<Guid?>()?.AsList(); } },
             };
@@ -119,14 +162,15 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("email", Email);
             writer.WriteEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.OrganizationInviteInEmailLanguage>("email_language", EmailLanguage);
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.OrganizationInviteInRole>("role", Role);
+            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.AdminOrganizationMemberUpdateRole>("role", Role);
             writer.WriteEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.OrganizationInviteInRoleName>("role_name", RoleName);
             writer.WriteCollectionOfEnumValues<global::Soenneker.Mistral.OpenApiClient.Models.OrganizationInviteInRoleNamesItem>("role_names", RoleNames);
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.OrganizationInviteInRoles>("roles", Roles);
+            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.AdminOrganizationMemberUpdateRoles>("roles", Roles);
             writer.WriteBoolValue("subscription_seat_automatic_granting", SubscriptionSeatAutomaticGranting);
             writer.WriteEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.PlanType>("subscription_type", SubscriptionType);
             writer.WriteCollectionOfEnumValues<global::Soenneker.Mistral.OpenApiClient.Models.PlanType>("subscription_types", SubscriptionTypes);
             writer.WriteCollectionOfPrimitiveValues<Guid?>("workspace_uuids", WorkspaceUuids);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

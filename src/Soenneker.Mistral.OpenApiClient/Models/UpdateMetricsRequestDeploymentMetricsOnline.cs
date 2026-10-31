@@ -11,21 +11,38 @@ namespace Soenneker.Mistral.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class UpdateMetricsRequestDeploymentMetricsOnline : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("document_count") is null) { _explicitNullValueDocumentCount = default!; _explicitNullProperties?.Remove("document_count"); }
+            else if (parseNode.GetChildNode("document_count") is { } nullNodeDocumentCount && nullNodeDocumentCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DocumentCount = null;
+            if (parseNode.GetChildNode("index_metrics") is null) { _explicitNullValueIndexMetrics = default!; _explicitNullProperties?.Remove("index_metrics"); }
+            else if (parseNode.GetChildNode("index_metrics") is { } nullNodeIndexMetrics && nullNodeIndexMetrics.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IndexMetrics = null;
+            if (parseNode.GetChildNode("status") is null) { _explicitNullValueStatus = default!; _explicitNullProperties?.Remove("status"); }
+            else if (parseNode.GetChildNode("status") is { } nullNodeStatus && nullNodeStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Status = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The document_count property</summary>
-        public int? DocumentCount { get; set; }
+        public int? DocumentCount { get => _explicitNullValueDocumentCount; set { _explicitNullValueDocumentCount = value; AdditionalData?.Remove("document_count"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("document_count"); else _explicitNullProperties?.Remove("document_count"); } }
+        private int? _explicitNullValueDocumentCount = default!;
         /// <summary>The index_metrics property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Mistral.OpenApiClient.Models.UpdateMetricsRequestIndexMetrics>? IndexMetrics { get; set; }
+        public List<global::Soenneker.Mistral.OpenApiClient.Models.UpdateMetricsRequestIndexMetrics>? IndexMetrics { get => _explicitNullValueIndexMetrics; set { _explicitNullValueIndexMetrics = value; AdditionalData?.Remove("index_metrics"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("index_metrics"); else _explicitNullProperties?.Remove("index_metrics"); } }
+        private List<global::Soenneker.Mistral.OpenApiClient.Models.UpdateMetricsRequestIndexMetrics>? _explicitNullValueIndexMetrics = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Mistral.OpenApiClient.Models.UpdateMetricsRequestIndexMetrics> IndexMetrics { get; set; }
+        public List<global::Soenneker.Mistral.OpenApiClient.Models.UpdateMetricsRequestIndexMetrics> IndexMetrics { get => _explicitNullValueIndexMetrics; set { _explicitNullValueIndexMetrics = value; AdditionalData?.Remove("index_metrics"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("index_metrics"); else _explicitNullProperties?.Remove("index_metrics"); } }
+        private List<global::Soenneker.Mistral.OpenApiClient.Models.UpdateMetricsRequestIndexMetrics> _explicitNullValueIndexMetrics = default!;
 #endif
         /// <summary>The status property</summary>
-        public global::Soenneker.Mistral.OpenApiClient.Models.OnlineStatus? Status { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.OnlineStatus? Status { get => _explicitNullValueStatus; set { _explicitNullValueStatus = value; AdditionalData?.Remove("status"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status"); else _explicitNullProperties?.Remove("status"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.OnlineStatus? _explicitNullValueStatus = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Mistral.OpenApiClient.Models.UpdateMetricsRequestDeploymentMetricsOnline"/> and sets the default values.
         /// </summary>
@@ -41,7 +58,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         public static global::Soenneker.Mistral.OpenApiClient.Models.UpdateMetricsRequestDeploymentMetricsOnline CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Mistral.OpenApiClient.Models.UpdateMetricsRequestDeploymentMetricsOnline();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Mistral.OpenApiClient.Models.UpdateMetricsRequestDeploymentMetricsOnline(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -53,7 +70,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             {
                 { "document_count", n => { DocumentCount = n.GetIntValue(); } },
                 { "index_metrics", n => { IndexMetrics = n.GetCollectionOfObjectValues<global::Soenneker.Mistral.OpenApiClient.Models.UpdateMetricsRequestIndexMetrics>(global::Soenneker.Mistral.OpenApiClient.Models.UpdateMetricsRequestIndexMetrics.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.OnlineStatus>(); } },
+                { "status", n => { var parsed = n.GetEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.OnlineStatus>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueStatus = default; _explicitNullProperties?.Remove("status"); AdditionalData["status"] = unknown; } else { Status = parsed; AdditionalData.Remove("status"); } } },
             };
         }
         /// <summary>
@@ -66,6 +83,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             writer.WriteIntValue("document_count", DocumentCount);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Mistral.OpenApiClient.Models.UpdateMetricsRequestIndexMetrics>("index_metrics", IndexMetrics);
             writer.WriteEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.OnlineStatus>("status", Status);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

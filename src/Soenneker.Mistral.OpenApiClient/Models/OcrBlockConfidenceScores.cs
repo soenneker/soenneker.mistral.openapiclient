@@ -12,15 +12,31 @@ namespace Soenneker.Mistral.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class OcrBlockConfidenceScores : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("average_content_confidence_score") is null) { _explicitNullValueAverageContentConfidenceScore = default!; _explicitNullProperties?.Remove("average_content_confidence_score"); }
+            else if (parseNode.GetChildNode("average_content_confidence_score") is { } nullNodeAverageContentConfidenceScore && nullNodeAverageContentConfidenceScore.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AverageContentConfidenceScore = null;
+            if (parseNode.GetChildNode("block_type_confidence_score") is null) { _explicitNullValueBlockTypeConfidenceScore = default!; _explicitNullProperties?.Remove("block_type_confidence_score"); }
+            else if (parseNode.GetChildNode("block_type_confidence_score") is { } nullNodeBlockTypeConfidenceScore && nullNodeBlockTypeConfidenceScore.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BlockTypeConfidenceScore = null;
+            if (parseNode.GetChildNode("minimum_content_confidence_score") is null) { _explicitNullValueMinimumContentConfidenceScore = default!; _explicitNullProperties?.Remove("minimum_content_confidence_score"); }
+            else if (parseNode.GetChildNode("minimum_content_confidence_score") is { } nullNodeMinimumContentConfidenceScore && nullNodeMinimumContentConfidenceScore.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MinimumContentConfidenceScore = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Average confidence over the block&apos;s content (caption) tokens. None when the block has no textual content (e.g. image-only entry).</summary>
-        public double? AverageContentConfidenceScore { get; set; }
+        public double? AverageContentConfidenceScore { get => _explicitNullValueAverageContentConfidenceScore; set { _explicitNullValueAverageContentConfidenceScore = value; AdditionalData?.Remove("average_content_confidence_score"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("average_content_confidence_score"); else _explicitNullProperties?.Remove("average_content_confidence_score"); } }
+        private double? _explicitNullValueAverageContentConfidenceScore = default!;
         /// <summary>Confidence in the block type (e.g. &apos;text&apos;, &apos;title&apos;, &apos;table&apos;). None when the entry had no block type or the block type span could not be located.</summary>
-        public double? BlockTypeConfidenceScore { get; set; }
+        public double? BlockTypeConfidenceScore { get => _explicitNullValueBlockTypeConfidenceScore; set { _explicitNullValueBlockTypeConfidenceScore = value; AdditionalData?.Remove("block_type_confidence_score"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("block_type_confidence_score"); else _explicitNullProperties?.Remove("block_type_confidence_score"); } }
+        private double? _explicitNullValueBlockTypeConfidenceScore = default!;
         /// <summary>Minimum per-word content confidence in the block. None when the block has no textual content.</summary>
-        public double? MinimumContentConfidenceScore { get; set; }
+        public double? MinimumContentConfidenceScore { get => _explicitNullValueMinimumContentConfidenceScore; set { _explicitNullValueMinimumContentConfidenceScore = value; AdditionalData?.Remove("minimum_content_confidence_score"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("minimum_content_confidence_score"); else _explicitNullProperties?.Remove("minimum_content_confidence_score"); } }
+        private double? _explicitNullValueMinimumContentConfidenceScore = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Mistral.OpenApiClient.Models.OcrBlockConfidenceScores"/> and sets the default values.
         /// </summary>
@@ -36,7 +52,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         public static global::Soenneker.Mistral.OpenApiClient.Models.OcrBlockConfidenceScores CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Mistral.OpenApiClient.Models.OcrBlockConfidenceScores();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Mistral.OpenApiClient.Models.OcrBlockConfidenceScores(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -61,6 +77,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             writer.WriteDoubleValue("average_content_confidence_score", AverageContentConfidenceScore);
             writer.WriteDoubleValue("block_type_confidence_score", BlockTypeConfidenceScore);
             writer.WriteDoubleValue("minimum_content_confidence_score", MinimumContentConfidenceScore);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

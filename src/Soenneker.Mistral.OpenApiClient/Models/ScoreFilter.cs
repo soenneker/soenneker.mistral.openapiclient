@@ -11,34 +11,56 @@ namespace Soenneker.Mistral.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class ScoreFilter : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("evaluator_name") is null) { _explicitNullValueEvaluatorName = default!; _explicitNullProperties?.Remove("evaluator_name"); }
+            else if (parseNode.GetChildNode("evaluator_name") is { } nullNodeEvaluatorName && nullNodeEvaluatorName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EvaluatorName = null;
+            if (parseNode.GetChildNode("metric") is null) { _explicitNullValueMetric = default!; _explicitNullProperties?.Remove("metric"); }
+            else if (parseNode.GetChildNode("metric") is { } nullNodeMetric && nullNodeMetric.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Metric = null;
+            if (parseNode.GetChildNode("operator") is null) { _explicitNullValueOperator = default!; _explicitNullProperties?.Remove("operator"); }
+            else if (parseNode.GetChildNode("operator") is { } nullNodeOperator && nullNodeOperator.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Operator = null;
+            if (parseNode.GetChildNode("value") is null) { _explicitNullValueValue = default!; _explicitNullProperties?.Remove("value"); }
+            else if (parseNode.GetChildNode("value") is { } nullNodeValue && nullNodeValue.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Value = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The evaluator_name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? EvaluatorName { get; set; }
+        public string? EvaluatorName { get => _explicitNullValueEvaluatorName; set { _explicitNullValueEvaluatorName = value; AdditionalData?.Remove("evaluator_name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("evaluator_name"); else _explicitNullProperties?.Remove("evaluator_name"); } }
+        private string? _explicitNullValueEvaluatorName = default!;
 #nullable restore
 #else
-        public string EvaluatorName { get; set; }
+        public string EvaluatorName { get => _explicitNullValueEvaluatorName; set { _explicitNullValueEvaluatorName = value; AdditionalData?.Remove("evaluator_name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("evaluator_name"); else _explicitNullProperties?.Remove("evaluator_name"); } }
+        private string _explicitNullValueEvaluatorName = default!;
 #endif
         /// <summary>The metric property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Metric { get; set; }
+        public string? Metric { get => _explicitNullValueMetric; set { _explicitNullValueMetric = value; AdditionalData?.Remove("metric"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("metric"); else _explicitNullProperties?.Remove("metric"); } }
+        private string? _explicitNullValueMetric = default!;
 #nullable restore
 #else
-        public string Metric { get; set; }
+        public string Metric { get => _explicitNullValueMetric; set { _explicitNullValueMetric = value; AdditionalData?.Remove("metric"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("metric"); else _explicitNullProperties?.Remove("metric"); } }
+        private string _explicitNullValueMetric = default!;
 #endif
         /// <summary>The operator property</summary>
-        public global::Soenneker.Mistral.OpenApiClient.Models.ScoreOperator? Operator { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.ScoreOperator? Operator { get => _explicitNullValueOperator; set { _explicitNullValueOperator = value; AdditionalData?.Remove("operator"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("operator"); else _explicitNullProperties?.Remove("operator"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.ScoreOperator? _explicitNullValueOperator = default!;
         /// <summary>The value property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.ScoreFilterValue? Value { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.EqualValue? Value { get => _explicitNullValueValue; set { _explicitNullValueValue = value; AdditionalData?.Remove("value"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("value"); else _explicitNullProperties?.Remove("value"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.EqualValue? _explicitNullValueValue = default!;
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.ScoreFilterValue Value { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.EqualValue Value { get => _explicitNullValueValue; set { _explicitNullValueValue = value; AdditionalData?.Remove("value"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("value"); else _explicitNullProperties?.Remove("value"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.EqualValue _explicitNullValueValue = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Mistral.OpenApiClient.Models.ScoreFilter"/> and sets the default values.
@@ -55,7 +77,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         public static global::Soenneker.Mistral.OpenApiClient.Models.ScoreFilter CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Mistral.OpenApiClient.Models.ScoreFilter();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Mistral.OpenApiClient.Models.ScoreFilter(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -67,8 +89,8 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             {
                 { "evaluator_name", n => { EvaluatorName = n.GetStringValue(); } },
                 { "metric", n => { Metric = n.GetStringValue(); } },
-                { "operator", n => { Operator = n.GetEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.ScoreOperator>(); } },
-                { "value", n => { Value = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ScoreFilterValue>(global::Soenneker.Mistral.OpenApiClient.Models.ScoreFilterValue.CreateFromDiscriminatorValue); } },
+                { "operator", n => { var parsed = n.GetEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.ScoreOperator>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueOperator = default; _explicitNullProperties?.Remove("operator"); AdditionalData["operator"] = unknown; } else { Operator = parsed; AdditionalData.Remove("operator"); } } },
+                { "value", n => { Value = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.EqualValue>(global::Soenneker.Mistral.OpenApiClient.Models.EqualValue.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -81,7 +103,8 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             writer.WriteStringValue("evaluator_name", EvaluatorName);
             writer.WriteStringValue("metric", Metric);
             writer.WriteEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.ScoreOperator>("operator", Operator);
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ScoreFilterValue>("value", Value);
+            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.EqualValue>("value", Value);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

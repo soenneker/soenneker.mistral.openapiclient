@@ -11,27 +11,61 @@ namespace Soenneker.Mistral.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class ModerationLlmv1CategoryThresholds : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("dangerous_and_criminal_content") is null) { _explicitNullValueDangerousAndCriminalContent = default!; _explicitNullProperties?.Remove("dangerous_and_criminal_content"); }
+            else if (parseNode.GetChildNode("dangerous_and_criminal_content") is { } nullNodeDangerousAndCriminalContent && nullNodeDangerousAndCriminalContent.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DangerousAndCriminalContent = null;
+            if (parseNode.GetChildNode("financial") is null) { _explicitNullValueFinancial = default!; _explicitNullProperties?.Remove("financial"); }
+            else if (parseNode.GetChildNode("financial") is { } nullNodeFinancial && nullNodeFinancial.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Financial = null;
+            if (parseNode.GetChildNode("hate_and_discrimination") is null) { _explicitNullValueHateAndDiscrimination = default!; _explicitNullProperties?.Remove("hate_and_discrimination"); }
+            else if (parseNode.GetChildNode("hate_and_discrimination") is { } nullNodeHateAndDiscrimination && nullNodeHateAndDiscrimination.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HateAndDiscrimination = null;
+            if (parseNode.GetChildNode("health") is null) { _explicitNullValueHealth = default!; _explicitNullProperties?.Remove("health"); }
+            else if (parseNode.GetChildNode("health") is { } nullNodeHealth && nullNodeHealth.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Health = null;
+            if (parseNode.GetChildNode("law") is null) { _explicitNullValueLaw = default!; _explicitNullProperties?.Remove("law"); }
+            else if (parseNode.GetChildNode("law") is { } nullNodeLaw && nullNodeLaw.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Law = null;
+            if (parseNode.GetChildNode("pii") is null) { _explicitNullValuePii = default!; _explicitNullProperties?.Remove("pii"); }
+            else if (parseNode.GetChildNode("pii") is { } nullNodePii && nullNodePii.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Pii = null;
+            if (parseNode.GetChildNode("selfharm") is null) { _explicitNullValueSelfharm = default!; _explicitNullProperties?.Remove("selfharm"); }
+            else if (parseNode.GetChildNode("selfharm") is { } nullNodeSelfharm && nullNodeSelfharm.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Selfharm = null;
+            if (parseNode.GetChildNode("sexual") is null) { _explicitNullValueSexual = default!; _explicitNullProperties?.Remove("sexual"); }
+            else if (parseNode.GetChildNode("sexual") is { } nullNodeSexual && nullNodeSexual.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Sexual = null;
+            if (parseNode.GetChildNode("violence_and_threats") is null) { _explicitNullValueViolenceAndThreats = default!; _explicitNullProperties?.Remove("violence_and_threats"); }
+            else if (parseNode.GetChildNode("violence_and_threats") is { } nullNodeViolenceAndThreats && nullNodeViolenceAndThreats.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ViolenceAndThreats = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The dangerous_and_criminal_content property</summary>
-        public double? DangerousAndCriminalContent { get; set; }
+        public double? DangerousAndCriminalContent { get => _explicitNullValueDangerousAndCriminalContent; set { _explicitNullValueDangerousAndCriminalContent = value; AdditionalData?.Remove("dangerous_and_criminal_content"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dangerous_and_criminal_content"); else _explicitNullProperties?.Remove("dangerous_and_criminal_content"); } }
+        private double? _explicitNullValueDangerousAndCriminalContent = default!;
         /// <summary>The financial property</summary>
-        public double? Financial { get; set; }
+        public double? Financial { get => _explicitNullValueFinancial; set { _explicitNullValueFinancial = value; AdditionalData?.Remove("financial"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("financial"); else _explicitNullProperties?.Remove("financial"); } }
+        private double? _explicitNullValueFinancial = default!;
         /// <summary>The hate_and_discrimination property</summary>
-        public double? HateAndDiscrimination { get; set; }
+        public double? HateAndDiscrimination { get => _explicitNullValueHateAndDiscrimination; set { _explicitNullValueHateAndDiscrimination = value; AdditionalData?.Remove("hate_and_discrimination"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hate_and_discrimination"); else _explicitNullProperties?.Remove("hate_and_discrimination"); } }
+        private double? _explicitNullValueHateAndDiscrimination = default!;
         /// <summary>The health property</summary>
-        public double? Health { get; set; }
+        public double? Health { get => _explicitNullValueHealth; set { _explicitNullValueHealth = value; AdditionalData?.Remove("health"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("health"); else _explicitNullProperties?.Remove("health"); } }
+        private double? _explicitNullValueHealth = default!;
         /// <summary>The law property</summary>
-        public double? Law { get; set; }
+        public double? Law { get => _explicitNullValueLaw; set { _explicitNullValueLaw = value; AdditionalData?.Remove("law"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("law"); else _explicitNullProperties?.Remove("law"); } }
+        private double? _explicitNullValueLaw = default!;
         /// <summary>The pii property</summary>
-        public double? Pii { get; set; }
+        public double? Pii { get => _explicitNullValuePii; set { _explicitNullValuePii = value; AdditionalData?.Remove("pii"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pii"); else _explicitNullProperties?.Remove("pii"); } }
+        private double? _explicitNullValuePii = default!;
         /// <summary>The selfharm property</summary>
-        public double? Selfharm { get; set; }
+        public double? Selfharm { get => _explicitNullValueSelfharm; set { _explicitNullValueSelfharm = value; AdditionalData?.Remove("selfharm"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("selfharm"); else _explicitNullProperties?.Remove("selfharm"); } }
+        private double? _explicitNullValueSelfharm = default!;
         /// <summary>The sexual property</summary>
-        public double? Sexual { get; set; }
+        public double? Sexual { get => _explicitNullValueSexual; set { _explicitNullValueSexual = value; AdditionalData?.Remove("sexual"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sexual"); else _explicitNullProperties?.Remove("sexual"); } }
+        private double? _explicitNullValueSexual = default!;
         /// <summary>The violence_and_threats property</summary>
-        public double? ViolenceAndThreats { get; set; }
+        public double? ViolenceAndThreats { get => _explicitNullValueViolenceAndThreats; set { _explicitNullValueViolenceAndThreats = value; AdditionalData?.Remove("violence_and_threats"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("violence_and_threats"); else _explicitNullProperties?.Remove("violence_and_threats"); } }
+        private double? _explicitNullValueViolenceAndThreats = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Mistral.OpenApiClient.Models.ModerationLlmv1CategoryThresholds"/> and sets the default values.
         /// </summary>
@@ -47,7 +81,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         public static global::Soenneker.Mistral.OpenApiClient.Models.ModerationLlmv1CategoryThresholds CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Mistral.OpenApiClient.Models.ModerationLlmv1CategoryThresholds();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Mistral.OpenApiClient.Models.ModerationLlmv1CategoryThresholds(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -84,6 +118,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             writer.WriteDoubleValue("selfharm", Selfharm);
             writer.WriteDoubleValue("sexual", Sexual);
             writer.WriteDoubleValue("violence_and_threats", ViolenceAndThreats);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

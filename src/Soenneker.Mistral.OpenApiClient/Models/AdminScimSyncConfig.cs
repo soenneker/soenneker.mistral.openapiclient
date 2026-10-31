@@ -11,19 +11,41 @@ namespace Soenneker.Mistral.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class AdminScimSyncConfig : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("delete_missing_groups") is null) { _explicitNullValueDeleteMissingGroups = default!; _explicitNullProperties?.Remove("delete_missing_groups"); }
+            else if (parseNode.GetChildNode("delete_missing_groups") is { } nullNodeDeleteMissingGroups && nullNodeDeleteMissingGroups.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DeleteMissingGroups = null;
+            if (parseNode.GetChildNode("deprovision_users") is null) { _explicitNullValueDeprovisionUsers = default!; _explicitNullProperties?.Remove("deprovision_users"); }
+            else if (parseNode.GetChildNode("deprovision_users") is { } nullNodeDeprovisionUsers && nullNodeDeprovisionUsers.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DeprovisionUsers = null;
+            if (parseNode.GetChildNode("sync_groups") is null) { _explicitNullValueSyncGroups = default!; _explicitNullProperties?.Remove("sync_groups"); }
+            else if (parseNode.GetChildNode("sync_groups") is { } nullNodeSyncGroups && nullNodeSyncGroups.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SyncGroups = null;
+            if (parseNode.GetChildNode("sync_memberships") is null) { _explicitNullValueSyncMemberships = default!; _explicitNullProperties?.Remove("sync_memberships"); }
+            else if (parseNode.GetChildNode("sync_memberships") is { } nullNodeSyncMemberships && nullNodeSyncMemberships.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SyncMemberships = null;
+            if (parseNode.GetChildNode("sync_users") is null) { _explicitNullValueSyncUsers = default!; _explicitNullProperties?.Remove("sync_users"); }
+            else if (parseNode.GetChildNode("sync_users") is { } nullNodeSyncUsers && nullNodeSyncUsers.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SyncUsers = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Delete Organization groups that are absent from the SCIM provider.</summary>
-        public bool? DeleteMissingGroups { get; set; }
+        public bool? DeleteMissingGroups { get => _explicitNullValueDeleteMissingGroups; set { _explicitNullValueDeleteMissingGroups = value; AdditionalData?.Remove("delete_missing_groups"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("delete_missing_groups"); else _explicitNullProperties?.Remove("delete_missing_groups"); } }
+        private bool? _explicitNullValueDeleteMissingGroups = default!;
         /// <summary>Remove Organization users that are inactive or absent from the SCIM provider.</summary>
-        public bool? DeprovisionUsers { get; set; }
+        public bool? DeprovisionUsers { get => _explicitNullValueDeprovisionUsers; set { _explicitNullValueDeprovisionUsers = value; AdditionalData?.Remove("deprovision_users"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("deprovision_users"); else _explicitNullProperties?.Remove("deprovision_users"); } }
+        private bool? _explicitNullValueDeprovisionUsers = default!;
         /// <summary>Synchronize group metadata from the SCIM provider.</summary>
-        public bool? SyncGroups { get; set; }
+        public bool? SyncGroups { get => _explicitNullValueSyncGroups; set { _explicitNullValueSyncGroups = value; AdditionalData?.Remove("sync_groups"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sync_groups"); else _explicitNullProperties?.Remove("sync_groups"); } }
+        private bool? _explicitNullValueSyncGroups = default!;
         /// <summary>Synchronize additions and removals of users in SCIM groups.</summary>
-        public bool? SyncMemberships { get; set; }
+        public bool? SyncMemberships { get => _explicitNullValueSyncMemberships; set { _explicitNullValueSyncMemberships = value; AdditionalData?.Remove("sync_memberships"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sync_memberships"); else _explicitNullProperties?.Remove("sync_memberships"); } }
+        private bool? _explicitNullValueSyncMemberships = default!;
         /// <summary>Add users found in the SCIM provider to the Organization.</summary>
-        public bool? SyncUsers { get; set; }
+        public bool? SyncUsers { get => _explicitNullValueSyncUsers; set { _explicitNullValueSyncUsers = value; AdditionalData?.Remove("sync_users"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sync_users"); else _explicitNullProperties?.Remove("sync_users"); } }
+        private bool? _explicitNullValueSyncUsers = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Mistral.OpenApiClient.Models.AdminScimSyncConfig"/> and sets the default values.
         /// </summary>
@@ -41,7 +63,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         public static global::Soenneker.Mistral.OpenApiClient.Models.AdminScimSyncConfig CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Mistral.OpenApiClient.Models.AdminScimSyncConfig();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Mistral.OpenApiClient.Models.AdminScimSyncConfig(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -70,6 +92,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             writer.WriteBoolValue("sync_groups", SyncGroups);
             writer.WriteBoolValue("sync_memberships", SyncMemberships);
             writer.WriteBoolValue("sync_users", SyncUsers);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

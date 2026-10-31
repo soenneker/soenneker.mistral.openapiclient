@@ -11,24 +11,39 @@ namespace Soenneker.Mistral.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class OrganizationUsersCreateOut : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("email_to_user_id") is null) { _explicitNullValueEmailToUserId = default!; _explicitNullProperties?.Remove("email_to_user_id"); }
+            else if (parseNode.GetChildNode("email_to_user_id") is { } nullNodeEmailToUserId && nullNodeEmailToUserId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EmailToUserId = null;
+            if (parseNode.GetChildNode("invalid_emails") is null) { _explicitNullValueInvalidEmails = default!; _explicitNullProperties?.Remove("invalid_emails"); }
+            else if (parseNode.GetChildNode("invalid_emails") is { } nullNodeInvalidEmails && nullNodeInvalidEmails.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) InvalidEmails = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Mapping from created user email to user identifier.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.OrganizationUsersCreateOutEmailToUserIdProperty? EmailToUserId { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.OrganizationUsersCreateOutEmailToUserIdProperty? EmailToUserId { get => _explicitNullValueEmailToUserId; set { _explicitNullValueEmailToUserId = value; AdditionalData?.Remove("email_to_user_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("email_to_user_id"); else _explicitNullProperties?.Remove("email_to_user_id"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.OrganizationUsersCreateOutEmailToUserIdProperty? _explicitNullValueEmailToUserId = default!;
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.OrganizationUsersCreateOutEmailToUserIdProperty EmailToUserId { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.OrganizationUsersCreateOutEmailToUserIdProperty EmailToUserId { get => _explicitNullValueEmailToUserId; set { _explicitNullValueEmailToUserId = value; AdditionalData?.Remove("email_to_user_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("email_to_user_id"); else _explicitNullProperties?.Remove("email_to_user_id"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.OrganizationUsersCreateOutEmailToUserIdProperty _explicitNullValueEmailToUserId = default!;
 #endif
         /// <summary>Email addresses that could not be created.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? InvalidEmails { get; set; }
+        public List<string>? InvalidEmails { get => _explicitNullValueInvalidEmails; set { _explicitNullValueInvalidEmails = value; AdditionalData?.Remove("invalid_emails"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("invalid_emails"); else _explicitNullProperties?.Remove("invalid_emails"); } }
+        private List<string>? _explicitNullValueInvalidEmails = default!;
 #nullable restore
 #else
-        public List<string> InvalidEmails { get; set; }
+        public List<string> InvalidEmails { get => _explicitNullValueInvalidEmails; set { _explicitNullValueInvalidEmails = value; AdditionalData?.Remove("invalid_emails"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("invalid_emails"); else _explicitNullProperties?.Remove("invalid_emails"); } }
+        private List<string> _explicitNullValueInvalidEmails = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Mistral.OpenApiClient.Models.OrganizationUsersCreateOut"/> and sets the default values.
@@ -45,7 +60,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         public static global::Soenneker.Mistral.OpenApiClient.Models.OrganizationUsersCreateOut CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Mistral.OpenApiClient.Models.OrganizationUsersCreateOut();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Mistral.OpenApiClient.Models.OrganizationUsersCreateOut(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -68,6 +83,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.OrganizationUsersCreateOutEmailToUserIdProperty>("email_to_user_id", EmailToUserId);
             writer.WriteCollectionOfPrimitiveValues<string>("invalid_emails", InvalidEmails);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

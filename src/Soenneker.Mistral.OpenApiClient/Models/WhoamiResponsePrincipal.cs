@@ -8,26 +8,31 @@ using System;
 namespace Soenneker.Mistral.OpenApiClient.Models
 {
     /// <summary>
-    /// Composed type wrapper for classes <see cref="global::Soenneker.Mistral.OpenApiClient.Models.WhoamiServiceAccountPrincipal"/>, <see cref="global::Soenneker.Mistral.OpenApiClient.Models.WhoamiUserPrincipal"/>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Mistral.OpenApiClient.Models.WhoamiResponsePrincipalOneOf1"/>, <see cref="global::Soenneker.Mistral.OpenApiClient.Models.WhoamiResponsePrincipalOneOf2"/>
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class WhoamiResponsePrincipal : IComposedTypeWrapper, IParsable
-    {
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Mistral.OpenApiClient.Models.WhoamiServiceAccountPrincipal"/></summary>
+    , global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder {
+        // Preserve ambiguous union payloads without inventing a discriminator.
+        /// <summary>The complete payload when no unique typed union branch can be selected.</summary>
+        public global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode UnrecognizedValue { get; set; } = null!;
+        public global::System.Collections.Generic.IDictionary<string, object> AdditionalData { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Mistral.OpenApiClient.Models.WhoamiResponsePrincipalOneOf1"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.WhoamiServiceAccountPrincipal? WhoamiServiceAccountPrincipal { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.WhoamiResponsePrincipalOneOf1? WhoamiResponsePrincipalOneOf1 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.WhoamiServiceAccountPrincipal WhoamiServiceAccountPrincipal { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.WhoamiResponsePrincipalOneOf1 WhoamiResponsePrincipalOneOf1 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Mistral.OpenApiClient.Models.WhoamiUserPrincipal"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Mistral.OpenApiClient.Models.WhoamiResponsePrincipalOneOf2"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.WhoamiUserPrincipal? WhoamiUserPrincipal { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.WhoamiResponsePrincipalOneOf2? WhoamiResponsePrincipalOneOf2 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.WhoamiUserPrincipal WhoamiUserPrincipal { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.WhoamiResponsePrincipalOneOf2 WhoamiResponsePrincipalOneOf2 { get; set; }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -37,17 +42,28 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         public static global::Soenneker.Mistral.OpenApiClient.Models.WhoamiResponsePrincipal CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            var mappingValue = parseNode.GetChildNode("principal_type")?.GetStringValue();
+            var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
             var result = new global::Soenneker.Mistral.OpenApiClient.Models.WhoamiResponsePrincipal();
-            if("service_account".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            if("WhoamiResponsePrincipalOneOf1".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.WhoamiServiceAccountPrincipal = new global::Soenneker.Mistral.OpenApiClient.Models.WhoamiServiceAccountPrincipal();
+                
             }
-            else if("user".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("WhoamiResponsePrincipalOneOf2".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.WhoamiUserPrincipal = new global::Soenneker.Mistral.OpenApiClient.Models.WhoamiUserPrincipal();
+                
             }
-            return result;
+            
+            var unionPayload = parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue);
+            bool matchesUnionBranch0 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => ((unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject)) && (unionPayload is not global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject shapeObject0 || (shapeObject0.GetValue() is var shapeMembers1 && (shapeMembers1.ContainsKey("id") && shapeMembers1.ContainsKey("principal_type") && (!shapeMembers1.ContainsKey("principal_type") || (((shapeMembers1["principal_type"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString)) && (shapeMembers1["principal_type"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString literal2 && "user".Equals(literal2.GetValue(), global::System.StringComparison.Ordinal)) && ((shapeMembers1["principal_type"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString literal3 && "user".Equals(literal3.GetValue(), global::System.StringComparison.Ordinal))))) && (!shapeMembers1.ContainsKey("id") || (((shapeMembers1["id"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString)))) && (!shapeMembers1.ContainsKey("email") || ((((shapeMembers1["email"] == null || shapeMembers1["email"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull)) || (shapeMembers1["email"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString)))) && (!shapeMembers1.ContainsKey("first_name") || ((((shapeMembers1["first_name"] == null || shapeMembers1["first_name"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull)) || (shapeMembers1["first_name"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString)))) && (!shapeMembers1.ContainsKey("last_name") || ((((shapeMembers1["last_name"] == null || shapeMembers1["last_name"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull)) || (shapeMembers1["last_name"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString)))))))))();
+            bool matchesUnionBranch1 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => ((unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject)) && (unionPayload is not global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject shapeObject0 || (shapeObject0.GetValue() is var shapeMembers1 && (shapeMembers1.ContainsKey("service_account_id") && shapeMembers1.ContainsKey("principal_type") && (!shapeMembers1.ContainsKey("principal_type") || (((shapeMembers1["principal_type"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString)) && (shapeMembers1["principal_type"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString literal2 && "service_account".Equals(literal2.GetValue(), global::System.StringComparison.Ordinal)) && ((shapeMembers1["principal_type"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString literal3 && "service_account".Equals(literal3.GetValue(), global::System.StringComparison.Ordinal))))) && (!shapeMembers1.ContainsKey("service_account_id") || (((shapeMembers1["service_account_id"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString)))) && (!shapeMembers1.ContainsKey("name") || ((((shapeMembers1["name"] == null || shapeMembers1["name"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull)) || (shapeMembers1["name"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString)))))))))();
+            int matchingUnionBranches = 0;
+            if (matchesUnionBranch0) matchingUnionBranches++;
+            if (matchesUnionBranch1) matchingUnionBranches++;
+            bool noSelectedUnionBranch = result.WhoamiResponsePrincipalOneOf1 == null && result.WhoamiResponsePrincipalOneOf2 == null;
+            if (noSelectedUnionBranch && matchesUnionBranch0 && matchingUnionBranches == 1) result.WhoamiResponsePrincipalOneOf1 = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Mistral.OpenApiClient.Models.WhoamiResponsePrincipalOneOf1(), parseNode);
+            if (noSelectedUnionBranch && matchesUnionBranch1 && matchingUnionBranches == 1) result.WhoamiResponsePrincipalOneOf2 = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Mistral.OpenApiClient.Models.WhoamiResponsePrincipalOneOf2(), parseNode);
+            if (result.WhoamiResponsePrincipalOneOf1 == null && result.WhoamiResponsePrincipalOneOf2 == null) result.UnrecognizedValue = unionPayload;
+return result;
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -55,13 +71,15 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            if(WhoamiServiceAccountPrincipal != null)
+            if (UnrecognizedValue is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject rawFields) { var fields = new global::System.Collections.Generic.Dictionary<string, global::System.Action<IParseNode>>(); foreach (var entry in rawFields.GetValue()) fields[entry.Key] = _ => { }; return fields; }
+
+            if(WhoamiResponsePrincipalOneOf1 != null)
             {
-                return WhoamiServiceAccountPrincipal.GetFieldDeserializers();
+                return WhoamiResponsePrincipalOneOf1.GetFieldDeserializers();
             }
-            else if(WhoamiUserPrincipal != null)
+            else if(WhoamiResponsePrincipalOneOf2 != null)
             {
-                return WhoamiUserPrincipal.GetFieldDeserializers();
+                return WhoamiResponsePrincipalOneOf2.GetFieldDeserializers();
             }
             return new Dictionary<string, Action<IParseNode>>();
         }
@@ -71,14 +89,24 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public virtual void Serialize(ISerializationWriter writer)
         {
+            if (global::System.Object.ReferenceEquals(writer, null)) throw new global::System.ArgumentNullException(nameof(writer));
+            if (WhoamiResponsePrincipalOneOf1 == null && WhoamiResponsePrincipalOneOf2 == null) { if (UnrecognizedValue is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject rawObject) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData, rawObject)); else if (UnrecognizedValue != null) writer.WriteObjectValue(null, UnrecognizedValue); else if (AdditionalData.Count > 0) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData)); else writer.WriteNullValue(null); return; }
+            int selectedUnionBranches = 0;
+            if (WhoamiResponsePrincipalOneOf1 != null) selectedUnionBranches++;
+            if (WhoamiResponsePrincipalOneOf2 != null) selectedUnionBranches++;
+            if (WhoamiResponsePrincipalOneOf1 != null && selectedUnionBranches == 1) { if (WhoamiResponsePrincipalOneOf1 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, WhoamiResponsePrincipalOneOf1); return; }
+            if (WhoamiResponsePrincipalOneOf2 != null && selectedUnionBranches == 1) { if (WhoamiResponsePrincipalOneOf2 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, WhoamiResponsePrincipalOneOf2); return; }
+
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            if(WhoamiServiceAccountPrincipal != null)
+            if(WhoamiResponsePrincipalOneOf1 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.WhoamiServiceAccountPrincipal>(null, WhoamiServiceAccountPrincipal);
+                if (WhoamiResponsePrincipalOneOf1 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
+                writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.WhoamiResponsePrincipalOneOf1>(null, WhoamiResponsePrincipalOneOf1);
             }
-            else if(WhoamiUserPrincipal != null)
+            else if(WhoamiResponsePrincipalOneOf2 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.WhoamiUserPrincipal>(null, WhoamiUserPrincipal);
+                if (WhoamiResponsePrincipalOneOf2 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
+                writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.WhoamiResponsePrincipalOneOf2>(null, WhoamiResponsePrincipalOneOf2);
             }
         }
     }

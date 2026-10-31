@@ -11,22 +11,37 @@ namespace Soenneker.Mistral.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class ManagedIndexFields : IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("chunk_fields") is null) { _explicitNullValueChunkFields = default!; _explicitNullProperties?.Remove("chunk_fields"); }
+            else if (parseNode.GetChildNode("chunk_fields") is { } nullNodeChunkFields && nullNodeChunkFields.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ChunkFields = null;
+            if (parseNode.GetChildNode("document_fields") is null) { _explicitNullValueDocumentFields = default!; _explicitNullProperties?.Remove("document_fields"); }
+            else if (parseNode.GetChildNode("document_fields") is { } nullNodeDocumentFields && nullNodeDocumentFields.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DocumentFields = null;
+        }
+
         /// <summary>The chunk_fields property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.ManagedIndexFieldsChunkFieldsProperty? ChunkFields { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.ManagedIndexFieldsChunkFieldsProperty? ChunkFields { get => _explicitNullValueChunkFields; set { _explicitNullValueChunkFields = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("chunk_fields"); else _explicitNullProperties?.Remove("chunk_fields"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.ManagedIndexFieldsChunkFieldsProperty? _explicitNullValueChunkFields = default!;
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.ManagedIndexFieldsChunkFieldsProperty ChunkFields { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.ManagedIndexFieldsChunkFieldsProperty ChunkFields { get => _explicitNullValueChunkFields; set { _explicitNullValueChunkFields = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("chunk_fields"); else _explicitNullProperties?.Remove("chunk_fields"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.ManagedIndexFieldsChunkFieldsProperty _explicitNullValueChunkFields = default!;
 #endif
         /// <summary>The document_fields property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.ManagedIndexFieldsDocumentFieldsProperty? DocumentFields { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.ManagedIndexFieldsDocumentFieldsProperty? DocumentFields { get => _explicitNullValueDocumentFields; set { _explicitNullValueDocumentFields = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("document_fields"); else _explicitNullProperties?.Remove("document_fields"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.ManagedIndexFieldsDocumentFieldsProperty? _explicitNullValueDocumentFields = default!;
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.ManagedIndexFieldsDocumentFieldsProperty DocumentFields { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.ManagedIndexFieldsDocumentFieldsProperty DocumentFields { get => _explicitNullValueDocumentFields; set { _explicitNullValueDocumentFields = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("document_fields"); else _explicitNullProperties?.Remove("document_fields"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.ManagedIndexFieldsDocumentFieldsProperty _explicitNullValueDocumentFields = default!;
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -36,7 +51,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         public static global::Soenneker.Mistral.OpenApiClient.Models.ManagedIndexFields CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Mistral.OpenApiClient.Models.ManagedIndexFields();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Mistral.OpenApiClient.Models.ManagedIndexFields(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -58,7 +73,8 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ManagedIndexFieldsChunkFieldsProperty>("chunk_fields", ChunkFields);
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ManagedIndexFieldsDocumentFieldsProperty>("document_fields", DocumentFields);
+            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ManagedIndexFieldsDocumentFieldsProperty>("document_fields", DocumentFields);if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
+            
         }
     }
 }

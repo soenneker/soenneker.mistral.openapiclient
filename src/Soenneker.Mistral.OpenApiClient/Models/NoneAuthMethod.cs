@@ -11,17 +11,31 @@ namespace Soenneker.Mistral.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class NoneAuthMethod : IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("headers") is null) { _explicitNullValueHeaders = default!; _explicitNullProperties?.Remove("headers"); }
+            else if (parseNode.GetChildNode("headers") is { } nullNodeHeaders && nullNodeHeaders.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Headers = null;
+            if (parseNode.GetChildNode("method_type") is null) { _explicitNullValueMethodType = default!; _explicitNullProperties?.Remove("method_type"); }
+            else if (parseNode.GetChildNode("method_type") is { } nullNodeMethodType && nullNodeMethodType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MethodType = null;
+        }
+
         /// <summary>Headers whose values must be provided as credentials.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Mistral.OpenApiClient.Models.ConnectorAuthenticationHeader>? Headers { get; set; }
+        public List<global::Soenneker.Mistral.OpenApiClient.Models.ConnectorAuthenticationHeader>? Headers { get => _explicitNullValueHeaders; set { _explicitNullValueHeaders = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("headers"); else _explicitNullProperties?.Remove("headers"); } }
+        private List<global::Soenneker.Mistral.OpenApiClient.Models.ConnectorAuthenticationHeader>? _explicitNullValueHeaders = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Mistral.OpenApiClient.Models.ConnectorAuthenticationHeader> Headers { get; set; }
+        public List<global::Soenneker.Mistral.OpenApiClient.Models.ConnectorAuthenticationHeader> Headers { get => _explicitNullValueHeaders; set { _explicitNullValueHeaders = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("headers"); else _explicitNullProperties?.Remove("headers"); } }
+        private List<global::Soenneker.Mistral.OpenApiClient.Models.ConnectorAuthenticationHeader> _explicitNullValueHeaders = default!;
 #endif
         /// <summary>The method_type property</summary>
-        public global::Soenneker.Mistral.OpenApiClient.Models.NoneMethodType? MethodType { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.NoneMethodType? MethodType { get => _explicitNullValueMethodType; set { _explicitNullValueMethodType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("method_type"); else _explicitNullProperties?.Remove("method_type"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.NoneMethodType? _explicitNullValueMethodType = default!;
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -30,7 +44,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         public static global::Soenneker.Mistral.OpenApiClient.Models.NoneAuthMethod CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Mistral.OpenApiClient.Models.NoneAuthMethod();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Mistral.OpenApiClient.Models.NoneAuthMethod(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -52,7 +66,8 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfObjectValues<global::Soenneker.Mistral.OpenApiClient.Models.ConnectorAuthenticationHeader>("headers", Headers);
-            writer.WriteEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.NoneMethodType>("method_type", MethodType);
+            writer.WriteEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.NoneMethodType>("method_type", MethodType);if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
+            
         }
     }
 }

@@ -49,25 +49,28 @@ namespace Soenneker.Mistral.OpenApiClient.V1.Connectors.Item.Tools
         /// <summary>
         /// List all tools available for an MCP connector.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Mistral.OpenApiClient.Models.ResponseConnectorListToolsV1"/></returns>
+        /// <returns>A List&lt;global::Soenneker.Mistral.OpenApiClient.Models.ResponseConnectorListToolsV1&gt;</returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Mistral.OpenApiClient.Models.HttpValidationError">When receiving a 422 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Mistral.OpenApiClient.Models.ResponseConnectorListToolsV1?> GetAsync(Action<RequestConfiguration<global::Soenneker.Mistral.OpenApiClient.V1.Connectors.Item.Tools.ToolsRequestBuilder.ToolsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<List<global::Soenneker.Mistral.OpenApiClient.Models.ResponseConnectorListToolsV1>?> GetAsync(Action<RequestConfiguration<global::Soenneker.Mistral.OpenApiClient.V1.Connectors.Item.Tools.ToolsRequestBuilder.ToolsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Mistral.OpenApiClient.Models.ResponseConnectorListToolsV1> GetAsync(Action<RequestConfiguration<global::Soenneker.Mistral.OpenApiClient.V1.Connectors.Item.Tools.ToolsRequestBuilder.ToolsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<List<global::Soenneker.Mistral.OpenApiClient.Models.ResponseConnectorListToolsV1>> GetAsync(Action<RequestConfiguration<global::Soenneker.Mistral.OpenApiClient.V1.Connectors.Item.Tools.ToolsRequestBuilder.ToolsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
                 { "422", global::Soenneker.Mistral.OpenApiClient.Models.HttpValidationError.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Mistral.OpenApiClient.Models.ResponseConnectorListToolsV1>(requestInfo, global::Soenneker.Mistral.OpenApiClient.Models.ResponseConnectorListToolsV1.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            var collectionResult = await RequestAdapter.SendCollectionAsync<global::Soenneker.Mistral.OpenApiClient.Models.ResponseConnectorListToolsV1>(requestInfo, global::Soenneker.Mistral.OpenApiClient.Models.ResponseConnectorListToolsV1.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return collectionResult?.AsList();
         }
         /// <summary>
         /// List all tools available for an MCP connector.

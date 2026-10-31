@@ -12,19 +12,41 @@ namespace Soenneker.Mistral.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class VibeNextEditModifiedLocStat : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("day") is null) { _explicitNullValueDay = default!; _explicitNullProperties?.Remove("day"); }
+            else if (parseNode.GetChildNode("day") is { } nullNodeDay && nullNodeDay.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Day = null;
+            if (parseNode.GetChildNode("lines_deleted") is null) { _explicitNullValueLinesDeleted = default!; _explicitNullProperties?.Remove("lines_deleted"); }
+            else if (parseNode.GetChildNode("lines_deleted") is { } nullNodeLinesDeleted && nullNodeLinesDeleted.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LinesDeleted = null;
+            if (parseNode.GetChildNode("lines_inserted") is null) { _explicitNullValueLinesInserted = default!; _explicitNullProperties?.Remove("lines_inserted"); }
+            else if (parseNode.GetChildNode("lines_inserted") is { } nullNodeLinesInserted && nullNodeLinesInserted.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LinesInserted = null;
+            if (parseNode.GetChildNode("lines_total") is null) { _explicitNullValueLinesTotal = default!; _explicitNullProperties?.Remove("lines_total"); }
+            else if (parseNode.GetChildNode("lines_total") is { } nullNodeLinesTotal && nullNodeLinesTotal.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LinesTotal = null;
+            if (parseNode.GetChildNode("lines_unchanged") is null) { _explicitNullValueLinesUnchanged = default!; _explicitNullProperties?.Remove("lines_unchanged"); }
+            else if (parseNode.GetChildNode("lines_unchanged") is { } nullNodeLinesUnchanged && nullNodeLinesUnchanged.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LinesUnchanged = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The day property</summary>
-        public Date? Day { get; set; }
+        public Date? Day { get => _explicitNullValueDay; set { _explicitNullValueDay = value; AdditionalData?.Remove("day"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("day"); else _explicitNullProperties?.Remove("day"); } }
+        private Date? _explicitNullValueDay = default!;
         /// <summary>The lines_deleted property</summary>
-        public int? LinesDeleted { get; set; }
+        public int? LinesDeleted { get => _explicitNullValueLinesDeleted; set { _explicitNullValueLinesDeleted = value; AdditionalData?.Remove("lines_deleted"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("lines_deleted"); else _explicitNullProperties?.Remove("lines_deleted"); } }
+        private int? _explicitNullValueLinesDeleted = default!;
         /// <summary>The lines_inserted property</summary>
-        public int? LinesInserted { get; set; }
+        public int? LinesInserted { get => _explicitNullValueLinesInserted; set { _explicitNullValueLinesInserted = value; AdditionalData?.Remove("lines_inserted"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("lines_inserted"); else _explicitNullProperties?.Remove("lines_inserted"); } }
+        private int? _explicitNullValueLinesInserted = default!;
         /// <summary>The lines_total property</summary>
-        public int? LinesTotal { get; set; }
+        public int? LinesTotal { get => _explicitNullValueLinesTotal; set { _explicitNullValueLinesTotal = value; AdditionalData?.Remove("lines_total"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("lines_total"); else _explicitNullProperties?.Remove("lines_total"); } }
+        private int? _explicitNullValueLinesTotal = default!;
         /// <summary>The lines_unchanged property</summary>
-        public int? LinesUnchanged { get; set; }
+        public int? LinesUnchanged { get => _explicitNullValueLinesUnchanged; set { _explicitNullValueLinesUnchanged = value; AdditionalData?.Remove("lines_unchanged"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("lines_unchanged"); else _explicitNullProperties?.Remove("lines_unchanged"); } }
+        private int? _explicitNullValueLinesUnchanged = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Mistral.OpenApiClient.Models.VibeNextEditModifiedLocStat"/> and sets the default values.
         /// </summary>
@@ -40,7 +62,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         public static global::Soenneker.Mistral.OpenApiClient.Models.VibeNextEditModifiedLocStat CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Mistral.OpenApiClient.Models.VibeNextEditModifiedLocStat();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Mistral.OpenApiClient.Models.VibeNextEditModifiedLocStat(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -69,6 +91,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             writer.WriteIntValue("lines_inserted", LinesInserted);
             writer.WriteIntValue("lines_total", LinesTotal);
             writer.WriteIntValue("lines_unchanged", LinesUnchanged);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

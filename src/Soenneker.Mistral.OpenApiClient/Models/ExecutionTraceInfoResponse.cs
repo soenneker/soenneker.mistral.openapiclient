@@ -11,18 +11,32 @@ namespace Soenneker.Mistral.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class ExecutionTraceInfoResponse : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("has_trace_data") is null) { _explicitNullValueHasTraceData = default!; _explicitNullProperties?.Remove("has_trace_data"); }
+            else if (parseNode.GetChildNode("has_trace_data") is { } nullNodeHasTraceData && nullNodeHasTraceData.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HasTraceData = null;
+            if (parseNode.GetChildNode("otel_trace_id") is null) { _explicitNullValueOtelTraceId = default!; _explicitNullProperties?.Remove("otel_trace_id"); }
+            else if (parseNode.GetChildNode("otel_trace_id") is { } nullNodeOtelTraceId && nullNodeOtelTraceId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OtelTraceId = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Whether trace data is available in the trace backend for this execution</summary>
-        public bool? HasTraceData { get; set; }
+        public bool? HasTraceData { get => _explicitNullValueHasTraceData; set { _explicitNullValueHasTraceData = value; AdditionalData?.Remove("has_trace_data"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("has_trace_data"); else _explicitNullProperties?.Remove("has_trace_data"); } }
+        private bool? _explicitNullValueHasTraceData = default!;
         /// <summary>The ID of the trace, if available</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OtelTraceId { get; set; }
+        public string? OtelTraceId { get => _explicitNullValueOtelTraceId; set { _explicitNullValueOtelTraceId = value; AdditionalData?.Remove("otel_trace_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("otel_trace_id"); else _explicitNullProperties?.Remove("otel_trace_id"); } }
+        private string? _explicitNullValueOtelTraceId = default!;
 #nullable restore
 #else
-        public string OtelTraceId { get; set; }
+        public string OtelTraceId { get => _explicitNullValueOtelTraceId; set { _explicitNullValueOtelTraceId = value; AdditionalData?.Remove("otel_trace_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("otel_trace_id"); else _explicitNullProperties?.Remove("otel_trace_id"); } }
+        private string _explicitNullValueOtelTraceId = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Mistral.OpenApiClient.Models.ExecutionTraceInfoResponse"/> and sets the default values.
@@ -40,7 +54,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         public static global::Soenneker.Mistral.OpenApiClient.Models.ExecutionTraceInfoResponse CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Mistral.OpenApiClient.Models.ExecutionTraceInfoResponse();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Mistral.OpenApiClient.Models.ExecutionTraceInfoResponse(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -63,6 +77,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("has_trace_data", HasTraceData);
             writer.WriteStringValue("otel_trace_id", OtelTraceId);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

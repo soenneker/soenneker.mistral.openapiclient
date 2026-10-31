@@ -12,207 +12,319 @@ namespace Soenneker.Mistral.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ExtendedOAuthServerMetadata : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("authorization_endpoint") is null) { _explicitNullValueAuthorizationEndpoint = default!; _explicitNullProperties?.Remove("authorization_endpoint"); }
+            else if (parseNode.GetChildNode("authorization_endpoint") is { } nullNodeAuthorizationEndpoint && nullNodeAuthorizationEndpoint.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AuthorizationEndpoint = null;
+            if (parseNode.GetChildNode("authorization_grant_profiles_supported") is null) { _explicitNullValueAuthorizationGrantProfilesSupported = default!; _explicitNullProperties?.Remove("authorization_grant_profiles_supported"); }
+            else if (parseNode.GetChildNode("authorization_grant_profiles_supported") is { } nullNodeAuthorizationGrantProfilesSupported && nullNodeAuthorizationGrantProfilesSupported.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AuthorizationGrantProfilesSupported = null;
+            if (parseNode.GetChildNode("authorization_response_iss_parameter_supported") is null) { _explicitNullValueAuthorizationResponseIssParameterSupported = default!; _explicitNullProperties?.Remove("authorization_response_iss_parameter_supported"); }
+            else if (parseNode.GetChildNode("authorization_response_iss_parameter_supported") is { } nullNodeAuthorizationResponseIssParameterSupported && nullNodeAuthorizationResponseIssParameterSupported.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AuthorizationResponseIssParameterSupported = null;
+            if (parseNode.GetChildNode("client_id_metadata_document_supported") is null) { _explicitNullValueClientIdMetadataDocumentSupported = default!; _explicitNullProperties?.Remove("client_id_metadata_document_supported"); }
+            else if (parseNode.GetChildNode("client_id_metadata_document_supported") is { } nullNodeClientIdMetadataDocumentSupported && nullNodeClientIdMetadataDocumentSupported.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ClientIdMetadataDocumentSupported = null;
+            if (parseNode.GetChildNode("code_challenge_methods_supported") is null) { _explicitNullValueCodeChallengeMethodsSupported = default!; _explicitNullProperties?.Remove("code_challenge_methods_supported"); }
+            else if (parseNode.GetChildNode("code_challenge_methods_supported") is { } nullNodeCodeChallengeMethodsSupported && nullNodeCodeChallengeMethodsSupported.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CodeChallengeMethodsSupported = null;
+            if (parseNode.GetChildNode("grant_types_supported") is null) { _explicitNullValueGrantTypesSupported = default!; _explicitNullProperties?.Remove("grant_types_supported"); }
+            else if (parseNode.GetChildNode("grant_types_supported") is { } nullNodeGrantTypesSupported && nullNodeGrantTypesSupported.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) GrantTypesSupported = null;
+            if (parseNode.GetChildNode("introspection_endpoint") is null) { _explicitNullValueIntrospectionEndpoint = default!; _explicitNullProperties?.Remove("introspection_endpoint"); }
+            else if (parseNode.GetChildNode("introspection_endpoint") is { } nullNodeIntrospectionEndpoint && nullNodeIntrospectionEndpoint.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IntrospectionEndpoint = null;
+            if (parseNode.GetChildNode("introspection_endpoint_auth_methods_supported") is null) { _explicitNullValueIntrospectionEndpointAuthMethodsSupported = default!; _explicitNullProperties?.Remove("introspection_endpoint_auth_methods_supported"); }
+            else if (parseNode.GetChildNode("introspection_endpoint_auth_methods_supported") is { } nullNodeIntrospectionEndpointAuthMethodsSupported && nullNodeIntrospectionEndpointAuthMethodsSupported.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IntrospectionEndpointAuthMethodsSupported = null;
+            if (parseNode.GetChildNode("introspection_endpoint_auth_signing_alg_values_supported") is null) { _explicitNullValueIntrospectionEndpointAuthSigningAlgValuesSupported = default!; _explicitNullProperties?.Remove("introspection_endpoint_auth_signing_alg_values_supported"); }
+            else if (parseNode.GetChildNode("introspection_endpoint_auth_signing_alg_values_supported") is { } nullNodeIntrospectionEndpointAuthSigningAlgValuesSupported && nullNodeIntrospectionEndpointAuthSigningAlgValuesSupported.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IntrospectionEndpointAuthSigningAlgValuesSupported = null;
+            if (parseNode.GetChildNode("issuer") is null) { _explicitNullValueIssuer = default!; _explicitNullProperties?.Remove("issuer"); }
+            else if (parseNode.GetChildNode("issuer") is { } nullNodeIssuer && nullNodeIssuer.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Issuer = null;
+            if (parseNode.GetChildNode("op_policy_uri") is null) { _explicitNullValueOpPolicyUri = default!; _explicitNullProperties?.Remove("op_policy_uri"); }
+            else if (parseNode.GetChildNode("op_policy_uri") is { } nullNodeOpPolicyUri && nullNodeOpPolicyUri.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OpPolicyUri = null;
+            if (parseNode.GetChildNode("op_tos_uri") is null) { _explicitNullValueOpTosUri = default!; _explicitNullProperties?.Remove("op_tos_uri"); }
+            else if (parseNode.GetChildNode("op_tos_uri") is { } nullNodeOpTosUri && nullNodeOpTosUri.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OpTosUri = null;
+            if (parseNode.GetChildNode("registration_endpoint") is null) { _explicitNullValueRegistrationEndpoint = default!; _explicitNullProperties?.Remove("registration_endpoint"); }
+            else if (parseNode.GetChildNode("registration_endpoint") is { } nullNodeRegistrationEndpoint && nullNodeRegistrationEndpoint.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RegistrationEndpoint = null;
+            if (parseNode.GetChildNode("response_modes_supported") is null) { _explicitNullValueResponseModesSupported = default!; _explicitNullProperties?.Remove("response_modes_supported"); }
+            else if (parseNode.GetChildNode("response_modes_supported") is { } nullNodeResponseModesSupported && nullNodeResponseModesSupported.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ResponseModesSupported = null;
+            if (parseNode.GetChildNode("response_types_supported") is null) { _explicitNullValueResponseTypesSupported = default!; _explicitNullProperties?.Remove("response_types_supported"); }
+            else if (parseNode.GetChildNode("response_types_supported") is { } nullNodeResponseTypesSupported && nullNodeResponseTypesSupported.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ResponseTypesSupported = null;
+            if (parseNode.GetChildNode("revocation_endpoint") is null) { _explicitNullValueRevocationEndpoint = default!; _explicitNullProperties?.Remove("revocation_endpoint"); }
+            else if (parseNode.GetChildNode("revocation_endpoint") is { } nullNodeRevocationEndpoint && nullNodeRevocationEndpoint.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RevocationEndpoint = null;
+            if (parseNode.GetChildNode("revocation_endpoint_auth_methods_supported") is null) { _explicitNullValueRevocationEndpointAuthMethodsSupported = default!; _explicitNullProperties?.Remove("revocation_endpoint_auth_methods_supported"); }
+            else if (parseNode.GetChildNode("revocation_endpoint_auth_methods_supported") is { } nullNodeRevocationEndpointAuthMethodsSupported && nullNodeRevocationEndpointAuthMethodsSupported.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RevocationEndpointAuthMethodsSupported = null;
+            if (parseNode.GetChildNode("revocation_endpoint_auth_signing_alg_values_supported") is null) { _explicitNullValueRevocationEndpointAuthSigningAlgValuesSupported = default!; _explicitNullProperties?.Remove("revocation_endpoint_auth_signing_alg_values_supported"); }
+            else if (parseNode.GetChildNode("revocation_endpoint_auth_signing_alg_values_supported") is { } nullNodeRevocationEndpointAuthSigningAlgValuesSupported && nullNodeRevocationEndpointAuthSigningAlgValuesSupported.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RevocationEndpointAuthSigningAlgValuesSupported = null;
+            if (parseNode.GetChildNode("scopes_supported") is null) { _explicitNullValueScopesSupported = default!; _explicitNullProperties?.Remove("scopes_supported"); }
+            else if (parseNode.GetChildNode("scopes_supported") is { } nullNodeScopesSupported && nullNodeScopesSupported.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ScopesSupported = null;
+            if (parseNode.GetChildNode("service_documentation") is null) { _explicitNullValueServiceDocumentation = default!; _explicitNullProperties?.Remove("service_documentation"); }
+            else if (parseNode.GetChildNode("service_documentation") is { } nullNodeServiceDocumentation && nullNodeServiceDocumentation.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ServiceDocumentation = null;
+            if (parseNode.GetChildNode("token_endpoint") is null) { _explicitNullValueTokenEndpoint = default!; _explicitNullProperties?.Remove("token_endpoint"); }
+            else if (parseNode.GetChildNode("token_endpoint") is { } nullNodeTokenEndpoint && nullNodeTokenEndpoint.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TokenEndpoint = null;
+            if (parseNode.GetChildNode("token_endpoint_auth_methods_supported") is null) { _explicitNullValueTokenEndpointAuthMethodsSupported = default!; _explicitNullProperties?.Remove("token_endpoint_auth_methods_supported"); }
+            else if (parseNode.GetChildNode("token_endpoint_auth_methods_supported") is { } nullNodeTokenEndpointAuthMethodsSupported && nullNodeTokenEndpointAuthMethodsSupported.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TokenEndpointAuthMethodsSupported = null;
+            if (parseNode.GetChildNode("token_endpoint_auth_signing_alg_values_supported") is null) { _explicitNullValueTokenEndpointAuthSigningAlgValuesSupported = default!; _explicitNullProperties?.Remove("token_endpoint_auth_signing_alg_values_supported"); }
+            else if (parseNode.GetChildNode("token_endpoint_auth_signing_alg_values_supported") is { } nullNodeTokenEndpointAuthSigningAlgValuesSupported && nullNodeTokenEndpointAuthSigningAlgValuesSupported.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TokenEndpointAuthSigningAlgValuesSupported = null;
+            if (parseNode.GetChildNode("ui_locales_supported") is null) { _explicitNullValueUiLocalesSupported = default!; _explicitNullProperties?.Remove("ui_locales_supported"); }
+            else if (parseNode.GetChildNode("ui_locales_supported") is { } nullNodeUiLocalesSupported && nullNodeUiLocalesSupported.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UiLocalesSupported = null;
+            if (parseNode.GetChildNode("x_resource_url") is null) { _explicitNullValueXResourceUrl = default!; _explicitNullProperties?.Remove("x_resource_url"); }
+            else if (parseNode.GetChildNode("x_resource_url") is { } nullNodeXResourceUrl && nullNodeXResourceUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) XResourceUrl = null;
+            if (parseNode.GetChildNode("x_scope") is null) { _explicitNullValueXScope = default!; _explicitNullProperties?.Remove("x_scope"); }
+            else if (parseNode.GetChildNode("x_scope") is { } nullNodeXScope && nullNodeXScope.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) XScope = null;
+            if (parseNode.GetChildNode("x_source") is null) { _explicitNullValueXSource = default!; _explicitNullProperties?.Remove("x_source"); }
+            else if (parseNode.GetChildNode("x_source") is { } nullNodeXSource && nullNodeXSource.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) XSource = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The authorization_endpoint property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AuthorizationEndpoint { get; set; }
+        public string? AuthorizationEndpoint { get => _explicitNullValueAuthorizationEndpoint; set { _explicitNullValueAuthorizationEndpoint = value; AdditionalData?.Remove("authorization_endpoint"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("authorization_endpoint"); else _explicitNullProperties?.Remove("authorization_endpoint"); } }
+        private string? _explicitNullValueAuthorizationEndpoint = default!;
 #nullable restore
 #else
-        public string AuthorizationEndpoint { get; set; }
+        public string AuthorizationEndpoint { get => _explicitNullValueAuthorizationEndpoint; set { _explicitNullValueAuthorizationEndpoint = value; AdditionalData?.Remove("authorization_endpoint"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("authorization_endpoint"); else _explicitNullProperties?.Remove("authorization_endpoint"); } }
+        private string _explicitNullValueAuthorizationEndpoint = default!;
 #endif
         /// <summary>The authorization_grant_profiles_supported property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? AuthorizationGrantProfilesSupported { get; set; }
+        public List<string>? AuthorizationGrantProfilesSupported { get => _explicitNullValueAuthorizationGrantProfilesSupported; set { _explicitNullValueAuthorizationGrantProfilesSupported = value; AdditionalData?.Remove("authorization_grant_profiles_supported"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("authorization_grant_profiles_supported"); else _explicitNullProperties?.Remove("authorization_grant_profiles_supported"); } }
+        private List<string>? _explicitNullValueAuthorizationGrantProfilesSupported = default!;
 #nullable restore
 #else
-        public List<string> AuthorizationGrantProfilesSupported { get; set; }
+        public List<string> AuthorizationGrantProfilesSupported { get => _explicitNullValueAuthorizationGrantProfilesSupported; set { _explicitNullValueAuthorizationGrantProfilesSupported = value; AdditionalData?.Remove("authorization_grant_profiles_supported"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("authorization_grant_profiles_supported"); else _explicitNullProperties?.Remove("authorization_grant_profiles_supported"); } }
+        private List<string> _explicitNullValueAuthorizationGrantProfilesSupported = default!;
 #endif
         /// <summary>The authorization_response_iss_parameter_supported property</summary>
-        public bool? AuthorizationResponseIssParameterSupported { get; set; }
+        public bool? AuthorizationResponseIssParameterSupported { get => _explicitNullValueAuthorizationResponseIssParameterSupported; set { _explicitNullValueAuthorizationResponseIssParameterSupported = value; AdditionalData?.Remove("authorization_response_iss_parameter_supported"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("authorization_response_iss_parameter_supported"); else _explicitNullProperties?.Remove("authorization_response_iss_parameter_supported"); } }
+        private bool? _explicitNullValueAuthorizationResponseIssParameterSupported = default!;
         /// <summary>The client_id_metadata_document_supported property</summary>
-        public bool? ClientIdMetadataDocumentSupported { get; set; }
+        public bool? ClientIdMetadataDocumentSupported { get => _explicitNullValueClientIdMetadataDocumentSupported; set { _explicitNullValueClientIdMetadataDocumentSupported = value; AdditionalData?.Remove("client_id_metadata_document_supported"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("client_id_metadata_document_supported"); else _explicitNullProperties?.Remove("client_id_metadata_document_supported"); } }
+        private bool? _explicitNullValueClientIdMetadataDocumentSupported = default!;
         /// <summary>The code_challenge_methods_supported property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? CodeChallengeMethodsSupported { get; set; }
+        public List<string>? CodeChallengeMethodsSupported { get => _explicitNullValueCodeChallengeMethodsSupported; set { _explicitNullValueCodeChallengeMethodsSupported = value; AdditionalData?.Remove("code_challenge_methods_supported"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("code_challenge_methods_supported"); else _explicitNullProperties?.Remove("code_challenge_methods_supported"); } }
+        private List<string>? _explicitNullValueCodeChallengeMethodsSupported = default!;
 #nullable restore
 #else
-        public List<string> CodeChallengeMethodsSupported { get; set; }
+        public List<string> CodeChallengeMethodsSupported { get => _explicitNullValueCodeChallengeMethodsSupported; set { _explicitNullValueCodeChallengeMethodsSupported = value; AdditionalData?.Remove("code_challenge_methods_supported"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("code_challenge_methods_supported"); else _explicitNullProperties?.Remove("code_challenge_methods_supported"); } }
+        private List<string> _explicitNullValueCodeChallengeMethodsSupported = default!;
 #endif
         /// <summary>The grant_types_supported property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? GrantTypesSupported { get; set; }
+        public List<string>? GrantTypesSupported { get => _explicitNullValueGrantTypesSupported; set { _explicitNullValueGrantTypesSupported = value; AdditionalData?.Remove("grant_types_supported"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("grant_types_supported"); else _explicitNullProperties?.Remove("grant_types_supported"); } }
+        private List<string>? _explicitNullValueGrantTypesSupported = default!;
 #nullable restore
 #else
-        public List<string> GrantTypesSupported { get; set; }
+        public List<string> GrantTypesSupported { get => _explicitNullValueGrantTypesSupported; set { _explicitNullValueGrantTypesSupported = value; AdditionalData?.Remove("grant_types_supported"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("grant_types_supported"); else _explicitNullProperties?.Remove("grant_types_supported"); } }
+        private List<string> _explicitNullValueGrantTypesSupported = default!;
 #endif
         /// <summary>The introspection_endpoint property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? IntrospectionEndpoint { get; set; }
+        public string? IntrospectionEndpoint { get => _explicitNullValueIntrospectionEndpoint; set { _explicitNullValueIntrospectionEndpoint = value; AdditionalData?.Remove("introspection_endpoint"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("introspection_endpoint"); else _explicitNullProperties?.Remove("introspection_endpoint"); } }
+        private string? _explicitNullValueIntrospectionEndpoint = default!;
 #nullable restore
 #else
-        public string IntrospectionEndpoint { get; set; }
+        public string IntrospectionEndpoint { get => _explicitNullValueIntrospectionEndpoint; set { _explicitNullValueIntrospectionEndpoint = value; AdditionalData?.Remove("introspection_endpoint"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("introspection_endpoint"); else _explicitNullProperties?.Remove("introspection_endpoint"); } }
+        private string _explicitNullValueIntrospectionEndpoint = default!;
 #endif
         /// <summary>The introspection_endpoint_auth_methods_supported property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? IntrospectionEndpointAuthMethodsSupported { get; set; }
+        public List<string>? IntrospectionEndpointAuthMethodsSupported { get => _explicitNullValueIntrospectionEndpointAuthMethodsSupported; set { _explicitNullValueIntrospectionEndpointAuthMethodsSupported = value; AdditionalData?.Remove("introspection_endpoint_auth_methods_supported"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("introspection_endpoint_auth_methods_supported"); else _explicitNullProperties?.Remove("introspection_endpoint_auth_methods_supported"); } }
+        private List<string>? _explicitNullValueIntrospectionEndpointAuthMethodsSupported = default!;
 #nullable restore
 #else
-        public List<string> IntrospectionEndpointAuthMethodsSupported { get; set; }
+        public List<string> IntrospectionEndpointAuthMethodsSupported { get => _explicitNullValueIntrospectionEndpointAuthMethodsSupported; set { _explicitNullValueIntrospectionEndpointAuthMethodsSupported = value; AdditionalData?.Remove("introspection_endpoint_auth_methods_supported"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("introspection_endpoint_auth_methods_supported"); else _explicitNullProperties?.Remove("introspection_endpoint_auth_methods_supported"); } }
+        private List<string> _explicitNullValueIntrospectionEndpointAuthMethodsSupported = default!;
 #endif
         /// <summary>The introspection_endpoint_auth_signing_alg_values_supported property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? IntrospectionEndpointAuthSigningAlgValuesSupported { get; set; }
+        public List<string>? IntrospectionEndpointAuthSigningAlgValuesSupported { get => _explicitNullValueIntrospectionEndpointAuthSigningAlgValuesSupported; set { _explicitNullValueIntrospectionEndpointAuthSigningAlgValuesSupported = value; AdditionalData?.Remove("introspection_endpoint_auth_signing_alg_values_supported"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("introspection_endpoint_auth_signing_alg_values_supported"); else _explicitNullProperties?.Remove("introspection_endpoint_auth_signing_alg_values_supported"); } }
+        private List<string>? _explicitNullValueIntrospectionEndpointAuthSigningAlgValuesSupported = default!;
 #nullable restore
 #else
-        public List<string> IntrospectionEndpointAuthSigningAlgValuesSupported { get; set; }
+        public List<string> IntrospectionEndpointAuthSigningAlgValuesSupported { get => _explicitNullValueIntrospectionEndpointAuthSigningAlgValuesSupported; set { _explicitNullValueIntrospectionEndpointAuthSigningAlgValuesSupported = value; AdditionalData?.Remove("introspection_endpoint_auth_signing_alg_values_supported"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("introspection_endpoint_auth_signing_alg_values_supported"); else _explicitNullProperties?.Remove("introspection_endpoint_auth_signing_alg_values_supported"); } }
+        private List<string> _explicitNullValueIntrospectionEndpointAuthSigningAlgValuesSupported = default!;
 #endif
         /// <summary>The issuer property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Issuer { get; set; }
+        public string? Issuer { get => _explicitNullValueIssuer; set { _explicitNullValueIssuer = value; AdditionalData?.Remove("issuer"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("issuer"); else _explicitNullProperties?.Remove("issuer"); } }
+        private string? _explicitNullValueIssuer = default!;
 #nullable restore
 #else
-        public string Issuer { get; set; }
+        public string Issuer { get => _explicitNullValueIssuer; set { _explicitNullValueIssuer = value; AdditionalData?.Remove("issuer"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("issuer"); else _explicitNullProperties?.Remove("issuer"); } }
+        private string _explicitNullValueIssuer = default!;
 #endif
         /// <summary>The op_policy_uri property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OpPolicyUri { get; set; }
+        public string? OpPolicyUri { get => _explicitNullValueOpPolicyUri; set { _explicitNullValueOpPolicyUri = value; AdditionalData?.Remove("op_policy_uri"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("op_policy_uri"); else _explicitNullProperties?.Remove("op_policy_uri"); } }
+        private string? _explicitNullValueOpPolicyUri = default!;
 #nullable restore
 #else
-        public string OpPolicyUri { get; set; }
+        public string OpPolicyUri { get => _explicitNullValueOpPolicyUri; set { _explicitNullValueOpPolicyUri = value; AdditionalData?.Remove("op_policy_uri"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("op_policy_uri"); else _explicitNullProperties?.Remove("op_policy_uri"); } }
+        private string _explicitNullValueOpPolicyUri = default!;
 #endif
         /// <summary>The op_tos_uri property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OpTosUri { get; set; }
+        public string? OpTosUri { get => _explicitNullValueOpTosUri; set { _explicitNullValueOpTosUri = value; AdditionalData?.Remove("op_tos_uri"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("op_tos_uri"); else _explicitNullProperties?.Remove("op_tos_uri"); } }
+        private string? _explicitNullValueOpTosUri = default!;
 #nullable restore
 #else
-        public string OpTosUri { get; set; }
+        public string OpTosUri { get => _explicitNullValueOpTosUri; set { _explicitNullValueOpTosUri = value; AdditionalData?.Remove("op_tos_uri"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("op_tos_uri"); else _explicitNullProperties?.Remove("op_tos_uri"); } }
+        private string _explicitNullValueOpTosUri = default!;
 #endif
         /// <summary>The registration_endpoint property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? RegistrationEndpoint { get; set; }
+        public string? RegistrationEndpoint { get => _explicitNullValueRegistrationEndpoint; set { _explicitNullValueRegistrationEndpoint = value; AdditionalData?.Remove("registration_endpoint"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("registration_endpoint"); else _explicitNullProperties?.Remove("registration_endpoint"); } }
+        private string? _explicitNullValueRegistrationEndpoint = default!;
 #nullable restore
 #else
-        public string RegistrationEndpoint { get; set; }
+        public string RegistrationEndpoint { get => _explicitNullValueRegistrationEndpoint; set { _explicitNullValueRegistrationEndpoint = value; AdditionalData?.Remove("registration_endpoint"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("registration_endpoint"); else _explicitNullProperties?.Remove("registration_endpoint"); } }
+        private string _explicitNullValueRegistrationEndpoint = default!;
 #endif
         /// <summary>The response_modes_supported property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? ResponseModesSupported { get; set; }
+        public List<string>? ResponseModesSupported { get => _explicitNullValueResponseModesSupported; set { _explicitNullValueResponseModesSupported = value; AdditionalData?.Remove("response_modes_supported"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("response_modes_supported"); else _explicitNullProperties?.Remove("response_modes_supported"); } }
+        private List<string>? _explicitNullValueResponseModesSupported = default!;
 #nullable restore
 #else
-        public List<string> ResponseModesSupported { get; set; }
+        public List<string> ResponseModesSupported { get => _explicitNullValueResponseModesSupported; set { _explicitNullValueResponseModesSupported = value; AdditionalData?.Remove("response_modes_supported"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("response_modes_supported"); else _explicitNullProperties?.Remove("response_modes_supported"); } }
+        private List<string> _explicitNullValueResponseModesSupported = default!;
 #endif
         /// <summary>The response_types_supported property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? ResponseTypesSupported { get; set; }
+        public List<string>? ResponseTypesSupported { get => _explicitNullValueResponseTypesSupported; set { _explicitNullValueResponseTypesSupported = value; AdditionalData?.Remove("response_types_supported"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("response_types_supported"); else _explicitNullProperties?.Remove("response_types_supported"); } }
+        private List<string>? _explicitNullValueResponseTypesSupported = default!;
 #nullable restore
 #else
-        public List<string> ResponseTypesSupported { get; set; }
+        public List<string> ResponseTypesSupported { get => _explicitNullValueResponseTypesSupported; set { _explicitNullValueResponseTypesSupported = value; AdditionalData?.Remove("response_types_supported"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("response_types_supported"); else _explicitNullProperties?.Remove("response_types_supported"); } }
+        private List<string> _explicitNullValueResponseTypesSupported = default!;
 #endif
         /// <summary>The revocation_endpoint property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? RevocationEndpoint { get; set; }
+        public string? RevocationEndpoint { get => _explicitNullValueRevocationEndpoint; set { _explicitNullValueRevocationEndpoint = value; AdditionalData?.Remove("revocation_endpoint"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("revocation_endpoint"); else _explicitNullProperties?.Remove("revocation_endpoint"); } }
+        private string? _explicitNullValueRevocationEndpoint = default!;
 #nullable restore
 #else
-        public string RevocationEndpoint { get; set; }
+        public string RevocationEndpoint { get => _explicitNullValueRevocationEndpoint; set { _explicitNullValueRevocationEndpoint = value; AdditionalData?.Remove("revocation_endpoint"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("revocation_endpoint"); else _explicitNullProperties?.Remove("revocation_endpoint"); } }
+        private string _explicitNullValueRevocationEndpoint = default!;
 #endif
         /// <summary>The revocation_endpoint_auth_methods_supported property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? RevocationEndpointAuthMethodsSupported { get; set; }
+        public List<string>? RevocationEndpointAuthMethodsSupported { get => _explicitNullValueRevocationEndpointAuthMethodsSupported; set { _explicitNullValueRevocationEndpointAuthMethodsSupported = value; AdditionalData?.Remove("revocation_endpoint_auth_methods_supported"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("revocation_endpoint_auth_methods_supported"); else _explicitNullProperties?.Remove("revocation_endpoint_auth_methods_supported"); } }
+        private List<string>? _explicitNullValueRevocationEndpointAuthMethodsSupported = default!;
 #nullable restore
 #else
-        public List<string> RevocationEndpointAuthMethodsSupported { get; set; }
+        public List<string> RevocationEndpointAuthMethodsSupported { get => _explicitNullValueRevocationEndpointAuthMethodsSupported; set { _explicitNullValueRevocationEndpointAuthMethodsSupported = value; AdditionalData?.Remove("revocation_endpoint_auth_methods_supported"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("revocation_endpoint_auth_methods_supported"); else _explicitNullProperties?.Remove("revocation_endpoint_auth_methods_supported"); } }
+        private List<string> _explicitNullValueRevocationEndpointAuthMethodsSupported = default!;
 #endif
         /// <summary>The revocation_endpoint_auth_signing_alg_values_supported property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? RevocationEndpointAuthSigningAlgValuesSupported { get; set; }
+        public List<string>? RevocationEndpointAuthSigningAlgValuesSupported { get => _explicitNullValueRevocationEndpointAuthSigningAlgValuesSupported; set { _explicitNullValueRevocationEndpointAuthSigningAlgValuesSupported = value; AdditionalData?.Remove("revocation_endpoint_auth_signing_alg_values_supported"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("revocation_endpoint_auth_signing_alg_values_supported"); else _explicitNullProperties?.Remove("revocation_endpoint_auth_signing_alg_values_supported"); } }
+        private List<string>? _explicitNullValueRevocationEndpointAuthSigningAlgValuesSupported = default!;
 #nullable restore
 #else
-        public List<string> RevocationEndpointAuthSigningAlgValuesSupported { get; set; }
+        public List<string> RevocationEndpointAuthSigningAlgValuesSupported { get => _explicitNullValueRevocationEndpointAuthSigningAlgValuesSupported; set { _explicitNullValueRevocationEndpointAuthSigningAlgValuesSupported = value; AdditionalData?.Remove("revocation_endpoint_auth_signing_alg_values_supported"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("revocation_endpoint_auth_signing_alg_values_supported"); else _explicitNullProperties?.Remove("revocation_endpoint_auth_signing_alg_values_supported"); } }
+        private List<string> _explicitNullValueRevocationEndpointAuthSigningAlgValuesSupported = default!;
 #endif
         /// <summary>The scopes_supported property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? ScopesSupported { get; set; }
+        public List<string>? ScopesSupported { get => _explicitNullValueScopesSupported; set { _explicitNullValueScopesSupported = value; AdditionalData?.Remove("scopes_supported"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("scopes_supported"); else _explicitNullProperties?.Remove("scopes_supported"); } }
+        private List<string>? _explicitNullValueScopesSupported = default!;
 #nullable restore
 #else
-        public List<string> ScopesSupported { get; set; }
+        public List<string> ScopesSupported { get => _explicitNullValueScopesSupported; set { _explicitNullValueScopesSupported = value; AdditionalData?.Remove("scopes_supported"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("scopes_supported"); else _explicitNullProperties?.Remove("scopes_supported"); } }
+        private List<string> _explicitNullValueScopesSupported = default!;
 #endif
         /// <summary>The service_documentation property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ServiceDocumentation { get; set; }
+        public string? ServiceDocumentation { get => _explicitNullValueServiceDocumentation; set { _explicitNullValueServiceDocumentation = value; AdditionalData?.Remove("service_documentation"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("service_documentation"); else _explicitNullProperties?.Remove("service_documentation"); } }
+        private string? _explicitNullValueServiceDocumentation = default!;
 #nullable restore
 #else
-        public string ServiceDocumentation { get; set; }
+        public string ServiceDocumentation { get => _explicitNullValueServiceDocumentation; set { _explicitNullValueServiceDocumentation = value; AdditionalData?.Remove("service_documentation"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("service_documentation"); else _explicitNullProperties?.Remove("service_documentation"); } }
+        private string _explicitNullValueServiceDocumentation = default!;
 #endif
         /// <summary>The token_endpoint property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TokenEndpoint { get; set; }
+        public string? TokenEndpoint { get => _explicitNullValueTokenEndpoint; set { _explicitNullValueTokenEndpoint = value; AdditionalData?.Remove("token_endpoint"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("token_endpoint"); else _explicitNullProperties?.Remove("token_endpoint"); } }
+        private string? _explicitNullValueTokenEndpoint = default!;
 #nullable restore
 #else
-        public string TokenEndpoint { get; set; }
+        public string TokenEndpoint { get => _explicitNullValueTokenEndpoint; set { _explicitNullValueTokenEndpoint = value; AdditionalData?.Remove("token_endpoint"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("token_endpoint"); else _explicitNullProperties?.Remove("token_endpoint"); } }
+        private string _explicitNullValueTokenEndpoint = default!;
 #endif
         /// <summary>The token_endpoint_auth_methods_supported property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? TokenEndpointAuthMethodsSupported { get; set; }
+        public List<string>? TokenEndpointAuthMethodsSupported { get => _explicitNullValueTokenEndpointAuthMethodsSupported; set { _explicitNullValueTokenEndpointAuthMethodsSupported = value; AdditionalData?.Remove("token_endpoint_auth_methods_supported"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("token_endpoint_auth_methods_supported"); else _explicitNullProperties?.Remove("token_endpoint_auth_methods_supported"); } }
+        private List<string>? _explicitNullValueTokenEndpointAuthMethodsSupported = default!;
 #nullable restore
 #else
-        public List<string> TokenEndpointAuthMethodsSupported { get; set; }
+        public List<string> TokenEndpointAuthMethodsSupported { get => _explicitNullValueTokenEndpointAuthMethodsSupported; set { _explicitNullValueTokenEndpointAuthMethodsSupported = value; AdditionalData?.Remove("token_endpoint_auth_methods_supported"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("token_endpoint_auth_methods_supported"); else _explicitNullProperties?.Remove("token_endpoint_auth_methods_supported"); } }
+        private List<string> _explicitNullValueTokenEndpointAuthMethodsSupported = default!;
 #endif
         /// <summary>The token_endpoint_auth_signing_alg_values_supported property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? TokenEndpointAuthSigningAlgValuesSupported { get; set; }
+        public List<string>? TokenEndpointAuthSigningAlgValuesSupported { get => _explicitNullValueTokenEndpointAuthSigningAlgValuesSupported; set { _explicitNullValueTokenEndpointAuthSigningAlgValuesSupported = value; AdditionalData?.Remove("token_endpoint_auth_signing_alg_values_supported"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("token_endpoint_auth_signing_alg_values_supported"); else _explicitNullProperties?.Remove("token_endpoint_auth_signing_alg_values_supported"); } }
+        private List<string>? _explicitNullValueTokenEndpointAuthSigningAlgValuesSupported = default!;
 #nullable restore
 #else
-        public List<string> TokenEndpointAuthSigningAlgValuesSupported { get; set; }
+        public List<string> TokenEndpointAuthSigningAlgValuesSupported { get => _explicitNullValueTokenEndpointAuthSigningAlgValuesSupported; set { _explicitNullValueTokenEndpointAuthSigningAlgValuesSupported = value; AdditionalData?.Remove("token_endpoint_auth_signing_alg_values_supported"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("token_endpoint_auth_signing_alg_values_supported"); else _explicitNullProperties?.Remove("token_endpoint_auth_signing_alg_values_supported"); } }
+        private List<string> _explicitNullValueTokenEndpointAuthSigningAlgValuesSupported = default!;
 #endif
         /// <summary>The ui_locales_supported property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? UiLocalesSupported { get; set; }
+        public List<string>? UiLocalesSupported { get => _explicitNullValueUiLocalesSupported; set { _explicitNullValueUiLocalesSupported = value; AdditionalData?.Remove("ui_locales_supported"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ui_locales_supported"); else _explicitNullProperties?.Remove("ui_locales_supported"); } }
+        private List<string>? _explicitNullValueUiLocalesSupported = default!;
 #nullable restore
 #else
-        public List<string> UiLocalesSupported { get; set; }
+        public List<string> UiLocalesSupported { get => _explicitNullValueUiLocalesSupported; set { _explicitNullValueUiLocalesSupported = value; AdditionalData?.Remove("ui_locales_supported"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ui_locales_supported"); else _explicitNullProperties?.Remove("ui_locales_supported"); } }
+        private List<string> _explicitNullValueUiLocalesSupported = default!;
 #endif
         /// <summary>The x_resource_url property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? XResourceUrl { get; set; }
+        public string? XResourceUrl { get => _explicitNullValueXResourceUrl; set { _explicitNullValueXResourceUrl = value; AdditionalData?.Remove("x_resource_url"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("x_resource_url"); else _explicitNullProperties?.Remove("x_resource_url"); } }
+        private string? _explicitNullValueXResourceUrl = default!;
 #nullable restore
 #else
-        public string XResourceUrl { get; set; }
+        public string XResourceUrl { get => _explicitNullValueXResourceUrl; set { _explicitNullValueXResourceUrl = value; AdditionalData?.Remove("x_resource_url"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("x_resource_url"); else _explicitNullProperties?.Remove("x_resource_url"); } }
+        private string _explicitNullValueXResourceUrl = default!;
 #endif
         /// <summary>The x_scope property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? XScope { get; set; }
+        public string? XScope { get => _explicitNullValueXScope; set { _explicitNullValueXScope = value; AdditionalData?.Remove("x_scope"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("x_scope"); else _explicitNullProperties?.Remove("x_scope"); } }
+        private string? _explicitNullValueXScope = default!;
 #nullable restore
 #else
-        public string XScope { get; set; }
+        public string XScope { get => _explicitNullValueXScope; set { _explicitNullValueXScope = value; AdditionalData?.Remove("x_scope"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("x_scope"); else _explicitNullProperties?.Remove("x_scope"); } }
+        private string _explicitNullValueXScope = default!;
 #endif
         /// <summary>The x_source property</summary>
-        public global::Soenneker.Mistral.OpenApiClient.Models.OAuthMetadataSource? XSource { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.OAuthMetadataSource? XSource { get => _explicitNullValueXSource; set { _explicitNullValueXSource = value; AdditionalData?.Remove("x_source"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("x_source"); else _explicitNullProperties?.Remove("x_source"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.OAuthMetadataSource? _explicitNullValueXSource = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Mistral.OpenApiClient.Models.ExtendedOAuthServerMetadata"/> and sets the default values.
         /// </summary>
@@ -228,7 +340,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         public static global::Soenneker.Mistral.OpenApiClient.Models.ExtendedOAuthServerMetadata CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Mistral.OpenApiClient.Models.ExtendedOAuthServerMetadata();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Mistral.OpenApiClient.Models.ExtendedOAuthServerMetadata(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -264,7 +376,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
                 { "ui_locales_supported", n => { UiLocalesSupported = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "x_resource_url", n => { XResourceUrl = n.GetStringValue(); } },
                 { "x_scope", n => { XScope = n.GetStringValue(); } },
-                { "x_source", n => { XSource = n.GetEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.OAuthMetadataSource>(); } },
+                { "x_source", n => { var parsed = n.GetEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.OAuthMetadataSource>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueXSource = default; _explicitNullProperties?.Remove("x_source"); AdditionalData["x_source"] = unknown; } else { XSource = parsed; AdditionalData.Remove("x_source"); } } },
             };
         }
         /// <summary>
@@ -301,6 +413,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             writer.WriteStringValue("x_resource_url", XResourceUrl);
             writer.WriteStringValue("x_scope", XScope);
             writer.WriteEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.OAuthMetadataSource>("x_source", XSource);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

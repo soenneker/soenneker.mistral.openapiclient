@@ -11,18 +11,32 @@ namespace Soenneker.Mistral.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class GoalStatusFilterGroup : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("combinator") is null) { _explicitNullValueCombinator = default!; _explicitNullProperties?.Remove("combinator"); }
+            else if (parseNode.GetChildNode("combinator") is { } nullNodeCombinator && nullNodeCombinator.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Combinator = null;
+            if (parseNode.GetChildNode("filters") is null) { _explicitNullValueFilters = default!; _explicitNullProperties?.Remove("filters"); }
+            else if (parseNode.GetChildNode("filters") is { } nullNodeFilters && nullNodeFilters.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Filters = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The combinator property</summary>
-        public global::Soenneker.Mistral.OpenApiClient.Models.FilterCombinator? Combinator { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.FilterCombinator? Combinator { get => _explicitNullValueCombinator; set { _explicitNullValueCombinator = value; AdditionalData?.Remove("combinator"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("combinator"); else _explicitNullProperties?.Remove("combinator"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.FilterCombinator? _explicitNullValueCombinator = default!;
         /// <summary>The filters property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Mistral.OpenApiClient.Models.GoalStatusFilter>? Filters { get; set; }
+        public List<global::Soenneker.Mistral.OpenApiClient.Models.GoalStatusFilter>? Filters { get => _explicitNullValueFilters; set { _explicitNullValueFilters = value; AdditionalData?.Remove("filters"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("filters"); else _explicitNullProperties?.Remove("filters"); } }
+        private List<global::Soenneker.Mistral.OpenApiClient.Models.GoalStatusFilter>? _explicitNullValueFilters = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Mistral.OpenApiClient.Models.GoalStatusFilter> Filters { get; set; }
+        public List<global::Soenneker.Mistral.OpenApiClient.Models.GoalStatusFilter> Filters { get => _explicitNullValueFilters; set { _explicitNullValueFilters = value; AdditionalData?.Remove("filters"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("filters"); else _explicitNullProperties?.Remove("filters"); } }
+        private List<global::Soenneker.Mistral.OpenApiClient.Models.GoalStatusFilter> _explicitNullValueFilters = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Mistral.OpenApiClient.Models.GoalStatusFilterGroup"/> and sets the default values.
@@ -40,7 +54,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         public static global::Soenneker.Mistral.OpenApiClient.Models.GoalStatusFilterGroup CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Mistral.OpenApiClient.Models.GoalStatusFilterGroup();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Mistral.OpenApiClient.Models.GoalStatusFilterGroup(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -50,7 +64,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "combinator", n => { Combinator = n.GetEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.FilterCombinator>(); } },
+                { "combinator", n => { var parsed = n.GetEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.FilterCombinator>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueCombinator = default; _explicitNullProperties?.Remove("combinator"); AdditionalData["combinator"] = unknown; } else { Combinator = parsed; AdditionalData.Remove("combinator"); } } },
                 { "filters", n => { Filters = n.GetCollectionOfObjectValues<global::Soenneker.Mistral.OpenApiClient.Models.GoalStatusFilter>(global::Soenneker.Mistral.OpenApiClient.Models.GoalStatusFilter.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
@@ -63,6 +77,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.FilterCombinator>("combinator", Combinator);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Mistral.OpenApiClient.Models.GoalStatusFilter>("filters", Filters);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

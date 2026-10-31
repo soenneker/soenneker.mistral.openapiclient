@@ -11,137 +11,216 @@ namespace Soenneker.Mistral.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class UsageOutjson : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("audio") is null) { _explicitNullValueAudio = default!; _explicitNullProperties?.Remove("audio"); }
+            else if (parseNode.GetChildNode("audio") is { } nullNodeAudio && nullNodeAudio.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Audio = null;
+            if (parseNode.GetChildNode("audio_agents") is null) { _explicitNullValueAudioAgents = default!; _explicitNullProperties?.Remove("audio_agents"); }
+            else if (parseNode.GetChildNode("audio_agents") is { } nullNodeAudioAgents && nullNodeAudioAgents.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AudioAgents = null;
+            if (parseNode.GetChildNode("audio_characters") is null) { _explicitNullValueAudioCharacters = default!; _explicitNullProperties?.Remove("audio_characters"); }
+            else if (parseNode.GetChildNode("audio_characters") is { } nullNodeAudioCharacters && nullNodeAudioCharacters.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AudioCharacters = null;
+            if (parseNode.GetChildNode("chat") is null) { _explicitNullValueChat = default!; _explicitNullProperties?.Remove("chat"); }
+            else if (parseNode.GetChildNode("chat") is { } nullNodeChat && nullNodeChat.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Chat = null;
+            if (parseNode.GetChildNode("completion") is null) { _explicitNullValueCompletion = default!; _explicitNullProperties?.Remove("completion"); }
+            else if (parseNode.GetChildNode("completion") is { } nullNodeCompletion && nullNodeCompletion.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Completion = null;
+            if (parseNode.GetChildNode("connectors") is null) { _explicitNullValueConnectors = default!; _explicitNullProperties?.Remove("connectors"); }
+            else if (parseNode.GetChildNode("connectors") is { } nullNodeConnectors && nullNodeConnectors.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Connectors = null;
+            if (parseNode.GetChildNode("currency") is null) { _explicitNullValueCurrency = default!; _explicitNullProperties?.Remove("currency"); }
+            else if (parseNode.GetChildNode("currency") is { } nullNodeCurrency && nullNodeCurrency.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Currency = null;
+            if (parseNode.GetChildNode("currency_symbol") is null) { _explicitNullValueCurrencySymbol = default!; _explicitNullProperties?.Remove("currency_symbol"); }
+            else if (parseNode.GetChildNode("currency_symbol") is { } nullNodeCurrencySymbol && nullNodeCurrencySymbol.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CurrencySymbol = null;
+            if (parseNode.GetChildNode("date") is null) { _explicitNullValueDate = default!; _explicitNullProperties?.Remove("date"); }
+            else if (parseNode.GetChildNode("date") is { } nullNodeDate && nullNodeDate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Date = null;
+            if (parseNode.GetChildNode("end_date") is null) { _explicitNullValueEndDate = default!; _explicitNullProperties?.Remove("end_date"); }
+            else if (parseNode.GetChildNode("end_date") is { } nullNodeEndDate && nullNodeEndDate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EndDate = null;
+            if (parseNode.GetChildNode("fine_tuning") is null) { _explicitNullValueFineTuning = default!; _explicitNullProperties?.Remove("fine_tuning"); }
+            else if (parseNode.GetChildNode("fine_tuning") is { } nullNodeFineTuning && nullNodeFineTuning.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FineTuning = null;
+            if (parseNode.GetChildNode("libraries_api") is null) { _explicitNullValueLibrariesApi = default!; _explicitNullProperties?.Remove("libraries_api"); }
+            else if (parseNode.GetChildNode("libraries_api") is { } nullNodeLibrariesApi && nullNodeLibrariesApi.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LibrariesApi = null;
+            if (parseNode.GetChildNode("next_month") is null) { _explicitNullValueNextMonth = default!; _explicitNullProperties?.Remove("next_month"); }
+            else if (parseNode.GetChildNode("next_month") is { } nullNodeNextMonth && nullNodeNextMonth.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NextMonth = null;
+            if (parseNode.GetChildNode("ocr") is null) { _explicitNullValueOcr = default!; _explicitNullProperties?.Remove("ocr"); }
+            else if (parseNode.GetChildNode("ocr") is { } nullNodeOcr && nullNodeOcr.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Ocr = null;
+            if (parseNode.GetChildNode("previous_month") is null) { _explicitNullValuePreviousMonth = default!; _explicitNullProperties?.Remove("previous_month"); }
+            else if (parseNode.GetChildNode("previous_month") is { } nullNodePreviousMonth && nullNodePreviousMonth.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PreviousMonth = null;
+            if (parseNode.GetChildNode("prices") is null) { _explicitNullValuePrices = default!; _explicitNullProperties?.Remove("prices"); }
+            else if (parseNode.GetChildNode("prices") is { } nullNodePrices && nullNodePrices.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Prices = null;
+            if (parseNode.GetChildNode("start_date") is null) { _explicitNullValueStartDate = default!; _explicitNullProperties?.Remove("start_date"); }
+            else if (parseNode.GetChildNode("start_date") is { } nullNodeStartDate && nullNodeStartDate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) StartDate = null;
+            if (parseNode.GetChildNode("vibe_code") is null) { _explicitNullValueVibeCode = default!; _explicitNullProperties?.Remove("vibe_code"); }
+            else if (parseNode.GetChildNode("vibe_code") is { } nullNodeVibeCode && nullNodeVibeCode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) VibeCode = null;
+            if (parseNode.GetChildNode("vibe_usage") is null) { _explicitNullValueVibeUsage = default!; _explicitNullProperties?.Remove("vibe_usage"); }
+            else if (parseNode.GetChildNode("vibe_usage") is { } nullNodeVibeUsage && nullNodeVibeUsage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) VibeUsage = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The audio property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.BasicModelUsageDataJson? Audio { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.BasicModelUsageDataJson? Audio { get => _explicitNullValueAudio; set { _explicitNullValueAudio = value; AdditionalData?.Remove("audio"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("audio"); else _explicitNullProperties?.Remove("audio"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.BasicModelUsageDataJson? _explicitNullValueAudio = default!;
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.BasicModelUsageDataJson Audio { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.BasicModelUsageDataJson Audio { get => _explicitNullValueAudio; set { _explicitNullValueAudio = value; AdditionalData?.Remove("audio"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("audio"); else _explicitNullProperties?.Remove("audio"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.BasicModelUsageDataJson _explicitNullValueAudio = default!;
 #endif
         /// <summary>The audio_agents property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.BasicModelUsageDataJson? AudioAgents { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.BasicModelUsageDataJson? AudioAgents { get => _explicitNullValueAudioAgents; set { _explicitNullValueAudioAgents = value; AdditionalData?.Remove("audio_agents"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("audio_agents"); else _explicitNullProperties?.Remove("audio_agents"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.BasicModelUsageDataJson? _explicitNullValueAudioAgents = default!;
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.BasicModelUsageDataJson AudioAgents { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.BasicModelUsageDataJson AudioAgents { get => _explicitNullValueAudioAgents; set { _explicitNullValueAudioAgents = value; AdditionalData?.Remove("audio_agents"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("audio_agents"); else _explicitNullProperties?.Remove("audio_agents"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.BasicModelUsageDataJson _explicitNullValueAudioAgents = default!;
 #endif
         /// <summary>The audio_characters property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.BasicModelUsageDataJson? AudioCharacters { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.BasicModelUsageDataJson? AudioCharacters { get => _explicitNullValueAudioCharacters; set { _explicitNullValueAudioCharacters = value; AdditionalData?.Remove("audio_characters"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("audio_characters"); else _explicitNullProperties?.Remove("audio_characters"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.BasicModelUsageDataJson? _explicitNullValueAudioCharacters = default!;
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.BasicModelUsageDataJson AudioCharacters { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.BasicModelUsageDataJson AudioCharacters { get => _explicitNullValueAudioCharacters; set { _explicitNullValueAudioCharacters = value; AdditionalData?.Remove("audio_characters"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("audio_characters"); else _explicitNullProperties?.Remove("audio_characters"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.BasicModelUsageDataJson _explicitNullValueAudioCharacters = default!;
 #endif
         /// <summary>The chat property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.BasicModelUsageDataJson? Chat { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.BasicModelUsageDataJson? Chat { get => _explicitNullValueChat; set { _explicitNullValueChat = value; AdditionalData?.Remove("chat"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("chat"); else _explicitNullProperties?.Remove("chat"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.BasicModelUsageDataJson? _explicitNullValueChat = default!;
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.BasicModelUsageDataJson Chat { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.BasicModelUsageDataJson Chat { get => _explicitNullValueChat; set { _explicitNullValueChat = value; AdditionalData?.Remove("chat"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("chat"); else _explicitNullProperties?.Remove("chat"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.BasicModelUsageDataJson _explicitNullValueChat = default!;
 #endif
         /// <summary>The completion property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.BasicModelUsageDataJson? Completion { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.BasicModelUsageDataJson? Completion { get => _explicitNullValueCompletion; set { _explicitNullValueCompletion = value; AdditionalData?.Remove("completion"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("completion"); else _explicitNullProperties?.Remove("completion"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.BasicModelUsageDataJson? _explicitNullValueCompletion = default!;
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.BasicModelUsageDataJson Completion { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.BasicModelUsageDataJson Completion { get => _explicitNullValueCompletion; set { _explicitNullValueCompletion = value; AdditionalData?.Remove("completion"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("completion"); else _explicitNullProperties?.Remove("completion"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.BasicModelUsageDataJson _explicitNullValueCompletion = default!;
 #endif
         /// <summary>The connectors property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.BasicModelUsageDataJson? Connectors { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.BasicModelUsageDataJson? Connectors { get => _explicitNullValueConnectors; set { _explicitNullValueConnectors = value; AdditionalData?.Remove("connectors"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("connectors"); else _explicitNullProperties?.Remove("connectors"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.BasicModelUsageDataJson? _explicitNullValueConnectors = default!;
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.BasicModelUsageDataJson Connectors { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.BasicModelUsageDataJson Connectors { get => _explicitNullValueConnectors; set { _explicitNullValueConnectors = value; AdditionalData?.Remove("connectors"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("connectors"); else _explicitNullProperties?.Remove("connectors"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.BasicModelUsageDataJson _explicitNullValueConnectors = default!;
 #endif
         /// <summary>Currency used for usage prices.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Currency { get; set; }
+        public string? Currency { get => _explicitNullValueCurrency; set { _explicitNullValueCurrency = value; AdditionalData?.Remove("currency"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("currency"); else _explicitNullProperties?.Remove("currency"); } }
+        private string? _explicitNullValueCurrency = default!;
 #nullable restore
 #else
-        public string Currency { get; set; }
+        public string Currency { get => _explicitNullValueCurrency; set { _explicitNullValueCurrency = value; AdditionalData?.Remove("currency"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("currency"); else _explicitNullProperties?.Remove("currency"); } }
+        private string _explicitNullValueCurrency = default!;
 #endif
         /// <summary>Currency symbol used for usage prices.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CurrencySymbol { get; set; }
+        public string? CurrencySymbol { get => _explicitNullValueCurrencySymbol; set { _explicitNullValueCurrencySymbol = value; AdditionalData?.Remove("currency_symbol"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("currency_symbol"); else _explicitNullProperties?.Remove("currency_symbol"); } }
+        private string? _explicitNullValueCurrencySymbol = default!;
 #nullable restore
 #else
-        public string CurrencySymbol { get; set; }
+        public string CurrencySymbol { get => _explicitNullValueCurrencySymbol; set { _explicitNullValueCurrencySymbol = value; AdditionalData?.Remove("currency_symbol"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("currency_symbol"); else _explicitNullProperties?.Remove("currency_symbol"); } }
+        private string _explicitNullValueCurrencySymbol = default!;
 #endif
         /// <summary>Reference date for the usage period.</summary>
-        public DateTimeOffset? Date { get; set; }
+        public DateTimeOffset? Date { get => _explicitNullValueDate; set { _explicitNullValueDate = value; AdditionalData?.Remove("date"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("date"); else _explicitNullProperties?.Remove("date"); } }
+        private DateTimeOffset? _explicitNullValueDate = default!;
         /// <summary>End of the usage period.</summary>
-        public DateTimeOffset? EndDate { get; set; }
+        public DateTimeOffset? EndDate { get => _explicitNullValueEndDate; set { _explicitNullValueEndDate = value; AdditionalData?.Remove("end_date"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("end_date"); else _explicitNullProperties?.Remove("end_date"); } }
+        private DateTimeOffset? _explicitNullValueEndDate = default!;
         /// <summary>The fine_tuning property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.FineTuningDataJson? FineTuning { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.FineTuningDataJson? FineTuning { get => _explicitNullValueFineTuning; set { _explicitNullValueFineTuning = value; AdditionalData?.Remove("fine_tuning"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("fine_tuning"); else _explicitNullProperties?.Remove("fine_tuning"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.FineTuningDataJson? _explicitNullValueFineTuning = default!;
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.FineTuningDataJson FineTuning { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.FineTuningDataJson FineTuning { get => _explicitNullValueFineTuning; set { _explicitNullValueFineTuning = value; AdditionalData?.Remove("fine_tuning"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("fine_tuning"); else _explicitNullProperties?.Remove("fine_tuning"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.FineTuningDataJson _explicitNullValueFineTuning = default!;
 #endif
         /// <summary>The libraries_api property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.LibrariesApiUsageDataJson? LibrariesApi { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.LibrariesApiUsageDataJson? LibrariesApi { get => _explicitNullValueLibrariesApi; set { _explicitNullValueLibrariesApi = value; AdditionalData?.Remove("libraries_api"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("libraries_api"); else _explicitNullProperties?.Remove("libraries_api"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.LibrariesApiUsageDataJson? _explicitNullValueLibrariesApi = default!;
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.LibrariesApiUsageDataJson LibrariesApi { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.LibrariesApiUsageDataJson LibrariesApi { get => _explicitNullValueLibrariesApi; set { _explicitNullValueLibrariesApi = value; AdditionalData?.Remove("libraries_api"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("libraries_api"); else _explicitNullProperties?.Remove("libraries_api"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.LibrariesApiUsageDataJson _explicitNullValueLibrariesApi = default!;
 #endif
         /// <summary>Next month in the usage report.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? NextMonth { get; set; }
+        public string? NextMonth { get => _explicitNullValueNextMonth; set { _explicitNullValueNextMonth = value; AdditionalData?.Remove("next_month"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("next_month"); else _explicitNullProperties?.Remove("next_month"); } }
+        private string? _explicitNullValueNextMonth = default!;
 #nullable restore
 #else
-        public string NextMonth { get; set; }
+        public string NextMonth { get => _explicitNullValueNextMonth; set { _explicitNullValueNextMonth = value; AdditionalData?.Remove("next_month"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("next_month"); else _explicitNullProperties?.Remove("next_month"); } }
+        private string _explicitNullValueNextMonth = default!;
 #endif
         /// <summary>The ocr property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.BasicModelUsageDataJson? Ocr { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.BasicModelUsageDataJson? Ocr { get => _explicitNullValueOcr; set { _explicitNullValueOcr = value; AdditionalData?.Remove("ocr"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ocr"); else _explicitNullProperties?.Remove("ocr"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.BasicModelUsageDataJson? _explicitNullValueOcr = default!;
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.BasicModelUsageDataJson Ocr { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.BasicModelUsageDataJson Ocr { get => _explicitNullValueOcr; set { _explicitNullValueOcr = value; AdditionalData?.Remove("ocr"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ocr"); else _explicitNullProperties?.Remove("ocr"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.BasicModelUsageDataJson _explicitNullValueOcr = default!;
 #endif
         /// <summary>Previous month in the usage report.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PreviousMonth { get; set; }
+        public string? PreviousMonth { get => _explicitNullValuePreviousMonth; set { _explicitNullValuePreviousMonth = value; AdditionalData?.Remove("previous_month"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("previous_month"); else _explicitNullProperties?.Remove("previous_month"); } }
+        private string? _explicitNullValuePreviousMonth = default!;
 #nullable restore
 #else
-        public string PreviousMonth { get; set; }
+        public string PreviousMonth { get => _explicitNullValuePreviousMonth; set { _explicitNullValuePreviousMonth = value; AdditionalData?.Remove("previous_month"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("previous_month"); else _explicitNullProperties?.Remove("previous_month"); } }
+        private string _explicitNullValuePreviousMonth = default!;
 #endif
         /// <summary>Prices used to calculate usage amounts.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Mistral.OpenApiClient.Models.PriceData>? Prices { get; set; }
+        public List<global::Soenneker.Mistral.OpenApiClient.Models.PriceData>? Prices { get => _explicitNullValuePrices; set { _explicitNullValuePrices = value; AdditionalData?.Remove("prices"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("prices"); else _explicitNullProperties?.Remove("prices"); } }
+        private List<global::Soenneker.Mistral.OpenApiClient.Models.PriceData>? _explicitNullValuePrices = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Mistral.OpenApiClient.Models.PriceData> Prices { get; set; }
+        public List<global::Soenneker.Mistral.OpenApiClient.Models.PriceData> Prices { get => _explicitNullValuePrices; set { _explicitNullValuePrices = value; AdditionalData?.Remove("prices"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("prices"); else _explicitNullProperties?.Remove("prices"); } }
+        private List<global::Soenneker.Mistral.OpenApiClient.Models.PriceData> _explicitNullValuePrices = default!;
 #endif
         /// <summary>Start of the usage period.</summary>
-        public DateTimeOffset? StartDate { get; set; }
+        public DateTimeOffset? StartDate { get => _explicitNullValueStartDate; set { _explicitNullValueStartDate = value; AdditionalData?.Remove("start_date"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("start_date"); else _explicitNullProperties?.Remove("start_date"); } }
+        private DateTimeOffset? _explicitNullValueStartDate = default!;
         /// <summary>The vibe_code property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.VibeCodeUsageDataJson? VibeCode { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.VibeCodeUsageDataJson? VibeCode { get => _explicitNullValueVibeCode; set { _explicitNullValueVibeCode = value; AdditionalData?.Remove("vibe_code"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("vibe_code"); else _explicitNullProperties?.Remove("vibe_code"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.VibeCodeUsageDataJson? _explicitNullValueVibeCode = default!;
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.VibeCodeUsageDataJson VibeCode { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.VibeCodeUsageDataJson VibeCode { get => _explicitNullValueVibeCode; set { _explicitNullValueVibeCode = value; AdditionalData?.Remove("vibe_code"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("vibe_code"); else _explicitNullProperties?.Remove("vibe_code"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.VibeCodeUsageDataJson _explicitNullValueVibeCode = default!;
 #endif
         /// <summary>Legacy Vibe usage field. Always 0; use the Vibe usage API instead.</summary>
-        public double? VibeUsage { get; set; }
+        public double? VibeUsage { get => _explicitNullValueVibeUsage; set { _explicitNullValueVibeUsage = value; AdditionalData?.Remove("vibe_usage"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("vibe_usage"); else _explicitNullProperties?.Remove("vibe_usage"); } }
+        private double? _explicitNullValueVibeUsage = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Mistral.OpenApiClient.Models.UsageOutjson"/> and sets the default values.
         /// </summary>
@@ -157,7 +236,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         public static global::Soenneker.Mistral.OpenApiClient.Models.UsageOutjson CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Mistral.OpenApiClient.Models.UsageOutjson();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Mistral.OpenApiClient.Models.UsageOutjson(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -214,6 +293,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             writer.WriteDateTimeOffsetValue("start_date", StartDate);
             writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.VibeCodeUsageDataJson>("vibe_code", VibeCode);
             writer.WriteDoubleValue("vibe_usage", VibeUsage);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

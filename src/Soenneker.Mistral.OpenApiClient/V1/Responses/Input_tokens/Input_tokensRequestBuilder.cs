@@ -51,7 +51,7 @@ namespace Soenneker.Mistral.OpenApiClient.V1.Responses.Input_tokens
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Mistral.OpenApiClient.Models.CountResponseInputTokensResponse>(requestInfo, global::Soenneker.Mistral.OpenApiClient.Models.CountResponseInputTokensResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Mistral.OpenApiClient.Models.CountResponseInputTokensResponse>(requestInfo, global::Soenneker.Mistral.OpenApiClient.Models.CountResponseInputTokensResponse.CreateFromDiscriminatorValue, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Count response input tokens.Count the input tokens for a Responses request without generating aresponse. The count includes the supplied conversation, instructions,and tool definitions.Use the same input, instructions, and tools that you plan to send whencreating a response. For multi-turn conversations, include prior outputitems and function results in input.

@@ -11,27 +11,45 @@ namespace Soenneker.Mistral.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class CreateDatasetRecordRequest : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("payload") is null) { _explicitNullValuePayload = default!; _explicitNullProperties?.Remove("payload"); }
+            else if (parseNode.GetChildNode("payload") is { } nullNodePayload && nullNodePayload.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Payload = null;
+            if (parseNode.GetChildNode("properties") is null) { _explicitNullValueProperties = default!; _explicitNullProperties?.Remove("properties"); }
+            else if (parseNode.GetChildNode("properties") is { } nullNodeProperties && nullNodeProperties.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Properties = null;
+            if (parseNode.GetChildNode("source") is null) { _explicitNullValueSource = default!; _explicitNullProperties?.Remove("source"); }
+            else if (parseNode.GetChildNode("source") is { } nullNodeSource && nullNodeSource.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Source = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Caller-authored input object stored on a dataset record.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.CreateDatasetRecordRequestPayload? Payload { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.CreateDatasetRecordRequestPayload? Payload { get => _explicitNullValuePayload; set { _explicitNullValuePayload = value; AdditionalData?.Remove("payload"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("payload"); else _explicitNullProperties?.Remove("payload"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.CreateDatasetRecordRequestPayload? _explicitNullValuePayload = default!;
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.CreateDatasetRecordRequestPayload Payload { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.CreateDatasetRecordRequestPayload Payload { get => _explicitNullValuePayload; set { _explicitNullValuePayload = value; AdditionalData?.Remove("payload"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("payload"); else _explicitNullProperties?.Remove("payload"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.CreateDatasetRecordRequestPayload _explicitNullValuePayload = default!;
 #endif
         /// <summary>The properties property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.CreateDatasetRecordRequestPropertiesProperty? Properties { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.CreateDatasetRecordRequestPropertiesProperty? Properties { get => _explicitNullValueProperties; set { _explicitNullValueProperties = value; AdditionalData?.Remove("properties"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("properties"); else _explicitNullProperties?.Remove("properties"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.CreateDatasetRecordRequestPropertiesProperty? _explicitNullValueProperties = default!;
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.CreateDatasetRecordRequestPropertiesProperty Properties { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.CreateDatasetRecordRequestPropertiesProperty Properties { get => _explicitNullValueProperties; set { _explicitNullValueProperties = value; AdditionalData?.Remove("properties"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("properties"); else _explicitNullProperties?.Remove("properties"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.CreateDatasetRecordRequestPropertiesProperty _explicitNullValueProperties = default!;
 #endif
         /// <summary>Caller-declared channel that initiated record creation. This value does not certify that the payload is an unmodified copy of its source.</summary>
-        public global::Soenneker.Mistral.OpenApiClient.Models.CreateDatasetRecordRequestSource? Source { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.CreateDatasetRecordRequestSource? Source { get => _explicitNullValueSource; set { _explicitNullValueSource = value; AdditionalData?.Remove("source"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("source"); else _explicitNullProperties?.Remove("source"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.CreateDatasetRecordRequestSource? _explicitNullValueSource = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Mistral.OpenApiClient.Models.CreateDatasetRecordRequest"/> and sets the default values.
         /// </summary>
@@ -47,7 +65,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         public static global::Soenneker.Mistral.OpenApiClient.Models.CreateDatasetRecordRequest CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Mistral.OpenApiClient.Models.CreateDatasetRecordRequest();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Mistral.OpenApiClient.Models.CreateDatasetRecordRequest(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -59,7 +77,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             {
                 { "payload", n => { Payload = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.CreateDatasetRecordRequestPayload>(global::Soenneker.Mistral.OpenApiClient.Models.CreateDatasetRecordRequestPayload.CreateFromDiscriminatorValue); } },
                 { "properties", n => { Properties = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.CreateDatasetRecordRequestPropertiesProperty>(global::Soenneker.Mistral.OpenApiClient.Models.CreateDatasetRecordRequestPropertiesProperty.CreateFromDiscriminatorValue); } },
-                { "source", n => { Source = n.GetEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.CreateDatasetRecordRequestSource>(); } },
+                { "source", n => { var parsed = n.GetEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.CreateDatasetRecordRequestSource>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueSource = default; _explicitNullProperties?.Remove("source"); AdditionalData["source"] = unknown; } else { Source = parsed; AdditionalData.Remove("source"); } } },
             };
         }
         /// <summary>
@@ -72,6 +90,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.CreateDatasetRecordRequestPayload>("payload", Payload);
             writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.CreateDatasetRecordRequestPropertiesProperty>("properties", Properties);
             writer.WriteEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.CreateDatasetRecordRequestSource>("source", Source);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -11,40 +11,63 @@ namespace Soenneker.Mistral.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class ToolExecutionConfiguration : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("exclude") is null) { _explicitNullValueExclude = default!; _explicitNullProperties?.Remove("exclude"); }
+            else if (parseNode.GetChildNode("exclude") is { } nullNodeExclude && nullNodeExclude.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Exclude = null;
+            if (parseNode.GetChildNode("include") is null) { _explicitNullValueInclude = default!; _explicitNullProperties?.Remove("include"); }
+            else if (parseNode.GetChildNode("include") is { } nullNodeInclude && nullNodeInclude.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Include = null;
+            if (parseNode.GetChildNode("requires_confirmation") is null) { _explicitNullValueRequiresConfirmation = default!; _explicitNullProperties?.Remove("requires_confirmation"); }
+            else if (parseNode.GetChildNode("requires_confirmation") is { } nullNodeRequiresConfirmation && nullNodeRequiresConfirmation.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RequiresConfirmation = null;
+            if (parseNode.GetChildNode("skip_confirmation") is null) { _explicitNullValueSkipConfirmation = default!; _explicitNullProperties?.Remove("skip_confirmation"); }
+            else if (parseNode.GetChildNode("skip_confirmation") is { } nullNodeSkipConfirmation && nullNodeSkipConfirmation.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SkipConfirmation = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The exclude property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Exclude { get; set; }
+        public List<string>? Exclude { get => _explicitNullValueExclude; set { _explicitNullValueExclude = value; AdditionalData?.Remove("exclude"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("exclude"); else _explicitNullProperties?.Remove("exclude"); } }
+        private List<string>? _explicitNullValueExclude = default!;
 #nullable restore
 #else
-        public List<string> Exclude { get; set; }
+        public List<string> Exclude { get => _explicitNullValueExclude; set { _explicitNullValueExclude = value; AdditionalData?.Remove("exclude"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("exclude"); else _explicitNullProperties?.Remove("exclude"); } }
+        private List<string> _explicitNullValueExclude = default!;
 #endif
         /// <summary>The include property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Include { get; set; }
+        public List<string>? Include { get => _explicitNullValueInclude; set { _explicitNullValueInclude = value; AdditionalData?.Remove("include"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("include"); else _explicitNullProperties?.Remove("include"); } }
+        private List<string>? _explicitNullValueInclude = default!;
 #nullable restore
 #else
-        public List<string> Include { get; set; }
+        public List<string> Include { get => _explicitNullValueInclude; set { _explicitNullValueInclude = value; AdditionalData?.Remove("include"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("include"); else _explicitNullProperties?.Remove("include"); } }
+        private List<string> _explicitNullValueInclude = default!;
 #endif
         /// <summary>The requires_confirmation property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.ToolExecutionConfigurationRequiresConfirmation? RequiresConfirmation { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.ToolExecutionConfigurationRequiresConfirmation? RequiresConfirmation { get => _explicitNullValueRequiresConfirmation; set { _explicitNullValueRequiresConfirmation = value; AdditionalData?.Remove("requires_confirmation"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("requires_confirmation"); else _explicitNullProperties?.Remove("requires_confirmation"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.ToolExecutionConfigurationRequiresConfirmation? _explicitNullValueRequiresConfirmation = default!;
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.ToolExecutionConfigurationRequiresConfirmation RequiresConfirmation { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.ToolExecutionConfigurationRequiresConfirmation RequiresConfirmation { get => _explicitNullValueRequiresConfirmation; set { _explicitNullValueRequiresConfirmation = value; AdditionalData?.Remove("requires_confirmation"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("requires_confirmation"); else _explicitNullProperties?.Remove("requires_confirmation"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.ToolExecutionConfigurationRequiresConfirmation _explicitNullValueRequiresConfirmation = default!;
 #endif
         /// <summary>The skip_confirmation property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.ToolExecutionConfigurationSkipConfirmation? SkipConfirmation { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.ToolExecutionConfigurationSkipConfirmation? SkipConfirmation { get => _explicitNullValueSkipConfirmation; set { _explicitNullValueSkipConfirmation = value; AdditionalData?.Remove("skip_confirmation"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("skip_confirmation"); else _explicitNullProperties?.Remove("skip_confirmation"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.ToolExecutionConfigurationSkipConfirmation? _explicitNullValueSkipConfirmation = default!;
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.ToolExecutionConfigurationSkipConfirmation SkipConfirmation { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.ToolExecutionConfigurationSkipConfirmation SkipConfirmation { get => _explicitNullValueSkipConfirmation; set { _explicitNullValueSkipConfirmation = value; AdditionalData?.Remove("skip_confirmation"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("skip_confirmation"); else _explicitNullProperties?.Remove("skip_confirmation"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.ToolExecutionConfigurationSkipConfirmation _explicitNullValueSkipConfirmation = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Mistral.OpenApiClient.Models.ToolExecutionConfiguration"/> and sets the default values.
@@ -61,7 +84,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         public static global::Soenneker.Mistral.OpenApiClient.Models.ToolExecutionConfiguration CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Mistral.OpenApiClient.Models.ToolExecutionConfiguration();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Mistral.OpenApiClient.Models.ToolExecutionConfiguration(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -88,6 +111,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             writer.WriteCollectionOfPrimitiveValues<string>("include", Include);
             writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ToolExecutionConfigurationRequiresConfirmation>("requires_confirmation", RequiresConfirmation);
             writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ToolExecutionConfigurationSkipConfirmation>("skip_confirmation", SkipConfirmation);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

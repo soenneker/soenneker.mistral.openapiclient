@@ -11,62 +11,102 @@ namespace Soenneker.Mistral.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class WorkflowCodeDefinition : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("enforce_determinism") is null) { _explicitNullValueEnforceDeterminism = default!; _explicitNullProperties?.Remove("enforce_determinism"); }
+            else if (parseNode.GetChildNode("enforce_determinism") is { } nullNodeEnforceDeterminism && nullNodeEnforceDeterminism.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EnforceDeterminism = null;
+            if (parseNode.GetChildNode("execution_timeout") is null) { _explicitNullValueExecutionTimeout = default!; _explicitNullProperties?.Remove("execution_timeout"); }
+            else if (parseNode.GetChildNode("execution_timeout") is { } nullNodeExecutionTimeout && nullNodeExecutionTimeout.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExecutionTimeout = null;
+            if (parseNode.GetChildNode("input_schema") is null) { _explicitNullValueInputSchema = default!; _explicitNullProperties?.Remove("input_schema"); }
+            else if (parseNode.GetChildNode("input_schema") is { } nullNodeInputSchema && nullNodeInputSchema.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) InputSchema = null;
+            if (parseNode.GetChildNode("on_behalf_of") is null) { _explicitNullValueOnBehalfOf = default!; _explicitNullProperties?.Remove("on_behalf_of"); }
+            else if (parseNode.GetChildNode("on_behalf_of") is { } nullNodeOnBehalfOf && nullNodeOnBehalfOf.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OnBehalfOf = null;
+            if (parseNode.GetChildNode("output_schema") is null) { _explicitNullValueOutputSchema = default!; _explicitNullProperties?.Remove("output_schema"); }
+            else if (parseNode.GetChildNode("output_schema") is { } nullNodeOutputSchema && nullNodeOutputSchema.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OutputSchema = null;
+            if (parseNode.GetChildNode("plugin_metadata") is null) { _explicitNullValuePluginMetadata = default!; _explicitNullProperties?.Remove("plugin_metadata"); }
+            else if (parseNode.GetChildNode("plugin_metadata") is { } nullNodePluginMetadata && nullNodePluginMetadata.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PluginMetadata = null;
+            if (parseNode.GetChildNode("queries") is null) { _explicitNullValueQueries = default!; _explicitNullProperties?.Remove("queries"); }
+            else if (parseNode.GetChildNode("queries") is { } nullNodeQueries && nullNodeQueries.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Queries = null;
+            if (parseNode.GetChildNode("signals") is null) { _explicitNullValueSignals = default!; _explicitNullProperties?.Remove("signals"); }
+            else if (parseNode.GetChildNode("signals") is { } nullNodeSignals && nullNodeSignals.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Signals = null;
+            if (parseNode.GetChildNode("updates") is null) { _explicitNullValueUpdates = default!; _explicitNullProperties?.Remove("updates"); }
+            else if (parseNode.GetChildNode("updates") is { } nullNodeUpdates && nullNodeUpdates.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Updates = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Whether the workflow enforces deterministic execution</summary>
-        public bool? EnforceDeterminism { get; set; }
+        public bool? EnforceDeterminism { get => _explicitNullValueEnforceDeterminism; set { _explicitNullValueEnforceDeterminism = value; AdditionalData?.Remove("enforce_determinism"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("enforce_determinism"); else _explicitNullProperties?.Remove("enforce_determinism"); } }
+        private bool? _explicitNullValueEnforceDeterminism = default!;
         /// <summary>Maximum total execution time including retries and continue-as-new</summary>
-        public double? ExecutionTimeout { get; set; }
+        public double? ExecutionTimeout { get => _explicitNullValueExecutionTimeout; set { _explicitNullValueExecutionTimeout = value; AdditionalData?.Remove("execution_timeout"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("execution_timeout"); else _explicitNullProperties?.Remove("execution_timeout"); } }
+        private double? _explicitNullValueExecutionTimeout = default!;
         /// <summary>Input schema of the workflow&apos;s run method</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.WorkflowCodeDefinitionInputSchemaProperty? InputSchema { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.WorkflowCodeDefinitionInputSchemaProperty? InputSchema { get => _explicitNullValueInputSchema; set { _explicitNullValueInputSchema = value; AdditionalData?.Remove("input_schema"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("input_schema"); else _explicitNullProperties?.Remove("input_schema"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.WorkflowCodeDefinitionInputSchemaProperty? _explicitNullValueInputSchema = default!;
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.WorkflowCodeDefinitionInputSchemaProperty InputSchema { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.WorkflowCodeDefinitionInputSchemaProperty InputSchema { get => _explicitNullValueInputSchema; set { _explicitNullValueInputSchema = value; AdditionalData?.Remove("input_schema"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("input_schema"); else _explicitNullProperties?.Remove("input_schema"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.WorkflowCodeDefinitionInputSchemaProperty _explicitNullValueInputSchema = default!;
 #endif
         /// <summary>Whether the workflow must run associated to a user&apos;s identity</summary>
-        public bool? OnBehalfOf { get; set; }
+        public bool? OnBehalfOf { get => _explicitNullValueOnBehalfOf; set { _explicitNullValueOnBehalfOf = value; AdditionalData?.Remove("on_behalf_of"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("on_behalf_of"); else _explicitNullProperties?.Remove("on_behalf_of"); } }
+        private bool? _explicitNullValueOnBehalfOf = default!;
         /// <summary>Output schema of the workflow&apos;s run method</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.WorkflowCodeDefinitionOutputSchemaProperty? OutputSchema { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.WorkflowCodeDefinitionOutputSchemaProperty? OutputSchema { get => _explicitNullValueOutputSchema; set { _explicitNullValueOutputSchema = value; AdditionalData?.Remove("output_schema"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("output_schema"); else _explicitNullProperties?.Remove("output_schema"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.WorkflowCodeDefinitionOutputSchemaProperty? _explicitNullValueOutputSchema = default!;
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.WorkflowCodeDefinitionOutputSchemaProperty OutputSchema { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.WorkflowCodeDefinitionOutputSchemaProperty OutputSchema { get => _explicitNullValueOutputSchema; set { _explicitNullValueOutputSchema = value; AdditionalData?.Remove("output_schema"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("output_schema"); else _explicitNullProperties?.Remove("output_schema"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.WorkflowCodeDefinitionOutputSchemaProperty _explicitNullValueOutputSchema = default!;
 #endif
         /// <summary>Plugin-specific metadata (e.g. connector declarations)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.WorkflowCodeDefinitionPluginMetadataProperty? PluginMetadata { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.WorkflowCodeDefinitionPluginMetadataProperty? PluginMetadata { get => _explicitNullValuePluginMetadata; set { _explicitNullValuePluginMetadata = value; AdditionalData?.Remove("plugin_metadata"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("plugin_metadata"); else _explicitNullProperties?.Remove("plugin_metadata"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.WorkflowCodeDefinitionPluginMetadataProperty? _explicitNullValuePluginMetadata = default!;
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.WorkflowCodeDefinitionPluginMetadataProperty PluginMetadata { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.WorkflowCodeDefinitionPluginMetadataProperty PluginMetadata { get => _explicitNullValuePluginMetadata; set { _explicitNullValuePluginMetadata = value; AdditionalData?.Remove("plugin_metadata"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("plugin_metadata"); else _explicitNullProperties?.Remove("plugin_metadata"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.WorkflowCodeDefinitionPluginMetadataProperty _explicitNullValuePluginMetadata = default!;
 #endif
         /// <summary>Query handlers defined by the workflow</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Mistral.OpenApiClient.Models.QueryDefinition>? Queries { get; set; }
+        public List<global::Soenneker.Mistral.OpenApiClient.Models.QueryDefinition>? Queries { get => _explicitNullValueQueries; set { _explicitNullValueQueries = value; AdditionalData?.Remove("queries"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("queries"); else _explicitNullProperties?.Remove("queries"); } }
+        private List<global::Soenneker.Mistral.OpenApiClient.Models.QueryDefinition>? _explicitNullValueQueries = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Mistral.OpenApiClient.Models.QueryDefinition> Queries { get; set; }
+        public List<global::Soenneker.Mistral.OpenApiClient.Models.QueryDefinition> Queries { get => _explicitNullValueQueries; set { _explicitNullValueQueries = value; AdditionalData?.Remove("queries"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("queries"); else _explicitNullProperties?.Remove("queries"); } }
+        private List<global::Soenneker.Mistral.OpenApiClient.Models.QueryDefinition> _explicitNullValueQueries = default!;
 #endif
         /// <summary>Signal handlers defined by the workflow</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Mistral.OpenApiClient.Models.SignalDefinition>? Signals { get; set; }
+        public List<global::Soenneker.Mistral.OpenApiClient.Models.SignalDefinition>? Signals { get => _explicitNullValueSignals; set { _explicitNullValueSignals = value; AdditionalData?.Remove("signals"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("signals"); else _explicitNullProperties?.Remove("signals"); } }
+        private List<global::Soenneker.Mistral.OpenApiClient.Models.SignalDefinition>? _explicitNullValueSignals = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Mistral.OpenApiClient.Models.SignalDefinition> Signals { get; set; }
+        public List<global::Soenneker.Mistral.OpenApiClient.Models.SignalDefinition> Signals { get => _explicitNullValueSignals; set { _explicitNullValueSignals = value; AdditionalData?.Remove("signals"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("signals"); else _explicitNullProperties?.Remove("signals"); } }
+        private List<global::Soenneker.Mistral.OpenApiClient.Models.SignalDefinition> _explicitNullValueSignals = default!;
 #endif
         /// <summary>Update handlers defined by the workflow</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Mistral.OpenApiClient.Models.UpdateDefinition>? Updates { get; set; }
+        public List<global::Soenneker.Mistral.OpenApiClient.Models.UpdateDefinition>? Updates { get => _explicitNullValueUpdates; set { _explicitNullValueUpdates = value; AdditionalData?.Remove("updates"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("updates"); else _explicitNullProperties?.Remove("updates"); } }
+        private List<global::Soenneker.Mistral.OpenApiClient.Models.UpdateDefinition>? _explicitNullValueUpdates = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Mistral.OpenApiClient.Models.UpdateDefinition> Updates { get; set; }
+        public List<global::Soenneker.Mistral.OpenApiClient.Models.UpdateDefinition> Updates { get => _explicitNullValueUpdates; set { _explicitNullValueUpdates = value; AdditionalData?.Remove("updates"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("updates"); else _explicitNullProperties?.Remove("updates"); } }
+        private List<global::Soenneker.Mistral.OpenApiClient.Models.UpdateDefinition> _explicitNullValueUpdates = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Mistral.OpenApiClient.Models.WorkflowCodeDefinition"/> and sets the default values.
@@ -85,7 +125,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         public static global::Soenneker.Mistral.OpenApiClient.Models.WorkflowCodeDefinition CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Mistral.OpenApiClient.Models.WorkflowCodeDefinition();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Mistral.OpenApiClient.Models.WorkflowCodeDefinition(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -122,6 +162,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             writer.WriteCollectionOfObjectValues<global::Soenneker.Mistral.OpenApiClient.Models.QueryDefinition>("queries", Queries);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Mistral.OpenApiClient.Models.SignalDefinition>("signals", Signals);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Mistral.OpenApiClient.Models.UpdateDefinition>("updates", Updates);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

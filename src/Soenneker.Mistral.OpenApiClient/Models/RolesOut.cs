@@ -11,24 +11,39 @@ namespace Soenneker.Mistral.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class RolesOut : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("organization_roles") is null) { _explicitNullValueOrganizationRoles = default!; _explicitNullProperties?.Remove("organization_roles"); }
+            else if (parseNode.GetChildNode("organization_roles") is { } nullNodeOrganizationRoles && nullNodeOrganizationRoles.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OrganizationRoles = null;
+            if (parseNode.GetChildNode("workspace_roles") is null) { _explicitNullValueWorkspaceRoles = default!; _explicitNullProperties?.Remove("workspace_roles"); }
+            else if (parseNode.GetChildNode("workspace_roles") is { } nullNodeWorkspaceRoles && nullNodeWorkspaceRoles.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WorkspaceRoles = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Organization roles available to the Organization.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Mistral.OpenApiClient.Models.RoleOut>? OrganizationRoles { get; set; }
+        public List<global::Soenneker.Mistral.OpenApiClient.Models.RoleOut>? OrganizationRoles { get => _explicitNullValueOrganizationRoles; set { _explicitNullValueOrganizationRoles = value; AdditionalData?.Remove("organization_roles"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("organization_roles"); else _explicitNullProperties?.Remove("organization_roles"); } }
+        private List<global::Soenneker.Mistral.OpenApiClient.Models.RoleOut>? _explicitNullValueOrganizationRoles = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Mistral.OpenApiClient.Models.RoleOut> OrganizationRoles { get; set; }
+        public List<global::Soenneker.Mistral.OpenApiClient.Models.RoleOut> OrganizationRoles { get => _explicitNullValueOrganizationRoles; set { _explicitNullValueOrganizationRoles = value; AdditionalData?.Remove("organization_roles"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("organization_roles"); else _explicitNullProperties?.Remove("organization_roles"); } }
+        private List<global::Soenneker.Mistral.OpenApiClient.Models.RoleOut> _explicitNullValueOrganizationRoles = default!;
 #endif
         /// <summary>Workspace roles available to the Organization.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Mistral.OpenApiClient.Models.RoleOut>? WorkspaceRoles { get; set; }
+        public List<global::Soenneker.Mistral.OpenApiClient.Models.RoleOut>? WorkspaceRoles { get => _explicitNullValueWorkspaceRoles; set { _explicitNullValueWorkspaceRoles = value; AdditionalData?.Remove("workspace_roles"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("workspace_roles"); else _explicitNullProperties?.Remove("workspace_roles"); } }
+        private List<global::Soenneker.Mistral.OpenApiClient.Models.RoleOut>? _explicitNullValueWorkspaceRoles = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Mistral.OpenApiClient.Models.RoleOut> WorkspaceRoles { get; set; }
+        public List<global::Soenneker.Mistral.OpenApiClient.Models.RoleOut> WorkspaceRoles { get => _explicitNullValueWorkspaceRoles; set { _explicitNullValueWorkspaceRoles = value; AdditionalData?.Remove("workspace_roles"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("workspace_roles"); else _explicitNullProperties?.Remove("workspace_roles"); } }
+        private List<global::Soenneker.Mistral.OpenApiClient.Models.RoleOut> _explicitNullValueWorkspaceRoles = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Mistral.OpenApiClient.Models.RolesOut"/> and sets the default values.
@@ -45,7 +60,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         public static global::Soenneker.Mistral.OpenApiClient.Models.RolesOut CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Mistral.OpenApiClient.Models.RolesOut();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Mistral.OpenApiClient.Models.RolesOut(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -68,6 +83,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfObjectValues<global::Soenneker.Mistral.OpenApiClient.Models.RoleOut>("organization_roles", OrganizationRoles);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Mistral.OpenApiClient.Models.RoleOut>("workspace_roles", WorkspaceRoles);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

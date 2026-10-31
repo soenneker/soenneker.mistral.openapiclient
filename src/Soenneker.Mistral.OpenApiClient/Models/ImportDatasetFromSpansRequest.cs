@@ -11,24 +11,39 @@ namespace Soenneker.Mistral.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class ImportDatasetFromSpansRequest : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("mapping_contract") is null) { _explicitNullValueMappingContract = default!; _explicitNullProperties?.Remove("mapping_contract"); }
+            else if (parseNode.GetChildNode("mapping_contract") is { } nullNodeMappingContract && nullNodeMappingContract.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MappingContract = null;
+            if (parseNode.GetChildNode("span_references") is null) { _explicitNullValueSpanReferences = default!; _explicitNullProperties?.Remove("span_references"); }
+            else if (parseNode.GetChildNode("span_references") is { } nullNodeSpanReferences && nullNodeSpanReferences.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SpanReferences = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Versioned rules for mapping span or resource attributes into top-level payload keys.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.SpanDatasetMappingContract? MappingContract { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.SpanDatasetMappingContract? MappingContract { get => _explicitNullValueMappingContract; set { _explicitNullValueMappingContract = value; AdditionalData?.Remove("mapping_contract"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mapping_contract"); else _explicitNullProperties?.Remove("mapping_contract"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.SpanDatasetMappingContract? _explicitNullValueMappingContract = default!;
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.SpanDatasetMappingContract MappingContract { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.SpanDatasetMappingContract MappingContract { get => _explicitNullValueMappingContract; set { _explicitNullValueMappingContract = value; AdditionalData?.Remove("mapping_contract"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mapping_contract"); else _explicitNullProperties?.Remove("mapping_contract"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.SpanDatasetMappingContract _explicitNullValueMappingContract = default!;
 #endif
         /// <summary>Spans to attempt to import; unavailable references are skipped, and trace and span IDs are attached as record properties automatically.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Mistral.OpenApiClient.Models.TelemetrySpanReference>? SpanReferences { get; set; }
+        public List<global::Soenneker.Mistral.OpenApiClient.Models.TelemetrySpanReference>? SpanReferences { get => _explicitNullValueSpanReferences; set { _explicitNullValueSpanReferences = value; AdditionalData?.Remove("span_references"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("span_references"); else _explicitNullProperties?.Remove("span_references"); } }
+        private List<global::Soenneker.Mistral.OpenApiClient.Models.TelemetrySpanReference>? _explicitNullValueSpanReferences = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Mistral.OpenApiClient.Models.TelemetrySpanReference> SpanReferences { get; set; }
+        public List<global::Soenneker.Mistral.OpenApiClient.Models.TelemetrySpanReference> SpanReferences { get => _explicitNullValueSpanReferences; set { _explicitNullValueSpanReferences = value; AdditionalData?.Remove("span_references"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("span_references"); else _explicitNullProperties?.Remove("span_references"); } }
+        private List<global::Soenneker.Mistral.OpenApiClient.Models.TelemetrySpanReference> _explicitNullValueSpanReferences = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Mistral.OpenApiClient.Models.ImportDatasetFromSpansRequest"/> and sets the default values.
@@ -45,7 +60,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         public static global::Soenneker.Mistral.OpenApiClient.Models.ImportDatasetFromSpansRequest CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Mistral.OpenApiClient.Models.ImportDatasetFromSpansRequest();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Mistral.OpenApiClient.Models.ImportDatasetFromSpansRequest(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -68,6 +83,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.SpanDatasetMappingContract>("mapping_contract", MappingContract);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Mistral.OpenApiClient.Models.TelemetrySpanReference>("span_references", SpanReferences);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

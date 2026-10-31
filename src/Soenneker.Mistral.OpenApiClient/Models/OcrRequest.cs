@@ -11,71 +11,126 @@ namespace Soenneker.Mistral.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class OcrRequest : IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("bbox_annotation_format") is null) { _explicitNullValueBboxAnnotationFormat = default!; _explicitNullProperties?.Remove("bbox_annotation_format"); }
+            else if (parseNode.GetChildNode("bbox_annotation_format") is { } nullNodeBboxAnnotationFormat && nullNodeBboxAnnotationFormat.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BboxAnnotationFormat = null;
+            if (parseNode.GetChildNode("confidence_scores_granularity") is null) { _explicitNullValueConfidenceScoresGranularity = default!; _explicitNullProperties?.Remove("confidence_scores_granularity"); }
+            else if (parseNode.GetChildNode("confidence_scores_granularity") is { } nullNodeConfidenceScoresGranularity && nullNodeConfidenceScoresGranularity.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ConfidenceScoresGranularity = null;
+            if (parseNode.GetChildNode("document") is null) { _explicitNullValueDocument = default!; _explicitNullProperties?.Remove("document"); }
+            else if (parseNode.GetChildNode("document") is { } nullNodeDocument && nullNodeDocument.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Document = null;
+            if (parseNode.GetChildNode("document_annotation_format") is null) { _explicitNullValueDocumentAnnotationFormat = default!; _explicitNullProperties?.Remove("document_annotation_format"); }
+            else if (parseNode.GetChildNode("document_annotation_format") is { } nullNodeDocumentAnnotationFormat && nullNodeDocumentAnnotationFormat.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DocumentAnnotationFormat = null;
+            if (parseNode.GetChildNode("document_annotation_prompt") is null) { _explicitNullValueDocumentAnnotationPrompt = default!; _explicitNullProperties?.Remove("document_annotation_prompt"); }
+            else if (parseNode.GetChildNode("document_annotation_prompt") is { } nullNodeDocumentAnnotationPrompt && nullNodeDocumentAnnotationPrompt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DocumentAnnotationPrompt = null;
+            if (parseNode.GetChildNode("extract_footer") is null) { _explicitNullValueExtractFooter = default!; _explicitNullProperties?.Remove("extract_footer"); }
+            else if (parseNode.GetChildNode("extract_footer") is { } nullNodeExtractFooter && nullNodeExtractFooter.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExtractFooter = null;
+            if (parseNode.GetChildNode("extract_header") is null) { _explicitNullValueExtractHeader = default!; _explicitNullProperties?.Remove("extract_header"); }
+            else if (parseNode.GetChildNode("extract_header") is { } nullNodeExtractHeader && nullNodeExtractHeader.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExtractHeader = null;
+            if (parseNode.GetChildNode("image_limit") is null) { _explicitNullValueImageLimit = default!; _explicitNullProperties?.Remove("image_limit"); }
+            else if (parseNode.GetChildNode("image_limit") is { } nullNodeImageLimit && nullNodeImageLimit.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ImageLimit = null;
+            if (parseNode.GetChildNode("image_min_size") is null) { _explicitNullValueImageMinSize = default!; _explicitNullProperties?.Remove("image_min_size"); }
+            else if (parseNode.GetChildNode("image_min_size") is { } nullNodeImageMinSize && nullNodeImageMinSize.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ImageMinSize = null;
+            if (parseNode.GetChildNode("include_blocks") is null) { _explicitNullValueIncludeBlocks = default!; _explicitNullProperties?.Remove("include_blocks"); }
+            else if (parseNode.GetChildNode("include_blocks") is { } nullNodeIncludeBlocks && nullNodeIncludeBlocks.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IncludeBlocks = null;
+            if (parseNode.GetChildNode("include_image_base64") is null) { _explicitNullValueIncludeImageBase64 = default!; _explicitNullProperties?.Remove("include_image_base64"); }
+            else if (parseNode.GetChildNode("include_image_base64") is { } nullNodeIncludeImageBase64 && nullNodeIncludeImageBase64.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IncludeImageBase64 = null;
+            if (parseNode.GetChildNode("model") is null) { _explicitNullValueModel = default!; _explicitNullProperties?.Remove("model"); }
+            else if (parseNode.GetChildNode("model") is { } nullNodeModel && nullNodeModel.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Model = null;
+            if (parseNode.GetChildNode("pages") is null) { _explicitNullValuePages = default!; _explicitNullProperties?.Remove("pages"); }
+            else if (parseNode.GetChildNode("pages") is { } nullNodePages && nullNodePages.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Pages = null;
+            if (parseNode.GetChildNode("table_format") is null) { _explicitNullValueTableFormat = default!; _explicitNullProperties?.Remove("table_format"); }
+            else if (parseNode.GetChildNode("table_format") is { } nullNodeTableFormat && nullNodeTableFormat.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TableFormat = null;
+        }
+
         /// <summary>Structured output class for extracting useful information from each extracted bounding box / image from document. Only json_schema is valid for this field</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.ResponseFormat? BboxAnnotationFormat { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.ResponseFormat? BboxAnnotationFormat { get => _explicitNullValueBboxAnnotationFormat; set { _explicitNullValueBboxAnnotationFormat = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bbox_annotation_format"); else _explicitNullProperties?.Remove("bbox_annotation_format"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.ResponseFormat? _explicitNullValueBboxAnnotationFormat = default!;
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.ResponseFormat BboxAnnotationFormat { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.ResponseFormat BboxAnnotationFormat { get => _explicitNullValueBboxAnnotationFormat; set { _explicitNullValueBboxAnnotationFormat = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bbox_annotation_format"); else _explicitNullProperties?.Remove("bbox_annotation_format"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.ResponseFormat _explicitNullValueBboxAnnotationFormat = default!;
 #endif
         /// <summary>Granularity for confidence scores: &apos;page&apos; (aggregate only), &apos;word&apos; (per-word scores), or &apos;block&apos; (per-block scores). Defaults to None (no confidence scores) to keep response payload small.</summary>
-        public global::Soenneker.Mistral.OpenApiClient.Models.OcrRequestConfidenceScoresGranularity? ConfidenceScoresGranularity { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.OcrRequestConfidenceScoresGranularity? ConfidenceScoresGranularity { get => _explicitNullValueConfidenceScoresGranularity; set { _explicitNullValueConfidenceScoresGranularity = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("confidence_scores_granularity"); else _explicitNullProperties?.Remove("confidence_scores_granularity"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.OcrRequestConfidenceScoresGranularity? _explicitNullValueConfidenceScoresGranularity = default!;
         /// <summary>Document to run OCR on</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.OcrRequestDocument? Document { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.OcrRequestDocument? Document { get => _explicitNullValueDocument; set { _explicitNullValueDocument = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("document"); else _explicitNullProperties?.Remove("document"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.OcrRequestDocument? _explicitNullValueDocument = default!;
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.OcrRequestDocument Document { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.OcrRequestDocument Document { get => _explicitNullValueDocument; set { _explicitNullValueDocument = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("document"); else _explicitNullProperties?.Remove("document"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.OcrRequestDocument _explicitNullValueDocument = default!;
 #endif
         /// <summary>Structured output class for extracting useful information from the entire document. Only json_schema is valid for this field</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.ResponseFormat? DocumentAnnotationFormat { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.ResponseFormat? DocumentAnnotationFormat { get => _explicitNullValueDocumentAnnotationFormat; set { _explicitNullValueDocumentAnnotationFormat = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("document_annotation_format"); else _explicitNullProperties?.Remove("document_annotation_format"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.ResponseFormat? _explicitNullValueDocumentAnnotationFormat = default!;
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.ResponseFormat DocumentAnnotationFormat { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.ResponseFormat DocumentAnnotationFormat { get => _explicitNullValueDocumentAnnotationFormat; set { _explicitNullValueDocumentAnnotationFormat = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("document_annotation_format"); else _explicitNullProperties?.Remove("document_annotation_format"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.ResponseFormat _explicitNullValueDocumentAnnotationFormat = default!;
 #endif
         /// <summary>Optional prompt to guide the model in extracting structured output from the entire document. A document_annotation_format must be provided.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DocumentAnnotationPrompt { get; set; }
+        public string? DocumentAnnotationPrompt { get => _explicitNullValueDocumentAnnotationPrompt; set { _explicitNullValueDocumentAnnotationPrompt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("document_annotation_prompt"); else _explicitNullProperties?.Remove("document_annotation_prompt"); } }
+        private string? _explicitNullValueDocumentAnnotationPrompt = default!;
 #nullable restore
 #else
-        public string DocumentAnnotationPrompt { get; set; }
+        public string DocumentAnnotationPrompt { get => _explicitNullValueDocumentAnnotationPrompt; set { _explicitNullValueDocumentAnnotationPrompt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("document_annotation_prompt"); else _explicitNullProperties?.Remove("document_annotation_prompt"); } }
+        private string _explicitNullValueDocumentAnnotationPrompt = default!;
 #endif
         /// <summary>Extract the page footer into the response&apos;s `footer` field and remove it from the markdown content</summary>
-        public bool? ExtractFooter { get; set; }
+        public bool? ExtractFooter { get => _explicitNullValueExtractFooter; set { _explicitNullValueExtractFooter = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("extract_footer"); else _explicitNullProperties?.Remove("extract_footer"); } }
+        private bool? _explicitNullValueExtractFooter = default!;
         /// <summary>Extract the page header into the response&apos;s `header` field and remove it from the markdown content</summary>
-        public bool? ExtractHeader { get; set; }
+        public bool? ExtractHeader { get => _explicitNullValueExtractHeader; set { _explicitNullValueExtractHeader = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("extract_header"); else _explicitNullProperties?.Remove("extract_header"); } }
+        private bool? _explicitNullValueExtractHeader = default!;
         /// <summary>Max images to extract</summary>
-        public int? ImageLimit { get; set; }
+        public int? ImageLimit { get => _explicitNullValueImageLimit; set { _explicitNullValueImageLimit = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("image_limit"); else _explicitNullProperties?.Remove("image_limit"); } }
+        private int? _explicitNullValueImageLimit = default!;
         /// <summary>Minimum height and width of image to extract</summary>
-        public int? ImageMinSize { get; set; }
+        public int? ImageMinSize { get => _explicitNullValueImageMinSize; set { _explicitNullValueImageMinSize = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("image_min_size"); else _explicitNullProperties?.Remove("image_min_size"); } }
+        private int? _explicitNullValueImageMinSize = default!;
         /// <summary>Return paragraph-level bounding boxes for all content blocks in the response</summary>
-        public bool? IncludeBlocks { get; set; }
+        public bool? IncludeBlocks { get => _explicitNullValueIncludeBlocks; set { _explicitNullValueIncludeBlocks = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("include_blocks"); else _explicitNullProperties?.Remove("include_blocks"); } }
+        private bool? _explicitNullValueIncludeBlocks = default!;
         /// <summary>Include image URLs in response</summary>
-        public bool? IncludeImageBase64 { get; set; }
+        public bool? IncludeImageBase64 { get => _explicitNullValueIncludeImageBase64; set { _explicitNullValueIncludeImageBase64 = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("include_image_base64"); else _explicitNullProperties?.Remove("include_image_base64"); } }
+        private bool? _explicitNullValueIncludeImageBase64 = default!;
         /// <summary>The model property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Model { get; set; }
+        public string? Model { get => _explicitNullValueModel; set { _explicitNullValueModel = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("model"); else _explicitNullProperties?.Remove("model"); } }
+        private string? _explicitNullValueModel = default!;
 #nullable restore
 #else
-        public string Model { get; set; }
+        public string Model { get => _explicitNullValueModel; set { _explicitNullValueModel = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("model"); else _explicitNullProperties?.Remove("model"); } }
+        private string _explicitNullValueModel = default!;
 #endif
         /// <summary>Specific pages to process. Accepts a list of integers or a string of comma-separated numbers and ranges (e.g. &apos;0,1,2&apos; or &apos;0-5&apos; or &apos;0,2-4&apos;). Page numbers start from 0.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.OcrRequestPages? Pages { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.OcrRequestPages? Pages { get => _explicitNullValuePages; set { _explicitNullValuePages = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pages"); else _explicitNullProperties?.Remove("pages"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.OcrRequestPages? _explicitNullValuePages = default!;
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.OcrRequestPages Pages { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.OcrRequestPages Pages { get => _explicitNullValuePages; set { _explicitNullValuePages = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pages"); else _explicitNullProperties?.Remove("pages"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.OcrRequestPages _explicitNullValuePages = default!;
 #endif
         /// <summary>The table_format property</summary>
-        public global::Soenneker.Mistral.OpenApiClient.Models.OcrRequestTableFormat? TableFormat { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.OcrRequestTableFormat? TableFormat { get => _explicitNullValueTableFormat; set { _explicitNullValueTableFormat = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("table_format"); else _explicitNullProperties?.Remove("table_format"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.OcrRequestTableFormat? _explicitNullValueTableFormat = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Mistral.OpenApiClient.Models.OcrRequest"/> and sets the default values.
         /// </summary>
@@ -93,7 +148,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         public static global::Soenneker.Mistral.OpenApiClient.Models.OcrRequest CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Mistral.OpenApiClient.Models.OcrRequest();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Mistral.OpenApiClient.Models.OcrRequest(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -139,7 +194,8 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             writer.WriteBoolValue("include_image_base64", IncludeImageBase64);
             writer.WriteStringValue("model", Model);
             writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.OcrRequestPages>("pages", Pages);
-            writer.WriteEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.OcrRequestTableFormat>("table_format", TableFormat);
+            writer.WriteEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.OcrRequestTableFormat>("table_format", TableFormat);if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
+            
         }
     }
 }

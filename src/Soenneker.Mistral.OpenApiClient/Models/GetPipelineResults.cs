@@ -11,16 +11,27 @@ namespace Soenneker.Mistral.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class GetPipelineResults : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("pipeline_results") is null) { _explicitNullValuePipelineResults = default!; _explicitNullProperties?.Remove("pipeline_results"); }
+            else if (parseNode.GetChildNode("pipeline_results") is { } nullNodePipelineResults && nullNodePipelineResults.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PipelineResults = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The pipeline_results property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.FeedResultGetPipelineResult? PipelineResults { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.FeedResultGetPipelineResult? PipelineResults { get => _explicitNullValuePipelineResults; set { _explicitNullValuePipelineResults = value; AdditionalData?.Remove("pipeline_results"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pipeline_results"); else _explicitNullProperties?.Remove("pipeline_results"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.FeedResultGetPipelineResult? _explicitNullValuePipelineResults = default!;
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.FeedResultGetPipelineResult PipelineResults { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.FeedResultGetPipelineResult PipelineResults { get => _explicitNullValuePipelineResults; set { _explicitNullValuePipelineResults = value; AdditionalData?.Remove("pipeline_results"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pipeline_results"); else _explicitNullProperties?.Remove("pipeline_results"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.FeedResultGetPipelineResult _explicitNullValuePipelineResults = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Mistral.OpenApiClient.Models.GetPipelineResults"/> and sets the default values.
@@ -37,7 +48,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         public static global::Soenneker.Mistral.OpenApiClient.Models.GetPipelineResults CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Mistral.OpenApiClient.Models.GetPipelineResults();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Mistral.OpenApiClient.Models.GetPipelineResults(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -58,6 +69,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.FeedResultGetPipelineResult>("pipeline_results", PipelineResults);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

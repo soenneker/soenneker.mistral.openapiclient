@@ -11,48 +11,75 @@ namespace Soenneker.Mistral.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class ServerLocale : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("description") is null) { _explicitNullValueDescription = default!; _explicitNullProperties?.Remove("description"); }
+            else if (parseNode.GetChildNode("description") is { } nullNodeDescription && nullNodeDescription.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Description = null;
+            if (parseNode.GetChildNode("done_description") is null) { _explicitNullValueDoneDescription = default!; _explicitNullProperties?.Remove("done_description"); }
+            else if (parseNode.GetChildNode("done_description") is { } nullNodeDoneDescription && nullNodeDoneDescription.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DoneDescription = null;
+            if (parseNode.GetChildNode("name") is null) { _explicitNullValueName = default!; _explicitNullProperties?.Remove("name"); }
+            else if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
+            if (parseNode.GetChildNode("usage_sentence") is null) { _explicitNullValueUsageSentence = default!; _explicitNullProperties?.Remove("usage_sentence"); }
+            else if (parseNode.GetChildNode("usage_sentence") is { } nullNodeUsageSentence && nullNodeUsageSentence.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UsageSentence = null;
+            if (parseNode.GetChildNode("working_description") is null) { _explicitNullValueWorkingDescription = default!; _explicitNullProperties?.Remove("working_description"); }
+            else if (parseNode.GetChildNode("working_description") is { } nullNodeWorkingDescription && nullNodeWorkingDescription.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WorkingDescription = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The description property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.ServerLocaleDescriptionAnyOf1? Description { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.ServerLocaleDescriptionAnyOf1? Description { get => _explicitNullValueDescription; set { _explicitNullValueDescription = value; AdditionalData?.Remove("description"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("description"); else _explicitNullProperties?.Remove("description"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.ServerLocaleDescriptionAnyOf1? _explicitNullValueDescription = default!;
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.ServerLocaleDescriptionAnyOf1 Description { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.ServerLocaleDescriptionAnyOf1 Description { get => _explicitNullValueDescription; set { _explicitNullValueDescription = value; AdditionalData?.Remove("description"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("description"); else _explicitNullProperties?.Remove("description"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.ServerLocaleDescriptionAnyOf1 _explicitNullValueDescription = default!;
 #endif
         /// <summary>The done_description property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.ServerLocaleDoneDescriptionAnyOf1? DoneDescription { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.ServerLocaleDoneDescriptionAnyOf1? DoneDescription { get => _explicitNullValueDoneDescription; set { _explicitNullValueDoneDescription = value; AdditionalData?.Remove("done_description"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("done_description"); else _explicitNullProperties?.Remove("done_description"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.ServerLocaleDoneDescriptionAnyOf1? _explicitNullValueDoneDescription = default!;
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.ServerLocaleDoneDescriptionAnyOf1 DoneDescription { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.ServerLocaleDoneDescriptionAnyOf1 DoneDescription { get => _explicitNullValueDoneDescription; set { _explicitNullValueDoneDescription = value; AdditionalData?.Remove("done_description"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("done_description"); else _explicitNullProperties?.Remove("done_description"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.ServerLocaleDoneDescriptionAnyOf1 _explicitNullValueDoneDescription = default!;
 #endif
         /// <summary>The name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.ServerLocaleNameAnyOf1? Name { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.ServerLocaleNameAnyOf1? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.ServerLocaleNameAnyOf1? _explicitNullValueName = default!;
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.ServerLocaleNameAnyOf1 Name { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.ServerLocaleNameAnyOf1 Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.ServerLocaleNameAnyOf1 _explicitNullValueName = default!;
 #endif
         /// <summary>The usage_sentence property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.ServerLocaleUsageSentenceAnyOf1? UsageSentence { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.ServerLocaleUsageSentenceAnyOf1? UsageSentence { get => _explicitNullValueUsageSentence; set { _explicitNullValueUsageSentence = value; AdditionalData?.Remove("usage_sentence"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("usage_sentence"); else _explicitNullProperties?.Remove("usage_sentence"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.ServerLocaleUsageSentenceAnyOf1? _explicitNullValueUsageSentence = default!;
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.ServerLocaleUsageSentenceAnyOf1 UsageSentence { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.ServerLocaleUsageSentenceAnyOf1 UsageSentence { get => _explicitNullValueUsageSentence; set { _explicitNullValueUsageSentence = value; AdditionalData?.Remove("usage_sentence"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("usage_sentence"); else _explicitNullProperties?.Remove("usage_sentence"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.ServerLocaleUsageSentenceAnyOf1 _explicitNullValueUsageSentence = default!;
 #endif
         /// <summary>The working_description property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.ServerLocaleWorkingDescriptionAnyOf1? WorkingDescription { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.ServerLocaleWorkingDescriptionAnyOf1? WorkingDescription { get => _explicitNullValueWorkingDescription; set { _explicitNullValueWorkingDescription = value; AdditionalData?.Remove("working_description"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("working_description"); else _explicitNullProperties?.Remove("working_description"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.ServerLocaleWorkingDescriptionAnyOf1? _explicitNullValueWorkingDescription = default!;
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.ServerLocaleWorkingDescriptionAnyOf1 WorkingDescription { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.ServerLocaleWorkingDescriptionAnyOf1 WorkingDescription { get => _explicitNullValueWorkingDescription; set { _explicitNullValueWorkingDescription = value; AdditionalData?.Remove("working_description"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("working_description"); else _explicitNullProperties?.Remove("working_description"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.ServerLocaleWorkingDescriptionAnyOf1 _explicitNullValueWorkingDescription = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Mistral.OpenApiClient.Models.ServerLocale"/> and sets the default values.
@@ -69,7 +96,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         public static global::Soenneker.Mistral.OpenApiClient.Models.ServerLocale CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Mistral.OpenApiClient.Models.ServerLocale();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Mistral.OpenApiClient.Models.ServerLocale(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -98,6 +125,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ServerLocaleNameAnyOf1>("name", Name);
             writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ServerLocaleUsageSentenceAnyOf1>("usage_sentence", UsageSentence);
             writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ServerLocaleWorkingDescriptionAnyOf1>("working_description", WorkingDescription);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -11,23 +11,43 @@ namespace Soenneker.Mistral.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class CredentialsStatus : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("error_http_code") is null) { _explicitNullValueErrorHttpCode = default!; _explicitNullProperties?.Remove("error_http_code"); }
+            else if (parseNode.GetChildNode("error_http_code") is { } nullNodeErrorHttpCode && nullNodeErrorHttpCode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ErrorHttpCode = null;
+            if (parseNode.GetChildNode("error_message") is null) { _explicitNullValueErrorMessage = default!; _explicitNullProperties?.Remove("error_message"); }
+            else if (parseNode.GetChildNode("error_message") is { } nullNodeErrorMessage && nullNodeErrorMessage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ErrorMessage = null;
+            if (parseNode.GetChildNode("last_checked_at") is null) { _explicitNullValueLastCheckedAt = default!; _explicitNullProperties?.Remove("last_checked_at"); }
+            else if (parseNode.GetChildNode("last_checked_at") is { } nullNodeLastCheckedAt && nullNodeLastCheckedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LastCheckedAt = null;
+            if (parseNode.GetChildNode("status_type") is null) { _explicitNullValueStatusType = default!; _explicitNullProperties?.Remove("status_type"); }
+            else if (parseNode.GetChildNode("status_type") is { } nullNodeStatusType && nullNodeStatusType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) StatusType = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The error_http_code property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.CredentialsStatusErrorHttpCode? ErrorHttpCode { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.CredentialsStatusErrorHttpCode? ErrorHttpCode { get => _explicitNullValueErrorHttpCode; set { _explicitNullValueErrorHttpCode = value; AdditionalData?.Remove("error_http_code"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("error_http_code"); else _explicitNullProperties?.Remove("error_http_code"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.CredentialsStatusErrorHttpCode? _explicitNullValueErrorHttpCode = default!;
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.CredentialsStatusErrorHttpCode ErrorHttpCode { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.CredentialsStatusErrorHttpCode ErrorHttpCode { get => _explicitNullValueErrorHttpCode; set { _explicitNullValueErrorHttpCode = value; AdditionalData?.Remove("error_http_code"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("error_http_code"); else _explicitNullProperties?.Remove("error_http_code"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.CredentialsStatusErrorHttpCode _explicitNullValueErrorHttpCode = default!;
 #endif
         /// <summary>The error_message property</summary>
-        public global::Soenneker.Mistral.OpenApiClient.Models.CredentialsStatusErrorReason? ErrorMessage { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.CredentialsStatusErrorReason? ErrorMessage { get => _explicitNullValueErrorMessage; set { _explicitNullValueErrorMessage = value; AdditionalData?.Remove("error_message"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("error_message"); else _explicitNullProperties?.Remove("error_message"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.CredentialsStatusErrorReason? _explicitNullValueErrorMessage = default!;
         /// <summary>The last_checked_at property</summary>
-        public DateTimeOffset? LastCheckedAt { get; set; }
+        public DateTimeOffset? LastCheckedAt { get => _explicitNullValueLastCheckedAt; set { _explicitNullValueLastCheckedAt = value; AdditionalData?.Remove("last_checked_at"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("last_checked_at"); else _explicitNullProperties?.Remove("last_checked_at"); } }
+        private DateTimeOffset? _explicitNullValueLastCheckedAt = default!;
         /// <summary>The status_type property</summary>
-        public global::Soenneker.Mistral.OpenApiClient.Models.AuthStatus? StatusType { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.AuthStatus? StatusType { get => _explicitNullValueStatusType; set { _explicitNullValueStatusType = value; AdditionalData?.Remove("status_type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status_type"); else _explicitNullProperties?.Remove("status_type"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.AuthStatus? _explicitNullValueStatusType = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Mistral.OpenApiClient.Models.CredentialsStatus"/> and sets the default values.
         /// </summary>
@@ -43,7 +63,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         public static global::Soenneker.Mistral.OpenApiClient.Models.CredentialsStatus CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Mistral.OpenApiClient.Models.CredentialsStatus();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Mistral.OpenApiClient.Models.CredentialsStatus(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -54,9 +74,9 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "error_http_code", n => { ErrorHttpCode = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.CredentialsStatusErrorHttpCode>(global::Soenneker.Mistral.OpenApiClient.Models.CredentialsStatusErrorHttpCode.CreateFromDiscriminatorValue); } },
-                { "error_message", n => { ErrorMessage = n.GetEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.CredentialsStatusErrorReason>(); } },
+                { "error_message", n => { var parsed = n.GetEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.CredentialsStatusErrorReason>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueErrorMessage = default; _explicitNullProperties?.Remove("error_message"); AdditionalData["error_message"] = unknown; } else { ErrorMessage = parsed; AdditionalData.Remove("error_message"); } } },
                 { "last_checked_at", n => { LastCheckedAt = n.GetDateTimeOffsetValue(); } },
-                { "status_type", n => { StatusType = n.GetEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.AuthStatus>(); } },
+                { "status_type", n => { var parsed = n.GetEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.AuthStatus>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueStatusType = default; _explicitNullProperties?.Remove("status_type"); AdditionalData["status_type"] = unknown; } else { StatusType = parsed; AdditionalData.Remove("status_type"); } } },
             };
         }
         /// <summary>
@@ -70,6 +90,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             writer.WriteEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.CredentialsStatusErrorReason>("error_message", ErrorMessage);
             writer.WriteDateTimeOffsetValue("last_checked_at", LastCheckedAt);
             writer.WriteEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.AuthStatus>("status_type", StatusType);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -49,7 +49,7 @@ namespace Soenneker.Mistral.OpenApiClient.V1.Users.Me.Workspaces
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Mistral.OpenApiClient.Models.ListWorkspacesResponse>(requestInfo, global::Soenneker.Mistral.OpenApiClient.Models.ListWorkspacesResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Mistral.OpenApiClient.Models.ListWorkspacesResponse>(requestInfo, global::Soenneker.Mistral.OpenApiClient.Models.ListWorkspacesResponse.CreateFromDiscriminatorValue, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// List every workspace the authenticated user is a member of, across alltheir organizations, each tagged with the organization it belongs to.

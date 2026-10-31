@@ -12,29 +12,50 @@ namespace Soenneker.Mistral.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class RunOwnershipFilter : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("combinator") is null) { _explicitNullValueCombinator = default!; _explicitNullProperties?.Remove("combinator"); }
+            else if (parseNode.GetChildNode("combinator") is { } nullNodeCombinator && nullNodeCombinator.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Combinator = null;
+            if (parseNode.GetChildNode("creator_ids") is null) { _explicitNullValueCreatorIds = default!; _explicitNullProperties?.Remove("creator_ids"); }
+            else if (parseNode.GetChildNode("creator_ids") is { } nullNodeCreatorIds && nullNodeCreatorIds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CreatorIds = null;
+            if (parseNode.GetChildNode("project_ids") is null) { _explicitNullValueProjectIds = default!; _explicitNullProperties?.Remove("project_ids"); }
+            else if (parseNode.GetChildNode("project_ids") is { } nullNodeProjectIds && nullNodeProjectIds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ProjectIds = null;
+            if (parseNode.GetChildNode("starred_by_me") is null) { _explicitNullValueStarredByMe = default!; _explicitNullProperties?.Remove("starred_by_me"); }
+            else if (parseNode.GetChildNode("starred_by_me") is { } nullNodeStarredByMe && nullNodeStarredByMe.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) StarredByMe = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The combinator property</summary>
-        public global::Soenneker.Mistral.OpenApiClient.Models.FilterCombinator? Combinator { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.FilterCombinator? Combinator { get => _explicitNullValueCombinator; set { _explicitNullValueCombinator = value; AdditionalData?.Remove("combinator"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("combinator"); else _explicitNullProperties?.Remove("combinator"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.FilterCombinator? _explicitNullValueCombinator = default!;
         /// <summary>The creator_ids property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Guid?>? CreatorIds { get; set; }
+        public List<Guid?>? CreatorIds { get => _explicitNullValueCreatorIds; set { _explicitNullValueCreatorIds = value; AdditionalData?.Remove("creator_ids"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("creator_ids"); else _explicitNullProperties?.Remove("creator_ids"); } }
+        private List<Guid?>? _explicitNullValueCreatorIds = default!;
 #nullable restore
 #else
-        public List<Guid?> CreatorIds { get; set; }
+        public List<Guid?> CreatorIds { get => _explicitNullValueCreatorIds; set { _explicitNullValueCreatorIds = value; AdditionalData?.Remove("creator_ids"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("creator_ids"); else _explicitNullProperties?.Remove("creator_ids"); } }
+        private List<Guid?> _explicitNullValueCreatorIds = default!;
 #endif
         /// <summary>The project_ids property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Guid?>? ProjectIds { get; set; }
+        public List<Guid?>? ProjectIds { get => _explicitNullValueProjectIds; set { _explicitNullValueProjectIds = value; AdditionalData?.Remove("project_ids"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("project_ids"); else _explicitNullProperties?.Remove("project_ids"); } }
+        private List<Guid?>? _explicitNullValueProjectIds = default!;
 #nullable restore
 #else
-        public List<Guid?> ProjectIds { get; set; }
+        public List<Guid?> ProjectIds { get => _explicitNullValueProjectIds; set { _explicitNullValueProjectIds = value; AdditionalData?.Remove("project_ids"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("project_ids"); else _explicitNullProperties?.Remove("project_ids"); } }
+        private List<Guid?> _explicitNullValueProjectIds = default!;
 #endif
         /// <summary>The starred_by_me property</summary>
-        public bool? StarredByMe { get; set; }
+        public bool? StarredByMe { get => _explicitNullValueStarredByMe; set { _explicitNullValueStarredByMe = value; AdditionalData?.Remove("starred_by_me"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("starred_by_me"); else _explicitNullProperties?.Remove("starred_by_me"); } }
+        private bool? _explicitNullValueStarredByMe = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Mistral.OpenApiClient.Models.RunOwnershipFilter"/> and sets the default values.
         /// </summary>
@@ -52,7 +73,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         public static global::Soenneker.Mistral.OpenApiClient.Models.RunOwnershipFilter CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Mistral.OpenApiClient.Models.RunOwnershipFilter();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Mistral.OpenApiClient.Models.RunOwnershipFilter(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -62,7 +83,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "combinator", n => { Combinator = n.GetEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.FilterCombinator>(); } },
+                { "combinator", n => { var parsed = n.GetEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.FilterCombinator>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueCombinator = default; _explicitNullProperties?.Remove("combinator"); AdditionalData["combinator"] = unknown; } else { Combinator = parsed; AdditionalData.Remove("combinator"); } } },
                 { "creator_ids", n => { CreatorIds = n.GetCollectionOfPrimitiveValues<Guid?>()?.AsList(); } },
                 { "project_ids", n => { ProjectIds = n.GetCollectionOfPrimitiveValues<Guid?>()?.AsList(); } },
                 { "starred_by_me", n => { StarredByMe = n.GetBoolValue(); } },
@@ -79,6 +100,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             writer.WriteCollectionOfPrimitiveValues<Guid?>("creator_ids", CreatorIds);
             writer.WriteCollectionOfPrimitiveValues<Guid?>("project_ids", ProjectIds);
             writer.WriteBoolValue("starred_by_me", StarredByMe);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

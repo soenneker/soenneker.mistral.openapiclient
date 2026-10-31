@@ -11,18 +11,32 @@ namespace Soenneker.Mistral.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class LogsRequest : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("order") is null) { _explicitNullValueOrder = default!; _explicitNullProperties?.Remove("order"); }
+            else if (parseNode.GetChildNode("order") is { } nullNodeOrder && nullNodeOrder.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Order = null;
+            if (parseNode.GetChildNode("search_expression") is null) { _explicitNullValueSearchExpression = default!; _explicitNullProperties?.Remove("search_expression"); }
+            else if (parseNode.GetChildNode("search_expression") is { } nullNodeSearchExpression && nullNodeSearchExpression.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SearchExpression = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The order property</summary>
-        public global::Soenneker.Mistral.OpenApiClient.Models.LogsRequestOrder? Order { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.LogsRequestOrder? Order { get => _explicitNullValueOrder; set { _explicitNullValueOrder = value; AdditionalData?.Remove("order"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("order"); else _explicitNullProperties?.Remove("order"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.LogsRequestOrder? _explicitNullValueOrder = default!;
         /// <summary>The search_expression property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SearchExpression { get; set; }
+        public string? SearchExpression { get => _explicitNullValueSearchExpression; set { _explicitNullValueSearchExpression = value; AdditionalData?.Remove("search_expression"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("search_expression"); else _explicitNullProperties?.Remove("search_expression"); } }
+        private string? _explicitNullValueSearchExpression = default!;
 #nullable restore
 #else
-        public string SearchExpression { get; set; }
+        public string SearchExpression { get => _explicitNullValueSearchExpression; set { _explicitNullValueSearchExpression = value; AdditionalData?.Remove("search_expression"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("search_expression"); else _explicitNullProperties?.Remove("search_expression"); } }
+        private string _explicitNullValueSearchExpression = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Mistral.OpenApiClient.Models.LogsRequest"/> and sets the default values.
@@ -39,7 +53,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         public static global::Soenneker.Mistral.OpenApiClient.Models.LogsRequest CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Mistral.OpenApiClient.Models.LogsRequest();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Mistral.OpenApiClient.Models.LogsRequest(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -49,7 +63,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "order", n => { Order = n.GetEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.LogsRequestOrder>(); } },
+                { "order", n => { var parsed = n.GetEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.LogsRequestOrder>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueOrder = default; _explicitNullProperties?.Remove("order"); AdditionalData["order"] = unknown; } else { Order = parsed; AdditionalData.Remove("order"); } } },
                 { "search_expression", n => { SearchExpression = n.GetStringValue(); } },
             };
         }
@@ -62,6 +76,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.LogsRequestOrder>("order", Order);
             writer.WriteStringValue("search_expression", SearchExpression);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

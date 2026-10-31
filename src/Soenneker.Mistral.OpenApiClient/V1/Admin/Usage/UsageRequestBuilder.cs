@@ -55,7 +55,7 @@ namespace Soenneker.Mistral.OpenApiClient.V1.Admin.Usage
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Mistral.OpenApiClient.Models.UsageOutjson>(requestInfo, global::Soenneker.Mistral.OpenApiClient.Models.UsageOutjson.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Mistral.OpenApiClient.Models.UsageOutjson>(requestInfo, global::Soenneker.Mistral.OpenApiClient.Models.UsageOutjson.CreateFromDiscriminatorValue, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Return the organization&apos;s usage for a calendar month in a fixed, product-oriented format.The response includes the applicable price catalog and currency. For custom time ranges, filters, grouping, andpagination, use `POST /v1/admin/usage/query`.

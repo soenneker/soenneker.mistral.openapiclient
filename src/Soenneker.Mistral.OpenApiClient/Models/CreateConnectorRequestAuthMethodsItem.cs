@@ -12,7 +12,12 @@ namespace Soenneker.Mistral.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class CreateConnectorRequestAuthMethodsItem : IComposedTypeWrapper, IParsable
-    {
+    , global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder {
+        // Preserve ambiguous union payloads without inventing a discriminator.
+        /// <summary>The complete payload when no unique typed union branch can be selected.</summary>
+        public global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode UnrecognizedValue { get; set; } = null!;
+        public global::System.Collections.Generic.IDictionary<string, object> AdditionalData { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+
         /// <summary>Composed type representation for type <see cref="global::Soenneker.Mistral.OpenApiClient.Models.BearerAuthMethod"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -49,13 +54,26 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             var result = new global::Soenneker.Mistral.OpenApiClient.Models.CreateConnectorRequestAuthMethodsItem();
             if("bearer".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.BearerAuthMethod = new global::Soenneker.Mistral.OpenApiClient.Models.BearerAuthMethod();
+                
             }
             else if("none".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.NoneAuthMethod = new global::Soenneker.Mistral.OpenApiClient.Models.NoneAuthMethod();
+                
             }
-            return result;
+            
+            var unionPayload = parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue);
+            bool matchesUnionBranch0 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => true))();
+            bool matchesUnionBranch1 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => ((unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject)) && (unionPayload is not global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject shapeObject0 || (shapeObject0.GetValue() is var shapeMembers1 && ((!shapeMembers1.ContainsKey("method_type") || (((shapeMembers1["method_type"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString)) && (shapeMembers1["method_type"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString literal2 && "bearer".Equals(literal2.GetValue(), global::System.StringComparison.Ordinal)) && ((shapeMembers1["method_type"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString literal3 && "bearer".Equals(literal3.GetValue(), global::System.StringComparison.Ordinal))))) && (!shapeMembers1.ContainsKey("headers") || ((((shapeMembers1["headers"] == null || shapeMembers1["headers"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull)) || (shapeMembers1["headers"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedArray)))) && global::System.Linq.Enumerable.All(shapeMembers1.Keys, key => key == "method_type" || key == "headers"))))))();
+            bool matchesUnionBranch2 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => ((unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject)) && (unionPayload is not global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject shapeObject0 || (shapeObject0.GetValue() is var shapeMembers1 && ((!shapeMembers1.ContainsKey("method_type") || (((shapeMembers1["method_type"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString)) && (shapeMembers1["method_type"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString literal2 && "none".Equals(literal2.GetValue(), global::System.StringComparison.Ordinal)) && ((shapeMembers1["method_type"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString literal3 && "none".Equals(literal3.GetValue(), global::System.StringComparison.Ordinal))))) && (!shapeMembers1.ContainsKey("headers") || ((((shapeMembers1["headers"] == null || shapeMembers1["headers"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull)) || (shapeMembers1["headers"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedArray)))) && global::System.Linq.Enumerable.All(shapeMembers1.Keys, key => key == "method_type" || key == "headers"))))))();
+            int matchingUnionBranches = 0;
+            if (matchesUnionBranch0) matchingUnionBranches++;
+            if (matchesUnionBranch1) matchingUnionBranches++;
+            if (matchesUnionBranch2) matchingUnionBranches++;
+            bool noSelectedUnionBranch = result.BearerAuthMethod == null && result.NoneAuthMethod == null && result.OAuth2AuthMethod == null;
+            if (noSelectedUnionBranch && matchesUnionBranch1 && matchingUnionBranches == 1) result.BearerAuthMethod = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Mistral.OpenApiClient.Models.BearerAuthMethod(), parseNode);
+            if (noSelectedUnionBranch && matchesUnionBranch2 && matchingUnionBranches == 1) result.NoneAuthMethod = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Mistral.OpenApiClient.Models.NoneAuthMethod(), parseNode);
+            if (result.BearerAuthMethod == null && result.NoneAuthMethod == null && result.OAuth2AuthMethod == null) result.UnrecognizedValue = unionPayload;
+return result;
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -63,6 +81,8 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
+            if (UnrecognizedValue is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject rawFields) { var fields = new global::System.Collections.Generic.Dictionary<string, global::System.Action<IParseNode>>(); foreach (var entry in rawFields.GetValue()) fields[entry.Key] = _ => { }; return fields; }
+
             if(BearerAuthMethod != null)
             {
                 return BearerAuthMethod.GetFieldDeserializers();
@@ -83,17 +103,29 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public virtual void Serialize(ISerializationWriter writer)
         {
+            if (global::System.Object.ReferenceEquals(writer, null)) throw new global::System.ArgumentNullException(nameof(writer));
+            if (BearerAuthMethod == null && NoneAuthMethod == null && OAuth2AuthMethod == null) { if (UnrecognizedValue is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject rawObject) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData, rawObject)); else if (UnrecognizedValue != null) writer.WriteObjectValue(null, UnrecognizedValue); else if (AdditionalData.Count > 0) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData)); else writer.WriteNullValue(null); return; }
+            int selectedUnionBranches = 0;
+            if (BearerAuthMethod != null) selectedUnionBranches++;
+            if (NoneAuthMethod != null) selectedUnionBranches++;
+            if (OAuth2AuthMethod != null) selectedUnionBranches++;
+            if (BearerAuthMethod != null && selectedUnionBranches == 1) { if (BearerAuthMethod is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, BearerAuthMethod); return; }
+            if (NoneAuthMethod != null && selectedUnionBranches == 1) { if (NoneAuthMethod is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, NoneAuthMethod); return; }
+
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             if(BearerAuthMethod != null)
             {
+                if (BearerAuthMethod is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.BearerAuthMethod>(null, BearerAuthMethod);
             }
             else if(NoneAuthMethod != null)
             {
+                if (NoneAuthMethod is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.NoneAuthMethod>(null, NoneAuthMethod);
             }
             else if(OAuth2AuthMethod != null)
             {
+                if (OAuth2AuthMethod is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.OAuth2AuthMethod>(null, OAuth2AuthMethod);
             }
         }

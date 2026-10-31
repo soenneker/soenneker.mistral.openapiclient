@@ -11,24 +11,39 @@ namespace Soenneker.Mistral.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class ModerationObject : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("categories") is null) { _explicitNullValueCategories = default!; _explicitNullProperties?.Remove("categories"); }
+            else if (parseNode.GetChildNode("categories") is { } nullNodeCategories && nullNodeCategories.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Categories = null;
+            if (parseNode.GetChildNode("category_scores") is null) { _explicitNullValueCategoryScores = default!; _explicitNullProperties?.Remove("category_scores"); }
+            else if (parseNode.GetChildNode("category_scores") is { } nullNodeCategoryScores && nullNodeCategoryScores.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CategoryScores = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Moderation result thresholds</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.ModerationObjectCategoriesProperty? Categories { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.ModerationObjectCategoriesProperty? Categories { get => _explicitNullValueCategories; set { _explicitNullValueCategories = value; AdditionalData?.Remove("categories"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("categories"); else _explicitNullProperties?.Remove("categories"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.ModerationObjectCategoriesProperty? _explicitNullValueCategories = default!;
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.ModerationObjectCategoriesProperty Categories { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.ModerationObjectCategoriesProperty Categories { get => _explicitNullValueCategories; set { _explicitNullValueCategories = value; AdditionalData?.Remove("categories"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("categories"); else _explicitNullProperties?.Remove("categories"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.ModerationObjectCategoriesProperty _explicitNullValueCategories = default!;
 #endif
         /// <summary>Moderation result</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.ModerationObjectCategoryScoresProperty? CategoryScores { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.ModerationObjectCategoryScoresProperty? CategoryScores { get => _explicitNullValueCategoryScores; set { _explicitNullValueCategoryScores = value; AdditionalData?.Remove("category_scores"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("category_scores"); else _explicitNullProperties?.Remove("category_scores"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.ModerationObjectCategoryScoresProperty? _explicitNullValueCategoryScores = default!;
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.ModerationObjectCategoryScoresProperty CategoryScores { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.ModerationObjectCategoryScoresProperty CategoryScores { get => _explicitNullValueCategoryScores; set { _explicitNullValueCategoryScores = value; AdditionalData?.Remove("category_scores"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("category_scores"); else _explicitNullProperties?.Remove("category_scores"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.ModerationObjectCategoryScoresProperty _explicitNullValueCategoryScores = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Mistral.OpenApiClient.Models.ModerationObject"/> and sets the default values.
@@ -45,7 +60,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         public static global::Soenneker.Mistral.OpenApiClient.Models.ModerationObject CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Mistral.OpenApiClient.Models.ModerationObject();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Mistral.OpenApiClient.Models.ModerationObject(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -68,6 +83,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ModerationObjectCategoriesProperty>("categories", Categories);
             writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ModerationObjectCategoryScoresProperty>("category_scores", CategoryScores);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

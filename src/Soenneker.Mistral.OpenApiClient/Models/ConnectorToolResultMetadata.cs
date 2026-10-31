@@ -12,26 +12,44 @@ namespace Soenneker.Mistral.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ConnectorToolResultMetadata : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("isError") is null) { _explicitNullValueIsError = default!; _explicitNullProperties?.Remove("isError"); }
+            else if (parseNode.GetChildNode("isError") is { } nullNodeIsError && nullNodeIsError.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IsError = null;
+            if (parseNode.GetChildNode("_meta") is null) { _explicitNullValueMeta = default!; _explicitNullProperties?.Remove("_meta"); }
+            else if (parseNode.GetChildNode("_meta") is { } nullNodeMeta && nullNodeMeta.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Meta = null;
+            if (parseNode.GetChildNode("structuredContent") is null) { _explicitNullValueStructuredContent = default!; _explicitNullProperties?.Remove("structuredContent"); }
+            else if (parseNode.GetChildNode("structuredContent") is { } nullNodeStructuredContent && nullNodeStructuredContent.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) StructuredContent = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The isError property</summary>
-        public bool? IsError { get; set; }
+        public bool? IsError { get => _explicitNullValueIsError; set { _explicitNullValueIsError = value; AdditionalData?.Remove("isError"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("isError"); else _explicitNullProperties?.Remove("isError"); } }
+        private bool? _explicitNullValueIsError = default!;
         /// <summary>The meta property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.ConnectorToolResultMetadataMetaProperty? Meta { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.ConnectorToolResultMetadataMetaProperty? Meta { get => _explicitNullValueMeta; set { _explicitNullValueMeta = value; AdditionalData?.Remove("_meta"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("_meta"); else _explicitNullProperties?.Remove("_meta"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.ConnectorToolResultMetadataMetaProperty? _explicitNullValueMeta = default!;
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.ConnectorToolResultMetadataMetaProperty Meta { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.ConnectorToolResultMetadataMetaProperty Meta { get => _explicitNullValueMeta; set { _explicitNullValueMeta = value; AdditionalData?.Remove("_meta"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("_meta"); else _explicitNullProperties?.Remove("_meta"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.ConnectorToolResultMetadataMetaProperty _explicitNullValueMeta = default!;
 #endif
         /// <summary>The structuredContent property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.ConnectorToolResultMetadataStructuredContentProperty? StructuredContent { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.ConnectorToolResultMetadataStructuredContentProperty? StructuredContent { get => _explicitNullValueStructuredContent; set { _explicitNullValueStructuredContent = value; AdditionalData?.Remove("structuredContent"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("structuredContent"); else _explicitNullProperties?.Remove("structuredContent"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.ConnectorToolResultMetadataStructuredContentProperty? _explicitNullValueStructuredContent = default!;
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.ConnectorToolResultMetadataStructuredContentProperty StructuredContent { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.ConnectorToolResultMetadataStructuredContentProperty StructuredContent { get => _explicitNullValueStructuredContent; set { _explicitNullValueStructuredContent = value; AdditionalData?.Remove("structuredContent"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("structuredContent"); else _explicitNullProperties?.Remove("structuredContent"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.ConnectorToolResultMetadataStructuredContentProperty _explicitNullValueStructuredContent = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Mistral.OpenApiClient.Models.ConnectorToolResultMetadata"/> and sets the default values.
@@ -49,7 +67,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         public static global::Soenneker.Mistral.OpenApiClient.Models.ConnectorToolResultMetadata CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Mistral.OpenApiClient.Models.ConnectorToolResultMetadata();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Mistral.OpenApiClient.Models.ConnectorToolResultMetadata(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -74,6 +92,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             writer.WriteBoolValue("isError", IsError);
             writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ConnectorToolResultMetadataMetaProperty>("_meta", Meta);
             writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ConnectorToolResultMetadataStructuredContentProperty>("structuredContent", StructuredContent);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

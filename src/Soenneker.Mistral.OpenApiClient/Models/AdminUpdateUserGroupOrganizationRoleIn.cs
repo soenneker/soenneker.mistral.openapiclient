@@ -11,11 +11,21 @@ namespace Soenneker.Mistral.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class AdminUpdateUserGroupOrganizationRoleIn : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("organization_role") is null) { _explicitNullValueOrganizationRole = default!; _explicitNullProperties?.Remove("organization_role"); }
+            else if (parseNode.GetChildNode("organization_role") is { } nullNodeOrganizationRole && nullNodeOrganizationRole.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OrganizationRole = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Organization role to assign to the group: a role name (`member`, `billing_manager`, `organization_admin`) or a role UUID.</summary>
-        public global::Soenneker.Mistral.OpenApiClient.Models.AdminUpdateUserGroupOrganizationRoleInOrganizationRole? OrganizationRole { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.AdminUpdateUserGroupOrganizationRoleInOrganizationRole? OrganizationRole { get => _explicitNullValueOrganizationRole; set { _explicitNullValueOrganizationRole = value; AdditionalData?.Remove("organization_role"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("organization_role"); else _explicitNullProperties?.Remove("organization_role"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.AdminUpdateUserGroupOrganizationRoleInOrganizationRole? _explicitNullValueOrganizationRole = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Mistral.OpenApiClient.Models.AdminUpdateUserGroupOrganizationRoleIn"/> and sets the default values.
         /// </summary>
@@ -31,7 +41,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         public static global::Soenneker.Mistral.OpenApiClient.Models.AdminUpdateUserGroupOrganizationRoleIn CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Mistral.OpenApiClient.Models.AdminUpdateUserGroupOrganizationRoleIn();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Mistral.OpenApiClient.Models.AdminUpdateUserGroupOrganizationRoleIn(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -41,7 +51,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "organization_role", n => { OrganizationRole = n.GetEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.AdminUpdateUserGroupOrganizationRoleInOrganizationRole>(); } },
+                { "organization_role", n => { var parsed = n.GetEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.AdminUpdateUserGroupOrganizationRoleInOrganizationRole>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueOrganizationRole = default; _explicitNullProperties?.Remove("organization_role"); AdditionalData["organization_role"] = unknown; } else { OrganizationRole = parsed; AdditionalData.Remove("organization_role"); } } },
             };
         }
         /// <summary>
@@ -52,6 +62,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.AdminUpdateUserGroupOrganizationRoleInOrganizationRole>("organization_role", OrganizationRole);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

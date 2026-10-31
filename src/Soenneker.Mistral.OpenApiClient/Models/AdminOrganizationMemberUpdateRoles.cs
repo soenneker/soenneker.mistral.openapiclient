@@ -12,7 +12,12 @@ namespace Soenneker.Mistral.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class AdminOrganizationMemberUpdateRoles : IComposedTypeWrapper, IParsable
-    {
+    , global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder {
+        // Preserve ambiguous union payloads without inventing a discriminator.
+        /// <summary>The complete payload when no unique typed union branch can be selected.</summary>
+        public global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode UnrecognizedValue { get; set; } = null!;
+        public global::System.Collections.Generic.IDictionary<string, object> AdditionalData { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+
         /// <summary>Composed type representation for type <see cref="global::Soenneker.Mistral.OpenApiClient.Models.AdminOrganizationMemberUpdateRolesMember1"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -46,18 +51,22 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             var result = new global::Soenneker.Mistral.OpenApiClient.Models.AdminOrganizationMemberUpdateRoles();
-            if(parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedArray && parseNode.GetCollectionOfObjectValues<global::Soenneker.Mistral.OpenApiClient.Models.StaticOrganizationRoles>(global::Soenneker.Mistral.OpenApiClient.Models.StaticOrganizationRoles.CreateFromDiscriminatorValue)?.AsList() is List<global::Soenneker.Mistral.OpenApiClient.Models.StaticOrganizationRoles> staticOrganizationRolesValue)
+            if (parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedArray ambiguousArray) { result.UnrecognizedValue = ambiguousArray; return result; }
+            if(parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedArray && global::System.Linq.Enumerable.All(((global::Microsoft.Kiota.Abstractions.Serialization.UntypedArray)parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue)).GetValue(), item => ((item is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString)) && ((item is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString literal0 && "0d48f530-095c-43fe-8aea-6673bcacabe6".Equals(literal0.GetValue(), global::System.StringComparison.Ordinal)) || (item is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString literal1 && "c955f4e1-9477-43f0-8349-6fbc629fccc9".Equals(literal1.GetValue(), global::System.StringComparison.Ordinal)) || (item is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString literal2 && "7bde5959-d676-47d2-b779-35b64323d278".Equals(literal2.GetValue(), global::System.StringComparison.Ordinal)))) && parseNode.GetCollectionOfObjectValues<global::Soenneker.Mistral.OpenApiClient.Models.StaticOrganizationRoles>(global::Soenneker.Mistral.OpenApiClient.Models.StaticOrganizationRoles.CreateFromDiscriminatorValue)?.AsList() is List<global::Soenneker.Mistral.OpenApiClient.Models.StaticOrganizationRoles> staticOrganizationRolesValue)
             {
                 result.StaticOrganizationRoles = staticOrganizationRolesValue;
             }
-            else if(parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedArray && parseNode.GetCollectionOfObjectValues<global::Soenneker.Mistral.OpenApiClient.Models.UserRole>(global::Soenneker.Mistral.OpenApiClient.Models.UserRole.CreateFromDiscriminatorValue)?.AsList() is List<global::Soenneker.Mistral.OpenApiClient.Models.UserRole> userRoleValue)
+            else if(parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedArray && global::System.Linq.Enumerable.All(((global::Microsoft.Kiota.Abstractions.Serialization.UntypedArray)parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue)).GetValue(), item => ((item is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString)) && ((item is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString literal0 && "A".Equals(literal0.GetValue(), global::System.StringComparison.Ordinal)) || (item is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString literal1 && "M".Equals(literal1.GetValue(), global::System.StringComparison.Ordinal)) || (item is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString literal2 && "B".Equals(literal2.GetValue(), global::System.StringComparison.Ordinal)))) && parseNode.GetCollectionOfObjectValues<global::Soenneker.Mistral.OpenApiClient.Models.UserRole>(global::Soenneker.Mistral.OpenApiClient.Models.UserRole.CreateFromDiscriminatorValue)?.AsList() is List<global::Soenneker.Mistral.OpenApiClient.Models.UserRole> userRoleValue)
             {
                 result.UserRole = userRoleValue;
             }
             else {
-                result.AdminOrganizationMemberUpdateRolesMember1 = new global::Soenneker.Mistral.OpenApiClient.Models.AdminOrganizationMemberUpdateRolesMember1();
+                
             }
-            return result;
+            
+            var unionPayload = parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue);
+            if (result.AdminOrganizationMemberUpdateRolesMember1 == null && result.StaticOrganizationRoles == null && result.UserRole == null) result.UnrecognizedValue = unionPayload;
+return result;
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -65,6 +74,8 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
+            if (UnrecognizedValue is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject rawFields) { var fields = new global::System.Collections.Generic.Dictionary<string, global::System.Action<IParseNode>>(); foreach (var entry in rawFields.GetValue()) fields[entry.Key] = _ => { }; return fields; }
+
             if(AdminOrganizationMemberUpdateRolesMember1 != null)
             {
                 return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(AdminOrganizationMemberUpdateRolesMember1);
@@ -77,6 +88,14 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public virtual void Serialize(ISerializationWriter writer)
         {
+            if (global::System.Object.ReferenceEquals(writer, null)) throw new global::System.ArgumentNullException(nameof(writer));
+            if (AdminOrganizationMemberUpdateRolesMember1 == null && StaticOrganizationRoles == null && UserRole == null) { if (UnrecognizedValue is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject rawObject) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData, rawObject)); else if (UnrecognizedValue != null) writer.WriteObjectValue(null, UnrecognizedValue); else if (AdditionalData.Count > 0) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData)); else writer.WriteNullValue(null); return; }
+            int selectedUnionBranches = 0;
+            if (AdminOrganizationMemberUpdateRolesMember1 != null) selectedUnionBranches++;
+            if (StaticOrganizationRoles != null) selectedUnionBranches++;
+            if (UserRole != null) selectedUnionBranches++;
+            if (AdminOrganizationMemberUpdateRolesMember1 != null && selectedUnionBranches == 1) { if (AdminOrganizationMemberUpdateRolesMember1 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, AdminOrganizationMemberUpdateRolesMember1); return; }
+
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             if(StaticOrganizationRoles != null)
             {
@@ -87,6 +106,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
                 writer.WriteCollectionOfObjectValues<global::Soenneker.Mistral.OpenApiClient.Models.UserRole>(null, UserRole);
             }
             else {
+                if (AdminOrganizationMemberUpdateRolesMember1 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.AdminOrganizationMemberUpdateRolesMember1>(null, AdminOrganizationMemberUpdateRolesMember1);
             }
         }

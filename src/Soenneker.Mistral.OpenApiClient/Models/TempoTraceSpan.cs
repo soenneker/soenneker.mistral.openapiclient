@@ -11,74 +11,116 @@ namespace Soenneker.Mistral.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class TempoTraceSpan : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("attributes") is null) { _explicitNullValueAttributes = default!; _explicitNullProperties?.Remove("attributes"); }
+            else if (parseNode.GetChildNode("attributes") is { } nullNodeAttributes && nullNodeAttributes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Attributes = null;
+            if (parseNode.GetChildNode("endTimeUnixNano") is null) { _explicitNullValueEndTimeUnixNano = default!; _explicitNullProperties?.Remove("endTimeUnixNano"); }
+            else if (parseNode.GetChildNode("endTimeUnixNano") is { } nullNodeEndTimeUnixNano && nullNodeEndTimeUnixNano.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EndTimeUnixNano = null;
+            if (parseNode.GetChildNode("events") is null) { _explicitNullValueEvents = default!; _explicitNullProperties?.Remove("events"); }
+            else if (parseNode.GetChildNode("events") is { } nullNodeEvents && nullNodeEvents.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Events = null;
+            if (parseNode.GetChildNode("kind") is null) { _explicitNullValueKind = default!; _explicitNullProperties?.Remove("kind"); }
+            else if (parseNode.GetChildNode("kind") is { } nullNodeKind && nullNodeKind.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Kind = null;
+            if (parseNode.GetChildNode("name") is null) { _explicitNullValueName = default!; _explicitNullProperties?.Remove("name"); }
+            else if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
+            if (parseNode.GetChildNode("parentSpanId") is null) { _explicitNullValueParentSpanId = default!; _explicitNullProperties?.Remove("parentSpanId"); }
+            else if (parseNode.GetChildNode("parentSpanId") is { } nullNodeParentSpanId && nullNodeParentSpanId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ParentSpanId = null;
+            if (parseNode.GetChildNode("spanId") is null) { _explicitNullValueSpanId = default!; _explicitNullProperties?.Remove("spanId"); }
+            else if (parseNode.GetChildNode("spanId") is { } nullNodeSpanId && nullNodeSpanId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SpanId = null;
+            if (parseNode.GetChildNode("startTimeUnixNano") is null) { _explicitNullValueStartTimeUnixNano = default!; _explicitNullProperties?.Remove("startTimeUnixNano"); }
+            else if (parseNode.GetChildNode("startTimeUnixNano") is { } nullNodeStartTimeUnixNano && nullNodeStartTimeUnixNano.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) StartTimeUnixNano = null;
+            if (parseNode.GetChildNode("traceId") is null) { _explicitNullValueTraceId = default!; _explicitNullProperties?.Remove("traceId"); }
+            else if (parseNode.GetChildNode("traceId") is { } nullNodeTraceId && nullNodeTraceId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TraceId = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The attributes of the scope</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Mistral.OpenApiClient.Models.TempoTraceAttribute>? Attributes { get; set; }
+        public List<global::Soenneker.Mistral.OpenApiClient.Models.TempoTraceAttribute>? Attributes { get => _explicitNullValueAttributes; set { _explicitNullValueAttributes = value; AdditionalData?.Remove("attributes"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("attributes"); else _explicitNullProperties?.Remove("attributes"); } }
+        private List<global::Soenneker.Mistral.OpenApiClient.Models.TempoTraceAttribute>? _explicitNullValueAttributes = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Mistral.OpenApiClient.Models.TempoTraceAttribute> Attributes { get; set; }
+        public List<global::Soenneker.Mistral.OpenApiClient.Models.TempoTraceAttribute> Attributes { get => _explicitNullValueAttributes; set { _explicitNullValueAttributes = value; AdditionalData?.Remove("attributes"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("attributes"); else _explicitNullProperties?.Remove("attributes"); } }
+        private List<global::Soenneker.Mistral.OpenApiClient.Models.TempoTraceAttribute> _explicitNullValueAttributes = default!;
 #endif
         /// <summary>The end time of the scope in Unix nano</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? EndTimeUnixNano { get; set; }
+        public string? EndTimeUnixNano { get => _explicitNullValueEndTimeUnixNano; set { _explicitNullValueEndTimeUnixNano = value; AdditionalData?.Remove("endTimeUnixNano"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("endTimeUnixNano"); else _explicitNullProperties?.Remove("endTimeUnixNano"); } }
+        private string? _explicitNullValueEndTimeUnixNano = default!;
 #nullable restore
 #else
-        public string EndTimeUnixNano { get; set; }
+        public string EndTimeUnixNano { get => _explicitNullValueEndTimeUnixNano; set { _explicitNullValueEndTimeUnixNano = value; AdditionalData?.Remove("endTimeUnixNano"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("endTimeUnixNano"); else _explicitNullProperties?.Remove("endTimeUnixNano"); } }
+        private string _explicitNullValueEndTimeUnixNano = default!;
 #endif
         /// <summary>The events of the scope</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Mistral.OpenApiClient.Models.TempoTraceEvent>? Events { get; set; }
+        public List<global::Soenneker.Mistral.OpenApiClient.Models.TempoTraceEvent>? Events { get => _explicitNullValueEvents; set { _explicitNullValueEvents = value; AdditionalData?.Remove("events"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("events"); else _explicitNullProperties?.Remove("events"); } }
+        private List<global::Soenneker.Mistral.OpenApiClient.Models.TempoTraceEvent>? _explicitNullValueEvents = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Mistral.OpenApiClient.Models.TempoTraceEvent> Events { get; set; }
+        public List<global::Soenneker.Mistral.OpenApiClient.Models.TempoTraceEvent> Events { get => _explicitNullValueEvents; set { _explicitNullValueEvents = value; AdditionalData?.Remove("events"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("events"); else _explicitNullProperties?.Remove("events"); } }
+        private List<global::Soenneker.Mistral.OpenApiClient.Models.TempoTraceEvent> _explicitNullValueEvents = default!;
 #endif
         /// <summary>The kind of the scope</summary>
-        public global::Soenneker.Mistral.OpenApiClient.Models.TempoTraceScopeKind? Kind { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.TempoTraceScopeKind? Kind { get => _explicitNullValueKind; set { _explicitNullValueKind = value; AdditionalData?.Remove("kind"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("kind"); else _explicitNullProperties?.Remove("kind"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.TempoTraceScopeKind? _explicitNullValueKind = default!;
         /// <summary>The name of the scope</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Name { get; set; }
+        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        private string? _explicitNullValueName = default!;
 #nullable restore
 #else
-        public string Name { get; set; }
+        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        private string _explicitNullValueName = default!;
 #endif
         /// <summary>The parent span ID of the scope</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ParentSpanId { get; set; }
+        public string? ParentSpanId { get => _explicitNullValueParentSpanId; set { _explicitNullValueParentSpanId = value; AdditionalData?.Remove("parentSpanId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("parentSpanId"); else _explicitNullProperties?.Remove("parentSpanId"); } }
+        private string? _explicitNullValueParentSpanId = default!;
 #nullable restore
 #else
-        public string ParentSpanId { get; set; }
+        public string ParentSpanId { get => _explicitNullValueParentSpanId; set { _explicitNullValueParentSpanId = value; AdditionalData?.Remove("parentSpanId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("parentSpanId"); else _explicitNullProperties?.Remove("parentSpanId"); } }
+        private string _explicitNullValueParentSpanId = default!;
 #endif
         /// <summary>The span ID of the scope</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SpanId { get; set; }
+        public string? SpanId { get => _explicitNullValueSpanId; set { _explicitNullValueSpanId = value; AdditionalData?.Remove("spanId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("spanId"); else _explicitNullProperties?.Remove("spanId"); } }
+        private string? _explicitNullValueSpanId = default!;
 #nullable restore
 #else
-        public string SpanId { get; set; }
+        public string SpanId { get => _explicitNullValueSpanId; set { _explicitNullValueSpanId = value; AdditionalData?.Remove("spanId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("spanId"); else _explicitNullProperties?.Remove("spanId"); } }
+        private string _explicitNullValueSpanId = default!;
 #endif
         /// <summary>The start time of the scope in Unix nano</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? StartTimeUnixNano { get; set; }
+        public string? StartTimeUnixNano { get => _explicitNullValueStartTimeUnixNano; set { _explicitNullValueStartTimeUnixNano = value; AdditionalData?.Remove("startTimeUnixNano"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("startTimeUnixNano"); else _explicitNullProperties?.Remove("startTimeUnixNano"); } }
+        private string? _explicitNullValueStartTimeUnixNano = default!;
 #nullable restore
 #else
-        public string StartTimeUnixNano { get; set; }
+        public string StartTimeUnixNano { get => _explicitNullValueStartTimeUnixNano; set { _explicitNullValueStartTimeUnixNano = value; AdditionalData?.Remove("startTimeUnixNano"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("startTimeUnixNano"); else _explicitNullProperties?.Remove("startTimeUnixNano"); } }
+        private string _explicitNullValueStartTimeUnixNano = default!;
 #endif
         /// <summary>The trace ID of the scope</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TraceId { get; set; }
+        public string? TraceId { get => _explicitNullValueTraceId; set { _explicitNullValueTraceId = value; AdditionalData?.Remove("traceId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("traceId"); else _explicitNullProperties?.Remove("traceId"); } }
+        private string? _explicitNullValueTraceId = default!;
 #nullable restore
 #else
-        public string TraceId { get; set; }
+        public string TraceId { get => _explicitNullValueTraceId; set { _explicitNullValueTraceId = value; AdditionalData?.Remove("traceId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("traceId"); else _explicitNullProperties?.Remove("traceId"); } }
+        private string _explicitNullValueTraceId = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Mistral.OpenApiClient.Models.TempoTraceSpan"/> and sets the default values.
@@ -95,7 +137,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         public static global::Soenneker.Mistral.OpenApiClient.Models.TempoTraceSpan CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Mistral.OpenApiClient.Models.TempoTraceSpan();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Mistral.OpenApiClient.Models.TempoTraceSpan(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -108,7 +150,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
                 { "attributes", n => { Attributes = n.GetCollectionOfObjectValues<global::Soenneker.Mistral.OpenApiClient.Models.TempoTraceAttribute>(global::Soenneker.Mistral.OpenApiClient.Models.TempoTraceAttribute.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "endTimeUnixNano", n => { EndTimeUnixNano = n.GetStringValue(); } },
                 { "events", n => { Events = n.GetCollectionOfObjectValues<global::Soenneker.Mistral.OpenApiClient.Models.TempoTraceEvent>(global::Soenneker.Mistral.OpenApiClient.Models.TempoTraceEvent.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "kind", n => { Kind = n.GetEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.TempoTraceScopeKind>(); } },
+                { "kind", n => { var parsed = n.GetEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.TempoTraceScopeKind>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueKind = default; _explicitNullProperties?.Remove("kind"); AdditionalData["kind"] = unknown; } else { Kind = parsed; AdditionalData.Remove("kind"); } } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "parentSpanId", n => { ParentSpanId = n.GetStringValue(); } },
                 { "spanId", n => { SpanId = n.GetStringValue(); } },
@@ -132,6 +174,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             writer.WriteStringValue("spanId", SpanId);
             writer.WriteStringValue("startTimeUnixNano", StartTimeUnixNano);
             writer.WriteStringValue("traceId", TraceId);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

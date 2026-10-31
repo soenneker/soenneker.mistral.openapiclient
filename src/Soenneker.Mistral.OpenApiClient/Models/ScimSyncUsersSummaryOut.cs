@@ -11,24 +11,39 @@ namespace Soenneker.Mistral.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class ScimSyncUsersSummaryOut : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("deprovision") is null) { _explicitNullValueDeprovision = default!; _explicitNullProperties?.Remove("deprovision"); }
+            else if (parseNode.GetChildNode("deprovision") is { } nullNodeDeprovision && nullNodeDeprovision.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Deprovision = null;
+            if (parseNode.GetChildNode("provision") is null) { _explicitNullValueProvision = default!; _explicitNullProperties?.Remove("provision"); }
+            else if (parseNode.GetChildNode("provision") is { } nullNodeProvision && nullNodeProvision.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Provision = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The deprovision property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Mistral.OpenApiClient.Models.ScimSyncUserActionOut>? Deprovision { get; set; }
+        public List<global::Soenneker.Mistral.OpenApiClient.Models.ScimSyncUserActionOut>? Deprovision { get => _explicitNullValueDeprovision; set { _explicitNullValueDeprovision = value; AdditionalData?.Remove("deprovision"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("deprovision"); else _explicitNullProperties?.Remove("deprovision"); } }
+        private List<global::Soenneker.Mistral.OpenApiClient.Models.ScimSyncUserActionOut>? _explicitNullValueDeprovision = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Mistral.OpenApiClient.Models.ScimSyncUserActionOut> Deprovision { get; set; }
+        public List<global::Soenneker.Mistral.OpenApiClient.Models.ScimSyncUserActionOut> Deprovision { get => _explicitNullValueDeprovision; set { _explicitNullValueDeprovision = value; AdditionalData?.Remove("deprovision"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("deprovision"); else _explicitNullProperties?.Remove("deprovision"); } }
+        private List<global::Soenneker.Mistral.OpenApiClient.Models.ScimSyncUserActionOut> _explicitNullValueDeprovision = default!;
 #endif
         /// <summary>The provision property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Mistral.OpenApiClient.Models.ScimSyncUserActionOut>? Provision { get; set; }
+        public List<global::Soenneker.Mistral.OpenApiClient.Models.ScimSyncUserActionOut>? Provision { get => _explicitNullValueProvision; set { _explicitNullValueProvision = value; AdditionalData?.Remove("provision"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("provision"); else _explicitNullProperties?.Remove("provision"); } }
+        private List<global::Soenneker.Mistral.OpenApiClient.Models.ScimSyncUserActionOut>? _explicitNullValueProvision = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Mistral.OpenApiClient.Models.ScimSyncUserActionOut> Provision { get; set; }
+        public List<global::Soenneker.Mistral.OpenApiClient.Models.ScimSyncUserActionOut> Provision { get => _explicitNullValueProvision; set { _explicitNullValueProvision = value; AdditionalData?.Remove("provision"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("provision"); else _explicitNullProperties?.Remove("provision"); } }
+        private List<global::Soenneker.Mistral.OpenApiClient.Models.ScimSyncUserActionOut> _explicitNullValueProvision = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Mistral.OpenApiClient.Models.ScimSyncUsersSummaryOut"/> and sets the default values.
@@ -45,7 +60,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         public static global::Soenneker.Mistral.OpenApiClient.Models.ScimSyncUsersSummaryOut CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Mistral.OpenApiClient.Models.ScimSyncUsersSummaryOut();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Mistral.OpenApiClient.Models.ScimSyncUsersSummaryOut(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -68,6 +83,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfObjectValues<global::Soenneker.Mistral.OpenApiClient.Models.ScimSyncUserActionOut>("deprovision", Deprovision);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Mistral.OpenApiClient.Models.ScimSyncUserActionOut>("provision", Provision);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

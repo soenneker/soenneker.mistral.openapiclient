@@ -68,6 +68,8 @@ namespace Soenneker.Mistral.OpenApiClient.V1.Admin.Scim.Sync
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
                 { "409", global::Soenneker.Mistral.OpenApiClient.Models.AdminScimSyncActiveRunOut.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Mistral.OpenApiClient.Models.AdminScimSyncTriggerOut>(requestInfo, global::Soenneker.Mistral.OpenApiClient.Models.AdminScimSyncTriggerOut.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

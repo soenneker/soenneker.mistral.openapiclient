@@ -11,16 +11,27 @@ namespace Soenneker.Mistral.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class WorkflowRegistrationGetResponse : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("workflow_registration") is null) { _explicitNullValueWorkflowRegistration = default!; _explicitNullProperties?.Remove("workflow_registration"); }
+            else if (parseNode.GetChildNode("workflow_registration") is { } nullNodeWorkflowRegistration && nullNodeWorkflowRegistration.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WorkflowRegistration = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The workflow registration</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.WorkflowRegistrationWithWorkerStatus? WorkflowRegistration { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.WorkflowRegistrationWithWorkerStatus? WorkflowRegistration { get => _explicitNullValueWorkflowRegistration; set { _explicitNullValueWorkflowRegistration = value; AdditionalData?.Remove("workflow_registration"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("workflow_registration"); else _explicitNullProperties?.Remove("workflow_registration"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.WorkflowRegistrationWithWorkerStatus? _explicitNullValueWorkflowRegistration = default!;
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.WorkflowRegistrationWithWorkerStatus WorkflowRegistration { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.WorkflowRegistrationWithWorkerStatus WorkflowRegistration { get => _explicitNullValueWorkflowRegistration; set { _explicitNullValueWorkflowRegistration = value; AdditionalData?.Remove("workflow_registration"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("workflow_registration"); else _explicitNullProperties?.Remove("workflow_registration"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.WorkflowRegistrationWithWorkerStatus _explicitNullValueWorkflowRegistration = default!;
 #endif
         /// <summary>Deprecated: use workflow_registration</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -45,7 +56,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         public static global::Soenneker.Mistral.OpenApiClient.Models.WorkflowRegistrationGetResponse CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Mistral.OpenApiClient.Models.WorkflowRegistrationGetResponse();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Mistral.OpenApiClient.Models.WorkflowRegistrationGetResponse(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -67,6 +78,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.WorkflowRegistrationWithWorkerStatus>("workflow_registration", WorkflowRegistration);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

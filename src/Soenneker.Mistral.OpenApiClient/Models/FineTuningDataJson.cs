@@ -11,24 +11,39 @@ namespace Soenneker.Mistral.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class FineTuningDataJson : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("storage") is null) { _explicitNullValueStorage = default!; _explicitNullProperties?.Remove("storage"); }
+            else if (parseNode.GetChildNode("storage") is { } nullNodeStorage && nullNodeStorage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Storage = null;
+            if (parseNode.GetChildNode("training") is null) { _explicitNullValueTraining = default!; _explicitNullProperties?.Remove("training"); }
+            else if (parseNode.GetChildNode("training") is { } nullNodeTraining && nullNodeTraining.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Training = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Fine-tuning storage usage.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.FineTuningDataJsonStorageProperty? Storage { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.FineTuningDataJsonStorageProperty? Storage { get => _explicitNullValueStorage; set { _explicitNullValueStorage = value; AdditionalData?.Remove("storage"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("storage"); else _explicitNullProperties?.Remove("storage"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.FineTuningDataJsonStorageProperty? _explicitNullValueStorage = default!;
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.FineTuningDataJsonStorageProperty Storage { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.FineTuningDataJsonStorageProperty Storage { get => _explicitNullValueStorage; set { _explicitNullValueStorage = value; AdditionalData?.Remove("storage"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("storage"); else _explicitNullProperties?.Remove("storage"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.FineTuningDataJsonStorageProperty _explicitNullValueStorage = default!;
 #endif
         /// <summary>Fine-tuning training usage.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.FineTuningDataJsonTrainingProperty? Training { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.FineTuningDataJsonTrainingProperty? Training { get => _explicitNullValueTraining; set { _explicitNullValueTraining = value; AdditionalData?.Remove("training"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("training"); else _explicitNullProperties?.Remove("training"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.FineTuningDataJsonTrainingProperty? _explicitNullValueTraining = default!;
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.FineTuningDataJsonTrainingProperty Training { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.FineTuningDataJsonTrainingProperty Training { get => _explicitNullValueTraining; set { _explicitNullValueTraining = value; AdditionalData?.Remove("training"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("training"); else _explicitNullProperties?.Remove("training"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.FineTuningDataJsonTrainingProperty _explicitNullValueTraining = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Mistral.OpenApiClient.Models.FineTuningDataJson"/> and sets the default values.
@@ -45,7 +60,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         public static global::Soenneker.Mistral.OpenApiClient.Models.FineTuningDataJson CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Mistral.OpenApiClient.Models.FineTuningDataJson();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Mistral.OpenApiClient.Models.FineTuningDataJson(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -68,6 +83,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.FineTuningDataJsonStorageProperty>("storage", Storage);
             writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.FineTuningDataJsonTrainingProperty>("training", Training);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

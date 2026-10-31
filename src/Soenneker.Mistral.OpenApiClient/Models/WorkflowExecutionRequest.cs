@@ -11,72 +11,116 @@ namespace Soenneker.Mistral.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class WorkflowExecutionRequest : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("custom_tracing_attributes") is null) { _explicitNullValueCustomTracingAttributes = default!; _explicitNullProperties?.Remove("custom_tracing_attributes"); }
+            else if (parseNode.GetChildNode("custom_tracing_attributes") is { } nullNodeCustomTracingAttributes && nullNodeCustomTracingAttributes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CustomTracingAttributes = null;
+            if (parseNode.GetChildNode("deployment_name") is null) { _explicitNullValueDeploymentName = default!; _explicitNullProperties?.Remove("deployment_name"); }
+            else if (parseNode.GetChildNode("deployment_name") is { } nullNodeDeploymentName && nullNodeDeploymentName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DeploymentName = null;
+            if (parseNode.GetChildNode("execution_id") is null) { _explicitNullValueExecutionId = default!; _explicitNullProperties?.Remove("execution_id"); }
+            else if (parseNode.GetChildNode("execution_id") is { } nullNodeExecutionId && nullNodeExecutionId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExecutionId = null;
+            if (parseNode.GetChildNode("extensions") is null) { _explicitNullValueExtensions = default!; _explicitNullProperties?.Remove("extensions"); }
+            else if (parseNode.GetChildNode("extensions") is { } nullNodeExtensions && nullNodeExtensions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Extensions = null;
+            if (parseNode.GetChildNode("force_new_trace") is null) { _explicitNullValueForceNewTrace = default!; _explicitNullProperties?.Remove("force_new_trace"); }
+            else if (parseNode.GetChildNode("force_new_trace") is { } nullNodeForceNewTrace && nullNodeForceNewTrace.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ForceNewTrace = null;
+            if (parseNode.GetChildNode("input") is null) { _explicitNullValueInput = default!; _explicitNullProperties?.Remove("input"); }
+            else if (parseNode.GetChildNode("input") is { } nullNodeInput && nullNodeInput.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Input = null;
+            if (parseNode.GetChildNode("task_queue") is null) { _explicitNullValueTaskQueue = default!; _explicitNullProperties?.Remove("task_queue"); }
+            else if (parseNode.GetChildNode("task_queue") is { } nullNodeTaskQueue && nullNodeTaskQueue.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TaskQueue = null;
+            if (parseNode.GetChildNode("timeout_seconds") is null) { _explicitNullValueTimeoutSeconds = default!; _explicitNullProperties?.Remove("timeout_seconds"); }
+            else if (parseNode.GetChildNode("timeout_seconds") is { } nullNodeTimeoutSeconds && nullNodeTimeoutSeconds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TimeoutSeconds = null;
+            if (parseNode.GetChildNode("traceparent") is null) { _explicitNullValueTraceparent = default!; _explicitNullProperties?.Remove("traceparent"); }
+            else if (parseNode.GetChildNode("traceparent") is { } nullNodeTraceparent && nullNodeTraceparent.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Traceparent = null;
+            if (parseNode.GetChildNode("wait_for_result") is null) { _explicitNullValueWaitForResult = default!; _explicitNullProperties?.Remove("wait_for_result"); }
+            else if (parseNode.GetChildNode("wait_for_result") is { } nullNodeWaitForResult && nullNodeWaitForResult.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WaitForResult = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The custom_tracing_attributes property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.WorkflowExecutionRequestCustomTracingAttributesProperty? CustomTracingAttributes { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.WorkflowExecutionRequestCustomTracingAttributesProperty? CustomTracingAttributes { get => _explicitNullValueCustomTracingAttributes; set { _explicitNullValueCustomTracingAttributes = value; AdditionalData?.Remove("custom_tracing_attributes"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("custom_tracing_attributes"); else _explicitNullProperties?.Remove("custom_tracing_attributes"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.WorkflowExecutionRequestCustomTracingAttributesProperty? _explicitNullValueCustomTracingAttributes = default!;
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.WorkflowExecutionRequestCustomTracingAttributesProperty CustomTracingAttributes { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.WorkflowExecutionRequestCustomTracingAttributesProperty CustomTracingAttributes { get => _explicitNullValueCustomTracingAttributes; set { _explicitNullValueCustomTracingAttributes = value; AdditionalData?.Remove("custom_tracing_attributes"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("custom_tracing_attributes"); else _explicitNullProperties?.Remove("custom_tracing_attributes"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.WorkflowExecutionRequestCustomTracingAttributesProperty _explicitNullValueCustomTracingAttributes = default!;
 #endif
         /// <summary>Name of the deployment to route this execution to</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DeploymentName { get; set; }
+        public string? DeploymentName { get => _explicitNullValueDeploymentName; set { _explicitNullValueDeploymentName = value; AdditionalData?.Remove("deployment_name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("deployment_name"); else _explicitNullProperties?.Remove("deployment_name"); } }
+        private string? _explicitNullValueDeploymentName = default!;
 #nullable restore
 #else
-        public string DeploymentName { get; set; }
+        public string DeploymentName { get => _explicitNullValueDeploymentName; set { _explicitNullValueDeploymentName = value; AdditionalData?.Remove("deployment_name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("deployment_name"); else _explicitNullProperties?.Remove("deployment_name"); } }
+        private string _explicitNullValueDeploymentName = default!;
 #endif
         /// <summary>Allows you to specify a custom execution ID. If not provided, a random ID will be generated.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ExecutionId { get; set; }
+        public string? ExecutionId { get => _explicitNullValueExecutionId; set { _explicitNullValueExecutionId = value; AdditionalData?.Remove("execution_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("execution_id"); else _explicitNullProperties?.Remove("execution_id"); } }
+        private string? _explicitNullValueExecutionId = default!;
 #nullable restore
 #else
-        public string ExecutionId { get; set; }
+        public string ExecutionId { get => _explicitNullValueExecutionId; set { _explicitNullValueExecutionId = value; AdditionalData?.Remove("execution_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("execution_id"); else _explicitNullProperties?.Remove("execution_id"); } }
+        private string _explicitNullValueExecutionId = default!;
 #endif
         /// <summary>Plugin-specific data to propagate into WorkflowContext.extensions at execution time.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.WorkflowExecutionRequestExtensionsProperty? Extensions { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.WorkflowExecutionRequestExtensionsProperty? Extensions { get => _explicitNullValueExtensions; set { _explicitNullValueExtensions = value; AdditionalData?.Remove("extensions"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("extensions"); else _explicitNullProperties?.Remove("extensions"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.WorkflowExecutionRequestExtensionsProperty? _explicitNullValueExtensions = default!;
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.WorkflowExecutionRequestExtensionsProperty Extensions { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.WorkflowExecutionRequestExtensionsProperty Extensions { get => _explicitNullValueExtensions; set { _explicitNullValueExtensions = value; AdditionalData?.Remove("extensions"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("extensions"); else _explicitNullProperties?.Remove("extensions"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.WorkflowExecutionRequestExtensionsProperty _explicitNullValueExtensions = default!;
 #endif
         /// <summary>If true, ignore the caller&apos;s trace context and start a new, independent trace for this execution instead of joining the caller&apos;s trace.</summary>
-        public bool? ForceNewTrace { get; set; }
+        public bool? ForceNewTrace { get => _explicitNullValueForceNewTrace; set { _explicitNullValueForceNewTrace = value; AdditionalData?.Remove("force_new_trace"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("force_new_trace"); else _explicitNullProperties?.Remove("force_new_trace"); } }
+        private bool? _explicitNullValueForceNewTrace = default!;
         /// <summary>The input to the workflow. This should be a dictionary or a BaseModel that matches the workflow&apos;s input schema.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public UntypedNode? Input { get; set; }
+        public UntypedNode? Input { get => _explicitNullValueInput; set { _explicitNullValueInput = value; AdditionalData?.Remove("input"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("input"); else _explicitNullProperties?.Remove("input"); } }
+        private UntypedNode? _explicitNullValueInput = default!;
 #nullable restore
 #else
-        public UntypedNode Input { get; set; }
+        public UntypedNode Input { get => _explicitNullValueInput; set { _explicitNullValueInput = value; AdditionalData?.Remove("input"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("input"); else _explicitNullProperties?.Remove("input"); } }
+        private UntypedNode _explicitNullValueInput = default!;
 #endif
         /// <summary>Deprecated. Use deployment_name instead.</summary>
         [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TaskQueue { get; set; }
+        public string? TaskQueue { get => _explicitNullValueTaskQueue; set { _explicitNullValueTaskQueue = value; AdditionalData?.Remove("task_queue"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("task_queue"); else _explicitNullProperties?.Remove("task_queue"); } }
+        private string? _explicitNullValueTaskQueue = default!;
 #nullable restore
 #else
-        public string TaskQueue { get; set; }
+        public string TaskQueue { get => _explicitNullValueTaskQueue; set { _explicitNullValueTaskQueue = value; AdditionalData?.Remove("task_queue"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("task_queue"); else _explicitNullProperties?.Remove("task_queue"); } }
+        private string _explicitNullValueTaskQueue = default!;
 #endif
         /// <summary>Maximum time to wait for completion when wait_for_result is true.</summary>
-        public double? TimeoutSeconds { get; set; }
+        public double? TimeoutSeconds { get => _explicitNullValueTimeoutSeconds; set { _explicitNullValueTimeoutSeconds = value; AdditionalData?.Remove("timeout_seconds"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("timeout_seconds"); else _explicitNullProperties?.Remove("timeout_seconds"); } }
+        private double? _explicitNullValueTimeoutSeconds = default!;
         /// <summary>W3C trace context to join this execution to the caller&apos;s trace. Ignored when force_new_trace is set.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Traceparent { get; set; }
+        public string? Traceparent { get => _explicitNullValueTraceparent; set { _explicitNullValueTraceparent = value; AdditionalData?.Remove("traceparent"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("traceparent"); else _explicitNullProperties?.Remove("traceparent"); } }
+        private string? _explicitNullValueTraceparent = default!;
 #nullable restore
 #else
-        public string Traceparent { get; set; }
+        public string Traceparent { get => _explicitNullValueTraceparent; set { _explicitNullValueTraceparent = value; AdditionalData?.Remove("traceparent"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("traceparent"); else _explicitNullProperties?.Remove("traceparent"); } }
+        private string _explicitNullValueTraceparent = default!;
 #endif
         /// <summary>If true, wait for the workflow to complete and return the result directly.</summary>
-        public bool? WaitForResult { get; set; }
+        public bool? WaitForResult { get => _explicitNullValueWaitForResult; set { _explicitNullValueWaitForResult = value; AdditionalData?.Remove("wait_for_result"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("wait_for_result"); else _explicitNullProperties?.Remove("wait_for_result"); } }
+        private bool? _explicitNullValueWaitForResult = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Mistral.OpenApiClient.Models.WorkflowExecutionRequest"/> and sets the default values.
         /// </summary>
@@ -94,7 +138,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         public static global::Soenneker.Mistral.OpenApiClient.Models.WorkflowExecutionRequest CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Mistral.OpenApiClient.Models.WorkflowExecutionRequest();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Mistral.OpenApiClient.Models.WorkflowExecutionRequest(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -133,6 +177,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             writer.WriteDoubleValue("timeout_seconds", TimeoutSeconds);
             writer.WriteStringValue("traceparent", Traceparent);
             writer.WriteBoolValue("wait_for_result", WaitForResult);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

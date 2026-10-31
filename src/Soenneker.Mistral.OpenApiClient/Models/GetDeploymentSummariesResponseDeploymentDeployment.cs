@@ -11,25 +11,33 @@ namespace Soenneker.Mistral.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class GetDeploymentSummariesResponseDeploymentDeployment : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("indexes") is null) { _explicitNullValueIndexes = default!; _explicitNullProperties?.Remove("indexes"); }
+            else if (parseNode.GetChildNode("indexes") is { } nullNodeIndexes && nullNodeIndexes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Indexes = null;
+            if (parseNode.GetChildNode("type") is null) { _explicitNullValueType = default!; _explicitNullProperties?.Remove("type"); }
+            else if (parseNode.GetChildNode("type") is { } nullNodeType && nullNodeType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Type = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The indexes property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Mistral.OpenApiClient.Models.GetDeploymentSummariesResponseVespaIndex>? Indexes { get; set; }
+        public List<global::Soenneker.Mistral.OpenApiClient.Models.GetDeploymentSummariesResponseVespaIndex>? Indexes { get => _explicitNullValueIndexes; set { _explicitNullValueIndexes = value; AdditionalData?.Remove("indexes"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("indexes"); else _explicitNullProperties?.Remove("indexes"); } }
+        private List<global::Soenneker.Mistral.OpenApiClient.Models.GetDeploymentSummariesResponseVespaIndex>? _explicitNullValueIndexes = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Mistral.OpenApiClient.Models.GetDeploymentSummariesResponseVespaIndex> Indexes { get; set; }
+        public List<global::Soenneker.Mistral.OpenApiClient.Models.GetDeploymentSummariesResponseVespaIndex> Indexes { get => _explicitNullValueIndexes; set { _explicitNullValueIndexes = value; AdditionalData?.Remove("indexes"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("indexes"); else _explicitNullProperties?.Remove("indexes"); } }
+        private List<global::Soenneker.Mistral.OpenApiClient.Models.GetDeploymentSummariesResponseVespaIndex> _explicitNullValueIndexes = default!;
 #endif
         /// <summary>The type property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Type { get; set; }
-#nullable restore
-#else
-        public string Type { get; set; }
-#endif
+        public global::Soenneker.Mistral.OpenApiClient.Models.GetDeploymentSummariesResponseDeploymentDeployment_type? Type { get => _explicitNullValueType; set { _explicitNullValueType = value; AdditionalData?.Remove("type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.GetDeploymentSummariesResponseDeploymentDeployment_type? _explicitNullValueType = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Mistral.OpenApiClient.Models.GetDeploymentSummariesResponseDeploymentDeployment"/> and sets the default values.
         /// </summary>
@@ -45,7 +53,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         public static global::Soenneker.Mistral.OpenApiClient.Models.GetDeploymentSummariesResponseDeploymentDeployment CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Mistral.OpenApiClient.Models.GetDeploymentSummariesResponseDeploymentDeployment();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Mistral.OpenApiClient.Models.GetDeploymentSummariesResponseDeploymentDeployment(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -56,7 +64,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "indexes", n => { Indexes = n.GetCollectionOfObjectValues<global::Soenneker.Mistral.OpenApiClient.Models.GetDeploymentSummariesResponseVespaIndex>(global::Soenneker.Mistral.OpenApiClient.Models.GetDeploymentSummariesResponseVespaIndex.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "type", n => { Type = n.GetStringValue(); } },
+                { "type", n => { var parsed = n.GetEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.GetDeploymentSummariesResponseDeploymentDeployment_type>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueType = default; _explicitNullProperties?.Remove("type"); AdditionalData["type"] = unknown; } else { Type = parsed; AdditionalData.Remove("type"); } } },
             };
         }
         /// <summary>
@@ -67,7 +75,8 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfObjectValues<global::Soenneker.Mistral.OpenApiClient.Models.GetDeploymentSummariesResponseVespaIndex>("indexes", Indexes);
-            writer.WriteStringValue("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.GetDeploymentSummariesResponseDeploymentDeployment_type>("type", Type);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

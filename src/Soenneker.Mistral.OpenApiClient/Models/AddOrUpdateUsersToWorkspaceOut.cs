@@ -11,13 +11,26 @@ namespace Soenneker.Mistral.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class AddOrUpdateUsersToWorkspaceOut : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("added_members_count") is null) { _explicitNullValueAddedMembersCount = default!; _explicitNullProperties?.Remove("added_members_count"); }
+            else if (parseNode.GetChildNode("added_members_count") is { } nullNodeAddedMembersCount && nullNodeAddedMembersCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AddedMembersCount = null;
+            if (parseNode.GetChildNode("updated_members_count") is null) { _explicitNullValueUpdatedMembersCount = default!; _explicitNullProperties?.Remove("updated_members_count"); }
+            else if (parseNode.GetChildNode("updated_members_count") is { } nullNodeUpdatedMembersCount && nullNodeUpdatedMembersCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UpdatedMembersCount = null;
+        }
+
         /// <summary>Number of users added to the Workspace.</summary>
-        public int? AddedMembersCount { get; set; }
+        public int? AddedMembersCount { get => _explicitNullValueAddedMembersCount; set { _explicitNullValueAddedMembersCount = value; AdditionalData?.Remove("added_members_count"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("added_members_count"); else _explicitNullProperties?.Remove("added_members_count"); } }
+        private int? _explicitNullValueAddedMembersCount = default!;
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Number of Workspace members updated.</summary>
-        public int? UpdatedMembersCount { get; set; }
+        public int? UpdatedMembersCount { get => _explicitNullValueUpdatedMembersCount; set { _explicitNullValueUpdatedMembersCount = value; AdditionalData?.Remove("updated_members_count"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("updated_members_count"); else _explicitNullProperties?.Remove("updated_members_count"); } }
+        private int? _explicitNullValueUpdatedMembersCount = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Mistral.OpenApiClient.Models.AddOrUpdateUsersToWorkspaceOut"/> and sets the default values.
         /// </summary>
@@ -33,7 +46,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         public static global::Soenneker.Mistral.OpenApiClient.Models.AddOrUpdateUsersToWorkspaceOut CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Mistral.OpenApiClient.Models.AddOrUpdateUsersToWorkspaceOut();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Mistral.OpenApiClient.Models.AddOrUpdateUsersToWorkspaceOut(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -56,6 +69,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteIntValue("added_members_count", AddedMembersCount);
             writer.WriteIntValue("updated_members_count", UpdatedMembersCount);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

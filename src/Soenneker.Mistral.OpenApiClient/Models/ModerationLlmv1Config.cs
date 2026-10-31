@@ -11,28 +11,49 @@ namespace Soenneker.Mistral.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class ModerationLlmv1Config : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("action") is null) { _explicitNullValueAction = default!; _explicitNullProperties?.Remove("action"); }
+            else if (parseNode.GetChildNode("action") is { } nullNodeAction && nullNodeAction.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Action = null;
+            if (parseNode.GetChildNode("custom_category_thresholds") is null) { _explicitNullValueCustomCategoryThresholds = default!; _explicitNullProperties?.Remove("custom_category_thresholds"); }
+            else if (parseNode.GetChildNode("custom_category_thresholds") is { } nullNodeCustomCategoryThresholds && nullNodeCustomCategoryThresholds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CustomCategoryThresholds = null;
+            if (parseNode.GetChildNode("ignore_other_categories") is null) { _explicitNullValueIgnoreOtherCategories = default!; _explicitNullProperties?.Remove("ignore_other_categories"); }
+            else if (parseNode.GetChildNode("ignore_other_categories") is { } nullNodeIgnoreOtherCategories && nullNodeIgnoreOtherCategories.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IgnoreOtherCategories = null;
+            if (parseNode.GetChildNode("model_name") is null) { _explicitNullValueModelName = default!; _explicitNullProperties?.Remove("model_name"); }
+            else if (parseNode.GetChildNode("model_name") is { } nullNodeModelName && nullNodeModelName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ModelName = null;
+        }
+
         /// <summary>The action property</summary>
-        public global::Soenneker.Mistral.OpenApiClient.Models.ModerationLlmAction? Action { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.ModerationLlmAction? Action { get => _explicitNullValueAction; set { _explicitNullValueAction = value; AdditionalData?.Remove("action"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("action"); else _explicitNullProperties?.Remove("action"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.ModerationLlmAction? _explicitNullValueAction = default!;
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The custom_category_thresholds property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.ModerationLlmv1CategoryThresholds? CustomCategoryThresholds { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.ModerationLlmv1CategoryThresholds? CustomCategoryThresholds { get => _explicitNullValueCustomCategoryThresholds; set { _explicitNullValueCustomCategoryThresholds = value; AdditionalData?.Remove("custom_category_thresholds"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("custom_category_thresholds"); else _explicitNullProperties?.Remove("custom_category_thresholds"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.ModerationLlmv1CategoryThresholds? _explicitNullValueCustomCategoryThresholds = default!;
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.ModerationLlmv1CategoryThresholds CustomCategoryThresholds { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.ModerationLlmv1CategoryThresholds CustomCategoryThresholds { get => _explicitNullValueCustomCategoryThresholds; set { _explicitNullValueCustomCategoryThresholds = value; AdditionalData?.Remove("custom_category_thresholds"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("custom_category_thresholds"); else _explicitNullProperties?.Remove("custom_category_thresholds"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.ModerationLlmv1CategoryThresholds _explicitNullValueCustomCategoryThresholds = default!;
 #endif
         /// <summary>If true, only evaluate categories in custom_category_thresholds; others are ignored.</summary>
-        public bool? IgnoreOtherCategories { get; set; }
+        public bool? IgnoreOtherCategories { get => _explicitNullValueIgnoreOtherCategories; set { _explicitNullValueIgnoreOtherCategories = value; AdditionalData?.Remove("ignore_other_categories"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ignore_other_categories"); else _explicitNullProperties?.Remove("ignore_other_categories"); } }
+        private bool? _explicitNullValueIgnoreOtherCategories = default!;
         /// <summary>Override model name. Should be omitted in general.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ModelName { get; set; }
+        public string? ModelName { get => _explicitNullValueModelName; set { _explicitNullValueModelName = value; AdditionalData?.Remove("model_name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("model_name"); else _explicitNullProperties?.Remove("model_name"); } }
+        private string? _explicitNullValueModelName = default!;
 #nullable restore
 #else
-        public string ModelName { get; set; }
+        public string ModelName { get => _explicitNullValueModelName; set { _explicitNullValueModelName = value; AdditionalData?.Remove("model_name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("model_name"); else _explicitNullProperties?.Remove("model_name"); } }
+        private string _explicitNullValueModelName = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Mistral.OpenApiClient.Models.ModerationLlmv1Config"/> and sets the default values.
@@ -51,7 +72,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         public static global::Soenneker.Mistral.OpenApiClient.Models.ModerationLlmv1Config CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Mistral.OpenApiClient.Models.ModerationLlmv1Config();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Mistral.OpenApiClient.Models.ModerationLlmv1Config(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -61,7 +82,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "action", n => { Action = n.GetEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.ModerationLlmAction>(); } },
+                { "action", n => { var parsed = n.GetEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.ModerationLlmAction>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueAction = default; _explicitNullProperties?.Remove("action"); AdditionalData["action"] = unknown; } else { Action = parsed; AdditionalData.Remove("action"); } } },
                 { "custom_category_thresholds", n => { CustomCategoryThresholds = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ModerationLlmv1CategoryThresholds>(global::Soenneker.Mistral.OpenApiClient.Models.ModerationLlmv1CategoryThresholds.CreateFromDiscriminatorValue); } },
                 { "ignore_other_categories", n => { IgnoreOtherCategories = n.GetBoolValue(); } },
                 { "model_name", n => { ModelName = n.GetStringValue(); } },
@@ -78,6 +99,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ModerationLlmv1CategoryThresholds>("custom_category_thresholds", CustomCategoryThresholds);
             writer.WriteBoolValue("ignore_other_categories", IgnoreOtherCategories);
             writer.WriteStringValue("model_name", ModelName);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

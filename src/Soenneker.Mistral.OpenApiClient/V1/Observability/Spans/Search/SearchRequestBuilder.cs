@@ -63,6 +63,8 @@ namespace Soenneker.Mistral.OpenApiClient.V1.Observability.Spans.Search
                 { "408", global::Soenneker.Mistral.OpenApiClient.Models.ObservabilityError.CreateFromDiscriminatorValue },
                 { "409", global::Soenneker.Mistral.OpenApiClient.Models.ObservabilityError.CreateFromDiscriminatorValue },
                 { "422", global::Soenneker.Mistral.OpenApiClient.Models.ObservabilityError.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Mistral.OpenApiClient.Models.GetSpans>(requestInfo, global::Soenneker.Mistral.OpenApiClient.Models.GetSpans.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

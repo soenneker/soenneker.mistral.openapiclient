@@ -12,25 +12,56 @@ namespace Soenneker.Mistral.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class VibeToolCallsStat : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("approval_always") is null) { _explicitNullValueApprovalAlways = default!; _explicitNullProperties?.Remove("approval_always"); }
+            else if (parseNode.GetChildNode("approval_always") is { } nullNodeApprovalAlways && nullNodeApprovalAlways.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ApprovalAlways = null;
+            if (parseNode.GetChildNode("approval_ask") is null) { _explicitNullValueApprovalAsk = default!; _explicitNullProperties?.Remove("approval_ask"); }
+            else if (parseNode.GetChildNode("approval_ask") is { } nullNodeApprovalAsk && nullNodeApprovalAsk.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ApprovalAsk = null;
+            if (parseNode.GetChildNode("approval_never") is null) { _explicitNullValueApprovalNever = default!; _explicitNullProperties?.Remove("approval_never"); }
+            else if (parseNode.GetChildNode("approval_never") is { } nullNodeApprovalNever && nullNodeApprovalNever.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ApprovalNever = null;
+            if (parseNode.GetChildNode("day") is null) { _explicitNullValueDay = default!; _explicitNullProperties?.Remove("day"); }
+            else if (parseNode.GetChildNode("day") is { } nullNodeDay && nullNodeDay.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Day = null;
+            if (parseNode.GetChildNode("status_failure") is null) { _explicitNullValueStatusFailure = default!; _explicitNullProperties?.Remove("status_failure"); }
+            else if (parseNode.GetChildNode("status_failure") is { } nullNodeStatusFailure && nullNodeStatusFailure.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) StatusFailure = null;
+            if (parseNode.GetChildNode("status_skipped") is null) { _explicitNullValueStatusSkipped = default!; _explicitNullProperties?.Remove("status_skipped"); }
+            else if (parseNode.GetChildNode("status_skipped") is { } nullNodeStatusSkipped && nullNodeStatusSkipped.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) StatusSkipped = null;
+            if (parseNode.GetChildNode("status_success") is null) { _explicitNullValueStatusSuccess = default!; _explicitNullProperties?.Remove("status_success"); }
+            else if (parseNode.GetChildNode("status_success") is { } nullNodeStatusSuccess && nullNodeStatusSuccess.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) StatusSuccess = null;
+            if (parseNode.GetChildNode("total") is null) { _explicitNullValueTotal = default!; _explicitNullProperties?.Remove("total"); }
+            else if (parseNode.GetChildNode("total") is { } nullNodeTotal && nullNodeTotal.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Total = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The approval_always property</summary>
-        public int? ApprovalAlways { get; set; }
+        public int? ApprovalAlways { get => _explicitNullValueApprovalAlways; set { _explicitNullValueApprovalAlways = value; AdditionalData?.Remove("approval_always"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("approval_always"); else _explicitNullProperties?.Remove("approval_always"); } }
+        private int? _explicitNullValueApprovalAlways = default!;
         /// <summary>The approval_ask property</summary>
-        public int? ApprovalAsk { get; set; }
+        public int? ApprovalAsk { get => _explicitNullValueApprovalAsk; set { _explicitNullValueApprovalAsk = value; AdditionalData?.Remove("approval_ask"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("approval_ask"); else _explicitNullProperties?.Remove("approval_ask"); } }
+        private int? _explicitNullValueApprovalAsk = default!;
         /// <summary>The approval_never property</summary>
-        public int? ApprovalNever { get; set; }
+        public int? ApprovalNever { get => _explicitNullValueApprovalNever; set { _explicitNullValueApprovalNever = value; AdditionalData?.Remove("approval_never"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("approval_never"); else _explicitNullProperties?.Remove("approval_never"); } }
+        private int? _explicitNullValueApprovalNever = default!;
         /// <summary>The day property</summary>
-        public Date? Day { get; set; }
+        public Date? Day { get => _explicitNullValueDay; set { _explicitNullValueDay = value; AdditionalData?.Remove("day"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("day"); else _explicitNullProperties?.Remove("day"); } }
+        private Date? _explicitNullValueDay = default!;
         /// <summary>The status_failure property</summary>
-        public int? StatusFailure { get; set; }
+        public int? StatusFailure { get => _explicitNullValueStatusFailure; set { _explicitNullValueStatusFailure = value; AdditionalData?.Remove("status_failure"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status_failure"); else _explicitNullProperties?.Remove("status_failure"); } }
+        private int? _explicitNullValueStatusFailure = default!;
         /// <summary>The status_skipped property</summary>
-        public int? StatusSkipped { get; set; }
+        public int? StatusSkipped { get => _explicitNullValueStatusSkipped; set { _explicitNullValueStatusSkipped = value; AdditionalData?.Remove("status_skipped"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status_skipped"); else _explicitNullProperties?.Remove("status_skipped"); } }
+        private int? _explicitNullValueStatusSkipped = default!;
         /// <summary>The status_success property</summary>
-        public int? StatusSuccess { get; set; }
+        public int? StatusSuccess { get => _explicitNullValueStatusSuccess; set { _explicitNullValueStatusSuccess = value; AdditionalData?.Remove("status_success"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status_success"); else _explicitNullProperties?.Remove("status_success"); } }
+        private int? _explicitNullValueStatusSuccess = default!;
         /// <summary>The total property</summary>
-        public int? Total { get; set; }
+        public int? Total { get => _explicitNullValueTotal; set { _explicitNullValueTotal = value; AdditionalData?.Remove("total"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("total"); else _explicitNullProperties?.Remove("total"); } }
+        private int? _explicitNullValueTotal = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Mistral.OpenApiClient.Models.VibeToolCallsStat"/> and sets the default values.
         /// </summary>
@@ -46,7 +77,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         public static global::Soenneker.Mistral.OpenApiClient.Models.VibeToolCallsStat CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Mistral.OpenApiClient.Models.VibeToolCallsStat();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Mistral.OpenApiClient.Models.VibeToolCallsStat(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -81,6 +112,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             writer.WriteIntValue("status_skipped", StatusSkipped);
             writer.WriteIntValue("status_success", StatusSuccess);
             writer.WriteIntValue("total", Total);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

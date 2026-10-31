@@ -11,94 +11,158 @@ namespace Soenneker.Mistral.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class ManagedDeploymentResponse : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("created_at") is null) { _explicitNullValueCreatedAt = default!; _explicitNullProperties?.Remove("created_at"); }
+            else if (parseNode.GetChildNode("created_at") is { } nullNodeCreatedAt && nullNodeCreatedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CreatedAt = null;
+            if (parseNode.GetChildNode("created_by") is null) { _explicitNullValueCreatedBy = default!; _explicitNullProperties?.Remove("created_by"); }
+            else if (parseNode.GetChildNode("created_by") is { } nullNodeCreatedBy && nullNodeCreatedBy.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CreatedBy = null;
+            if (parseNode.GetChildNode("deployed_at") is null) { _explicitNullValueDeployedAt = default!; _explicitNullProperties?.Remove("deployed_at"); }
+            else if (parseNode.GetChildNode("deployed_at") is { } nullNodeDeployedAt && nullNodeDeployedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DeployedAt = null;
+            if (parseNode.GetChildNode("deployed_by") is null) { _explicitNullValueDeployedBy = default!; _explicitNullProperties?.Remove("deployed_by"); }
+            else if (parseNode.GetChildNode("deployed_by") is { } nullNodeDeployedBy && nullNodeDeployedBy.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DeployedBy = null;
+            if (parseNode.GetChildNode("is_hardened") is null) { _explicitNullValueIsHardened = default!; _explicitNullProperties?.Remove("is_hardened"); }
+            else if (parseNode.GetChildNode("is_hardened") is { } nullNodeIsHardened && nullNodeIsHardened.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IsHardened = null;
+            if (parseNode.GetChildNode("name") is null) { _explicitNullValueName = default!; _explicitNullProperties?.Remove("name"); }
+            else if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
+            if (parseNode.GetChildNode("resources") is null) { _explicitNullValueResources = default!; _explicitNullProperties?.Remove("resources"); }
+            else if (parseNode.GetChildNode("resources") is { } nullNodeResources && nullNodeResources.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Resources = null;
+            if (parseNode.GetChildNode("rollout_status") is null) { _explicitNullValueRolloutStatus = default!; _explicitNullProperties?.Remove("rollout_status"); }
+            else if (parseNode.GetChildNode("rollout_status") is { } nullNodeRolloutStatus && nullNodeRolloutStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RolloutStatus = null;
+            if (parseNode.GetChildNode("runtime_credential_id") is null) { _explicitNullValueRuntimeCredentialId = default!; _explicitNullProperties?.Remove("runtime_credential_id"); }
+            else if (parseNode.GetChildNode("runtime_credential_id") is { } nullNodeRuntimeCredentialId && nullNodeRuntimeCredentialId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RuntimeCredentialId = null;
+            if (parseNode.GetChildNode("runtime_principal_type") is null) { _explicitNullValueRuntimePrincipalType = default!; _explicitNullProperties?.Remove("runtime_principal_type"); }
+            else if (parseNode.GetChildNode("runtime_principal_type") is { } nullNodeRuntimePrincipalType && nullNodeRuntimePrincipalType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RuntimePrincipalType = null;
+            if (parseNode.GetChildNode("service_id") is null) { _explicitNullValueServiceId = default!; _explicitNullProperties?.Remove("service_id"); }
+            else if (parseNode.GetChildNode("service_id") is { } nullNodeServiceId && nullNodeServiceId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ServiceId = null;
+            if (parseNode.GetChildNode("spec") is null) { _explicitNullValueSpec = default!; _explicitNullProperties?.Remove("spec"); }
+            else if (parseNode.GetChildNode("spec") is { } nullNodeSpec && nullNodeSpec.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Spec = null;
+            if (parseNode.GetChildNode("status") is null) { _explicitNullValueStatus = default!; _explicitNullProperties?.Remove("status"); }
+            else if (parseNode.GetChildNode("status") is { } nullNodeStatus && nullNodeStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Status = null;
+            if (parseNode.GetChildNode("stopped") is null) { _explicitNullValueStopped = default!; _explicitNullProperties?.Remove("stopped"); }
+            else if (parseNode.GetChildNode("stopped") is { } nullNodeStopped && nullNodeStopped.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Stopped = null;
+            if (parseNode.GetChildNode("updated_at") is null) { _explicitNullValueUpdatedAt = default!; _explicitNullProperties?.Remove("updated_at"); }
+            else if (parseNode.GetChildNode("updated_at") is { } nullNodeUpdatedAt && nullNodeUpdatedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UpdatedAt = null;
+            if (parseNode.GetChildNode("updated_by") is null) { _explicitNullValueUpdatedBy = default!; _explicitNullProperties?.Remove("updated_by"); }
+            else if (parseNode.GetChildNode("updated_by") is { } nullNodeUpdatedBy && nullNodeUpdatedBy.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UpdatedBy = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The created_at property</summary>
-        public DateTimeOffset? CreatedAt { get; set; }
+        public DateTimeOffset? CreatedAt { get => _explicitNullValueCreatedAt; set { _explicitNullValueCreatedAt = value; AdditionalData?.Remove("created_at"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("created_at"); else _explicitNullProperties?.Remove("created_at"); } }
+        private DateTimeOffset? _explicitNullValueCreatedAt = default!;
         /// <summary>The created_by property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CreatedBy { get; set; }
+        public string? CreatedBy { get => _explicitNullValueCreatedBy; set { _explicitNullValueCreatedBy = value; AdditionalData?.Remove("created_by"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("created_by"); else _explicitNullProperties?.Remove("created_by"); } }
+        private string? _explicitNullValueCreatedBy = default!;
 #nullable restore
 #else
-        public string CreatedBy { get; set; }
+        public string CreatedBy { get => _explicitNullValueCreatedBy; set { _explicitNullValueCreatedBy = value; AdditionalData?.Remove("created_by"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("created_by"); else _explicitNullProperties?.Remove("created_by"); } }
+        private string _explicitNullValueCreatedBy = default!;
 #endif
         /// <summary>The deployed_at property</summary>
-        public DateTimeOffset? DeployedAt { get; set; }
+        public DateTimeOffset? DeployedAt { get => _explicitNullValueDeployedAt; set { _explicitNullValueDeployedAt = value; AdditionalData?.Remove("deployed_at"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("deployed_at"); else _explicitNullProperties?.Remove("deployed_at"); } }
+        private DateTimeOffset? _explicitNullValueDeployedAt = default!;
         /// <summary>The deployed_by property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DeployedBy { get; set; }
+        public string? DeployedBy { get => _explicitNullValueDeployedBy; set { _explicitNullValueDeployedBy = value; AdditionalData?.Remove("deployed_by"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("deployed_by"); else _explicitNullProperties?.Remove("deployed_by"); } }
+        private string? _explicitNullValueDeployedBy = default!;
 #nullable restore
 #else
-        public string DeployedBy { get; set; }
+        public string DeployedBy { get => _explicitNullValueDeployedBy; set { _explicitNullValueDeployedBy = value; AdditionalData?.Remove("deployed_by"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("deployed_by"); else _explicitNullProperties?.Remove("deployed_by"); } }
+        private string _explicitNullValueDeployedBy = default!;
 #endif
         /// <summary>The is_hardened property</summary>
-        public bool? IsHardened { get; set; }
+        public bool? IsHardened { get => _explicitNullValueIsHardened; set { _explicitNullValueIsHardened = value; AdditionalData?.Remove("is_hardened"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("is_hardened"); else _explicitNullProperties?.Remove("is_hardened"); } }
+        private bool? _explicitNullValueIsHardened = default!;
         /// <summary>The name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Name { get; set; }
+        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        private string? _explicitNullValueName = default!;
 #nullable restore
 #else
-        public string Name { get; set; }
+        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        private string _explicitNullValueName = default!;
 #endif
         /// <summary>The resources property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.DeploymentResourceConfig? Resources { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.DeploymentResourceConfig? Resources { get => _explicitNullValueResources; set { _explicitNullValueResources = value; AdditionalData?.Remove("resources"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("resources"); else _explicitNullProperties?.Remove("resources"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.DeploymentResourceConfig? _explicitNullValueResources = default!;
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.DeploymentResourceConfig Resources { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.DeploymentResourceConfig Resources { get => _explicitNullValueResources; set { _explicitNullValueResources = value; AdditionalData?.Remove("resources"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("resources"); else _explicitNullProperties?.Remove("resources"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.DeploymentResourceConfig _explicitNullValueResources = default!;
 #endif
         /// <summary>The rollout_status property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? RolloutStatus { get; set; }
+        public string? RolloutStatus { get => _explicitNullValueRolloutStatus; set { _explicitNullValueRolloutStatus = value; AdditionalData?.Remove("rollout_status"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rollout_status"); else _explicitNullProperties?.Remove("rollout_status"); } }
+        private string? _explicitNullValueRolloutStatus = default!;
 #nullable restore
 #else
-        public string RolloutStatus { get; set; }
+        public string RolloutStatus { get => _explicitNullValueRolloutStatus; set { _explicitNullValueRolloutStatus = value; AdditionalData?.Remove("rollout_status"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rollout_status"); else _explicitNullProperties?.Remove("rollout_status"); } }
+        private string _explicitNullValueRolloutStatus = default!;
 #endif
         /// <summary>The runtime_credential_id property</summary>
-        public Guid? RuntimeCredentialId { get; set; }
+        public Guid? RuntimeCredentialId { get => _explicitNullValueRuntimeCredentialId; set { _explicitNullValueRuntimeCredentialId = value; AdditionalData?.Remove("runtime_credential_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("runtime_credential_id"); else _explicitNullProperties?.Remove("runtime_credential_id"); } }
+        private Guid? _explicitNullValueRuntimeCredentialId = default!;
         /// <summary>The runtime_principal_type property</summary>
-        public global::Soenneker.Mistral.OpenApiClient.Models.PrincipalType? RuntimePrincipalType { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.PrincipalType? RuntimePrincipalType { get => _explicitNullValueRuntimePrincipalType; set { _explicitNullValueRuntimePrincipalType = value; AdditionalData?.Remove("runtime_principal_type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("runtime_principal_type"); else _explicitNullProperties?.Remove("runtime_principal_type"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.PrincipalType? _explicitNullValueRuntimePrincipalType = default!;
         /// <summary>The service_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ServiceId { get; set; }
+        public string? ServiceId { get => _explicitNullValueServiceId; set { _explicitNullValueServiceId = value; AdditionalData?.Remove("service_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("service_id"); else _explicitNullProperties?.Remove("service_id"); } }
+        private string? _explicitNullValueServiceId = default!;
 #nullable restore
 #else
-        public string ServiceId { get; set; }
+        public string ServiceId { get => _explicitNullValueServiceId; set { _explicitNullValueServiceId = value; AdditionalData?.Remove("service_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("service_id"); else _explicitNullProperties?.Remove("service_id"); } }
+        private string _explicitNullValueServiceId = default!;
 #endif
         /// <summary>The spec property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.DeploymentWorkerSpecResponse? Spec { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.DeploymentWorkerSpecResponse? Spec { get => _explicitNullValueSpec; set { _explicitNullValueSpec = value; AdditionalData?.Remove("spec"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("spec"); else _explicitNullProperties?.Remove("spec"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.DeploymentWorkerSpecResponse? _explicitNullValueSpec = default!;
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.DeploymentWorkerSpecResponse Spec { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.DeploymentWorkerSpecResponse Spec { get => _explicitNullValueSpec; set { _explicitNullValueSpec = value; AdditionalData?.Remove("spec"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("spec"); else _explicitNullProperties?.Remove("spec"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.DeploymentWorkerSpecResponse _explicitNullValueSpec = default!;
 #endif
         /// <summary>The status property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.DeploymentObservedState? Status { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.DeploymentObservedState? Status { get => _explicitNullValueStatus; set { _explicitNullValueStatus = value; AdditionalData?.Remove("status"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status"); else _explicitNullProperties?.Remove("status"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.DeploymentObservedState? _explicitNullValueStatus = default!;
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.DeploymentObservedState Status { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.DeploymentObservedState Status { get => _explicitNullValueStatus; set { _explicitNullValueStatus = value; AdditionalData?.Remove("status"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status"); else _explicitNullProperties?.Remove("status"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.DeploymentObservedState _explicitNullValueStatus = default!;
 #endif
         /// <summary>The stopped property</summary>
-        public bool? Stopped { get; set; }
+        public bool? Stopped { get => _explicitNullValueStopped; set { _explicitNullValueStopped = value; AdditionalData?.Remove("stopped"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("stopped"); else _explicitNullProperties?.Remove("stopped"); } }
+        private bool? _explicitNullValueStopped = default!;
         /// <summary>The updated_at property</summary>
-        public DateTimeOffset? UpdatedAt { get; set; }
+        public DateTimeOffset? UpdatedAt { get => _explicitNullValueUpdatedAt; set { _explicitNullValueUpdatedAt = value; AdditionalData?.Remove("updated_at"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("updated_at"); else _explicitNullProperties?.Remove("updated_at"); } }
+        private DateTimeOffset? _explicitNullValueUpdatedAt = default!;
         /// <summary>The updated_by property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? UpdatedBy { get; set; }
+        public string? UpdatedBy { get => _explicitNullValueUpdatedBy; set { _explicitNullValueUpdatedBy = value; AdditionalData?.Remove("updated_by"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("updated_by"); else _explicitNullProperties?.Remove("updated_by"); } }
+        private string? _explicitNullValueUpdatedBy = default!;
 #nullable restore
 #else
-        public string UpdatedBy { get; set; }
+        public string UpdatedBy { get => _explicitNullValueUpdatedBy; set { _explicitNullValueUpdatedBy = value; AdditionalData?.Remove("updated_by"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("updated_by"); else _explicitNullProperties?.Remove("updated_by"); } }
+        private string _explicitNullValueUpdatedBy = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Mistral.OpenApiClient.Models.ManagedDeploymentResponse"/> and sets the default values.
@@ -117,7 +181,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         public static global::Soenneker.Mistral.OpenApiClient.Models.ManagedDeploymentResponse CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Mistral.OpenApiClient.Models.ManagedDeploymentResponse();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Mistral.OpenApiClient.Models.ManagedDeploymentResponse(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -136,7 +200,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
                 { "resources", n => { Resources = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.DeploymentResourceConfig>(global::Soenneker.Mistral.OpenApiClient.Models.DeploymentResourceConfig.CreateFromDiscriminatorValue); } },
                 { "rollout_status", n => { RolloutStatus = n.GetStringValue(); } },
                 { "runtime_credential_id", n => { RuntimeCredentialId = n.GetGuidValue(); } },
-                { "runtime_principal_type", n => { RuntimePrincipalType = n.GetEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.PrincipalType>(); } },
+                { "runtime_principal_type", n => { var parsed = n.GetEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.PrincipalType>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueRuntimePrincipalType = default; _explicitNullProperties?.Remove("runtime_principal_type"); AdditionalData["runtime_principal_type"] = unknown; } else { RuntimePrincipalType = parsed; AdditionalData.Remove("runtime_principal_type"); } } },
                 { "service_id", n => { ServiceId = n.GetStringValue(); } },
                 { "spec", n => { Spec = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.DeploymentWorkerSpecResponse>(global::Soenneker.Mistral.OpenApiClient.Models.DeploymentWorkerSpecResponse.CreateFromDiscriminatorValue); } },
                 { "status", n => { Status = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.DeploymentObservedState>(global::Soenneker.Mistral.OpenApiClient.Models.DeploymentObservedState.CreateFromDiscriminatorValue); } },
@@ -168,6 +232,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             writer.WriteBoolValue("stopped", Stopped);
             writer.WriteDateTimeOffsetValue("updated_at", UpdatedAt);
             writer.WriteStringValue("updated_by", UpdatedBy);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

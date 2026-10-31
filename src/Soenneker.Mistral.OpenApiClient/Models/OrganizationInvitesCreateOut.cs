@@ -11,27 +11,45 @@ namespace Soenneker.Mistral.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class OrganizationInvitesCreateOut : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("already_members") is null) { _explicitNullValueAlreadyMembers = default!; _explicitNullProperties?.Remove("already_members"); }
+            else if (parseNode.GetChildNode("already_members") is { } nullNodeAlreadyMembers && nullNodeAlreadyMembers.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AlreadyMembers = null;
+            if (parseNode.GetChildNode("invalid_emails") is null) { _explicitNullValueInvalidEmails = default!; _explicitNullProperties?.Remove("invalid_emails"); }
+            else if (parseNode.GetChildNode("invalid_emails") is { } nullNodeInvalidEmails && nullNodeInvalidEmails.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) InvalidEmails = null;
+            if (parseNode.GetChildNode("invited_members_count") is null) { _explicitNullValueInvitedMembersCount = default!; _explicitNullProperties?.Remove("invited_members_count"); }
+            else if (parseNode.GetChildNode("invited_members_count") is { } nullNodeInvitedMembersCount && nullNodeInvitedMembersCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) InvitedMembersCount = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Email addresses that already belong to the Organization.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? AlreadyMembers { get; set; }
+        public List<string>? AlreadyMembers { get => _explicitNullValueAlreadyMembers; set { _explicitNullValueAlreadyMembers = value; AdditionalData?.Remove("already_members"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("already_members"); else _explicitNullProperties?.Remove("already_members"); } }
+        private List<string>? _explicitNullValueAlreadyMembers = default!;
 #nullable restore
 #else
-        public List<string> AlreadyMembers { get; set; }
+        public List<string> AlreadyMembers { get => _explicitNullValueAlreadyMembers; set { _explicitNullValueAlreadyMembers = value; AdditionalData?.Remove("already_members"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("already_members"); else _explicitNullProperties?.Remove("already_members"); } }
+        private List<string> _explicitNullValueAlreadyMembers = default!;
 #endif
         /// <summary>Email addresses that could not be invited.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? InvalidEmails { get; set; }
+        public List<string>? InvalidEmails { get => _explicitNullValueInvalidEmails; set { _explicitNullValueInvalidEmails = value; AdditionalData?.Remove("invalid_emails"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("invalid_emails"); else _explicitNullProperties?.Remove("invalid_emails"); } }
+        private List<string>? _explicitNullValueInvalidEmails = default!;
 #nullable restore
 #else
-        public List<string> InvalidEmails { get; set; }
+        public List<string> InvalidEmails { get => _explicitNullValueInvalidEmails; set { _explicitNullValueInvalidEmails = value; AdditionalData?.Remove("invalid_emails"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("invalid_emails"); else _explicitNullProperties?.Remove("invalid_emails"); } }
+        private List<string> _explicitNullValueInvalidEmails = default!;
 #endif
         /// <summary>Number of invitations successfully created.</summary>
-        public int? InvitedMembersCount { get; set; }
+        public int? InvitedMembersCount { get => _explicitNullValueInvitedMembersCount; set { _explicitNullValueInvitedMembersCount = value; AdditionalData?.Remove("invited_members_count"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("invited_members_count"); else _explicitNullProperties?.Remove("invited_members_count"); } }
+        private int? _explicitNullValueInvitedMembersCount = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Mistral.OpenApiClient.Models.OrganizationInvitesCreateOut"/> and sets the default values.
         /// </summary>
@@ -47,7 +65,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         public static global::Soenneker.Mistral.OpenApiClient.Models.OrganizationInvitesCreateOut CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Mistral.OpenApiClient.Models.OrganizationInvitesCreateOut();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Mistral.OpenApiClient.Models.OrganizationInvitesCreateOut(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -72,6 +90,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             writer.WriteCollectionOfPrimitiveValues<string>("already_members", AlreadyMembers);
             writer.WriteCollectionOfPrimitiveValues<string>("invalid_emails", InvalidEmails);
             writer.WriteIntValue("invited_members_count", InvitedMembersCount);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -11,39 +11,67 @@ namespace Soenneker.Mistral.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class PriceData : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("api_zone") is null) { _explicitNullValueApiZone = default!; _explicitNullProperties?.Remove("api_zone"); }
+            else if (parseNode.GetChildNode("api_zone") is { } nullNodeApiZone && nullNodeApiZone.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ApiZone = null;
+            if (parseNode.GetChildNode("billing_group") is null) { _explicitNullValueBillingGroup = default!; _explicitNullProperties?.Remove("billing_group"); }
+            else if (parseNode.GetChildNode("billing_group") is { } nullNodeBillingGroup && nullNodeBillingGroup.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BillingGroup = null;
+            if (parseNode.GetChildNode("billing_metric") is null) { _explicitNullValueBillingMetric = default!; _explicitNullProperties?.Remove("billing_metric"); }
+            else if (parseNode.GetChildNode("billing_metric") is { } nullNodeBillingMetric && nullNodeBillingMetric.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BillingMetric = null;
+            if (parseNode.GetChildNode("event_type") is null) { _explicitNullValueEventType = default!; _explicitNullProperties?.Remove("event_type"); }
+            else if (parseNode.GetChildNode("event_type") is { } nullNodeEventType && nullNodeEventType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EventType = null;
+            if (parseNode.GetChildNode("price") is null) { _explicitNullValuePrice = default!; _explicitNullProperties?.Remove("price"); }
+            else if (parseNode.GetChildNode("price") is { } nullNodePrice && nullNodePrice.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Price = null;
+            if (parseNode.GetChildNode("service_tier") is null) { _explicitNullValueServiceTier = default!; _explicitNullProperties?.Remove("service_tier"); }
+            else if (parseNode.GetChildNode("service_tier") is { } nullNodeServiceTier && nullNodeServiceTier.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ServiceTier = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>API zone this price applies to.</summary>
-        public global::Soenneker.Mistral.OpenApiClient.Models.ApiZone? ApiZone { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.ApiZone? ApiZone { get => _explicitNullValueApiZone; set { _explicitNullValueApiZone = value; AdditionalData?.Remove("api_zone"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("api_zone"); else _explicitNullProperties?.Remove("api_zone"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.ApiZone? _explicitNullValueApiZone = default!;
         /// <summary>Billing metric group this price applies to.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? BillingGroup { get; set; }
+        public string? BillingGroup { get => _explicitNullValueBillingGroup; set { _explicitNullValueBillingGroup = value; AdditionalData?.Remove("billing_group"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("billing_group"); else _explicitNullProperties?.Remove("billing_group"); } }
+        private string? _explicitNullValueBillingGroup = default!;
 #nullable restore
 #else
-        public string BillingGroup { get; set; }
+        public string BillingGroup { get => _explicitNullValueBillingGroup; set { _explicitNullValueBillingGroup = value; AdditionalData?.Remove("billing_group"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("billing_group"); else _explicitNullProperties?.Remove("billing_group"); } }
+        private string _explicitNullValueBillingGroup = default!;
 #endif
         /// <summary>Billing metric this price applies to.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? BillingMetric { get; set; }
+        public string? BillingMetric { get => _explicitNullValueBillingMetric; set { _explicitNullValueBillingMetric = value; AdditionalData?.Remove("billing_metric"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("billing_metric"); else _explicitNullProperties?.Remove("billing_metric"); } }
+        private string? _explicitNullValueBillingMetric = default!;
 #nullable restore
 #else
-        public string BillingMetric { get; set; }
+        public string BillingMetric { get => _explicitNullValueBillingMetric; set { _explicitNullValueBillingMetric = value; AdditionalData?.Remove("billing_metric"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("billing_metric"); else _explicitNullProperties?.Remove("billing_metric"); } }
+        private string _explicitNullValueBillingMetric = default!;
 #endif
         /// <summary>Billing event type for the price.</summary>
-        public global::Soenneker.Mistral.OpenApiClient.Models.LagoEventType? EventType { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.LagoEventType? EventType { get => _explicitNullValueEventType; set { _explicitNullValueEventType = value; AdditionalData?.Remove("event_type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("event_type"); else _explicitNullProperties?.Remove("event_type"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.LagoEventType? _explicitNullValueEventType = default!;
         /// <summary>Unit price for the billing metric.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.PriceDataPrice? Price { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.PriceDataPrice? Price { get => _explicitNullValuePrice; set { _explicitNullValuePrice = value; AdditionalData?.Remove("price"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("price"); else _explicitNullProperties?.Remove("price"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.PriceDataPrice? _explicitNullValuePrice = default!;
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.PriceDataPrice Price { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.PriceDataPrice Price { get => _explicitNullValuePrice; set { _explicitNullValuePrice = value; AdditionalData?.Remove("price"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("price"); else _explicitNullProperties?.Remove("price"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.PriceDataPrice _explicitNullValuePrice = default!;
 #endif
         /// <summary>Service tier this price applies to.</summary>
-        public global::Soenneker.Mistral.OpenApiClient.Models.ServiceTier? ServiceTier { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.ServiceTier? ServiceTier { get => _explicitNullValueServiceTier; set { _explicitNullValueServiceTier = value; AdditionalData?.Remove("service_tier"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("service_tier"); else _explicitNullProperties?.Remove("service_tier"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.ServiceTier? _explicitNullValueServiceTier = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Mistral.OpenApiClient.Models.PriceData"/> and sets the default values.
         /// </summary>
@@ -59,7 +87,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         public static global::Soenneker.Mistral.OpenApiClient.Models.PriceData CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Mistral.OpenApiClient.Models.PriceData();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Mistral.OpenApiClient.Models.PriceData(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -69,12 +97,12 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "api_zone", n => { ApiZone = n.GetEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.ApiZone>(); } },
+                { "api_zone", n => { var parsed = n.GetEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.ApiZone>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueApiZone = default; _explicitNullProperties?.Remove("api_zone"); AdditionalData["api_zone"] = unknown; } else { ApiZone = parsed; AdditionalData.Remove("api_zone"); } } },
                 { "billing_group", n => { BillingGroup = n.GetStringValue(); } },
                 { "billing_metric", n => { BillingMetric = n.GetStringValue(); } },
-                { "event_type", n => { EventType = n.GetEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.LagoEventType>(); } },
+                { "event_type", n => { var parsed = n.GetEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.LagoEventType>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueEventType = default; _explicitNullProperties?.Remove("event_type"); AdditionalData["event_type"] = unknown; } else { EventType = parsed; AdditionalData.Remove("event_type"); } } },
                 { "price", n => { Price = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.PriceDataPrice>(global::Soenneker.Mistral.OpenApiClient.Models.PriceDataPrice.CreateFromDiscriminatorValue); } },
-                { "service_tier", n => { ServiceTier = n.GetEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.ServiceTier>(); } },
+                { "service_tier", n => { var parsed = n.GetEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.ServiceTier>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueServiceTier = default; _explicitNullProperties?.Remove("service_tier"); AdditionalData["service_tier"] = unknown; } else { ServiceTier = parsed; AdditionalData.Remove("service_tier"); } } },
             };
         }
         /// <summary>
@@ -90,6 +118,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             writer.WriteEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.LagoEventType>("event_type", EventType);
             writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.PriceDataPrice>("price", Price);
             writer.WriteEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.ServiceTier>("service_tier", ServiceTier);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

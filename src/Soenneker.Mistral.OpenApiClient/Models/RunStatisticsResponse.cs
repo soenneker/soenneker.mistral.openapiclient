@@ -11,28 +11,49 @@ namespace Soenneker.Mistral.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class RunStatisticsResponse : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("goal_results") is null) { _explicitNullValueGoalResults = default!; _explicitNullProperties?.Remove("goal_results"); }
+            else if (parseNode.GetChildNode("goal_results") is { } nullNodeGoalResults && nullNodeGoalResults.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) GoalResults = null;
+            if (parseNode.GetChildNode("passed") is null) { _explicitNullValuePassed = default!; _explicitNullProperties?.Remove("passed"); }
+            else if (parseNode.GetChildNode("passed") is { } nullNodePassed && nullNodePassed.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Passed = null;
+            if (parseNode.GetChildNode("run_id") is null) { _explicitNullValueRunId = default!; _explicitNullProperties?.Remove("run_id"); }
+            else if (parseNode.GetChildNode("run_id") is { } nullNodeRunId && nullNodeRunId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RunId = null;
+            if (parseNode.GetChildNode("statistics") is null) { _explicitNullValueStatistics = default!; _explicitNullProperties?.Remove("statistics"); }
+            else if (parseNode.GetChildNode("statistics") is { } nullNodeStatistics && nullNodeStatistics.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Statistics = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The goal_results property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.RunStatisticsResponseGoalResultsProperty? GoalResults { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.RunStatisticsResponseGoalResultsProperty? GoalResults { get => _explicitNullValueGoalResults; set { _explicitNullValueGoalResults = value; AdditionalData?.Remove("goal_results"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("goal_results"); else _explicitNullProperties?.Remove("goal_results"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.RunStatisticsResponseGoalResultsProperty? _explicitNullValueGoalResults = default!;
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.RunStatisticsResponseGoalResultsProperty GoalResults { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.RunStatisticsResponseGoalResultsProperty GoalResults { get => _explicitNullValueGoalResults; set { _explicitNullValueGoalResults = value; AdditionalData?.Remove("goal_results"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("goal_results"); else _explicitNullProperties?.Remove("goal_results"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.RunStatisticsResponseGoalResultsProperty _explicitNullValueGoalResults = default!;
 #endif
         /// <summary>The passed property</summary>
-        public bool? Passed { get; set; }
+        public bool? Passed { get => _explicitNullValuePassed; set { _explicitNullValuePassed = value; AdditionalData?.Remove("passed"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("passed"); else _explicitNullProperties?.Remove("passed"); } }
+        private bool? _explicitNullValuePassed = default!;
         /// <summary>The run_id property</summary>
-        public Guid? RunId { get; set; }
+        public Guid? RunId { get => _explicitNullValueRunId; set { _explicitNullValueRunId = value; AdditionalData?.Remove("run_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("run_id"); else _explicitNullProperties?.Remove("run_id"); } }
+        private Guid? _explicitNullValueRunId = default!;
         /// <summary>The statistics property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.RunStatisticsResponseStatisticsProperty? Statistics { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.RunStatisticsResponseStatisticsProperty? Statistics { get => _explicitNullValueStatistics; set { _explicitNullValueStatistics = value; AdditionalData?.Remove("statistics"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("statistics"); else _explicitNullProperties?.Remove("statistics"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.RunStatisticsResponseStatisticsProperty? _explicitNullValueStatistics = default!;
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.RunStatisticsResponseStatisticsProperty Statistics { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.RunStatisticsResponseStatisticsProperty Statistics { get => _explicitNullValueStatistics; set { _explicitNullValueStatistics = value; AdditionalData?.Remove("statistics"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("statistics"); else _explicitNullProperties?.Remove("statistics"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.RunStatisticsResponseStatisticsProperty _explicitNullValueStatistics = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Mistral.OpenApiClient.Models.RunStatisticsResponse"/> and sets the default values.
@@ -49,7 +70,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         public static global::Soenneker.Mistral.OpenApiClient.Models.RunStatisticsResponse CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Mistral.OpenApiClient.Models.RunStatisticsResponse();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Mistral.OpenApiClient.Models.RunStatisticsResponse(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -76,6 +97,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             writer.WriteBoolValue("passed", Passed);
             writer.WriteGuidValue("run_id", RunId);
             writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.RunStatisticsResponseStatisticsProperty>("statistics", Statistics);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

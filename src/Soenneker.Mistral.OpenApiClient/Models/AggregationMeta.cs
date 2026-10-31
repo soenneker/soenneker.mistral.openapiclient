@@ -11,15 +11,31 @@ namespace Soenneker.Mistral.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class AggregationMeta : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("from_timestamp") is null) { _explicitNullValueFromTimestamp = default!; _explicitNullProperties?.Remove("from_timestamp"); }
+            else if (parseNode.GetChildNode("from_timestamp") is { } nullNodeFromTimestamp && nullNodeFromTimestamp.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FromTimestamp = null;
+            if (parseNode.GetChildNode("granularity_seconds") is null) { _explicitNullValueGranularitySeconds = default!; _explicitNullProperties?.Remove("granularity_seconds"); }
+            else if (parseNode.GetChildNode("granularity_seconds") is { } nullNodeGranularitySeconds && nullNodeGranularitySeconds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) GranularitySeconds = null;
+            if (parseNode.GetChildNode("to_timestamp") is null) { _explicitNullValueToTimestamp = default!; _explicitNullProperties?.Remove("to_timestamp"); }
+            else if (parseNode.GetChildNode("to_timestamp") is { } nullNodeToTimestamp && nullNodeToTimestamp.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ToTimestamp = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The from_timestamp property</summary>
-        public DateTimeOffset? FromTimestamp { get; set; }
+        public DateTimeOffset? FromTimestamp { get => _explicitNullValueFromTimestamp; set { _explicitNullValueFromTimestamp = value; AdditionalData?.Remove("from_timestamp"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("from_timestamp"); else _explicitNullProperties?.Remove("from_timestamp"); } }
+        private DateTimeOffset? _explicitNullValueFromTimestamp = default!;
         /// <summary>The granularity_seconds property</summary>
-        public int? GranularitySeconds { get; set; }
+        public int? GranularitySeconds { get => _explicitNullValueGranularitySeconds; set { _explicitNullValueGranularitySeconds = value; AdditionalData?.Remove("granularity_seconds"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("granularity_seconds"); else _explicitNullProperties?.Remove("granularity_seconds"); } }
+        private int? _explicitNullValueGranularitySeconds = default!;
         /// <summary>The to_timestamp property</summary>
-        public DateTimeOffset? ToTimestamp { get; set; }
+        public DateTimeOffset? ToTimestamp { get => _explicitNullValueToTimestamp; set { _explicitNullValueToTimestamp = value; AdditionalData?.Remove("to_timestamp"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("to_timestamp"); else _explicitNullProperties?.Remove("to_timestamp"); } }
+        private DateTimeOffset? _explicitNullValueToTimestamp = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Mistral.OpenApiClient.Models.AggregationMeta"/> and sets the default values.
         /// </summary>
@@ -35,7 +51,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         public static global::Soenneker.Mistral.OpenApiClient.Models.AggregationMeta CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Mistral.OpenApiClient.Models.AggregationMeta();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Mistral.OpenApiClient.Models.AggregationMeta(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -60,6 +76,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             writer.WriteDateTimeOffsetValue("from_timestamp", FromTimestamp);
             writer.WriteIntValue("granularity_seconds", GranularitySeconds);
             writer.WriteDateTimeOffsetValue("to_timestamp", ToTimestamp);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

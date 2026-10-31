@@ -51,7 +51,7 @@ namespace Soenneker.Mistral.OpenApiClient.V1.Admin.Workspaces.Item.AddUsers
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Mistral.OpenApiClient.Models.AddUsersToWorkspaceOut>(requestInfo, global::Soenneker.Mistral.OpenApiClient.Models.AddUsersToWorkspaceOut.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Mistral.OpenApiClient.Models.AddUsersToWorkspaceOut>(requestInfo, global::Soenneker.Mistral.OpenApiClient.Models.AddUsersToWorkspaceOut.CreateFromDiscriminatorValue, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Add members to a Workspace.

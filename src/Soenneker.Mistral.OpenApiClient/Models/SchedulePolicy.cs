@@ -11,15 +11,31 @@ namespace Soenneker.Mistral.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class SchedulePolicy : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("catchup_window_seconds") is null) { _explicitNullValueCatchupWindowSeconds = default!; _explicitNullProperties?.Remove("catchup_window_seconds"); }
+            else if (parseNode.GetChildNode("catchup_window_seconds") is { } nullNodeCatchupWindowSeconds && nullNodeCatchupWindowSeconds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CatchupWindowSeconds = null;
+            if (parseNode.GetChildNode("overlap") is null) { _explicitNullValueOverlap = default!; _explicitNullProperties?.Remove("overlap"); }
+            else if (parseNode.GetChildNode("overlap") is { } nullNodeOverlap && nullNodeOverlap.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Overlap = null;
+            if (parseNode.GetChildNode("pause_on_failure") is null) { _explicitNullValuePauseOnFailure = default!; _explicitNullProperties?.Remove("pause_on_failure"); }
+            else if (parseNode.GetChildNode("pause_on_failure") is { } nullNodePauseOnFailure && nullNodePauseOnFailure.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PauseOnFailure = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>After a Temporal server is unavailable, amount of time in seconds in the past to execute missed actions.</summary>
-        public int? CatchupWindowSeconds { get; set; }
+        public int? CatchupWindowSeconds { get => _explicitNullValueCatchupWindowSeconds; set { _explicitNullValueCatchupWindowSeconds = value; AdditionalData?.Remove("catchup_window_seconds"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("catchup_window_seconds"); else _explicitNullProperties?.Remove("catchup_window_seconds"); } }
+        private int? _explicitNullValueCatchupWindowSeconds = default!;
         /// <summary>Policy controlling what to do when a workflow is already running.</summary>
-        public int? Overlap { get; set; }
+        public int? Overlap { get => _explicitNullValueOverlap; set { _explicitNullValueOverlap = value; AdditionalData?.Remove("overlap"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("overlap"); else _explicitNullProperties?.Remove("overlap"); } }
+        private int? _explicitNullValueOverlap = default!;
         /// <summary>Whether to pause the schedule after a workflow failure.</summary>
-        public bool? PauseOnFailure { get; set; }
+        public bool? PauseOnFailure { get => _explicitNullValuePauseOnFailure; set { _explicitNullValuePauseOnFailure = value; AdditionalData?.Remove("pause_on_failure"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pause_on_failure"); else _explicitNullProperties?.Remove("pause_on_failure"); } }
+        private bool? _explicitNullValuePauseOnFailure = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Mistral.OpenApiClient.Models.SchedulePolicy"/> and sets the default values.
         /// </summary>
@@ -38,7 +54,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         public static global::Soenneker.Mistral.OpenApiClient.Models.SchedulePolicy CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Mistral.OpenApiClient.Models.SchedulePolicy();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Mistral.OpenApiClient.Models.SchedulePolicy(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -63,6 +79,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             writer.WriteIntValue("catchup_window_seconds", CatchupWindowSeconds);
             writer.WriteIntValue("overlap", Overlap);
             writer.WriteBoolValue("pause_on_failure", PauseOnFailure);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

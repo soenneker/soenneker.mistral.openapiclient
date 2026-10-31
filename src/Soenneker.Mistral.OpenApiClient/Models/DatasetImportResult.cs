@@ -12,15 +12,31 @@ namespace Soenneker.Mistral.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class DatasetImportResult : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("imported_record_count") is null) { _explicitNullValueImportedRecordCount = default!; _explicitNullProperties?.Remove("imported_record_count"); }
+            else if (parseNode.GetChildNode("imported_record_count") is { } nullNodeImportedRecordCount && nullNodeImportedRecordCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ImportedRecordCount = null;
+            if (parseNode.GetChildNode("requested_record_count") is null) { _explicitNullValueRequestedRecordCount = default!; _explicitNullProperties?.Remove("requested_record_count"); }
+            else if (parseNode.GetChildNode("requested_record_count") is { } nullNodeRequestedRecordCount && nullNodeRequestedRecordCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RequestedRecordCount = null;
+            if (parseNode.GetChildNode("skipped_record_count") is null) { _explicitNullValueSkippedRecordCount = default!; _explicitNullProperties?.Remove("skipped_record_count"); }
+            else if (parseNode.GetChildNode("skipped_record_count") is { } nullNodeSkippedRecordCount && nullNodeSkippedRecordCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SkippedRecordCount = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The imported_record_count property</summary>
-        public int? ImportedRecordCount { get; set; }
+        public int? ImportedRecordCount { get => _explicitNullValueImportedRecordCount; set { _explicitNullValueImportedRecordCount = value; AdditionalData?.Remove("imported_record_count"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("imported_record_count"); else _explicitNullProperties?.Remove("imported_record_count"); } }
+        private int? _explicitNullValueImportedRecordCount = default!;
         /// <summary>The requested_record_count property</summary>
-        public int? RequestedRecordCount { get; set; }
+        public int? RequestedRecordCount { get => _explicitNullValueRequestedRecordCount; set { _explicitNullValueRequestedRecordCount = value; AdditionalData?.Remove("requested_record_count"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("requested_record_count"); else _explicitNullProperties?.Remove("requested_record_count"); } }
+        private int? _explicitNullValueRequestedRecordCount = default!;
         /// <summary>The skipped_record_count property</summary>
-        public int? SkippedRecordCount { get; set; }
+        public int? SkippedRecordCount { get => _explicitNullValueSkippedRecordCount; set { _explicitNullValueSkippedRecordCount = value; AdditionalData?.Remove("skipped_record_count"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("skipped_record_count"); else _explicitNullProperties?.Remove("skipped_record_count"); } }
+        private int? _explicitNullValueSkippedRecordCount = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Mistral.OpenApiClient.Models.DatasetImportResult"/> and sets the default values.
         /// </summary>
@@ -36,7 +52,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         public static global::Soenneker.Mistral.OpenApiClient.Models.DatasetImportResult CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Mistral.OpenApiClient.Models.DatasetImportResult();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Mistral.OpenApiClient.Models.DatasetImportResult(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -61,6 +77,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             writer.WriteIntValue("imported_record_count", ImportedRecordCount);
             writer.WriteIntValue("requested_record_count", RequestedRecordCount);
             writer.WriteIntValue("skipped_record_count", SkippedRecordCount);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

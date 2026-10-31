@@ -11,68 +11,109 @@ namespace Soenneker.Mistral.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class VibeWorkspaceStatsOut : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("active_users") is null) { _explicitNullValueActiveUsers = default!; _explicitNullProperties?.Remove("active_users"); }
+            else if (parseNode.GetChildNode("active_users") is { } nullNodeActiveUsers && nullNodeActiveUsers.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ActiveUsers = null;
+            if (parseNode.GetChildNode("consumed_tokens") is null) { _explicitNullValueConsumedTokens = default!; _explicitNullProperties?.Remove("consumed_tokens"); }
+            else if (parseNode.GetChildNode("consumed_tokens") is { } nullNodeConsumedTokens && nullNodeConsumedTokens.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ConsumedTokens = null;
+            if (parseNode.GetChildNode("end_time") is null) { _explicitNullValueEndTime = default!; _explicitNullProperties?.Remove("end_time"); }
+            else if (parseNode.GetChildNode("end_time") is { } nullNodeEndTime && nullNodeEndTime.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EndTime = null;
+            if (parseNode.GetChildNode("session_durations") is null) { _explicitNullValueSessionDurations = default!; _explicitNullProperties?.Remove("session_durations"); }
+            else if (parseNode.GetChildNode("session_durations") is { } nullNodeSessionDurations && nullNodeSessionDurations.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SessionDurations = null;
+            if (parseNode.GetChildNode("sessions") is null) { _explicitNullValueSessions = default!; _explicitNullProperties?.Remove("sessions"); }
+            else if (parseNode.GetChildNode("sessions") is { } nullNodeSessions && nullNodeSessions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Sessions = null;
+            if (parseNode.GetChildNode("start_time") is null) { _explicitNullValueStartTime = default!; _explicitNullProperties?.Remove("start_time"); }
+            else if (parseNode.GetChildNode("start_time") is { } nullNodeStartTime && nullNodeStartTime.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) StartTime = null;
+            if (parseNode.GetChildNode("tool_calls") is null) { _explicitNullValueToolCalls = default!; _explicitNullProperties?.Remove("tool_calls"); }
+            else if (parseNode.GetChildNode("tool_calls") is { } nullNodeToolCalls && nullNodeToolCalls.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ToolCalls = null;
+            if (parseNode.GetChildNode("tool_calls_by_name") is null) { _explicitNullValueToolCallsByName = default!; _explicitNullProperties?.Remove("tool_calls_by_name"); }
+            else if (parseNode.GetChildNode("tool_calls_by_name") is { } nullNodeToolCallsByName && nullNodeToolCallsByName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ToolCallsByName = null;
+            if (parseNode.GetChildNode("user_prompts") is null) { _explicitNullValueUserPrompts = default!; _explicitNullProperties?.Remove("user_prompts"); }
+            else if (parseNode.GetChildNode("user_prompts") is { } nullNodeUserPrompts && nullNodeUserPrompts.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UserPrompts = null;
+        }
+
         /// <summary>The active_users property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Mistral.OpenApiClient.Models.VibeActiveUsersStat>? ActiveUsers { get; set; }
+        public List<global::Soenneker.Mistral.OpenApiClient.Models.VibeActiveUsersStat>? ActiveUsers { get => _explicitNullValueActiveUsers; set { _explicitNullValueActiveUsers = value; AdditionalData?.Remove("active_users"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("active_users"); else _explicitNullProperties?.Remove("active_users"); } }
+        private List<global::Soenneker.Mistral.OpenApiClient.Models.VibeActiveUsersStat>? _explicitNullValueActiveUsers = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Mistral.OpenApiClient.Models.VibeActiveUsersStat> ActiveUsers { get; set; }
+        public List<global::Soenneker.Mistral.OpenApiClient.Models.VibeActiveUsersStat> ActiveUsers { get => _explicitNullValueActiveUsers; set { _explicitNullValueActiveUsers = value; AdditionalData?.Remove("active_users"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("active_users"); else _explicitNullProperties?.Remove("active_users"); } }
+        private List<global::Soenneker.Mistral.OpenApiClient.Models.VibeActiveUsersStat> _explicitNullValueActiveUsers = default!;
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The consumed_tokens property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Mistral.OpenApiClient.Models.VibeConsumedTokensStat>? ConsumedTokens { get; set; }
+        public List<global::Soenneker.Mistral.OpenApiClient.Models.VibeConsumedTokensStat>? ConsumedTokens { get => _explicitNullValueConsumedTokens; set { _explicitNullValueConsumedTokens = value; AdditionalData?.Remove("consumed_tokens"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("consumed_tokens"); else _explicitNullProperties?.Remove("consumed_tokens"); } }
+        private List<global::Soenneker.Mistral.OpenApiClient.Models.VibeConsumedTokensStat>? _explicitNullValueConsumedTokens = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Mistral.OpenApiClient.Models.VibeConsumedTokensStat> ConsumedTokens { get; set; }
+        public List<global::Soenneker.Mistral.OpenApiClient.Models.VibeConsumedTokensStat> ConsumedTokens { get => _explicitNullValueConsumedTokens; set { _explicitNullValueConsumedTokens = value; AdditionalData?.Remove("consumed_tokens"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("consumed_tokens"); else _explicitNullProperties?.Remove("consumed_tokens"); } }
+        private List<global::Soenneker.Mistral.OpenApiClient.Models.VibeConsumedTokensStat> _explicitNullValueConsumedTokens = default!;
 #endif
         /// <summary>End of the queried window, as a Unix timestamp in seconds.</summary>
-        public int? EndTime { get; set; }
+        public int? EndTime { get => _explicitNullValueEndTime; set { _explicitNullValueEndTime = value; AdditionalData?.Remove("end_time"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("end_time"); else _explicitNullProperties?.Remove("end_time"); } }
+        private int? _explicitNullValueEndTime = default!;
         /// <summary>The session_durations property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Mistral.OpenApiClient.Models.VibeSessionDurationStat>? SessionDurations { get; set; }
+        public List<global::Soenneker.Mistral.OpenApiClient.Models.VibeSessionDurationStat>? SessionDurations { get => _explicitNullValueSessionDurations; set { _explicitNullValueSessionDurations = value; AdditionalData?.Remove("session_durations"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("session_durations"); else _explicitNullProperties?.Remove("session_durations"); } }
+        private List<global::Soenneker.Mistral.OpenApiClient.Models.VibeSessionDurationStat>? _explicitNullValueSessionDurations = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Mistral.OpenApiClient.Models.VibeSessionDurationStat> SessionDurations { get; set; }
+        public List<global::Soenneker.Mistral.OpenApiClient.Models.VibeSessionDurationStat> SessionDurations { get => _explicitNullValueSessionDurations; set { _explicitNullValueSessionDurations = value; AdditionalData?.Remove("session_durations"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("session_durations"); else _explicitNullProperties?.Remove("session_durations"); } }
+        private List<global::Soenneker.Mistral.OpenApiClient.Models.VibeSessionDurationStat> _explicitNullValueSessionDurations = default!;
 #endif
         /// <summary>The sessions property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Mistral.OpenApiClient.Models.VibeSessionStat>? Sessions { get; set; }
+        public List<global::Soenneker.Mistral.OpenApiClient.Models.VibeSessionStat>? Sessions { get => _explicitNullValueSessions; set { _explicitNullValueSessions = value; AdditionalData?.Remove("sessions"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sessions"); else _explicitNullProperties?.Remove("sessions"); } }
+        private List<global::Soenneker.Mistral.OpenApiClient.Models.VibeSessionStat>? _explicitNullValueSessions = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Mistral.OpenApiClient.Models.VibeSessionStat> Sessions { get; set; }
+        public List<global::Soenneker.Mistral.OpenApiClient.Models.VibeSessionStat> Sessions { get => _explicitNullValueSessions; set { _explicitNullValueSessions = value; AdditionalData?.Remove("sessions"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sessions"); else _explicitNullProperties?.Remove("sessions"); } }
+        private List<global::Soenneker.Mistral.OpenApiClient.Models.VibeSessionStat> _explicitNullValueSessions = default!;
 #endif
         /// <summary>Start of the queried window, as a Unix timestamp in seconds.</summary>
-        public int? StartTime { get; set; }
+        public int? StartTime { get => _explicitNullValueStartTime; set { _explicitNullValueStartTime = value; AdditionalData?.Remove("start_time"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("start_time"); else _explicitNullProperties?.Remove("start_time"); } }
+        private int? _explicitNullValueStartTime = default!;
         /// <summary>The tool_calls property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Mistral.OpenApiClient.Models.VibeToolCallsStat>? ToolCalls { get; set; }
+        public List<global::Soenneker.Mistral.OpenApiClient.Models.VibeToolCallsStat>? ToolCalls { get => _explicitNullValueToolCalls; set { _explicitNullValueToolCalls = value; AdditionalData?.Remove("tool_calls"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tool_calls"); else _explicitNullProperties?.Remove("tool_calls"); } }
+        private List<global::Soenneker.Mistral.OpenApiClient.Models.VibeToolCallsStat>? _explicitNullValueToolCalls = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Mistral.OpenApiClient.Models.VibeToolCallsStat> ToolCalls { get; set; }
+        public List<global::Soenneker.Mistral.OpenApiClient.Models.VibeToolCallsStat> ToolCalls { get => _explicitNullValueToolCalls; set { _explicitNullValueToolCalls = value; AdditionalData?.Remove("tool_calls"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tool_calls"); else _explicitNullProperties?.Remove("tool_calls"); } }
+        private List<global::Soenneker.Mistral.OpenApiClient.Models.VibeToolCallsStat> _explicitNullValueToolCalls = default!;
 #endif
         /// <summary>The tool_calls_by_name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Mistral.OpenApiClient.Models.VibeToolCallsByNameStat>? ToolCallsByName { get; set; }
+        public List<global::Soenneker.Mistral.OpenApiClient.Models.VibeToolCallsByNameStat>? ToolCallsByName { get => _explicitNullValueToolCallsByName; set { _explicitNullValueToolCallsByName = value; AdditionalData?.Remove("tool_calls_by_name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tool_calls_by_name"); else _explicitNullProperties?.Remove("tool_calls_by_name"); } }
+        private List<global::Soenneker.Mistral.OpenApiClient.Models.VibeToolCallsByNameStat>? _explicitNullValueToolCallsByName = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Mistral.OpenApiClient.Models.VibeToolCallsByNameStat> ToolCallsByName { get; set; }
+        public List<global::Soenneker.Mistral.OpenApiClient.Models.VibeToolCallsByNameStat> ToolCallsByName { get => _explicitNullValueToolCallsByName; set { _explicitNullValueToolCallsByName = value; AdditionalData?.Remove("tool_calls_by_name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tool_calls_by_name"); else _explicitNullProperties?.Remove("tool_calls_by_name"); } }
+        private List<global::Soenneker.Mistral.OpenApiClient.Models.VibeToolCallsByNameStat> _explicitNullValueToolCallsByName = default!;
 #endif
         /// <summary>The user_prompts property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Mistral.OpenApiClient.Models.VibeUserPromptsStat>? UserPrompts { get; set; }
+        public List<global::Soenneker.Mistral.OpenApiClient.Models.VibeUserPromptsStat>? UserPrompts { get => _explicitNullValueUserPrompts; set { _explicitNullValueUserPrompts = value; AdditionalData?.Remove("user_prompts"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("user_prompts"); else _explicitNullProperties?.Remove("user_prompts"); } }
+        private List<global::Soenneker.Mistral.OpenApiClient.Models.VibeUserPromptsStat>? _explicitNullValueUserPrompts = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Mistral.OpenApiClient.Models.VibeUserPromptsStat> UserPrompts { get; set; }
+        public List<global::Soenneker.Mistral.OpenApiClient.Models.VibeUserPromptsStat> UserPrompts { get => _explicitNullValueUserPrompts; set { _explicitNullValueUserPrompts = value; AdditionalData?.Remove("user_prompts"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("user_prompts"); else _explicitNullProperties?.Remove("user_prompts"); } }
+        private List<global::Soenneker.Mistral.OpenApiClient.Models.VibeUserPromptsStat> _explicitNullValueUserPrompts = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Mistral.OpenApiClient.Models.VibeWorkspaceStatsOut"/> and sets the default values.
@@ -89,7 +130,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         public static global::Soenneker.Mistral.OpenApiClient.Models.VibeWorkspaceStatsOut CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Mistral.OpenApiClient.Models.VibeWorkspaceStatsOut();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Mistral.OpenApiClient.Models.VibeWorkspaceStatsOut(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -126,6 +167,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             writer.WriteCollectionOfObjectValues<global::Soenneker.Mistral.OpenApiClient.Models.VibeToolCallsStat>("tool_calls", ToolCalls);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Mistral.OpenApiClient.Models.VibeToolCallsByNameStat>("tool_calls_by_name", ToolCallsByName);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Mistral.OpenApiClient.Models.VibeUserPromptsStat>("user_prompts", UserPrompts);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

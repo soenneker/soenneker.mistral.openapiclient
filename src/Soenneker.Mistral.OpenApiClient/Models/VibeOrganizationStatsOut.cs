@@ -11,37 +11,62 @@ namespace Soenneker.Mistral.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class VibeOrganizationStatsOut : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("end_time") is null) { _explicitNullValueEndTime = default!; _explicitNullProperties?.Remove("end_time"); }
+            else if (parseNode.GetChildNode("end_time") is { } nullNodeEndTime && nullNodeEndTime.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EndTime = null;
+            if (parseNode.GetChildNode("next_edit_active_users") is null) { _explicitNullValueNextEditActiveUsers = default!; _explicitNullProperties?.Remove("next_edit_active_users"); }
+            else if (parseNode.GetChildNode("next_edit_active_users") is { } nullNodeNextEditActiveUsers && nullNodeNextEditActiveUsers.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NextEditActiveUsers = null;
+            if (parseNode.GetChildNode("next_edit_modified_loc") is null) { _explicitNullValueNextEditModifiedLoc = default!; _explicitNullProperties?.Remove("next_edit_modified_loc"); }
+            else if (parseNode.GetChildNode("next_edit_modified_loc") is { } nullNodeNextEditModifiedLoc && nullNodeNextEditModifiedLoc.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NextEditModifiedLoc = null;
+            if (parseNode.GetChildNode("next_edit_suggestions") is null) { _explicitNullValueNextEditSuggestions = default!; _explicitNullProperties?.Remove("next_edit_suggestions"); }
+            else if (parseNode.GetChildNode("next_edit_suggestions") is { } nullNodeNextEditSuggestions && nullNodeNextEditSuggestions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NextEditSuggestions = null;
+            if (parseNode.GetChildNode("start_time") is null) { _explicitNullValueStartTime = default!; _explicitNullProperties?.Remove("start_time"); }
+            else if (parseNode.GetChildNode("start_time") is { } nullNodeStartTime && nullNodeStartTime.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) StartTime = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>End of the queried window, as a Unix timestamp in seconds.</summary>
-        public int? EndTime { get; set; }
+        public int? EndTime { get => _explicitNullValueEndTime; set { _explicitNullValueEndTime = value; AdditionalData?.Remove("end_time"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("end_time"); else _explicitNullProperties?.Remove("end_time"); } }
+        private int? _explicitNullValueEndTime = default!;
         /// <summary>The next_edit_active_users property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Mistral.OpenApiClient.Models.VibeNextEditActiveUsersStat>? NextEditActiveUsers { get; set; }
+        public List<global::Soenneker.Mistral.OpenApiClient.Models.VibeNextEditActiveUsersStat>? NextEditActiveUsers { get => _explicitNullValueNextEditActiveUsers; set { _explicitNullValueNextEditActiveUsers = value; AdditionalData?.Remove("next_edit_active_users"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("next_edit_active_users"); else _explicitNullProperties?.Remove("next_edit_active_users"); } }
+        private List<global::Soenneker.Mistral.OpenApiClient.Models.VibeNextEditActiveUsersStat>? _explicitNullValueNextEditActiveUsers = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Mistral.OpenApiClient.Models.VibeNextEditActiveUsersStat> NextEditActiveUsers { get; set; }
+        public List<global::Soenneker.Mistral.OpenApiClient.Models.VibeNextEditActiveUsersStat> NextEditActiveUsers { get => _explicitNullValueNextEditActiveUsers; set { _explicitNullValueNextEditActiveUsers = value; AdditionalData?.Remove("next_edit_active_users"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("next_edit_active_users"); else _explicitNullProperties?.Remove("next_edit_active_users"); } }
+        private List<global::Soenneker.Mistral.OpenApiClient.Models.VibeNextEditActiveUsersStat> _explicitNullValueNextEditActiveUsers = default!;
 #endif
         /// <summary>The next_edit_modified_loc property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Mistral.OpenApiClient.Models.VibeNextEditModifiedLocStat>? NextEditModifiedLoc { get; set; }
+        public List<global::Soenneker.Mistral.OpenApiClient.Models.VibeNextEditModifiedLocStat>? NextEditModifiedLoc { get => _explicitNullValueNextEditModifiedLoc; set { _explicitNullValueNextEditModifiedLoc = value; AdditionalData?.Remove("next_edit_modified_loc"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("next_edit_modified_loc"); else _explicitNullProperties?.Remove("next_edit_modified_loc"); } }
+        private List<global::Soenneker.Mistral.OpenApiClient.Models.VibeNextEditModifiedLocStat>? _explicitNullValueNextEditModifiedLoc = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Mistral.OpenApiClient.Models.VibeNextEditModifiedLocStat> NextEditModifiedLoc { get; set; }
+        public List<global::Soenneker.Mistral.OpenApiClient.Models.VibeNextEditModifiedLocStat> NextEditModifiedLoc { get => _explicitNullValueNextEditModifiedLoc; set { _explicitNullValueNextEditModifiedLoc = value; AdditionalData?.Remove("next_edit_modified_loc"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("next_edit_modified_loc"); else _explicitNullProperties?.Remove("next_edit_modified_loc"); } }
+        private List<global::Soenneker.Mistral.OpenApiClient.Models.VibeNextEditModifiedLocStat> _explicitNullValueNextEditModifiedLoc = default!;
 #endif
         /// <summary>The next_edit_suggestions property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Mistral.OpenApiClient.Models.VibeNextEditSuggestionStat>? NextEditSuggestions { get; set; }
+        public List<global::Soenneker.Mistral.OpenApiClient.Models.VibeNextEditSuggestionStat>? NextEditSuggestions { get => _explicitNullValueNextEditSuggestions; set { _explicitNullValueNextEditSuggestions = value; AdditionalData?.Remove("next_edit_suggestions"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("next_edit_suggestions"); else _explicitNullProperties?.Remove("next_edit_suggestions"); } }
+        private List<global::Soenneker.Mistral.OpenApiClient.Models.VibeNextEditSuggestionStat>? _explicitNullValueNextEditSuggestions = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Mistral.OpenApiClient.Models.VibeNextEditSuggestionStat> NextEditSuggestions { get; set; }
+        public List<global::Soenneker.Mistral.OpenApiClient.Models.VibeNextEditSuggestionStat> NextEditSuggestions { get => _explicitNullValueNextEditSuggestions; set { _explicitNullValueNextEditSuggestions = value; AdditionalData?.Remove("next_edit_suggestions"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("next_edit_suggestions"); else _explicitNullProperties?.Remove("next_edit_suggestions"); } }
+        private List<global::Soenneker.Mistral.OpenApiClient.Models.VibeNextEditSuggestionStat> _explicitNullValueNextEditSuggestions = default!;
 #endif
         /// <summary>Start of the queried window, as a Unix timestamp in seconds.</summary>
-        public int? StartTime { get; set; }
+        public int? StartTime { get => _explicitNullValueStartTime; set { _explicitNullValueStartTime = value; AdditionalData?.Remove("start_time"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("start_time"); else _explicitNullProperties?.Remove("start_time"); } }
+        private int? _explicitNullValueStartTime = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Mistral.OpenApiClient.Models.VibeOrganizationStatsOut"/> and sets the default values.
         /// </summary>
@@ -57,7 +82,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         public static global::Soenneker.Mistral.OpenApiClient.Models.VibeOrganizationStatsOut CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Mistral.OpenApiClient.Models.VibeOrganizationStatsOut();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Mistral.OpenApiClient.Models.VibeOrganizationStatsOut(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -86,6 +111,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             writer.WriteCollectionOfObjectValues<global::Soenneker.Mistral.OpenApiClient.Models.VibeNextEditModifiedLocStat>("next_edit_modified_loc", NextEditModifiedLoc);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Mistral.OpenApiClient.Models.VibeNextEditSuggestionStat>("next_edit_suggestions", NextEditSuggestions);
             writer.WriteIntValue("start_time", StartTime);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

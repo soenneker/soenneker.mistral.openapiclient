@@ -11,101 +11,158 @@ namespace Soenneker.Mistral.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class CreateHttpConnectorRequest : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("auth_methods") is null) { _explicitNullValueAuthMethods = default!; _explicitNullProperties?.Remove("auth_methods"); }
+            else if (parseNode.GetChildNode("auth_methods") is { } nullNodeAuthMethods && nullNodeAuthMethods.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AuthMethods = null;
+            if (parseNode.GetChildNode("description") is null) { _explicitNullValueDescription = default!; _explicitNullProperties?.Remove("description"); }
+            else if (parseNode.GetChildNode("description") is { } nullNodeDescription && nullNodeDescription.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Description = null;
+            if (parseNode.GetChildNode("global_headers") is null) { _explicitNullValueGlobalHeaders = default!; _explicitNullProperties?.Remove("global_headers"); }
+            else if (parseNode.GetChildNode("global_headers") is { } nullNodeGlobalHeaders && nullNodeGlobalHeaders.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) GlobalHeaders = null;
+            if (parseNode.GetChildNode("headers") is null) { _explicitNullValueHeaders = default!; _explicitNullProperties?.Remove("headers"); }
+            else if (parseNode.GetChildNode("headers") is { } nullNodeHeaders && nullNodeHeaders.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Headers = null;
+            if (parseNode.GetChildNode("icon_url") is null) { _explicitNullValueIconUrl = default!; _explicitNullProperties?.Remove("icon_url"); }
+            else if (parseNode.GetChildNode("icon_url") is { } nullNodeIconUrl && nullNodeIconUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IconUrl = null;
+            if (parseNode.GetChildNode("name") is null) { _explicitNullValueName = default!; _explicitNullProperties?.Remove("name"); }
+            else if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
+            if (parseNode.GetChildNode("oauth2_server_metadata") is null) { _explicitNullValueOauth2ServerMetadata = default!; _explicitNullProperties?.Remove("oauth2_server_metadata"); }
+            else if (parseNode.GetChildNode("oauth2_server_metadata") is { } nullNodeOauth2ServerMetadata && nullNodeOauth2ServerMetadata.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Oauth2ServerMetadata = null;
+            if (parseNode.GetChildNode("oauth2_server_metadata_url") is null) { _explicitNullValueOauth2ServerMetadataUrl = default!; _explicitNullProperties?.Remove("oauth2_server_metadata_url"); }
+            else if (parseNode.GetChildNode("oauth2_server_metadata_url") is { } nullNodeOauth2ServerMetadataUrl && nullNodeOauth2ServerMetadataUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Oauth2ServerMetadataUrl = null;
+            if (parseNode.GetChildNode("protocol") is null) { _explicitNullValueProtocol = default!; _explicitNullProperties?.Remove("protocol"); }
+            else if (parseNode.GetChildNode("protocol") is { } nullNodeProtocol && nullNodeProtocol.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Protocol = null;
+            if (parseNode.GetChildNode("server") is null) { _explicitNullValueServer = default!; _explicitNullProperties?.Remove("server"); }
+            else if (parseNode.GetChildNode("server") is { } nullNodeServer && nullNodeServer.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Server = null;
+            if (parseNode.GetChildNode("system_prompt") is null) { _explicitNullValueSystemPrompt = default!; _explicitNullProperties?.Remove("system_prompt"); }
+            else if (parseNode.GetChildNode("system_prompt") is { } nullNodeSystemPrompt && nullNodeSystemPrompt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SystemPrompt = null;
+            if (parseNode.GetChildNode("title") is null) { _explicitNullValueTitle = default!; _explicitNullProperties?.Remove("title"); }
+            else if (parseNode.GetChildNode("title") is { } nullNodeTitle && nullNodeTitle.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Title = null;
+            if (parseNode.GetChildNode("visibility") is null) { _explicitNullValueVisibility = default!; _explicitNullProperties?.Remove("visibility"); }
+            else if (parseNode.GetChildNode("visibility") is { } nullNodeVisibility && nullNodeVisibility.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Visibility = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Authentication methods supported by the connector.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Mistral.OpenApiClient.Models.CreateHttpConnectorRequestAuthMethodsItem>? AuthMethods { get; set; }
+        public List<global::Soenneker.Mistral.OpenApiClient.Models.CreateConnectorRequestAuthMethodsItem>? AuthMethods { get => _explicitNullValueAuthMethods; set { _explicitNullValueAuthMethods = value; AdditionalData?.Remove("auth_methods"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("auth_methods"); else _explicitNullProperties?.Remove("auth_methods"); } }
+        private List<global::Soenneker.Mistral.OpenApiClient.Models.CreateConnectorRequestAuthMethodsItem>? _explicitNullValueAuthMethods = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Mistral.OpenApiClient.Models.CreateHttpConnectorRequestAuthMethodsItem> AuthMethods { get; set; }
+        public List<global::Soenneker.Mistral.OpenApiClient.Models.CreateConnectorRequestAuthMethodsItem> AuthMethods { get => _explicitNullValueAuthMethods; set { _explicitNullValueAuthMethods = value; AdditionalData?.Remove("auth_methods"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("auth_methods"); else _explicitNullProperties?.Remove("auth_methods"); } }
+        private List<global::Soenneker.Mistral.OpenApiClient.Models.CreateConnectorRequestAuthMethodsItem> _explicitNullValueAuthMethods = default!;
 #endif
         /// <summary>The description of the connector.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Description { get; set; }
+        public string? Description { get => _explicitNullValueDescription; set { _explicitNullValueDescription = value; AdditionalData?.Remove("description"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("description"); else _explicitNullProperties?.Remove("description"); } }
+        private string? _explicitNullValueDescription = default!;
 #nullable restore
 #else
-        public string Description { get; set; }
+        public string Description { get => _explicitNullValueDescription; set { _explicitNullValueDescription = value; AdditionalData?.Remove("description"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("description"); else _explicitNullProperties?.Remove("description"); } }
+        private string _explicitNullValueDescription = default!;
 #endif
         /// <summary>Optional connector-wide headers, keyed by header name, set at creation and applied to every credential. Secret values are encrypted at rest and never returned in clear.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.CreateHttpConnectorRequestGlobalHeadersProperty? GlobalHeaders { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.CreateHttpConnectorRequestGlobalHeadersProperty? GlobalHeaders { get => _explicitNullValueGlobalHeaders; set { _explicitNullValueGlobalHeaders = value; AdditionalData?.Remove("global_headers"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("global_headers"); else _explicitNullProperties?.Remove("global_headers"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.CreateHttpConnectorRequestGlobalHeadersProperty? _explicitNullValueGlobalHeaders = default!;
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.CreateHttpConnectorRequestGlobalHeadersProperty GlobalHeaders { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.CreateHttpConnectorRequestGlobalHeadersProperty GlobalHeaders { get => _explicitNullValueGlobalHeaders; set { _explicitNullValueGlobalHeaders = value; AdditionalData?.Remove("global_headers"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("global_headers"); else _explicitNullProperties?.Remove("global_headers"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.CreateHttpConnectorRequestGlobalHeadersProperty _explicitNullValueGlobalHeaders = default!;
 #endif
         /// <summary>Optional scoped credentials to be sent with connector requests.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.CreateHttpConnectorRequestHeadersProperty? Headers { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.CreateHttpConnectorRequestHeadersProperty? Headers { get => _explicitNullValueHeaders; set { _explicitNullValueHeaders = value; AdditionalData?.Remove("headers"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("headers"); else _explicitNullProperties?.Remove("headers"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.CreateHttpConnectorRequestHeadersProperty? _explicitNullValueHeaders = default!;
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.CreateHttpConnectorRequestHeadersProperty Headers { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.CreateHttpConnectorRequestHeadersProperty Headers { get => _explicitNullValueHeaders; set { _explicitNullValueHeaders = value; AdditionalData?.Remove("headers"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("headers"); else _explicitNullProperties?.Remove("headers"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.CreateHttpConnectorRequestHeadersProperty _explicitNullValueHeaders = default!;
 #endif
         /// <summary>The optional url of the icon you want to associate to the connector.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? IconUrl { get; set; }
+        public string? IconUrl { get => _explicitNullValueIconUrl; set { _explicitNullValueIconUrl = value; AdditionalData?.Remove("icon_url"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("icon_url"); else _explicitNullProperties?.Remove("icon_url"); } }
+        private string? _explicitNullValueIconUrl = default!;
 #nullable restore
 #else
-        public string IconUrl { get; set; }
+        public string IconUrl { get => _explicitNullValueIconUrl; set { _explicitNullValueIconUrl = value; AdditionalData?.Remove("icon_url"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("icon_url"); else _explicitNullProperties?.Remove("icon_url"); } }
+        private string _explicitNullValueIconUrl = default!;
 #endif
         /// <summary>The name of the connector. Should be 64 char length maximum, alphanumeric, only underscores/dashes.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Name { get; set; }
+        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        private string? _explicitNullValueName = default!;
 #nullable restore
 #else
-        public string Name { get; set; }
+        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        private string _explicitNullValueName = default!;
 #endif
         /// <summary>Optional OAuth2 authorization server metadata (authorization_endpoint, token_endpoint, etc.). When provided, skips .well-known discovery and uses these endpoints directly.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.ExtendedOAuthServerMetadata? Oauth2ServerMetadata { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.ExtendedOAuthServerMetadata? Oauth2ServerMetadata { get => _explicitNullValueOauth2ServerMetadata; set { _explicitNullValueOauth2ServerMetadata = value; AdditionalData?.Remove("oauth2_server_metadata"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("oauth2_server_metadata"); else _explicitNullProperties?.Remove("oauth2_server_metadata"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.ExtendedOAuthServerMetadata? _explicitNullValueOauth2ServerMetadata = default!;
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.ExtendedOAuthServerMetadata Oauth2ServerMetadata { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.ExtendedOAuthServerMetadata Oauth2ServerMetadata { get => _explicitNullValueOauth2ServerMetadata; set { _explicitNullValueOauth2ServerMetadata = value; AdditionalData?.Remove("oauth2_server_metadata"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("oauth2_server_metadata"); else _explicitNullProperties?.Remove("oauth2_server_metadata"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.ExtendedOAuthServerMetadata _explicitNullValueOauth2ServerMetadata = default!;
 #endif
         /// <summary>Optional URL to fetch OAuth2 authorization server metadata from (RFC 8414). When provided, the metadata is fetched from this URL and used instead of .well-known discovery. Mutually exclusive with oauth2_server_metadata.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Oauth2ServerMetadataUrl { get; set; }
+        public string? Oauth2ServerMetadataUrl { get => _explicitNullValueOauth2ServerMetadataUrl; set { _explicitNullValueOauth2ServerMetadataUrl = value; AdditionalData?.Remove("oauth2_server_metadata_url"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("oauth2_server_metadata_url"); else _explicitNullProperties?.Remove("oauth2_server_metadata_url"); } }
+        private string? _explicitNullValueOauth2ServerMetadataUrl = default!;
 #nullable restore
 #else
-        public string Oauth2ServerMetadataUrl { get; set; }
+        public string Oauth2ServerMetadataUrl { get => _explicitNullValueOauth2ServerMetadataUrl; set { _explicitNullValueOauth2ServerMetadataUrl = value; AdditionalData?.Remove("oauth2_server_metadata_url"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("oauth2_server_metadata_url"); else _explicitNullProperties?.Remove("oauth2_server_metadata_url"); } }
+        private string _explicitNullValueOauth2ServerMetadataUrl = default!;
 #endif
         /// <summary>The protocol property</summary>
-        public global::Soenneker.Mistral.OpenApiClient.Models.CreateHttpConnectorRequestProtocol? Protocol { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.CreateHttpConnectorRequestProtocol? Protocol { get => _explicitNullValueProtocol; set { _explicitNullValueProtocol = value; AdditionalData?.Remove("protocol"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("protocol"); else _explicitNullProperties?.Remove("protocol"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.CreateHttpConnectorRequestProtocol? _explicitNullValueProtocol = default!;
         /// <summary>The URL of the connector server.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Server { get; set; }
+        public string? Server { get => _explicitNullValueServer; set { _explicitNullValueServer = value; AdditionalData?.Remove("server"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("server"); else _explicitNullProperties?.Remove("server"); } }
+        private string? _explicitNullValueServer = default!;
 #nullable restore
 #else
-        public string Server { get; set; }
+        public string Server { get => _explicitNullValueServer; set { _explicitNullValueServer = value; AdditionalData?.Remove("server"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("server"); else _explicitNullProperties?.Remove("server"); } }
+        private string _explicitNullValueServer = default!;
 #endif
         /// <summary>Optional system prompt for the connector.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SystemPrompt { get; set; }
+        public string? SystemPrompt { get => _explicitNullValueSystemPrompt; set { _explicitNullValueSystemPrompt = value; AdditionalData?.Remove("system_prompt"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("system_prompt"); else _explicitNullProperties?.Remove("system_prompt"); } }
+        private string? _explicitNullValueSystemPrompt = default!;
 #nullable restore
 #else
-        public string SystemPrompt { get; set; }
+        public string SystemPrompt { get => _explicitNullValueSystemPrompt; set { _explicitNullValueSystemPrompt = value; AdditionalData?.Remove("system_prompt"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("system_prompt"); else _explicitNullProperties?.Remove("system_prompt"); } }
+        private string _explicitNullValueSystemPrompt = default!;
 #endif
         /// <summary>Optional human-readable title for the connector.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Title { get; set; }
+        public string? Title { get => _explicitNullValueTitle; set { _explicitNullValueTitle = value; AdditionalData?.Remove("title"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("title"); else _explicitNullProperties?.Remove("title"); } }
+        private string? _explicitNullValueTitle = default!;
 #nullable restore
 #else
-        public string Title { get; set; }
+        public string Title { get => _explicitNullValueTitle; set { _explicitNullValueTitle = value; AdditionalData?.Remove("title"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("title"); else _explicitNullProperties?.Remove("title"); } }
+        private string _explicitNullValueTitle = default!;
 #endif
         /// <summary>Visibility of the connector. Use &apos;shared_workspace&apos; for workspace scoped connectors, or &apos;private&apos; for private connectors.</summary>
-        public global::Soenneker.Mistral.OpenApiClient.Models.PublicResourceVisibility? Visibility { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.PublicResourceVisibility? Visibility { get => _explicitNullValueVisibility; set { _explicitNullValueVisibility = value; AdditionalData?.Remove("visibility"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("visibility"); else _explicitNullProperties?.Remove("visibility"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.PublicResourceVisibility? _explicitNullValueVisibility = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Mistral.OpenApiClient.Models.CreateHttpConnectorRequest"/> and sets the default values.
         /// </summary>
@@ -122,7 +179,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         public static global::Soenneker.Mistral.OpenApiClient.Models.CreateHttpConnectorRequest CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Mistral.OpenApiClient.Models.CreateHttpConnectorRequest();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Mistral.OpenApiClient.Models.CreateHttpConnectorRequest(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -132,7 +189,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "auth_methods", n => { AuthMethods = n.GetCollectionOfObjectValues<global::Soenneker.Mistral.OpenApiClient.Models.CreateHttpConnectorRequestAuthMethodsItem>(global::Soenneker.Mistral.OpenApiClient.Models.CreateHttpConnectorRequestAuthMethodsItem.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "auth_methods", n => { AuthMethods = n.GetCollectionOfObjectValues<global::Soenneker.Mistral.OpenApiClient.Models.CreateConnectorRequestAuthMethodsItem>(global::Soenneker.Mistral.OpenApiClient.Models.CreateConnectorRequestAuthMethodsItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "global_headers", n => { GlobalHeaders = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.CreateHttpConnectorRequestGlobalHeadersProperty>(global::Soenneker.Mistral.OpenApiClient.Models.CreateHttpConnectorRequestGlobalHeadersProperty.CreateFromDiscriminatorValue); } },
                 { "headers", n => { Headers = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.CreateHttpConnectorRequestHeadersProperty>(global::Soenneker.Mistral.OpenApiClient.Models.CreateHttpConnectorRequestHeadersProperty.CreateFromDiscriminatorValue); } },
@@ -140,11 +197,11 @@ namespace Soenneker.Mistral.OpenApiClient.Models
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "oauth2_server_metadata", n => { Oauth2ServerMetadata = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ExtendedOAuthServerMetadata>(global::Soenneker.Mistral.OpenApiClient.Models.ExtendedOAuthServerMetadata.CreateFromDiscriminatorValue); } },
                 { "oauth2_server_metadata_url", n => { Oauth2ServerMetadataUrl = n.GetStringValue(); } },
-                { "protocol", n => { Protocol = n.GetEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.CreateHttpConnectorRequestProtocol>(); } },
+                { "protocol", n => { var parsed = n.GetEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.CreateHttpConnectorRequestProtocol>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueProtocol = default; _explicitNullProperties?.Remove("protocol"); AdditionalData["protocol"] = unknown; } else { Protocol = parsed; AdditionalData.Remove("protocol"); } } },
                 { "server", n => { Server = n.GetStringValue(); } },
                 { "system_prompt", n => { SystemPrompt = n.GetStringValue(); } },
                 { "title", n => { Title = n.GetStringValue(); } },
-                { "visibility", n => { Visibility = n.GetEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.PublicResourceVisibility>(); } },
+                { "visibility", n => { var parsed = n.GetEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.PublicResourceVisibility>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueVisibility = default; _explicitNullProperties?.Remove("visibility"); AdditionalData["visibility"] = unknown; } else { Visibility = parsed; AdditionalData.Remove("visibility"); } } },
             };
         }
         /// <summary>
@@ -154,7 +211,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Mistral.OpenApiClient.Models.CreateHttpConnectorRequestAuthMethodsItem>("auth_methods", AuthMethods);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Mistral.OpenApiClient.Models.CreateConnectorRequestAuthMethodsItem>("auth_methods", AuthMethods);
             writer.WriteStringValue("description", Description);
             writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.CreateHttpConnectorRequestGlobalHeadersProperty>("global_headers", GlobalHeaders);
             writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.CreateHttpConnectorRequestHeadersProperty>("headers", Headers);
@@ -167,6 +224,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             writer.WriteStringValue("system_prompt", SystemPrompt);
             writer.WriteStringValue("title", Title);
             writer.WriteEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.PublicResourceVisibility>("visibility", Visibility);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

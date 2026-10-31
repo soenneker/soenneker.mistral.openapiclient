@@ -12,24 +12,39 @@ namespace Soenneker.Mistral.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ApiKeyActions : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("delete") is null) { _explicitNullValueDelete = default!; _explicitNullProperties?.Remove("delete"); }
+            else if (parseNode.GetChildNode("delete") is { } nullNodeDelete && nullNodeDelete.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Delete = null;
+            if (parseNode.GetChildNode("rotate") is null) { _explicitNullValueRotate = default!; _explicitNullProperties?.Remove("rotate"); }
+            else if (parseNode.GetChildNode("rotate") is { } nullNodeRotate && nullNodeRotate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Rotate = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The delete property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.ActionUnavailableDeleteUnavailableReason? Delete { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.ActionUnavailableDeleteUnavailableReason? Delete { get => _explicitNullValueDelete; set { _explicitNullValueDelete = value; AdditionalData?.Remove("delete"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("delete"); else _explicitNullProperties?.Remove("delete"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.ActionUnavailableDeleteUnavailableReason? _explicitNullValueDelete = default!;
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.ActionUnavailableDeleteUnavailableReason Delete { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.ActionUnavailableDeleteUnavailableReason Delete { get => _explicitNullValueDelete; set { _explicitNullValueDelete = value; AdditionalData?.Remove("delete"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("delete"); else _explicitNullProperties?.Remove("delete"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.ActionUnavailableDeleteUnavailableReason _explicitNullValueDelete = default!;
 #endif
         /// <summary>The rotate property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.ActionUnavailableRotateUnavailableReason? Rotate { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.ActionUnavailableRotateUnavailableReason? Rotate { get => _explicitNullValueRotate; set { _explicitNullValueRotate = value; AdditionalData?.Remove("rotate"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rotate"); else _explicitNullProperties?.Remove("rotate"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.ActionUnavailableRotateUnavailableReason? _explicitNullValueRotate = default!;
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.ActionUnavailableRotateUnavailableReason Rotate { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.ActionUnavailableRotateUnavailableReason Rotate { get => _explicitNullValueRotate; set { _explicitNullValueRotate = value; AdditionalData?.Remove("rotate"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rotate"); else _explicitNullProperties?.Remove("rotate"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.ActionUnavailableRotateUnavailableReason _explicitNullValueRotate = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Mistral.OpenApiClient.Models.ApiKeyActions"/> and sets the default values.
@@ -46,7 +61,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         public static global::Soenneker.Mistral.OpenApiClient.Models.ApiKeyActions CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Mistral.OpenApiClient.Models.ApiKeyActions();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Mistral.OpenApiClient.Models.ApiKeyActions(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -69,6 +84,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ActionUnavailableDeleteUnavailableReason>("delete", Delete);
             writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ActionUnavailableRotateUnavailableReason>("rotate", Rotate);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

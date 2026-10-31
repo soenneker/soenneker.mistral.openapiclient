@@ -12,19 +12,41 @@ namespace Soenneker.Mistral.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class VibeActiveUsersStat : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("day") is null) { _explicitNullValueDay = default!; _explicitNullProperties?.Remove("day"); }
+            else if (parseNode.GetChildNode("day") is { } nullNodeDay && nullNodeDay.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Day = null;
+            if (parseNode.GetChildNode("nb_active_users_acp") is null) { _explicitNullValueNbActiveUsersAcp = default!; _explicitNullProperties?.Remove("nb_active_users_acp"); }
+            else if (parseNode.GetChildNode("nb_active_users_acp") is { } nullNodeNbActiveUsersAcp && nullNodeNbActiveUsersAcp.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NbActiveUsersAcp = null;
+            if (parseNode.GetChildNode("nb_active_users_cli") is null) { _explicitNullValueNbActiveUsersCli = default!; _explicitNullProperties?.Remove("nb_active_users_cli"); }
+            else if (parseNode.GetChildNode("nb_active_users_cli") is { } nullNodeNbActiveUsersCli && nullNodeNbActiveUsersCli.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NbActiveUsersCli = null;
+            if (parseNode.GetChildNode("nb_active_users_programmatic") is null) { _explicitNullValueNbActiveUsersProgrammatic = default!; _explicitNullProperties?.Remove("nb_active_users_programmatic"); }
+            else if (parseNode.GetChildNode("nb_active_users_programmatic") is { } nullNodeNbActiveUsersProgrammatic && nullNodeNbActiveUsersProgrammatic.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NbActiveUsersProgrammatic = null;
+            if (parseNode.GetChildNode("nb_active_users_total") is null) { _explicitNullValueNbActiveUsersTotal = default!; _explicitNullProperties?.Remove("nb_active_users_total"); }
+            else if (parseNode.GetChildNode("nb_active_users_total") is { } nullNodeNbActiveUsersTotal && nullNodeNbActiveUsersTotal.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NbActiveUsersTotal = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The day property</summary>
-        public Date? Day { get; set; }
+        public Date? Day { get => _explicitNullValueDay; set { _explicitNullValueDay = value; AdditionalData?.Remove("day"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("day"); else _explicitNullProperties?.Remove("day"); } }
+        private Date? _explicitNullValueDay = default!;
         /// <summary>The nb_active_users_acp property</summary>
-        public int? NbActiveUsersAcp { get; set; }
+        public int? NbActiveUsersAcp { get => _explicitNullValueNbActiveUsersAcp; set { _explicitNullValueNbActiveUsersAcp = value; AdditionalData?.Remove("nb_active_users_acp"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("nb_active_users_acp"); else _explicitNullProperties?.Remove("nb_active_users_acp"); } }
+        private int? _explicitNullValueNbActiveUsersAcp = default!;
         /// <summary>The nb_active_users_cli property</summary>
-        public int? NbActiveUsersCli { get; set; }
+        public int? NbActiveUsersCli { get => _explicitNullValueNbActiveUsersCli; set { _explicitNullValueNbActiveUsersCli = value; AdditionalData?.Remove("nb_active_users_cli"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("nb_active_users_cli"); else _explicitNullProperties?.Remove("nb_active_users_cli"); } }
+        private int? _explicitNullValueNbActiveUsersCli = default!;
         /// <summary>The nb_active_users_programmatic property</summary>
-        public int? NbActiveUsersProgrammatic { get; set; }
+        public int? NbActiveUsersProgrammatic { get => _explicitNullValueNbActiveUsersProgrammatic; set { _explicitNullValueNbActiveUsersProgrammatic = value; AdditionalData?.Remove("nb_active_users_programmatic"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("nb_active_users_programmatic"); else _explicitNullProperties?.Remove("nb_active_users_programmatic"); } }
+        private int? _explicitNullValueNbActiveUsersProgrammatic = default!;
         /// <summary>The nb_active_users_total property</summary>
-        public int? NbActiveUsersTotal { get; set; }
+        public int? NbActiveUsersTotal { get => _explicitNullValueNbActiveUsersTotal; set { _explicitNullValueNbActiveUsersTotal = value; AdditionalData?.Remove("nb_active_users_total"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("nb_active_users_total"); else _explicitNullProperties?.Remove("nb_active_users_total"); } }
+        private int? _explicitNullValueNbActiveUsersTotal = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Mistral.OpenApiClient.Models.VibeActiveUsersStat"/> and sets the default values.
         /// </summary>
@@ -40,7 +62,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         public static global::Soenneker.Mistral.OpenApiClient.Models.VibeActiveUsersStat CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Mistral.OpenApiClient.Models.VibeActiveUsersStat();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Mistral.OpenApiClient.Models.VibeActiveUsersStat(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -69,6 +91,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             writer.WriteIntValue("nb_active_users_cli", NbActiveUsersCli);
             writer.WriteIntValue("nb_active_users_programmatic", NbActiveUsersProgrammatic);
             writer.WriteIntValue("nb_active_users_total", NbActiveUsersTotal);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

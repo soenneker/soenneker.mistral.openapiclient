@@ -12,61 +12,101 @@ namespace Soenneker.Mistral.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class RestartConversationRequest : IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("agent_version") is null) { _explicitNullValueAgentVersion = default!; _explicitNullProperties?.Remove("agent_version"); }
+            else if (parseNode.GetChildNode("agent_version") is { } nullNodeAgentVersion && nullNodeAgentVersion.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AgentVersion = null;
+            if (parseNode.GetChildNode("completion_args") is null) { _explicitNullValueCompletionArgs = default!; _explicitNullProperties?.Remove("completion_args"); }
+            else if (parseNode.GetChildNode("completion_args") is { } nullNodeCompletionArgs && nullNodeCompletionArgs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CompletionArgs = null;
+            if (parseNode.GetChildNode("from_entry_id") is null) { _explicitNullValueFromEntryId = default!; _explicitNullProperties?.Remove("from_entry_id"); }
+            else if (parseNode.GetChildNode("from_entry_id") is { } nullNodeFromEntryId && nullNodeFromEntryId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FromEntryId = null;
+            if (parseNode.GetChildNode("guardrails") is null) { _explicitNullValueGuardrails = default!; _explicitNullProperties?.Remove("guardrails"); }
+            else if (parseNode.GetChildNode("guardrails") is { } nullNodeGuardrails && nullNodeGuardrails.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Guardrails = null;
+            if (parseNode.GetChildNode("handoff_execution") is null) { _explicitNullValueHandoffExecution = default!; _explicitNullProperties?.Remove("handoff_execution"); }
+            else if (parseNode.GetChildNode("handoff_execution") is { } nullNodeHandoffExecution && nullNodeHandoffExecution.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HandoffExecution = null;
+            if (parseNode.GetChildNode("inputs") is null) { _explicitNullValueInputs = default!; _explicitNullProperties?.Remove("inputs"); }
+            else if (parseNode.GetChildNode("inputs") is { } nullNodeInputs && nullNodeInputs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Inputs = null;
+            if (parseNode.GetChildNode("metadata") is null) { _explicitNullValueMetadata = default!; _explicitNullProperties?.Remove("metadata"); }
+            else if (parseNode.GetChildNode("metadata") is { } nullNodeMetadata && nullNodeMetadata.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Metadata = null;
+            if (parseNode.GetChildNode("store") is null) { _explicitNullValueStore = default!; _explicitNullProperties?.Remove("store"); }
+            else if (parseNode.GetChildNode("store") is { } nullNodeStore && nullNodeStore.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Store = null;
+            if (parseNode.GetChildNode("stream") is null) { _explicitNullValueStream = default!; _explicitNullProperties?.Remove("stream"); }
+            else if (parseNode.GetChildNode("stream") is { } nullNodeStream && nullNodeStream.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Stream = null;
+        }
+
         /// <summary>Specific version of the agent to use when restarting. If not provided, uses the current version.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.RestartConversationRequestAgentVersion? AgentVersion { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.RestartConversationRequestAgentVersion? AgentVersion { get => _explicitNullValueAgentVersion; set { _explicitNullValueAgentVersion = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("agent_version"); else _explicitNullProperties?.Remove("agent_version"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.RestartConversationRequestAgentVersion? _explicitNullValueAgentVersion = default!;
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.RestartConversationRequestAgentVersion AgentVersion { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.RestartConversationRequestAgentVersion AgentVersion { get => _explicitNullValueAgentVersion; set { _explicitNullValueAgentVersion = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("agent_version"); else _explicitNullProperties?.Remove("agent_version"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.RestartConversationRequestAgentVersion _explicitNullValueAgentVersion = default!;
 #endif
         /// <summary>Completion arguments that will be used to generate assistant responses. Can be overridden at each message request.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.CompletionArgs? CompletionArgs { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.CompletionArgs? CompletionArgs { get => _explicitNullValueCompletionArgs; set { _explicitNullValueCompletionArgs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("completion_args"); else _explicitNullProperties?.Remove("completion_args"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.CompletionArgs? _explicitNullValueCompletionArgs = default!;
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.CompletionArgs CompletionArgs { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.CompletionArgs CompletionArgs { get => _explicitNullValueCompletionArgs; set { _explicitNullValueCompletionArgs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("completion_args"); else _explicitNullProperties?.Remove("completion_args"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.CompletionArgs _explicitNullValueCompletionArgs = default!;
 #endif
         /// <summary>The from_entry_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? FromEntryId { get; set; }
+        public string? FromEntryId { get => _explicitNullValueFromEntryId; set { _explicitNullValueFromEntryId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("from_entry_id"); else _explicitNullProperties?.Remove("from_entry_id"); } }
+        private string? _explicitNullValueFromEntryId = default!;
 #nullable restore
 #else
-        public string FromEntryId { get; set; }
+        public string FromEntryId { get => _explicitNullValueFromEntryId; set { _explicitNullValueFromEntryId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("from_entry_id"); else _explicitNullProperties?.Remove("from_entry_id"); } }
+        private string _explicitNullValueFromEntryId = default!;
 #endif
         /// <summary>The guardrails property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Mistral.OpenApiClient.Models.GuardrailConfig>? Guardrails { get; set; }
+        public List<global::Soenneker.Mistral.OpenApiClient.Models.GuardrailConfig>? Guardrails { get => _explicitNullValueGuardrails; set { _explicitNullValueGuardrails = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("guardrails"); else _explicitNullProperties?.Remove("guardrails"); } }
+        private List<global::Soenneker.Mistral.OpenApiClient.Models.GuardrailConfig>? _explicitNullValueGuardrails = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Mistral.OpenApiClient.Models.GuardrailConfig> Guardrails { get; set; }
+        public List<global::Soenneker.Mistral.OpenApiClient.Models.GuardrailConfig> Guardrails { get => _explicitNullValueGuardrails; set { _explicitNullValueGuardrails = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("guardrails"); else _explicitNullProperties?.Remove("guardrails"); } }
+        private List<global::Soenneker.Mistral.OpenApiClient.Models.GuardrailConfig> _explicitNullValueGuardrails = default!;
 #endif
         /// <summary>The handoff_execution property</summary>
-        public global::Soenneker.Mistral.OpenApiClient.Models.RestartConversationRequestHandoffExecution? HandoffExecution { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.RestartConversationRequestHandoffExecution? HandoffExecution { get => _explicitNullValueHandoffExecution; set { _explicitNullValueHandoffExecution = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("handoff_execution"); else _explicitNullProperties?.Remove("handoff_execution"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.RestartConversationRequestHandoffExecution? _explicitNullValueHandoffExecution = default!;
         /// <summary>The inputs property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.ConversationInputs? Inputs { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.ConversationInputs? Inputs { get => _explicitNullValueInputs; set { _explicitNullValueInputs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("inputs"); else _explicitNullProperties?.Remove("inputs"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.ConversationInputs? _explicitNullValueInputs = default!;
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.ConversationInputs Inputs { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.ConversationInputs Inputs { get => _explicitNullValueInputs; set { _explicitNullValueInputs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("inputs"); else _explicitNullProperties?.Remove("inputs"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.ConversationInputs _explicitNullValueInputs = default!;
 #endif
         /// <summary>Custom metadata for the conversation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.RestartConversationRequestMetadata? Metadata { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.RestartConversationRequestMetadata? Metadata { get => _explicitNullValueMetadata; set { _explicitNullValueMetadata = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("metadata"); else _explicitNullProperties?.Remove("metadata"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.RestartConversationRequestMetadata? _explicitNullValueMetadata = default!;
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.RestartConversationRequestMetadata Metadata { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.RestartConversationRequestMetadata Metadata { get => _explicitNullValueMetadata; set { _explicitNullValueMetadata = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("metadata"); else _explicitNullProperties?.Remove("metadata"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.RestartConversationRequestMetadata _explicitNullValueMetadata = default!;
 #endif
         /// <summary>Whether to store the results into our servers or not.</summary>
-        public bool? Store { get; set; }
+        public bool? Store { get => _explicitNullValueStore; set { _explicitNullValueStore = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("store"); else _explicitNullProperties?.Remove("store"); } }
+        private bool? _explicitNullValueStore = default!;
         /// <summary>Whether to stream back partial progress. Otherwise, the server will hold the request open until the timeout or until completion, with the response containing the full result as JSON.</summary>
-        public bool? Stream { get; set; }
+        public bool? Stream { get => _explicitNullValueStream; set { _explicitNullValueStream = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("stream"); else _explicitNullProperties?.Remove("stream"); } }
+        private bool? _explicitNullValueStream = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Mistral.OpenApiClient.Models.RestartConversationRequest"/> and sets the default values.
         /// </summary>
@@ -83,7 +123,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         public static global::Soenneker.Mistral.OpenApiClient.Models.RestartConversationRequest CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Mistral.OpenApiClient.Models.RestartConversationRequest();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Mistral.OpenApiClient.Models.RestartConversationRequest(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -119,7 +159,8 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ConversationInputs>("inputs", Inputs);
             writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.RestartConversationRequestMetadata>("metadata", Metadata);
             writer.WriteBoolValue("store", Store);
-            writer.WriteBoolValue("stream", Stream);
+            writer.WriteBoolValue("stream", Stream);if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
+            
         }
     }
 }

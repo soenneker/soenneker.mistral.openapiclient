@@ -12,44 +12,73 @@ namespace Soenneker.Mistral.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ClassificationStatisticSpec : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("average") is null) { _explicitNullValueAverage = default!; _explicitNullProperties?.Remove("average"); }
+            else if (parseNode.GetChildNode("average") is { } nullNodeAverage && nullNodeAverage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Average = null;
+            if (parseNode.GetChildNode("expected_key") is null) { _explicitNullValueExpectedKey = default!; _explicitNullProperties?.Remove("expected_key"); }
+            else if (parseNode.GetChildNode("expected_key") is { } nullNodeExpectedKey && nullNodeExpectedKey.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExpectedKey = null;
+            if (parseNode.GetChildNode("goal") is null) { _explicitNullValueGoal = default!; _explicitNullProperties?.Remove("goal"); }
+            else if (parseNode.GetChildNode("goal") is { } nullNodeGoal && nullNodeGoal.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Goal = null;
+            if (parseNode.GetChildNode("kind") is null) { _explicitNullValueKind = default!; _explicitNullProperties?.Remove("kind"); }
+            else if (parseNode.GetChildNode("kind") is { } nullNodeKind && nullNodeKind.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Kind = null;
+            if (parseNode.GetChildNode("labels") is null) { _explicitNullValueLabels = default!; _explicitNullProperties?.Remove("labels"); }
+            else if (parseNode.GetChildNode("labels") is { } nullNodeLabels && nullNodeLabels.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Labels = null;
+            if (parseNode.GetChildNode("positive_label") is null) { _explicitNullValuePositiveLabel = default!; _explicitNullProperties?.Remove("positive_label"); }
+            else if (parseNode.GetChildNode("positive_label") is { } nullNodePositiveLabel && nullNodePositiveLabel.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PositiveLabel = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The average property</summary>
-        public global::Soenneker.Mistral.OpenApiClient.Models.ClassificationStatisticSpecAverage? Average { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.ClassificationStatisticSpecAverage? Average { get => _explicitNullValueAverage; set { _explicitNullValueAverage = value; AdditionalData?.Remove("average"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("average"); else _explicitNullProperties?.Remove("average"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.ClassificationStatisticSpecAverage? _explicitNullValueAverage = default!;
         /// <summary>The expected_key property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ExpectedKey { get; set; }
+        public string? ExpectedKey { get => _explicitNullValueExpectedKey; set { _explicitNullValueExpectedKey = value; AdditionalData?.Remove("expected_key"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("expected_key"); else _explicitNullProperties?.Remove("expected_key"); } }
+        private string? _explicitNullValueExpectedKey = default!;
 #nullable restore
 #else
-        public string ExpectedKey { get; set; }
+        public string ExpectedKey { get => _explicitNullValueExpectedKey; set { _explicitNullValueExpectedKey = value; AdditionalData?.Remove("expected_key"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("expected_key"); else _explicitNullProperties?.Remove("expected_key"); } }
+        private string _explicitNullValueExpectedKey = default!;
 #endif
         /// <summary>The goal property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.GoalSpec? Goal { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.GoalSpec? Goal { get => _explicitNullValueGoal; set { _explicitNullValueGoal = value; AdditionalData?.Remove("goal"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("goal"); else _explicitNullProperties?.Remove("goal"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.GoalSpec? _explicitNullValueGoal = default!;
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.GoalSpec Goal { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.GoalSpec Goal { get => _explicitNullValueGoal; set { _explicitNullValueGoal = value; AdditionalData?.Remove("goal"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("goal"); else _explicitNullProperties?.Remove("goal"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.GoalSpec _explicitNullValueGoal = default!;
 #endif
         /// <summary>The kind property</summary>
-        public global::Soenneker.Mistral.OpenApiClient.Models.ClassificationStatisticSpecKind? Kind { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.ClassificationStatisticSpecKind? Kind { get => _explicitNullValueKind; set { _explicitNullValueKind = value; AdditionalData?.Remove("kind"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("kind"); else _explicitNullProperties?.Remove("kind"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.ClassificationStatisticSpecKind? _explicitNullValueKind = default!;
         /// <summary>The labels property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Labels { get; set; }
+        public List<string>? Labels { get => _explicitNullValueLabels; set { _explicitNullValueLabels = value; AdditionalData?.Remove("labels"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("labels"); else _explicitNullProperties?.Remove("labels"); } }
+        private List<string>? _explicitNullValueLabels = default!;
 #nullable restore
 #else
-        public List<string> Labels { get; set; }
+        public List<string> Labels { get => _explicitNullValueLabels; set { _explicitNullValueLabels = value; AdditionalData?.Remove("labels"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("labels"); else _explicitNullProperties?.Remove("labels"); } }
+        private List<string> _explicitNullValueLabels = default!;
 #endif
         /// <summary>The positive_label property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PositiveLabel { get; set; }
+        public string? PositiveLabel { get => _explicitNullValuePositiveLabel; set { _explicitNullValuePositiveLabel = value; AdditionalData?.Remove("positive_label"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("positive_label"); else _explicitNullProperties?.Remove("positive_label"); } }
+        private string? _explicitNullValuePositiveLabel = default!;
 #nullable restore
 #else
-        public string PositiveLabel { get; set; }
+        public string PositiveLabel { get => _explicitNullValuePositiveLabel; set { _explicitNullValuePositiveLabel = value; AdditionalData?.Remove("positive_label"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("positive_label"); else _explicitNullProperties?.Remove("positive_label"); } }
+        private string _explicitNullValuePositiveLabel = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Mistral.OpenApiClient.Models.ClassificationStatisticSpec"/> and sets the default values.
@@ -67,7 +96,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         public static global::Soenneker.Mistral.OpenApiClient.Models.ClassificationStatisticSpec CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Mistral.OpenApiClient.Models.ClassificationStatisticSpec();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Mistral.OpenApiClient.Models.ClassificationStatisticSpec(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -77,10 +106,10 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "average", n => { Average = n.GetEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.ClassificationStatisticSpecAverage>(); } },
+                { "average", n => { var parsed = n.GetEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.ClassificationStatisticSpecAverage>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueAverage = default; _explicitNullProperties?.Remove("average"); AdditionalData["average"] = unknown; } else { Average = parsed; AdditionalData.Remove("average"); } } },
                 { "expected_key", n => { ExpectedKey = n.GetStringValue(); } },
                 { "goal", n => { Goal = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.GoalSpec>(global::Soenneker.Mistral.OpenApiClient.Models.GoalSpec.CreateFromDiscriminatorValue); } },
-                { "kind", n => { Kind = n.GetEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.ClassificationStatisticSpecKind>(); } },
+                { "kind", n => { var parsed = n.GetEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.ClassificationStatisticSpecKind>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueKind = default; _explicitNullProperties?.Remove("kind"); AdditionalData["kind"] = unknown; } else { Kind = parsed; AdditionalData.Remove("kind"); } } },
                 { "labels", n => { Labels = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "positive_label", n => { PositiveLabel = n.GetStringValue(); } },
             };
@@ -98,6 +127,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             writer.WriteEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.ClassificationStatisticSpecKind>("kind", Kind);
             writer.WriteCollectionOfPrimitiveValues<string>("labels", Labels);
             writer.WriteStringValue("positive_label", PositiveLabel);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

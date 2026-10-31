@@ -11,36 +11,58 @@ namespace Soenneker.Mistral.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class AdminAssignGroupToWorkspaceIn : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("role") is null) { _explicitNullValueRole = default!; _explicitNullProperties?.Remove("role"); }
+            else if (parseNode.GetChildNode("role") is { } nullNodeRole && nullNodeRole.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Role = null;
+            if (parseNode.GetChildNode("role_names") is null) { _explicitNullValueRoleNames = default!; _explicitNullProperties?.Remove("role_names"); }
+            else if (parseNode.GetChildNode("role_names") is { } nullNodeRoleNames && nullNodeRoleNames.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RoleNames = null;
+            if (parseNode.GetChildNode("roles") is null) { _explicitNullValueRoles = default!; _explicitNullProperties?.Remove("roles"); }
+            else if (parseNode.GetChildNode("roles") is { } nullNodeRoles && nullNodeRoles.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Roles = null;
+            if (parseNode.GetChildNode("workspace_uuid") is null) { _explicitNullValueWorkspaceUuid = default!; _explicitNullProperties?.Remove("workspace_uuid"); }
+            else if (parseNode.GetChildNode("workspace_uuid") is { } nullNodeWorkspaceUuid && nullNodeWorkspaceUuid.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WorkspaceUuid = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Deprecated single role value. Use &apos;role_names&apos; instead.</summary>
         [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.AdminAssignGroupToWorkspaceInRole? Role { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.AdminAssignGroupToWorkspaceInRole? Role { get => _explicitNullValueRole; set { _explicitNullValueRole = value; AdditionalData?.Remove("role"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("role"); else _explicitNullProperties?.Remove("role"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.AdminAssignGroupToWorkspaceInRole? _explicitNullValueRole = default!;
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.AdminAssignGroupToWorkspaceInRole Role { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.AdminAssignGroupToWorkspaceInRole Role { get => _explicitNullValueRole; set { _explicitNullValueRole = value; AdditionalData?.Remove("role"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("role"); else _explicitNullProperties?.Remove("role"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.AdminAssignGroupToWorkspaceInRole _explicitNullValueRole = default!;
 #endif
         /// <summary>Simplified role names to assign. Mutually exclusive with &apos;roles&apos;.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Mistral.OpenApiClient.Models.AdminAssignGroupToWorkspaceInRoleNamesItem?>? RoleNames { get; set; }
+        public List<global::Soenneker.Mistral.OpenApiClient.Models.AdminAssignGroupToWorkspaceInRoleNamesItem?>? RoleNames { get => _explicitNullValueRoleNames; set { _explicitNullValueRoleNames = value; AdditionalData?.Remove("role_names"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("role_names"); else _explicitNullProperties?.Remove("role_names"); } }
+        private List<global::Soenneker.Mistral.OpenApiClient.Models.AdminAssignGroupToWorkspaceInRoleNamesItem?>? _explicitNullValueRoleNames = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Mistral.OpenApiClient.Models.AdminAssignGroupToWorkspaceInRoleNamesItem?> RoleNames { get; set; }
+        public List<global::Soenneker.Mistral.OpenApiClient.Models.AdminAssignGroupToWorkspaceInRoleNamesItem?> RoleNames { get => _explicitNullValueRoleNames; set { _explicitNullValueRoleNames = value; AdditionalData?.Remove("role_names"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("role_names"); else _explicitNullProperties?.Remove("role_names"); } }
+        private List<global::Soenneker.Mistral.OpenApiClient.Models.AdminAssignGroupToWorkspaceInRoleNamesItem?> _explicitNullValueRoleNames = default!;
 #endif
         /// <summary>Role values to assign. Mutually exclusive with &apos;role_names&apos;.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Mistral.OpenApiClient.Models.AdminAssignGroupToWorkspaceInRolesItem?>? Roles { get; set; }
+        public List<global::Soenneker.Mistral.OpenApiClient.Models.AdminAssignGroupToWorkspaceInRolesItem?>? Roles { get => _explicitNullValueRoles; set { _explicitNullValueRoles = value; AdditionalData?.Remove("roles"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("roles"); else _explicitNullProperties?.Remove("roles"); } }
+        private List<global::Soenneker.Mistral.OpenApiClient.Models.AdminAssignGroupToWorkspaceInRolesItem?>? _explicitNullValueRoles = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Mistral.OpenApiClient.Models.AdminAssignGroupToWorkspaceInRolesItem?> Roles { get; set; }
+        public List<global::Soenneker.Mistral.OpenApiClient.Models.AdminAssignGroupToWorkspaceInRolesItem?> Roles { get => _explicitNullValueRoles; set { _explicitNullValueRoles = value; AdditionalData?.Remove("roles"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("roles"); else _explicitNullProperties?.Remove("roles"); } }
+        private List<global::Soenneker.Mistral.OpenApiClient.Models.AdminAssignGroupToWorkspaceInRolesItem?> _explicitNullValueRoles = default!;
 #endif
         /// <summary>The workspace_uuid property</summary>
-        public Guid? WorkspaceUuid { get; set; }
+        public Guid? WorkspaceUuid { get => _explicitNullValueWorkspaceUuid; set { _explicitNullValueWorkspaceUuid = value; AdditionalData?.Remove("workspace_uuid"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("workspace_uuid"); else _explicitNullProperties?.Remove("workspace_uuid"); } }
+        private Guid? _explicitNullValueWorkspaceUuid = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Mistral.OpenApiClient.Models.AdminAssignGroupToWorkspaceIn"/> and sets the default values.
         /// </summary>
@@ -56,7 +78,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         public static global::Soenneker.Mistral.OpenApiClient.Models.AdminAssignGroupToWorkspaceIn CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Mistral.OpenApiClient.Models.AdminAssignGroupToWorkspaceIn();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Mistral.OpenApiClient.Models.AdminAssignGroupToWorkspaceIn(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -83,6 +105,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             writer.WriteCollectionOfEnumValues<global::Soenneker.Mistral.OpenApiClient.Models.AdminAssignGroupToWorkspaceInRoleNamesItem>("role_names", RoleNames);
             writer.WriteCollectionOfEnumValues<global::Soenneker.Mistral.OpenApiClient.Models.AdminAssignGroupToWorkspaceInRolesItem>("roles", Roles);
             writer.WriteGuidValue("workspace_uuid", WorkspaceUuid);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

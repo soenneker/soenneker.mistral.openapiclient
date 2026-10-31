@@ -11,18 +11,32 @@ namespace Soenneker.Mistral.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class RemoveWorkspaceMembersOut : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("deleted_members_count") is null) { _explicitNullValueDeletedMembersCount = default!; _explicitNullProperties?.Remove("deleted_members_count"); }
+            else if (parseNode.GetChildNode("deleted_members_count") is { } nullNodeDeletedMembersCount && nullNodeDeletedMembersCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DeletedMembersCount = null;
+            if (parseNode.GetChildNode("not_deleted_members") is null) { _explicitNullValueNotDeletedMembers = default!; _explicitNullProperties?.Remove("not_deleted_members"); }
+            else if (parseNode.GetChildNode("not_deleted_members") is { } nullNodeNotDeletedMembers && nullNodeNotDeletedMembers.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NotDeletedMembers = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Number of Workspace members removed.</summary>
-        public int? DeletedMembersCount { get; set; }
+        public int? DeletedMembersCount { get => _explicitNullValueDeletedMembersCount; set { _explicitNullValueDeletedMembersCount = value; AdditionalData?.Remove("deleted_members_count"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("deleted_members_count"); else _explicitNullProperties?.Remove("deleted_members_count"); } }
+        private int? _explicitNullValueDeletedMembersCount = default!;
         /// <summary>Users that could not be removed.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Guid?>? NotDeletedMembers { get; set; }
+        public List<Guid?>? NotDeletedMembers { get => _explicitNullValueNotDeletedMembers; set { _explicitNullValueNotDeletedMembers = value; AdditionalData?.Remove("not_deleted_members"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("not_deleted_members"); else _explicitNullProperties?.Remove("not_deleted_members"); } }
+        private List<Guid?>? _explicitNullValueNotDeletedMembers = default!;
 #nullable restore
 #else
-        public List<Guid?> NotDeletedMembers { get; set; }
+        public List<Guid?> NotDeletedMembers { get => _explicitNullValueNotDeletedMembers; set { _explicitNullValueNotDeletedMembers = value; AdditionalData?.Remove("not_deleted_members"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("not_deleted_members"); else _explicitNullProperties?.Remove("not_deleted_members"); } }
+        private List<Guid?> _explicitNullValueNotDeletedMembers = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Mistral.OpenApiClient.Models.RemoveWorkspaceMembersOut"/> and sets the default values.
@@ -39,7 +53,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         public static global::Soenneker.Mistral.OpenApiClient.Models.RemoveWorkspaceMembersOut CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Mistral.OpenApiClient.Models.RemoveWorkspaceMembersOut();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Mistral.OpenApiClient.Models.RemoveWorkspaceMembersOut(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -62,6 +76,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteIntValue("deleted_members_count", DeletedMembersCount);
             writer.WriteCollectionOfPrimitiveValues<Guid?>("not_deleted_members", NotDeletedMembers);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

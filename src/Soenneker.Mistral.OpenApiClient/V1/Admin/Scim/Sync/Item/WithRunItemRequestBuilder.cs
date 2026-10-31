@@ -49,7 +49,7 @@ namespace Soenneker.Mistral.OpenApiClient.V1.Admin.Scim.Sync.Item
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Mistral.OpenApiClient.Models.AdminScimSyncRunOut>(requestInfo, global::Soenneker.Mistral.OpenApiClient.Models.AdminScimSyncRunOut.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Mistral.OpenApiClient.Models.AdminScimSyncRunOut>(requestInfo, global::Soenneker.Mistral.OpenApiClient.Models.AdminScimSyncRunOut.CreateFromDiscriminatorValue, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Retrieve an on-demand SCIM synchronization run for the Organization.Returns the run&apos;s lifecycle status along with the preview or result summaryonce the synchronization plan has been built.

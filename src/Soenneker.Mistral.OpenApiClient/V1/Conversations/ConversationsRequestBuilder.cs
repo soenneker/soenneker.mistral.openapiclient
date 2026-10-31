@@ -50,25 +50,27 @@ namespace Soenneker.Mistral.OpenApiClient.V1.Conversations
         /// <summary>
         /// Retrieve a list of conversation entities sorted by creation time.
         /// </summary>
-        /// <returns>A List&lt;global::Soenneker.Mistral.OpenApiClient.Models.ResponseV1ConversationsListSchemaItem&gt;</returns>
+        /// <returns>A List&lt;global::Soenneker.Mistral.OpenApiClient.Models.ResponseV1ConversationsListItem&gt;</returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Mistral.OpenApiClient.Models.HttpValidationError">When receiving a 422 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<List<global::Soenneker.Mistral.OpenApiClient.Models.ResponseV1ConversationsListSchemaItem>?> GetAsync(Action<RequestConfiguration<global::Soenneker.Mistral.OpenApiClient.V1.Conversations.ConversationsRequestBuilder.ConversationsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<List<global::Soenneker.Mistral.OpenApiClient.Models.ResponseV1ConversationsListItem>?> GetAsync(Action<RequestConfiguration<global::Soenneker.Mistral.OpenApiClient.V1.Conversations.ConversationsRequestBuilder.ConversationsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<List<global::Soenneker.Mistral.OpenApiClient.Models.ResponseV1ConversationsListSchemaItem>> GetAsync(Action<RequestConfiguration<global::Soenneker.Mistral.OpenApiClient.V1.Conversations.ConversationsRequestBuilder.ConversationsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<List<global::Soenneker.Mistral.OpenApiClient.Models.ResponseV1ConversationsListItem>> GetAsync(Action<RequestConfiguration<global::Soenneker.Mistral.OpenApiClient.V1.Conversations.ConversationsRequestBuilder.ConversationsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
                 { "422", global::Soenneker.Mistral.OpenApiClient.Models.HttpValidationError.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
-            var collectionResult = await RequestAdapter.SendCollectionAsync<global::Soenneker.Mistral.OpenApiClient.Models.ResponseV1ConversationsListSchemaItem>(requestInfo, global::Soenneker.Mistral.OpenApiClient.Models.ResponseV1ConversationsListSchemaItem.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            var collectionResult = await RequestAdapter.SendCollectionAsync<global::Soenneker.Mistral.OpenApiClient.Models.ResponseV1ConversationsListItem>(requestInfo, global::Soenneker.Mistral.OpenApiClient.Models.ResponseV1ConversationsListItem.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
             return collectionResult?.AsList();
         }
         /// <summary>
@@ -93,6 +95,8 @@ namespace Soenneker.Mistral.OpenApiClient.V1.Conversations
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
                 { "422", global::Soenneker.Mistral.OpenApiClient.Models.HttpValidationError.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Mistral.OpenApiClient.Models.ConversationResponse>(requestInfo, global::Soenneker.Mistral.OpenApiClient.Models.ConversationResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

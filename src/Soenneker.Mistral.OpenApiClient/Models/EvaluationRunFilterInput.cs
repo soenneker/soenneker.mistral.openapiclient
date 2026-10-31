@@ -11,88 +11,135 @@ namespace Soenneker.Mistral.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class EvaluationRunFilterInput : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("creator_ids") is null) { _explicitNullValueCreatorIds = default!; _explicitNullProperties?.Remove("creator_ids"); }
+            else if (parseNode.GetChildNode("creator_ids") is { } nullNodeCreatorIds && nullNodeCreatorIds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CreatorIds = null;
+            if (parseNode.GetChildNode("evaluation_ids") is null) { _explicitNullValueEvaluationIds = default!; _explicitNullProperties?.Remove("evaluation_ids"); }
+            else if (parseNode.GetChildNode("evaluation_ids") is { } nullNodeEvaluationIds && nullNodeEvaluationIds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EvaluationIds = null;
+            if (parseNode.GetChildNode("goal_filters") is null) { _explicitNullValueGoalFilters = default!; _explicitNullProperties?.Remove("goal_filters"); }
+            else if (parseNode.GetChildNode("goal_filters") is { } nullNodeGoalFilters && nullNodeGoalFilters.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) GoalFilters = null;
+            if (parseNode.GetChildNode("metadata") is null) { _explicitNullValueMetadata = default!; _explicitNullProperties?.Remove("metadata"); }
+            else if (parseNode.GetChildNode("metadata") is { } nullNodeMetadata && nullNodeMetadata.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Metadata = null;
+            if (parseNode.GetChildNode("ownership") is null) { _explicitNullValueOwnership = default!; _explicitNullProperties?.Remove("ownership"); }
+            else if (parseNode.GetChildNode("ownership") is { } nullNodeOwnership && nullNodeOwnership.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Ownership = null;
+            if (parseNode.GetChildNode("project_ids") is null) { _explicitNullValueProjectIds = default!; _explicitNullProperties?.Remove("project_ids"); }
+            else if (parseNode.GetChildNode("project_ids") is { } nullNodeProjectIds && nullNodeProjectIds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ProjectIds = null;
+            if (parseNode.GetChildNode("run_ids") is null) { _explicitNullValueRunIds = default!; _explicitNullProperties?.Remove("run_ids"); }
+            else if (parseNode.GetChildNode("run_ids") is { } nullNodeRunIds && nullNodeRunIds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RunIds = null;
+            if (parseNode.GetChildNode("score_filters") is null) { _explicitNullValueScoreFilters = default!; _explicitNullProperties?.Remove("score_filters"); }
+            else if (parseNode.GetChildNode("score_filters") is { } nullNodeScoreFilters && nullNodeScoreFilters.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ScoreFilters = null;
+            if (parseNode.GetChildNode("system") is null) { _explicitNullValueSystem = default!; _explicitNullProperties?.Remove("system"); }
+            else if (parseNode.GetChildNode("system") is { } nullNodeSystem && nullNodeSystem.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) System = null;
+            if (parseNode.GetChildNode("tags") is null) { _explicitNullValueTags = default!; _explicitNullProperties?.Remove("tags"); }
+            else if (parseNode.GetChildNode("tags") is { } nullNodeTags && nullNodeTags.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Tags = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The creator_ids property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Guid?>? CreatorIds { get; set; }
+        public List<Guid?>? CreatorIds { get => _explicitNullValueCreatorIds; set { _explicitNullValueCreatorIds = value; AdditionalData?.Remove("creator_ids"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("creator_ids"); else _explicitNullProperties?.Remove("creator_ids"); } }
+        private List<Guid?>? _explicitNullValueCreatorIds = default!;
 #nullable restore
 #else
-        public List<Guid?> CreatorIds { get; set; }
+        public List<Guid?> CreatorIds { get => _explicitNullValueCreatorIds; set { _explicitNullValueCreatorIds = value; AdditionalData?.Remove("creator_ids"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("creator_ids"); else _explicitNullProperties?.Remove("creator_ids"); } }
+        private List<Guid?> _explicitNullValueCreatorIds = default!;
 #endif
         /// <summary>The evaluation_ids property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Guid?>? EvaluationIds { get; set; }
+        public List<Guid?>? EvaluationIds { get => _explicitNullValueEvaluationIds; set { _explicitNullValueEvaluationIds = value; AdditionalData?.Remove("evaluation_ids"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("evaluation_ids"); else _explicitNullProperties?.Remove("evaluation_ids"); } }
+        private List<Guid?>? _explicitNullValueEvaluationIds = default!;
 #nullable restore
 #else
-        public List<Guid?> EvaluationIds { get; set; }
+        public List<Guid?> EvaluationIds { get => _explicitNullValueEvaluationIds; set { _explicitNullValueEvaluationIds = value; AdditionalData?.Remove("evaluation_ids"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("evaluation_ids"); else _explicitNullProperties?.Remove("evaluation_ids"); } }
+        private List<Guid?> _explicitNullValueEvaluationIds = default!;
 #endif
         /// <summary>The goal_filters property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.GoalStatusFilterGroup? GoalFilters { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.GoalStatusFilterGroup? GoalFilters { get => _explicitNullValueGoalFilters; set { _explicitNullValueGoalFilters = value; AdditionalData?.Remove("goal_filters"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("goal_filters"); else _explicitNullProperties?.Remove("goal_filters"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.GoalStatusFilterGroup? _explicitNullValueGoalFilters = default!;
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.GoalStatusFilterGroup GoalFilters { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.GoalStatusFilterGroup GoalFilters { get => _explicitNullValueGoalFilters; set { _explicitNullValueGoalFilters = value; AdditionalData?.Remove("goal_filters"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("goal_filters"); else _explicitNullProperties?.Remove("goal_filters"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.GoalStatusFilterGroup _explicitNullValueGoalFilters = default!;
 #endif
         /// <summary>The metadata property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.MetadataFilterGroup? Metadata { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.MetadataFilterGroup? Metadata { get => _explicitNullValueMetadata; set { _explicitNullValueMetadata = value; AdditionalData?.Remove("metadata"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("metadata"); else _explicitNullProperties?.Remove("metadata"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.MetadataFilterGroup? _explicitNullValueMetadata = default!;
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.MetadataFilterGroup Metadata { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.MetadataFilterGroup Metadata { get => _explicitNullValueMetadata; set { _explicitNullValueMetadata = value; AdditionalData?.Remove("metadata"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("metadata"); else _explicitNullProperties?.Remove("metadata"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.MetadataFilterGroup _explicitNullValueMetadata = default!;
 #endif
         /// <summary>The ownership property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.RunOwnershipFilter? Ownership { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.RunOwnershipFilter? Ownership { get => _explicitNullValueOwnership; set { _explicitNullValueOwnership = value; AdditionalData?.Remove("ownership"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ownership"); else _explicitNullProperties?.Remove("ownership"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.RunOwnershipFilter? _explicitNullValueOwnership = default!;
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.RunOwnershipFilter Ownership { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.RunOwnershipFilter Ownership { get => _explicitNullValueOwnership; set { _explicitNullValueOwnership = value; AdditionalData?.Remove("ownership"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ownership"); else _explicitNullProperties?.Remove("ownership"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.RunOwnershipFilter _explicitNullValueOwnership = default!;
 #endif
         /// <summary>The project_ids property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Guid?>? ProjectIds { get; set; }
+        public List<Guid?>? ProjectIds { get => _explicitNullValueProjectIds; set { _explicitNullValueProjectIds = value; AdditionalData?.Remove("project_ids"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("project_ids"); else _explicitNullProperties?.Remove("project_ids"); } }
+        private List<Guid?>? _explicitNullValueProjectIds = default!;
 #nullable restore
 #else
-        public List<Guid?> ProjectIds { get; set; }
+        public List<Guid?> ProjectIds { get => _explicitNullValueProjectIds; set { _explicitNullValueProjectIds = value; AdditionalData?.Remove("project_ids"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("project_ids"); else _explicitNullProperties?.Remove("project_ids"); } }
+        private List<Guid?> _explicitNullValueProjectIds = default!;
 #endif
         /// <summary>The run_ids property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Guid?>? RunIds { get; set; }
+        public List<Guid?>? RunIds { get => _explicitNullValueRunIds; set { _explicitNullValueRunIds = value; AdditionalData?.Remove("run_ids"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("run_ids"); else _explicitNullProperties?.Remove("run_ids"); } }
+        private List<Guid?>? _explicitNullValueRunIds = default!;
 #nullable restore
 #else
-        public List<Guid?> RunIds { get; set; }
+        public List<Guid?> RunIds { get => _explicitNullValueRunIds; set { _explicitNullValueRunIds = value; AdditionalData?.Remove("run_ids"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("run_ids"); else _explicitNullProperties?.Remove("run_ids"); } }
+        private List<Guid?> _explicitNullValueRunIds = default!;
 #endif
         /// <summary>The score_filters property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.ScoreFilterGroup? ScoreFilters { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.ScoreFilterGroup? ScoreFilters { get => _explicitNullValueScoreFilters; set { _explicitNullValueScoreFilters = value; AdditionalData?.Remove("score_filters"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("score_filters"); else _explicitNullProperties?.Remove("score_filters"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.ScoreFilterGroup? _explicitNullValueScoreFilters = default!;
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.ScoreFilterGroup ScoreFilters { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.ScoreFilterGroup ScoreFilters { get => _explicitNullValueScoreFilters; set { _explicitNullValueScoreFilters = value; AdditionalData?.Remove("score_filters"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("score_filters"); else _explicitNullProperties?.Remove("score_filters"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.ScoreFilterGroup _explicitNullValueScoreFilters = default!;
 #endif
         /// <summary>The system property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.SystemFilter? System { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.SystemFilter? System { get => _explicitNullValueSystem; set { _explicitNullValueSystem = value; AdditionalData?.Remove("system"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("system"); else _explicitNullProperties?.Remove("system"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.SystemFilter? _explicitNullValueSystem = default!;
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.SystemFilter System { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.SystemFilter System { get => _explicitNullValueSystem; set { _explicitNullValueSystem = value; AdditionalData?.Remove("system"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("system"); else _explicitNullProperties?.Remove("system"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.SystemFilter _explicitNullValueSystem = default!;
 #endif
         /// <summary>The tags property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.TagFilter? Tags { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.TagFilter? Tags { get => _explicitNullValueTags; set { _explicitNullValueTags = value; AdditionalData?.Remove("tags"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tags"); else _explicitNullProperties?.Remove("tags"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.TagFilter? _explicitNullValueTags = default!;
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.TagFilter Tags { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.TagFilter Tags { get => _explicitNullValueTags; set { _explicitNullValueTags = value; AdditionalData?.Remove("tags"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tags"); else _explicitNullProperties?.Remove("tags"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.TagFilter _explicitNullValueTags = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Mistral.OpenApiClient.Models.EvaluationRunFilterInput"/> and sets the default values.
@@ -109,7 +156,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         public static global::Soenneker.Mistral.OpenApiClient.Models.EvaluationRunFilterInput CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Mistral.OpenApiClient.Models.EvaluationRunFilterInput();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Mistral.OpenApiClient.Models.EvaluationRunFilterInput(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -148,6 +195,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ScoreFilterGroup>("score_filters", ScoreFilters);
             writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.SystemFilter>("system", System);
             writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.TagFilter>("tags", Tags);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

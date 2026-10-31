@@ -12,19 +12,41 @@ namespace Soenneker.Mistral.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class VibeUserPromptsStat : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("day") is null) { _explicitNullValueDay = default!; _explicitNullProperties?.Remove("day"); }
+            else if (parseNode.GetChildNode("day") is { } nullNodeDay && nullNodeDay.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Day = null;
+            if (parseNode.GetChildNode("nb_prompts_acp") is null) { _explicitNullValueNbPromptsAcp = default!; _explicitNullProperties?.Remove("nb_prompts_acp"); }
+            else if (parseNode.GetChildNode("nb_prompts_acp") is { } nullNodeNbPromptsAcp && nullNodeNbPromptsAcp.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NbPromptsAcp = null;
+            if (parseNode.GetChildNode("nb_prompts_cli") is null) { _explicitNullValueNbPromptsCli = default!; _explicitNullProperties?.Remove("nb_prompts_cli"); }
+            else if (parseNode.GetChildNode("nb_prompts_cli") is { } nullNodeNbPromptsCli && nullNodeNbPromptsCli.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NbPromptsCli = null;
+            if (parseNode.GetChildNode("nb_prompts_programmatic") is null) { _explicitNullValueNbPromptsProgrammatic = default!; _explicitNullProperties?.Remove("nb_prompts_programmatic"); }
+            else if (parseNode.GetChildNode("nb_prompts_programmatic") is { } nullNodeNbPromptsProgrammatic && nullNodeNbPromptsProgrammatic.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NbPromptsProgrammatic = null;
+            if (parseNode.GetChildNode("nb_prompts_total") is null) { _explicitNullValueNbPromptsTotal = default!; _explicitNullProperties?.Remove("nb_prompts_total"); }
+            else if (parseNode.GetChildNode("nb_prompts_total") is { } nullNodeNbPromptsTotal && nullNodeNbPromptsTotal.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NbPromptsTotal = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The day property</summary>
-        public Date? Day { get; set; }
+        public Date? Day { get => _explicitNullValueDay; set { _explicitNullValueDay = value; AdditionalData?.Remove("day"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("day"); else _explicitNullProperties?.Remove("day"); } }
+        private Date? _explicitNullValueDay = default!;
         /// <summary>The nb_prompts_acp property</summary>
-        public int? NbPromptsAcp { get; set; }
+        public int? NbPromptsAcp { get => _explicitNullValueNbPromptsAcp; set { _explicitNullValueNbPromptsAcp = value; AdditionalData?.Remove("nb_prompts_acp"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("nb_prompts_acp"); else _explicitNullProperties?.Remove("nb_prompts_acp"); } }
+        private int? _explicitNullValueNbPromptsAcp = default!;
         /// <summary>The nb_prompts_cli property</summary>
-        public int? NbPromptsCli { get; set; }
+        public int? NbPromptsCli { get => _explicitNullValueNbPromptsCli; set { _explicitNullValueNbPromptsCli = value; AdditionalData?.Remove("nb_prompts_cli"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("nb_prompts_cli"); else _explicitNullProperties?.Remove("nb_prompts_cli"); } }
+        private int? _explicitNullValueNbPromptsCli = default!;
         /// <summary>The nb_prompts_programmatic property</summary>
-        public int? NbPromptsProgrammatic { get; set; }
+        public int? NbPromptsProgrammatic { get => _explicitNullValueNbPromptsProgrammatic; set { _explicitNullValueNbPromptsProgrammatic = value; AdditionalData?.Remove("nb_prompts_programmatic"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("nb_prompts_programmatic"); else _explicitNullProperties?.Remove("nb_prompts_programmatic"); } }
+        private int? _explicitNullValueNbPromptsProgrammatic = default!;
         /// <summary>The nb_prompts_total property</summary>
-        public int? NbPromptsTotal { get; set; }
+        public int? NbPromptsTotal { get => _explicitNullValueNbPromptsTotal; set { _explicitNullValueNbPromptsTotal = value; AdditionalData?.Remove("nb_prompts_total"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("nb_prompts_total"); else _explicitNullProperties?.Remove("nb_prompts_total"); } }
+        private int? _explicitNullValueNbPromptsTotal = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Mistral.OpenApiClient.Models.VibeUserPromptsStat"/> and sets the default values.
         /// </summary>
@@ -40,7 +62,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         public static global::Soenneker.Mistral.OpenApiClient.Models.VibeUserPromptsStat CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Mistral.OpenApiClient.Models.VibeUserPromptsStat();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Mistral.OpenApiClient.Models.VibeUserPromptsStat(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -69,6 +91,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             writer.WriteIntValue("nb_prompts_cli", NbPromptsCli);
             writer.WriteIntValue("nb_prompts_programmatic", NbPromptsProgrammatic);
             writer.WriteIntValue("nb_prompts_total", NbPromptsTotal);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

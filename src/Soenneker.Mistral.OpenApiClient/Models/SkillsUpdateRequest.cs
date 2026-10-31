@@ -11,11 +11,24 @@ namespace Soenneker.Mistral.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class SkillsUpdateRequest : IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("sharingScope") is null) { _explicitNullValueSharingScope = default!; _explicitNullProperties?.Remove("sharingScope"); }
+            else if (parseNode.GetChildNode("sharingScope") is { } nullNodeSharingScope && nullNodeSharingScope.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SharingScope = null;
+            if (parseNode.GetChildNode("workspaceRelation") is null) { _explicitNullValueWorkspaceRelation = default!; _explicitNullProperties?.Remove("workspaceRelation"); }
+            else if (parseNode.GetChildNode("workspaceRelation") is { } nullNodeWorkspaceRelation && nullNodeWorkspaceRelation.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WorkspaceRelation = null;
+        }
+
         /// <summary>The sharingScope property</summary>
-        public global::Soenneker.Mistral.OpenApiClient.Models.RegistrySharingScope? SharingScope { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.RegistrySharingScope? SharingScope { get => _explicitNullValueSharingScope; set { _explicitNullValueSharingScope = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sharingScope"); else _explicitNullProperties?.Remove("sharingScope"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.RegistrySharingScope? _explicitNullValueSharingScope = default!;
         /// <summary>The workspaceRelation property</summary>
-        public global::Soenneker.Mistral.OpenApiClient.Models.ShareRelation? WorkspaceRelation { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.ShareRelation? WorkspaceRelation { get => _explicitNullValueWorkspaceRelation; set { _explicitNullValueWorkspaceRelation = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("workspaceRelation"); else _explicitNullProperties?.Remove("workspaceRelation"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.ShareRelation? _explicitNullValueWorkspaceRelation = default!;
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -24,7 +37,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         public static global::Soenneker.Mistral.OpenApiClient.Models.SkillsUpdateRequest CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Mistral.OpenApiClient.Models.SkillsUpdateRequest();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Mistral.OpenApiClient.Models.SkillsUpdateRequest(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -46,7 +59,8 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.RegistrySharingScope>("sharingScope", SharingScope);
-            writer.WriteEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.ShareRelation>("workspaceRelation", WorkspaceRelation);
+            writer.WriteEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.ShareRelation>("workspaceRelation", WorkspaceRelation);if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
+            
         }
     }
 }

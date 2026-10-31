@@ -12,100 +12,157 @@ namespace Soenneker.Mistral.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class WorkflowExecutionStartedResponse : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("attributes") is null) { _explicitNullValueAttributes = default!; _explicitNullProperties?.Remove("attributes"); }
+            else if (parseNode.GetChildNode("attributes") is { } nullNodeAttributes && nullNodeAttributes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Attributes = null;
+            if (parseNode.GetChildNode("chain_run_id") is null) { _explicitNullValueChainRunId = default!; _explicitNullProperties?.Remove("chain_run_id"); }
+            else if (parseNode.GetChildNode("chain_run_id") is { } nullNodeChainRunId && nullNodeChainRunId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ChainRunId = null;
+            if (parseNode.GetChildNode("continued_run_id") is null) { _explicitNullValueContinuedRunId = default!; _explicitNullProperties?.Remove("continued_run_id"); }
+            else if (parseNode.GetChildNode("continued_run_id") is { } nullNodeContinuedRunId && nullNodeContinuedRunId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ContinuedRunId = null;
+            if (parseNode.GetChildNode("event_id") is null) { _explicitNullValueEventId = default!; _explicitNullProperties?.Remove("event_id"); }
+            else if (parseNode.GetChildNode("event_id") is { } nullNodeEventId && nullNodeEventId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EventId = null;
+            if (parseNode.GetChildNode("event_timestamp") is null) { _explicitNullValueEventTimestamp = default!; _explicitNullProperties?.Remove("event_timestamp"); }
+            else if (parseNode.GetChildNode("event_timestamp") is { } nullNodeEventTimestamp && nullNodeEventTimestamp.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EventTimestamp = null;
+            if (parseNode.GetChildNode("event_type") is null) { _explicitNullValueEventType = default!; _explicitNullProperties?.Remove("event_type"); }
+            else if (parseNode.GetChildNode("event_type") is { } nullNodeEventType && nullNodeEventType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EventType = null;
+            if (parseNode.GetChildNode("first_execution_run_id") is null) { _explicitNullValueFirstExecutionRunId = default!; _explicitNullProperties?.Remove("first_execution_run_id"); }
+            else if (parseNode.GetChildNode("first_execution_run_id") is { } nullNodeFirstExecutionRunId && nullNodeFirstExecutionRunId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FirstExecutionRunId = null;
+            if (parseNode.GetChildNode("parent_workflow_exec_id") is null) { _explicitNullValueParentWorkflowExecId = default!; _explicitNullProperties?.Remove("parent_workflow_exec_id"); }
+            else if (parseNode.GetChildNode("parent_workflow_exec_id") is { } nullNodeParentWorkflowExecId && nullNodeParentWorkflowExecId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ParentWorkflowExecId = null;
+            if (parseNode.GetChildNode("root_workflow_exec_id") is null) { _explicitNullValueRootWorkflowExecId = default!; _explicitNullProperties?.Remove("root_workflow_exec_id"); }
+            else if (parseNode.GetChildNode("root_workflow_exec_id") is { } nullNodeRootWorkflowExecId && nullNodeRootWorkflowExecId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RootWorkflowExecId = null;
+            if (parseNode.GetChildNode("schedule_id") is null) { _explicitNullValueScheduleId = default!; _explicitNullProperties?.Remove("schedule_id"); }
+            else if (parseNode.GetChildNode("schedule_id") is { } nullNodeScheduleId && nullNodeScheduleId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ScheduleId = null;
+            if (parseNode.GetChildNode("workflow_exec_id") is null) { _explicitNullValueWorkflowExecId = default!; _explicitNullProperties?.Remove("workflow_exec_id"); }
+            else if (parseNode.GetChildNode("workflow_exec_id") is { } nullNodeWorkflowExecId && nullNodeWorkflowExecId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WorkflowExecId = null;
+            if (parseNode.GetChildNode("workflow_name") is null) { _explicitNullValueWorkflowName = default!; _explicitNullProperties?.Remove("workflow_name"); }
+            else if (parseNode.GetChildNode("workflow_name") is { } nullNodeWorkflowName && nullNodeWorkflowName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WorkflowName = null;
+            if (parseNode.GetChildNode("workflow_run_id") is null) { _explicitNullValueWorkflowRunId = default!; _explicitNullProperties?.Remove("workflow_run_id"); }
+            else if (parseNode.GetChildNode("workflow_run_id") is { } nullNodeWorkflowRunId && nullNodeWorkflowRunId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WorkflowRunId = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Event-specific attributes.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.WorkflowExecutionStartedAttributesResponse? Attributes { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.WorkflowExecutionStartedAttributesResponse? Attributes { get => _explicitNullValueAttributes; set { _explicitNullValueAttributes = value; AdditionalData?.Remove("attributes"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("attributes"); else _explicitNullProperties?.Remove("attributes"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.WorkflowExecutionStartedAttributesResponse? _explicitNullValueAttributes = default!;
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.WorkflowExecutionStartedAttributesResponse Attributes { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.WorkflowExecutionStartedAttributesResponse Attributes { get => _explicitNullValueAttributes; set { _explicitNullValueAttributes = value; AdditionalData?.Remove("attributes"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("attributes"); else _explicitNullProperties?.Remove("attributes"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.WorkflowExecutionStartedAttributesResponse _explicitNullValueAttributes = default!;
 #endif
         /// <summary>Identifies one start of an execution. Shared by its continue-as-new, retry and reset runs, and by every sub-workflow below it. Starting the same execution ID again gives a new value.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ChainRunId { get; set; }
+        public string? ChainRunId { get => _explicitNullValueChainRunId; set { _explicitNullValueChainRunId = value; AdditionalData?.Remove("chain_run_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("chain_run_id"); else _explicitNullProperties?.Remove("chain_run_id"); } }
+        private string? _explicitNullValueChainRunId = default!;
 #nullable restore
 #else
-        public string ChainRunId { get; set; }
+        public string ChainRunId { get => _explicitNullValueChainRunId; set { _explicitNullValueChainRunId = value; AdditionalData?.Remove("chain_run_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("chain_run_id"); else _explicitNullProperties?.Remove("chain_run_id"); } }
+        private string _explicitNullValueChainRunId = default!;
 #endif
         /// <summary>Run ID of the execution this run continued from. Non-null for continue-as-new runs.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ContinuedRunId { get; set; }
+        public string? ContinuedRunId { get => _explicitNullValueContinuedRunId; set { _explicitNullValueContinuedRunId = value; AdditionalData?.Remove("continued_run_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("continued_run_id"); else _explicitNullProperties?.Remove("continued_run_id"); } }
+        private string? _explicitNullValueContinuedRunId = default!;
 #nullable restore
 #else
-        public string ContinuedRunId { get; set; }
+        public string ContinuedRunId { get => _explicitNullValueContinuedRunId; set { _explicitNullValueContinuedRunId = value; AdditionalData?.Remove("continued_run_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("continued_run_id"); else _explicitNullProperties?.Remove("continued_run_id"); } }
+        private string _explicitNullValueContinuedRunId = default!;
 #endif
         /// <summary>Unique identifier for this event instance.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? EventId { get; set; }
+        public string? EventId { get => _explicitNullValueEventId; set { _explicitNullValueEventId = value; AdditionalData?.Remove("event_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("event_id"); else _explicitNullProperties?.Remove("event_id"); } }
+        private string? _explicitNullValueEventId = default!;
 #nullable restore
 #else
-        public string EventId { get; set; }
+        public string EventId { get => _explicitNullValueEventId; set { _explicitNullValueEventId = value; AdditionalData?.Remove("event_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("event_id"); else _explicitNullProperties?.Remove("event_id"); } }
+        private string _explicitNullValueEventId = default!;
 #endif
         /// <summary>Unix timestamp in nanoseconds when the event was created.</summary>
-        public int? EventTimestamp { get; set; }
+        public int? EventTimestamp { get => _explicitNullValueEventTimestamp; set { _explicitNullValueEventTimestamp = value; AdditionalData?.Remove("event_timestamp"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("event_timestamp"); else _explicitNullProperties?.Remove("event_timestamp"); } }
+        private int? _explicitNullValueEventTimestamp = default!;
         /// <summary>Event type discriminator.</summary>
-        public global::Soenneker.Mistral.OpenApiClient.Models.WorkflowExecutionStartedEventType? EventType { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.WorkflowExecutionStartedEventType? EventType { get => _explicitNullValueEventType; set { _explicitNullValueEventType = value; AdditionalData?.Remove("event_type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("event_type"); else _explicitNullProperties?.Remove("event_type"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.WorkflowExecutionStartedEventType? _explicitNullValueEventType = default!;
         /// <summary>Run ID of the first execution in this workflow chain. Equals workflow_run_id on a fresh start. Continue-as-new, retry and reset runs keep the original value.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? FirstExecutionRunId { get; set; }
+        public string? FirstExecutionRunId { get => _explicitNullValueFirstExecutionRunId; set { _explicitNullValueFirstExecutionRunId = value; AdditionalData?.Remove("first_execution_run_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("first_execution_run_id"); else _explicitNullProperties?.Remove("first_execution_run_id"); } }
+        private string? _explicitNullValueFirstExecutionRunId = default!;
 #nullable restore
 #else
-        public string FirstExecutionRunId { get; set; }
+        public string FirstExecutionRunId { get => _explicitNullValueFirstExecutionRunId; set { _explicitNullValueFirstExecutionRunId = value; AdditionalData?.Remove("first_execution_run_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("first_execution_run_id"); else _explicitNullProperties?.Remove("first_execution_run_id"); } }
+        private string _explicitNullValueFirstExecutionRunId = default!;
 #endif
         /// <summary>Execution ID of the parent workflow that initiated this execution. If this is a root workflow, this field is not set.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ParentWorkflowExecId { get; set; }
+        public string? ParentWorkflowExecId { get => _explicitNullValueParentWorkflowExecId; set { _explicitNullValueParentWorkflowExecId = value; AdditionalData?.Remove("parent_workflow_exec_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("parent_workflow_exec_id"); else _explicitNullProperties?.Remove("parent_workflow_exec_id"); } }
+        private string? _explicitNullValueParentWorkflowExecId = default!;
 #nullable restore
 #else
-        public string ParentWorkflowExecId { get; set; }
+        public string ParentWorkflowExecId { get => _explicitNullValueParentWorkflowExecId; set { _explicitNullValueParentWorkflowExecId = value; AdditionalData?.Remove("parent_workflow_exec_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("parent_workflow_exec_id"); else _explicitNullProperties?.Remove("parent_workflow_exec_id"); } }
+        private string _explicitNullValueParentWorkflowExecId = default!;
 #endif
         /// <summary>Execution ID of the root workflow that initiated this execution chain.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? RootWorkflowExecId { get; set; }
+        public string? RootWorkflowExecId { get => _explicitNullValueRootWorkflowExecId; set { _explicitNullValueRootWorkflowExecId = value; AdditionalData?.Remove("root_workflow_exec_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("root_workflow_exec_id"); else _explicitNullProperties?.Remove("root_workflow_exec_id"); } }
+        private string? _explicitNullValueRootWorkflowExecId = default!;
 #nullable restore
 #else
-        public string RootWorkflowExecId { get; set; }
+        public string RootWorkflowExecId { get => _explicitNullValueRootWorkflowExecId; set { _explicitNullValueRootWorkflowExecId = value; AdditionalData?.Remove("root_workflow_exec_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("root_workflow_exec_id"); else _explicitNullProperties?.Remove("root_workflow_exec_id"); } }
+        private string _explicitNullValueRootWorkflowExecId = default!;
 #endif
         /// <summary>Temporal schedule ID that triggered this execution, if any.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ScheduleId { get; set; }
+        public string? ScheduleId { get => _explicitNullValueScheduleId; set { _explicitNullValueScheduleId = value; AdditionalData?.Remove("schedule_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("schedule_id"); else _explicitNullProperties?.Remove("schedule_id"); } }
+        private string? _explicitNullValueScheduleId = default!;
 #nullable restore
 #else
-        public string ScheduleId { get; set; }
+        public string ScheduleId { get => _explicitNullValueScheduleId; set { _explicitNullValueScheduleId = value; AdditionalData?.Remove("schedule_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("schedule_id"); else _explicitNullProperties?.Remove("schedule_id"); } }
+        private string _explicitNullValueScheduleId = default!;
 #endif
         /// <summary>Execution ID of the workflow that emitted this event.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? WorkflowExecId { get; set; }
+        public string? WorkflowExecId { get => _explicitNullValueWorkflowExecId; set { _explicitNullValueWorkflowExecId = value; AdditionalData?.Remove("workflow_exec_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("workflow_exec_id"); else _explicitNullProperties?.Remove("workflow_exec_id"); } }
+        private string? _explicitNullValueWorkflowExecId = default!;
 #nullable restore
 #else
-        public string WorkflowExecId { get; set; }
+        public string WorkflowExecId { get => _explicitNullValueWorkflowExecId; set { _explicitNullValueWorkflowExecId = value; AdditionalData?.Remove("workflow_exec_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("workflow_exec_id"); else _explicitNullProperties?.Remove("workflow_exec_id"); } }
+        private string _explicitNullValueWorkflowExecId = default!;
 #endif
         /// <summary>The registered name of the workflow that emitted this event.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? WorkflowName { get; set; }
+        public string? WorkflowName { get => _explicitNullValueWorkflowName; set { _explicitNullValueWorkflowName = value; AdditionalData?.Remove("workflow_name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("workflow_name"); else _explicitNullProperties?.Remove("workflow_name"); } }
+        private string? _explicitNullValueWorkflowName = default!;
 #nullable restore
 #else
-        public string WorkflowName { get; set; }
+        public string WorkflowName { get => _explicitNullValueWorkflowName; set { _explicitNullValueWorkflowName = value; AdditionalData?.Remove("workflow_name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("workflow_name"); else _explicitNullProperties?.Remove("workflow_name"); } }
+        private string _explicitNullValueWorkflowName = default!;
 #endif
         /// <summary>Run ID of the workflow execution. Changes on continue-as-new while workflow_exec_id stays the same.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? WorkflowRunId { get; set; }
+        public string? WorkflowRunId { get => _explicitNullValueWorkflowRunId; set { _explicitNullValueWorkflowRunId = value; AdditionalData?.Remove("workflow_run_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("workflow_run_id"); else _explicitNullProperties?.Remove("workflow_run_id"); } }
+        private string? _explicitNullValueWorkflowRunId = default!;
 #nullable restore
 #else
-        public string WorkflowRunId { get; set; }
+        public string WorkflowRunId { get => _explicitNullValueWorkflowRunId; set { _explicitNullValueWorkflowRunId = value; AdditionalData?.Remove("workflow_run_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("workflow_run_id"); else _explicitNullProperties?.Remove("workflow_run_id"); } }
+        private string _explicitNullValueWorkflowRunId = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Mistral.OpenApiClient.Models.WorkflowExecutionStartedResponse"/> and sets the default values.
@@ -122,7 +179,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         public static global::Soenneker.Mistral.OpenApiClient.Models.WorkflowExecutionStartedResponse CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Mistral.OpenApiClient.Models.WorkflowExecutionStartedResponse();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Mistral.OpenApiClient.Models.WorkflowExecutionStartedResponse(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -137,7 +194,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
                 { "continued_run_id", n => { ContinuedRunId = n.GetStringValue(); } },
                 { "event_id", n => { EventId = n.GetStringValue(); } },
                 { "event_timestamp", n => { EventTimestamp = n.GetIntValue(); } },
-                { "event_type", n => { EventType = n.GetEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.WorkflowExecutionStartedEventType>(); } },
+                { "event_type", n => { var parsed = n.GetEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.WorkflowExecutionStartedEventType>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueEventType = default; _explicitNullProperties?.Remove("event_type"); AdditionalData["event_type"] = unknown; } else { EventType = parsed; AdditionalData.Remove("event_type"); } } },
                 { "first_execution_run_id", n => { FirstExecutionRunId = n.GetStringValue(); } },
                 { "parent_workflow_exec_id", n => { ParentWorkflowExecId = n.GetStringValue(); } },
                 { "root_workflow_exec_id", n => { RootWorkflowExecId = n.GetStringValue(); } },
@@ -167,6 +224,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             writer.WriteStringValue("workflow_exec_id", WorkflowExecId);
             writer.WriteStringValue("workflow_name", WorkflowName);
             writer.WriteStringValue("workflow_run_id", WorkflowRunId);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

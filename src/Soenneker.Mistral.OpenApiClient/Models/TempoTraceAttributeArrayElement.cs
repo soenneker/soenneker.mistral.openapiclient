@@ -11,28 +11,49 @@ namespace Soenneker.Mistral.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class TempoTraceAttributeArrayElement : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("boolValue") is null) { _explicitNullValueBoolValue = default!; _explicitNullProperties?.Remove("boolValue"); }
+            else if (parseNode.GetChildNode("boolValue") is { } nullNodeBoolValue && nullNodeBoolValue.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BoolValue = null;
+            if (parseNode.GetChildNode("doubleValue") is null) { _explicitNullValueDoubleValue = default!; _explicitNullProperties?.Remove("doubleValue"); }
+            else if (parseNode.GetChildNode("doubleValue") is { } nullNodeDoubleValue && nullNodeDoubleValue.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DoubleValue = null;
+            if (parseNode.GetChildNode("intValue") is null) { _explicitNullValueIntValue = default!; _explicitNullProperties?.Remove("intValue"); }
+            else if (parseNode.GetChildNode("intValue") is { } nullNodeIntValue && nullNodeIntValue.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IntValue = null;
+            if (parseNode.GetChildNode("stringValue") is null) { _explicitNullValueStringValue = default!; _explicitNullProperties?.Remove("stringValue"); }
+            else if (parseNode.GetChildNode("stringValue") is { } nullNodeStringValue && nullNodeStringValue.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) StringValue = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>A boolean element in the array</summary>
-        public bool? BoolValue { get; set; }
+        public bool? BoolValue { get => _explicitNullValueBoolValue; set { _explicitNullValueBoolValue = value; AdditionalData?.Remove("boolValue"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("boolValue"); else _explicitNullProperties?.Remove("boolValue"); } }
+        private bool? _explicitNullValueBoolValue = default!;
         /// <summary>A floating point element in the array</summary>
-        public double? DoubleValue { get; set; }
+        public double? DoubleValue { get => _explicitNullValueDoubleValue; set { _explicitNullValueDoubleValue = value; AdditionalData?.Remove("doubleValue"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("doubleValue"); else _explicitNullProperties?.Remove("doubleValue"); } }
+        private double? _explicitNullValueDoubleValue = default!;
         /// <summary>An integer element in the array</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? IntValue { get; set; }
+        public string? IntValue { get => _explicitNullValueIntValue; set { _explicitNullValueIntValue = value; AdditionalData?.Remove("intValue"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("intValue"); else _explicitNullProperties?.Remove("intValue"); } }
+        private string? _explicitNullValueIntValue = default!;
 #nullable restore
 #else
-        public string IntValue { get; set; }
+        public string IntValue { get => _explicitNullValueIntValue; set { _explicitNullValueIntValue = value; AdditionalData?.Remove("intValue"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("intValue"); else _explicitNullProperties?.Remove("intValue"); } }
+        private string _explicitNullValueIntValue = default!;
 #endif
         /// <summary>A string element in the array</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? StringValue { get; set; }
+        public string? StringValue { get => _explicitNullValueStringValue; set { _explicitNullValueStringValue = value; AdditionalData?.Remove("stringValue"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("stringValue"); else _explicitNullProperties?.Remove("stringValue"); } }
+        private string? _explicitNullValueStringValue = default!;
 #nullable restore
 #else
-        public string StringValue { get; set; }
+        public string StringValue { get => _explicitNullValueStringValue; set { _explicitNullValueStringValue = value; AdditionalData?.Remove("stringValue"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("stringValue"); else _explicitNullProperties?.Remove("stringValue"); } }
+        private string _explicitNullValueStringValue = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Mistral.OpenApiClient.Models.TempoTraceAttributeArrayElement"/> and sets the default values.
@@ -49,7 +70,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         public static global::Soenneker.Mistral.OpenApiClient.Models.TempoTraceAttributeArrayElement CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Mistral.OpenApiClient.Models.TempoTraceAttributeArrayElement();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Mistral.OpenApiClient.Models.TempoTraceAttributeArrayElement(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -76,6 +97,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             writer.WriteDoubleValue("doubleValue", DoubleValue);
             writer.WriteStringValue("intValue", IntValue);
             writer.WriteStringValue("stringValue", StringValue);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }
