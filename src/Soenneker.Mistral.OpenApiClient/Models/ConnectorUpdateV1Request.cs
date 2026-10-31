@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.Mistral.OpenApiClient.Models
 {
     /// <summary>
-    /// Composed type wrapper for classes <see cref="global::Soenneker.Mistral.OpenApiClient.Models.ConnectorMcpPublicUpdate"/>, <see cref="global::Soenneker.Mistral.OpenApiClient.Models.UpdateHttpConnectorRequest"/>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Mistral.OpenApiClient.Models.ConnectorUpdateV1RequestOneOf1"/>, <see cref="global::Soenneker.Mistral.OpenApiClient.Models.UpdateHttpConnectorRequest"/>
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ConnectorUpdateV1Request : IComposedTypeWrapper, IParsable
@@ -18,13 +18,13 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         public global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode UnrecognizedValue { get; set; } = null!;
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalData { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Mistral.OpenApiClient.Models.ConnectorMcpPublicUpdate"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Mistral.OpenApiClient.Models.ConnectorUpdateV1RequestOneOf1"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.ConnectorMcpPublicUpdate? ConnectorMcpPublicUpdate { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.ConnectorUpdateV1RequestOneOf1? ConnectorUpdateV1RequestOneOf1 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.ConnectorMcpPublicUpdate ConnectorMcpPublicUpdate { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.ConnectorUpdateV1RequestOneOf1 ConnectorUpdateV1RequestOneOf1 { get; set; }
 #endif
         /// <summary>Composed type representation for type <see cref="global::Soenneker.Mistral.OpenApiClient.Models.UpdateHttpConnectorRequest"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -42,27 +42,27 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         public static global::Soenneker.Mistral.OpenApiClient.Models.ConnectorUpdateV1Request CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            var mappingValue = parseNode.GetChildNode("protocol")?.GetStringValue();
+            var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
             var result = new global::Soenneker.Mistral.OpenApiClient.Models.ConnectorUpdateV1Request();
-            if("mcp".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            if("ConnectorUpdateV1RequestOneOf1".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 
             }
-            else if("http".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("UpdateHttpConnectorRequest".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 
             }
             
             var unionPayload = parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue);
-            bool matchesUnionBranch0 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => ((unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject)) && (unionPayload is not global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject shapeObject0 || (shapeObject0.GetValue() is var shapeMembers1 && ((!shapeMembers1.ContainsKey("title") || ((((shapeMembers1["title"] == null || shapeMembers1["title"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull)) || (shapeMembers1["title"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString)))) && (!shapeMembers1.ContainsKey("name") || ((((shapeMembers1["name"] == null || shapeMembers1["name"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull)) || (shapeMembers1["name"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString)))) && (!shapeMembers1.ContainsKey("description") || ((((shapeMembers1["description"] == null || shapeMembers1["description"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull)) || (shapeMembers1["description"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString)))) && (!shapeMembers1.ContainsKey("icon_url") || ((((shapeMembers1["icon_url"] == null || shapeMembers1["icon_url"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull)) || (shapeMembers1["icon_url"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString)))) && (!shapeMembers1.ContainsKey("server") || ((((shapeMembers1["server"] == null || shapeMembers1["server"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull)) || (shapeMembers1["server"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString)))) && (!shapeMembers1.ContainsKey("auth_methods") || ((((shapeMembers1["auth_methods"] == null || shapeMembers1["auth_methods"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull)) || (shapeMembers1["auth_methods"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedArray)))) && (!shapeMembers1.ContainsKey("protocol") || (((shapeMembers1["protocol"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString)) && (shapeMembers1["protocol"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString literal14 && "mcp".Equals(literal14.GetValue(), global::System.StringComparison.Ordinal)) && ((shapeMembers1["protocol"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString literal15 && "mcp".Equals(literal15.GetValue(), global::System.StringComparison.Ordinal))))) && (!shapeMembers1.ContainsKey("system_prompt") || ((((shapeMembers1["system_prompt"] == null || shapeMembers1["system_prompt"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull)) || (shapeMembers1["system_prompt"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString)))) && global::System.Linq.Enumerable.All(shapeMembers1.Keys, key => key == "title" || key == "name" || key == "description" || key == "icon_url" || key == "server" || key == "auth_methods" || key == "protocol" || key == "system_prompt"))))))();
+            bool matchesUnionBranch0 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => ((unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject)) && (unionPayload is not global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject shapeObject0 || (shapeObject0.GetValue() is var shapeMembers1 && (shapeMembers1.ContainsKey("protocol") && (!shapeMembers1.ContainsKey("title") || ((((shapeMembers1["title"] == null || shapeMembers1["title"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull)) || (shapeMembers1["title"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString)))) && (!shapeMembers1.ContainsKey("name") || ((((shapeMembers1["name"] == null || shapeMembers1["name"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull)) || (shapeMembers1["name"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString)))) && (!shapeMembers1.ContainsKey("description") || ((((shapeMembers1["description"] == null || shapeMembers1["description"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull)) || (shapeMembers1["description"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString)))) && (!shapeMembers1.ContainsKey("icon_url") || ((((shapeMembers1["icon_url"] == null || shapeMembers1["icon_url"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull)) || (shapeMembers1["icon_url"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString)))) && (!shapeMembers1.ContainsKey("server") || ((((shapeMembers1["server"] == null || shapeMembers1["server"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull)) || (shapeMembers1["server"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString)))) && (!shapeMembers1.ContainsKey("auth_methods") || ((((shapeMembers1["auth_methods"] == null || shapeMembers1["auth_methods"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull)) || (shapeMembers1["auth_methods"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedArray)))) && (!shapeMembers1.ContainsKey("protocol") || (((shapeMembers1["protocol"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString)) && (shapeMembers1["protocol"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString literal14 && "mcp".Equals(literal14.GetValue(), global::System.StringComparison.Ordinal)) && ((shapeMembers1["protocol"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString literal15 && "mcp".Equals(literal15.GetValue(), global::System.StringComparison.Ordinal))))) && (!shapeMembers1.ContainsKey("system_prompt") || ((((shapeMembers1["system_prompt"] == null || shapeMembers1["system_prompt"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull)) || (shapeMembers1["system_prompt"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString)))) && global::System.Linq.Enumerable.All(shapeMembers1.Keys, key => key == "title" || key == "name" || key == "description" || key == "icon_url" || key == "server" || key == "auth_methods" || key == "protocol" || key == "system_prompt"))))))();
             bool matchesUnionBranch1 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => ((unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject)) && (unionPayload is not global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject shapeObject0 || (shapeObject0.GetValue() is var shapeMembers1 && (shapeMembers1.ContainsKey("protocol") && (!shapeMembers1.ContainsKey("title") || ((((shapeMembers1["title"] == null || shapeMembers1["title"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull)) || (shapeMembers1["title"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString)))) && (!shapeMembers1.ContainsKey("name") || ((((shapeMembers1["name"] == null || shapeMembers1["name"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull)) || (shapeMembers1["name"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString)))) && (!shapeMembers1.ContainsKey("description") || ((((shapeMembers1["description"] == null || shapeMembers1["description"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull)) || (shapeMembers1["description"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString)))) && (!shapeMembers1.ContainsKey("icon_url") || ((((shapeMembers1["icon_url"] == null || shapeMembers1["icon_url"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull)) || (shapeMembers1["icon_url"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString)))) && (!shapeMembers1.ContainsKey("server") || ((((shapeMembers1["server"] == null || shapeMembers1["server"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull)) || (shapeMembers1["server"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString)))) && (!shapeMembers1.ContainsKey("auth_methods") || ((((shapeMembers1["auth_methods"] == null || shapeMembers1["auth_methods"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull)) || (shapeMembers1["auth_methods"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedArray)))) && (!shapeMembers1.ContainsKey("protocol") || (((shapeMembers1["protocol"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString)) && (shapeMembers1["protocol"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString literal14 && "http".Equals(literal14.GetValue(), global::System.StringComparison.Ordinal)) && ((shapeMembers1["protocol"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString literal15 && "http".Equals(literal15.GetValue(), global::System.StringComparison.Ordinal))))) && global::System.Linq.Enumerable.All(shapeMembers1.Keys, key => key == "title" || key == "name" || key == "description" || key == "icon_url" || key == "server" || key == "auth_methods" || key == "protocol"))))))();
             int matchingUnionBranches = 0;
             if (matchesUnionBranch0) matchingUnionBranches++;
             if (matchesUnionBranch1) matchingUnionBranches++;
-            bool noSelectedUnionBranch = result.ConnectorMcpPublicUpdate == null && result.UpdateHttpConnectorRequest == null;
-            if (noSelectedUnionBranch && matchesUnionBranch0 && matchingUnionBranches == 1) result.ConnectorMcpPublicUpdate = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Mistral.OpenApiClient.Models.ConnectorMcpPublicUpdate(), parseNode);
+            bool noSelectedUnionBranch = result.ConnectorUpdateV1RequestOneOf1 == null && result.UpdateHttpConnectorRequest == null;
+            if (noSelectedUnionBranch && matchesUnionBranch0 && matchingUnionBranches == 1) result.ConnectorUpdateV1RequestOneOf1 = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Mistral.OpenApiClient.Models.ConnectorUpdateV1RequestOneOf1(), parseNode);
             if (noSelectedUnionBranch && matchesUnionBranch1 && matchingUnionBranches == 1) result.UpdateHttpConnectorRequest = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Mistral.OpenApiClient.Models.UpdateHttpConnectorRequest(), parseNode);
-            if (result.ConnectorMcpPublicUpdate == null && result.UpdateHttpConnectorRequest == null) result.UnrecognizedValue = unionPayload;
+            if (result.ConnectorUpdateV1RequestOneOf1 == null && result.UpdateHttpConnectorRequest == null) result.UnrecognizedValue = unionPayload;
 return result;
         }
         /// <summary>
@@ -73,9 +73,9 @@ return result;
         {
             if (UnrecognizedValue is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject rawFields) { var fields = new global::System.Collections.Generic.Dictionary<string, global::System.Action<IParseNode>>(); foreach (var entry in rawFields.GetValue()) fields[entry.Key] = _ => { }; return fields; }
 
-            if(ConnectorMcpPublicUpdate != null)
+            if(ConnectorUpdateV1RequestOneOf1 != null)
             {
-                return ConnectorMcpPublicUpdate.GetFieldDeserializers();
+                return ConnectorUpdateV1RequestOneOf1.GetFieldDeserializers();
             }
             else if(UpdateHttpConnectorRequest != null)
             {
@@ -90,18 +90,18 @@ return result;
         public virtual void Serialize(ISerializationWriter writer)
         {
             if (global::System.Object.ReferenceEquals(writer, null)) throw new global::System.ArgumentNullException(nameof(writer));
-            if (ConnectorMcpPublicUpdate == null && UpdateHttpConnectorRequest == null) { if (UnrecognizedValue is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject rawObject) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData, rawObject)); else if (UnrecognizedValue != null) writer.WriteObjectValue(null, UnrecognizedValue); else if (AdditionalData.Count > 0) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData)); else writer.WriteNullValue(null); return; }
+            if (ConnectorUpdateV1RequestOneOf1 == null && UpdateHttpConnectorRequest == null) { if (UnrecognizedValue is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject rawObject) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData, rawObject)); else if (UnrecognizedValue != null) writer.WriteObjectValue(null, UnrecognizedValue); else if (AdditionalData.Count > 0) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData)); else writer.WriteNullValue(null); return; }
             int selectedUnionBranches = 0;
-            if (ConnectorMcpPublicUpdate != null) selectedUnionBranches++;
+            if (ConnectorUpdateV1RequestOneOf1 != null) selectedUnionBranches++;
             if (UpdateHttpConnectorRequest != null) selectedUnionBranches++;
-            if (ConnectorMcpPublicUpdate != null && selectedUnionBranches == 1) { if (ConnectorMcpPublicUpdate is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, ConnectorMcpPublicUpdate); return; }
+            if (ConnectorUpdateV1RequestOneOf1 != null && selectedUnionBranches == 1) { if (ConnectorUpdateV1RequestOneOf1 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, ConnectorUpdateV1RequestOneOf1); return; }
             if (UpdateHttpConnectorRequest != null && selectedUnionBranches == 1) { if (UpdateHttpConnectorRequest is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, UpdateHttpConnectorRequest); return; }
 
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            if(ConnectorMcpPublicUpdate != null)
+            if(ConnectorUpdateV1RequestOneOf1 != null)
             {
-                if (ConnectorMcpPublicUpdate is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
-                writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ConnectorMcpPublicUpdate>(null, ConnectorMcpPublicUpdate);
+                if (ConnectorUpdateV1RequestOneOf1 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
+                writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ConnectorUpdateV1RequestOneOf1>(null, ConnectorUpdateV1RequestOneOf1);
             }
             else if(UpdateHttpConnectorRequest != null)
             {

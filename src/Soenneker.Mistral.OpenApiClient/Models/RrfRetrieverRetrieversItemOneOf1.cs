@@ -44,12 +44,12 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         /// <summary>The filter property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.InType? Filter { get => _explicitNullValueFilter; set { _explicitNullValueFilter = value; AdditionalData?.Remove("filter"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("filter"); else _explicitNullProperties?.Remove("filter"); } }
-        private global::Soenneker.Mistral.OpenApiClient.Models.InType? _explicitNullValueFilter = default!;
+        public global::Soenneker.Mistral.OpenApiClient.Models.KeywordRetrieverFilterAnyOf1? Filter { get => _explicitNullValueFilter; set { _explicitNullValueFilter = value; AdditionalData?.Remove("filter"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("filter"); else _explicitNullProperties?.Remove("filter"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.KeywordRetrieverFilterAnyOf1? _explicitNullValueFilter = default!;
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.InType Filter { get => _explicitNullValueFilter; set { _explicitNullValueFilter = value; AdditionalData?.Remove("filter"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("filter"); else _explicitNullProperties?.Remove("filter"); } }
-        private global::Soenneker.Mistral.OpenApiClient.Models.InType _explicitNullValueFilter = default!;
+        public global::Soenneker.Mistral.OpenApiClient.Models.KeywordRetrieverFilterAnyOf1 Filter { get => _explicitNullValueFilter; set { _explicitNullValueFilter = value; AdditionalData?.Remove("filter"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("filter"); else _explicitNullProperties?.Remove("filter"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.KeywordRetrieverFilterAnyOf1 _explicitNullValueFilter = default!;
 #endif
         /// <summary>The query property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -94,7 +94,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "field", n => { Field = n.GetStringValue(); } },
-                { "filter", n => { Filter = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.InType>(global::Soenneker.Mistral.OpenApiClient.Models.InType.CreateFromDiscriminatorValue); } },
+                { "filter", n => { Filter = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.KeywordRetrieverFilterAnyOf1>(global::Soenneker.Mistral.OpenApiClient.Models.KeywordRetrieverFilterAnyOf1.CreateFromDiscriminatorValue); } },
                 { "query", n => { Query = n.GetStringValue(); } },
                 { "top_k", n => { TopK = n.GetIntValue(); } },
                 { "type", n => { var parsed = n.GetEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.RrfRetrieverRetrieversItemOneOf1_type>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueType = default; _explicitNullProperties?.Remove("type"); AdditionalData["type"] = unknown; } else { Type = parsed; AdditionalData.Remove("type"); } } },
@@ -108,7 +108,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("field", Field);
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.InType>("filter", Filter);
+            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.KeywordRetrieverFilterAnyOf1>("filter", Filter);
             writer.WriteStringValue("query", Query);
             writer.WriteIntValue("top_k", TopK);
             writer.WriteEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.RrfRetrieverRetrieversItemOneOf1_type>("type", Type);

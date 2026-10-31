@@ -101,12 +101,12 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         /// <summary>The prompt(s) to generate completions for, encoded as a list of dict with role and content.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Mistral.OpenApiClient.Models.AgentsCompletionRequestMessagesItem>? Messages { get => _explicitNullValueMessages; set { _explicitNullValueMessages = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("messages"); else _explicitNullProperties?.Remove("messages"); } }
-        private List<global::Soenneker.Mistral.OpenApiClient.Models.AgentsCompletionRequestMessagesItem>? _explicitNullValueMessages = default!;
+        public List<global::Soenneker.Mistral.OpenApiClient.Models.ChatCompletionRequestMessagesItem>? Messages { get => _explicitNullValueMessages; set { _explicitNullValueMessages = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("messages"); else _explicitNullProperties?.Remove("messages"); } }
+        private List<global::Soenneker.Mistral.OpenApiClient.Models.ChatCompletionRequestMessagesItem>? _explicitNullValueMessages = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Mistral.OpenApiClient.Models.AgentsCompletionRequestMessagesItem> Messages { get => _explicitNullValueMessages; set { _explicitNullValueMessages = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("messages"); else _explicitNullProperties?.Remove("messages"); } }
-        private List<global::Soenneker.Mistral.OpenApiClient.Models.AgentsCompletionRequestMessagesItem> _explicitNullValueMessages = default!;
+        public List<global::Soenneker.Mistral.OpenApiClient.Models.ChatCompletionRequestMessagesItem> Messages { get => _explicitNullValueMessages; set { _explicitNullValueMessages = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("messages"); else _explicitNullProperties?.Remove("messages"); } }
+        private List<global::Soenneker.Mistral.OpenApiClient.Models.ChatCompletionRequestMessagesItem> _explicitNullValueMessages = default!;
 #endif
         /// <summary>The metadata property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -220,12 +220,12 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         /// <summary>A list of tools the model may call. Use this to provide a list of functions the model may generate JSON inputs for.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Mistral.OpenApiClient.Models.AgentsCompletionRequestToolsItem>? Tools { get => _explicitNullValueTools; set { _explicitNullValueTools = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tools"); else _explicitNullProperties?.Remove("tools"); } }
-        private List<global::Soenneker.Mistral.OpenApiClient.Models.AgentsCompletionRequestToolsItem>? _explicitNullValueTools = default!;
+        public List<global::Soenneker.Mistral.OpenApiClient.Models.ChatCompletionRequestToolsItem>? Tools { get => _explicitNullValueTools; set { _explicitNullValueTools = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tools"); else _explicitNullProperties?.Remove("tools"); } }
+        private List<global::Soenneker.Mistral.OpenApiClient.Models.ChatCompletionRequestToolsItem>? _explicitNullValueTools = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Mistral.OpenApiClient.Models.AgentsCompletionRequestToolsItem> Tools { get => _explicitNullValueTools; set { _explicitNullValueTools = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tools"); else _explicitNullProperties?.Remove("tools"); } }
-        private List<global::Soenneker.Mistral.OpenApiClient.Models.AgentsCompletionRequestToolsItem> _explicitNullValueTools = default!;
+        public List<global::Soenneker.Mistral.OpenApiClient.Models.ChatCompletionRequestToolsItem> Tools { get => _explicitNullValueTools; set { _explicitNullValueTools = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tools"); else _explicitNullProperties?.Remove("tools"); } }
+        private List<global::Soenneker.Mistral.OpenApiClient.Models.ChatCompletionRequestToolsItem> _explicitNullValueTools = default!;
 #endif
         /// <summary>The top_k property</summary>
         public int? TopK { get => _explicitNullValueTopK; set { _explicitNullValueTopK = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("top_k"); else _explicitNullProperties?.Remove("top_k"); } }
@@ -270,7 +270,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
                 { "guardrails", n => { Guardrails = n.GetCollectionOfObjectValues<global::Soenneker.Mistral.OpenApiClient.Models.GuardrailConfig>(global::Soenneker.Mistral.OpenApiClient.Models.GuardrailConfig.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "logprobs", n => { Logprobs = n.GetBoolValue(); } },
                 { "max_tokens", n => { MaxTokens = n.GetIntValue(); } },
-                { "messages", n => { Messages = n.GetCollectionOfObjectValues<global::Soenneker.Mistral.OpenApiClient.Models.AgentsCompletionRequestMessagesItem>(global::Soenneker.Mistral.OpenApiClient.Models.AgentsCompletionRequestMessagesItem.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "messages", n => { Messages = n.GetCollectionOfObjectValues<global::Soenneker.Mistral.OpenApiClient.Models.ChatCompletionRequestMessagesItem>(global::Soenneker.Mistral.OpenApiClient.Models.ChatCompletionRequestMessagesItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "metadata", n => { Metadata = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ChatCompletionRequestMetadataProperty>(global::Soenneker.Mistral.OpenApiClient.Models.ChatCompletionRequestMetadataProperty.CreateFromDiscriminatorValue); } },
                 { "min_tokens", n => { MinTokens = n.GetIntValue(); } },
                 { "model", n => { Model = n.GetStringValue(); } },
@@ -291,7 +291,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
                 { "stream", n => { Stream = n.GetBoolValue(); } },
                 { "temperature", n => { Temperature = n.GetDoubleValue(); } },
                 { "tool_choice", n => { ToolChoice = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ChatCompletionRequestToolChoice>(global::Soenneker.Mistral.OpenApiClient.Models.ChatCompletionRequestToolChoice.CreateFromDiscriminatorValue); } },
-                { "tools", n => { Tools = n.GetCollectionOfObjectValues<global::Soenneker.Mistral.OpenApiClient.Models.AgentsCompletionRequestToolsItem>(global::Soenneker.Mistral.OpenApiClient.Models.AgentsCompletionRequestToolsItem.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "tools", n => { Tools = n.GetCollectionOfObjectValues<global::Soenneker.Mistral.OpenApiClient.Models.ChatCompletionRequestToolsItem>(global::Soenneker.Mistral.OpenApiClient.Models.ChatCompletionRequestToolsItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "top_k", n => { TopK = n.GetIntValue(); } },
                 { "top_logprobs", n => { TopLogprobs = n.GetIntValue(); } },
                 { "top_p", n => { TopP = n.GetDoubleValue(); } },
@@ -309,7 +309,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             writer.WriteCollectionOfObjectValues<global::Soenneker.Mistral.OpenApiClient.Models.GuardrailConfig>("guardrails", Guardrails);
             writer.WriteBoolValue("logprobs", Logprobs);
             writer.WriteIntValue("max_tokens", MaxTokens);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Mistral.OpenApiClient.Models.AgentsCompletionRequestMessagesItem>("messages", Messages);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Mistral.OpenApiClient.Models.ChatCompletionRequestMessagesItem>("messages", Messages);
             writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ChatCompletionRequestMetadataProperty>("metadata", Metadata);
             writer.WriteIntValue("min_tokens", MinTokens);
             writer.WriteStringValue("model", Model);
@@ -330,7 +330,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             writer.WriteBoolValue("stream", Stream);
             writer.WriteDoubleValue("temperature", Temperature);
             writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ChatCompletionRequestToolChoice>("tool_choice", ToolChoice);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Mistral.OpenApiClient.Models.AgentsCompletionRequestToolsItem>("tools", Tools);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Mistral.OpenApiClient.Models.ChatCompletionRequestToolsItem>("tools", Tools);
             writer.WriteIntValue("top_k", TopK);
             writer.WriteIntValue("top_logprobs", TopLogprobs);
             writer.WriteDoubleValue("top_p", TopP);

@@ -36,12 +36,12 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         /// <summary>Authentication methods supported by the connector.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Mistral.OpenApiClient.Models.ConnectorMcpPublicUpdateAuthMethodsItem>? AuthMethods { get => _explicitNullValueAuthMethods; set { _explicitNullValueAuthMethods = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("auth_methods"); else _explicitNullProperties?.Remove("auth_methods"); } }
-        private List<global::Soenneker.Mistral.OpenApiClient.Models.ConnectorMcpPublicUpdateAuthMethodsItem>? _explicitNullValueAuthMethods = default!;
+        public List<global::Soenneker.Mistral.OpenApiClient.Models.UpdateHttpConnectorRequestAuthMethodsItem>? AuthMethods { get => _explicitNullValueAuthMethods; set { _explicitNullValueAuthMethods = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("auth_methods"); else _explicitNullProperties?.Remove("auth_methods"); } }
+        private List<global::Soenneker.Mistral.OpenApiClient.Models.UpdateHttpConnectorRequestAuthMethodsItem>? _explicitNullValueAuthMethods = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Mistral.OpenApiClient.Models.ConnectorMcpPublicUpdateAuthMethodsItem> AuthMethods { get => _explicitNullValueAuthMethods; set { _explicitNullValueAuthMethods = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("auth_methods"); else _explicitNullProperties?.Remove("auth_methods"); } }
-        private List<global::Soenneker.Mistral.OpenApiClient.Models.ConnectorMcpPublicUpdateAuthMethodsItem> _explicitNullValueAuthMethods = default!;
+        public List<global::Soenneker.Mistral.OpenApiClient.Models.UpdateHttpConnectorRequestAuthMethodsItem> AuthMethods { get => _explicitNullValueAuthMethods; set { _explicitNullValueAuthMethods = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("auth_methods"); else _explicitNullProperties?.Remove("auth_methods"); } }
+        private List<global::Soenneker.Mistral.OpenApiClient.Models.UpdateHttpConnectorRequestAuthMethodsItem> _explicitNullValueAuthMethods = default!;
 #endif
         /// <summary>The description of the connector.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -114,7 +114,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "auth_methods", n => { AuthMethods = n.GetCollectionOfObjectValues<global::Soenneker.Mistral.OpenApiClient.Models.ConnectorMcpPublicUpdateAuthMethodsItem>(global::Soenneker.Mistral.OpenApiClient.Models.ConnectorMcpPublicUpdateAuthMethodsItem.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "auth_methods", n => { AuthMethods = n.GetCollectionOfObjectValues<global::Soenneker.Mistral.OpenApiClient.Models.UpdateHttpConnectorRequestAuthMethodsItem>(global::Soenneker.Mistral.OpenApiClient.Models.UpdateHttpConnectorRequestAuthMethodsItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "icon_url", n => { IconUrl = n.GetStringValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
@@ -130,7 +130,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Mistral.OpenApiClient.Models.ConnectorMcpPublicUpdateAuthMethodsItem>("auth_methods", AuthMethods);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Mistral.OpenApiClient.Models.UpdateHttpConnectorRequestAuthMethodsItem>("auth_methods", AuthMethods);
             writer.WriteStringValue("description", Description);
             writer.WriteStringValue("icon_url", IconUrl);
             writer.WriteStringValue("name", Name);

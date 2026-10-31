@@ -50,12 +50,12 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         /// <summary>Authentication methods supported by the connector.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Mistral.OpenApiClient.Models.CreateConnectorRequestAuthMethodsItem>? AuthMethods { get => _explicitNullValueAuthMethods; set { _explicitNullValueAuthMethods = value; AdditionalData?.Remove("auth_methods"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("auth_methods"); else _explicitNullProperties?.Remove("auth_methods"); } }
-        private List<global::Soenneker.Mistral.OpenApiClient.Models.CreateConnectorRequestAuthMethodsItem>? _explicitNullValueAuthMethods = default!;
+        public List<global::Soenneker.Mistral.OpenApiClient.Models.CreateHttpConnectorRequestAuthMethodsItem>? AuthMethods { get => _explicitNullValueAuthMethods; set { _explicitNullValueAuthMethods = value; AdditionalData?.Remove("auth_methods"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("auth_methods"); else _explicitNullProperties?.Remove("auth_methods"); } }
+        private List<global::Soenneker.Mistral.OpenApiClient.Models.CreateHttpConnectorRequestAuthMethodsItem>? _explicitNullValueAuthMethods = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Mistral.OpenApiClient.Models.CreateConnectorRequestAuthMethodsItem> AuthMethods { get => _explicitNullValueAuthMethods; set { _explicitNullValueAuthMethods = value; AdditionalData?.Remove("auth_methods"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("auth_methods"); else _explicitNullProperties?.Remove("auth_methods"); } }
-        private List<global::Soenneker.Mistral.OpenApiClient.Models.CreateConnectorRequestAuthMethodsItem> _explicitNullValueAuthMethods = default!;
+        public List<global::Soenneker.Mistral.OpenApiClient.Models.CreateHttpConnectorRequestAuthMethodsItem> AuthMethods { get => _explicitNullValueAuthMethods; set { _explicitNullValueAuthMethods = value; AdditionalData?.Remove("auth_methods"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("auth_methods"); else _explicitNullProperties?.Remove("auth_methods"); } }
+        private List<global::Soenneker.Mistral.OpenApiClient.Models.CreateHttpConnectorRequestAuthMethodsItem> _explicitNullValueAuthMethods = default!;
 #endif
         /// <summary>The description of the connector.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -189,7 +189,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "auth_methods", n => { AuthMethods = n.GetCollectionOfObjectValues<global::Soenneker.Mistral.OpenApiClient.Models.CreateConnectorRequestAuthMethodsItem>(global::Soenneker.Mistral.OpenApiClient.Models.CreateConnectorRequestAuthMethodsItem.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "auth_methods", n => { AuthMethods = n.GetCollectionOfObjectValues<global::Soenneker.Mistral.OpenApiClient.Models.CreateHttpConnectorRequestAuthMethodsItem>(global::Soenneker.Mistral.OpenApiClient.Models.CreateHttpConnectorRequestAuthMethodsItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "global_headers", n => { GlobalHeaders = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.CreateHttpConnectorRequestGlobalHeadersProperty>(global::Soenneker.Mistral.OpenApiClient.Models.CreateHttpConnectorRequestGlobalHeadersProperty.CreateFromDiscriminatorValue); } },
                 { "headers", n => { Headers = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.CreateHttpConnectorRequestHeadersProperty>(global::Soenneker.Mistral.OpenApiClient.Models.CreateHttpConnectorRequestHeadersProperty.CreateFromDiscriminatorValue); } },
@@ -211,7 +211,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Mistral.OpenApiClient.Models.CreateConnectorRequestAuthMethodsItem>("auth_methods", AuthMethods);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Mistral.OpenApiClient.Models.CreateHttpConnectorRequestAuthMethodsItem>("auth_methods", AuthMethods);
             writer.WriteStringValue("description", Description);
             writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.CreateHttpConnectorRequestGlobalHeadersProperty>("global_headers", GlobalHeaders);
             writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.CreateHttpConnectorRequestHeadersProperty>("headers", Headers);

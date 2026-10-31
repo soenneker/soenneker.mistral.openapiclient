@@ -36,12 +36,12 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         /// <summary>The filter property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.InType? Filter { get => _explicitNullValueFilter; set { _explicitNullValueFilter = value; AdditionalData?.Remove("filter"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("filter"); else _explicitNullProperties?.Remove("filter"); } }
-        private global::Soenneker.Mistral.OpenApiClient.Models.InType? _explicitNullValueFilter = default!;
+        public global::Soenneker.Mistral.OpenApiClient.Models.RrfRetrieverFilterAnyOf1? Filter { get => _explicitNullValueFilter; set { _explicitNullValueFilter = value; AdditionalData?.Remove("filter"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("filter"); else _explicitNullProperties?.Remove("filter"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.RrfRetrieverFilterAnyOf1? _explicitNullValueFilter = default!;
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.InType Filter { get => _explicitNullValueFilter; set { _explicitNullValueFilter = value; AdditionalData?.Remove("filter"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("filter"); else _explicitNullProperties?.Remove("filter"); } }
-        private global::Soenneker.Mistral.OpenApiClient.Models.InType _explicitNullValueFilter = default!;
+        public global::Soenneker.Mistral.OpenApiClient.Models.RrfRetrieverFilterAnyOf1 Filter { get => _explicitNullValueFilter; set { _explicitNullValueFilter = value; AdditionalData?.Remove("filter"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("filter"); else _explicitNullProperties?.Remove("filter"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.RrfRetrieverFilterAnyOf1 _explicitNullValueFilter = default!;
 #endif
         /// <summary>The rank_constant property</summary>
         public int? RankConstant { get => _explicitNullValueRankConstant; set { _explicitNullValueRankConstant = value; AdditionalData?.Remove("rank_constant"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rank_constant"); else _explicitNullProperties?.Remove("rank_constant"); } }
@@ -99,7 +99,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "filter", n => { Filter = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.InType>(global::Soenneker.Mistral.OpenApiClient.Models.InType.CreateFromDiscriminatorValue); } },
+                { "filter", n => { Filter = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.RrfRetrieverFilterAnyOf1>(global::Soenneker.Mistral.OpenApiClient.Models.RrfRetrieverFilterAnyOf1.CreateFromDiscriminatorValue); } },
                 { "rank_constant", n => { RankConstant = n.GetIntValue(); } },
                 { "retrievers", n => { Retrievers = n.GetCollectionOfObjectValues<global::Soenneker.Mistral.OpenApiClient.Models.RrfRetrieverRetrieversItem>(global::Soenneker.Mistral.OpenApiClient.Models.RrfRetrieverRetrieversItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "top_k", n => { TopK = n.GetIntValue(); } },
@@ -114,7 +114,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.InType>("filter", Filter);
+            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.RrfRetrieverFilterAnyOf1>("filter", Filter);
             writer.WriteIntValue("rank_constant", RankConstant);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Mistral.OpenApiClient.Models.RrfRetrieverRetrieversItem>("retrievers", Retrievers);
             writer.WriteIntValue("top_k", TopK);

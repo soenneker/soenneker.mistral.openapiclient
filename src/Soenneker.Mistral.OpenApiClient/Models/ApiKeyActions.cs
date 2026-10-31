@@ -29,22 +29,22 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         /// <summary>The delete property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.ActionUnavailableDeleteUnavailableReason? Delete { get => _explicitNullValueDelete; set { _explicitNullValueDelete = value; AdditionalData?.Remove("delete"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("delete"); else _explicitNullProperties?.Remove("delete"); } }
-        private global::Soenneker.Mistral.OpenApiClient.Models.ActionUnavailableDeleteUnavailableReason? _explicitNullValueDelete = default!;
+        public global::Soenneker.Mistral.OpenApiClient.Models.ApiKeyActionsDeleteAnyOf1? Delete { get => _explicitNullValueDelete; set { _explicitNullValueDelete = value; AdditionalData?.Remove("delete"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("delete"); else _explicitNullProperties?.Remove("delete"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.ApiKeyActionsDeleteAnyOf1? _explicitNullValueDelete = default!;
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.ActionUnavailableDeleteUnavailableReason Delete { get => _explicitNullValueDelete; set { _explicitNullValueDelete = value; AdditionalData?.Remove("delete"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("delete"); else _explicitNullProperties?.Remove("delete"); } }
-        private global::Soenneker.Mistral.OpenApiClient.Models.ActionUnavailableDeleteUnavailableReason _explicitNullValueDelete = default!;
+        public global::Soenneker.Mistral.OpenApiClient.Models.ApiKeyActionsDeleteAnyOf1 Delete { get => _explicitNullValueDelete; set { _explicitNullValueDelete = value; AdditionalData?.Remove("delete"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("delete"); else _explicitNullProperties?.Remove("delete"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.ApiKeyActionsDeleteAnyOf1 _explicitNullValueDelete = default!;
 #endif
         /// <summary>The rotate property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.ActionUnavailableRotateUnavailableReason? Rotate { get => _explicitNullValueRotate; set { _explicitNullValueRotate = value; AdditionalData?.Remove("rotate"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rotate"); else _explicitNullProperties?.Remove("rotate"); } }
-        private global::Soenneker.Mistral.OpenApiClient.Models.ActionUnavailableRotateUnavailableReason? _explicitNullValueRotate = default!;
+        public global::Soenneker.Mistral.OpenApiClient.Models.ApiKeyActionsRotateAnyOf1? Rotate { get => _explicitNullValueRotate; set { _explicitNullValueRotate = value; AdditionalData?.Remove("rotate"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rotate"); else _explicitNullProperties?.Remove("rotate"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.ApiKeyActionsRotateAnyOf1? _explicitNullValueRotate = default!;
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.ActionUnavailableRotateUnavailableReason Rotate { get => _explicitNullValueRotate; set { _explicitNullValueRotate = value; AdditionalData?.Remove("rotate"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rotate"); else _explicitNullProperties?.Remove("rotate"); } }
-        private global::Soenneker.Mistral.OpenApiClient.Models.ActionUnavailableRotateUnavailableReason _explicitNullValueRotate = default!;
+        public global::Soenneker.Mistral.OpenApiClient.Models.ApiKeyActionsRotateAnyOf1 Rotate { get => _explicitNullValueRotate; set { _explicitNullValueRotate = value; AdditionalData?.Remove("rotate"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rotate"); else _explicitNullProperties?.Remove("rotate"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.ApiKeyActionsRotateAnyOf1 _explicitNullValueRotate = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Mistral.OpenApiClient.Models.ApiKeyActions"/> and sets the default values.
@@ -71,8 +71,8 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "delete", n => { Delete = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ActionUnavailableDeleteUnavailableReason>(global::Soenneker.Mistral.OpenApiClient.Models.ActionUnavailableDeleteUnavailableReason.CreateFromDiscriminatorValue); } },
-                { "rotate", n => { Rotate = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ActionUnavailableRotateUnavailableReason>(global::Soenneker.Mistral.OpenApiClient.Models.ActionUnavailableRotateUnavailableReason.CreateFromDiscriminatorValue); } },
+                { "delete", n => { Delete = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ApiKeyActionsDeleteAnyOf1>(global::Soenneker.Mistral.OpenApiClient.Models.ApiKeyActionsDeleteAnyOf1.CreateFromDiscriminatorValue); } },
+                { "rotate", n => { Rotate = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ApiKeyActionsRotateAnyOf1>(global::Soenneker.Mistral.OpenApiClient.Models.ApiKeyActionsRotateAnyOf1.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -82,8 +82,8 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ActionUnavailableDeleteUnavailableReason>("delete", Delete);
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ActionUnavailableRotateUnavailableReason>("rotate", Rotate);
+            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ApiKeyActionsDeleteAnyOf1>("delete", Delete);
+            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ApiKeyActionsRotateAnyOf1>("rotate", Rotate);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }

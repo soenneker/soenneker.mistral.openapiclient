@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.Mistral.OpenApiClient.Models
 {
     /// <summary>
-    /// Composed type wrapper for classes <see cref="global::Soenneker.Mistral.OpenApiClient.Models.DeploymentK8SBackendSpec"/>, <see cref="global::Soenneker.Mistral.OpenApiClient.Models.DeploymentMistralCloudBackendSpec"/>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Mistral.OpenApiClient.Models.DeploymentWorkerSpecResponseBackendSpecOneOf1"/>, <see cref="global::Soenneker.Mistral.OpenApiClient.Models.DeploymentWorkerSpecResponseBackendSpecOneOf2"/>
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class DeploymentWorkerSpecResponseBackendSpec : IComposedTypeWrapper, IParsable
@@ -18,21 +18,21 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         public global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode UnrecognizedValue { get; set; } = null!;
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalData { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Mistral.OpenApiClient.Models.DeploymentK8SBackendSpec"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Mistral.OpenApiClient.Models.DeploymentWorkerSpecResponseBackendSpecOneOf1"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.DeploymentK8SBackendSpec? DeploymentK8SBackendSpec { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.DeploymentWorkerSpecResponseBackendSpecOneOf1? DeploymentWorkerSpecResponseBackendSpecOneOf1 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.DeploymentK8SBackendSpec DeploymentK8SBackendSpec { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.DeploymentWorkerSpecResponseBackendSpecOneOf1 DeploymentWorkerSpecResponseBackendSpecOneOf1 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Mistral.OpenApiClient.Models.DeploymentMistralCloudBackendSpec"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Mistral.OpenApiClient.Models.DeploymentWorkerSpecResponseBackendSpecOneOf2"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.DeploymentMistralCloudBackendSpec? DeploymentMistralCloudBackendSpec { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.DeploymentWorkerSpecResponseBackendSpecOneOf2? DeploymentWorkerSpecResponseBackendSpecOneOf2 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.DeploymentMistralCloudBackendSpec DeploymentMistralCloudBackendSpec { get; set; }
+        public global::Soenneker.Mistral.OpenApiClient.Models.DeploymentWorkerSpecResponseBackendSpecOneOf2 DeploymentWorkerSpecResponseBackendSpecOneOf2 { get; set; }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -42,27 +42,27 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         public static global::Soenneker.Mistral.OpenApiClient.Models.DeploymentWorkerSpecResponseBackendSpec CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
+            var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
             var result = new global::Soenneker.Mistral.OpenApiClient.Models.DeploymentWorkerSpecResponseBackendSpec();
-            if("kubernetes".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            if("DeploymentWorkerSpecResponseBackendSpecOneOf1".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 
             }
-            else if("koyeb".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("DeploymentWorkerSpecResponseBackendSpecOneOf2".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 
             }
             
             var unionPayload = parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue);
-            bool matchesUnionBranch0 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => ((unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject)) && (unionPayload is not global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject shapeObject0 || (shapeObject0.GetValue() is var shapeMembers1 && ((!shapeMembers1.ContainsKey("type") || (((shapeMembers1["type"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString)) && ((shapeMembers1["type"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString literal2 && "mistral_cloud".Equals(literal2.GetValue(), global::System.StringComparison.Ordinal)) || (shapeMembers1["type"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString literal3 && "koyeb".Equals(literal3.GetValue(), global::System.StringComparison.Ordinal))))) && (!shapeMembers1.ContainsKey("build_directory") || ((((shapeMembers1["build_directory"] == null || shapeMembers1["build_directory"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull)) || (shapeMembers1["build_directory"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString)))) && (!shapeMembers1.ContainsKey("dockerfile_path") || ((((shapeMembers1["dockerfile_path"] == null || shapeMembers1["dockerfile_path"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull)) || (shapeMembers1["dockerfile_path"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString)))) && (!shapeMembers1.ContainsKey("secrets") || ((((shapeMembers1["secrets"] == null || shapeMembers1["secrets"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull)) || (shapeMembers1["secrets"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedArray)))) && global::System.Linq.Enumerable.All(shapeMembers1.Keys, key => key == "type" || key == "build_directory" || key == "dockerfile_path" || key == "secrets"))))))();
-            bool matchesUnionBranch1 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => ((unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject)) && (unionPayload is not global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject shapeObject0 || (shapeObject0.GetValue() is var shapeMembers1 && ((!shapeMembers1.ContainsKey("type") || (((shapeMembers1["type"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString)) && (shapeMembers1["type"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString literal2 && "kubernetes".Equals(literal2.GetValue(), global::System.StringComparison.Ordinal)) && ((shapeMembers1["type"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString literal3 && "kubernetes".Equals(literal3.GetValue(), global::System.StringComparison.Ordinal))))) && (!shapeMembers1.ContainsKey("entrypoint") || ((((shapeMembers1["entrypoint"] == null || shapeMembers1["entrypoint"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull)) || (shapeMembers1["entrypoint"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString)))) && (!shapeMembers1.ContainsKey("working_dir") || ((((shapeMembers1["working_dir"] == null || shapeMembers1["working_dir"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull)) || (shapeMembers1["working_dir"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString)))) && global::System.Linq.Enumerable.All(shapeMembers1.Keys, key => key == "type" || key == "entrypoint" || key == "working_dir"))))))();
+            bool matchesUnionBranch0 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => ((unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject)) && (unionPayload is not global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject shapeObject0 || (shapeObject0.GetValue() is var shapeMembers1 && (shapeMembers1.ContainsKey("type") && (!shapeMembers1.ContainsKey("type") || (((shapeMembers1["type"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString)) && ((shapeMembers1["type"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString literal2 && "mistral_cloud".Equals(literal2.GetValue(), global::System.StringComparison.Ordinal)) || (shapeMembers1["type"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString literal3 && "koyeb".Equals(literal3.GetValue(), global::System.StringComparison.Ordinal))))) && (!shapeMembers1.ContainsKey("build_directory") || ((((shapeMembers1["build_directory"] == null || shapeMembers1["build_directory"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull)) || (shapeMembers1["build_directory"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString)))) && (!shapeMembers1.ContainsKey("dockerfile_path") || ((((shapeMembers1["dockerfile_path"] == null || shapeMembers1["dockerfile_path"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull)) || (shapeMembers1["dockerfile_path"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString)))) && (!shapeMembers1.ContainsKey("secrets") || ((((shapeMembers1["secrets"] == null || shapeMembers1["secrets"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull)) || (shapeMembers1["secrets"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedArray)))) && global::System.Linq.Enumerable.All(shapeMembers1.Keys, key => key == "type" || key == "build_directory" || key == "dockerfile_path" || key == "secrets"))))))();
+            bool matchesUnionBranch1 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => ((unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject)) && (unionPayload is not global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject shapeObject0 || (shapeObject0.GetValue() is var shapeMembers1 && (shapeMembers1.ContainsKey("type") && (!shapeMembers1.ContainsKey("type") || (((shapeMembers1["type"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString)) && (shapeMembers1["type"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString literal2 && "kubernetes".Equals(literal2.GetValue(), global::System.StringComparison.Ordinal)) && ((shapeMembers1["type"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString literal3 && "kubernetes".Equals(literal3.GetValue(), global::System.StringComparison.Ordinal))))) && (!shapeMembers1.ContainsKey("entrypoint") || ((((shapeMembers1["entrypoint"] == null || shapeMembers1["entrypoint"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull)) || (shapeMembers1["entrypoint"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString)))) && (!shapeMembers1.ContainsKey("working_dir") || ((((shapeMembers1["working_dir"] == null || shapeMembers1["working_dir"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull)) || (shapeMembers1["working_dir"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString)))) && global::System.Linq.Enumerable.All(shapeMembers1.Keys, key => key == "type" || key == "entrypoint" || key == "working_dir"))))))();
             int matchingUnionBranches = 0;
             if (matchesUnionBranch0) matchingUnionBranches++;
             if (matchesUnionBranch1) matchingUnionBranches++;
-            bool noSelectedUnionBranch = result.DeploymentK8SBackendSpec == null && result.DeploymentMistralCloudBackendSpec == null;
-            if (noSelectedUnionBranch && matchesUnionBranch0 && matchingUnionBranches == 1) result.DeploymentMistralCloudBackendSpec = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Mistral.OpenApiClient.Models.DeploymentMistralCloudBackendSpec(), parseNode);
-            if (noSelectedUnionBranch && matchesUnionBranch1 && matchingUnionBranches == 1) result.DeploymentK8SBackendSpec = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Mistral.OpenApiClient.Models.DeploymentK8SBackendSpec(), parseNode);
-            if (result.DeploymentK8SBackendSpec == null && result.DeploymentMistralCloudBackendSpec == null) result.UnrecognizedValue = unionPayload;
+            bool noSelectedUnionBranch = result.DeploymentWorkerSpecResponseBackendSpecOneOf1 == null && result.DeploymentWorkerSpecResponseBackendSpecOneOf2 == null;
+            if (noSelectedUnionBranch && matchesUnionBranch0 && matchingUnionBranches == 1) result.DeploymentWorkerSpecResponseBackendSpecOneOf1 = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Mistral.OpenApiClient.Models.DeploymentWorkerSpecResponseBackendSpecOneOf1(), parseNode);
+            if (noSelectedUnionBranch && matchesUnionBranch1 && matchingUnionBranches == 1) result.DeploymentWorkerSpecResponseBackendSpecOneOf2 = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Mistral.OpenApiClient.Models.DeploymentWorkerSpecResponseBackendSpecOneOf2(), parseNode);
+            if (result.DeploymentWorkerSpecResponseBackendSpecOneOf1 == null && result.DeploymentWorkerSpecResponseBackendSpecOneOf2 == null) result.UnrecognizedValue = unionPayload;
 return result;
         }
         /// <summary>
@@ -73,13 +73,13 @@ return result;
         {
             if (UnrecognizedValue is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject rawFields) { var fields = new global::System.Collections.Generic.Dictionary<string, global::System.Action<IParseNode>>(); foreach (var entry in rawFields.GetValue()) fields[entry.Key] = _ => { }; return fields; }
 
-            if(DeploymentK8SBackendSpec != null)
+            if(DeploymentWorkerSpecResponseBackendSpecOneOf1 != null)
             {
-                return DeploymentK8SBackendSpec.GetFieldDeserializers();
+                return DeploymentWorkerSpecResponseBackendSpecOneOf1.GetFieldDeserializers();
             }
-            else if(DeploymentMistralCloudBackendSpec != null)
+            else if(DeploymentWorkerSpecResponseBackendSpecOneOf2 != null)
             {
-                return DeploymentMistralCloudBackendSpec.GetFieldDeserializers();
+                return DeploymentWorkerSpecResponseBackendSpecOneOf2.GetFieldDeserializers();
             }
             return new Dictionary<string, Action<IParseNode>>();
         }
@@ -90,23 +90,23 @@ return result;
         public virtual void Serialize(ISerializationWriter writer)
         {
             if (global::System.Object.ReferenceEquals(writer, null)) throw new global::System.ArgumentNullException(nameof(writer));
-            if (DeploymentK8SBackendSpec == null && DeploymentMistralCloudBackendSpec == null) { if (UnrecognizedValue is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject rawObject) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData, rawObject)); else if (UnrecognizedValue != null) writer.WriteObjectValue(null, UnrecognizedValue); else if (AdditionalData.Count > 0) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData)); else writer.WriteNullValue(null); return; }
+            if (DeploymentWorkerSpecResponseBackendSpecOneOf1 == null && DeploymentWorkerSpecResponseBackendSpecOneOf2 == null) { if (UnrecognizedValue is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject rawObject) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData, rawObject)); else if (UnrecognizedValue != null) writer.WriteObjectValue(null, UnrecognizedValue); else if (AdditionalData.Count > 0) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData)); else writer.WriteNullValue(null); return; }
             int selectedUnionBranches = 0;
-            if (DeploymentK8SBackendSpec != null) selectedUnionBranches++;
-            if (DeploymentMistralCloudBackendSpec != null) selectedUnionBranches++;
-            if (DeploymentK8SBackendSpec != null && selectedUnionBranches == 1) { if (DeploymentK8SBackendSpec is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, DeploymentK8SBackendSpec); return; }
-            if (DeploymentMistralCloudBackendSpec != null && selectedUnionBranches == 1) { if (DeploymentMistralCloudBackendSpec is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, DeploymentMistralCloudBackendSpec); return; }
+            if (DeploymentWorkerSpecResponseBackendSpecOneOf1 != null) selectedUnionBranches++;
+            if (DeploymentWorkerSpecResponseBackendSpecOneOf2 != null) selectedUnionBranches++;
+            if (DeploymentWorkerSpecResponseBackendSpecOneOf1 != null && selectedUnionBranches == 1) { if (DeploymentWorkerSpecResponseBackendSpecOneOf1 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, DeploymentWorkerSpecResponseBackendSpecOneOf1); return; }
+            if (DeploymentWorkerSpecResponseBackendSpecOneOf2 != null && selectedUnionBranches == 1) { if (DeploymentWorkerSpecResponseBackendSpecOneOf2 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, DeploymentWorkerSpecResponseBackendSpecOneOf2); return; }
 
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            if(DeploymentK8SBackendSpec != null)
+            if(DeploymentWorkerSpecResponseBackendSpecOneOf1 != null)
             {
-                if (DeploymentK8SBackendSpec is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
-                writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.DeploymentK8SBackendSpec>(null, DeploymentK8SBackendSpec);
+                if (DeploymentWorkerSpecResponseBackendSpecOneOf1 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
+                writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.DeploymentWorkerSpecResponseBackendSpecOneOf1>(null, DeploymentWorkerSpecResponseBackendSpecOneOf1);
             }
-            else if(DeploymentMistralCloudBackendSpec != null)
+            else if(DeploymentWorkerSpecResponseBackendSpecOneOf2 != null)
             {
-                if (DeploymentMistralCloudBackendSpec is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
-                writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.DeploymentMistralCloudBackendSpec>(null, DeploymentMistralCloudBackendSpec);
+                if (DeploymentWorkerSpecResponseBackendSpecOneOf2 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
+                writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.DeploymentWorkerSpecResponseBackendSpecOneOf2>(null, DeploymentWorkerSpecResponseBackendSpecOneOf2);
             }
         }
     }

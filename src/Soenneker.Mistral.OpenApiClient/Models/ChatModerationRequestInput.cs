@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.Mistral.OpenApiClient.Models
 {
     /// <summary>
-    /// Composed type wrapper for classes List&lt;global::Soenneker.Mistral.OpenApiClient.Models.AgentsCompletionRequestMessagesItem&gt;
+    /// Composed type wrapper for classes List&lt;global::Soenneker.Mistral.OpenApiClient.Models.ChatModerationRequestInputAnyOf1Item&gt;, List&lt;global::Soenneker.Mistral.OpenApiClient.Models.ChatModerationRequestInputAnyOf2ItemItem&gt;
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ChatModerationRequestInput : IComposedTypeWrapper, IParsable
@@ -18,13 +18,21 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         public global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode UnrecognizedValue { get; set; } = null!;
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalData { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
-        /// <summary>Composed type representation for type List&lt;global::Soenneker.Mistral.OpenApiClient.Models.AgentsCompletionRequestMessagesItem&gt;</summary>
+        /// <summary>Composed type representation for type List&lt;global::Soenneker.Mistral.OpenApiClient.Models.ChatModerationRequestInputAnyOf1Item&gt;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Mistral.OpenApiClient.Models.AgentsCompletionRequestMessagesItem>? AgentsCompletionRequestMessagesItem { get; set; }
+        public List<global::Soenneker.Mistral.OpenApiClient.Models.ChatModerationRequestInputAnyOf1Item>? ChatModerationRequestInputAnyOf1Item { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Mistral.OpenApiClient.Models.AgentsCompletionRequestMessagesItem> AgentsCompletionRequestMessagesItem { get; set; }
+        public List<global::Soenneker.Mistral.OpenApiClient.Models.ChatModerationRequestInputAnyOf1Item> ChatModerationRequestInputAnyOf1Item { get; set; }
+#endif
+        /// <summary>Composed type representation for type List&lt;global::Soenneker.Mistral.OpenApiClient.Models.ChatModerationRequestInputAnyOf2ItemItem&gt;</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.Mistral.OpenApiClient.Models.ChatModerationRequestInputAnyOf2ItemItem>? ChatModerationRequestInputAnyOf2ItemItem { get; set; }
+#nullable restore
+#else
+        public List<global::Soenneker.Mistral.OpenApiClient.Models.ChatModerationRequestInputAnyOf2ItemItem> ChatModerationRequestInputAnyOf2ItemItem { get; set; }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -35,13 +43,18 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             var result = new global::Soenneker.Mistral.OpenApiClient.Models.ChatModerationRequestInput();
-            if(parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedArray && global::System.Linq.Enumerable.All(((global::Microsoft.Kiota.Abstractions.Serialization.UntypedArray)parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue)).GetValue(), item => item is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject) && parseNode.GetCollectionOfObjectValues<global::Soenneker.Mistral.OpenApiClient.Models.AgentsCompletionRequestMessagesItem>(global::Soenneker.Mistral.OpenApiClient.Models.AgentsCompletionRequestMessagesItem.CreateFromDiscriminatorValue)?.AsList() is List<global::Soenneker.Mistral.OpenApiClient.Models.AgentsCompletionRequestMessagesItem> agentsCompletionRequestMessagesItemValue)
+            if (parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedArray ambiguousArray) { result.UnrecognizedValue = ambiguousArray; return result; }
+            if(parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedArray && global::System.Linq.Enumerable.All(((global::Microsoft.Kiota.Abstractions.Serialization.UntypedArray)parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue)).GetValue(), item => item is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject) && parseNode.GetCollectionOfObjectValues<global::Soenneker.Mistral.OpenApiClient.Models.ChatModerationRequestInputAnyOf1Item>(global::Soenneker.Mistral.OpenApiClient.Models.ChatModerationRequestInputAnyOf1Item.CreateFromDiscriminatorValue)?.AsList() is List<global::Soenneker.Mistral.OpenApiClient.Models.ChatModerationRequestInputAnyOf1Item> chatModerationRequestInputAnyOf1ItemValue)
             {
-                result.AgentsCompletionRequestMessagesItem = agentsCompletionRequestMessagesItemValue;
+                result.ChatModerationRequestInputAnyOf1Item = chatModerationRequestInputAnyOf1ItemValue;
+            }
+            else if(parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedArray && global::System.Linq.Enumerable.All(((global::Microsoft.Kiota.Abstractions.Serialization.UntypedArray)parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue)).GetValue(), item => item is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject) && parseNode.GetCollectionOfObjectValues<global::Soenneker.Mistral.OpenApiClient.Models.ChatModerationRequestInputAnyOf2ItemItem>(global::Soenneker.Mistral.OpenApiClient.Models.ChatModerationRequestInputAnyOf2ItemItem.CreateFromDiscriminatorValue)?.AsList() is List<global::Soenneker.Mistral.OpenApiClient.Models.ChatModerationRequestInputAnyOf2ItemItem> chatModerationRequestInputAnyOf2ItemItemValue)
+            {
+                result.ChatModerationRequestInputAnyOf2ItemItem = chatModerationRequestInputAnyOf2ItemItemValue;
             }
             
             var unionPayload = parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue);
-            if (result.AgentsCompletionRequestMessagesItem == null) result.UnrecognizedValue = unionPayload;
+            if (result.ChatModerationRequestInputAnyOf1Item == null && result.ChatModerationRequestInputAnyOf2ItemItem == null) result.UnrecognizedValue = unionPayload;
 return result;
         }
         /// <summary>
@@ -61,12 +74,16 @@ return result;
         public virtual void Serialize(ISerializationWriter writer)
         {
             if (global::System.Object.ReferenceEquals(writer, null)) throw new global::System.ArgumentNullException(nameof(writer));
-            if (AgentsCompletionRequestMessagesItem == null) { if (UnrecognizedValue is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject rawObject) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData, rawObject)); else if (UnrecognizedValue != null) writer.WriteObjectValue(null, UnrecognizedValue); else if (AdditionalData.Count > 0) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData)); else writer.WriteNullValue(null); return; }
+            if (ChatModerationRequestInputAnyOf1Item == null && ChatModerationRequestInputAnyOf2ItemItem == null) { if (UnrecognizedValue is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject rawObject) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData, rawObject)); else if (UnrecognizedValue != null) writer.WriteObjectValue(null, UnrecognizedValue); else if (AdditionalData.Count > 0) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData)); else writer.WriteNullValue(null); return; }
 
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            if(AgentsCompletionRequestMessagesItem != null)
+            if(ChatModerationRequestInputAnyOf1Item != null)
             {
-                writer.WriteCollectionOfObjectValues<global::Soenneker.Mistral.OpenApiClient.Models.AgentsCompletionRequestMessagesItem>(null, AgentsCompletionRequestMessagesItem);
+                writer.WriteCollectionOfObjectValues<global::Soenneker.Mistral.OpenApiClient.Models.ChatModerationRequestInputAnyOf1Item>(null, ChatModerationRequestInputAnyOf1Item);
+            }
+            else if(ChatModerationRequestInputAnyOf2ItemItem != null)
+            {
+                writer.WriteCollectionOfObjectValues<global::Soenneker.Mistral.OpenApiClient.Models.ChatModerationRequestInputAnyOf2ItemItem>(null, ChatModerationRequestInputAnyOf2ItemItem);
             }
         }
     }

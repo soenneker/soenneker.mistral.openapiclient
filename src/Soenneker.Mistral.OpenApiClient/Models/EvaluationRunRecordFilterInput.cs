@@ -74,12 +74,12 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         /// <summary>The sort property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.ScoreSortInput? Sort { get => _explicitNullValueSort; set { _explicitNullValueSort = value; AdditionalData?.Remove("sort"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sort"); else _explicitNullProperties?.Remove("sort"); } }
-        private global::Soenneker.Mistral.OpenApiClient.Models.ScoreSortInput? _explicitNullValueSort = default!;
+        public global::Soenneker.Mistral.OpenApiClient.Models.EvaluationRunRecordFilterInputSortAnyOf1? Sort { get => _explicitNullValueSort; set { _explicitNullValueSort = value; AdditionalData?.Remove("sort"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sort"); else _explicitNullProperties?.Remove("sort"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.EvaluationRunRecordFilterInputSortAnyOf1? _explicitNullValueSort = default!;
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.ScoreSortInput Sort { get => _explicitNullValueSort; set { _explicitNullValueSort = value; AdditionalData?.Remove("sort"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sort"); else _explicitNullProperties?.Remove("sort"); } }
-        private global::Soenneker.Mistral.OpenApiClient.Models.ScoreSortInput _explicitNullValueSort = default!;
+        public global::Soenneker.Mistral.OpenApiClient.Models.EvaluationRunRecordFilterInputSortAnyOf1 Sort { get => _explicitNullValueSort; set { _explicitNullValueSort = value; AdditionalData?.Remove("sort"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sort"); else _explicitNullProperties?.Remove("sort"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.EvaluationRunRecordFilterInputSortAnyOf1 _explicitNullValueSort = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Mistral.OpenApiClient.Models.EvaluationRunRecordFilterInput"/> and sets the default values.
@@ -110,7 +110,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
                 { "input_filters", n => { InputFilters = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ContentSearchFilterGroup>(global::Soenneker.Mistral.OpenApiClient.Models.ContentSearchFilterGroup.CreateFromDiscriminatorValue); } },
                 { "output_filters", n => { OutputFilters = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ContentSearchFilterGroup>(global::Soenneker.Mistral.OpenApiClient.Models.ContentSearchFilterGroup.CreateFromDiscriminatorValue); } },
                 { "score_filters", n => { ScoreFilters = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ScoreFilterGroup>(global::Soenneker.Mistral.OpenApiClient.Models.ScoreFilterGroup.CreateFromDiscriminatorValue); } },
-                { "sort", n => { Sort = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ScoreSortInput>(global::Soenneker.Mistral.OpenApiClient.Models.ScoreSortInput.CreateFromDiscriminatorValue); } },
+                { "sort", n => { Sort = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.EvaluationRunRecordFilterInputSortAnyOf1>(global::Soenneker.Mistral.OpenApiClient.Models.EvaluationRunRecordFilterInputSortAnyOf1.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -124,7 +124,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ContentSearchFilterGroup>("input_filters", InputFilters);
             writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ContentSearchFilterGroup>("output_filters", OutputFilters);
             writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ScoreFilterGroup>("score_filters", ScoreFilters);
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ScoreSortInput>("sort", Sort);
+            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.EvaluationRunRecordFilterInputSortAnyOf1>("sort", Sort);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
