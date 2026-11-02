@@ -51,8 +51,8 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             var mappingValue = parseNode.GetChildNode("status")?.GetStringValue();
             return mappingValue switch
             {
-                "available" => new global::Soenneker.Mistral.OpenApiClient.Models.ApiKeyActionsRotateAnyOf1ApiKeyActionsRotateAnyOf1OneOf1(),
-                "unavailable" => new global::Soenneker.Mistral.OpenApiClient.Models.ApiKeyActionsRotateAnyOf1ApiKeyActionsRotateAnyOf1OneOf2(),
+                "available" => new global::Soenneker.Mistral.OpenApiClient.Models.ApiKeyActionsRotateAnyOf1OneOf1Variant(),
+                "unavailable" => new global::Soenneker.Mistral.OpenApiClient.Models.ApiKeyActionsRotateAnyOf1OneOf2Variant(),
                 _ => new global::Soenneker.Mistral.OpenApiClient.Models.ApiKeyActionsRotateAnyOf1(),
             };
         }

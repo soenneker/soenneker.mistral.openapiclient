@@ -56,7 +56,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
                 "f1" => new global::Soenneker.Mistral.OpenApiClient.Models.EvaluatorV2StatisticsItemClassificationStatisticSpec(),
                 "max" => new global::Soenneker.Mistral.OpenApiClient.Models.EvaluatorV2StatisticsItemSimpleNumericStatisticSpec(),
                 "min" => new global::Soenneker.Mistral.OpenApiClient.Models.EvaluatorV2StatisticsItemSimpleNumericStatisticSpec(),
-                "percentile" => new global::Soenneker.Mistral.OpenApiClient.Models.EvaluatorV2StatisticsItemEvaluatorV2StatisticsItemOneOf2(),
+                "percentile" => new global::Soenneker.Mistral.OpenApiClient.Models.EvaluatorV2StatisticsItemOneOf2Variant(),
                 "precision" => new global::Soenneker.Mistral.OpenApiClient.Models.EvaluatorV2StatisticsItemClassificationStatisticSpec(),
                 "recall" => new global::Soenneker.Mistral.OpenApiClient.Models.EvaluatorV2StatisticsItemClassificationStatisticSpec(),
                 "std" => new global::Soenneker.Mistral.OpenApiClient.Models.EvaluatorV2StatisticsItemSimpleNumericStatisticSpec(),

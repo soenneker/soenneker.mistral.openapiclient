@@ -51,12 +51,12 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
             return mappingValue switch
             {
-                "and" => new global::Soenneker.Mistral.OpenApiClient.Models.AndMatchesItemAndMatchesItemOneOf1(),
-                "equal" => new global::Soenneker.Mistral.OpenApiClient.Models.AndMatchesItemAndMatchesItemOneOf4(),
-                "in" => new global::Soenneker.Mistral.OpenApiClient.Models.AndMatchesItemAndMatchesItemOneOf6(),
-                "not" => new global::Soenneker.Mistral.OpenApiClient.Models.AndMatchesItemAndMatchesItemOneOf3(),
-                "or" => new global::Soenneker.Mistral.OpenApiClient.Models.AndMatchesItemAndMatchesItemOneOf2(),
-                "range" => new global::Soenneker.Mistral.OpenApiClient.Models.AndMatchesItemAndMatchesItemOneOf5(),
+                "and" => new global::Soenneker.Mistral.OpenApiClient.Models.AndMatchesItemOneOf1Variant(),
+                "equal" => new global::Soenneker.Mistral.OpenApiClient.Models.AndMatchesItemOneOf4Variant(),
+                "in" => new global::Soenneker.Mistral.OpenApiClient.Models.AndMatchesItemOneOf6Variant(),
+                "not" => new global::Soenneker.Mistral.OpenApiClient.Models.AndMatchesItemOneOf3Variant(),
+                "or" => new global::Soenneker.Mistral.OpenApiClient.Models.AndMatchesItemOneOf2Variant(),
+                "range" => new global::Soenneker.Mistral.OpenApiClient.Models.AndMatchesItemOneOf5Variant(),
                 _ => new global::Soenneker.Mistral.OpenApiClient.Models.AndMatchesItem(),
             };
         }

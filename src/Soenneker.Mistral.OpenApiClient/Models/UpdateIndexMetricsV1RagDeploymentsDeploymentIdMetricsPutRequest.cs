@@ -51,8 +51,8 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             var mappingValue = parseNode.GetChildNode("status")?.GetStringValue();
             return mappingValue switch
             {
-                "offline" => new global::Soenneker.Mistral.OpenApiClient.Models.UpdateIndexMetricsV1RagDeploymentsDeploymentIdMetricsPutRequestUpdateMetricsRequestDeploymentMetricsOffline(),
-                "online" => new global::Soenneker.Mistral.OpenApiClient.Models.UpdateIndexMetricsV1RagDeploymentsDeploymentIdMetricsPutRequestUpdateMetricsRequestDeploymentMetricsOnline(),
+                "offline" => new global::Soenneker.Mistral.OpenApiClient.Models.TaggedOfflineVariant3F46054DD887D74F(),
+                "online" => new global::Soenneker.Mistral.OpenApiClient.Models.TaggedOnlineVariant1114236CC2954C94(),
                 _ => new global::Soenneker.Mistral.OpenApiClient.Models.UpdateIndexMetricsV1RagDeploymentsDeploymentIdMetricsPutRequest(),
             };
         }

@@ -51,8 +51,8 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
             return mappingValue switch
             {
-                "CLASSIFICATION" => new global::Soenneker.Mistral.OpenApiClient.Models.JudgeOutputComposedJudgeOutputComposedOneOf1(),
-                "REGRESSION" => new global::Soenneker.Mistral.OpenApiClient.Models.JudgeOutputComposedJudgeOutputComposedOneOf2(),
+                "CLASSIFICATION" => new global::Soenneker.Mistral.OpenApiClient.Models.JudgeOutputComposedOneOf1Variant(),
+                "REGRESSION" => new global::Soenneker.Mistral.OpenApiClient.Models.JudgeOutputComposedOneOf2Variant(),
                 _ => new global::Soenneker.Mistral.OpenApiClient.Models.JudgeOutputComposed(),
             };
         }

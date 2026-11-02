@@ -51,10 +51,10 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             var mappingValue = parseNode.GetChildNode("role")?.GetStringValue();
             return mappingValue switch
             {
-                "assistant" => new global::Soenneker.Mistral.OpenApiClient.Models.AgentsCompletionRequestMessagesItemAgentsCompletionRequestMessagesItemOneOf3(),
-                "system" => new global::Soenneker.Mistral.OpenApiClient.Models.AgentsCompletionRequestMessagesItemAgentsCompletionRequestMessagesItemOneOf1(),
-                "tool" => new global::Soenneker.Mistral.OpenApiClient.Models.AgentsCompletionRequestMessagesItemAgentsCompletionRequestMessagesItemOneOf4(),
-                "user" => new global::Soenneker.Mistral.OpenApiClient.Models.AgentsCompletionRequestMessagesItemAgentsCompletionRequestMessagesItemOneOf2(),
+                "assistant" => new global::Soenneker.Mistral.OpenApiClient.Models.AgentsCompletionRequestMessagesItemOneOf3Variant(),
+                "system" => new global::Soenneker.Mistral.OpenApiClient.Models.AgentsCompletionRequestMessagesItemOneOf1Variant(),
+                "tool" => new global::Soenneker.Mistral.OpenApiClient.Models.AgentsCompletionRequestMessagesItemOneOf4Variant(),
+                "user" => new global::Soenneker.Mistral.OpenApiClient.Models.AgentsCompletionRequestMessagesItemOneOf2Variant(),
                 _ => new global::Soenneker.Mistral.OpenApiClient.Models.AgentsCompletionRequestMessagesItem(),
             };
         }

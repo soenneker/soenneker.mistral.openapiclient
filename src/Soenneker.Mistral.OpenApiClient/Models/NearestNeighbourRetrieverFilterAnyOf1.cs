@@ -51,12 +51,12 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
             return mappingValue switch
             {
-                "and" => new global::Soenneker.Mistral.OpenApiClient.Models.NearestNeighbourRetrieverFilterAnyOf1NearestNeighbourRetrieverFilterAnyOf1OneOf1(),
-                "equal" => new global::Soenneker.Mistral.OpenApiClient.Models.NearestNeighbourRetrieverFilterAnyOf1NearestNeighbourRetrieverFilterAnyOf1OneOf4(),
-                "in" => new global::Soenneker.Mistral.OpenApiClient.Models.NearestNeighbourRetrieverFilterAnyOf1NearestNeighbourRetrieverFilterAnyOf1OneOf6(),
-                "not" => new global::Soenneker.Mistral.OpenApiClient.Models.NearestNeighbourRetrieverFilterAnyOf1NearestNeighbourRetrieverFilterAnyOf1OneOf3(),
-                "or" => new global::Soenneker.Mistral.OpenApiClient.Models.NearestNeighbourRetrieverFilterAnyOf1NearestNeighbourRetrieverFilterAnyOf1OneOf2(),
-                "range" => new global::Soenneker.Mistral.OpenApiClient.Models.NearestNeighbourRetrieverFilterAnyOf1NearestNeighbourRetrieverFilterAnyOf1OneOf5(),
+                "and" => new global::Soenneker.Mistral.OpenApiClient.Models.NearestNeighbourRetrieverFilterAnyOf1OneOf1Variant(),
+                "equal" => new global::Soenneker.Mistral.OpenApiClient.Models.NearestNeighbourRetrieverFilterAnyOf1OneOf4Variant(),
+                "in" => new global::Soenneker.Mistral.OpenApiClient.Models.NearestNeighbourRetrieverFilterAnyOf1OneOf6Variant(),
+                "not" => new global::Soenneker.Mistral.OpenApiClient.Models.NearestNeighbourRetrieverFilterAnyOf1OneOf3Variant(),
+                "or" => new global::Soenneker.Mistral.OpenApiClient.Models.NearestNeighbourRetrieverFilterAnyOf1OneOf2Variant(),
+                "range" => new global::Soenneker.Mistral.OpenApiClient.Models.NearestNeighbourRetrieverFilterAnyOf1OneOf5Variant(),
                 _ => new global::Soenneker.Mistral.OpenApiClient.Models.NearestNeighbourRetrieverFilterAnyOf1(),
             };
         }

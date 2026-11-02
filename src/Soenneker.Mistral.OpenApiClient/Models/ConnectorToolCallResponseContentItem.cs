@@ -51,11 +51,11 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
             return mappingValue switch
             {
-                "audio" => new global::Soenneker.Mistral.OpenApiClient.Models.ConnectorToolCallResponseContentItemConnectorToolCallResponseContentItemOneOf3(),
-                "image" => new global::Soenneker.Mistral.OpenApiClient.Models.ConnectorToolCallResponseContentItemConnectorToolCallResponseContentItemOneOf2(),
-                "resource" => new global::Soenneker.Mistral.OpenApiClient.Models.ConnectorToolCallResponseContentItemConnectorToolCallResponseContentItemOneOf5(),
-                "resource_link" => new global::Soenneker.Mistral.OpenApiClient.Models.ConnectorToolCallResponseContentItemConnectorToolCallResponseContentItemOneOf4(),
-                "text" => new global::Soenneker.Mistral.OpenApiClient.Models.ConnectorToolCallResponseContentItemConnectorToolCallResponseContentItemOneOf1(),
+                "audio" => new global::Soenneker.Mistral.OpenApiClient.Models.ConnectorToolCallResponseContentItemOneOf3Variant(),
+                "image" => new global::Soenneker.Mistral.OpenApiClient.Models.ConnectorToolCallResponseContentItemOneOf2Variant(),
+                "resource" => new global::Soenneker.Mistral.OpenApiClient.Models.ConnectorToolCallResponseContentItemOneOf5Variant(),
+                "resource_link" => new global::Soenneker.Mistral.OpenApiClient.Models.ConnectorToolCallResponseContentItemOneOf4Variant(),
+                "text" => new global::Soenneker.Mistral.OpenApiClient.Models.ConnectorToolCallResponseContentItemOneOf1Variant(),
                 _ => new global::Soenneker.Mistral.OpenApiClient.Models.ConnectorToolCallResponseContentItem(),
             };
         }

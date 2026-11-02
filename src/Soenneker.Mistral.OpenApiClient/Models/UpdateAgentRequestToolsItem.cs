@@ -51,13 +51,13 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
             return mappingValue switch
             {
-                "code_interpreter" => new global::Soenneker.Mistral.OpenApiClient.Models.UpdateAgentRequestToolsItemUpdateAgentRequestToolsItemOneOf4(),
-                "connector" => new global::Soenneker.Mistral.OpenApiClient.Models.UpdateAgentRequestToolsItemUpdateAgentRequestToolsItemOneOf7(),
-                "document_library" => new global::Soenneker.Mistral.OpenApiClient.Models.UpdateAgentRequestToolsItemUpdateAgentRequestToolsItemOneOf6(),
-                "function" => new global::Soenneker.Mistral.OpenApiClient.Models.UpdateAgentRequestToolsItemUpdateAgentRequestToolsItemOneOf1(),
-                "image_generation" => new global::Soenneker.Mistral.OpenApiClient.Models.UpdateAgentRequestToolsItemUpdateAgentRequestToolsItemOneOf5(),
-                "web_search" => new global::Soenneker.Mistral.OpenApiClient.Models.UpdateAgentRequestToolsItemUpdateAgentRequestToolsItemOneOf2(),
-                "web_search_premium" => new global::Soenneker.Mistral.OpenApiClient.Models.UpdateAgentRequestToolsItemUpdateAgentRequestToolsItemOneOf3(),
+                "code_interpreter" => new global::Soenneker.Mistral.OpenApiClient.Models.UpdateAgentRequestToolsItemOneOf4Variant(),
+                "connector" => new global::Soenneker.Mistral.OpenApiClient.Models.UpdateAgentRequestToolsItemOneOf7Variant(),
+                "document_library" => new global::Soenneker.Mistral.OpenApiClient.Models.UpdateAgentRequestToolsItemOneOf6Variant(),
+                "function" => new global::Soenneker.Mistral.OpenApiClient.Models.UpdateAgentRequestToolsItemOneOf1Variant(),
+                "image_generation" => new global::Soenneker.Mistral.OpenApiClient.Models.UpdateAgentRequestToolsItemOneOf5Variant(),
+                "web_search" => new global::Soenneker.Mistral.OpenApiClient.Models.UpdateAgentRequestToolsItemOneOf2Variant(),
+                "web_search_premium" => new global::Soenneker.Mistral.OpenApiClient.Models.UpdateAgentRequestToolsItemOneOf3Variant(),
                 _ => new global::Soenneker.Mistral.OpenApiClient.Models.UpdateAgentRequestToolsItem(),
             };
         }

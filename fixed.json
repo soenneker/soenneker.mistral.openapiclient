@@ -27034,15 +27034,15 @@
         "discriminator": {
           "propertyName": "type",
           "mapping": {
-            "text": "#/components/schemas/ContentChunkContentChunkOneOf1",
-            "image_url": "#/components/schemas/ContentChunkContentChunkOneOf2",
-            "document_url": "#/components/schemas/ContentChunkContentChunkOneOf3",
-            "reference": "#/components/schemas/ContentChunkContentChunkOneOf4",
-            "file": "#/components/schemas/ContentChunkContentChunkOneOf5",
-            "thinking": "#/components/schemas/ContentChunkContentChunkOneOf6",
-            "input_audio": "#/components/schemas/ContentChunkContentChunkOneOf7",
-            "resource": "#/components/schemas/ContentChunkContentChunkOneOf8",
-            "resource_link": "#/components/schemas/ContentChunkContentChunkOneOf9"
+            "text": "#/components/schemas/ContentChunkOneOf1Variant",
+            "image_url": "#/components/schemas/ContentChunkOneOf2Variant",
+            "document_url": "#/components/schemas/ContentChunkOneOf3Variant",
+            "reference": "#/components/schemas/ContentChunkOneOf4Variant",
+            "file": "#/components/schemas/ContentChunkOneOf5Variant",
+            "thinking": "#/components/schemas/ContentChunkOneOf6Variant",
+            "input_audio": "#/components/schemas/ContentChunkOneOf7Variant",
+            "resource": "#/components/schemas/ContentChunkOneOf8Variant",
+            "resource_link": "#/components/schemas/ContentChunkOneOf9Variant"
           }
         },
         "x-client-original-tagged-union": {
@@ -27163,8 +27163,8 @@
         "discriminator": {
           "propertyName": "type",
           "mapping": {
-            "text": "#/components/schemas/SystemMessageContentChunksSystemMessageContentChunksOneOf1",
-            "thinking": "#/components/schemas/SystemMessageContentChunksSystemMessageContentChunksOneOf2"
+            "text": "#/components/schemas/SystemMessageContentChunksOneOf1Variant",
+            "thinking": "#/components/schemas/SystemMessageContentChunksOneOf2Variant"
           }
         },
         "x-client-original-tagged-union": {
@@ -27978,9 +27978,9 @@
         "discriminator": {
           "propertyName": "type",
           "mapping": {
-            "boolean": "#/components/schemas/EvaluationResultSpecEvaluationResultSpecOneOf1",
-            "categorical": "#/components/schemas/EvaluationResultSpecEvaluationResultSpecOneOf2",
-            "numeric": "#/components/schemas/EvaluationResultSpecEvaluationResultSpecOneOf3"
+            "boolean": "#/components/schemas/EvaluationResultSpecOneOf1Variant",
+            "categorical": "#/components/schemas/EvaluationResultSpecOneOf2Variant",
+            "numeric": "#/components/schemas/EvaluationResultSpecOneOf3Variant"
           }
         },
         "x-client-original-tagged-union": {
@@ -31174,8 +31174,8 @@
         "discriminator": {
           "propertyName": "type",
           "mapping": {
-            "probabilistic": "#/components/schemas/PipelineConfigSamplingPipelineConfigSamplingOneOf1",
-            "attribute_hash": "#/components/schemas/PipelineConfigSamplingPipelineConfigSamplingOneOf2"
+            "probabilistic": "#/components/schemas/PipelineConfigSamplingOneOf1Variant",
+            "attribute_hash": "#/components/schemas/PipelineConfigSamplingOneOf2Variant"
           }
         },
         "x-client-original-tagged-union": {
@@ -36004,10 +36004,10 @@
             "discriminator": {
               "propertyName": "op",
               "mapping": {
-                "append": "#/components/schemas/JsonPatchJsonPatchAppend",
-                "add": "#/components/schemas/JsonPatchJsonPatchAdd",
-                "replace": "#/components/schemas/JsonPatchJsonPatchReplace",
-                "remove": "#/components/schemas/JsonPatchJsonPatchRemove"
+                "append": "#/components/schemas/JsonPatchAppendVariant",
+                "add": "#/components/schemas/JsonPatchAddVariant",
+                "replace": "#/components/schemas/JsonPatchReplaceVariant",
+                "remove": "#/components/schemas/JsonPatchRemoveVariant"
               }
             },
             "x-client-array-item-dispatch": true
@@ -51898,10 +51898,10 @@
         "discriminator": {
           "propertyName": "op",
           "mapping": {
-            "append": "#/components/schemas/JsonPatchJsonPatchAppend",
-            "add": "#/components/schemas/JsonPatchJsonPatchAdd",
-            "replace": "#/components/schemas/JsonPatchJsonPatchReplace",
-            "remove": "#/components/schemas/JsonPatchJsonPatchRemove"
+            "append": "#/components/schemas/JsonPatchAppendVariant",
+            "add": "#/components/schemas/JsonPatchAddVariant",
+            "replace": "#/components/schemas/JsonPatchReplaceVariant",
+            "remove": "#/components/schemas/JsonPatchRemoveVariant"
           }
         },
         "x-client-original-tagged-union": {
@@ -53386,8 +53386,8 @@
         "discriminator": {
           "propertyName": "type",
           "mapping": {
-            "base": "#/components/schemas/ModelListDataItemModelListDataItemOneOf1",
-            "fine-tuned": "#/components/schemas/ModelListDataItemModelListDataItemOneOf2"
+            "base": "#/components/schemas/ModelListDataItemOneOf1Variant",
+            "fine-tuned": "#/components/schemas/ModelListDataItemOneOf2Variant"
           }
         },
         "x-client-original-tagged-union": {
@@ -53459,13 +53459,13 @@
         "discriminator": {
           "propertyName": "type",
           "mapping": {
-            "function": "#/components/schemas/AgentToolsItemAgentToolsItemOneOf1",
-            "web_search": "#/components/schemas/AgentToolsItemAgentToolsItemOneOf2",
-            "web_search_premium": "#/components/schemas/AgentToolsItemAgentToolsItemOneOf3",
-            "code_interpreter": "#/components/schemas/AgentToolsItemAgentToolsItemOneOf4",
-            "image_generation": "#/components/schemas/AgentToolsItemAgentToolsItemOneOf5",
-            "document_library": "#/components/schemas/AgentToolsItemAgentToolsItemOneOf6",
-            "connector": "#/components/schemas/AgentToolsItemAgentToolsItemOneOf7"
+            "function": "#/components/schemas/AgentToolsItemOneOf1Variant",
+            "web_search": "#/components/schemas/AgentToolsItemOneOf2Variant",
+            "web_search_premium": "#/components/schemas/AgentToolsItemOneOf3Variant",
+            "code_interpreter": "#/components/schemas/AgentToolsItemOneOf4Variant",
+            "image_generation": "#/components/schemas/AgentToolsItemOneOf5Variant",
+            "document_library": "#/components/schemas/AgentToolsItemOneOf6Variant",
+            "connector": "#/components/schemas/AgentToolsItemOneOf7Variant"
           }
         },
         "x-client-original-tagged-union": {
@@ -53873,13 +53873,13 @@
         "discriminator": {
           "propertyName": "type",
           "mapping": {
-            "function": "#/components/schemas/ModelConversationToolsItemModelConversationToolsItemOneOf1",
-            "web_search": "#/components/schemas/ModelConversationToolsItemModelConversationToolsItemOneOf2",
-            "web_search_premium": "#/components/schemas/ModelConversationToolsItemModelConversationToolsItemOneOf3",
-            "code_interpreter": "#/components/schemas/ModelConversationToolsItemModelConversationToolsItemOneOf4",
-            "image_generation": "#/components/schemas/ModelConversationToolsItemModelConversationToolsItemOneOf5",
-            "document_library": "#/components/schemas/ModelConversationToolsItemModelConversationToolsItemOneOf6",
-            "connector": "#/components/schemas/ModelConversationToolsItemModelConversationToolsItemOneOf7"
+            "function": "#/components/schemas/ModelConversationToolsItemOneOf1Variant",
+            "web_search": "#/components/schemas/ModelConversationToolsItemOneOf2Variant",
+            "web_search_premium": "#/components/schemas/ModelConversationToolsItemOneOf3Variant",
+            "code_interpreter": "#/components/schemas/ModelConversationToolsItemOneOf4Variant",
+            "image_generation": "#/components/schemas/ModelConversationToolsItemOneOf5Variant",
+            "document_library": "#/components/schemas/ModelConversationToolsItemOneOf6Variant",
+            "connector": "#/components/schemas/ModelConversationToolsItemOneOf7Variant"
           }
         },
         "x-client-original-tagged-union": {
@@ -54229,16 +54229,16 @@
         "discriminator": {
           "propertyName": "type",
           "mapping": {
-            "conversation.response.started": "#/components/schemas/ConversationEventsDataConversationEventsDataOneOf1",
-            "conversation.response.done": "#/components/schemas/ConversationEventsDataConversationEventsDataOneOf2",
-            "conversation.response.error": "#/components/schemas/ConversationEventsDataConversationEventsDataOneOf3",
-            "tool.execution.started": "#/components/schemas/ConversationEventsDataConversationEventsDataOneOf4",
-            "tool.execution.delta": "#/components/schemas/ConversationEventsDataConversationEventsDataOneOf5",
-            "tool.execution.done": "#/components/schemas/ConversationEventsDataConversationEventsDataOneOf6",
-            "message.output.delta": "#/components/schemas/ConversationEventsDataConversationEventsDataOneOf7",
-            "function.call.delta": "#/components/schemas/ConversationEventsDataConversationEventsDataOneOf8",
-            "agent.handoff.started": "#/components/schemas/ConversationEventsDataConversationEventsDataOneOf9",
-            "agent.handoff.done": "#/components/schemas/ConversationEventsDataConversationEventsDataOneOf10"
+            "conversation.response.started": "#/components/schemas/ConversationEventsDataOneOf1Variant",
+            "conversation.response.done": "#/components/schemas/ConversationEventsDataOneOf2Variant",
+            "conversation.response.error": "#/components/schemas/ConversationEventsDataOneOf3Variant",
+            "tool.execution.started": "#/components/schemas/ConversationEventsDataOneOf4Variant",
+            "tool.execution.delta": "#/components/schemas/ConversationEventsDataOneOf5Variant",
+            "tool.execution.done": "#/components/schemas/ConversationEventsDataOneOf6Variant",
+            "message.output.delta": "#/components/schemas/ConversationEventsDataOneOf7Variant",
+            "function.call.delta": "#/components/schemas/ConversationEventsDataOneOf8Variant",
+            "agent.handoff.started": "#/components/schemas/ConversationEventsDataOneOf9Variant",
+            "agent.handoff.done": "#/components/schemas/ConversationEventsDataOneOf10Variant"
           }
         },
         "x-client-original-tagged-union": {
@@ -54383,13 +54383,13 @@
         "discriminator": {
           "propertyName": "type",
           "mapping": {
-            "function": "#/components/schemas/ConversationRequestBaseToolsItemConversationRequestBaseToolsItemOneOf1",
-            "web_search": "#/components/schemas/ConversationRequestBaseToolsItemConversationRequestBaseToolsItemOneOf2",
-            "web_search_premium": "#/components/schemas/ConversationRequestBaseToolsItemConversationRequestBaseToolsItemOneOf3",
-            "code_interpreter": "#/components/schemas/ConversationRequestBaseToolsItemConversationRequestBaseToolsItemOneOf4",
-            "image_generation": "#/components/schemas/ConversationRequestBaseToolsItemConversationRequestBaseToolsItemOneOf5",
-            "document_library": "#/components/schemas/ConversationRequestBaseToolsItemConversationRequestBaseToolsItemOneOf6",
-            "connector": "#/components/schemas/ConversationRequestBaseToolsItemConversationRequestBaseToolsItemOneOf7"
+            "function": "#/components/schemas/ConversationRequestBaseToolsItemOneOf1Variant",
+            "web_search": "#/components/schemas/ConversationRequestBaseToolsItemOneOf2Variant",
+            "web_search_premium": "#/components/schemas/ConversationRequestBaseToolsItemOneOf3Variant",
+            "code_interpreter": "#/components/schemas/ConversationRequestBaseToolsItemOneOf4Variant",
+            "image_generation": "#/components/schemas/ConversationRequestBaseToolsItemOneOf5Variant",
+            "document_library": "#/components/schemas/ConversationRequestBaseToolsItemOneOf6Variant",
+            "connector": "#/components/schemas/ConversationRequestBaseToolsItemOneOf7Variant"
           }
         },
         "x-client-original-tagged-union": {
@@ -54582,15 +54582,15 @@
             "discriminator": {
               "propertyName": "type",
               "mapping": {
-                "text": "#/components/schemas/ContentChunkContentChunkOneOf1",
-                "image_url": "#/components/schemas/ContentChunkContentChunkOneOf2",
-                "document_url": "#/components/schemas/ContentChunkContentChunkOneOf3",
-                "reference": "#/components/schemas/ContentChunkContentChunkOneOf4",
-                "file": "#/components/schemas/ContentChunkContentChunkOneOf5",
-                "thinking": "#/components/schemas/ContentChunkContentChunkOneOf6",
-                "input_audio": "#/components/schemas/ContentChunkContentChunkOneOf7",
-                "resource": "#/components/schemas/ContentChunkContentChunkOneOf8",
-                "resource_link": "#/components/schemas/ContentChunkContentChunkOneOf9"
+                "text": "#/components/schemas/ContentChunkOneOf1Variant",
+                "image_url": "#/components/schemas/ContentChunkOneOf2Variant",
+                "document_url": "#/components/schemas/ContentChunkOneOf3Variant",
+                "reference": "#/components/schemas/ContentChunkOneOf4Variant",
+                "file": "#/components/schemas/ContentChunkOneOf5Variant",
+                "thinking": "#/components/schemas/ContentChunkOneOf6Variant",
+                "input_audio": "#/components/schemas/ContentChunkOneOf7Variant",
+                "resource": "#/components/schemas/ContentChunkOneOf8Variant",
+                "resource_link": "#/components/schemas/ContentChunkOneOf9Variant"
               }
             },
             "x-client-array-item-dispatch": true
@@ -54610,10 +54610,10 @@
         "discriminator": {
           "propertyName": "role",
           "mapping": {
-            "system": "#/components/schemas/ChatCompletionRequestMessagesItemChatCompletionRequestMessagesItemOneOf1",
-            "user": "#/components/schemas/ChatCompletionRequestMessagesItemChatCompletionRequestMessagesItemOneOf2",
-            "assistant": "#/components/schemas/ChatCompletionRequestMessagesItemChatCompletionRequestMessagesItemOneOf3",
-            "tool": "#/components/schemas/ChatCompletionRequestMessagesItemChatCompletionRequestMessagesItemOneOf4"
+            "system": "#/components/schemas/ChatCompletionRequestMessagesItemOneOf1Variant",
+            "user": "#/components/schemas/ChatCompletionRequestMessagesItemOneOf2Variant",
+            "assistant": "#/components/schemas/ChatCompletionRequestMessagesItemOneOf3Variant",
+            "tool": "#/components/schemas/ChatCompletionRequestMessagesItemOneOf4Variant"
           }
         },
         "x-client-original-tagged-union": {
@@ -54716,10 +54716,10 @@
             "discriminator": {
               "propertyName": "role",
               "mapping": {
-                "system": "#/components/schemas/ChatModerationRequestInputAnyOf1ItemChatModerationRequestInputAnyOf1ItemOneOf1",
-                "user": "#/components/schemas/ChatModerationRequestInputAnyOf1ItemChatModerationRequestInputAnyOf1ItemOneOf2",
-                "assistant": "#/components/schemas/ChatModerationRequestInputAnyOf1ItemChatModerationRequestInputAnyOf1ItemOneOf3",
-                "tool": "#/components/schemas/ChatModerationRequestInputAnyOf1ItemChatModerationRequestInputAnyOf1ItemOneOf4"
+                "system": "#/components/schemas/ChatModerationRequestInputAnyOf1ItemOneOf1Variant",
+                "user": "#/components/schemas/ChatModerationRequestInputAnyOf1ItemOneOf2Variant",
+                "assistant": "#/components/schemas/ChatModerationRequestInputAnyOf1ItemOneOf3Variant",
+                "tool": "#/components/schemas/ChatModerationRequestInputAnyOf1ItemOneOf4Variant"
               }
             },
             "x-client-array-item-dispatch": true
@@ -54743,10 +54743,10 @@
             "discriminator": {
               "propertyName": "role",
               "mapping": {
-                "system": "#/components/schemas/ChatModerationRequestInputAnyOf2ItemItemChatModerationRequestInputAnyOf2ItemItemOneOf1",
-                "user": "#/components/schemas/ChatModerationRequestInputAnyOf2ItemItemChatModerationRequestInputAnyOf2ItemItemOneOf2",
-                "assistant": "#/components/schemas/ChatModerationRequestInputAnyOf2ItemItemChatModerationRequestInputAnyOf2ItemItemOneOf3",
-                "tool": "#/components/schemas/ChatModerationRequestInputAnyOf2ItemItemChatModerationRequestInputAnyOf2ItemItemOneOf4"
+                "system": "#/components/schemas/ChatModerationRequestInputAnyOf2ItemItemOneOf1Variant",
+                "user": "#/components/schemas/ChatModerationRequestInputAnyOf2ItemItemOneOf2Variant",
+                "assistant": "#/components/schemas/ChatModerationRequestInputAnyOf2ItemItemOneOf3Variant",
+                "tool": "#/components/schemas/ChatModerationRequestInputAnyOf2ItemItemOneOf4Variant"
               }
             },
             "x-client-array-item-dispatch": true
@@ -54959,19 +54959,19 @@
         "discriminator": {
           "propertyName": "type",
           "mapping": {
-            "text": "#/components/schemas/OcrPageObjectBlocksItemOcrPageObjectBlocksItemOneOf1",
-            "list": "#/components/schemas/OcrPageObjectBlocksItemOcrPageObjectBlocksItemOneOf2",
-            "image": "#/components/schemas/OcrPageObjectBlocksItemOcrPageObjectBlocksItemOneOf3",
-            "table": "#/components/schemas/OcrPageObjectBlocksItemOcrPageObjectBlocksItemOneOf4",
-            "title": "#/components/schemas/OcrPageObjectBlocksItemOcrPageObjectBlocksItemOneOf5",
-            "equation": "#/components/schemas/OcrPageObjectBlocksItemOcrPageObjectBlocksItemOneOf6",
-            "caption": "#/components/schemas/OcrPageObjectBlocksItemOcrPageObjectBlocksItemOneOf7",
-            "code": "#/components/schemas/OcrPageObjectBlocksItemOcrPageObjectBlocksItemOneOf8",
-            "references": "#/components/schemas/OcrPageObjectBlocksItemOcrPageObjectBlocksItemOneOf9",
-            "aside_text": "#/components/schemas/OcrPageObjectBlocksItemOcrPageObjectBlocksItemOneOf10",
-            "header": "#/components/schemas/OcrPageObjectBlocksItemOcrPageObjectBlocksItemOneOf11",
-            "footer": "#/components/schemas/OcrPageObjectBlocksItemOcrPageObjectBlocksItemOneOf12",
-            "signature": "#/components/schemas/OcrPageObjectBlocksItemOcrPageObjectBlocksItemOneOf13"
+            "text": "#/components/schemas/OcrPageObjectBlocksItemOneOf1Variant",
+            "list": "#/components/schemas/OcrPageObjectBlocksItemOneOf2Variant",
+            "image": "#/components/schemas/OcrPageObjectBlocksItemOneOf3Variant",
+            "table": "#/components/schemas/OcrPageObjectBlocksItemOneOf4Variant",
+            "title": "#/components/schemas/OcrPageObjectBlocksItemOneOf5Variant",
+            "equation": "#/components/schemas/OcrPageObjectBlocksItemOneOf6Variant",
+            "caption": "#/components/schemas/OcrPageObjectBlocksItemOneOf7Variant",
+            "code": "#/components/schemas/OcrPageObjectBlocksItemOneOf8Variant",
+            "references": "#/components/schemas/OcrPageObjectBlocksItemOneOf9Variant",
+            "aside_text": "#/components/schemas/OcrPageObjectBlocksItemOneOf10Variant",
+            "header": "#/components/schemas/OcrPageObjectBlocksItemOneOf11Variant",
+            "footer": "#/components/schemas/OcrPageObjectBlocksItemOneOf12Variant",
+            "signature": "#/components/schemas/OcrPageObjectBlocksItemOneOf13Variant"
           }
         },
         "x-client-original-tagged-union": {
@@ -55240,8 +55240,8 @@
         "discriminator": {
           "propertyName": "type",
           "mapping": {
-            "text": "#/components/schemas/ResourceChunkContentResourceChunkContentOneOf1",
-            "image_url": "#/components/schemas/ResourceChunkContentResourceChunkContentOneOf2"
+            "text": "#/components/schemas/ResourceChunkContentOneOf1Variant",
+            "image_url": "#/components/schemas/ResourceChunkContentOneOf2Variant"
           }
         },
         "x-client-original-tagged-union": {
@@ -55314,8 +55314,8 @@
             "discriminator": {
               "propertyName": "type",
               "mapping": {
-                "text": "#/components/schemas/SystemMessageContentChunksSystemMessageContentChunksOneOf1",
-                "thinking": "#/components/schemas/SystemMessageContentChunksSystemMessageContentChunksOneOf2"
+                "text": "#/components/schemas/SystemMessageContentChunksOneOf1Variant",
+                "thinking": "#/components/schemas/SystemMessageContentChunksOneOf2Variant"
               }
             },
             "x-client-array-item-dispatch": true
@@ -55336,10 +55336,10 @@
         "discriminator": {
           "propertyName": "type",
           "mapping": {
-            "transcription.text.delta": "#/components/schemas/TranscriptionStreamEventsDataTranscriptionStreamEventsDataOneOf1",
-            "transcription.language": "#/components/schemas/TranscriptionStreamEventsDataTranscriptionStreamEventsDataOneOf2",
-            "transcription.segment": "#/components/schemas/TranscriptionStreamEventsDataTranscriptionStreamEventsDataOneOf3",
-            "transcription.done": "#/components/schemas/TranscriptionStreamEventsDataTranscriptionStreamEventsDataOneOf4"
+            "transcription.text.delta": "#/components/schemas/TranscriptionStreamEventsDataOneOf1Variant",
+            "transcription.language": "#/components/schemas/TranscriptionStreamEventsDataOneOf2Variant",
+            "transcription.segment": "#/components/schemas/TranscriptionStreamEventsDataOneOf3Variant",
+            "transcription.done": "#/components/schemas/TranscriptionStreamEventsDataOneOf4Variant"
           }
         },
         "x-client-original-tagged-union": {
@@ -55400,10 +55400,10 @@
         "discriminator": {
           "propertyName": "role",
           "mapping": {
-            "system": "#/components/schemas/InstructRequestMessagesItemInstructRequestMessagesItemOneOf1",
-            "user": "#/components/schemas/InstructRequestMessagesItemInstructRequestMessagesItemOneOf2",
-            "assistant": "#/components/schemas/InstructRequestMessagesItemInstructRequestMessagesItemOneOf3",
-            "tool": "#/components/schemas/InstructRequestMessagesItemInstructRequestMessagesItemOneOf4"
+            "system": "#/components/schemas/InstructRequestMessagesItemOneOf1Variant",
+            "user": "#/components/schemas/InstructRequestMessagesItemOneOf2Variant",
+            "assistant": "#/components/schemas/InstructRequestMessagesItemOneOf3Variant",
+            "tool": "#/components/schemas/InstructRequestMessagesItemOneOf4Variant"
           }
         },
         "x-client-original-tagged-union": {
@@ -55481,10 +55481,10 @@
         "discriminator": {
           "propertyName": "role",
           "mapping": {
-            "system": "#/components/schemas/AgentsCompletionRequestMessagesItemAgentsCompletionRequestMessagesItemOneOf1",
-            "user": "#/components/schemas/AgentsCompletionRequestMessagesItemAgentsCompletionRequestMessagesItemOneOf2",
-            "assistant": "#/components/schemas/AgentsCompletionRequestMessagesItemAgentsCompletionRequestMessagesItemOneOf3",
-            "tool": "#/components/schemas/AgentsCompletionRequestMessagesItemAgentsCompletionRequestMessagesItemOneOf4"
+            "system": "#/components/schemas/AgentsCompletionRequestMessagesItemOneOf1Variant",
+            "user": "#/components/schemas/AgentsCompletionRequestMessagesItemOneOf2Variant",
+            "assistant": "#/components/schemas/AgentsCompletionRequestMessagesItemOneOf3Variant",
+            "tool": "#/components/schemas/AgentsCompletionRequestMessagesItemOneOf4Variant"
           }
         },
         "x-client-original-tagged-union": {
@@ -56247,7 +56247,7 @@
             "max": "#/components/schemas/EvaluatorV2StatisticsItemSimpleNumericStatisticSpec",
             "std": "#/components/schemas/EvaluatorV2StatisticsItemSimpleNumericStatisticSpec",
             "count": "#/components/schemas/EvaluatorV2StatisticsItemSimpleNumericStatisticSpec",
-            "percentile": "#/components/schemas/EvaluatorV2StatisticsItemEvaluatorV2StatisticsItemOneOf2",
+            "percentile": "#/components/schemas/EvaluatorV2StatisticsItemOneOf2Variant",
             "precision": "#/components/schemas/EvaluatorV2StatisticsItemClassificationStatisticSpec",
             "recall": "#/components/schemas/EvaluatorV2StatisticsItemClassificationStatisticSpec",
             "f1": "#/components/schemas/EvaluatorV2StatisticsItemClassificationStatisticSpec"
@@ -59635,9 +59635,9 @@
         "discriminator": {
           "propertyName": "type",
           "mapping": {
-            "mistral_cloud": "#/components/schemas/DeploymentWorkerSpecResponseBackendSpecDeploymentWorkerSpecResponseBackendSpecOneOf1",
-            "koyeb": "#/components/schemas/DeploymentWorkerSpecResponseBackendSpecDeploymentWorkerSpecResponseBackendSpecOneOf1",
-            "kubernetes": "#/components/schemas/DeploymentWorkerSpecResponseBackendSpecDeploymentWorkerSpecResponseBackendSpecOneOf2"
+            "mistral_cloud": "#/components/schemas/DeploymentWorkerSpecResponseBackendSpecOneOf1Variant",
+            "koyeb": "#/components/schemas/DeploymentWorkerSpecResponseBackendSpecOneOf1Variant",
+            "kubernetes": "#/components/schemas/DeploymentWorkerSpecResponseBackendSpecOneOf2Variant"
           }
         },
         "x-client-original-tagged-union": {
@@ -60517,12 +60517,12 @@
         "discriminator": {
           "propertyName": "type",
           "mapping": {
-            "and": "#/components/schemas/AndMatchesItemAndMatchesItemOneOf1",
-            "or": "#/components/schemas/AndMatchesItemAndMatchesItemOneOf2",
-            "not": "#/components/schemas/AndMatchesItemAndMatchesItemOneOf3",
-            "equal": "#/components/schemas/AndMatchesItemAndMatchesItemOneOf4",
-            "range": "#/components/schemas/AndMatchesItemAndMatchesItemOneOf5",
-            "in": "#/components/schemas/AndMatchesItemAndMatchesItemOneOf6"
+            "and": "#/components/schemas/AndMatchesItemOneOf1Variant",
+            "or": "#/components/schemas/AndMatchesItemOneOf2Variant",
+            "not": "#/components/schemas/AndMatchesItemOneOf3Variant",
+            "equal": "#/components/schemas/AndMatchesItemOneOf4Variant",
+            "range": "#/components/schemas/AndMatchesItemOneOf5Variant",
+            "in": "#/components/schemas/AndMatchesItemOneOf6Variant"
           }
         },
         "x-client-original-tagged-union": {
@@ -60677,8 +60677,8 @@
         "discriminator": {
           "propertyName": "status",
           "mapping": {
-            "accepted": "#/components/schemas/IngestDocumentsResponseResultsItemIngestDocumentsResponseResultsItemOneOf1",
-            "rejected": "#/components/schemas/IngestDocumentsResponseResultsItemIngestDocumentsResponseResultsItemOneOf2"
+            "accepted": "#/components/schemas/IngestDocumentsResponseResultsItemOneOf1Variant",
+            "rejected": "#/components/schemas/IngestDocumentsResponseResultsItemOneOf2Variant"
           }
         },
         "x-client-original-tagged-union": {
@@ -60759,8 +60759,8 @@
         "discriminator": {
           "propertyName": "type",
           "mapping": {
-            "mistral": "#/components/schemas/ManagedIndexConfigEmbeddingManagedIndexConfigEmbeddingOneOf1",
-            "custom": "#/components/schemas/ManagedIndexConfigEmbeddingManagedIndexConfigEmbeddingOneOf2"
+            "mistral": "#/components/schemas/ManagedIndexConfigEmbeddingOneOf1Variant",
+            "custom": "#/components/schemas/ManagedIndexConfigEmbeddingOneOf2Variant"
           }
         },
         "x-client-original-tagged-union": {
@@ -60825,12 +60825,12 @@
         "discriminator": {
           "propertyName": "type",
           "mapping": {
-            "and": "#/components/schemas/NotMatchNotMatchOneOf1",
-            "or": "#/components/schemas/NotMatchNotMatchOneOf2",
-            "not": "#/components/schemas/NotMatchNotMatchOneOf3",
-            "equal": "#/components/schemas/NotMatchNotMatchOneOf4",
-            "range": "#/components/schemas/NotMatchNotMatchOneOf5",
-            "in": "#/components/schemas/NotMatchNotMatchOneOf6"
+            "and": "#/components/schemas/NotMatchOneOf1Variant",
+            "or": "#/components/schemas/NotMatchOneOf2Variant",
+            "not": "#/components/schemas/NotMatchOneOf3Variant",
+            "equal": "#/components/schemas/NotMatchOneOf4Variant",
+            "range": "#/components/schemas/NotMatchOneOf5Variant",
+            "in": "#/components/schemas/NotMatchOneOf6Variant"
           }
         },
         "x-client-original-tagged-union": {
@@ -60903,12 +60903,12 @@
         "discriminator": {
           "propertyName": "type",
           "mapping": {
-            "and": "#/components/schemas/OrMatchesItemOrMatchesItemOneOf1",
-            "or": "#/components/schemas/OrMatchesItemOrMatchesItemOneOf2",
-            "not": "#/components/schemas/OrMatchesItemOrMatchesItemOneOf3",
-            "equal": "#/components/schemas/OrMatchesItemOrMatchesItemOneOf4",
-            "range": "#/components/schemas/OrMatchesItemOrMatchesItemOneOf5",
-            "in": "#/components/schemas/OrMatchesItemOrMatchesItemOneOf6"
+            "and": "#/components/schemas/OrMatchesItemOneOf1Variant",
+            "or": "#/components/schemas/OrMatchesItemOneOf2Variant",
+            "not": "#/components/schemas/OrMatchesItemOneOf3Variant",
+            "equal": "#/components/schemas/OrMatchesItemOneOf4Variant",
+            "range": "#/components/schemas/OrMatchesItemOneOf5Variant",
+            "in": "#/components/schemas/OrMatchesItemOneOf6Variant"
           }
         },
         "x-client-original-tagged-union": {
@@ -60976,8 +60976,8 @@
         "discriminator": {
           "propertyName": "type",
           "mapping": {
-            "keyword": "#/components/schemas/RrfRetrieverRetrieversItemRrfRetrieverRetrieversItemOneOf1",
-            "nearest_neighbour": "#/components/schemas/RrfRetrieverRetrieversItemRrfRetrieverRetrieversItemOneOf2"
+            "keyword": "#/components/schemas/RrfRetrieverRetrieversItemOneOf1Variant",
+            "nearest_neighbour": "#/components/schemas/RrfRetrieverRetrieversItemOneOf2Variant"
           }
         },
         "x-client-original-tagged-union": {
@@ -61159,9 +61159,9 @@
         "discriminator": {
           "propertyName": "type",
           "mapping": {
-            "keyword": "#/components/schemas/SearchRequestRetrieverSearchRequestRetrieverOneOf1",
-            "nearest_neighbour": "#/components/schemas/SearchRequestRetrieverSearchRequestRetrieverOneOf2",
-            "rrf": "#/components/schemas/SearchRequestRetrieverSearchRequestRetrieverOneOf3"
+            "keyword": "#/components/schemas/SearchRequestRetrieverOneOf1Variant",
+            "nearest_neighbour": "#/components/schemas/SearchRequestRetrieverOneOf2Variant",
+            "rrf": "#/components/schemas/SearchRequestRetrieverOneOf3Variant"
           }
         },
         "x-client-original-tagged-union": {
@@ -61325,8 +61325,8 @@
         "discriminator": {
           "propertyName": "principal_type",
           "mapping": {
-            "user": "#/components/schemas/WhoamiResponsePrincipalWhoamiResponsePrincipalOneOf1",
-            "service_account": "#/components/schemas/WhoamiResponsePrincipalWhoamiResponsePrincipalOneOf2"
+            "user": "#/components/schemas/WhoamiResponsePrincipalOneOf1Variant",
+            "service_account": "#/components/schemas/WhoamiResponsePrincipalOneOf2Variant"
           }
         },
         "x-client-original-tagged-union": {
@@ -63287,15 +63287,15 @@
             "discriminator": {
               "propertyName": "type",
               "mapping": {
-                "text": "#/components/schemas/ContentChunkContentChunkOneOf1",
-                "image_url": "#/components/schemas/ContentChunkContentChunkOneOf2",
-                "document_url": "#/components/schemas/ContentChunkContentChunkOneOf3",
-                "reference": "#/components/schemas/ContentChunkContentChunkOneOf4",
-                "file": "#/components/schemas/ContentChunkContentChunkOneOf5",
-                "thinking": "#/components/schemas/ContentChunkContentChunkOneOf6",
-                "input_audio": "#/components/schemas/ContentChunkContentChunkOneOf7",
-                "resource": "#/components/schemas/ContentChunkContentChunkOneOf8",
-                "resource_link": "#/components/schemas/ContentChunkContentChunkOneOf9"
+                "text": "#/components/schemas/ContentChunkOneOf1Variant",
+                "image_url": "#/components/schemas/ContentChunkOneOf2Variant",
+                "document_url": "#/components/schemas/ContentChunkOneOf3Variant",
+                "reference": "#/components/schemas/ContentChunkOneOf4Variant",
+                "file": "#/components/schemas/ContentChunkOneOf5Variant",
+                "thinking": "#/components/schemas/ContentChunkOneOf6Variant",
+                "input_audio": "#/components/schemas/ContentChunkOneOf7Variant",
+                "resource": "#/components/schemas/ContentChunkOneOf8Variant",
+                "resource_link": "#/components/schemas/ContentChunkOneOf9Variant"
               }
             },
             "x-client-array-item-dispatch": true
@@ -63318,13 +63318,13 @@
         "discriminator": {
           "propertyName": "type",
           "mapping": {
-            "function": "#/components/schemas/CreateAgentRequestToolsItemCreateAgentRequestToolsItemOneOf1",
-            "web_search": "#/components/schemas/CreateAgentRequestToolsItemCreateAgentRequestToolsItemOneOf2",
-            "web_search_premium": "#/components/schemas/CreateAgentRequestToolsItemCreateAgentRequestToolsItemOneOf3",
-            "code_interpreter": "#/components/schemas/CreateAgentRequestToolsItemCreateAgentRequestToolsItemOneOf4",
-            "image_generation": "#/components/schemas/CreateAgentRequestToolsItemCreateAgentRequestToolsItemOneOf5",
-            "document_library": "#/components/schemas/CreateAgentRequestToolsItemCreateAgentRequestToolsItemOneOf6",
-            "connector": "#/components/schemas/CreateAgentRequestToolsItemCreateAgentRequestToolsItemOneOf7"
+            "function": "#/components/schemas/CreateAgentRequestToolsItemOneOf1Variant",
+            "web_search": "#/components/schemas/CreateAgentRequestToolsItemOneOf2Variant",
+            "web_search_premium": "#/components/schemas/CreateAgentRequestToolsItemOneOf3Variant",
+            "code_interpreter": "#/components/schemas/CreateAgentRequestToolsItemOneOf4Variant",
+            "image_generation": "#/components/schemas/CreateAgentRequestToolsItemOneOf5Variant",
+            "document_library": "#/components/schemas/CreateAgentRequestToolsItemOneOf6Variant",
+            "connector": "#/components/schemas/CreateAgentRequestToolsItemOneOf7Variant"
           }
         },
         "x-client-original-tagged-union": {
@@ -63409,13 +63409,13 @@
         "discriminator": {
           "propertyName": "type",
           "mapping": {
-            "function": "#/components/schemas/UpdateAgentRequestToolsItemUpdateAgentRequestToolsItemOneOf1",
-            "web_search": "#/components/schemas/UpdateAgentRequestToolsItemUpdateAgentRequestToolsItemOneOf2",
-            "web_search_premium": "#/components/schemas/UpdateAgentRequestToolsItemUpdateAgentRequestToolsItemOneOf3",
-            "code_interpreter": "#/components/schemas/UpdateAgentRequestToolsItemUpdateAgentRequestToolsItemOneOf4",
-            "image_generation": "#/components/schemas/UpdateAgentRequestToolsItemUpdateAgentRequestToolsItemOneOf5",
-            "document_library": "#/components/schemas/UpdateAgentRequestToolsItemUpdateAgentRequestToolsItemOneOf6",
-            "connector": "#/components/schemas/UpdateAgentRequestToolsItemUpdateAgentRequestToolsItemOneOf7"
+            "function": "#/components/schemas/UpdateAgentRequestToolsItemOneOf1Variant",
+            "web_search": "#/components/schemas/UpdateAgentRequestToolsItemOneOf2Variant",
+            "web_search_premium": "#/components/schemas/UpdateAgentRequestToolsItemOneOf3Variant",
+            "code_interpreter": "#/components/schemas/UpdateAgentRequestToolsItemOneOf4Variant",
+            "image_generation": "#/components/schemas/UpdateAgentRequestToolsItemOneOf5Variant",
+            "document_library": "#/components/schemas/UpdateAgentRequestToolsItemOneOf6Variant",
+            "connector": "#/components/schemas/UpdateAgentRequestToolsItemOneOf7Variant"
           }
         },
         "x-client-original-tagged-union": {
@@ -63661,8 +63661,8 @@
         "discriminator": {
           "propertyName": "type",
           "mapping": {
-            "CLASSIFICATION": "#/components/schemas/JudgeOutputComposedJudgeOutputComposedOneOf1",
-            "REGRESSION": "#/components/schemas/JudgeOutputComposedJudgeOutputComposedOneOf2"
+            "CLASSIFICATION": "#/components/schemas/JudgeOutputComposedOneOf1Variant",
+            "REGRESSION": "#/components/schemas/JudgeOutputComposedOneOf2Variant"
           }
         },
         "x-client-original-tagged-union": {
@@ -63712,8 +63712,8 @@
         "discriminator": {
           "propertyName": "type",
           "mapping": {
-            "CLASSIFICATION": "#/components/schemas/CreateJudgeRequestOutputCreateJudgeRequestOutputOneOf1",
-            "REGRESSION": "#/components/schemas/CreateJudgeRequestOutputCreateJudgeRequestOutputOneOf2"
+            "CLASSIFICATION": "#/components/schemas/CreateJudgeRequestOutputOneOf1Variant",
+            "REGRESSION": "#/components/schemas/CreateJudgeRequestOutputOneOf2Variant"
           }
         },
         "x-client-original-tagged-union": {
@@ -63763,8 +63763,8 @@
         "discriminator": {
           "propertyName": "type",
           "mapping": {
-            "CLASSIFICATION": "#/components/schemas/UpdateJudgeRequestOutputUpdateJudgeRequestOutputOneOf1",
-            "REGRESSION": "#/components/schemas/UpdateJudgeRequestOutputUpdateJudgeRequestOutputOneOf2"
+            "CLASSIFICATION": "#/components/schemas/UpdateJudgeRequestOutputOneOf1Variant",
+            "REGRESSION": "#/components/schemas/UpdateJudgeRequestOutputOneOf2Variant"
           }
         },
         "x-client-original-tagged-union": {
@@ -64160,11 +64160,11 @@
         "discriminator": {
           "propertyName": "type",
           "mapping": {
-            "text": "#/components/schemas/ConnectorToolCallResponseContentItemConnectorToolCallResponseContentItemOneOf1",
-            "image": "#/components/schemas/ConnectorToolCallResponseContentItemConnectorToolCallResponseContentItemOneOf2",
-            "audio": "#/components/schemas/ConnectorToolCallResponseContentItemConnectorToolCallResponseContentItemOneOf3",
-            "resource_link": "#/components/schemas/ConnectorToolCallResponseContentItemConnectorToolCallResponseContentItemOneOf4",
-            "resource": "#/components/schemas/ConnectorToolCallResponseContentItemConnectorToolCallResponseContentItemOneOf5"
+            "text": "#/components/schemas/ConnectorToolCallResponseContentItemOneOf1Variant",
+            "image": "#/components/schemas/ConnectorToolCallResponseContentItemOneOf2Variant",
+            "audio": "#/components/schemas/ConnectorToolCallResponseContentItemOneOf3Variant",
+            "resource_link": "#/components/schemas/ConnectorToolCallResponseContentItemOneOf4Variant",
+            "resource": "#/components/schemas/ConnectorToolCallResponseContentItemOneOf5Variant"
           }
         },
         "x-client-original-tagged-union": {
@@ -64264,22 +64264,22 @@
         "discriminator": {
           "propertyName": "type",
           "mapping": {
-            "text": "#/components/schemas/ManagedIndexFieldsDocumentFieldsAdditionalPropertiesManagedIndexFieldsDocumentFieldsAdditionalPropertiesOneOf1",
-            "keyword": "#/components/schemas/ManagedIndexFieldsDocumentFieldsAdditionalPropertiesManagedIndexFieldsDocumentFieldsAdditionalPropertiesOneOf2",
-            "int": "#/components/schemas/ManagedIndexFieldsDocumentFieldsAdditionalPropertiesManagedIndexFieldsDocumentFieldsAdditionalPropertiesOneOf3",
-            "long": "#/components/schemas/ManagedIndexFieldsDocumentFieldsAdditionalPropertiesManagedIndexFieldsDocumentFieldsAdditionalPropertiesOneOf4",
-            "float": "#/components/schemas/ManagedIndexFieldsDocumentFieldsAdditionalPropertiesManagedIndexFieldsDocumentFieldsAdditionalPropertiesOneOf5",
-            "bool": "#/components/schemas/ManagedIndexFieldsDocumentFieldsAdditionalPropertiesManagedIndexFieldsDocumentFieldsAdditionalPropertiesOneOf6",
-            "timestamp": "#/components/schemas/ManagedIndexFieldsDocumentFieldsAdditionalPropertiesManagedIndexFieldsDocumentFieldsAdditionalPropertiesOneOf7",
-            "json": "#/components/schemas/ManagedIndexFieldsDocumentFieldsAdditionalPropertiesManagedIndexFieldsDocumentFieldsAdditionalPropertiesOneOf8",
-            "dense_vector": "#/components/schemas/ManagedIndexFieldsDocumentFieldsAdditionalPropertiesManagedIndexFieldsDocumentFieldsAdditionalPropertiesOneOf9",
-            "text[]": "#/components/schemas/ManagedIndexFieldsDocumentFieldsAdditionalPropertiesManagedIndexFieldsDocumentFieldsAdditionalPropertiesOneOf10",
-            "keyword[]": "#/components/schemas/ManagedIndexFieldsDocumentFieldsAdditionalPropertiesManagedIndexFieldsDocumentFieldsAdditionalPropertiesOneOf11",
-            "int[]": "#/components/schemas/ManagedIndexFieldsDocumentFieldsAdditionalPropertiesManagedIndexFieldsDocumentFieldsAdditionalPropertiesOneOf12",
-            "long[]": "#/components/schemas/ManagedIndexFieldsDocumentFieldsAdditionalPropertiesManagedIndexFieldsDocumentFieldsAdditionalPropertiesOneOf13",
-            "float[]": "#/components/schemas/ManagedIndexFieldsDocumentFieldsAdditionalPropertiesManagedIndexFieldsDocumentFieldsAdditionalPropertiesOneOf14",
-            "bool[]": "#/components/schemas/ManagedIndexFieldsDocumentFieldsAdditionalPropertiesManagedIndexFieldsDocumentFieldsAdditionalPropertiesOneOf15",
-            "timestamp[]": "#/components/schemas/ManagedIndexFieldsDocumentFieldsAdditionalPropertiesManagedIndexFieldsDocumentFieldsAdditionalPropertiesOneOf16"
+            "text": "#/components/schemas/ManagedIndexFieldsDocumentFieldsAdditionalPropertiesOneOf1Variant",
+            "keyword": "#/components/schemas/ManagedIndexFieldsDocumentFieldsAdditionalPropertiesOneOf2Variant",
+            "int": "#/components/schemas/ManagedIndexFieldsDocumentFieldsAdditionalPropertiesOneOf3Variant",
+            "long": "#/components/schemas/ManagedIndexFieldsDocumentFieldsAdditionalPropertiesOneOf4Variant",
+            "float": "#/components/schemas/ManagedIndexFieldsDocumentFieldsAdditionalPropertiesOneOf5Variant",
+            "bool": "#/components/schemas/ManagedIndexFieldsDocumentFieldsAdditionalPropertiesOneOf6Variant",
+            "timestamp": "#/components/schemas/ManagedIndexFieldsDocumentFieldsAdditionalPropertiesOneOf7Variant",
+            "json": "#/components/schemas/ManagedIndexFieldsDocumentFieldsAdditionalPropertiesOneOf8Variant",
+            "dense_vector": "#/components/schemas/ManagedIndexFieldsDocumentFieldsAdditionalPropertiesOneOf9Variant",
+            "text[]": "#/components/schemas/ManagedIndexFieldsDocumentFieldsAdditionalPropertiesOneOf10Variant",
+            "keyword[]": "#/components/schemas/ManagedIndexFieldsDocumentFieldsAdditionalPropertiesOneOf11Variant",
+            "int[]": "#/components/schemas/ManagedIndexFieldsDocumentFieldsAdditionalPropertiesOneOf12Variant",
+            "long[]": "#/components/schemas/ManagedIndexFieldsDocumentFieldsAdditionalPropertiesOneOf13Variant",
+            "float[]": "#/components/schemas/ManagedIndexFieldsDocumentFieldsAdditionalPropertiesOneOf14Variant",
+            "bool[]": "#/components/schemas/ManagedIndexFieldsDocumentFieldsAdditionalPropertiesOneOf15Variant",
+            "timestamp[]": "#/components/schemas/ManagedIndexFieldsDocumentFieldsAdditionalPropertiesOneOf16Variant"
           }
         },
         "x-client-original-tagged-union": {
@@ -64411,22 +64411,22 @@
         "discriminator": {
           "propertyName": "type",
           "mapping": {
-            "text": "#/components/schemas/ManagedIndexFieldsChunkFieldsAdditionalPropertiesManagedIndexFieldsChunkFieldsAdditionalPropertiesOneOf1",
-            "keyword": "#/components/schemas/ManagedIndexFieldsChunkFieldsAdditionalPropertiesManagedIndexFieldsChunkFieldsAdditionalPropertiesOneOf2",
-            "int": "#/components/schemas/ManagedIndexFieldsChunkFieldsAdditionalPropertiesManagedIndexFieldsChunkFieldsAdditionalPropertiesOneOf3",
-            "long": "#/components/schemas/ManagedIndexFieldsChunkFieldsAdditionalPropertiesManagedIndexFieldsChunkFieldsAdditionalPropertiesOneOf4",
-            "float": "#/components/schemas/ManagedIndexFieldsChunkFieldsAdditionalPropertiesManagedIndexFieldsChunkFieldsAdditionalPropertiesOneOf5",
-            "bool": "#/components/schemas/ManagedIndexFieldsChunkFieldsAdditionalPropertiesManagedIndexFieldsChunkFieldsAdditionalPropertiesOneOf6",
-            "timestamp": "#/components/schemas/ManagedIndexFieldsChunkFieldsAdditionalPropertiesManagedIndexFieldsChunkFieldsAdditionalPropertiesOneOf7",
-            "json": "#/components/schemas/ManagedIndexFieldsChunkFieldsAdditionalPropertiesManagedIndexFieldsChunkFieldsAdditionalPropertiesOneOf8",
-            "dense_vector": "#/components/schemas/ManagedIndexFieldsChunkFieldsAdditionalPropertiesManagedIndexFieldsChunkFieldsAdditionalPropertiesOneOf9",
-            "text[]": "#/components/schemas/ManagedIndexFieldsChunkFieldsAdditionalPropertiesManagedIndexFieldsChunkFieldsAdditionalPropertiesOneOf10",
-            "keyword[]": "#/components/schemas/ManagedIndexFieldsChunkFieldsAdditionalPropertiesManagedIndexFieldsChunkFieldsAdditionalPropertiesOneOf11",
-            "int[]": "#/components/schemas/ManagedIndexFieldsChunkFieldsAdditionalPropertiesManagedIndexFieldsChunkFieldsAdditionalPropertiesOneOf12",
-            "long[]": "#/components/schemas/ManagedIndexFieldsChunkFieldsAdditionalPropertiesManagedIndexFieldsChunkFieldsAdditionalPropertiesOneOf13",
-            "float[]": "#/components/schemas/ManagedIndexFieldsChunkFieldsAdditionalPropertiesManagedIndexFieldsChunkFieldsAdditionalPropertiesOneOf14",
-            "bool[]": "#/components/schemas/ManagedIndexFieldsChunkFieldsAdditionalPropertiesManagedIndexFieldsChunkFieldsAdditionalPropertiesOneOf15",
-            "timestamp[]": "#/components/schemas/ManagedIndexFieldsChunkFieldsAdditionalPropertiesManagedIndexFieldsChunkFieldsAdditionalPropertiesOneOf16"
+            "text": "#/components/schemas/ManagedIndexFieldsChunkFieldsAdditionalPropertiesOneOf1Variant",
+            "keyword": "#/components/schemas/ManagedIndexFieldsChunkFieldsAdditionalPropertiesOneOf2Variant",
+            "int": "#/components/schemas/ManagedIndexFieldsChunkFieldsAdditionalPropertiesOneOf3Variant",
+            "long": "#/components/schemas/ManagedIndexFieldsChunkFieldsAdditionalPropertiesOneOf4Variant",
+            "float": "#/components/schemas/ManagedIndexFieldsChunkFieldsAdditionalPropertiesOneOf5Variant",
+            "bool": "#/components/schemas/ManagedIndexFieldsChunkFieldsAdditionalPropertiesOneOf6Variant",
+            "timestamp": "#/components/schemas/ManagedIndexFieldsChunkFieldsAdditionalPropertiesOneOf7Variant",
+            "json": "#/components/schemas/ManagedIndexFieldsChunkFieldsAdditionalPropertiesOneOf8Variant",
+            "dense_vector": "#/components/schemas/ManagedIndexFieldsChunkFieldsAdditionalPropertiesOneOf9Variant",
+            "text[]": "#/components/schemas/ManagedIndexFieldsChunkFieldsAdditionalPropertiesOneOf10Variant",
+            "keyword[]": "#/components/schemas/ManagedIndexFieldsChunkFieldsAdditionalPropertiesOneOf11Variant",
+            "int[]": "#/components/schemas/ManagedIndexFieldsChunkFieldsAdditionalPropertiesOneOf12Variant",
+            "long[]": "#/components/schemas/ManagedIndexFieldsChunkFieldsAdditionalPropertiesOneOf13Variant",
+            "float[]": "#/components/schemas/ManagedIndexFieldsChunkFieldsAdditionalPropertiesOneOf14Variant",
+            "bool[]": "#/components/schemas/ManagedIndexFieldsChunkFieldsAdditionalPropertiesOneOf15Variant",
+            "timestamp[]": "#/components/schemas/ManagedIndexFieldsChunkFieldsAdditionalPropertiesOneOf16Variant"
           }
         },
         "x-client-original-tagged-union": {
@@ -65059,10 +65059,10 @@
         "discriminator": {
           "propertyName": "role",
           "mapping": {
-            "system": "#/components/schemas/ChatModerationRequestInputAnyOf1ItemChatModerationRequestInputAnyOf1ItemOneOf1",
-            "user": "#/components/schemas/ChatModerationRequestInputAnyOf1ItemChatModerationRequestInputAnyOf1ItemOneOf2",
-            "assistant": "#/components/schemas/ChatModerationRequestInputAnyOf1ItemChatModerationRequestInputAnyOf1ItemOneOf3",
-            "tool": "#/components/schemas/ChatModerationRequestInputAnyOf1ItemChatModerationRequestInputAnyOf1ItemOneOf4"
+            "system": "#/components/schemas/ChatModerationRequestInputAnyOf1ItemOneOf1Variant",
+            "user": "#/components/schemas/ChatModerationRequestInputAnyOf1ItemOneOf2Variant",
+            "assistant": "#/components/schemas/ChatModerationRequestInputAnyOf1ItemOneOf3Variant",
+            "tool": "#/components/schemas/ChatModerationRequestInputAnyOf1ItemOneOf4Variant"
           }
         },
         "x-client-original-tagged-union": {
@@ -65122,10 +65122,10 @@
         "discriminator": {
           "propertyName": "role",
           "mapping": {
-            "system": "#/components/schemas/ChatModerationRequestInputAnyOf2ItemItemChatModerationRequestInputAnyOf2ItemItemOneOf1",
-            "user": "#/components/schemas/ChatModerationRequestInputAnyOf2ItemItemChatModerationRequestInputAnyOf2ItemItemOneOf2",
-            "assistant": "#/components/schemas/ChatModerationRequestInputAnyOf2ItemItemChatModerationRequestInputAnyOf2ItemItemOneOf3",
-            "tool": "#/components/schemas/ChatModerationRequestInputAnyOf2ItemItemChatModerationRequestInputAnyOf2ItemItemOneOf4"
+            "system": "#/components/schemas/ChatModerationRequestInputAnyOf2ItemItemOneOf1Variant",
+            "user": "#/components/schemas/ChatModerationRequestInputAnyOf2ItemItemOneOf2Variant",
+            "assistant": "#/components/schemas/ChatModerationRequestInputAnyOf2ItemItemOneOf3Variant",
+            "tool": "#/components/schemas/ChatModerationRequestInputAnyOf2ItemItemOneOf4Variant"
           }
         },
         "x-client-original-tagged-union": {
@@ -65442,8 +65442,8 @@
         "discriminator": {
           "propertyName": "type",
           "mapping": {
-            "base": "#/components/schemas/ResponseRetrieveModelV1ModelsModelIdGetResponseRetrieveModelV1ModelsModelIdGetOneOf1",
-            "fine-tuned": "#/components/schemas/ResponseRetrieveModelV1ModelsModelIdGetResponseRetrieveModelV1ModelsModelIdGetOneOf2"
+            "base": "#/components/schemas/ResponseRetrieveModelV1ModelsModelIdGetOneOf1Variant",
+            "fine-tuned": "#/components/schemas/ResponseRetrieveModelV1ModelsModelIdGetOneOf2Variant"
           }
         },
         "x-client-original-tagged-union": {
@@ -65579,8 +65579,8 @@
         "discriminator": {
           "propertyName": "model_type",
           "mapping": {
-            "completion": "#/components/schemas/JobsApiRoutesFineTuningUpdateFineTunedModel200ResponseJobsApiRoutesFineTuningUpdateFineTunedModel200ResponseOneOf1",
-            "classifier": "#/components/schemas/JobsApiRoutesFineTuningUpdateFineTunedModel200ResponseJobsApiRoutesFineTuningUpdateFineTunedModel200ResponseOneOf2"
+            "completion": "#/components/schemas/JobsApiRoutesFineTuningUpdateFineTunedModel200ResponseOneOf1Variant",
+            "classifier": "#/components/schemas/JobsApiRoutesFineTuningUpdateFineTunedModel200ResponseOneOf2Variant"
           }
         },
         "x-client-original-tagged-union": {
@@ -65762,7 +65762,7 @@
         "discriminator": {
           "propertyName": "protocol",
           "mapping": {
-            "mcp": "#/components/schemas/ConnectorCreateV1RequestConnectorCreateV1RequestOneOf1",
+            "mcp": "#/components/schemas/ConnectorCreateV1RequestOneOf1Variant",
             "http": "#/components/schemas/ConnectorCreateV1RequestCreateHttpConnectorRequest"
           }
         },
@@ -65820,7 +65820,7 @@
         "discriminator": {
           "propertyName": "protocol",
           "mapping": {
-            "mcp": "#/components/schemas/ConnectorUpdateV1RequestConnectorUpdateV1RequestOneOf1",
+            "mcp": "#/components/schemas/ConnectorUpdateV1RequestOneOf1Variant",
             "http": "#/components/schemas/ConnectorUpdateV1RequestUpdateHttpConnectorRequest"
           }
         },
@@ -65999,8 +65999,8 @@
         "discriminator": {
           "propertyName": "status",
           "mapping": {
-            "online": "#/components/schemas/UpdateIndexMetricsV1RagDeploymentsDeploymentIdMetricsPutRequestUpdateMetricsRequestDeploymentMetricsOnline",
-            "offline": "#/components/schemas/UpdateIndexMetricsV1RagDeploymentsDeploymentIdMetricsPutRequestUpdateMetricsRequestDeploymentMetricsOffline"
+            "online": "#/components/schemas/TaggedOnlineVariant1114236CC2954C94",
+            "offline": "#/components/schemas/TaggedOfflineVariant3F46054DD887D74F"
           }
         },
         "x-client-original-tagged-union": {
@@ -66190,12 +66190,12 @@
         "discriminator": {
           "propertyName": "type",
           "mapping": {
-            "missing_field": "#/components/schemas/Response400SearchIndexV1RagManagedIndexesIndexNameSearchPostSchemaItemResponse400SearchIndexV1RagManagedIndexesIndexNameSearchPostSchemaItemOneOf1",
-            "missing_embedding": "#/components/schemas/Response400SearchIndexV1RagManagedIndexesIndexNameSearchPostSchemaItemResponse400SearchIndexV1RagManagedIndexesIndexNameSearchPostSchemaItemOneOf2",
-            "incorrect_field_type": "#/components/schemas/Response400SearchIndexV1RagManagedIndexesIndexNameSearchPostSchemaItemResponse400SearchIndexV1RagManagedIndexesIndexNameSearchPostSchemaItemOneOf3",
-            "embedding_mismatch": "#/components/schemas/Response400SearchIndexV1RagManagedIndexesIndexNameSearchPostSchemaItemResponse400SearchIndexV1RagManagedIndexesIndexNameSearchPostSchemaItemOneOf4",
-            "max_candidates_too_small": "#/components/schemas/Response400SearchIndexV1RagManagedIndexesIndexNameSearchPostSchemaItemResponse400SearchIndexV1RagManagedIndexesIndexNameSearchPostSchemaItemOneOf5",
-            "top_k_too_large": "#/components/schemas/Response400SearchIndexV1RagManagedIndexesIndexNameSearchPostSchemaItemResponse400SearchIndexV1RagManagedIndexesIndexNameSearchPostSchemaItemOneOf6"
+            "missing_field": "#/components/schemas/Response400SearchIndexV1RagManagedIndexesIndexNameSearchPostSchemaItemOneOf1Variant",
+            "missing_embedding": "#/components/schemas/Response400SearchIndexV1RagManagedIndexesIndexNameSearchPostSchemaItemOneOf2Variant",
+            "incorrect_field_type": "#/components/schemas/Response400SearchIndexV1RagManagedIndexesIndexNameSearchPostSchemaItemOneOf3Variant",
+            "embedding_mismatch": "#/components/schemas/Response400SearchIndexV1RagManagedIndexesIndexNameSearchPostSchemaItemOneOf4Variant",
+            "max_candidates_too_small": "#/components/schemas/Response400SearchIndexV1RagManagedIndexesIndexNameSearchPostSchemaItemOneOf5Variant",
+            "top_k_too_large": "#/components/schemas/Response400SearchIndexV1RagManagedIndexesIndexNameSearchPostSchemaItemOneOf6Variant"
           }
         },
         "x-client-original-tagged-union": {
@@ -73483,8 +73483,8 @@
         "discriminator": {
           "propertyName": "type",
           "mapping": {
-            "oauth2-token": "#/components/schemas/CustomConnectorAuthorizationAnyOf1CustomConnectorAuthorizationAnyOf1OneOf1",
-            "api-key": "#/components/schemas/CustomConnectorAuthorizationAnyOf1CustomConnectorAuthorizationAnyOf1OneOf2"
+            "oauth2-token": "#/components/schemas/CustomConnectorAuthorizationAnyOf1OneOf1Variant",
+            "api-key": "#/components/schemas/CustomConnectorAuthorizationAnyOf1OneOf2Variant"
           }
         },
         "x-client-original-tagged-union": {
@@ -73790,8 +73790,8 @@
         "discriminator": {
           "propertyName": "kind",
           "mapping": {
-            "field": "#/components/schemas/EvaluationRunRecordFilterInputSortAnyOf1EvaluationRunRecordFilterInputSortAnyOf1OneOf1",
-            "score": "#/components/schemas/EvaluationRunRecordFilterInputSortAnyOf1EvaluationRunRecordFilterInputSortAnyOf1OneOf2"
+            "field": "#/components/schemas/EvaluationRunRecordFilterInputSortAnyOf1OneOf1Variant",
+            "score": "#/components/schemas/EvaluationRunRecordFilterInputSortAnyOf1OneOf2Variant"
           }
         },
         "x-client-original-tagged-union": {
@@ -73864,12 +73864,12 @@
         "discriminator": {
           "propertyName": "type",
           "mapping": {
-            "and": "#/components/schemas/KeywordRetrieverFilterAnyOf1KeywordRetrieverFilterAnyOf1OneOf1",
-            "or": "#/components/schemas/KeywordRetrieverFilterAnyOf1KeywordRetrieverFilterAnyOf1OneOf2",
-            "not": "#/components/schemas/KeywordRetrieverFilterAnyOf1KeywordRetrieverFilterAnyOf1OneOf3",
-            "equal": "#/components/schemas/KeywordRetrieverFilterAnyOf1KeywordRetrieverFilterAnyOf1OneOf4",
-            "range": "#/components/schemas/KeywordRetrieverFilterAnyOf1KeywordRetrieverFilterAnyOf1OneOf5",
-            "in": "#/components/schemas/KeywordRetrieverFilterAnyOf1KeywordRetrieverFilterAnyOf1OneOf6"
+            "and": "#/components/schemas/KeywordRetrieverFilterAnyOf1OneOf1Variant",
+            "or": "#/components/schemas/KeywordRetrieverFilterAnyOf1OneOf2Variant",
+            "not": "#/components/schemas/KeywordRetrieverFilterAnyOf1OneOf3Variant",
+            "equal": "#/components/schemas/KeywordRetrieverFilterAnyOf1OneOf4Variant",
+            "range": "#/components/schemas/KeywordRetrieverFilterAnyOf1OneOf5Variant",
+            "in": "#/components/schemas/KeywordRetrieverFilterAnyOf1OneOf6Variant"
           }
         },
         "x-client-original-tagged-union": {
@@ -73941,12 +73941,12 @@
         "discriminator": {
           "propertyName": "type",
           "mapping": {
-            "and": "#/components/schemas/NearestNeighbourRetrieverFilterAnyOf1NearestNeighbourRetrieverFilterAnyOf1OneOf1",
-            "or": "#/components/schemas/NearestNeighbourRetrieverFilterAnyOf1NearestNeighbourRetrieverFilterAnyOf1OneOf2",
-            "not": "#/components/schemas/NearestNeighbourRetrieverFilterAnyOf1NearestNeighbourRetrieverFilterAnyOf1OneOf3",
-            "equal": "#/components/schemas/NearestNeighbourRetrieverFilterAnyOf1NearestNeighbourRetrieverFilterAnyOf1OneOf4",
-            "range": "#/components/schemas/NearestNeighbourRetrieverFilterAnyOf1NearestNeighbourRetrieverFilterAnyOf1OneOf5",
-            "in": "#/components/schemas/NearestNeighbourRetrieverFilterAnyOf1NearestNeighbourRetrieverFilterAnyOf1OneOf6"
+            "and": "#/components/schemas/NearestNeighbourRetrieverFilterAnyOf1OneOf1Variant",
+            "or": "#/components/schemas/NearestNeighbourRetrieverFilterAnyOf1OneOf2Variant",
+            "not": "#/components/schemas/NearestNeighbourRetrieverFilterAnyOf1OneOf3Variant",
+            "equal": "#/components/schemas/NearestNeighbourRetrieverFilterAnyOf1OneOf4Variant",
+            "range": "#/components/schemas/NearestNeighbourRetrieverFilterAnyOf1OneOf5Variant",
+            "in": "#/components/schemas/NearestNeighbourRetrieverFilterAnyOf1OneOf6Variant"
           }
         },
         "x-client-original-tagged-union": {
@@ -74018,12 +74018,12 @@
         "discriminator": {
           "propertyName": "type",
           "mapping": {
-            "and": "#/components/schemas/RrfRetrieverFilterAnyOf1RrfRetrieverFilterAnyOf1OneOf1",
-            "or": "#/components/schemas/RrfRetrieverFilterAnyOf1RrfRetrieverFilterAnyOf1OneOf2",
-            "not": "#/components/schemas/RrfRetrieverFilterAnyOf1RrfRetrieverFilterAnyOf1OneOf3",
-            "equal": "#/components/schemas/RrfRetrieverFilterAnyOf1RrfRetrieverFilterAnyOf1OneOf4",
-            "range": "#/components/schemas/RrfRetrieverFilterAnyOf1RrfRetrieverFilterAnyOf1OneOf5",
-            "in": "#/components/schemas/RrfRetrieverFilterAnyOf1RrfRetrieverFilterAnyOf1OneOf6"
+            "and": "#/components/schemas/RrfRetrieverFilterAnyOf1OneOf1Variant",
+            "or": "#/components/schemas/RrfRetrieverFilterAnyOf1OneOf2Variant",
+            "not": "#/components/schemas/RrfRetrieverFilterAnyOf1OneOf3Variant",
+            "equal": "#/components/schemas/RrfRetrieverFilterAnyOf1OneOf4Variant",
+            "range": "#/components/schemas/RrfRetrieverFilterAnyOf1OneOf5Variant",
+            "in": "#/components/schemas/RrfRetrieverFilterAnyOf1OneOf6Variant"
           }
         },
         "x-client-original-tagged-union": {
@@ -74091,8 +74091,8 @@
         "discriminator": {
           "propertyName": "status",
           "mapping": {
-            "available": "#/components/schemas/ApiKeyActionsRotateAnyOf1ApiKeyActionsRotateAnyOf1OneOf1",
-            "unavailable": "#/components/schemas/ApiKeyActionsRotateAnyOf1ApiKeyActionsRotateAnyOf1OneOf2"
+            "available": "#/components/schemas/ApiKeyActionsRotateAnyOf1OneOf1Variant",
+            "unavailable": "#/components/schemas/ApiKeyActionsRotateAnyOf1OneOf2Variant"
           }
         },
         "x-client-original-tagged-union": {
@@ -74140,8 +74140,8 @@
         "discriminator": {
           "propertyName": "status",
           "mapping": {
-            "available": "#/components/schemas/ApiKeyActionsDeleteAnyOf1ApiKeyActionsDeleteAnyOf1OneOf1",
-            "unavailable": "#/components/schemas/ApiKeyActionsDeleteAnyOf1ApiKeyActionsDeleteAnyOf1OneOf2"
+            "available": "#/components/schemas/ApiKeyActionsDeleteAnyOf1OneOf1Variant",
+            "unavailable": "#/components/schemas/ApiKeyActionsDeleteAnyOf1OneOf2Variant"
           }
         },
         "x-client-original-tagged-union": {
@@ -74210,8 +74210,8 @@
         "discriminator": {
           "propertyName": "grant_type",
           "mapping": {
-            "authorization_code": "#/components/schemas/CreateConnectorRequestAuthMethodsItemOneOf1CreateConnectorRequestAuthMethodsItemOneOf1AuthorizationCode",
-            "client_credentials": "#/components/schemas/CreateConnectorRequestAuthMethodsItemOneOf1CreateConnectorRequestAuthMethodsItemOneOf1ClientCredentials"
+            "authorization_code": "#/components/schemas/CreateConnectorRequestAuthMethodsItemOneOf1AuthorizationCodeVariant",
+            "client_credentials": "#/components/schemas/CreateConnectorRequestAuthMethodsItemOneOf1ClientCredentialsVariant"
           }
         },
         "x-client-original-tagged-union": {
@@ -74335,8 +74335,8 @@
         "discriminator": {
           "propertyName": "grant_type",
           "mapping": {
-            "authorization_code": "#/components/schemas/CreateHttpConnectorRequestAuthMethodsItemOneOf1CreateHttpConnectorRequestAuthMethodsItemOneOf1AuthorizationCode",
-            "client_credentials": "#/components/schemas/CreateHttpConnectorRequestAuthMethodsItemOneOf1CreateHttpConnectorRequestAuthMethodsItemOneOf1ClientCredentials"
+            "authorization_code": "#/components/schemas/CreateHttpConnectorRequestAuthMethodsItemOneOf1AuthorizationCodeVariant",
+            "client_credentials": "#/components/schemas/CreateHttpConnectorRequestAuthMethodsItemOneOf1ClientCredentialsVariant"
           }
         },
         "x-client-original-tagged-union": {
@@ -74460,8 +74460,8 @@
         "discriminator": {
           "propertyName": "grant_type",
           "mapping": {
-            "authorization_code": "#/components/schemas/ConnectorMcpPublicUpdateAuthMethodsItemAnyOf1OneOf1ConnectorMcpPublicUpdateAuthMethodsItemAnyOf1OneOf1AuthorizationCode",
-            "client_credentials": "#/components/schemas/ConnectorMcpPublicUpdateAuthMethodsItemAnyOf1OneOf1ConnectorMcpPublicUpdateAuthMethodsItemAnyOf1OneOf1ClientCredentials"
+            "authorization_code": "#/components/schemas/ConnectorMcpPublicUpdateAuthMethodsItemAnyOf1OneOf1AuthorizationCodeVariant",
+            "client_credentials": "#/components/schemas/ConnectorMcpPublicUpdateAuthMethodsItemAnyOf1OneOf1ClientCredentialsVariant"
           }
         },
         "x-client-original-tagged-union": {
@@ -74585,8 +74585,8 @@
         "discriminator": {
           "propertyName": "grant_type",
           "mapping": {
-            "authorization_code": "#/components/schemas/UpdateHttpConnectorRequestAuthMethodsItemAnyOf1OneOf1UpdateHttpConnectorRequestAuthMethodsItemAnyOf1OneOf1AuthorizationCode",
-            "client_credentials": "#/components/schemas/UpdateHttpConnectorRequestAuthMethodsItemAnyOf1OneOf1UpdateHttpConnectorRequestAuthMethodsItemAnyOf1OneOf1ClientCredentials"
+            "authorization_code": "#/components/schemas/UpdateHttpConnectorRequestAuthMethodsItemAnyOf1OneOf1AuthorizationCodeVariant",
+            "client_credentials": "#/components/schemas/UpdateHttpConnectorRequestAuthMethodsItemAnyOf1OneOf1ClientCredentialsVariant"
           }
         },
         "x-client-original-tagged-union": {
@@ -74714,7 +74714,7 @@
           "$ref": "#/components/schemas/Response400SearchIndexV1RagManagedIndexesIndexNameSearchPostSchema"
         }
       },
-      "ContentChunkContentChunkOneOf1": {
+      "ContentChunkOneOf1Variant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/ContentChunk"
@@ -74753,7 +74753,7 @@
           }
         ]
       },
-      "ContentChunkContentChunkOneOf2": {
+      "ContentChunkOneOf2Variant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/ContentChunk"
@@ -74791,7 +74791,7 @@
           }
         ]
       },
-      "ContentChunkContentChunkOneOf3": {
+      "ContentChunkOneOf3Variant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/ContentChunk"
@@ -74838,7 +74838,7 @@
           }
         ]
       },
-      "ContentChunkContentChunkOneOf4": {
+      "ContentChunkOneOf4Variant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/ContentChunk"
@@ -74880,7 +74880,7 @@
           }
         ]
       },
-      "ContentChunkContentChunkOneOf5": {
+      "ContentChunkOneOf5Variant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/ContentChunk"
@@ -74920,7 +74920,7 @@
           }
         ]
       },
-      "ContentChunkContentChunkOneOf6": {
+      "ContentChunkOneOf6Variant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/ContentChunk"
@@ -74976,7 +74976,7 @@
           }
         ]
       },
-      "ContentChunkContentChunkOneOf7": {
+      "ContentChunkOneOf7Variant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/ContentChunk"
@@ -75016,7 +75016,7 @@
           }
         ]
       },
-      "ContentChunkContentChunkOneOf8": {
+      "ContentChunkOneOf8Variant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/ContentChunk"
@@ -75059,7 +75059,7 @@
           }
         ]
       },
-      "ContentChunkContentChunkOneOf9": {
+      "ContentChunkOneOf9Variant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/ContentChunk"
@@ -75101,7 +75101,7 @@
           }
         ]
       },
-      "SystemMessageContentChunksSystemMessageContentChunksOneOf1": {
+      "SystemMessageContentChunksOneOf1Variant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/SystemMessageContentChunks"
@@ -75140,7 +75140,7 @@
           }
         ]
       },
-      "SystemMessageContentChunksSystemMessageContentChunksOneOf2": {
+      "SystemMessageContentChunksOneOf2Variant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/SystemMessageContentChunks"
@@ -75196,7 +75196,7 @@
           }
         ]
       },
-      "EvaluationResultSpecEvaluationResultSpecOneOf1": {
+      "EvaluationResultSpecOneOf1Variant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/EvaluationResultSpec"
@@ -75229,7 +75229,7 @@
           }
         ]
       },
-      "EvaluationResultSpecEvaluationResultSpecOneOf2": {
+      "EvaluationResultSpecOneOf2Variant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/EvaluationResultSpec"
@@ -75271,7 +75271,7 @@
           }
         ]
       },
-      "EvaluationResultSpecEvaluationResultSpecOneOf3": {
+      "EvaluationResultSpecOneOf3Variant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/EvaluationResultSpec"
@@ -75314,7 +75314,7 @@
           }
         ]
       },
-      "PipelineConfigSamplingPipelineConfigSamplingOneOf1": {
+      "PipelineConfigSamplingOneOf1Variant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/PipelineConfigSampling"
@@ -75354,7 +75354,7 @@
           }
         ]
       },
-      "PipelineConfigSamplingPipelineConfigSamplingOneOf2": {
+      "PipelineConfigSamplingOneOf2Variant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/PipelineConfigSampling"
@@ -75761,7 +75761,7 @@
           }
         ]
       },
-      "JsonPatchJsonPatchAppend": {
+      "JsonPatchAppendVariant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/JsonPatch"
@@ -75790,7 +75790,7 @@
           }
         ]
       },
-      "JsonPatchJsonPatchAdd": {
+      "JsonPatchAddVariant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/JsonPatch"
@@ -75820,7 +75820,7 @@
           }
         ]
       },
-      "JsonPatchJsonPatchReplace": {
+      "JsonPatchReplaceVariant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/JsonPatch"
@@ -75850,7 +75850,7 @@
           }
         ]
       },
-      "JsonPatchJsonPatchRemove": {
+      "JsonPatchRemoveVariant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/JsonPatch"
@@ -75880,7 +75880,7 @@
           }
         ]
       },
-      "ModelListDataItemModelListDataItemOneOf1": {
+      "ModelListDataItemOneOf1Variant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/ModelListDataItem"
@@ -75998,7 +75998,7 @@
           }
         ]
       },
-      "ModelListDataItemModelListDataItemOneOf2": {
+      "ModelListDataItemOneOf2Variant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/ModelListDataItem"
@@ -76131,7 +76131,7 @@
           }
         ]
       },
-      "AgentToolsItemAgentToolsItemOneOf1": {
+      "AgentToolsItemOneOf1Variant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/AgentToolsItem"
@@ -76168,7 +76168,7 @@
           }
         ]
       },
-      "AgentToolsItemAgentToolsItemOneOf2": {
+      "AgentToolsItemOneOf2Variant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/AgentToolsItem"
@@ -76204,7 +76204,7 @@
           }
         ]
       },
-      "AgentToolsItemAgentToolsItemOneOf3": {
+      "AgentToolsItemOneOf3Variant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/AgentToolsItem"
@@ -76240,7 +76240,7 @@
           }
         ]
       },
-      "AgentToolsItemAgentToolsItemOneOf4": {
+      "AgentToolsItemOneOf4Variant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/AgentToolsItem"
@@ -76276,7 +76276,7 @@
           }
         ]
       },
-      "AgentToolsItemAgentToolsItemOneOf5": {
+      "AgentToolsItemOneOf5Variant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/AgentToolsItem"
@@ -76312,7 +76312,7 @@
           }
         ]
       },
-      "AgentToolsItemAgentToolsItemOneOf6": {
+      "AgentToolsItemOneOf6Variant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/AgentToolsItem"
@@ -76358,7 +76358,7 @@
           }
         ]
       },
-      "AgentToolsItemAgentToolsItemOneOf7": {
+      "AgentToolsItemOneOf7Variant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/AgentToolsItem"
@@ -76402,7 +76402,7 @@
           }
         ]
       },
-      "ModelConversationToolsItemModelConversationToolsItemOneOf1": {
+      "ModelConversationToolsItemOneOf1Variant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/ModelConversationToolsItem"
@@ -76439,7 +76439,7 @@
           }
         ]
       },
-      "ModelConversationToolsItemModelConversationToolsItemOneOf2": {
+      "ModelConversationToolsItemOneOf2Variant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/ModelConversationToolsItem"
@@ -76475,7 +76475,7 @@
           }
         ]
       },
-      "ModelConversationToolsItemModelConversationToolsItemOneOf3": {
+      "ModelConversationToolsItemOneOf3Variant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/ModelConversationToolsItem"
@@ -76511,7 +76511,7 @@
           }
         ]
       },
-      "ModelConversationToolsItemModelConversationToolsItemOneOf4": {
+      "ModelConversationToolsItemOneOf4Variant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/ModelConversationToolsItem"
@@ -76547,7 +76547,7 @@
           }
         ]
       },
-      "ModelConversationToolsItemModelConversationToolsItemOneOf5": {
+      "ModelConversationToolsItemOneOf5Variant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/ModelConversationToolsItem"
@@ -76583,7 +76583,7 @@
           }
         ]
       },
-      "ModelConversationToolsItemModelConversationToolsItemOneOf6": {
+      "ModelConversationToolsItemOneOf6Variant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/ModelConversationToolsItem"
@@ -76629,7 +76629,7 @@
           }
         ]
       },
-      "ModelConversationToolsItemModelConversationToolsItemOneOf7": {
+      "ModelConversationToolsItemOneOf7Variant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/ModelConversationToolsItem"
@@ -76673,7 +76673,7 @@
           }
         ]
       },
-      "ConversationEventsDataConversationEventsDataOneOf1": {
+      "ConversationEventsDataOneOf1Variant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/ConversationEventsData"
@@ -76717,7 +76717,7 @@
           }
         ]
       },
-      "ConversationEventsDataConversationEventsDataOneOf2": {
+      "ConversationEventsDataOneOf2Variant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/ConversationEventsData"
@@ -76760,7 +76760,7 @@
           }
         ]
       },
-      "ConversationEventsDataConversationEventsDataOneOf3": {
+      "ConversationEventsDataOneOf3Variant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/ConversationEventsData"
@@ -76809,7 +76809,7 @@
           }
         ]
       },
-      "ConversationEventsDataConversationEventsDataOneOf4": {
+      "ConversationEventsDataOneOf4Variant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/ConversationEventsData"
@@ -76885,7 +76885,7 @@
           }
         ]
       },
-      "ConversationEventsDataConversationEventsDataOneOf5": {
+      "ConversationEventsDataOneOf5Variant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/ConversationEventsData"
@@ -76945,7 +76945,7 @@
           }
         ]
       },
-      "ConversationEventsDataConversationEventsDataOneOf6": {
+      "ConversationEventsDataOneOf6Variant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/ConversationEventsData"
@@ -77003,7 +77003,7 @@
           }
         ]
       },
-      "ConversationEventsDataConversationEventsDataOneOf7": {
+      "ConversationEventsDataOneOf7Variant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/ConversationEventsData"
@@ -77080,7 +77080,7 @@
           }
         ]
       },
-      "ConversationEventsDataConversationEventsDataOneOf8": {
+      "ConversationEventsDataOneOf8Variant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/ConversationEventsData"
@@ -77163,7 +77163,7 @@
           }
         ]
       },
-      "ConversationEventsDataConversationEventsDataOneOf9": {
+      "ConversationEventsDataOneOf9Variant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/ConversationEventsData"
@@ -77222,7 +77222,7 @@
           }
         ]
       },
-      "ConversationEventsDataConversationEventsDataOneOf10": {
+      "ConversationEventsDataOneOf10Variant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/ConversationEventsData"
@@ -77281,7 +77281,7 @@
           }
         ]
       },
-      "ConversationRequestBaseToolsItemConversationRequestBaseToolsItemOneOf1": {
+      "ConversationRequestBaseToolsItemOneOf1Variant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/ConversationRequestBaseToolsItem"
@@ -77318,7 +77318,7 @@
           }
         ]
       },
-      "ConversationRequestBaseToolsItemConversationRequestBaseToolsItemOneOf2": {
+      "ConversationRequestBaseToolsItemOneOf2Variant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/ConversationRequestBaseToolsItem"
@@ -77354,7 +77354,7 @@
           }
         ]
       },
-      "ConversationRequestBaseToolsItemConversationRequestBaseToolsItemOneOf3": {
+      "ConversationRequestBaseToolsItemOneOf3Variant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/ConversationRequestBaseToolsItem"
@@ -77390,7 +77390,7 @@
           }
         ]
       },
-      "ConversationRequestBaseToolsItemConversationRequestBaseToolsItemOneOf4": {
+      "ConversationRequestBaseToolsItemOneOf4Variant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/ConversationRequestBaseToolsItem"
@@ -77426,7 +77426,7 @@
           }
         ]
       },
-      "ConversationRequestBaseToolsItemConversationRequestBaseToolsItemOneOf5": {
+      "ConversationRequestBaseToolsItemOneOf5Variant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/ConversationRequestBaseToolsItem"
@@ -77462,7 +77462,7 @@
           }
         ]
       },
-      "ConversationRequestBaseToolsItemConversationRequestBaseToolsItemOneOf6": {
+      "ConversationRequestBaseToolsItemOneOf6Variant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/ConversationRequestBaseToolsItem"
@@ -77508,7 +77508,7 @@
           }
         ]
       },
-      "ConversationRequestBaseToolsItemConversationRequestBaseToolsItemOneOf7": {
+      "ConversationRequestBaseToolsItemOneOf7Variant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/ConversationRequestBaseToolsItem"
@@ -77552,7 +77552,7 @@
           }
         ]
       },
-      "ChatCompletionRequestMessagesItemChatCompletionRequestMessagesItemOneOf1": {
+      "ChatCompletionRequestMessagesItemOneOf1Variant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/ChatCompletionRequestMessagesItem"
@@ -77590,7 +77590,7 @@
           }
         ]
       },
-      "ChatCompletionRequestMessagesItemChatCompletionRequestMessagesItemOneOf2": {
+      "ChatCompletionRequestMessagesItemOneOf2Variant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/ChatCompletionRequestMessagesItem"
@@ -77628,7 +77628,7 @@
           }
         ]
       },
-      "ChatCompletionRequestMessagesItemChatCompletionRequestMessagesItemOneOf3": {
+      "ChatCompletionRequestMessagesItemOneOf3Variant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/ChatCompletionRequestMessagesItem"
@@ -77681,7 +77681,7 @@
           }
         ]
       },
-      "ChatCompletionRequestMessagesItemChatCompletionRequestMessagesItemOneOf4": {
+      "ChatCompletionRequestMessagesItemOneOf4Variant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/ChatCompletionRequestMessagesItem"
@@ -77733,7 +77733,7 @@
           }
         ]
       },
-      "OcrPageObjectBlocksItemOcrPageObjectBlocksItemOneOf1": {
+      "OcrPageObjectBlocksItemOneOf1Variant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/OcrPageObjectBlocksItem"
@@ -77799,7 +77799,7 @@
           }
         ]
       },
-      "OcrPageObjectBlocksItemOcrPageObjectBlocksItemOneOf2": {
+      "OcrPageObjectBlocksItemOneOf2Variant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/OcrPageObjectBlocksItem"
@@ -77865,7 +77865,7 @@
           }
         ]
       },
-      "OcrPageObjectBlocksItemOcrPageObjectBlocksItemOneOf3": {
+      "OcrPageObjectBlocksItemOneOf3Variant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/OcrPageObjectBlocksItem"
@@ -77937,7 +77937,7 @@
           }
         ]
       },
-      "OcrPageObjectBlocksItemOcrPageObjectBlocksItemOneOf4": {
+      "OcrPageObjectBlocksItemOneOf4Variant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/OcrPageObjectBlocksItem"
@@ -78011,7 +78011,7 @@
           }
         ]
       },
-      "OcrPageObjectBlocksItemOcrPageObjectBlocksItemOneOf5": {
+      "OcrPageObjectBlocksItemOneOf5Variant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/OcrPageObjectBlocksItem"
@@ -78077,7 +78077,7 @@
           }
         ]
       },
-      "OcrPageObjectBlocksItemOcrPageObjectBlocksItemOneOf6": {
+      "OcrPageObjectBlocksItemOneOf6Variant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/OcrPageObjectBlocksItem"
@@ -78143,7 +78143,7 @@
           }
         ]
       },
-      "OcrPageObjectBlocksItemOcrPageObjectBlocksItemOneOf7": {
+      "OcrPageObjectBlocksItemOneOf7Variant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/OcrPageObjectBlocksItem"
@@ -78209,7 +78209,7 @@
           }
         ]
       },
-      "OcrPageObjectBlocksItemOcrPageObjectBlocksItemOneOf8": {
+      "OcrPageObjectBlocksItemOneOf8Variant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/OcrPageObjectBlocksItem"
@@ -78275,7 +78275,7 @@
           }
         ]
       },
-      "OcrPageObjectBlocksItemOcrPageObjectBlocksItemOneOf9": {
+      "OcrPageObjectBlocksItemOneOf9Variant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/OcrPageObjectBlocksItem"
@@ -78341,7 +78341,7 @@
           }
         ]
       },
-      "OcrPageObjectBlocksItemOcrPageObjectBlocksItemOneOf10": {
+      "OcrPageObjectBlocksItemOneOf10Variant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/OcrPageObjectBlocksItem"
@@ -78407,7 +78407,7 @@
           }
         ]
       },
-      "OcrPageObjectBlocksItemOcrPageObjectBlocksItemOneOf11": {
+      "OcrPageObjectBlocksItemOneOf11Variant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/OcrPageObjectBlocksItem"
@@ -78473,7 +78473,7 @@
           }
         ]
       },
-      "OcrPageObjectBlocksItemOcrPageObjectBlocksItemOneOf12": {
+      "OcrPageObjectBlocksItemOneOf12Variant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/OcrPageObjectBlocksItem"
@@ -78539,7 +78539,7 @@
           }
         ]
       },
-      "OcrPageObjectBlocksItemOcrPageObjectBlocksItemOneOf13": {
+      "OcrPageObjectBlocksItemOneOf13Variant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/OcrPageObjectBlocksItem"
@@ -78605,7 +78605,7 @@
           }
         ]
       },
-      "ResourceChunkContentResourceChunkContentOneOf1": {
+      "ResourceChunkContentOneOf1Variant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/ResourceChunkContent"
@@ -78644,7 +78644,7 @@
           }
         ]
       },
-      "ResourceChunkContentResourceChunkContentOneOf2": {
+      "ResourceChunkContentOneOf2Variant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/ResourceChunkContent"
@@ -78682,7 +78682,7 @@
           }
         ]
       },
-      "TranscriptionStreamEventsDataTranscriptionStreamEventsDataOneOf1": {
+      "TranscriptionStreamEventsDataOneOf1Variant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/TranscriptionStreamEventsData"
@@ -78721,7 +78721,7 @@
           }
         ]
       },
-      "TranscriptionStreamEventsDataTranscriptionStreamEventsDataOneOf2": {
+      "TranscriptionStreamEventsDataOneOf2Variant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/TranscriptionStreamEventsData"
@@ -78761,7 +78761,7 @@
           }
         ]
       },
-      "TranscriptionStreamEventsDataTranscriptionStreamEventsDataOneOf3": {
+      "TranscriptionStreamEventsDataOneOf3Variant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/TranscriptionStreamEventsData"
@@ -78824,7 +78824,7 @@
           }
         ]
       },
-      "TranscriptionStreamEventsDataTranscriptionStreamEventsDataOneOf4": {
+      "TranscriptionStreamEventsDataOneOf4Variant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/TranscriptionStreamEventsData"
@@ -78888,7 +78888,7 @@
           }
         ]
       },
-      "InstructRequestMessagesItemInstructRequestMessagesItemOneOf1": {
+      "InstructRequestMessagesItemOneOf1Variant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/InstructRequestMessagesItem"
@@ -78926,7 +78926,7 @@
           }
         ]
       },
-      "InstructRequestMessagesItemInstructRequestMessagesItemOneOf2": {
+      "InstructRequestMessagesItemOneOf2Variant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/InstructRequestMessagesItem"
@@ -78964,7 +78964,7 @@
           }
         ]
       },
-      "InstructRequestMessagesItemInstructRequestMessagesItemOneOf3": {
+      "InstructRequestMessagesItemOneOf3Variant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/InstructRequestMessagesItem"
@@ -79017,7 +79017,7 @@
           }
         ]
       },
-      "InstructRequestMessagesItemInstructRequestMessagesItemOneOf4": {
+      "InstructRequestMessagesItemOneOf4Variant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/InstructRequestMessagesItem"
@@ -79069,7 +79069,7 @@
           }
         ]
       },
-      "AgentsCompletionRequestMessagesItemAgentsCompletionRequestMessagesItemOneOf1": {
+      "AgentsCompletionRequestMessagesItemOneOf1Variant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/AgentsCompletionRequestMessagesItem"
@@ -79107,7 +79107,7 @@
           }
         ]
       },
-      "AgentsCompletionRequestMessagesItemAgentsCompletionRequestMessagesItemOneOf2": {
+      "AgentsCompletionRequestMessagesItemOneOf2Variant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/AgentsCompletionRequestMessagesItem"
@@ -79145,7 +79145,7 @@
           }
         ]
       },
-      "AgentsCompletionRequestMessagesItemAgentsCompletionRequestMessagesItemOneOf3": {
+      "AgentsCompletionRequestMessagesItemOneOf3Variant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/AgentsCompletionRequestMessagesItem"
@@ -79198,7 +79198,7 @@
           }
         ]
       },
-      "AgentsCompletionRequestMessagesItemAgentsCompletionRequestMessagesItemOneOf4": {
+      "AgentsCompletionRequestMessagesItemOneOf4Variant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/AgentsCompletionRequestMessagesItem"
@@ -79273,7 +79273,7 @@
           }
         ]
       },
-      "EvaluatorV2StatisticsItemEvaluatorV2StatisticsItemOneOf2": {
+      "EvaluatorV2StatisticsItemOneOf2Variant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/EvaluatorV2StatisticsItem"
@@ -79432,7 +79432,7 @@
           }
         ]
       },
-      "DeploymentWorkerSpecResponseBackendSpecDeploymentWorkerSpecResponseBackendSpecOneOf1": {
+      "DeploymentWorkerSpecResponseBackendSpecOneOf1Variant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/DeploymentWorkerSpecResponseBackendSpec"
@@ -79497,7 +79497,7 @@
           }
         ]
       },
-      "DeploymentWorkerSpecResponseBackendSpecDeploymentWorkerSpecResponseBackendSpecOneOf2": {
+      "DeploymentWorkerSpecResponseBackendSpecOneOf2Variant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/DeploymentWorkerSpecResponseBackendSpec"
@@ -81281,7 +81281,7 @@
           }
         ]
       },
-      "AndMatchesItemAndMatchesItemOneOf1": {
+      "AndMatchesItemOneOf1Variant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/AndMatchesItem"
@@ -81322,7 +81322,7 @@
           }
         ]
       },
-      "AndMatchesItemAndMatchesItemOneOf2": {
+      "AndMatchesItemOneOf2Variant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/AndMatchesItem"
@@ -81363,7 +81363,7 @@
           }
         ]
       },
-      "AndMatchesItemAndMatchesItemOneOf3": {
+      "AndMatchesItemOneOf3Variant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/AndMatchesItem"
@@ -81400,7 +81400,7 @@
           }
         ]
       },
-      "AndMatchesItemAndMatchesItemOneOf4": {
+      "AndMatchesItemOneOf4Variant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/AndMatchesItem"
@@ -81442,7 +81442,7 @@
           }
         ]
       },
-      "AndMatchesItemAndMatchesItemOneOf5": {
+      "AndMatchesItemOneOf5Variant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/AndMatchesItem"
@@ -81492,7 +81492,7 @@
           }
         ]
       },
-      "AndMatchesItemAndMatchesItemOneOf6": {
+      "AndMatchesItemOneOf6Variant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/AndMatchesItem"
@@ -81538,7 +81538,7 @@
           }
         ]
       },
-      "IngestDocumentsResponseResultsItemIngestDocumentsResponseResultsItemOneOf1": {
+      "IngestDocumentsResponseResultsItemOneOf1Variant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/IngestDocumentsResponseResultsItem"
@@ -81586,7 +81586,7 @@
           }
         ]
       },
-      "IngestDocumentsResponseResultsItemIngestDocumentsResponseResultsItemOneOf2": {
+      "IngestDocumentsResponseResultsItemOneOf2Variant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/IngestDocumentsResponseResultsItem"
@@ -81632,7 +81632,7 @@
           }
         ]
       },
-      "ManagedIndexConfigEmbeddingManagedIndexConfigEmbeddingOneOf1": {
+      "ManagedIndexConfigEmbeddingOneOf1Variant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/ManagedIndexConfigEmbedding"
@@ -81685,7 +81685,7 @@
           }
         ]
       },
-      "ManagedIndexConfigEmbeddingManagedIndexConfigEmbeddingOneOf2": {
+      "ManagedIndexConfigEmbeddingOneOf2Variant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/ManagedIndexConfigEmbedding"
@@ -81738,7 +81738,7 @@
           }
         ]
       },
-      "NotMatchNotMatchOneOf1": {
+      "NotMatchOneOf1Variant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/NotMatch"
@@ -81779,7 +81779,7 @@
           }
         ]
       },
-      "NotMatchNotMatchOneOf2": {
+      "NotMatchOneOf2Variant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/NotMatch"
@@ -81820,7 +81820,7 @@
           }
         ]
       },
-      "NotMatchNotMatchOneOf3": {
+      "NotMatchOneOf3Variant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/NotMatch"
@@ -81857,7 +81857,7 @@
           }
         ]
       },
-      "NotMatchNotMatchOneOf4": {
+      "NotMatchOneOf4Variant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/NotMatch"
@@ -81899,7 +81899,7 @@
           }
         ]
       },
-      "NotMatchNotMatchOneOf5": {
+      "NotMatchOneOf5Variant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/NotMatch"
@@ -81949,7 +81949,7 @@
           }
         ]
       },
-      "NotMatchNotMatchOneOf6": {
+      "NotMatchOneOf6Variant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/NotMatch"
@@ -81995,7 +81995,7 @@
           }
         ]
       },
-      "OrMatchesItemOrMatchesItemOneOf1": {
+      "OrMatchesItemOneOf1Variant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/OrMatchesItem"
@@ -82036,7 +82036,7 @@
           }
         ]
       },
-      "OrMatchesItemOrMatchesItemOneOf2": {
+      "OrMatchesItemOneOf2Variant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/OrMatchesItem"
@@ -82077,7 +82077,7 @@
           }
         ]
       },
-      "OrMatchesItemOrMatchesItemOneOf3": {
+      "OrMatchesItemOneOf3Variant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/OrMatchesItem"
@@ -82114,7 +82114,7 @@
           }
         ]
       },
-      "OrMatchesItemOrMatchesItemOneOf4": {
+      "OrMatchesItemOneOf4Variant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/OrMatchesItem"
@@ -82156,7 +82156,7 @@
           }
         ]
       },
-      "OrMatchesItemOrMatchesItemOneOf5": {
+      "OrMatchesItemOneOf5Variant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/OrMatchesItem"
@@ -82206,7 +82206,7 @@
           }
         ]
       },
-      "OrMatchesItemOrMatchesItemOneOf6": {
+      "OrMatchesItemOneOf6Variant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/OrMatchesItem"
@@ -82252,7 +82252,7 @@
           }
         ]
       },
-      "RrfRetrieverRetrieversItemRrfRetrieverRetrieversItemOneOf1": {
+      "RrfRetrieverRetrieversItemOneOf1Variant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/RrfRetrieverRetrieversItem"
@@ -82307,7 +82307,7 @@
           }
         ]
       },
-      "RrfRetrieverRetrieversItemRrfRetrieverRetrieversItemOneOf2": {
+      "RrfRetrieverRetrieversItemOneOf2Variant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/RrfRetrieverRetrieversItem"
@@ -82384,7 +82384,7 @@
           }
         ]
       },
-      "SearchRequestRetrieverSearchRequestRetrieverOneOf1": {
+      "SearchRequestRetrieverOneOf1Variant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/SearchRequestRetriever"
@@ -82439,7 +82439,7 @@
           }
         ]
       },
-      "SearchRequestRetrieverSearchRequestRetrieverOneOf2": {
+      "SearchRequestRetrieverOneOf2Variant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/SearchRequestRetriever"
@@ -82516,7 +82516,7 @@
           }
         ]
       },
-      "SearchRequestRetrieverSearchRequestRetrieverOneOf3": {
+      "SearchRequestRetrieverOneOf3Variant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/SearchRequestRetriever"
@@ -82584,7 +82584,7 @@
           }
         ]
       },
-      "WhoamiResponsePrincipalWhoamiResponsePrincipalOneOf1": {
+      "WhoamiResponsePrincipalOneOf1Variant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/WhoamiResponsePrincipal"
@@ -82663,7 +82663,7 @@
           }
         ]
       },
-      "WhoamiResponsePrincipalWhoamiResponsePrincipalOneOf2": {
+      "WhoamiResponsePrincipalOneOf2Variant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/WhoamiResponsePrincipal"
@@ -82720,7 +82720,7 @@
           }
         ]
       },
-      "CreateAgentRequestToolsItemCreateAgentRequestToolsItemOneOf1": {
+      "CreateAgentRequestToolsItemOneOf1Variant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/CreateAgentRequestToolsItem"
@@ -82757,7 +82757,7 @@
           }
         ]
       },
-      "CreateAgentRequestToolsItemCreateAgentRequestToolsItemOneOf2": {
+      "CreateAgentRequestToolsItemOneOf2Variant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/CreateAgentRequestToolsItem"
@@ -82793,7 +82793,7 @@
           }
         ]
       },
-      "CreateAgentRequestToolsItemCreateAgentRequestToolsItemOneOf3": {
+      "CreateAgentRequestToolsItemOneOf3Variant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/CreateAgentRequestToolsItem"
@@ -82829,7 +82829,7 @@
           }
         ]
       },
-      "CreateAgentRequestToolsItemCreateAgentRequestToolsItemOneOf4": {
+      "CreateAgentRequestToolsItemOneOf4Variant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/CreateAgentRequestToolsItem"
@@ -82865,7 +82865,7 @@
           }
         ]
       },
-      "CreateAgentRequestToolsItemCreateAgentRequestToolsItemOneOf5": {
+      "CreateAgentRequestToolsItemOneOf5Variant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/CreateAgentRequestToolsItem"
@@ -82901,7 +82901,7 @@
           }
         ]
       },
-      "CreateAgentRequestToolsItemCreateAgentRequestToolsItemOneOf6": {
+      "CreateAgentRequestToolsItemOneOf6Variant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/CreateAgentRequestToolsItem"
@@ -82947,7 +82947,7 @@
           }
         ]
       },
-      "CreateAgentRequestToolsItemCreateAgentRequestToolsItemOneOf7": {
+      "CreateAgentRequestToolsItemOneOf7Variant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/CreateAgentRequestToolsItem"
@@ -82991,7 +82991,7 @@
           }
         ]
       },
-      "UpdateAgentRequestToolsItemUpdateAgentRequestToolsItemOneOf1": {
+      "UpdateAgentRequestToolsItemOneOf1Variant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/UpdateAgentRequestToolsItem"
@@ -83028,7 +83028,7 @@
           }
         ]
       },
-      "UpdateAgentRequestToolsItemUpdateAgentRequestToolsItemOneOf2": {
+      "UpdateAgentRequestToolsItemOneOf2Variant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/UpdateAgentRequestToolsItem"
@@ -83064,7 +83064,7 @@
           }
         ]
       },
-      "UpdateAgentRequestToolsItemUpdateAgentRequestToolsItemOneOf3": {
+      "UpdateAgentRequestToolsItemOneOf3Variant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/UpdateAgentRequestToolsItem"
@@ -83100,7 +83100,7 @@
           }
         ]
       },
-      "UpdateAgentRequestToolsItemUpdateAgentRequestToolsItemOneOf4": {
+      "UpdateAgentRequestToolsItemOneOf4Variant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/UpdateAgentRequestToolsItem"
@@ -83136,7 +83136,7 @@
           }
         ]
       },
-      "UpdateAgentRequestToolsItemUpdateAgentRequestToolsItemOneOf5": {
+      "UpdateAgentRequestToolsItemOneOf5Variant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/UpdateAgentRequestToolsItem"
@@ -83172,7 +83172,7 @@
           }
         ]
       },
-      "UpdateAgentRequestToolsItemUpdateAgentRequestToolsItemOneOf6": {
+      "UpdateAgentRequestToolsItemOneOf6Variant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/UpdateAgentRequestToolsItem"
@@ -83218,7 +83218,7 @@
           }
         ]
       },
-      "UpdateAgentRequestToolsItemUpdateAgentRequestToolsItemOneOf7": {
+      "UpdateAgentRequestToolsItemOneOf7Variant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/UpdateAgentRequestToolsItem"
@@ -83262,7 +83262,7 @@
           }
         ]
       },
-      "JudgeOutputComposedJudgeOutputComposedOneOf1": {
+      "JudgeOutputComposedOneOf1Variant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/JudgeOutputComposed"
@@ -83303,7 +83303,7 @@
           }
         ]
       },
-      "JudgeOutputComposedJudgeOutputComposedOneOf2": {
+      "JudgeOutputComposedOneOf2Variant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/JudgeOutputComposed"
@@ -83358,7 +83358,7 @@
           }
         ]
       },
-      "CreateJudgeRequestOutputCreateJudgeRequestOutputOneOf1": {
+      "CreateJudgeRequestOutputOneOf1Variant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/CreateJudgeRequestOutput"
@@ -83399,7 +83399,7 @@
           }
         ]
       },
-      "CreateJudgeRequestOutputCreateJudgeRequestOutputOneOf2": {
+      "CreateJudgeRequestOutputOneOf2Variant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/CreateJudgeRequestOutput"
@@ -83454,7 +83454,7 @@
           }
         ]
       },
-      "UpdateJudgeRequestOutputUpdateJudgeRequestOutputOneOf1": {
+      "UpdateJudgeRequestOutputOneOf1Variant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/UpdateJudgeRequestOutput"
@@ -83495,7 +83495,7 @@
           }
         ]
       },
-      "UpdateJudgeRequestOutputUpdateJudgeRequestOutputOneOf2": {
+      "UpdateJudgeRequestOutputOneOf2Variant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/UpdateJudgeRequestOutput"
@@ -83550,7 +83550,7 @@
           }
         ]
       },
-      "ConnectorToolCallResponseContentItemConnectorToolCallResponseContentItemOneOf1": {
+      "ConnectorToolCallResponseContentItemOneOf1Variant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/ConnectorToolCallResponseContentItem"
@@ -83594,7 +83594,7 @@
           }
         ]
       },
-      "ConnectorToolCallResponseContentItemConnectorToolCallResponseContentItemOneOf2": {
+      "ConnectorToolCallResponseContentItemOneOf2Variant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/ConnectorToolCallResponseContentItem"
@@ -83643,7 +83643,7 @@
           }
         ]
       },
-      "ConnectorToolCallResponseContentItemConnectorToolCallResponseContentItemOneOf3": {
+      "ConnectorToolCallResponseContentItemOneOf3Variant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/ConnectorToolCallResponseContentItem"
@@ -83692,7 +83692,7 @@
           }
         ]
       },
-      "ConnectorToolCallResponseContentItemConnectorToolCallResponseContentItemOneOf4": {
+      "ConnectorToolCallResponseContentItemOneOf4Variant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/ConnectorToolCallResponseContentItem"
@@ -83779,7 +83779,7 @@
           }
         ]
       },
-      "ConnectorToolCallResponseContentItemConnectorToolCallResponseContentItemOneOf5": {
+      "ConnectorToolCallResponseContentItemOneOf5Variant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/ConnectorToolCallResponseContentItem"
@@ -83822,7 +83822,7 @@
           }
         ]
       },
-      "ManagedIndexFieldsDocumentFieldsAdditionalPropertiesManagedIndexFieldsDocumentFieldsAdditionalPropertiesOneOf1": {
+      "ManagedIndexFieldsDocumentFieldsAdditionalPropertiesOneOf1Variant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/ManagedIndexFieldsDocumentFieldsAdditionalProperties"
@@ -83874,7 +83874,7 @@
           }
         ]
       },
-      "ManagedIndexFieldsDocumentFieldsAdditionalPropertiesManagedIndexFieldsDocumentFieldsAdditionalPropertiesOneOf2": {
+      "ManagedIndexFieldsDocumentFieldsAdditionalPropertiesOneOf2Variant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/ManagedIndexFieldsDocumentFieldsAdditionalProperties"
@@ -83926,7 +83926,7 @@
           }
         ]
       },
-      "ManagedIndexFieldsDocumentFieldsAdditionalPropertiesManagedIndexFieldsDocumentFieldsAdditionalPropertiesOneOf3": {
+      "ManagedIndexFieldsDocumentFieldsAdditionalPropertiesOneOf3Variant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/ManagedIndexFieldsDocumentFieldsAdditionalProperties"
@@ -83978,7 +83978,7 @@
           }
         ]
       },
-      "ManagedIndexFieldsDocumentFieldsAdditionalPropertiesManagedIndexFieldsDocumentFieldsAdditionalPropertiesOneOf4": {
+      "ManagedIndexFieldsDocumentFieldsAdditionalPropertiesOneOf4Variant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/ManagedIndexFieldsDocumentFieldsAdditionalProperties"
@@ -84030,7 +84030,7 @@
           }
         ]
       },
-      "ManagedIndexFieldsDocumentFieldsAdditionalPropertiesManagedIndexFieldsDocumentFieldsAdditionalPropertiesOneOf5": {
+      "ManagedIndexFieldsDocumentFieldsAdditionalPropertiesOneOf5Variant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/ManagedIndexFieldsDocumentFieldsAdditionalProperties"
@@ -84082,7 +84082,7 @@
           }
         ]
       },
-      "ManagedIndexFieldsDocumentFieldsAdditionalPropertiesManagedIndexFieldsDocumentFieldsAdditionalPropertiesOneOf6": {
+      "ManagedIndexFieldsDocumentFieldsAdditionalPropertiesOneOf6Variant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/ManagedIndexFieldsDocumentFieldsAdditionalProperties"
@@ -84134,7 +84134,7 @@
           }
         ]
       },
-      "ManagedIndexFieldsDocumentFieldsAdditionalPropertiesManagedIndexFieldsDocumentFieldsAdditionalPropertiesOneOf7": {
+      "ManagedIndexFieldsDocumentFieldsAdditionalPropertiesOneOf7Variant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/ManagedIndexFieldsDocumentFieldsAdditionalProperties"
@@ -84186,7 +84186,7 @@
           }
         ]
       },
-      "ManagedIndexFieldsDocumentFieldsAdditionalPropertiesManagedIndexFieldsDocumentFieldsAdditionalPropertiesOneOf8": {
+      "ManagedIndexFieldsDocumentFieldsAdditionalPropertiesOneOf8Variant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/ManagedIndexFieldsDocumentFieldsAdditionalProperties"
@@ -84238,7 +84238,7 @@
           }
         ]
       },
-      "ManagedIndexFieldsDocumentFieldsAdditionalPropertiesManagedIndexFieldsDocumentFieldsAdditionalPropertiesOneOf9": {
+      "ManagedIndexFieldsDocumentFieldsAdditionalPropertiesOneOf9Variant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/ManagedIndexFieldsDocumentFieldsAdditionalProperties"
@@ -84290,7 +84290,7 @@
           }
         ]
       },
-      "ManagedIndexFieldsDocumentFieldsAdditionalPropertiesManagedIndexFieldsDocumentFieldsAdditionalPropertiesOneOf10": {
+      "ManagedIndexFieldsDocumentFieldsAdditionalPropertiesOneOf10Variant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/ManagedIndexFieldsDocumentFieldsAdditionalProperties"
@@ -84342,7 +84342,7 @@
           }
         ]
       },
-      "ManagedIndexFieldsDocumentFieldsAdditionalPropertiesManagedIndexFieldsDocumentFieldsAdditionalPropertiesOneOf11": {
+      "ManagedIndexFieldsDocumentFieldsAdditionalPropertiesOneOf11Variant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/ManagedIndexFieldsDocumentFieldsAdditionalProperties"
@@ -84394,7 +84394,7 @@
           }
         ]
       },
-      "ManagedIndexFieldsDocumentFieldsAdditionalPropertiesManagedIndexFieldsDocumentFieldsAdditionalPropertiesOneOf12": {
+      "ManagedIndexFieldsDocumentFieldsAdditionalPropertiesOneOf12Variant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/ManagedIndexFieldsDocumentFieldsAdditionalProperties"
@@ -84446,7 +84446,7 @@
           }
         ]
       },
-      "ManagedIndexFieldsDocumentFieldsAdditionalPropertiesManagedIndexFieldsDocumentFieldsAdditionalPropertiesOneOf13": {
+      "ManagedIndexFieldsDocumentFieldsAdditionalPropertiesOneOf13Variant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/ManagedIndexFieldsDocumentFieldsAdditionalProperties"
@@ -84498,7 +84498,7 @@
           }
         ]
       },
-      "ManagedIndexFieldsDocumentFieldsAdditionalPropertiesManagedIndexFieldsDocumentFieldsAdditionalPropertiesOneOf14": {
+      "ManagedIndexFieldsDocumentFieldsAdditionalPropertiesOneOf14Variant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/ManagedIndexFieldsDocumentFieldsAdditionalProperties"
@@ -84550,7 +84550,7 @@
           }
         ]
       },
-      "ManagedIndexFieldsDocumentFieldsAdditionalPropertiesManagedIndexFieldsDocumentFieldsAdditionalPropertiesOneOf15": {
+      "ManagedIndexFieldsDocumentFieldsAdditionalPropertiesOneOf15Variant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/ManagedIndexFieldsDocumentFieldsAdditionalProperties"
@@ -84602,7 +84602,7 @@
           }
         ]
       },
-      "ManagedIndexFieldsDocumentFieldsAdditionalPropertiesManagedIndexFieldsDocumentFieldsAdditionalPropertiesOneOf16": {
+      "ManagedIndexFieldsDocumentFieldsAdditionalPropertiesOneOf16Variant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/ManagedIndexFieldsDocumentFieldsAdditionalProperties"
@@ -84654,7 +84654,7 @@
           }
         ]
       },
-      "ManagedIndexFieldsChunkFieldsAdditionalPropertiesManagedIndexFieldsChunkFieldsAdditionalPropertiesOneOf1": {
+      "ManagedIndexFieldsChunkFieldsAdditionalPropertiesOneOf1Variant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/ManagedIndexFieldsChunkFieldsAdditionalProperties"
@@ -84706,7 +84706,7 @@
           }
         ]
       },
-      "ManagedIndexFieldsChunkFieldsAdditionalPropertiesManagedIndexFieldsChunkFieldsAdditionalPropertiesOneOf2": {
+      "ManagedIndexFieldsChunkFieldsAdditionalPropertiesOneOf2Variant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/ManagedIndexFieldsChunkFieldsAdditionalProperties"
@@ -84758,7 +84758,7 @@
           }
         ]
       },
-      "ManagedIndexFieldsChunkFieldsAdditionalPropertiesManagedIndexFieldsChunkFieldsAdditionalPropertiesOneOf3": {
+      "ManagedIndexFieldsChunkFieldsAdditionalPropertiesOneOf3Variant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/ManagedIndexFieldsChunkFieldsAdditionalProperties"
@@ -84810,7 +84810,7 @@
           }
         ]
       },
-      "ManagedIndexFieldsChunkFieldsAdditionalPropertiesManagedIndexFieldsChunkFieldsAdditionalPropertiesOneOf4": {
+      "ManagedIndexFieldsChunkFieldsAdditionalPropertiesOneOf4Variant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/ManagedIndexFieldsChunkFieldsAdditionalProperties"
@@ -84862,7 +84862,7 @@
           }
         ]
       },
-      "ManagedIndexFieldsChunkFieldsAdditionalPropertiesManagedIndexFieldsChunkFieldsAdditionalPropertiesOneOf5": {
+      "ManagedIndexFieldsChunkFieldsAdditionalPropertiesOneOf5Variant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/ManagedIndexFieldsChunkFieldsAdditionalProperties"
@@ -84914,7 +84914,7 @@
           }
         ]
       },
-      "ManagedIndexFieldsChunkFieldsAdditionalPropertiesManagedIndexFieldsChunkFieldsAdditionalPropertiesOneOf6": {
+      "ManagedIndexFieldsChunkFieldsAdditionalPropertiesOneOf6Variant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/ManagedIndexFieldsChunkFieldsAdditionalProperties"
@@ -84966,7 +84966,7 @@
           }
         ]
       },
-      "ManagedIndexFieldsChunkFieldsAdditionalPropertiesManagedIndexFieldsChunkFieldsAdditionalPropertiesOneOf7": {
+      "ManagedIndexFieldsChunkFieldsAdditionalPropertiesOneOf7Variant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/ManagedIndexFieldsChunkFieldsAdditionalProperties"
@@ -85018,7 +85018,7 @@
           }
         ]
       },
-      "ManagedIndexFieldsChunkFieldsAdditionalPropertiesManagedIndexFieldsChunkFieldsAdditionalPropertiesOneOf8": {
+      "ManagedIndexFieldsChunkFieldsAdditionalPropertiesOneOf8Variant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/ManagedIndexFieldsChunkFieldsAdditionalProperties"
@@ -85070,7 +85070,7 @@
           }
         ]
       },
-      "ManagedIndexFieldsChunkFieldsAdditionalPropertiesManagedIndexFieldsChunkFieldsAdditionalPropertiesOneOf9": {
+      "ManagedIndexFieldsChunkFieldsAdditionalPropertiesOneOf9Variant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/ManagedIndexFieldsChunkFieldsAdditionalProperties"
@@ -85122,7 +85122,7 @@
           }
         ]
       },
-      "ManagedIndexFieldsChunkFieldsAdditionalPropertiesManagedIndexFieldsChunkFieldsAdditionalPropertiesOneOf10": {
+      "ManagedIndexFieldsChunkFieldsAdditionalPropertiesOneOf10Variant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/ManagedIndexFieldsChunkFieldsAdditionalProperties"
@@ -85174,7 +85174,7 @@
           }
         ]
       },
-      "ManagedIndexFieldsChunkFieldsAdditionalPropertiesManagedIndexFieldsChunkFieldsAdditionalPropertiesOneOf11": {
+      "ManagedIndexFieldsChunkFieldsAdditionalPropertiesOneOf11Variant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/ManagedIndexFieldsChunkFieldsAdditionalProperties"
@@ -85226,7 +85226,7 @@
           }
         ]
       },
-      "ManagedIndexFieldsChunkFieldsAdditionalPropertiesManagedIndexFieldsChunkFieldsAdditionalPropertiesOneOf12": {
+      "ManagedIndexFieldsChunkFieldsAdditionalPropertiesOneOf12Variant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/ManagedIndexFieldsChunkFieldsAdditionalProperties"
@@ -85278,7 +85278,7 @@
           }
         ]
       },
-      "ManagedIndexFieldsChunkFieldsAdditionalPropertiesManagedIndexFieldsChunkFieldsAdditionalPropertiesOneOf13": {
+      "ManagedIndexFieldsChunkFieldsAdditionalPropertiesOneOf13Variant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/ManagedIndexFieldsChunkFieldsAdditionalProperties"
@@ -85330,7 +85330,7 @@
           }
         ]
       },
-      "ManagedIndexFieldsChunkFieldsAdditionalPropertiesManagedIndexFieldsChunkFieldsAdditionalPropertiesOneOf14": {
+      "ManagedIndexFieldsChunkFieldsAdditionalPropertiesOneOf14Variant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/ManagedIndexFieldsChunkFieldsAdditionalProperties"
@@ -85382,7 +85382,7 @@
           }
         ]
       },
-      "ManagedIndexFieldsChunkFieldsAdditionalPropertiesManagedIndexFieldsChunkFieldsAdditionalPropertiesOneOf15": {
+      "ManagedIndexFieldsChunkFieldsAdditionalPropertiesOneOf15Variant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/ManagedIndexFieldsChunkFieldsAdditionalProperties"
@@ -85434,7 +85434,7 @@
           }
         ]
       },
-      "ManagedIndexFieldsChunkFieldsAdditionalPropertiesManagedIndexFieldsChunkFieldsAdditionalPropertiesOneOf16": {
+      "ManagedIndexFieldsChunkFieldsAdditionalPropertiesOneOf16Variant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/ManagedIndexFieldsChunkFieldsAdditionalProperties"
@@ -85949,7 +85949,7 @@
           }
         ]
       },
-      "ChatModerationRequestInputAnyOf1ItemChatModerationRequestInputAnyOf1ItemOneOf1": {
+      "ChatModerationRequestInputAnyOf1ItemOneOf1Variant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/ChatModerationRequestInputAnyOf1Item"
@@ -85987,7 +85987,7 @@
           }
         ]
       },
-      "ChatModerationRequestInputAnyOf1ItemChatModerationRequestInputAnyOf1ItemOneOf2": {
+      "ChatModerationRequestInputAnyOf1ItemOneOf2Variant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/ChatModerationRequestInputAnyOf1Item"
@@ -86025,7 +86025,7 @@
           }
         ]
       },
-      "ChatModerationRequestInputAnyOf1ItemChatModerationRequestInputAnyOf1ItemOneOf3": {
+      "ChatModerationRequestInputAnyOf1ItemOneOf3Variant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/ChatModerationRequestInputAnyOf1Item"
@@ -86078,7 +86078,7 @@
           }
         ]
       },
-      "ChatModerationRequestInputAnyOf1ItemChatModerationRequestInputAnyOf1ItemOneOf4": {
+      "ChatModerationRequestInputAnyOf1ItemOneOf4Variant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/ChatModerationRequestInputAnyOf1Item"
@@ -86130,7 +86130,7 @@
           }
         ]
       },
-      "ChatModerationRequestInputAnyOf2ItemItemChatModerationRequestInputAnyOf2ItemItemOneOf1": {
+      "ChatModerationRequestInputAnyOf2ItemItemOneOf1Variant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/ChatModerationRequestInputAnyOf2ItemItem"
@@ -86168,7 +86168,7 @@
           }
         ]
       },
-      "ChatModerationRequestInputAnyOf2ItemItemChatModerationRequestInputAnyOf2ItemItemOneOf2": {
+      "ChatModerationRequestInputAnyOf2ItemItemOneOf2Variant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/ChatModerationRequestInputAnyOf2ItemItem"
@@ -86206,7 +86206,7 @@
           }
         ]
       },
-      "ChatModerationRequestInputAnyOf2ItemItemChatModerationRequestInputAnyOf2ItemItemOneOf3": {
+      "ChatModerationRequestInputAnyOf2ItemItemOneOf3Variant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/ChatModerationRequestInputAnyOf2ItemItem"
@@ -86259,7 +86259,7 @@
           }
         ]
       },
-      "ChatModerationRequestInputAnyOf2ItemItemChatModerationRequestInputAnyOf2ItemItemOneOf4": {
+      "ChatModerationRequestInputAnyOf2ItemItemOneOf4Variant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/ChatModerationRequestInputAnyOf2ItemItem"
@@ -86440,7 +86440,7 @@
           }
         ]
       },
-      "ResponseRetrieveModelV1ModelsModelIdGetResponseRetrieveModelV1ModelsModelIdGetOneOf1": {
+      "ResponseRetrieveModelV1ModelsModelIdGetOneOf1Variant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/ResponseRetrieveModelV1ModelsModelIdGet"
@@ -86558,7 +86558,7 @@
           }
         ]
       },
-      "ResponseRetrieveModelV1ModelsModelIdGetResponseRetrieveModelV1ModelsModelIdGetOneOf2": {
+      "ResponseRetrieveModelV1ModelsModelIdGetOneOf2Variant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/ResponseRetrieveModelV1ModelsModelIdGet"
@@ -86691,7 +86691,7 @@
           }
         ]
       },
-      "JobsApiRoutesFineTuningUpdateFineTunedModel200ResponseJobsApiRoutesFineTuningUpdateFineTunedModel200ResponseOneOf1": {
+      "JobsApiRoutesFineTuningUpdateFineTunedModel200ResponseOneOf1Variant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/JobsApiRoutesFineTuningUpdateFineTunedModel200Response"
@@ -86801,7 +86801,7 @@
           }
         ]
       },
-      "JobsApiRoutesFineTuningUpdateFineTunedModel200ResponseJobsApiRoutesFineTuningUpdateFineTunedModel200ResponseOneOf2": {
+      "JobsApiRoutesFineTuningUpdateFineTunedModel200ResponseOneOf2Variant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/JobsApiRoutesFineTuningUpdateFineTunedModel200Response"
@@ -86919,7 +86919,7 @@
           }
         ]
       },
-      "ConnectorCreateV1RequestConnectorCreateV1RequestOneOf1": {
+      "ConnectorCreateV1RequestOneOf1Variant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/ConnectorCreateV1Request"
@@ -87136,7 +87136,7 @@
           }
         ]
       },
-      "ConnectorUpdateV1RequestConnectorUpdateV1RequestOneOf1": {
+      "ConnectorUpdateV1RequestOneOf1Variant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/ConnectorUpdateV1Request"
@@ -87308,7 +87308,7 @@
           }
         ]
       },
-      "UpdateIndexMetricsV1RagDeploymentsDeploymentIdMetricsPutRequestUpdateMetricsRequestDeploymentMetricsOnline": {
+      "TaggedOnlineVariant1114236CC2954C94": {
         "allOf": [
           {
             "$ref": "#/components/schemas/UpdateIndexMetricsV1RagDeploymentsDeploymentIdMetricsPutRequest"
@@ -87340,7 +87340,7 @@
           }
         ]
       },
-      "UpdateIndexMetricsV1RagDeploymentsDeploymentIdMetricsPutRequestUpdateMetricsRequestDeploymentMetricsOffline": {
+      "TaggedOfflineVariant3F46054DD887D74F": {
         "allOf": [
           {
             "$ref": "#/components/schemas/UpdateIndexMetricsV1RagDeploymentsDeploymentIdMetricsPutRequest"
@@ -87364,7 +87364,7 @@
           }
         ]
       },
-      "Response400SearchIndexV1RagManagedIndexesIndexNameSearchPostSchemaItemResponse400SearchIndexV1RagManagedIndexesIndexNameSearchPostSchemaItemOneOf1": {
+      "Response400SearchIndexV1RagManagedIndexesIndexNameSearchPostSchemaItemOneOf1Variant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/Response400SearchIndexV1RagManagedIndexesIndexNameSearchPostSchemaItem"
@@ -87402,7 +87402,7 @@
           }
         ]
       },
-      "Response400SearchIndexV1RagManagedIndexesIndexNameSearchPostSchemaItemResponse400SearchIndexV1RagManagedIndexesIndexNameSearchPostSchemaItemOneOf2": {
+      "Response400SearchIndexV1RagManagedIndexesIndexNameSearchPostSchemaItemOneOf2Variant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/Response400SearchIndexV1RagManagedIndexesIndexNameSearchPostSchemaItem"
@@ -87435,7 +87435,7 @@
           }
         ]
       },
-      "Response400SearchIndexV1RagManagedIndexesIndexNameSearchPostSchemaItemResponse400SearchIndexV1RagManagedIndexesIndexNameSearchPostSchemaItemOneOf3": {
+      "Response400SearchIndexV1RagManagedIndexesIndexNameSearchPostSchemaItemOneOf3Variant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/Response400SearchIndexV1RagManagedIndexesIndexNameSearchPostSchemaItem"
@@ -87483,7 +87483,7 @@
           }
         ]
       },
-      "Response400SearchIndexV1RagManagedIndexesIndexNameSearchPostSchemaItemResponse400SearchIndexV1RagManagedIndexesIndexNameSearchPostSchemaItemOneOf4": {
+      "Response400SearchIndexV1RagManagedIndexesIndexNameSearchPostSchemaItemOneOf4Variant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/Response400SearchIndexV1RagManagedIndexesIndexNameSearchPostSchemaItem"
@@ -87526,7 +87526,7 @@
           }
         ]
       },
-      "Response400SearchIndexV1RagManagedIndexesIndexNameSearchPostSchemaItemResponse400SearchIndexV1RagManagedIndexesIndexNameSearchPostSchemaItemOneOf5": {
+      "Response400SearchIndexV1RagManagedIndexesIndexNameSearchPostSchemaItemOneOf5Variant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/Response400SearchIndexV1RagManagedIndexesIndexNameSearchPostSchemaItem"
@@ -87569,7 +87569,7 @@
           }
         ]
       },
-      "Response400SearchIndexV1RagManagedIndexesIndexNameSearchPostSchemaItemResponse400SearchIndexV1RagManagedIndexesIndexNameSearchPostSchemaItemOneOf6": {
+      "Response400SearchIndexV1RagManagedIndexesIndexNameSearchPostSchemaItemOneOf6Variant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/Response400SearchIndexV1RagManagedIndexesIndexNameSearchPostSchemaItem"
@@ -87612,7 +87612,7 @@
           }
         ]
       },
-      "CustomConnectorAuthorizationAnyOf1CustomConnectorAuthorizationAnyOf1OneOf1": {
+      "CustomConnectorAuthorizationAnyOf1OneOf1Variant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/CustomConnectorAuthorizationAnyOf1"
@@ -87650,7 +87650,7 @@
           }
         ]
       },
-      "CustomConnectorAuthorizationAnyOf1CustomConnectorAuthorizationAnyOf1OneOf2": {
+      "CustomConnectorAuthorizationAnyOf1OneOf2Variant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/CustomConnectorAuthorizationAnyOf1"
@@ -87688,7 +87688,7 @@
           }
         ]
       },
-      "EvaluationRunRecordFilterInputSortAnyOf1EvaluationRunRecordFilterInputSortAnyOf1OneOf1": {
+      "EvaluationRunRecordFilterInputSortAnyOf1OneOf1Variant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/EvaluationRunRecordFilterInputSortAnyOf1"
@@ -87729,7 +87729,7 @@
           }
         ]
       },
-      "EvaluationRunRecordFilterInputSortAnyOf1EvaluationRunRecordFilterInputSortAnyOf1OneOf2": {
+      "EvaluationRunRecordFilterInputSortAnyOf1OneOf2Variant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/EvaluationRunRecordFilterInputSortAnyOf1"
@@ -87775,7 +87775,7 @@
           }
         ]
       },
-      "KeywordRetrieverFilterAnyOf1KeywordRetrieverFilterAnyOf1OneOf1": {
+      "KeywordRetrieverFilterAnyOf1OneOf1Variant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/KeywordRetrieverFilterAnyOf1"
@@ -87816,7 +87816,7 @@
           }
         ]
       },
-      "KeywordRetrieverFilterAnyOf1KeywordRetrieverFilterAnyOf1OneOf2": {
+      "KeywordRetrieverFilterAnyOf1OneOf2Variant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/KeywordRetrieverFilterAnyOf1"
@@ -87857,7 +87857,7 @@
           }
         ]
       },
-      "KeywordRetrieverFilterAnyOf1KeywordRetrieverFilterAnyOf1OneOf3": {
+      "KeywordRetrieverFilterAnyOf1OneOf3Variant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/KeywordRetrieverFilterAnyOf1"
@@ -87894,7 +87894,7 @@
           }
         ]
       },
-      "KeywordRetrieverFilterAnyOf1KeywordRetrieverFilterAnyOf1OneOf4": {
+      "KeywordRetrieverFilterAnyOf1OneOf4Variant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/KeywordRetrieverFilterAnyOf1"
@@ -87936,7 +87936,7 @@
           }
         ]
       },
-      "KeywordRetrieverFilterAnyOf1KeywordRetrieverFilterAnyOf1OneOf5": {
+      "KeywordRetrieverFilterAnyOf1OneOf5Variant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/KeywordRetrieverFilterAnyOf1"
@@ -87986,7 +87986,7 @@
           }
         ]
       },
-      "KeywordRetrieverFilterAnyOf1KeywordRetrieverFilterAnyOf1OneOf6": {
+      "KeywordRetrieverFilterAnyOf1OneOf6Variant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/KeywordRetrieverFilterAnyOf1"
@@ -88032,7 +88032,7 @@
           }
         ]
       },
-      "NearestNeighbourRetrieverFilterAnyOf1NearestNeighbourRetrieverFilterAnyOf1OneOf1": {
+      "NearestNeighbourRetrieverFilterAnyOf1OneOf1Variant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/NearestNeighbourRetrieverFilterAnyOf1"
@@ -88073,7 +88073,7 @@
           }
         ]
       },
-      "NearestNeighbourRetrieverFilterAnyOf1NearestNeighbourRetrieverFilterAnyOf1OneOf2": {
+      "NearestNeighbourRetrieverFilterAnyOf1OneOf2Variant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/NearestNeighbourRetrieverFilterAnyOf1"
@@ -88114,7 +88114,7 @@
           }
         ]
       },
-      "NearestNeighbourRetrieverFilterAnyOf1NearestNeighbourRetrieverFilterAnyOf1OneOf3": {
+      "NearestNeighbourRetrieverFilterAnyOf1OneOf3Variant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/NearestNeighbourRetrieverFilterAnyOf1"
@@ -88151,7 +88151,7 @@
           }
         ]
       },
-      "NearestNeighbourRetrieverFilterAnyOf1NearestNeighbourRetrieverFilterAnyOf1OneOf4": {
+      "NearestNeighbourRetrieverFilterAnyOf1OneOf4Variant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/NearestNeighbourRetrieverFilterAnyOf1"
@@ -88193,7 +88193,7 @@
           }
         ]
       },
-      "NearestNeighbourRetrieverFilterAnyOf1NearestNeighbourRetrieverFilterAnyOf1OneOf5": {
+      "NearestNeighbourRetrieverFilterAnyOf1OneOf5Variant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/NearestNeighbourRetrieverFilterAnyOf1"
@@ -88243,7 +88243,7 @@
           }
         ]
       },
-      "NearestNeighbourRetrieverFilterAnyOf1NearestNeighbourRetrieverFilterAnyOf1OneOf6": {
+      "NearestNeighbourRetrieverFilterAnyOf1OneOf6Variant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/NearestNeighbourRetrieverFilterAnyOf1"
@@ -88289,7 +88289,7 @@
           }
         ]
       },
-      "RrfRetrieverFilterAnyOf1RrfRetrieverFilterAnyOf1OneOf1": {
+      "RrfRetrieverFilterAnyOf1OneOf1Variant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/RrfRetrieverFilterAnyOf1"
@@ -88330,7 +88330,7 @@
           }
         ]
       },
-      "RrfRetrieverFilterAnyOf1RrfRetrieverFilterAnyOf1OneOf2": {
+      "RrfRetrieverFilterAnyOf1OneOf2Variant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/RrfRetrieverFilterAnyOf1"
@@ -88371,7 +88371,7 @@
           }
         ]
       },
-      "RrfRetrieverFilterAnyOf1RrfRetrieverFilterAnyOf1OneOf3": {
+      "RrfRetrieverFilterAnyOf1OneOf3Variant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/RrfRetrieverFilterAnyOf1"
@@ -88408,7 +88408,7 @@
           }
         ]
       },
-      "RrfRetrieverFilterAnyOf1RrfRetrieverFilterAnyOf1OneOf4": {
+      "RrfRetrieverFilterAnyOf1OneOf4Variant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/RrfRetrieverFilterAnyOf1"
@@ -88450,7 +88450,7 @@
           }
         ]
       },
-      "RrfRetrieverFilterAnyOf1RrfRetrieverFilterAnyOf1OneOf5": {
+      "RrfRetrieverFilterAnyOf1OneOf5Variant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/RrfRetrieverFilterAnyOf1"
@@ -88500,7 +88500,7 @@
           }
         ]
       },
-      "RrfRetrieverFilterAnyOf1RrfRetrieverFilterAnyOf1OneOf6": {
+      "RrfRetrieverFilterAnyOf1OneOf6Variant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/RrfRetrieverFilterAnyOf1"
@@ -88546,7 +88546,7 @@
           }
         ]
       },
-      "ApiKeyActionsRotateAnyOf1ApiKeyActionsRotateAnyOf1OneOf1": {
+      "ApiKeyActionsRotateAnyOf1OneOf1Variant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/ApiKeyActionsRotateAnyOf1"
@@ -88579,7 +88579,7 @@
           }
         ]
       },
-      "ApiKeyActionsRotateAnyOf1ApiKeyActionsRotateAnyOf1OneOf2": {
+      "ApiKeyActionsRotateAnyOf1OneOf2Variant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/ApiKeyActionsRotateAnyOf1"
@@ -88615,7 +88615,7 @@
           }
         ]
       },
-      "ApiKeyActionsDeleteAnyOf1ApiKeyActionsDeleteAnyOf1OneOf1": {
+      "ApiKeyActionsDeleteAnyOf1OneOf1Variant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/ApiKeyActionsDeleteAnyOf1"
@@ -88648,7 +88648,7 @@
           }
         ]
       },
-      "ApiKeyActionsDeleteAnyOf1ApiKeyActionsDeleteAnyOf1OneOf2": {
+      "ApiKeyActionsDeleteAnyOf1OneOf2Variant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/ApiKeyActionsDeleteAnyOf1"
@@ -88684,7 +88684,7 @@
           }
         ]
       },
-      "CreateConnectorRequestAuthMethodsItemOneOf1CreateConnectorRequestAuthMethodsItemOneOf1AuthorizationCode": {
+      "CreateConnectorRequestAuthMethodsItemOneOf1AuthorizationCodeVariant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/CreateConnectorRequestAuthMethodsItemOneOf1"
@@ -88756,7 +88756,7 @@
           }
         ]
       },
-      "CreateConnectorRequestAuthMethodsItemOneOf1CreateConnectorRequestAuthMethodsItemOneOf1ClientCredentials": {
+      "CreateConnectorRequestAuthMethodsItemOneOf1ClientCredentialsVariant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/CreateConnectorRequestAuthMethodsItemOneOf1"
@@ -88814,7 +88814,7 @@
           }
         ]
       },
-      "CreateHttpConnectorRequestAuthMethodsItemOneOf1CreateHttpConnectorRequestAuthMethodsItemOneOf1AuthorizationCode": {
+      "CreateHttpConnectorRequestAuthMethodsItemOneOf1AuthorizationCodeVariant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/CreateHttpConnectorRequestAuthMethodsItemOneOf1"
@@ -88886,7 +88886,7 @@
           }
         ]
       },
-      "CreateHttpConnectorRequestAuthMethodsItemOneOf1CreateHttpConnectorRequestAuthMethodsItemOneOf1ClientCredentials": {
+      "CreateHttpConnectorRequestAuthMethodsItemOneOf1ClientCredentialsVariant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/CreateHttpConnectorRequestAuthMethodsItemOneOf1"
@@ -88944,7 +88944,7 @@
           }
         ]
       },
-      "ConnectorMcpPublicUpdateAuthMethodsItemAnyOf1OneOf1ConnectorMcpPublicUpdateAuthMethodsItemAnyOf1OneOf1AuthorizationCode": {
+      "ConnectorMcpPublicUpdateAuthMethodsItemAnyOf1OneOf1AuthorizationCodeVariant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/ConnectorMcpPublicUpdateAuthMethodsItemAnyOf1OneOf1"
@@ -89016,7 +89016,7 @@
           }
         ]
       },
-      "ConnectorMcpPublicUpdateAuthMethodsItemAnyOf1OneOf1ConnectorMcpPublicUpdateAuthMethodsItemAnyOf1OneOf1ClientCredentials": {
+      "ConnectorMcpPublicUpdateAuthMethodsItemAnyOf1OneOf1ClientCredentialsVariant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/ConnectorMcpPublicUpdateAuthMethodsItemAnyOf1OneOf1"
@@ -89074,7 +89074,7 @@
           }
         ]
       },
-      "UpdateHttpConnectorRequestAuthMethodsItemAnyOf1OneOf1UpdateHttpConnectorRequestAuthMethodsItemAnyOf1OneOf1AuthorizationCode": {
+      "UpdateHttpConnectorRequestAuthMethodsItemAnyOf1OneOf1AuthorizationCodeVariant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/UpdateHttpConnectorRequestAuthMethodsItemAnyOf1OneOf1"
@@ -89146,7 +89146,7 @@
           }
         ]
       },
-      "UpdateHttpConnectorRequestAuthMethodsItemAnyOf1OneOf1UpdateHttpConnectorRequestAuthMethodsItemAnyOf1OneOf1ClientCredentials": {
+      "UpdateHttpConnectorRequestAuthMethodsItemAnyOf1OneOf1ClientCredentialsVariant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/UpdateHttpConnectorRequestAuthMethodsItemAnyOf1OneOf1"
@@ -93524,7 +93524,7 @@
       "discriminator": {
         "propertyName": "grant_type",
         "mapping": {
-          "authorization_code": "#/components/schemas/OAuth2AuthMethodOAuth2AuthMethodOneOf1",
+          "authorization_code": "#/components/schemas/OAuth2AuthMethodOneOf1Variant",
           "client_credentials": "#/components/schemas/OAuth2AuthMethodOAuth2ClientCredentialsAuthMethod"
         }
       },
@@ -98977,15 +98977,15 @@
           "discriminator": {
             "propertyName": "type",
             "mapping": {
-              "text": "#/components/schemas/ContentChunkContentChunkOneOf1",
-              "image_url": "#/components/schemas/ContentChunkContentChunkOneOf2",
-              "document_url": "#/components/schemas/ContentChunkContentChunkOneOf3",
-              "reference": "#/components/schemas/ContentChunkContentChunkOneOf4",
-              "file": "#/components/schemas/ContentChunkContentChunkOneOf5",
-              "thinking": "#/components/schemas/ContentChunkContentChunkOneOf6",
-              "input_audio": "#/components/schemas/ContentChunkContentChunkOneOf7",
-              "resource": "#/components/schemas/ContentChunkContentChunkOneOf8",
-              "resource_link": "#/components/schemas/ContentChunkContentChunkOneOf9"
+              "text": "#/components/schemas/ContentChunkOneOf1Variant",
+              "image_url": "#/components/schemas/ContentChunkOneOf2Variant",
+              "document_url": "#/components/schemas/ContentChunkOneOf3Variant",
+              "reference": "#/components/schemas/ContentChunkOneOf4Variant",
+              "file": "#/components/schemas/ContentChunkOneOf5Variant",
+              "thinking": "#/components/schemas/ContentChunkOneOf6Variant",
+              "input_audio": "#/components/schemas/ContentChunkOneOf7Variant",
+              "resource": "#/components/schemas/ContentChunkOneOf8Variant",
+              "resource_link": "#/components/schemas/ContentChunkOneOf9Variant"
             }
           },
           "x-client-array-item-dispatch": true
@@ -99017,15 +99017,15 @@
           "discriminator": {
             "propertyName": "type",
             "mapping": {
-              "text": "#/components/schemas/ContentChunkContentChunkOneOf1",
-              "image_url": "#/components/schemas/ContentChunkContentChunkOneOf2",
-              "document_url": "#/components/schemas/ContentChunkContentChunkOneOf3",
-              "reference": "#/components/schemas/ContentChunkContentChunkOneOf4",
-              "file": "#/components/schemas/ContentChunkContentChunkOneOf5",
-              "thinking": "#/components/schemas/ContentChunkContentChunkOneOf6",
-              "input_audio": "#/components/schemas/ContentChunkContentChunkOneOf7",
-              "resource": "#/components/schemas/ContentChunkContentChunkOneOf8",
-              "resource_link": "#/components/schemas/ContentChunkContentChunkOneOf9"
+              "text": "#/components/schemas/ContentChunkOneOf1Variant",
+              "image_url": "#/components/schemas/ContentChunkOneOf2Variant",
+              "document_url": "#/components/schemas/ContentChunkOneOf3Variant",
+              "reference": "#/components/schemas/ContentChunkOneOf4Variant",
+              "file": "#/components/schemas/ContentChunkOneOf5Variant",
+              "thinking": "#/components/schemas/ContentChunkOneOf6Variant",
+              "input_audio": "#/components/schemas/ContentChunkOneOf7Variant",
+              "resource": "#/components/schemas/ContentChunkOneOf8Variant",
+              "resource_link": "#/components/schemas/ContentChunkOneOf9Variant"
             }
           },
           "x-client-array-item-dispatch": true
@@ -103293,12 +103293,12 @@
       "discriminator": {
         "propertyName": "type",
         "mapping": {
-          "missing_field": "#/components/schemas/Response400SearchIndexV1RagManagedIndexesIndexNameSearchPostItemResponse400SearchIndexV1RagManagedIndexesIndexNameSearchPostItemOneOf1",
-          "missing_embedding": "#/components/schemas/Response400SearchIndexV1RagManagedIndexesIndexNameSearchPostItemResponse400SearchIndexV1RagManagedIndexesIndexNameSearchPostItemOneOf2",
-          "incorrect_field_type": "#/components/schemas/Response400SearchIndexV1RagManagedIndexesIndexNameSearchPostItemResponse400SearchIndexV1RagManagedIndexesIndexNameSearchPostItemOneOf3",
-          "embedding_mismatch": "#/components/schemas/Response400SearchIndexV1RagManagedIndexesIndexNameSearchPostItemResponse400SearchIndexV1RagManagedIndexesIndexNameSearchPostItemOneOf4",
-          "max_candidates_too_small": "#/components/schemas/Response400SearchIndexV1RagManagedIndexesIndexNameSearchPostItemResponse400SearchIndexV1RagManagedIndexesIndexNameSearchPostItemOneOf5",
-          "top_k_too_large": "#/components/schemas/Response400SearchIndexV1RagManagedIndexesIndexNameSearchPostItemResponse400SearchIndexV1RagManagedIndexesIndexNameSearchPostItemOneOf6"
+          "missing_field": "#/components/schemas/Response400SearchIndexV1RagManagedIndexesIndexNameSearchPostItemOneOf1Variant",
+          "missing_embedding": "#/components/schemas/Response400SearchIndexV1RagManagedIndexesIndexNameSearchPostItemOneOf2Variant",
+          "incorrect_field_type": "#/components/schemas/Response400SearchIndexV1RagManagedIndexesIndexNameSearchPostItemOneOf3Variant",
+          "embedding_mismatch": "#/components/schemas/Response400SearchIndexV1RagManagedIndexesIndexNameSearchPostItemOneOf4Variant",
+          "max_candidates_too_small": "#/components/schemas/Response400SearchIndexV1RagManagedIndexesIndexNameSearchPostItemOneOf5Variant",
+          "top_k_too_large": "#/components/schemas/Response400SearchIndexV1RagManagedIndexesIndexNameSearchPostItemOneOf6Variant"
         }
       },
       "x-client-original-tagged-union": {
@@ -115930,7 +115930,7 @@
       ],
       "additionalProperties": false
     },
-    "OAuth2AuthMethodOAuth2AuthMethodOneOf1": {
+    "OAuth2AuthMethodOneOf1Variant": {
       "allOf": [
         {
           "$ref": "#/components/schemas/OAuth2AuthMethod"
@@ -117058,7 +117058,7 @@
         }
       ]
     },
-    "Response400SearchIndexV1RagManagedIndexesIndexNameSearchPostItemResponse400SearchIndexV1RagManagedIndexesIndexNameSearchPostItemOneOf1": {
+    "Response400SearchIndexV1RagManagedIndexesIndexNameSearchPostItemOneOf1Variant": {
       "allOf": [
         {
           "$ref": "#/components/schemas/Response400SearchIndexV1RagManagedIndexesIndexNameSearchPostItem"
@@ -117096,7 +117096,7 @@
         }
       ]
     },
-    "Response400SearchIndexV1RagManagedIndexesIndexNameSearchPostItemResponse400SearchIndexV1RagManagedIndexesIndexNameSearchPostItemOneOf2": {
+    "Response400SearchIndexV1RagManagedIndexesIndexNameSearchPostItemOneOf2Variant": {
       "allOf": [
         {
           "$ref": "#/components/schemas/Response400SearchIndexV1RagManagedIndexesIndexNameSearchPostItem"
@@ -117129,7 +117129,7 @@
         }
       ]
     },
-    "Response400SearchIndexV1RagManagedIndexesIndexNameSearchPostItemResponse400SearchIndexV1RagManagedIndexesIndexNameSearchPostItemOneOf3": {
+    "Response400SearchIndexV1RagManagedIndexesIndexNameSearchPostItemOneOf3Variant": {
       "allOf": [
         {
           "$ref": "#/components/schemas/Response400SearchIndexV1RagManagedIndexesIndexNameSearchPostItem"
@@ -117177,7 +117177,7 @@
         }
       ]
     },
-    "Response400SearchIndexV1RagManagedIndexesIndexNameSearchPostItemResponse400SearchIndexV1RagManagedIndexesIndexNameSearchPostItemOneOf4": {
+    "Response400SearchIndexV1RagManagedIndexesIndexNameSearchPostItemOneOf4Variant": {
       "allOf": [
         {
           "$ref": "#/components/schemas/Response400SearchIndexV1RagManagedIndexesIndexNameSearchPostItem"
@@ -117220,7 +117220,7 @@
         }
       ]
     },
-    "Response400SearchIndexV1RagManagedIndexesIndexNameSearchPostItemResponse400SearchIndexV1RagManagedIndexesIndexNameSearchPostItemOneOf5": {
+    "Response400SearchIndexV1RagManagedIndexesIndexNameSearchPostItemOneOf5Variant": {
       "allOf": [
         {
           "$ref": "#/components/schemas/Response400SearchIndexV1RagManagedIndexesIndexNameSearchPostItem"
@@ -117263,7 +117263,7 @@
         }
       ]
     },
-    "Response400SearchIndexV1RagManagedIndexesIndexNameSearchPostItemResponse400SearchIndexV1RagManagedIndexesIndexNameSearchPostItemOneOf6": {
+    "Response400SearchIndexV1RagManagedIndexesIndexNameSearchPostItemOneOf6Variant": {
       "allOf": [
         {
           "$ref": "#/components/schemas/Response400SearchIndexV1RagManagedIndexesIndexNameSearchPostItem"

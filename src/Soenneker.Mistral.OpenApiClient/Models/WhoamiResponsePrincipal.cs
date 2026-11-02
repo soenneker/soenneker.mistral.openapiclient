@@ -52,8 +52,8 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             var mappingValue = parseNode.GetChildNode("principal_type")?.GetStringValue();
             return mappingValue switch
             {
-                "service_account" => new global::Soenneker.Mistral.OpenApiClient.Models.WhoamiResponsePrincipalWhoamiResponsePrincipalOneOf2(),
-                "user" => new global::Soenneker.Mistral.OpenApiClient.Models.WhoamiResponsePrincipalWhoamiResponsePrincipalOneOf1(),
+                "service_account" => new global::Soenneker.Mistral.OpenApiClient.Models.WhoamiResponsePrincipalOneOf2Variant(),
+                "user" => new global::Soenneker.Mistral.OpenApiClient.Models.WhoamiResponsePrincipalOneOf1Variant(),
                 _ => new global::Soenneker.Mistral.OpenApiClient.Models.WhoamiResponsePrincipal(),
             };
         }

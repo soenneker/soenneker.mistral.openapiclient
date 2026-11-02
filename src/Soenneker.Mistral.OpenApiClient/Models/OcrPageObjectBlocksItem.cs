@@ -51,19 +51,19 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
             return mappingValue switch
             {
-                "aside_text" => new global::Soenneker.Mistral.OpenApiClient.Models.OcrPageObjectBlocksItemOcrPageObjectBlocksItemOneOf10(),
-                "caption" => new global::Soenneker.Mistral.OpenApiClient.Models.OcrPageObjectBlocksItemOcrPageObjectBlocksItemOneOf7(),
-                "code" => new global::Soenneker.Mistral.OpenApiClient.Models.OcrPageObjectBlocksItemOcrPageObjectBlocksItemOneOf8(),
-                "equation" => new global::Soenneker.Mistral.OpenApiClient.Models.OcrPageObjectBlocksItemOcrPageObjectBlocksItemOneOf6(),
-                "footer" => new global::Soenneker.Mistral.OpenApiClient.Models.OcrPageObjectBlocksItemOcrPageObjectBlocksItemOneOf12(),
-                "header" => new global::Soenneker.Mistral.OpenApiClient.Models.OcrPageObjectBlocksItemOcrPageObjectBlocksItemOneOf11(),
-                "image" => new global::Soenneker.Mistral.OpenApiClient.Models.OcrPageObjectBlocksItemOcrPageObjectBlocksItemOneOf3(),
-                "list" => new global::Soenneker.Mistral.OpenApiClient.Models.OcrPageObjectBlocksItemOcrPageObjectBlocksItemOneOf2(),
-                "references" => new global::Soenneker.Mistral.OpenApiClient.Models.OcrPageObjectBlocksItemOcrPageObjectBlocksItemOneOf9(),
-                "signature" => new global::Soenneker.Mistral.OpenApiClient.Models.OcrPageObjectBlocksItemOcrPageObjectBlocksItemOneOf13(),
-                "table" => new global::Soenneker.Mistral.OpenApiClient.Models.OcrPageObjectBlocksItemOcrPageObjectBlocksItemOneOf4(),
-                "text" => new global::Soenneker.Mistral.OpenApiClient.Models.OcrPageObjectBlocksItemOcrPageObjectBlocksItemOneOf1(),
-                "title" => new global::Soenneker.Mistral.OpenApiClient.Models.OcrPageObjectBlocksItemOcrPageObjectBlocksItemOneOf5(),
+                "aside_text" => new global::Soenneker.Mistral.OpenApiClient.Models.OcrPageObjectBlocksItemOneOf10Variant(),
+                "caption" => new global::Soenneker.Mistral.OpenApiClient.Models.OcrPageObjectBlocksItemOneOf7Variant(),
+                "code" => new global::Soenneker.Mistral.OpenApiClient.Models.OcrPageObjectBlocksItemOneOf8Variant(),
+                "equation" => new global::Soenneker.Mistral.OpenApiClient.Models.OcrPageObjectBlocksItemOneOf6Variant(),
+                "footer" => new global::Soenneker.Mistral.OpenApiClient.Models.OcrPageObjectBlocksItemOneOf12Variant(),
+                "header" => new global::Soenneker.Mistral.OpenApiClient.Models.OcrPageObjectBlocksItemOneOf11Variant(),
+                "image" => new global::Soenneker.Mistral.OpenApiClient.Models.OcrPageObjectBlocksItemOneOf3Variant(),
+                "list" => new global::Soenneker.Mistral.OpenApiClient.Models.OcrPageObjectBlocksItemOneOf2Variant(),
+                "references" => new global::Soenneker.Mistral.OpenApiClient.Models.OcrPageObjectBlocksItemOneOf9Variant(),
+                "signature" => new global::Soenneker.Mistral.OpenApiClient.Models.OcrPageObjectBlocksItemOneOf13Variant(),
+                "table" => new global::Soenneker.Mistral.OpenApiClient.Models.OcrPageObjectBlocksItemOneOf4Variant(),
+                "text" => new global::Soenneker.Mistral.OpenApiClient.Models.OcrPageObjectBlocksItemOneOf1Variant(),
+                "title" => new global::Soenneker.Mistral.OpenApiClient.Models.OcrPageObjectBlocksItemOneOf5Variant(),
                 _ => new global::Soenneker.Mistral.OpenApiClient.Models.OcrPageObjectBlocksItem(),
             };
         }

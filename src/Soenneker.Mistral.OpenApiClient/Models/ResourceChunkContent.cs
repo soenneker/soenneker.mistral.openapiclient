@@ -51,8 +51,8 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
             return mappingValue switch
             {
-                "image_url" => new global::Soenneker.Mistral.OpenApiClient.Models.ResourceChunkContentResourceChunkContentOneOf2(),
-                "text" => new global::Soenneker.Mistral.OpenApiClient.Models.ResourceChunkContentResourceChunkContentOneOf1(),
+                "image_url" => new global::Soenneker.Mistral.OpenApiClient.Models.ResourceChunkContentOneOf2Variant(),
+                "text" => new global::Soenneker.Mistral.OpenApiClient.Models.ResourceChunkContentOneOf1Variant(),
                 _ => new global::Soenneker.Mistral.OpenApiClient.Models.ResourceChunkContent(),
             };
         }

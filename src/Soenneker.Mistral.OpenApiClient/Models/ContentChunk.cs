@@ -51,15 +51,15 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
             return mappingValue switch
             {
-                "document_url" => new global::Soenneker.Mistral.OpenApiClient.Models.ContentChunkContentChunkOneOf3(),
-                "file" => new global::Soenneker.Mistral.OpenApiClient.Models.ContentChunkContentChunkOneOf5(),
-                "image_url" => new global::Soenneker.Mistral.OpenApiClient.Models.ContentChunkContentChunkOneOf2(),
-                "input_audio" => new global::Soenneker.Mistral.OpenApiClient.Models.ContentChunkContentChunkOneOf7(),
-                "reference" => new global::Soenneker.Mistral.OpenApiClient.Models.ContentChunkContentChunkOneOf4(),
-                "resource" => new global::Soenneker.Mistral.OpenApiClient.Models.ContentChunkContentChunkOneOf8(),
-                "resource_link" => new global::Soenneker.Mistral.OpenApiClient.Models.ContentChunkContentChunkOneOf9(),
-                "text" => new global::Soenneker.Mistral.OpenApiClient.Models.ContentChunkContentChunkOneOf1(),
-                "thinking" => new global::Soenneker.Mistral.OpenApiClient.Models.ContentChunkContentChunkOneOf6(),
+                "document_url" => new global::Soenneker.Mistral.OpenApiClient.Models.ContentChunkOneOf3Variant(),
+                "file" => new global::Soenneker.Mistral.OpenApiClient.Models.ContentChunkOneOf5Variant(),
+                "image_url" => new global::Soenneker.Mistral.OpenApiClient.Models.ContentChunkOneOf2Variant(),
+                "input_audio" => new global::Soenneker.Mistral.OpenApiClient.Models.ContentChunkOneOf7Variant(),
+                "reference" => new global::Soenneker.Mistral.OpenApiClient.Models.ContentChunkOneOf4Variant(),
+                "resource" => new global::Soenneker.Mistral.OpenApiClient.Models.ContentChunkOneOf8Variant(),
+                "resource_link" => new global::Soenneker.Mistral.OpenApiClient.Models.ContentChunkOneOf9Variant(),
+                "text" => new global::Soenneker.Mistral.OpenApiClient.Models.ContentChunkOneOf1Variant(),
+                "thinking" => new global::Soenneker.Mistral.OpenApiClient.Models.ContentChunkOneOf6Variant(),
                 _ => new global::Soenneker.Mistral.OpenApiClient.Models.ContentChunk(),
             };
         }

@@ -51,10 +51,10 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             var mappingValue = parseNode.GetChildNode("role")?.GetStringValue();
             return mappingValue switch
             {
-                "assistant" => new global::Soenneker.Mistral.OpenApiClient.Models.ChatModerationRequestInputAnyOf2ItemItemChatModerationRequestInputAnyOf2ItemItemOneOf3(),
-                "system" => new global::Soenneker.Mistral.OpenApiClient.Models.ChatModerationRequestInputAnyOf2ItemItemChatModerationRequestInputAnyOf2ItemItemOneOf1(),
-                "tool" => new global::Soenneker.Mistral.OpenApiClient.Models.ChatModerationRequestInputAnyOf2ItemItemChatModerationRequestInputAnyOf2ItemItemOneOf4(),
-                "user" => new global::Soenneker.Mistral.OpenApiClient.Models.ChatModerationRequestInputAnyOf2ItemItemChatModerationRequestInputAnyOf2ItemItemOneOf2(),
+                "assistant" => new global::Soenneker.Mistral.OpenApiClient.Models.ChatModerationRequestInputAnyOf2ItemItemOneOf3Variant(),
+                "system" => new global::Soenneker.Mistral.OpenApiClient.Models.ChatModerationRequestInputAnyOf2ItemItemOneOf1Variant(),
+                "tool" => new global::Soenneker.Mistral.OpenApiClient.Models.ChatModerationRequestInputAnyOf2ItemItemOneOf4Variant(),
+                "user" => new global::Soenneker.Mistral.OpenApiClient.Models.ChatModerationRequestInputAnyOf2ItemItemOneOf2Variant(),
                 _ => new global::Soenneker.Mistral.OpenApiClient.Models.ChatModerationRequestInputAnyOf2ItemItem(),
             };
         }

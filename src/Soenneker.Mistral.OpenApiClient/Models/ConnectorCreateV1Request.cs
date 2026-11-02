@@ -52,7 +52,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             return mappingValue switch
             {
                 "http" => new global::Soenneker.Mistral.OpenApiClient.Models.ConnectorCreateV1RequestCreateHttpConnectorRequest(),
-                "mcp" => new global::Soenneker.Mistral.OpenApiClient.Models.ConnectorCreateV1RequestConnectorCreateV1RequestOneOf1(),
+                "mcp" => new global::Soenneker.Mistral.OpenApiClient.Models.ConnectorCreateV1RequestOneOf1Variant(),
                 _ => new global::Soenneker.Mistral.OpenApiClient.Models.ConnectorCreateV1Request(),
             };
         }

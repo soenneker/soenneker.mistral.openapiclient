@@ -51,13 +51,13 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
             return mappingValue switch
             {
-                "code_interpreter" => new global::Soenneker.Mistral.OpenApiClient.Models.AgentToolsItemAgentToolsItemOneOf4(),
-                "connector" => new global::Soenneker.Mistral.OpenApiClient.Models.AgentToolsItemAgentToolsItemOneOf7(),
-                "document_library" => new global::Soenneker.Mistral.OpenApiClient.Models.AgentToolsItemAgentToolsItemOneOf6(),
-                "function" => new global::Soenneker.Mistral.OpenApiClient.Models.AgentToolsItemAgentToolsItemOneOf1(),
-                "image_generation" => new global::Soenneker.Mistral.OpenApiClient.Models.AgentToolsItemAgentToolsItemOneOf5(),
-                "web_search" => new global::Soenneker.Mistral.OpenApiClient.Models.AgentToolsItemAgentToolsItemOneOf2(),
-                "web_search_premium" => new global::Soenneker.Mistral.OpenApiClient.Models.AgentToolsItemAgentToolsItemOneOf3(),
+                "code_interpreter" => new global::Soenneker.Mistral.OpenApiClient.Models.AgentToolsItemOneOf4Variant(),
+                "connector" => new global::Soenneker.Mistral.OpenApiClient.Models.AgentToolsItemOneOf7Variant(),
+                "document_library" => new global::Soenneker.Mistral.OpenApiClient.Models.AgentToolsItemOneOf6Variant(),
+                "function" => new global::Soenneker.Mistral.OpenApiClient.Models.AgentToolsItemOneOf1Variant(),
+                "image_generation" => new global::Soenneker.Mistral.OpenApiClient.Models.AgentToolsItemOneOf5Variant(),
+                "web_search" => new global::Soenneker.Mistral.OpenApiClient.Models.AgentToolsItemOneOf2Variant(),
+                "web_search_premium" => new global::Soenneker.Mistral.OpenApiClient.Models.AgentToolsItemOneOf3Variant(),
                 _ => new global::Soenneker.Mistral.OpenApiClient.Models.AgentToolsItem(),
             };
         }

@@ -51,12 +51,12 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
             return mappingValue switch
             {
-                "and" => new global::Soenneker.Mistral.OpenApiClient.Models.RrfRetrieverFilterAnyOf1RrfRetrieverFilterAnyOf1OneOf1(),
-                "equal" => new global::Soenneker.Mistral.OpenApiClient.Models.RrfRetrieverFilterAnyOf1RrfRetrieverFilterAnyOf1OneOf4(),
-                "in" => new global::Soenneker.Mistral.OpenApiClient.Models.RrfRetrieverFilterAnyOf1RrfRetrieverFilterAnyOf1OneOf6(),
-                "not" => new global::Soenneker.Mistral.OpenApiClient.Models.RrfRetrieverFilterAnyOf1RrfRetrieverFilterAnyOf1OneOf3(),
-                "or" => new global::Soenneker.Mistral.OpenApiClient.Models.RrfRetrieverFilterAnyOf1RrfRetrieverFilterAnyOf1OneOf2(),
-                "range" => new global::Soenneker.Mistral.OpenApiClient.Models.RrfRetrieverFilterAnyOf1RrfRetrieverFilterAnyOf1OneOf5(),
+                "and" => new global::Soenneker.Mistral.OpenApiClient.Models.RrfRetrieverFilterAnyOf1OneOf1Variant(),
+                "equal" => new global::Soenneker.Mistral.OpenApiClient.Models.RrfRetrieverFilterAnyOf1OneOf4Variant(),
+                "in" => new global::Soenneker.Mistral.OpenApiClient.Models.RrfRetrieverFilterAnyOf1OneOf6Variant(),
+                "not" => new global::Soenneker.Mistral.OpenApiClient.Models.RrfRetrieverFilterAnyOf1OneOf3Variant(),
+                "or" => new global::Soenneker.Mistral.OpenApiClient.Models.RrfRetrieverFilterAnyOf1OneOf2Variant(),
+                "range" => new global::Soenneker.Mistral.OpenApiClient.Models.RrfRetrieverFilterAnyOf1OneOf5Variant(),
                 _ => new global::Soenneker.Mistral.OpenApiClient.Models.RrfRetrieverFilterAnyOf1(),
             };
         }

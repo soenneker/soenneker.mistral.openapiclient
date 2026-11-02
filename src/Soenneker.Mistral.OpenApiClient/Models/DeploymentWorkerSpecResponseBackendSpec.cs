@@ -52,9 +52,9 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
             return mappingValue switch
             {
-                "koyeb" => new global::Soenneker.Mistral.OpenApiClient.Models.DeploymentWorkerSpecResponseBackendSpecDeploymentWorkerSpecResponseBackendSpecOneOf1(),
-                "kubernetes" => new global::Soenneker.Mistral.OpenApiClient.Models.DeploymentWorkerSpecResponseBackendSpecDeploymentWorkerSpecResponseBackendSpecOneOf2(),
-                "mistral_cloud" => new global::Soenneker.Mistral.OpenApiClient.Models.DeploymentWorkerSpecResponseBackendSpecDeploymentWorkerSpecResponseBackendSpecOneOf1(),
+                "koyeb" => new global::Soenneker.Mistral.OpenApiClient.Models.DeploymentWorkerSpecResponseBackendSpecOneOf1Variant(),
+                "kubernetes" => new global::Soenneker.Mistral.OpenApiClient.Models.DeploymentWorkerSpecResponseBackendSpecOneOf2Variant(),
+                "mistral_cloud" => new global::Soenneker.Mistral.OpenApiClient.Models.DeploymentWorkerSpecResponseBackendSpecOneOf1Variant(),
                 _ => new global::Soenneker.Mistral.OpenApiClient.Models.DeploymentWorkerSpecResponseBackendSpec(),
             };
         }

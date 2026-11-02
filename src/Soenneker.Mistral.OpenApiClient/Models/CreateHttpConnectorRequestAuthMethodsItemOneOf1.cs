@@ -51,8 +51,8 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             var mappingValue = parseNode.GetChildNode("grant_type")?.GetStringValue();
             return mappingValue switch
             {
-                "authorization_code" => new global::Soenneker.Mistral.OpenApiClient.Models.CreateHttpConnectorRequestAuthMethodsItemOneOf1CreateHttpConnectorRequestAuthMethodsItemOneOf1AuthorizationCode(),
-                "client_credentials" => new global::Soenneker.Mistral.OpenApiClient.Models.CreateHttpConnectorRequestAuthMethodsItemOneOf1CreateHttpConnectorRequestAuthMethodsItemOneOf1ClientCredentials(),
+                "authorization_code" => new global::Soenneker.Mistral.OpenApiClient.Models.CreateHttpConnectorRequestAuthMethodsItemOneOf1AuthorizationCodeVariant(),
+                "client_credentials" => new global::Soenneker.Mistral.OpenApiClient.Models.CreateHttpConnectorRequestAuthMethodsItemOneOf1ClientCredentialsVariant(),
                 _ => new global::Soenneker.Mistral.OpenApiClient.Models.CreateHttpConnectorRequestAuthMethodsItemOneOf1(),
             };
         }

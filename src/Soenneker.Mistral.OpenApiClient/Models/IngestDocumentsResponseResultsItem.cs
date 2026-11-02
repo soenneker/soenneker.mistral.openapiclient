@@ -51,8 +51,8 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             var mappingValue = parseNode.GetChildNode("status")?.GetStringValue();
             return mappingValue switch
             {
-                "accepted" => new global::Soenneker.Mistral.OpenApiClient.Models.IngestDocumentsResponseResultsItemIngestDocumentsResponseResultsItemOneOf1(),
-                "rejected" => new global::Soenneker.Mistral.OpenApiClient.Models.IngestDocumentsResponseResultsItemIngestDocumentsResponseResultsItemOneOf2(),
+                "accepted" => new global::Soenneker.Mistral.OpenApiClient.Models.IngestDocumentsResponseResultsItemOneOf1Variant(),
+                "rejected" => new global::Soenneker.Mistral.OpenApiClient.Models.IngestDocumentsResponseResultsItemOneOf2Variant(),
                 _ => new global::Soenneker.Mistral.OpenApiClient.Models.IngestDocumentsResponseResultsItem(),
             };
         }

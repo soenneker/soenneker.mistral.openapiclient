@@ -51,10 +51,10 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             var mappingValue = parseNode.GetChildNode("op")?.GetStringValue();
             return mappingValue switch
             {
-                "add" => new global::Soenneker.Mistral.OpenApiClient.Models.JsonPatchJsonPatchAdd(),
-                "append" => new global::Soenneker.Mistral.OpenApiClient.Models.JsonPatchJsonPatchAppend(),
-                "remove" => new global::Soenneker.Mistral.OpenApiClient.Models.JsonPatchJsonPatchRemove(),
-                "replace" => new global::Soenneker.Mistral.OpenApiClient.Models.JsonPatchJsonPatchReplace(),
+                "add" => new global::Soenneker.Mistral.OpenApiClient.Models.JsonPatchAddVariant(),
+                "append" => new global::Soenneker.Mistral.OpenApiClient.Models.JsonPatchAppendVariant(),
+                "remove" => new global::Soenneker.Mistral.OpenApiClient.Models.JsonPatchRemoveVariant(),
+                "replace" => new global::Soenneker.Mistral.OpenApiClient.Models.JsonPatchReplaceVariant(),
                 _ => new global::Soenneker.Mistral.OpenApiClient.Models.JsonPatch(),
             };
         }
