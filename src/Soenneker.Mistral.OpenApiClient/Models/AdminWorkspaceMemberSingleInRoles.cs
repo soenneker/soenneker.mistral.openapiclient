@@ -52,11 +52,78 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             var result = new global::Soenneker.Mistral.OpenApiClient.Models.AdminWorkspaceMemberSingleInRoles();
             if (parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedArray ambiguousArray) { result.UnrecognizedValue = ambiguousArray; return result; }
-            if(parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedArray && global::System.Linq.Enumerable.All(((global::Microsoft.Kiota.Abstractions.Serialization.UntypedArray)parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue)).GetValue(), item => ((item is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString)) && ((item is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString literal0 && "d7ea77c5-9260-41d0-ab26-52b5add3ee56".Equals(literal0.GetValue(), global::System.StringComparison.Ordinal)) || (item is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString literal1 && "48436751-ee56-44bd-8a2d-712233977821".Equals(literal1.GetValue(), global::System.StringComparison.Ordinal)) || (item is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString literal2 && "375cd0db-3bbe-4b79-80f3-954ccf04f3d1".Equals(literal2.GetValue(), global::System.StringComparison.Ordinal)) || (item is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString literal3 && "578584f1-4319-4c88-9948-38a5184483b6".Equals(literal3.GetValue(), global::System.StringComparison.Ordinal)) || (item is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString literal4 && "d79b3027-4eb2-4521-8722-825acfee7d8b".Equals(literal4.GetValue(), global::System.StringComparison.Ordinal)) || (item is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString literal5 && "252a0825-40b9-4b98-be80-7658956f13e9".Equals(literal5.GetValue(), global::System.StringComparison.Ordinal)) || (item is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString literal6 && "17aa61c5-1c61-477e-a40a-e52c8ccd74b9".Equals(literal6.GetValue(), global::System.StringComparison.Ordinal)) || (item is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString literal7 && "348fc8da-f6da-4464-ad3e-af7bc137e221".Equals(literal7.GetValue(), global::System.StringComparison.Ordinal)) || (item is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString literal8 && "b23cd6e0-91cd-4a8a-9869-b30366bf3966".Equals(literal8.GetValue(), global::System.StringComparison.Ordinal)) || (item is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString literal9 && "731eb2be-a74f-4070-b797-35bf7009e553".Equals(literal9.GetValue(), global::System.StringComparison.Ordinal)) || (item is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString literal10 && "ff86d432-7f27-47f8-b02f-b5c102ef6a55".Equals(literal10.GetValue(), global::System.StringComparison.Ordinal)) || (item is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString literal11 && "0f9acbf6-93b5-42c7-a227-fc7652755f65".Equals(literal11.GetValue(), global::System.StringComparison.Ordinal)) || (item is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString literal12 && "94ef59cf-56bf-4383-9dd6-1fee77d370af".Equals(literal12.GetValue(), global::System.StringComparison.Ordinal)) || (item is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString literal13 && "7e69e493-caf6-4671-af60-84951754d9fc".Equals(literal13.GetValue(), global::System.StringComparison.Ordinal)) || (item is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString literal14 && "b23cd6e0-91cd-4a8a-9869-b30366bf3966".Equals(literal14.GetValue(), global::System.StringComparison.Ordinal)))) && parseNode.GetCollectionOfObjectValues<global::Soenneker.Mistral.OpenApiClient.Models.StaticWorkspaceRoles>(global::Soenneker.Mistral.OpenApiClient.Models.StaticWorkspaceRoles.CreateFromDiscriminatorValue)?.AsList() is List<global::Soenneker.Mistral.OpenApiClient.Models.StaticWorkspaceRoles> staticWorkspaceRolesValue)
+            if(parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedArray && global::System.Linq.Enumerable.All(((global::Microsoft.Kiota.Abstractions.Serialization.UntypedArray)parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue)).GetValue(), item => (((global::System.Func<bool?>)(() => { int remaining = 10000;
+bool IsNumber(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode node) => node is global::Microsoft.Kiota.Abstractions.Serialization.UntypedInteger or global::Microsoft.Kiota.Abstractions.Serialization.UntypedLong or global::Microsoft.Kiota.Abstractions.Serialization.UntypedFloat or global::Microsoft.Kiota.Abstractions.Serialization.UntypedDouble or global::Microsoft.Kiota.Abstractions.Serialization.UntypedDecimal;
+int StringLength(string text) { int count = 0; for (int i = 0; i < text.Length; i++, count++) if (char.IsHighSurrogate(text[i]) && i + 1 < text.Length && char.IsLowSurrogate(text[i + 1])) i++; return count; }
+bool? All(params bool?[] values) { bool? result = true; foreach (var item in values) result &= item; return result; }
+bool? Any(params bool?[] values) { bool? result = false; foreach (var item in values) result |= item; return result; }
+bool? One(params bool?[] values) { int matches = 0; bool unknown = false; foreach (var item in values) { if (item == true) matches++; if (item == null) unknown = true; } return matches > 1 ? false : unknown ? null : matches == 1; }
+decimal? Number(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode node) {
+    try { return node switch {
+        global::Microsoft.Kiota.Abstractions.Serialization.UntypedInteger n => n.GetValue(),
+        global::Microsoft.Kiota.Abstractions.Serialization.UntypedLong n => n.GetValue(),
+        global::Microsoft.Kiota.Abstractions.Serialization.UntypedFloat n => (decimal)n.GetValue(),
+        global::Microsoft.Kiota.Abstractions.Serialization.UntypedDouble n => (decimal)n.GetValue(),
+        global::Microsoft.Kiota.Abstractions.Serialization.UntypedDecimal n => n.GetValue(), _ => null }; }
+    catch (global::System.OverflowException) { return null; }
+}
+bool? MatchSchema0(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode node, int depth) {
+if (depth > 64 || --remaining < 0) return null;
+bool? result = true;
+result &= ((global::System.Func<bool?>)(() => node is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString))();
+if (result == false) return false;
+bool? enumMatch = false;
+enumMatch |= ((global::System.Func<bool?>)(() => (node is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString text && "d7ea77c5-9260-41d0-ab26-52b5add3ee56".Equals(text.GetValue(), global::System.StringComparison.Ordinal))))();
+enumMatch |= ((global::System.Func<bool?>)(() => (node is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString text && "48436751-ee56-44bd-8a2d-712233977821".Equals(text.GetValue(), global::System.StringComparison.Ordinal))))();
+enumMatch |= ((global::System.Func<bool?>)(() => (node is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString text && "375cd0db-3bbe-4b79-80f3-954ccf04f3d1".Equals(text.GetValue(), global::System.StringComparison.Ordinal))))();
+enumMatch |= ((global::System.Func<bool?>)(() => (node is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString text && "578584f1-4319-4c88-9948-38a5184483b6".Equals(text.GetValue(), global::System.StringComparison.Ordinal))))();
+enumMatch |= ((global::System.Func<bool?>)(() => (node is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString text && "d79b3027-4eb2-4521-8722-825acfee7d8b".Equals(text.GetValue(), global::System.StringComparison.Ordinal))))();
+enumMatch |= ((global::System.Func<bool?>)(() => (node is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString text && "252a0825-40b9-4b98-be80-7658956f13e9".Equals(text.GetValue(), global::System.StringComparison.Ordinal))))();
+enumMatch |= ((global::System.Func<bool?>)(() => (node is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString text && "17aa61c5-1c61-477e-a40a-e52c8ccd74b9".Equals(text.GetValue(), global::System.StringComparison.Ordinal))))();
+enumMatch |= ((global::System.Func<bool?>)(() => (node is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString text && "348fc8da-f6da-4464-ad3e-af7bc137e221".Equals(text.GetValue(), global::System.StringComparison.Ordinal))))();
+enumMatch |= ((global::System.Func<bool?>)(() => (node is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString text && "b23cd6e0-91cd-4a8a-9869-b30366bf3966".Equals(text.GetValue(), global::System.StringComparison.Ordinal))))();
+enumMatch |= ((global::System.Func<bool?>)(() => (node is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString text && "731eb2be-a74f-4070-b797-35bf7009e553".Equals(text.GetValue(), global::System.StringComparison.Ordinal))))();
+enumMatch |= ((global::System.Func<bool?>)(() => (node is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString text && "ff86d432-7f27-47f8-b02f-b5c102ef6a55".Equals(text.GetValue(), global::System.StringComparison.Ordinal))))();
+enumMatch |= ((global::System.Func<bool?>)(() => (node is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString text && "0f9acbf6-93b5-42c7-a227-fc7652755f65".Equals(text.GetValue(), global::System.StringComparison.Ordinal))))();
+enumMatch |= ((global::System.Func<bool?>)(() => (node is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString text && "94ef59cf-56bf-4383-9dd6-1fee77d370af".Equals(text.GetValue(), global::System.StringComparison.Ordinal))))();
+enumMatch |= ((global::System.Func<bool?>)(() => (node is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString text && "7e69e493-caf6-4671-af60-84951754d9fc".Equals(text.GetValue(), global::System.StringComparison.Ordinal))))();
+enumMatch |= ((global::System.Func<bool?>)(() => (node is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString text && "b23cd6e0-91cd-4a8a-9869-b30366bf3966".Equals(text.GetValue(), global::System.StringComparison.Ordinal))))();
+result &= ((global::System.Func<bool?>)(() => enumMatch))();
+if (result == false) return false;
+return result;
+}
+return MatchSchema0(item, 0); }))()) == true) && parseNode.GetCollectionOfObjectValues<global::Soenneker.Mistral.OpenApiClient.Models.StaticWorkspaceRoles>(global::Soenneker.Mistral.OpenApiClient.Models.StaticWorkspaceRoles.CreateFromDiscriminatorValue)?.AsList() is List<global::Soenneker.Mistral.OpenApiClient.Models.StaticWorkspaceRoles> staticWorkspaceRolesValue)
             {
                 result.StaticWorkspaceRoles = staticWorkspaceRolesValue;
             }
-            else if(parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedArray && global::System.Linq.Enumerable.All(((global::Microsoft.Kiota.Abstractions.Serialization.UntypedArray)parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue)).GetValue(), item => ((item is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString)) && ((item is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString literal0 && "A".Equals(literal0.GetValue(), global::System.StringComparison.Ordinal)) || (item is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString literal1 && "M".Equals(literal1.GetValue(), global::System.StringComparison.Ordinal)))) && parseNode.GetCollectionOfObjectValues<global::Soenneker.Mistral.OpenApiClient.Models.WorkspaceRole>(global::Soenneker.Mistral.OpenApiClient.Models.WorkspaceRole.CreateFromDiscriminatorValue)?.AsList() is List<global::Soenneker.Mistral.OpenApiClient.Models.WorkspaceRole> workspaceRoleValue)
+            else if(parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedArray && global::System.Linq.Enumerable.All(((global::Microsoft.Kiota.Abstractions.Serialization.UntypedArray)parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue)).GetValue(), item => (((global::System.Func<bool?>)(() => { int remaining = 10000;
+bool IsNumber(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode node) => node is global::Microsoft.Kiota.Abstractions.Serialization.UntypedInteger or global::Microsoft.Kiota.Abstractions.Serialization.UntypedLong or global::Microsoft.Kiota.Abstractions.Serialization.UntypedFloat or global::Microsoft.Kiota.Abstractions.Serialization.UntypedDouble or global::Microsoft.Kiota.Abstractions.Serialization.UntypedDecimal;
+int StringLength(string text) { int count = 0; for (int i = 0; i < text.Length; i++, count++) if (char.IsHighSurrogate(text[i]) && i + 1 < text.Length && char.IsLowSurrogate(text[i + 1])) i++; return count; }
+bool? All(params bool?[] values) { bool? result = true; foreach (var item in values) result &= item; return result; }
+bool? Any(params bool?[] values) { bool? result = false; foreach (var item in values) result |= item; return result; }
+bool? One(params bool?[] values) { int matches = 0; bool unknown = false; foreach (var item in values) { if (item == true) matches++; if (item == null) unknown = true; } return matches > 1 ? false : unknown ? null : matches == 1; }
+decimal? Number(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode node) {
+    try { return node switch {
+        global::Microsoft.Kiota.Abstractions.Serialization.UntypedInteger n => n.GetValue(),
+        global::Microsoft.Kiota.Abstractions.Serialization.UntypedLong n => n.GetValue(),
+        global::Microsoft.Kiota.Abstractions.Serialization.UntypedFloat n => (decimal)n.GetValue(),
+        global::Microsoft.Kiota.Abstractions.Serialization.UntypedDouble n => (decimal)n.GetValue(),
+        global::Microsoft.Kiota.Abstractions.Serialization.UntypedDecimal n => n.GetValue(), _ => null }; }
+    catch (global::System.OverflowException) { return null; }
+}
+bool? MatchSchema0(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode node, int depth) {
+if (depth > 64 || --remaining < 0) return null;
+bool? result = true;
+result &= ((global::System.Func<bool?>)(() => node is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString))();
+if (result == false) return false;
+bool? enumMatch = false;
+enumMatch |= ((global::System.Func<bool?>)(() => (node is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString text && "A".Equals(text.GetValue(), global::System.StringComparison.Ordinal))))();
+enumMatch |= ((global::System.Func<bool?>)(() => (node is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString text && "M".Equals(text.GetValue(), global::System.StringComparison.Ordinal))))();
+result &= ((global::System.Func<bool?>)(() => enumMatch))();
+if (result == false) return false;
+return result;
+}
+return MatchSchema0(item, 0); }))()) == true) && parseNode.GetCollectionOfObjectValues<global::Soenneker.Mistral.OpenApiClient.Models.WorkspaceRole>(global::Soenneker.Mistral.OpenApiClient.Models.WorkspaceRole.CreateFromDiscriminatorValue)?.AsList() is List<global::Soenneker.Mistral.OpenApiClient.Models.WorkspaceRole> workspaceRoleValue)
             {
                 result.WorkspaceRole = workspaceRoleValue;
             }
@@ -65,6 +132,11 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             }
             
             var unionPayload = parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue);
+            bool? matchesUnionBranch0 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject ? (bool?)null : (bool?)false;
+            int matchingUnionBranches = 0;
+            if (matchesUnionBranch0 != false) matchingUnionBranches++;
+            bool noSelectedUnionBranch = result.AdminWorkspaceMemberSingleInRolesMember1 == null && result.StaticWorkspaceRoles == null && result.WorkspaceRole == null;
+            if (noSelectedUnionBranch && matchesUnionBranch0 == true && matchingUnionBranches == 1) result.AdminWorkspaceMemberSingleInRolesMember1 = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Mistral.OpenApiClient.Models.AdminWorkspaceMemberSingleInRolesMember1(), parseNode);
             if (result.AdminWorkspaceMemberSingleInRolesMember1 == null && result.StaticWorkspaceRoles == null && result.WorkspaceRole == null) result.UnrecognizedValue = unionPayload;
 return result;
         }
