@@ -54,22 +54,22 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         /// <summary>Confidence scores for the OCR page (populated when confidence_scores_granularity is set)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.OcrPageConfidenceScores? ConfidenceScores { get => _explicitNullValueConfidenceScores; set { _explicitNullValueConfidenceScores = value; AdditionalData?.Remove("confidence_scores"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("confidence_scores"); else _explicitNullProperties?.Remove("confidence_scores"); } }
-        private global::Soenneker.Mistral.OpenApiClient.Models.OcrPageConfidenceScores? _explicitNullValueConfidenceScores = default!;
+        public global::Soenneker.Mistral.OpenApiClient.Models.OcrPageObjectConfidenceScores? ConfidenceScores { get => _explicitNullValueConfidenceScores; set { _explicitNullValueConfidenceScores = value; AdditionalData?.Remove("confidence_scores"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("confidence_scores"); else _explicitNullProperties?.Remove("confidence_scores"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.OcrPageObjectConfidenceScores? _explicitNullValueConfidenceScores = default!;
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.OcrPageConfidenceScores ConfidenceScores { get => _explicitNullValueConfidenceScores; set { _explicitNullValueConfidenceScores = value; AdditionalData?.Remove("confidence_scores"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("confidence_scores"); else _explicitNullProperties?.Remove("confidence_scores"); } }
-        private global::Soenneker.Mistral.OpenApiClient.Models.OcrPageConfidenceScores _explicitNullValueConfidenceScores = default!;
+        public global::Soenneker.Mistral.OpenApiClient.Models.OcrPageObjectConfidenceScores ConfidenceScores { get => _explicitNullValueConfidenceScores; set { _explicitNullValueConfidenceScores = value; AdditionalData?.Remove("confidence_scores"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("confidence_scores"); else _explicitNullProperties?.Remove("confidence_scores"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.OcrPageObjectConfidenceScores _explicitNullValueConfidenceScores = default!;
 #endif
         /// <summary>The dimensions of the PDF Page&apos;s screenshot image</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.OcrPageDimensions? Dimensions { get => _explicitNullValueDimensions; set { _explicitNullValueDimensions = value; AdditionalData?.Remove("dimensions"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dimensions"); else _explicitNullProperties?.Remove("dimensions"); } }
-        private global::Soenneker.Mistral.OpenApiClient.Models.OcrPageDimensions? _explicitNullValueDimensions = default!;
+        public global::Soenneker.Mistral.OpenApiClient.Models.OcrPageObjectDimensions? Dimensions { get => _explicitNullValueDimensions; set { _explicitNullValueDimensions = value; AdditionalData?.Remove("dimensions"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dimensions"); else _explicitNullProperties?.Remove("dimensions"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.OcrPageObjectDimensions? _explicitNullValueDimensions = default!;
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.OcrPageDimensions Dimensions { get => _explicitNullValueDimensions; set { _explicitNullValueDimensions = value; AdditionalData?.Remove("dimensions"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dimensions"); else _explicitNullProperties?.Remove("dimensions"); } }
-        private global::Soenneker.Mistral.OpenApiClient.Models.OcrPageDimensions _explicitNullValueDimensions = default!;
+        public global::Soenneker.Mistral.OpenApiClient.Models.OcrPageObjectDimensions Dimensions { get => _explicitNullValueDimensions; set { _explicitNullValueDimensions = value; AdditionalData?.Remove("dimensions"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dimensions"); else _explicitNullProperties?.Remove("dimensions"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.OcrPageObjectDimensions _explicitNullValueDimensions = default!;
 #endif
         /// <summary>Footer of the page</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -160,8 +160,8 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "blocks", n => { Blocks = n.GetCollectionOfObjectValues<global::Soenneker.Mistral.OpenApiClient.Models.OcrPageObjectBlocksItem>(global::Soenneker.Mistral.OpenApiClient.Models.OcrPageObjectBlocksItem.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "confidence_scores", n => { ConfidenceScores = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.OcrPageConfidenceScores>(global::Soenneker.Mistral.OpenApiClient.Models.OcrPageConfidenceScores.CreateFromDiscriminatorValue); } },
-                { "dimensions", n => { Dimensions = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.OcrPageDimensions>(global::Soenneker.Mistral.OpenApiClient.Models.OcrPageDimensions.CreateFromDiscriminatorValue); } },
+                { "confidence_scores", n => { ConfidenceScores = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.OcrPageObjectConfidenceScores>(global::Soenneker.Mistral.OpenApiClient.Models.OcrPageObjectConfidenceScores.CreateFromDiscriminatorValue); } },
+                { "dimensions", n => { Dimensions = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.OcrPageObjectDimensions>(global::Soenneker.Mistral.OpenApiClient.Models.OcrPageObjectDimensions.CreateFromDiscriminatorValue); } },
                 { "footer", n => { Footer = n.GetStringValue(); } },
                 { "header", n => { Header = n.GetStringValue(); } },
                 { "hyperlinks", n => { Hyperlinks = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
@@ -179,8 +179,8 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfObjectValues<global::Soenneker.Mistral.OpenApiClient.Models.OcrPageObjectBlocksItem>("blocks", Blocks);
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.OcrPageConfidenceScores>("confidence_scores", ConfidenceScores);
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.OcrPageDimensions>("dimensions", Dimensions);
+            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.OcrPageObjectConfidenceScores>("confidence_scores", ConfidenceScores);
+            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.OcrPageObjectDimensions>("dimensions", Dimensions);
             writer.WriteStringValue("footer", Footer);
             writer.WriteStringValue("header", Header);
             writer.WriteCollectionOfPrimitiveValues<string>("hyperlinks", Hyperlinks);

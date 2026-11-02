@@ -33,12 +33,12 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         /// <summary>The credential data (headers, bearer_token, or OAuth2 client credentials).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.ConnectionCredentialsInput? Credentials { get => _explicitNullValueCredentials; set { _explicitNullValueCredentials = value; AdditionalData?.Remove("credentials"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("credentials"); else _explicitNullProperties?.Remove("credentials"); } }
-        private global::Soenneker.Mistral.OpenApiClient.Models.ConnectionCredentialsInput? _explicitNullValueCredentials = default!;
+        public global::Soenneker.Mistral.OpenApiClient.Models.CredentialsCreateOrUpdateCredentials? Credentials { get => _explicitNullValueCredentials; set { _explicitNullValueCredentials = value; AdditionalData?.Remove("credentials"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("credentials"); else _explicitNullProperties?.Remove("credentials"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.CredentialsCreateOrUpdateCredentials? _explicitNullValueCredentials = default!;
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.ConnectionCredentialsInput Credentials { get => _explicitNullValueCredentials; set { _explicitNullValueCredentials = value; AdditionalData?.Remove("credentials"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("credentials"); else _explicitNullProperties?.Remove("credentials"); } }
-        private global::Soenneker.Mistral.OpenApiClient.Models.ConnectionCredentialsInput _explicitNullValueCredentials = default!;
+        public global::Soenneker.Mistral.OpenApiClient.Models.CredentialsCreateOrUpdateCredentials Credentials { get => _explicitNullValueCredentials; set { _explicitNullValueCredentials = value; AdditionalData?.Remove("credentials"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("credentials"); else _explicitNullProperties?.Remove("credentials"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.CredentialsCreateOrUpdateCredentials _explicitNullValueCredentials = default!;
 #endif
         /// <summary>Controls whether this credential is the default for its auth method. On creation: if no credential exists yet for this auth method, the credential is automatically set as default when is_default is true or omitted; setting is_default to false is rejected because a default must exist. If other credentials already exist, setting is_default to true promotes this credential (demoting the previous default); false or omitted creates it as non-default. On update: true promotes this credential, false is rejected if it is currently the default (promote another credential first), omitted leaves the default status unchanged.</summary>
         public bool? IsDefault { get => _explicitNullValueIsDefault; set { _explicitNullValueIsDefault = value; AdditionalData?.Remove("is_default"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("is_default"); else _explicitNullProperties?.Remove("is_default"); } }
@@ -88,7 +88,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "credentials", n => { Credentials = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ConnectionCredentialsInput>(global::Soenneker.Mistral.OpenApiClient.Models.ConnectionCredentialsInput.CreateFromDiscriminatorValue); } },
+                { "credentials", n => { Credentials = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.CredentialsCreateOrUpdateCredentials>(global::Soenneker.Mistral.OpenApiClient.Models.CredentialsCreateOrUpdateCredentials.CreateFromDiscriminatorValue); } },
                 { "is_default", n => { IsDefault = n.GetBoolValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "title", n => { Title = n.GetStringValue(); } },
@@ -101,7 +101,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ConnectionCredentialsInput>("credentials", Credentials);
+            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.CredentialsCreateOrUpdateCredentials>("credentials", Credentials);
             writer.WriteBoolValue("is_default", IsDefault);
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("title", Title);

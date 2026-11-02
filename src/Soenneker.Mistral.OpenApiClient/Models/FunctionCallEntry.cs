@@ -65,8 +65,15 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         public DateTimeOffset? CompletedAt { get => _explicitNullValueCompletedAt; set { _explicitNullValueCompletedAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("completed_at"); else _explicitNullProperties?.Remove("completed_at"); } }
         private DateTimeOffset? _explicitNullValueCompletedAt = default!;
         /// <summary>The confirmation_status property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public global::Soenneker.Mistral.OpenApiClient.Models.FunctionCallEntryConfirmationStatus? ConfirmationStatus { get => _explicitNullValueConfirmationStatus; set { _explicitNullValueConfirmationStatus = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("confirmation_status"); else _explicitNullProperties?.Remove("confirmation_status"); } }
         private global::Soenneker.Mistral.OpenApiClient.Models.FunctionCallEntryConfirmationStatus? _explicitNullValueConfirmationStatus = default!;
+#nullable restore
+#else
+        public global::Soenneker.Mistral.OpenApiClient.Models.FunctionCallEntryConfirmationStatus ConfirmationStatus { get => _explicitNullValueConfirmationStatus; set { _explicitNullValueConfirmationStatus = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("confirmation_status"); else _explicitNullProperties?.Remove("confirmation_status"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.FunctionCallEntryConfirmationStatus _explicitNullValueConfirmationStatus = default!;
+#endif
         /// <summary>The created_at property</summary>
         public DateTimeOffset? CreatedAt { get => _explicitNullValueCreatedAt; set { _explicitNullValueCreatedAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("created_at"); else _explicitNullProperties?.Remove("created_at"); } }
         private DateTimeOffset? _explicitNullValueCreatedAt = default!;
@@ -137,7 +144,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
                 { "agent_id", n => { AgentId = n.GetStringValue(); } },
                 { "arguments", n => { Arguments = n.GetStringValue(); } },
                 { "completed_at", n => { CompletedAt = n.GetDateTimeOffsetValue(); } },
-                { "confirmation_status", n => { ConfirmationStatus = n.GetEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.FunctionCallEntryConfirmationStatus>(); } },
+                { "confirmation_status", n => { ConfirmationStatus = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.FunctionCallEntryConfirmationStatus>(global::Soenneker.Mistral.OpenApiClient.Models.FunctionCallEntryConfirmationStatus.CreateFromDiscriminatorValue); } },
                 { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "model", n => { Model = n.GetStringValue(); } },
@@ -157,7 +164,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             writer.WriteStringValue("agent_id", AgentId);
             writer.WriteStringValue("arguments", Arguments);
             writer.WriteDateTimeOffsetValue("completed_at", CompletedAt);
-            writer.WriteEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.FunctionCallEntryConfirmationStatus>("confirmation_status", ConfirmationStatus);
+            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.FunctionCallEntryConfirmationStatus>("confirmation_status", ConfirmationStatus);
             writer.WriteDateTimeOffsetValue("created_at", CreatedAt);
             writer.WriteStringValue("id", Id);
             writer.WriteStringValue("model", Model);

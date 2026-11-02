@@ -198,8 +198,15 @@ namespace Soenneker.Mistral.OpenApiClient.V1.Workflows.Deployments
             [QueryParameter("order")]
             public global::Soenneker.Mistral.OpenApiClient.Models.ListDeploymentsV1WorkflowsDeploymentsGetOrderParameter? Order { get; set; }
             /// <summary>Field to sort by. When omitted, active and managed deployments are grouped first, then sorted by created_at. When set, results are sorted purely by the specified field with no grouping.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
             [QueryParameter("order_by")]
-            public global::Soenneker.Mistral.OpenApiClient.Models.ListDeploymentsV1WorkflowsDeploymentsGetOrderByParameter? OrderBy { get; set; }
+            public string? OrderBy { get; set; }
+#nullable restore
+#else
+            [QueryParameter("order_by")]
+            public string OrderBy { get; set; }
+#endif
             /// <summary>Filter deployments by owner&apos;s user id</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable

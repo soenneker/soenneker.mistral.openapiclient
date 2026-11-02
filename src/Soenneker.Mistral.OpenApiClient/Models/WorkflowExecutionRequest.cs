@@ -87,12 +87,12 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         /// <summary>The input to the workflow. This should be a dictionary or a BaseModel that matches the workflow&apos;s input schema.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public UntypedNode? Input { get => _explicitNullValueInput; set { _explicitNullValueInput = value; AdditionalData?.Remove("input"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("input"); else _explicitNullProperties?.Remove("input"); } }
-        private UntypedNode? _explicitNullValueInput = default!;
+        public global::Soenneker.Mistral.OpenApiClient.Models.WorkflowExecutionRequestInput? Input { get => _explicitNullValueInput; set { _explicitNullValueInput = value; AdditionalData?.Remove("input"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("input"); else _explicitNullProperties?.Remove("input"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.WorkflowExecutionRequestInput? _explicitNullValueInput = default!;
 #nullable restore
 #else
-        public UntypedNode Input { get => _explicitNullValueInput; set { _explicitNullValueInput = value; AdditionalData?.Remove("input"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("input"); else _explicitNullProperties?.Remove("input"); } }
-        private UntypedNode _explicitNullValueInput = default!;
+        public global::Soenneker.Mistral.OpenApiClient.Models.WorkflowExecutionRequestInput Input { get => _explicitNullValueInput; set { _explicitNullValueInput = value; AdditionalData?.Remove("input"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("input"); else _explicitNullProperties?.Remove("input"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.WorkflowExecutionRequestInput _explicitNullValueInput = default!;
 #endif
         /// <summary>Deprecated. Use deployment_name instead.</summary>
         [Obsolete("")]
@@ -153,7 +153,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
                 { "execution_id", n => { ExecutionId = n.GetStringValue(); } },
                 { "extensions", n => { Extensions = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.WorkflowExecutionRequestExtensionsProperty>(global::Soenneker.Mistral.OpenApiClient.Models.WorkflowExecutionRequestExtensionsProperty.CreateFromDiscriminatorValue); } },
                 { "force_new_trace", n => { ForceNewTrace = n.GetBoolValue(); } },
-                { "input", n => { Input = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "input", n => { Input = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.WorkflowExecutionRequestInput>(global::Soenneker.Mistral.OpenApiClient.Models.WorkflowExecutionRequestInput.CreateFromDiscriminatorValue); } },
                 { "task_queue", n => { TaskQueue = n.GetStringValue(); } },
                 { "timeout_seconds", n => { TimeoutSeconds = n.GetDoubleValue(); } },
                 { "traceparent", n => { Traceparent = n.GetStringValue(); } },
@@ -172,7 +172,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             writer.WriteStringValue("execution_id", ExecutionId);
             writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.WorkflowExecutionRequestExtensionsProperty>("extensions", Extensions);
             writer.WriteBoolValue("force_new_trace", ForceNewTrace);
-            writer.WriteObjectValue<UntypedNode>("input", Input);
+            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.WorkflowExecutionRequestInput>("input", Input);
             writer.WriteStringValue("task_queue", TaskQueue);
             writer.WriteDoubleValue("timeout_seconds", TimeoutSeconds);
             writer.WriteStringValue("traceparent", Traceparent);

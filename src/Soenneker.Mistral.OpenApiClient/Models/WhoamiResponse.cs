@@ -31,12 +31,12 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         /// <summary>The organization the caller&apos;s session is scoped to, when set.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.WhoamiOrganization? Organization { get => _explicitNullValueOrganization; set { _explicitNullValueOrganization = value; AdditionalData?.Remove("organization"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("organization"); else _explicitNullProperties?.Remove("organization"); } }
-        private global::Soenneker.Mistral.OpenApiClient.Models.WhoamiOrganization? _explicitNullValueOrganization = default!;
+        public global::Soenneker.Mistral.OpenApiClient.Models.WhoamiResponseOrganization? Organization { get => _explicitNullValueOrganization; set { _explicitNullValueOrganization = value; AdditionalData?.Remove("organization"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("organization"); else _explicitNullProperties?.Remove("organization"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.WhoamiResponseOrganization? _explicitNullValueOrganization = default!;
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.WhoamiOrganization Organization { get => _explicitNullValueOrganization; set { _explicitNullValueOrganization = value; AdditionalData?.Remove("organization"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("organization"); else _explicitNullProperties?.Remove("organization"); } }
-        private global::Soenneker.Mistral.OpenApiClient.Models.WhoamiOrganization _explicitNullValueOrganization = default!;
+        public global::Soenneker.Mistral.OpenApiClient.Models.WhoamiResponseOrganization Organization { get => _explicitNullValueOrganization; set { _explicitNullValueOrganization = value; AdditionalData?.Remove("organization"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("organization"); else _explicitNullProperties?.Remove("organization"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.WhoamiResponseOrganization _explicitNullValueOrganization = default!;
 #endif
         /// <summary>The authenticated principal: either a user or a service account.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -51,12 +51,12 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         /// <summary>The workspace the caller&apos;s session is scoped to, when set.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.UserIdentityWorkspace? Workspace { get => _explicitNullValueWorkspace; set { _explicitNullValueWorkspace = value; AdditionalData?.Remove("workspace"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("workspace"); else _explicitNullProperties?.Remove("workspace"); } }
-        private global::Soenneker.Mistral.OpenApiClient.Models.UserIdentityWorkspace? _explicitNullValueWorkspace = default!;
+        public global::Soenneker.Mistral.OpenApiClient.Models.WhoamiResponseWorkspace? Workspace { get => _explicitNullValueWorkspace; set { _explicitNullValueWorkspace = value; AdditionalData?.Remove("workspace"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("workspace"); else _explicitNullProperties?.Remove("workspace"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.WhoamiResponseWorkspace? _explicitNullValueWorkspace = default!;
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.UserIdentityWorkspace Workspace { get => _explicitNullValueWorkspace; set { _explicitNullValueWorkspace = value; AdditionalData?.Remove("workspace"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("workspace"); else _explicitNullProperties?.Remove("workspace"); } }
-        private global::Soenneker.Mistral.OpenApiClient.Models.UserIdentityWorkspace _explicitNullValueWorkspace = default!;
+        public global::Soenneker.Mistral.OpenApiClient.Models.WhoamiResponseWorkspace Workspace { get => _explicitNullValueWorkspace; set { _explicitNullValueWorkspace = value; AdditionalData?.Remove("workspace"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("workspace"); else _explicitNullProperties?.Remove("workspace"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.WhoamiResponseWorkspace _explicitNullValueWorkspace = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Mistral.OpenApiClient.Models.WhoamiResponse"/> and sets the default values.
@@ -83,9 +83,9 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "organization", n => { Organization = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.WhoamiOrganization>(global::Soenneker.Mistral.OpenApiClient.Models.WhoamiOrganization.CreateFromDiscriminatorValue); } },
+                { "organization", n => { Organization = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.WhoamiResponseOrganization>(global::Soenneker.Mistral.OpenApiClient.Models.WhoamiResponseOrganization.CreateFromDiscriminatorValue); } },
                 { "principal", n => { Principal = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.WhoamiResponsePrincipal>(global::Soenneker.Mistral.OpenApiClient.Models.WhoamiResponsePrincipal.CreateFromDiscriminatorValue); } },
-                { "workspace", n => { Workspace = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.UserIdentityWorkspace>(global::Soenneker.Mistral.OpenApiClient.Models.UserIdentityWorkspace.CreateFromDiscriminatorValue); } },
+                { "workspace", n => { Workspace = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.WhoamiResponseWorkspace>(global::Soenneker.Mistral.OpenApiClient.Models.WhoamiResponseWorkspace.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -95,9 +95,9 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.WhoamiOrganization>("organization", Organization);
+            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.WhoamiResponseOrganization>("organization", Organization);
             writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.WhoamiResponsePrincipal>("principal", Principal);
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.UserIdentityWorkspace>("workspace", Workspace);
+            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.WhoamiResponseWorkspace>("workspace", Workspace);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }

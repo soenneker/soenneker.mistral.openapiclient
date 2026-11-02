@@ -46,12 +46,12 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         /// <summary>The commit property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.GitCommitMetadata? Commit { get => _explicitNullValueCommit; set { _explicitNullValueCommit = value; AdditionalData?.Remove("commit"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("commit"); else _explicitNullProperties?.Remove("commit"); } }
-        private global::Soenneker.Mistral.OpenApiClient.Models.GitCommitMetadata? _explicitNullValueCommit = default!;
+        public global::Soenneker.Mistral.OpenApiClient.Models.DeploymentWorkerSpecResponseCommit? Commit { get => _explicitNullValueCommit; set { _explicitNullValueCommit = value; AdditionalData?.Remove("commit"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("commit"); else _explicitNullProperties?.Remove("commit"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.DeploymentWorkerSpecResponseCommit? _explicitNullValueCommit = default!;
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.GitCommitMetadata Commit { get => _explicitNullValueCommit; set { _explicitNullValueCommit = value; AdditionalData?.Remove("commit"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("commit"); else _explicitNullProperties?.Remove("commit"); } }
-        private global::Soenneker.Mistral.OpenApiClient.Models.GitCommitMetadata _explicitNullValueCommit = default!;
+        public global::Soenneker.Mistral.OpenApiClient.Models.DeploymentWorkerSpecResponseCommit Commit { get => _explicitNullValueCommit; set { _explicitNullValueCommit = value; AdditionalData?.Remove("commit"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("commit"); else _explicitNullProperties?.Remove("commit"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.DeploymentWorkerSpecResponseCommit _explicitNullValueCommit = default!;
 #endif
         /// <summary>The github_url property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -120,7 +120,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "backend_spec", n => { BackendSpec = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.DeploymentWorkerSpecResponseBackendSpec>(global::Soenneker.Mistral.OpenApiClient.Models.DeploymentWorkerSpecResponseBackendSpec.CreateFromDiscriminatorValue); } },
-                { "commit", n => { Commit = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.GitCommitMetadata>(global::Soenneker.Mistral.OpenApiClient.Models.GitCommitMetadata.CreateFromDiscriminatorValue); } },
+                { "commit", n => { Commit = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.DeploymentWorkerSpecResponseCommit>(global::Soenneker.Mistral.OpenApiClient.Models.DeploymentWorkerSpecResponseCommit.CreateFromDiscriminatorValue); } },
                 { "github_url", n => { GithubUrl = n.GetStringValue(); } },
                 { "restarted_at", n => { RestartedAt = n.GetStringValue(); } },
                 { "revision", n => { Revision = n.GetStringValue(); } },
@@ -135,7 +135,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.DeploymentWorkerSpecResponseBackendSpec>("backend_spec", BackendSpec);
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.GitCommitMetadata>("commit", Commit);
+            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.DeploymentWorkerSpecResponseCommit>("commit", Commit);
             writer.WriteStringValue("github_url", GithubUrl);
             writer.WriteStringValue("restarted_at", RestartedAt);
             writer.WriteStringValue("revision", Revision);

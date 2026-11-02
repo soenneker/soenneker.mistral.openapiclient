@@ -79,12 +79,12 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         /// <summary>The time_dimension property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.TimeDimension? TimeDimension { get => _explicitNullValueTimeDimension; set { _explicitNullValueTimeDimension = value; AdditionalData?.Remove("time_dimension"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("time_dimension"); else _explicitNullProperties?.Remove("time_dimension"); } }
-        private global::Soenneker.Mistral.OpenApiClient.Models.TimeDimension? _explicitNullValueTimeDimension = default!;
+        public global::Soenneker.Mistral.OpenApiClient.Models.AggregationRequestTimeDimension? TimeDimension { get => _explicitNullValueTimeDimension; set { _explicitNullValueTimeDimension = value; AdditionalData?.Remove("time_dimension"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("time_dimension"); else _explicitNullProperties?.Remove("time_dimension"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.AggregationRequestTimeDimension? _explicitNullValueTimeDimension = default!;
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.TimeDimension TimeDimension { get => _explicitNullValueTimeDimension; set { _explicitNullValueTimeDimension = value; AdditionalData?.Remove("time_dimension"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("time_dimension"); else _explicitNullProperties?.Remove("time_dimension"); } }
-        private global::Soenneker.Mistral.OpenApiClient.Models.TimeDimension _explicitNullValueTimeDimension = default!;
+        public global::Soenneker.Mistral.OpenApiClient.Models.AggregationRequestTimeDimension TimeDimension { get => _explicitNullValueTimeDimension; set { _explicitNullValueTimeDimension = value; AdditionalData?.Remove("time_dimension"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("time_dimension"); else _explicitNullProperties?.Remove("time_dimension"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.AggregationRequestTimeDimension _explicitNullValueTimeDimension = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Mistral.OpenApiClient.Models.AggregationRequest"/> and sets the default values.
@@ -117,7 +117,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
                 { "metric", n => { Metric = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.MetricDefinition>(global::Soenneker.Mistral.OpenApiClient.Models.MetricDefinition.CreateFromDiscriminatorValue); } },
                 { "order_by", n => { OrderBy = n.GetCollectionOfObjectValues<global::Soenneker.Mistral.OpenApiClient.Models.OrderByClause>(global::Soenneker.Mistral.OpenApiClient.Models.OrderByClause.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "search_expression", n => { SearchExpression = n.GetStringValue(); } },
-                { "time_dimension", n => { TimeDimension = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.TimeDimension>(global::Soenneker.Mistral.OpenApiClient.Models.TimeDimension.CreateFromDiscriminatorValue); } },
+                { "time_dimension", n => { TimeDimension = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.AggregationRequestTimeDimension>(global::Soenneker.Mistral.OpenApiClient.Models.AggregationRequestTimeDimension.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -132,7 +132,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.MetricDefinition>("metric", Metric);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Mistral.OpenApiClient.Models.OrderByClause>("order_by", OrderBy);
             writer.WriteStringValue("search_expression", SearchExpression);
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.TimeDimension>("time_dimension", TimeDimension);
+            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.AggregationRequestTimeDimension>("time_dimension", TimeDimension);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }

@@ -96,8 +96,15 @@ namespace Soenneker.Mistral.OpenApiClient.V1.Admin.Analytics.Vibe.Work.Usage.By_
             [QueryParameter("end_time")]
             public int? EndTime { get; set; }
             /// <summary>Time interval used to group usage results.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
             [QueryParameter("granularity")]
-            public global::Soenneker.Mistral.OpenApiClient.Models.GetByTimeStatsV1AdminAnalyticsVibeWorkUsageByTimeStatsGranularityParameter? Granularity { get; set; }
+            public string? Granularity { get; set; }
+#nullable restore
+#else
+            [QueryParameter("granularity")]
+            public string Granularity { get; set; }
+#endif
             /// <summary>Start of the queried window, as a Unix timestamp in seconds.</summary>
             [QueryParameter("start_time")]
             public int? StartTime { get; set; }

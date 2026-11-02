@@ -61,12 +61,12 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         /// <summary>The metadata of your choice to be associated with the batch inference job.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.CreateBatchJobRequestMetadataAnyOf1? Metadata { get => _explicitNullValueMetadata; set { _explicitNullValueMetadata = value; AdditionalData?.Remove("metadata"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("metadata"); else _explicitNullProperties?.Remove("metadata"); } }
-        private global::Soenneker.Mistral.OpenApiClient.Models.CreateBatchJobRequestMetadataAnyOf1? _explicitNullValueMetadata = default!;
+        public global::Soenneker.Mistral.OpenApiClient.Models.CreateBatchJobRequestMetadata? Metadata { get => _explicitNullValueMetadata; set { _explicitNullValueMetadata = value; AdditionalData?.Remove("metadata"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("metadata"); else _explicitNullProperties?.Remove("metadata"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.CreateBatchJobRequestMetadata? _explicitNullValueMetadata = default!;
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.CreateBatchJobRequestMetadataAnyOf1 Metadata { get => _explicitNullValueMetadata; set { _explicitNullValueMetadata = value; AdditionalData?.Remove("metadata"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("metadata"); else _explicitNullProperties?.Remove("metadata"); } }
-        private global::Soenneker.Mistral.OpenApiClient.Models.CreateBatchJobRequestMetadataAnyOf1 _explicitNullValueMetadata = default!;
+        public global::Soenneker.Mistral.OpenApiClient.Models.CreateBatchJobRequestMetadata Metadata { get => _explicitNullValueMetadata; set { _explicitNullValueMetadata = value; AdditionalData?.Remove("metadata"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("metadata"); else _explicitNullProperties?.Remove("metadata"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.CreateBatchJobRequestMetadata _explicitNullValueMetadata = default!;
 #endif
         /// <summary>The model to be used for batch inference.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -120,7 +120,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
                 { "agent_id", n => { AgentId = n.GetStringValue(); } },
                 { "endpoint", n => { var parsed = n.GetEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.ApiEndpoint>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueEndpoint = default; _explicitNullProperties?.Remove("endpoint"); AdditionalData["endpoint"] = unknown; } else { Endpoint = parsed; AdditionalData.Remove("endpoint"); } } },
                 { "input_files", n => { InputFiles = n.GetCollectionOfPrimitiveValues<Guid?>()?.AsList(); } },
-                { "metadata", n => { Metadata = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.CreateBatchJobRequestMetadataAnyOf1>(global::Soenneker.Mistral.OpenApiClient.Models.CreateBatchJobRequestMetadataAnyOf1.CreateFromDiscriminatorValue); } },
+                { "metadata", n => { Metadata = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.CreateBatchJobRequestMetadata>(global::Soenneker.Mistral.OpenApiClient.Models.CreateBatchJobRequestMetadata.CreateFromDiscriminatorValue); } },
                 { "model", n => { Model = n.GetStringValue(); } },
                 { "requests", n => { Requests = n.GetCollectionOfObjectValues<global::Soenneker.Mistral.OpenApiClient.Models.BatchRequest>(global::Soenneker.Mistral.OpenApiClient.Models.BatchRequest.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "timeout_hours", n => { TimeoutHours = n.GetIntValue(); } },
@@ -136,7 +136,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             writer.WriteStringValue("agent_id", AgentId);
             writer.WriteEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.ApiEndpoint>("endpoint", Endpoint);
             writer.WriteCollectionOfPrimitiveValues<Guid?>("input_files", InputFiles);
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.CreateBatchJobRequestMetadataAnyOf1>("metadata", Metadata);
+            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.CreateBatchJobRequestMetadata>("metadata", Metadata);
             writer.WriteStringValue("model", Model);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Mistral.OpenApiClient.Models.BatchRequest>("requests", Requests);
             writer.WriteIntValue("timeout_hours", TimeoutHours);

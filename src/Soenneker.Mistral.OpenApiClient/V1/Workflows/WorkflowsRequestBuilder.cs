@@ -184,8 +184,15 @@ namespace Soenneker.Mistral.OpenApiClient.V1.Workflows
             public string[] DeploymentName { get; set; }
 #endif
             /// <summary>Filter by deployment activity. active=only active, inactive=only inactive, None=no filter</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
             [QueryParameter("deployment_status")]
-            public global::Soenneker.Mistral.OpenApiClient.Models.GetWorkflowsV1WorkflowsGetDeploymentStatusParameter? DeploymentStatus { get; set; }
+            public string? DeploymentStatus { get; set; }
+#nullable restore
+#else
+            [QueryParameter("deployment_status")]
+            public string DeploymentStatus { get; set; }
+#endif
             /// <summary>Whether to include shared workflows</summary>
             [QueryParameter("include_shared")]
             public bool? IncludeShared { get; set; }

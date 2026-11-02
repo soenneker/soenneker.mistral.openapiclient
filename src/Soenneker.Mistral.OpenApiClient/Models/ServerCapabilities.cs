@@ -78,45 +78,45 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         public global::Soenneker.Mistral.OpenApiClient.Models.ServerCapabilitiesLogging Logging { get => _explicitNullValueLogging; set { _explicitNullValueLogging = value; AdditionalData?.Remove("logging"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("logging"); else _explicitNullProperties?.Remove("logging"); } }
         private global::Soenneker.Mistral.OpenApiClient.Models.ServerCapabilitiesLogging _explicitNullValueLogging = default!;
 #endif
-        /// <summary>The prompts property</summary>
+        /// <summary>Capability for prompts operations.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.PromptsCapability? Prompts { get => _explicitNullValuePrompts; set { _explicitNullValuePrompts = value; AdditionalData?.Remove("prompts"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("prompts"); else _explicitNullProperties?.Remove("prompts"); } }
-        private global::Soenneker.Mistral.OpenApiClient.Models.PromptsCapability? _explicitNullValuePrompts = default!;
+        public global::Soenneker.Mistral.OpenApiClient.Models.ServerCapabilitiesPrompts? Prompts { get => _explicitNullValuePrompts; set { _explicitNullValuePrompts = value; AdditionalData?.Remove("prompts"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("prompts"); else _explicitNullProperties?.Remove("prompts"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.ServerCapabilitiesPrompts? _explicitNullValuePrompts = default!;
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.PromptsCapability Prompts { get => _explicitNullValuePrompts; set { _explicitNullValuePrompts = value; AdditionalData?.Remove("prompts"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("prompts"); else _explicitNullProperties?.Remove("prompts"); } }
-        private global::Soenneker.Mistral.OpenApiClient.Models.PromptsCapability _explicitNullValuePrompts = default!;
+        public global::Soenneker.Mistral.OpenApiClient.Models.ServerCapabilitiesPrompts Prompts { get => _explicitNullValuePrompts; set { _explicitNullValuePrompts = value; AdditionalData?.Remove("prompts"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("prompts"); else _explicitNullProperties?.Remove("prompts"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.ServerCapabilitiesPrompts _explicitNullValuePrompts = default!;
 #endif
-        /// <summary>The resources property</summary>
+        /// <summary>Capability for resources operations.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.ResourcesCapability? Resources { get => _explicitNullValueResources; set { _explicitNullValueResources = value; AdditionalData?.Remove("resources"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("resources"); else _explicitNullProperties?.Remove("resources"); } }
-        private global::Soenneker.Mistral.OpenApiClient.Models.ResourcesCapability? _explicitNullValueResources = default!;
+        public global::Soenneker.Mistral.OpenApiClient.Models.ServerCapabilitiesResources? Resources { get => _explicitNullValueResources; set { _explicitNullValueResources = value; AdditionalData?.Remove("resources"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("resources"); else _explicitNullProperties?.Remove("resources"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.ServerCapabilitiesResources? _explicitNullValueResources = default!;
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.ResourcesCapability Resources { get => _explicitNullValueResources; set { _explicitNullValueResources = value; AdditionalData?.Remove("resources"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("resources"); else _explicitNullProperties?.Remove("resources"); } }
-        private global::Soenneker.Mistral.OpenApiClient.Models.ResourcesCapability _explicitNullValueResources = default!;
+        public global::Soenneker.Mistral.OpenApiClient.Models.ServerCapabilitiesResources Resources { get => _explicitNullValueResources; set { _explicitNullValueResources = value; AdditionalData?.Remove("resources"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("resources"); else _explicitNullProperties?.Remove("resources"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.ServerCapabilitiesResources _explicitNullValueResources = default!;
 #endif
-        /// <summary>The tasks property</summary>
+        /// <summary>Capability for server tasks operations (2025-11-25 only).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.ServerTasksCapability? Tasks { get => _explicitNullValueTasks; set { _explicitNullValueTasks = value; AdditionalData?.Remove("tasks"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tasks"); else _explicitNullProperties?.Remove("tasks"); } }
-        private global::Soenneker.Mistral.OpenApiClient.Models.ServerTasksCapability? _explicitNullValueTasks = default!;
+        public global::Soenneker.Mistral.OpenApiClient.Models.ServerCapabilitiesTasks? Tasks { get => _explicitNullValueTasks; set { _explicitNullValueTasks = value; AdditionalData?.Remove("tasks"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tasks"); else _explicitNullProperties?.Remove("tasks"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.ServerCapabilitiesTasks? _explicitNullValueTasks = default!;
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.ServerTasksCapability Tasks { get => _explicitNullValueTasks; set { _explicitNullValueTasks = value; AdditionalData?.Remove("tasks"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tasks"); else _explicitNullProperties?.Remove("tasks"); } }
-        private global::Soenneker.Mistral.OpenApiClient.Models.ServerTasksCapability _explicitNullValueTasks = default!;
+        public global::Soenneker.Mistral.OpenApiClient.Models.ServerCapabilitiesTasks Tasks { get => _explicitNullValueTasks; set { _explicitNullValueTasks = value; AdditionalData?.Remove("tasks"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tasks"); else _explicitNullProperties?.Remove("tasks"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.ServerCapabilitiesTasks _explicitNullValueTasks = default!;
 #endif
-        /// <summary>The tools property</summary>
+        /// <summary>Capability for tools operations.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.ToolsCapability? Tools { get => _explicitNullValueTools; set { _explicitNullValueTools = value; AdditionalData?.Remove("tools"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tools"); else _explicitNullProperties?.Remove("tools"); } }
-        private global::Soenneker.Mistral.OpenApiClient.Models.ToolsCapability? _explicitNullValueTools = default!;
+        public global::Soenneker.Mistral.OpenApiClient.Models.ServerCapabilitiesTools? Tools { get => _explicitNullValueTools; set { _explicitNullValueTools = value; AdditionalData?.Remove("tools"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tools"); else _explicitNullProperties?.Remove("tools"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.ServerCapabilitiesTools? _explicitNullValueTools = default!;
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.ToolsCapability Tools { get => _explicitNullValueTools; set { _explicitNullValueTools = value; AdditionalData?.Remove("tools"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tools"); else _explicitNullProperties?.Remove("tools"); } }
-        private global::Soenneker.Mistral.OpenApiClient.Models.ToolsCapability _explicitNullValueTools = default!;
+        public global::Soenneker.Mistral.OpenApiClient.Models.ServerCapabilitiesTools Tools { get => _explicitNullValueTools; set { _explicitNullValueTools = value; AdditionalData?.Remove("tools"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tools"); else _explicitNullProperties?.Remove("tools"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.ServerCapabilitiesTools _explicitNullValueTools = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Mistral.OpenApiClient.Models.ServerCapabilities"/> and sets the default values.
@@ -147,10 +147,10 @@ namespace Soenneker.Mistral.OpenApiClient.Models
                 { "experimental", n => { Experimental = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ServerCapabilitiesExperimentalProperty>(global::Soenneker.Mistral.OpenApiClient.Models.ServerCapabilitiesExperimentalProperty.CreateFromDiscriminatorValue); } },
                 { "extensions", n => { Extensions = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ServerCapabilitiesExtensionsProperty>(global::Soenneker.Mistral.OpenApiClient.Models.ServerCapabilitiesExtensionsProperty.CreateFromDiscriminatorValue); } },
                 { "logging", n => { Logging = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ServerCapabilitiesLogging>(global::Soenneker.Mistral.OpenApiClient.Models.ServerCapabilitiesLogging.CreateFromDiscriminatorValue); } },
-                { "prompts", n => { Prompts = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.PromptsCapability>(global::Soenneker.Mistral.OpenApiClient.Models.PromptsCapability.CreateFromDiscriminatorValue); } },
-                { "resources", n => { Resources = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ResourcesCapability>(global::Soenneker.Mistral.OpenApiClient.Models.ResourcesCapability.CreateFromDiscriminatorValue); } },
-                { "tasks", n => { Tasks = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ServerTasksCapability>(global::Soenneker.Mistral.OpenApiClient.Models.ServerTasksCapability.CreateFromDiscriminatorValue); } },
-                { "tools", n => { Tools = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ToolsCapability>(global::Soenneker.Mistral.OpenApiClient.Models.ToolsCapability.CreateFromDiscriminatorValue); } },
+                { "prompts", n => { Prompts = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ServerCapabilitiesPrompts>(global::Soenneker.Mistral.OpenApiClient.Models.ServerCapabilitiesPrompts.CreateFromDiscriminatorValue); } },
+                { "resources", n => { Resources = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ServerCapabilitiesResources>(global::Soenneker.Mistral.OpenApiClient.Models.ServerCapabilitiesResources.CreateFromDiscriminatorValue); } },
+                { "tasks", n => { Tasks = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ServerCapabilitiesTasks>(global::Soenneker.Mistral.OpenApiClient.Models.ServerCapabilitiesTasks.CreateFromDiscriminatorValue); } },
+                { "tools", n => { Tools = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ServerCapabilitiesTools>(global::Soenneker.Mistral.OpenApiClient.Models.ServerCapabilitiesTools.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -164,10 +164,10 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ServerCapabilitiesExperimentalProperty>("experimental", Experimental);
             writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ServerCapabilitiesExtensionsProperty>("extensions", Extensions);
             writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ServerCapabilitiesLogging>("logging", Logging);
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.PromptsCapability>("prompts", Prompts);
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ResourcesCapability>("resources", Resources);
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ServerTasksCapability>("tasks", Tasks);
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ToolsCapability>("tools", Tools);
+            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ServerCapabilitiesPrompts>("prompts", Prompts);
+            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ServerCapabilitiesResources>("resources", Resources);
+            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ServerCapabilitiesTasks>("tasks", Tasks);
+            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ServerCapabilitiesTools>("tools", Tools);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }

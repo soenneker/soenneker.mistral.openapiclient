@@ -31,12 +31,12 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         /// <summary>Categories to synchronize. Required when dry_run is false; ignored for dry runs.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.AdminScimSyncConfig? SyncConfig { get => _explicitNullValueSyncConfig; set { _explicitNullValueSyncConfig = value; AdditionalData?.Remove("sync_config"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sync_config"); else _explicitNullProperties?.Remove("sync_config"); } }
-        private global::Soenneker.Mistral.OpenApiClient.Models.AdminScimSyncConfig? _explicitNullValueSyncConfig = default!;
+        public global::Soenneker.Mistral.OpenApiClient.Models.AdminScimSyncTriggerInSyncConfig? SyncConfig { get => _explicitNullValueSyncConfig; set { _explicitNullValueSyncConfig = value; AdditionalData?.Remove("sync_config"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sync_config"); else _explicitNullProperties?.Remove("sync_config"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.AdminScimSyncTriggerInSyncConfig? _explicitNullValueSyncConfig = default!;
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.AdminScimSyncConfig SyncConfig { get => _explicitNullValueSyncConfig; set { _explicitNullValueSyncConfig = value; AdditionalData?.Remove("sync_config"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sync_config"); else _explicitNullProperties?.Remove("sync_config"); } }
-        private global::Soenneker.Mistral.OpenApiClient.Models.AdminScimSyncConfig _explicitNullValueSyncConfig = default!;
+        public global::Soenneker.Mistral.OpenApiClient.Models.AdminScimSyncTriggerInSyncConfig SyncConfig { get => _explicitNullValueSyncConfig; set { _explicitNullValueSyncConfig = value; AdditionalData?.Remove("sync_config"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sync_config"); else _explicitNullProperties?.Remove("sync_config"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.AdminScimSyncTriggerInSyncConfig _explicitNullValueSyncConfig = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Mistral.OpenApiClient.Models.AdminScimSyncTriggerIn"/> and sets the default values.
@@ -65,7 +65,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "dry_run", n => { DryRun = n.GetBoolValue(); } },
-                { "sync_config", n => { SyncConfig = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.AdminScimSyncConfig>(global::Soenneker.Mistral.OpenApiClient.Models.AdminScimSyncConfig.CreateFromDiscriminatorValue); } },
+                { "sync_config", n => { SyncConfig = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.AdminScimSyncTriggerInSyncConfig>(global::Soenneker.Mistral.OpenApiClient.Models.AdminScimSyncTriggerInSyncConfig.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -76,7 +76,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("dry_run", DryRun);
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.AdminScimSyncConfig>("sync_config", SyncConfig);
+            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.AdminScimSyncTriggerInSyncConfig>("sync_config", SyncConfig);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }

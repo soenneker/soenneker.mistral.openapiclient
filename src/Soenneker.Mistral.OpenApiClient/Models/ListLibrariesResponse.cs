@@ -51,12 +51,12 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.PaginationInfo? Pagination { get => _explicitNullValuePagination; set { _explicitNullValuePagination = value; AdditionalData?.Remove("pagination"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pagination"); else _explicitNullProperties?.Remove("pagination"); } }
-        private global::Soenneker.Mistral.OpenApiClient.Models.PaginationInfo? _explicitNullValuePagination = default!;
+        public global::Soenneker.Mistral.OpenApiClient.Models.ListLibrariesResponsePagination? Pagination { get => _explicitNullValuePagination; set { _explicitNullValuePagination = value; AdditionalData?.Remove("pagination"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pagination"); else _explicitNullProperties?.Remove("pagination"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.ListLibrariesResponsePagination? _explicitNullValuePagination = default!;
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.PaginationInfo Pagination { get => _explicitNullValuePagination; set { _explicitNullValuePagination = value; AdditionalData?.Remove("pagination"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pagination"); else _explicitNullProperties?.Remove("pagination"); } }
-        private global::Soenneker.Mistral.OpenApiClient.Models.PaginationInfo _explicitNullValuePagination = default!;
+        public global::Soenneker.Mistral.OpenApiClient.Models.ListLibrariesResponsePagination Pagination { get => _explicitNullValuePagination; set { _explicitNullValuePagination = value; AdditionalData?.Remove("pagination"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pagination"); else _explicitNullProperties?.Remove("pagination"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.ListLibrariesResponsePagination _explicitNullValuePagination = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Mistral.OpenApiClient.Models.ListLibrariesResponse"/> and sets the default values.
@@ -85,7 +85,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             {
                 { "data", n => { Data = n.GetCollectionOfObjectValues<global::Soenneker.Mistral.OpenApiClient.Models.Library>(global::Soenneker.Mistral.OpenApiClient.Models.Library.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "next_page_token", n => { NextPageToken = n.GetStringValue(); } },
-                { "pagination", n => { Pagination = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.PaginationInfo>(global::Soenneker.Mistral.OpenApiClient.Models.PaginationInfo.CreateFromDiscriminatorValue); } },
+                { "pagination", n => { Pagination = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ListLibrariesResponsePagination>(global::Soenneker.Mistral.OpenApiClient.Models.ListLibrariesResponsePagination.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -97,7 +97,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfObjectValues<global::Soenneker.Mistral.OpenApiClient.Models.Library>("data", Data);
             writer.WriteStringValue("next_page_token", NextPageToken);
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.PaginationInfo>("pagination", Pagination);
+            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ListLibrariesResponsePagination>("pagination", Pagination);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }

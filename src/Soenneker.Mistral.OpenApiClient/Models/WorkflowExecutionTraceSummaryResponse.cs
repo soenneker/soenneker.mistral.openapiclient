@@ -127,12 +127,12 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         /// <summary>The root span of the trace</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.WorkflowExecutionTraceSummarySpan? SpanTree { get => _explicitNullValueSpanTree; set { _explicitNullValueSpanTree = value; AdditionalData?.Remove("span_tree"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("span_tree"); else _explicitNullProperties?.Remove("span_tree"); } }
-        private global::Soenneker.Mistral.OpenApiClient.Models.WorkflowExecutionTraceSummarySpan? _explicitNullValueSpanTree = default!;
+        public global::Soenneker.Mistral.OpenApiClient.Models.WorkflowExecutionTraceSummaryResponseSpanTree? SpanTree { get => _explicitNullValueSpanTree; set { _explicitNullValueSpanTree = value; AdditionalData?.Remove("span_tree"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("span_tree"); else _explicitNullProperties?.Remove("span_tree"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.WorkflowExecutionTraceSummaryResponseSpanTree? _explicitNullValueSpanTree = default!;
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.WorkflowExecutionTraceSummarySpan SpanTree { get => _explicitNullValueSpanTree; set { _explicitNullValueSpanTree = value; AdditionalData?.Remove("span_tree"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("span_tree"); else _explicitNullProperties?.Remove("span_tree"); } }
-        private global::Soenneker.Mistral.OpenApiClient.Models.WorkflowExecutionTraceSummarySpan _explicitNullValueSpanTree = default!;
+        public global::Soenneker.Mistral.OpenApiClient.Models.WorkflowExecutionTraceSummaryResponseSpanTree SpanTree { get => _explicitNullValueSpanTree; set { _explicitNullValueSpanTree = value; AdditionalData?.Remove("span_tree"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("span_tree"); else _explicitNullProperties?.Remove("span_tree"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.WorkflowExecutionTraceSummaryResponseSpanTree _explicitNullValueSpanTree = default!;
 #endif
         /// <summary>The start time of the workflow execution</summary>
         public DateTimeOffset? StartTime { get => _explicitNullValueStartTime; set { _explicitNullValueStartTime = value; AdditionalData?.Remove("start_time"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("start_time"); else _explicitNullProperties?.Remove("start_time"); } }
@@ -199,7 +199,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
                 { "root_execution_id", n => { RootExecutionId = n.GetStringValue(); } },
                 { "run_id", n => { RunId = n.GetStringValue(); } },
                 { "search_keys", n => { SearchKeys = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.WorkflowExecutionTraceSummaryResponseSearchKeysProperty>(global::Soenneker.Mistral.OpenApiClient.Models.WorkflowExecutionTraceSummaryResponseSearchKeysProperty.CreateFromDiscriminatorValue); } },
-                { "span_tree", n => { SpanTree = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.WorkflowExecutionTraceSummarySpan>(global::Soenneker.Mistral.OpenApiClient.Models.WorkflowExecutionTraceSummarySpan.CreateFromDiscriminatorValue); } },
+                { "span_tree", n => { SpanTree = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.WorkflowExecutionTraceSummaryResponseSpanTree>(global::Soenneker.Mistral.OpenApiClient.Models.WorkflowExecutionTraceSummaryResponseSpanTree.CreateFromDiscriminatorValue); } },
                 { "start_time", n => { StartTime = n.GetDateTimeOffsetValue(); } },
                 { "status", n => { var parsed = n.GetEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.WorkflowExecutionStatus>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueStatus = default; _explicitNullProperties?.Remove("status"); AdditionalData["status"] = unknown; } else { Status = parsed; AdditionalData.Remove("status"); } } },
                 { "total_duration_ms", n => { TotalDurationMs = n.GetIntValue(); } },
@@ -223,7 +223,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             writer.WriteStringValue("root_execution_id", RootExecutionId);
             writer.WriteStringValue("run_id", RunId);
             writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.WorkflowExecutionTraceSummaryResponseSearchKeysProperty>("search_keys", SearchKeys);
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.WorkflowExecutionTraceSummarySpan>("span_tree", SpanTree);
+            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.WorkflowExecutionTraceSummaryResponseSpanTree>("span_tree", SpanTree);
             writer.WriteDateTimeOffsetValue("start_time", StartTime);
             writer.WriteEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.WorkflowExecutionStatus>("status", Status);
             writer.WriteIntValue("total_duration_ms", TotalDurationMs);

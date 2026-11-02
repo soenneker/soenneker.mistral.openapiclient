@@ -79,12 +79,12 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         /// <summary>Workspace spending limit.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.WorkspaceSpendLimitOut? SpendLimit { get => _explicitNullValueSpendLimit; set { _explicitNullValueSpendLimit = value; AdditionalData?.Remove("spend_limit"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("spend_limit"); else _explicitNullProperties?.Remove("spend_limit"); } }
-        private global::Soenneker.Mistral.OpenApiClient.Models.WorkspaceSpendLimitOut? _explicitNullValueSpendLimit = default!;
+        public global::Soenneker.Mistral.OpenApiClient.Models.WorkspaceEnrichedOutSpendLimit? SpendLimit { get => _explicitNullValueSpendLimit; set { _explicitNullValueSpendLimit = value; AdditionalData?.Remove("spend_limit"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("spend_limit"); else _explicitNullProperties?.Remove("spend_limit"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.WorkspaceEnrichedOutSpendLimit? _explicitNullValueSpendLimit = default!;
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.WorkspaceSpendLimitOut SpendLimit { get => _explicitNullValueSpendLimit; set { _explicitNullValueSpendLimit = value; AdditionalData?.Remove("spend_limit"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("spend_limit"); else _explicitNullProperties?.Remove("spend_limit"); } }
-        private global::Soenneker.Mistral.OpenApiClient.Models.WorkspaceSpendLimitOut _explicitNullValueSpendLimit = default!;
+        public global::Soenneker.Mistral.OpenApiClient.Models.WorkspaceEnrichedOutSpendLimit SpendLimit { get => _explicitNullValueSpendLimit; set { _explicitNullValueSpendLimit = value; AdditionalData?.Remove("spend_limit"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("spend_limit"); else _explicitNullProperties?.Remove("spend_limit"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.WorkspaceEnrichedOutSpendLimit _explicitNullValueSpendLimit = default!;
 #endif
         /// <summary>Workspace ID.</summary>
         public Guid? Uuid { get => _explicitNullValueUuid; set { _explicitNullValueUuid = value; AdditionalData?.Remove("uuid"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("uuid"); else _explicitNullProperties?.Remove("uuid"); } }
@@ -120,7 +120,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
                 { "is_default", n => { IsDefault = n.GetBoolValue(); } },
                 { "members_count", n => { MembersCount = n.GetIntValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
-                { "spend_limit", n => { SpendLimit = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.WorkspaceSpendLimitOut>(global::Soenneker.Mistral.OpenApiClient.Models.WorkspaceSpendLimitOut.CreateFromDiscriminatorValue); } },
+                { "spend_limit", n => { SpendLimit = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.WorkspaceEnrichedOutSpendLimit>(global::Soenneker.Mistral.OpenApiClient.Models.WorkspaceEnrichedOutSpendLimit.CreateFromDiscriminatorValue); } },
                 { "uuid", n => { Uuid = n.GetGuidValue(); } },
             };
         }
@@ -137,7 +137,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             writer.WriteBoolValue("is_default", IsDefault);
             writer.WriteIntValue("members_count", MembersCount);
             writer.WriteStringValue("name", Name);
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.WorkspaceSpendLimitOut>("spend_limit", SpendLimit);
+            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.WorkspaceEnrichedOutSpendLimit>("spend_limit", SpendLimit);
             writer.WriteGuidValue("uuid", Uuid);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);

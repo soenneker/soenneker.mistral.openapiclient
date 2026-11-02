@@ -54,8 +54,15 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         private string _explicitNullValueName = default!;
 #endif
         /// <summary>Determines who owns the created library. &apos;User&apos; creates a private library accessible only to its owner. &apos;Workspace&apos; creates a library shared with the workspace. Defaults to &apos;Workspace&apos; for API key sessions. Only API keys with the &apos;Private and shared connectors&apos; connector access scope can create private, user-owned libraries.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public global::Soenneker.Mistral.OpenApiClient.Models.CreateLibraryRequestOwnerType? OwnerType { get => _explicitNullValueOwnerType; set { _explicitNullValueOwnerType = value; AdditionalData?.Remove("owner_type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("owner_type"); else _explicitNullProperties?.Remove("owner_type"); } }
         private global::Soenneker.Mistral.OpenApiClient.Models.CreateLibraryRequestOwnerType? _explicitNullValueOwnerType = default!;
+#nullable restore
+#else
+        public global::Soenneker.Mistral.OpenApiClient.Models.CreateLibraryRequestOwnerType OwnerType { get => _explicitNullValueOwnerType; set { _explicitNullValueOwnerType = value; AdditionalData?.Remove("owner_type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("owner_type"); else _explicitNullProperties?.Remove("owner_type"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.CreateLibraryRequestOwnerType _explicitNullValueOwnerType = default!;
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Mistral.OpenApiClient.Models.CreateLibraryRequest"/> and sets the default values.
         /// </summary>
@@ -84,7 +91,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
                 { "chunk_size", n => { ChunkSize = n.GetIntValue(); } },
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
-                { "owner_type", n => { var parsed = n.GetEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.CreateLibraryRequestOwnerType>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueOwnerType = default; _explicitNullProperties?.Remove("owner_type"); AdditionalData["owner_type"] = unknown; } else { OwnerType = parsed; AdditionalData.Remove("owner_type"); } } },
+                { "owner_type", n => { OwnerType = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.CreateLibraryRequestOwnerType>(global::Soenneker.Mistral.OpenApiClient.Models.CreateLibraryRequestOwnerType.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -97,7 +104,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             writer.WriteIntValue("chunk_size", ChunkSize);
             writer.WriteStringValue("description", Description);
             writer.WriteStringValue("name", Name);
-            writer.WriteEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.CreateLibraryRequestOwnerType>("owner_type", OwnerType);
+            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.CreateLibraryRequestOwnerType>("owner_type", OwnerType);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }

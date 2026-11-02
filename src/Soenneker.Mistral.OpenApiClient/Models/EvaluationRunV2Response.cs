@@ -136,15 +136,15 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         /// <summary>The num_generations property</summary>
         public int? NumGenerations { get => _explicitNullValueNumGenerations; set { _explicitNullValueNumGenerations = value; AdditionalData?.Remove("num_generations"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("num_generations"); else _explicitNullProperties?.Remove("num_generations"); } }
         private int? _explicitNullValueNumGenerations = default!;
-        /// <summary>The optimization property</summary>
+        /// <summary>Typed run→optimization back-ref, derived at read from the optimization_run link.Not stored on the run (single source of truth = optimization_run); lets a run row showits optimization (id + name) without an extra request per run.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.RunOptimizationRef? Optimization { get => _explicitNullValueOptimization; set { _explicitNullValueOptimization = value; AdditionalData?.Remove("optimization"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("optimization"); else _explicitNullProperties?.Remove("optimization"); } }
-        private global::Soenneker.Mistral.OpenApiClient.Models.RunOptimizationRef? _explicitNullValueOptimization = default!;
+        public global::Soenneker.Mistral.OpenApiClient.Models.EvaluationRunV2ResponseOptimization? Optimization { get => _explicitNullValueOptimization; set { _explicitNullValueOptimization = value; AdditionalData?.Remove("optimization"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("optimization"); else _explicitNullProperties?.Remove("optimization"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.EvaluationRunV2ResponseOptimization? _explicitNullValueOptimization = default!;
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.RunOptimizationRef Optimization { get => _explicitNullValueOptimization; set { _explicitNullValueOptimization = value; AdditionalData?.Remove("optimization"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("optimization"); else _explicitNullProperties?.Remove("optimization"); } }
-        private global::Soenneker.Mistral.OpenApiClient.Models.RunOptimizationRef _explicitNullValueOptimization = default!;
+        public global::Soenneker.Mistral.OpenApiClient.Models.EvaluationRunV2ResponseOptimization Optimization { get => _explicitNullValueOptimization; set { _explicitNullValueOptimization = value; AdditionalData?.Remove("optimization"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("optimization"); else _explicitNullProperties?.Remove("optimization"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.EvaluationRunV2ResponseOptimization _explicitNullValueOptimization = default!;
 #endif
         /// <summary>The passed property</summary>
         public bool? Passed { get => _explicitNullValuePassed; set { _explicitNullValuePassed = value; AdditionalData?.Remove("passed"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("passed"); else _explicitNullProperties?.Remove("passed"); } }
@@ -202,12 +202,12 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         /// <summary>The system property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.SystemV2? System { get => _explicitNullValueSystem; set { _explicitNullValueSystem = value; AdditionalData?.Remove("system"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("system"); else _explicitNullProperties?.Remove("system"); } }
-        private global::Soenneker.Mistral.OpenApiClient.Models.SystemV2? _explicitNullValueSystem = default!;
+        public global::Soenneker.Mistral.OpenApiClient.Models.EvaluationRunV2ResponseSystem? System { get => _explicitNullValueSystem; set { _explicitNullValueSystem = value; AdditionalData?.Remove("system"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("system"); else _explicitNullProperties?.Remove("system"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.EvaluationRunV2ResponseSystem? _explicitNullValueSystem = default!;
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.SystemV2 System { get => _explicitNullValueSystem; set { _explicitNullValueSystem = value; AdditionalData?.Remove("system"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("system"); else _explicitNullProperties?.Remove("system"); } }
-        private global::Soenneker.Mistral.OpenApiClient.Models.SystemV2 _explicitNullValueSystem = default!;
+        public global::Soenneker.Mistral.OpenApiClient.Models.EvaluationRunV2ResponseSystem System { get => _explicitNullValueSystem; set { _explicitNullValueSystem = value; AdditionalData?.Remove("system"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("system"); else _explicitNullProperties?.Remove("system"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.EvaluationRunV2ResponseSystem _explicitNullValueSystem = default!;
 #endif
         /// <summary>The tags property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -260,14 +260,14 @@ namespace Soenneker.Mistral.OpenApiClient.Models
                 { "metadata_", n => { Metadata = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.EvaluationRunV2ResponseMetadataProperty>(global::Soenneker.Mistral.OpenApiClient.Models.EvaluationRunV2ResponseMetadataProperty.CreateFromDiscriminatorValue); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "num_generations", n => { NumGenerations = n.GetIntValue(); } },
-                { "optimization", n => { Optimization = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.RunOptimizationRef>(global::Soenneker.Mistral.OpenApiClient.Models.RunOptimizationRef.CreateFromDiscriminatorValue); } },
+                { "optimization", n => { Optimization = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.EvaluationRunV2ResponseOptimization>(global::Soenneker.Mistral.OpenApiClient.Models.EvaluationRunV2ResponseOptimization.CreateFromDiscriminatorValue); } },
                 { "passed", n => { Passed = n.GetBoolValue(); } },
                 { "run_evaluators", n => { RunEvaluators = n.GetCollectionOfObjectValues<global::Soenneker.Mistral.OpenApiClient.Models.EvaluatorV2>(global::Soenneker.Mistral.OpenApiClient.Models.EvaluatorV2.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "run_info", n => { RunInfo = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.EvaluationRunV2ResponseRunInfoProperty>(global::Soenneker.Mistral.OpenApiClient.Models.EvaluationRunV2ResponseRunInfoProperty.CreateFromDiscriminatorValue); } },
                 { "run_scores", n => { RunScores = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.EvaluationRunV2ResponseRunScoresProperty>(global::Soenneker.Mistral.OpenApiClient.Models.EvaluationRunV2ResponseRunScoresProperty.CreateFromDiscriminatorValue); } },
                 { "statistics", n => { Statistics = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.EvaluationRunV2ResponseStatisticsProperty>(global::Soenneker.Mistral.OpenApiClient.Models.EvaluationRunV2ResponseStatisticsProperty.CreateFromDiscriminatorValue); } },
                 { "status", n => { Status = n.GetStringValue(); } },
-                { "system", n => { System = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.SystemV2>(global::Soenneker.Mistral.OpenApiClient.Models.SystemV2.CreateFromDiscriminatorValue); } },
+                { "system", n => { System = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.EvaluationRunV2ResponseSystem>(global::Soenneker.Mistral.OpenApiClient.Models.EvaluationRunV2ResponseSystem.CreateFromDiscriminatorValue); } },
                 { "tags", n => { Tags = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
             };
@@ -291,14 +291,14 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.EvaluationRunV2ResponseMetadataProperty>("metadata_", Metadata);
             writer.WriteStringValue("name", Name);
             writer.WriteIntValue("num_generations", NumGenerations);
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.RunOptimizationRef>("optimization", Optimization);
+            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.EvaluationRunV2ResponseOptimization>("optimization", Optimization);
             writer.WriteBoolValue("passed", Passed);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Mistral.OpenApiClient.Models.EvaluatorV2>("run_evaluators", RunEvaluators);
             writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.EvaluationRunV2ResponseRunInfoProperty>("run_info", RunInfo);
             writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.EvaluationRunV2ResponseRunScoresProperty>("run_scores", RunScores);
             writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.EvaluationRunV2ResponseStatisticsProperty>("statistics", Statistics);
             writer.WriteStringValue("status", Status);
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.SystemV2>("system", System);
+            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.EvaluationRunV2ResponseSystem>("system", System);
             writer.WriteCollectionOfPrimitiveValues<string>("tags", Tags);
             writer.WriteDateTimeOffsetValue("updated_at", UpdatedAt);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);

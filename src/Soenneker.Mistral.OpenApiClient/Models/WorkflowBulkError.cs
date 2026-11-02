@@ -40,12 +40,12 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         /// <summary>The workflow, if found</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.Workflow? Workflow { get => _explicitNullValueWorkflow; set { _explicitNullValueWorkflow = value; AdditionalData?.Remove("workflow"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("workflow"); else _explicitNullProperties?.Remove("workflow"); } }
-        private global::Soenneker.Mistral.OpenApiClient.Models.Workflow? _explicitNullValueWorkflow = default!;
+        public global::Soenneker.Mistral.OpenApiClient.Models.WorkflowBulkErrorWorkflow? Workflow { get => _explicitNullValueWorkflow; set { _explicitNullValueWorkflow = value; AdditionalData?.Remove("workflow"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("workflow"); else _explicitNullProperties?.Remove("workflow"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.WorkflowBulkErrorWorkflow? _explicitNullValueWorkflow = default!;
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.Workflow Workflow { get => _explicitNullValueWorkflow; set { _explicitNullValueWorkflow = value; AdditionalData?.Remove("workflow"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("workflow"); else _explicitNullProperties?.Remove("workflow"); } }
-        private global::Soenneker.Mistral.OpenApiClient.Models.Workflow _explicitNullValueWorkflow = default!;
+        public global::Soenneker.Mistral.OpenApiClient.Models.WorkflowBulkErrorWorkflow Workflow { get => _explicitNullValueWorkflow; set { _explicitNullValueWorkflow = value; AdditionalData?.Remove("workflow"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("workflow"); else _explicitNullProperties?.Remove("workflow"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.WorkflowBulkErrorWorkflow _explicitNullValueWorkflow = default!;
 #endif
         /// <summary>The requested workflow ID</summary>
         public Guid? WorkflowId { get => _explicitNullValueWorkflowId; set { _explicitNullValueWorkflowId = value; AdditionalData?.Remove("workflow_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("workflow_id"); else _explicitNullProperties?.Remove("workflow_id"); } }
@@ -76,7 +76,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "message", n => { Message = n.GetStringValue(); } },
-                { "workflow", n => { Workflow = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.Workflow>(global::Soenneker.Mistral.OpenApiClient.Models.Workflow.CreateFromDiscriminatorValue); } },
+                { "workflow", n => { Workflow = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.WorkflowBulkErrorWorkflow>(global::Soenneker.Mistral.OpenApiClient.Models.WorkflowBulkErrorWorkflow.CreateFromDiscriminatorValue); } },
                 { "workflow_id", n => { WorkflowId = n.GetGuidValue(); } },
             };
         }
@@ -88,7 +88,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("message", Message);
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.Workflow>("workflow", Workflow);
+            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.WorkflowBulkErrorWorkflow>("workflow", Workflow);
             writer.WriteGuidValue("workflow_id", WorkflowId);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);

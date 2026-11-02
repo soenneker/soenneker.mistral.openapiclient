@@ -42,12 +42,12 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         /// <summary>The logprobs property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.ChatCompletionResponseChoiceLogprobs? Logprobs { get => _explicitNullValueLogprobs; set { _explicitNullValueLogprobs = value; AdditionalData?.Remove("logprobs"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("logprobs"); else _explicitNullProperties?.Remove("logprobs"); } }
-        private global::Soenneker.Mistral.OpenApiClient.Models.ChatCompletionResponseChoiceLogprobs? _explicitNullValueLogprobs = default!;
+        public global::Soenneker.Mistral.OpenApiClient.Models.ChatCompletionChoiceLogprobs? Logprobs { get => _explicitNullValueLogprobs; set { _explicitNullValueLogprobs = value; AdditionalData?.Remove("logprobs"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("logprobs"); else _explicitNullProperties?.Remove("logprobs"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.ChatCompletionChoiceLogprobs? _explicitNullValueLogprobs = default!;
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.ChatCompletionResponseChoiceLogprobs Logprobs { get => _explicitNullValueLogprobs; set { _explicitNullValueLogprobs = value; AdditionalData?.Remove("logprobs"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("logprobs"); else _explicitNullProperties?.Remove("logprobs"); } }
-        private global::Soenneker.Mistral.OpenApiClient.Models.ChatCompletionResponseChoiceLogprobs _explicitNullValueLogprobs = default!;
+        public global::Soenneker.Mistral.OpenApiClient.Models.ChatCompletionChoiceLogprobs Logprobs { get => _explicitNullValueLogprobs; set { _explicitNullValueLogprobs = value; AdditionalData?.Remove("logprobs"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("logprobs"); else _explicitNullProperties?.Remove("logprobs"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.ChatCompletionChoiceLogprobs _explicitNullValueLogprobs = default!;
 #endif
         /// <summary>The message property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -72,12 +72,12 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         /// <summary>The prompt_logprobs property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.ChatCompletionResponseChoiceLogprobs? PromptLogprobs { get => _explicitNullValuePromptLogprobs; set { _explicitNullValuePromptLogprobs = value; AdditionalData?.Remove("prompt_logprobs"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("prompt_logprobs"); else _explicitNullProperties?.Remove("prompt_logprobs"); } }
-        private global::Soenneker.Mistral.OpenApiClient.Models.ChatCompletionResponseChoiceLogprobs? _explicitNullValuePromptLogprobs = default!;
+        public global::Soenneker.Mistral.OpenApiClient.Models.ChatCompletionChoiceLogprobs? PromptLogprobs { get => _explicitNullValuePromptLogprobs; set { _explicitNullValuePromptLogprobs = value; AdditionalData?.Remove("prompt_logprobs"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("prompt_logprobs"); else _explicitNullProperties?.Remove("prompt_logprobs"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.ChatCompletionChoiceLogprobs? _explicitNullValuePromptLogprobs = default!;
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.ChatCompletionResponseChoiceLogprobs PromptLogprobs { get => _explicitNullValuePromptLogprobs; set { _explicitNullValuePromptLogprobs = value; AdditionalData?.Remove("prompt_logprobs"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("prompt_logprobs"); else _explicitNullProperties?.Remove("prompt_logprobs"); } }
-        private global::Soenneker.Mistral.OpenApiClient.Models.ChatCompletionResponseChoiceLogprobs _explicitNullValuePromptLogprobs = default!;
+        public global::Soenneker.Mistral.OpenApiClient.Models.ChatCompletionChoiceLogprobs PromptLogprobs { get => _explicitNullValuePromptLogprobs; set { _explicitNullValuePromptLogprobs = value; AdditionalData?.Remove("prompt_logprobs"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("prompt_logprobs"); else _explicitNullProperties?.Remove("prompt_logprobs"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.ChatCompletionChoiceLogprobs _explicitNullValuePromptLogprobs = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Mistral.OpenApiClient.Models.ChatCompletionChoice"/> and sets the default values.
@@ -106,10 +106,10 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             {
                 { "finish_reason", n => { var parsed = n.GetEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.ChatCompletionChoiceFinishReason>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueFinishReason = default; _explicitNullProperties?.Remove("finish_reason"); AdditionalData["finish_reason"] = unknown; } else { FinishReason = parsed; AdditionalData.Remove("finish_reason"); } } },
                 { "index", n => { Index = n.GetIntValue(); } },
-                { "logprobs", n => { Logprobs = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ChatCompletionResponseChoiceLogprobs>(global::Soenneker.Mistral.OpenApiClient.Models.ChatCompletionResponseChoiceLogprobs.CreateFromDiscriminatorValue); } },
+                { "logprobs", n => { Logprobs = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ChatCompletionChoiceLogprobs>(global::Soenneker.Mistral.OpenApiClient.Models.ChatCompletionChoiceLogprobs.CreateFromDiscriminatorValue); } },
                 { "message", n => { Message = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.AssistantMessage>(global::Soenneker.Mistral.OpenApiClient.Models.AssistantMessage.CreateFromDiscriminatorValue); } },
                 { "messages", n => { Messages = n.GetCollectionOfObjectValues<global::Soenneker.Mistral.OpenApiClient.Models.DeltaMessage>(global::Soenneker.Mistral.OpenApiClient.Models.DeltaMessage.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "prompt_logprobs", n => { PromptLogprobs = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ChatCompletionResponseChoiceLogprobs>(global::Soenneker.Mistral.OpenApiClient.Models.ChatCompletionResponseChoiceLogprobs.CreateFromDiscriminatorValue); } },
+                { "prompt_logprobs", n => { PromptLogprobs = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ChatCompletionChoiceLogprobs>(global::Soenneker.Mistral.OpenApiClient.Models.ChatCompletionChoiceLogprobs.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -121,10 +121,10 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.ChatCompletionChoiceFinishReason>("finish_reason", FinishReason);
             writer.WriteIntValue("index", Index);
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ChatCompletionResponseChoiceLogprobs>("logprobs", Logprobs);
+            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ChatCompletionChoiceLogprobs>("logprobs", Logprobs);
             writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.AssistantMessage>("message", Message);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Mistral.OpenApiClient.Models.DeltaMessage>("messages", Messages);
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ChatCompletionResponseChoiceLogprobs>("prompt_logprobs", PromptLogprobs);
+            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ChatCompletionChoiceLogprobs>("prompt_logprobs", PromptLogprobs);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }

@@ -50,16 +50,23 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         /// <summary>Structured output class for extracting useful information from each extracted bounding box / image from document. Only json_schema is valid for this field</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.ResponseFormat? BboxAnnotationFormat { get => _explicitNullValueBboxAnnotationFormat; set { _explicitNullValueBboxAnnotationFormat = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bbox_annotation_format"); else _explicitNullProperties?.Remove("bbox_annotation_format"); } }
-        private global::Soenneker.Mistral.OpenApiClient.Models.ResponseFormat? _explicitNullValueBboxAnnotationFormat = default!;
+        public global::Soenneker.Mistral.OpenApiClient.Models.OcrRequestBboxAnnotationFormat? BboxAnnotationFormat { get => _explicitNullValueBboxAnnotationFormat; set { _explicitNullValueBboxAnnotationFormat = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bbox_annotation_format"); else _explicitNullProperties?.Remove("bbox_annotation_format"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.OcrRequestBboxAnnotationFormat? _explicitNullValueBboxAnnotationFormat = default!;
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.ResponseFormat BboxAnnotationFormat { get => _explicitNullValueBboxAnnotationFormat; set { _explicitNullValueBboxAnnotationFormat = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bbox_annotation_format"); else _explicitNullProperties?.Remove("bbox_annotation_format"); } }
-        private global::Soenneker.Mistral.OpenApiClient.Models.ResponseFormat _explicitNullValueBboxAnnotationFormat = default!;
+        public global::Soenneker.Mistral.OpenApiClient.Models.OcrRequestBboxAnnotationFormat BboxAnnotationFormat { get => _explicitNullValueBboxAnnotationFormat; set { _explicitNullValueBboxAnnotationFormat = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bbox_annotation_format"); else _explicitNullProperties?.Remove("bbox_annotation_format"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.OcrRequestBboxAnnotationFormat _explicitNullValueBboxAnnotationFormat = default!;
 #endif
         /// <summary>Granularity for confidence scores: &apos;page&apos; (aggregate only), &apos;word&apos; (per-word scores), or &apos;block&apos; (per-block scores). Defaults to None (no confidence scores) to keep response payload small.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public global::Soenneker.Mistral.OpenApiClient.Models.OcrRequestConfidenceScoresGranularity? ConfidenceScoresGranularity { get => _explicitNullValueConfidenceScoresGranularity; set { _explicitNullValueConfidenceScoresGranularity = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("confidence_scores_granularity"); else _explicitNullProperties?.Remove("confidence_scores_granularity"); } }
         private global::Soenneker.Mistral.OpenApiClient.Models.OcrRequestConfidenceScoresGranularity? _explicitNullValueConfidenceScoresGranularity = default!;
+#nullable restore
+#else
+        public global::Soenneker.Mistral.OpenApiClient.Models.OcrRequestConfidenceScoresGranularity ConfidenceScoresGranularity { get => _explicitNullValueConfidenceScoresGranularity; set { _explicitNullValueConfidenceScoresGranularity = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("confidence_scores_granularity"); else _explicitNullProperties?.Remove("confidence_scores_granularity"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.OcrRequestConfidenceScoresGranularity _explicitNullValueConfidenceScoresGranularity = default!;
+#endif
         /// <summary>Document to run OCR on</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -73,12 +80,12 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         /// <summary>Structured output class for extracting useful information from the entire document. Only json_schema is valid for this field</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.ResponseFormat? DocumentAnnotationFormat { get => _explicitNullValueDocumentAnnotationFormat; set { _explicitNullValueDocumentAnnotationFormat = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("document_annotation_format"); else _explicitNullProperties?.Remove("document_annotation_format"); } }
-        private global::Soenneker.Mistral.OpenApiClient.Models.ResponseFormat? _explicitNullValueDocumentAnnotationFormat = default!;
+        public global::Soenneker.Mistral.OpenApiClient.Models.OcrRequestDocumentAnnotationFormat? DocumentAnnotationFormat { get => _explicitNullValueDocumentAnnotationFormat; set { _explicitNullValueDocumentAnnotationFormat = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("document_annotation_format"); else _explicitNullProperties?.Remove("document_annotation_format"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.OcrRequestDocumentAnnotationFormat? _explicitNullValueDocumentAnnotationFormat = default!;
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.ResponseFormat DocumentAnnotationFormat { get => _explicitNullValueDocumentAnnotationFormat; set { _explicitNullValueDocumentAnnotationFormat = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("document_annotation_format"); else _explicitNullProperties?.Remove("document_annotation_format"); } }
-        private global::Soenneker.Mistral.OpenApiClient.Models.ResponseFormat _explicitNullValueDocumentAnnotationFormat = default!;
+        public global::Soenneker.Mistral.OpenApiClient.Models.OcrRequestDocumentAnnotationFormat DocumentAnnotationFormat { get => _explicitNullValueDocumentAnnotationFormat; set { _explicitNullValueDocumentAnnotationFormat = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("document_annotation_format"); else _explicitNullProperties?.Remove("document_annotation_format"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.OcrRequestDocumentAnnotationFormat _explicitNullValueDocumentAnnotationFormat = default!;
 #endif
         /// <summary>Optional prompt to guide the model in extracting structured output from the entire document. A document_annotation_format must be provided.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -129,8 +136,15 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         private global::Soenneker.Mistral.OpenApiClient.Models.OcrRequestPages _explicitNullValuePages = default!;
 #endif
         /// <summary>The table_format property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public global::Soenneker.Mistral.OpenApiClient.Models.OcrRequestTableFormat? TableFormat { get => _explicitNullValueTableFormat; set { _explicitNullValueTableFormat = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("table_format"); else _explicitNullProperties?.Remove("table_format"); } }
         private global::Soenneker.Mistral.OpenApiClient.Models.OcrRequestTableFormat? _explicitNullValueTableFormat = default!;
+#nullable restore
+#else
+        public global::Soenneker.Mistral.OpenApiClient.Models.OcrRequestTableFormat TableFormat { get => _explicitNullValueTableFormat; set { _explicitNullValueTableFormat = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("table_format"); else _explicitNullProperties?.Remove("table_format"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.OcrRequestTableFormat _explicitNullValueTableFormat = default!;
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Mistral.OpenApiClient.Models.OcrRequest"/> and sets the default values.
         /// </summary>
@@ -158,10 +172,10 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "bbox_annotation_format", n => { BboxAnnotationFormat = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ResponseFormat>(global::Soenneker.Mistral.OpenApiClient.Models.ResponseFormat.CreateFromDiscriminatorValue); } },
-                { "confidence_scores_granularity", n => { ConfidenceScoresGranularity = n.GetEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.OcrRequestConfidenceScoresGranularity>(); } },
+                { "bbox_annotation_format", n => { BboxAnnotationFormat = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.OcrRequestBboxAnnotationFormat>(global::Soenneker.Mistral.OpenApiClient.Models.OcrRequestBboxAnnotationFormat.CreateFromDiscriminatorValue); } },
+                { "confidence_scores_granularity", n => { ConfidenceScoresGranularity = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.OcrRequestConfidenceScoresGranularity>(global::Soenneker.Mistral.OpenApiClient.Models.OcrRequestConfidenceScoresGranularity.CreateFromDiscriminatorValue); } },
                 { "document", n => { Document = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.OcrRequestDocument>(global::Soenneker.Mistral.OpenApiClient.Models.OcrRequestDocument.CreateFromDiscriminatorValue); } },
-                { "document_annotation_format", n => { DocumentAnnotationFormat = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ResponseFormat>(global::Soenneker.Mistral.OpenApiClient.Models.ResponseFormat.CreateFromDiscriminatorValue); } },
+                { "document_annotation_format", n => { DocumentAnnotationFormat = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.OcrRequestDocumentAnnotationFormat>(global::Soenneker.Mistral.OpenApiClient.Models.OcrRequestDocumentAnnotationFormat.CreateFromDiscriminatorValue); } },
                 { "document_annotation_prompt", n => { DocumentAnnotationPrompt = n.GetStringValue(); } },
                 { "extract_footer", n => { ExtractFooter = n.GetBoolValue(); } },
                 { "extract_header", n => { ExtractHeader = n.GetBoolValue(); } },
@@ -171,7 +185,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
                 { "include_image_base64", n => { IncludeImageBase64 = n.GetBoolValue(); } },
                 { "model", n => { Model = n.GetStringValue(); } },
                 { "pages", n => { Pages = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.OcrRequestPages>(global::Soenneker.Mistral.OpenApiClient.Models.OcrRequestPages.CreateFromDiscriminatorValue); } },
-                { "table_format", n => { TableFormat = n.GetEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.OcrRequestTableFormat>(); } },
+                { "table_format", n => { TableFormat = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.OcrRequestTableFormat>(global::Soenneker.Mistral.OpenApiClient.Models.OcrRequestTableFormat.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -181,10 +195,10 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ResponseFormat>("bbox_annotation_format", BboxAnnotationFormat);
-            writer.WriteEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.OcrRequestConfidenceScoresGranularity>("confidence_scores_granularity", ConfidenceScoresGranularity);
+            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.OcrRequestBboxAnnotationFormat>("bbox_annotation_format", BboxAnnotationFormat);
+            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.OcrRequestConfidenceScoresGranularity>("confidence_scores_granularity", ConfidenceScoresGranularity);
             writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.OcrRequestDocument>("document", Document);
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ResponseFormat>("document_annotation_format", DocumentAnnotationFormat);
+            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.OcrRequestDocumentAnnotationFormat>("document_annotation_format", DocumentAnnotationFormat);
             writer.WriteStringValue("document_annotation_prompt", DocumentAnnotationPrompt);
             writer.WriteBoolValue("extract_footer", ExtractFooter);
             writer.WriteBoolValue("extract_header", ExtractHeader);
@@ -194,7 +208,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             writer.WriteBoolValue("include_image_base64", IncludeImageBase64);
             writer.WriteStringValue("model", Model);
             writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.OcrRequestPages>("pages", Pages);
-            writer.WriteEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.OcrRequestTableFormat>("table_format", TableFormat);if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
+            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.OcrRequestTableFormat>("table_format", TableFormat);if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             
         }
     }

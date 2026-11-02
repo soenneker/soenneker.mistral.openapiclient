@@ -33,22 +33,22 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         /// <summary>The moderation_llm_v1 property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.ModerationLlmv1Config? ModerationLlmV1 { get => _explicitNullValueModerationLlmV1; set { _explicitNullValueModerationLlmV1 = value; AdditionalData?.Remove("moderation_llm_v1"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("moderation_llm_v1"); else _explicitNullProperties?.Remove("moderation_llm_v1"); } }
-        private global::Soenneker.Mistral.OpenApiClient.Models.ModerationLlmv1Config? _explicitNullValueModerationLlmV1 = default!;
+        public global::Soenneker.Mistral.OpenApiClient.Models.GuardrailConfigModerationLlmV1? ModerationLlmV1 { get => _explicitNullValueModerationLlmV1; set { _explicitNullValueModerationLlmV1 = value; AdditionalData?.Remove("moderation_llm_v1"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("moderation_llm_v1"); else _explicitNullProperties?.Remove("moderation_llm_v1"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.GuardrailConfigModerationLlmV1? _explicitNullValueModerationLlmV1 = default!;
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.ModerationLlmv1Config ModerationLlmV1 { get => _explicitNullValueModerationLlmV1; set { _explicitNullValueModerationLlmV1 = value; AdditionalData?.Remove("moderation_llm_v1"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("moderation_llm_v1"); else _explicitNullProperties?.Remove("moderation_llm_v1"); } }
-        private global::Soenneker.Mistral.OpenApiClient.Models.ModerationLlmv1Config _explicitNullValueModerationLlmV1 = default!;
+        public global::Soenneker.Mistral.OpenApiClient.Models.GuardrailConfigModerationLlmV1 ModerationLlmV1 { get => _explicitNullValueModerationLlmV1; set { _explicitNullValueModerationLlmV1 = value; AdditionalData?.Remove("moderation_llm_v1"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("moderation_llm_v1"); else _explicitNullProperties?.Remove("moderation_llm_v1"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.GuardrailConfigModerationLlmV1 _explicitNullValueModerationLlmV1 = default!;
 #endif
         /// <summary>The moderation_llm_v2 property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.ModerationLlmv2Config? ModerationLlmV2 { get => _explicitNullValueModerationLlmV2; set { _explicitNullValueModerationLlmV2 = value; AdditionalData?.Remove("moderation_llm_v2"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("moderation_llm_v2"); else _explicitNullProperties?.Remove("moderation_llm_v2"); } }
-        private global::Soenneker.Mistral.OpenApiClient.Models.ModerationLlmv2Config? _explicitNullValueModerationLlmV2 = default!;
+        public global::Soenneker.Mistral.OpenApiClient.Models.GuardrailConfigModerationLlmV2? ModerationLlmV2 { get => _explicitNullValueModerationLlmV2; set { _explicitNullValueModerationLlmV2 = value; AdditionalData?.Remove("moderation_llm_v2"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("moderation_llm_v2"); else _explicitNullProperties?.Remove("moderation_llm_v2"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.GuardrailConfigModerationLlmV2? _explicitNullValueModerationLlmV2 = default!;
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.ModerationLlmv2Config ModerationLlmV2 { get => _explicitNullValueModerationLlmV2; set { _explicitNullValueModerationLlmV2 = value; AdditionalData?.Remove("moderation_llm_v2"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("moderation_llm_v2"); else _explicitNullProperties?.Remove("moderation_llm_v2"); } }
-        private global::Soenneker.Mistral.OpenApiClient.Models.ModerationLlmv2Config _explicitNullValueModerationLlmV2 = default!;
+        public global::Soenneker.Mistral.OpenApiClient.Models.GuardrailConfigModerationLlmV2 ModerationLlmV2 { get => _explicitNullValueModerationLlmV2; set { _explicitNullValueModerationLlmV2 = value; AdditionalData?.Remove("moderation_llm_v2"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("moderation_llm_v2"); else _explicitNullProperties?.Remove("moderation_llm_v2"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.GuardrailConfigModerationLlmV2 _explicitNullValueModerationLlmV2 = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Mistral.OpenApiClient.Models.GuardrailConfig"/> and sets the default values.
@@ -77,8 +77,8 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "block_on_error", n => { BlockOnError = n.GetBoolValue(); } },
-                { "moderation_llm_v1", n => { ModerationLlmV1 = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ModerationLlmv1Config>(global::Soenneker.Mistral.OpenApiClient.Models.ModerationLlmv1Config.CreateFromDiscriminatorValue); } },
-                { "moderation_llm_v2", n => { ModerationLlmV2 = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ModerationLlmv2Config>(global::Soenneker.Mistral.OpenApiClient.Models.ModerationLlmv2Config.CreateFromDiscriminatorValue); } },
+                { "moderation_llm_v1", n => { ModerationLlmV1 = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.GuardrailConfigModerationLlmV1>(global::Soenneker.Mistral.OpenApiClient.Models.GuardrailConfigModerationLlmV1.CreateFromDiscriminatorValue); } },
+                { "moderation_llm_v2", n => { ModerationLlmV2 = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.GuardrailConfigModerationLlmV2>(global::Soenneker.Mistral.OpenApiClient.Models.GuardrailConfigModerationLlmV2.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -89,8 +89,8 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("block_on_error", BlockOnError);
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ModerationLlmv1Config>("moderation_llm_v1", ModerationLlmV1);
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ModerationLlmv2Config>("moderation_llm_v2", ModerationLlmV2);
+            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.GuardrailConfigModerationLlmV1>("moderation_llm_v1", ModerationLlmV1);
+            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.GuardrailConfigModerationLlmV2>("moderation_llm_v2", ModerationLlmV2);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }

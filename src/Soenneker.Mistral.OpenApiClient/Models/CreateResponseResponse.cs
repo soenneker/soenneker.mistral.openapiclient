@@ -193,8 +193,15 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         private string _explicitNullValuePromptCacheKey = default!;
 #endif
         /// <summary>The prompt_cache_retention property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public global::Soenneker.Mistral.OpenApiClient.Models.CreateResponseResponsePromptCacheRetention? PromptCacheRetention { get => _explicitNullValuePromptCacheRetention; set { _explicitNullValuePromptCacheRetention = value; AdditionalData?.Remove("prompt_cache_retention"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("prompt_cache_retention"); else _explicitNullProperties?.Remove("prompt_cache_retention"); } }
         private global::Soenneker.Mistral.OpenApiClient.Models.CreateResponseResponsePromptCacheRetention? _explicitNullValuePromptCacheRetention = default!;
+#nullable restore
+#else
+        public global::Soenneker.Mistral.OpenApiClient.Models.CreateResponseResponsePromptCacheRetention PromptCacheRetention { get => _explicitNullValuePromptCacheRetention; set { _explicitNullValuePromptCacheRetention = value; AdditionalData?.Remove("prompt_cache_retention"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("prompt_cache_retention"); else _explicitNullProperties?.Remove("prompt_cache_retention"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.CreateResponseResponsePromptCacheRetention _explicitNullValuePromptCacheRetention = default!;
+#endif
         /// <summary>The reasoning property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -216,11 +223,25 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         private string _explicitNullValueSafetyIdentifier = default!;
 #endif
         /// <summary>The service_tier property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public global::Soenneker.Mistral.OpenApiClient.Models.CreateResponseResponseServiceTier? ServiceTier { get => _explicitNullValueServiceTier; set { _explicitNullValueServiceTier = value; AdditionalData?.Remove("service_tier"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("service_tier"); else _explicitNullProperties?.Remove("service_tier"); } }
         private global::Soenneker.Mistral.OpenApiClient.Models.CreateResponseResponseServiceTier? _explicitNullValueServiceTier = default!;
+#nullable restore
+#else
+        public global::Soenneker.Mistral.OpenApiClient.Models.CreateResponseResponseServiceTier ServiceTier { get => _explicitNullValueServiceTier; set { _explicitNullValueServiceTier = value; AdditionalData?.Remove("service_tier"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("service_tier"); else _explicitNullProperties?.Remove("service_tier"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.CreateResponseResponseServiceTier _explicitNullValueServiceTier = default!;
+#endif
         /// <summary>The status property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public global::Soenneker.Mistral.OpenApiClient.Models.CreateResponseResponseStatus? Status { get => _explicitNullValueStatus; set { _explicitNullValueStatus = value; AdditionalData?.Remove("status"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status"); else _explicitNullProperties?.Remove("status"); } }
         private global::Soenneker.Mistral.OpenApiClient.Models.CreateResponseResponseStatus? _explicitNullValueStatus = default!;
+#nullable restore
+#else
+        public global::Soenneker.Mistral.OpenApiClient.Models.CreateResponseResponseStatus Status { get => _explicitNullValueStatus; set { _explicitNullValueStatus = value; AdditionalData?.Remove("status"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status"); else _explicitNullProperties?.Remove("status"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.CreateResponseResponseStatus _explicitNullValueStatus = default!;
+#endif
         /// <summary>The temperature property</summary>
         public double? Temperature { get => _explicitNullValueTemperature; set { _explicitNullValueTemperature = value; AdditionalData?.Remove("temperature"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("temperature"); else _explicitNullProperties?.Remove("temperature"); } }
         private double? _explicitNullValueTemperature = default!;
@@ -261,8 +282,15 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         public double? TopP { get => _explicitNullValueTopP; set { _explicitNullValueTopP = value; AdditionalData?.Remove("top_p"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("top_p"); else _explicitNullProperties?.Remove("top_p"); } }
         private double? _explicitNullValueTopP = default!;
         /// <summary>The truncation property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public global::Soenneker.Mistral.OpenApiClient.Models.CreateResponseResponseTruncation? Truncation { get => _explicitNullValueTruncation; set { _explicitNullValueTruncation = value; AdditionalData?.Remove("truncation"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("truncation"); else _explicitNullProperties?.Remove("truncation"); } }
         private global::Soenneker.Mistral.OpenApiClient.Models.CreateResponseResponseTruncation? _explicitNullValueTruncation = default!;
+#nullable restore
+#else
+        public global::Soenneker.Mistral.OpenApiClient.Models.CreateResponseResponseTruncation Truncation { get => _explicitNullValueTruncation; set { _explicitNullValueTruncation = value; AdditionalData?.Remove("truncation"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("truncation"); else _explicitNullProperties?.Remove("truncation"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.CreateResponseResponseTruncation _explicitNullValueTruncation = default!;
+#endif
         /// <summary>The usage property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -324,18 +352,18 @@ namespace Soenneker.Mistral.OpenApiClient.Models
                 { "parallel_tool_calls", n => { ParallelToolCalls = n.GetBoolValue(); } },
                 { "previous_response_id", n => { PreviousResponseId = n.GetStringValue(); } },
                 { "prompt_cache_key", n => { PromptCacheKey = n.GetStringValue(); } },
-                { "prompt_cache_retention", n => { var parsed = n.GetEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.CreateResponseResponsePromptCacheRetention>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValuePromptCacheRetention = default; _explicitNullProperties?.Remove("prompt_cache_retention"); AdditionalData["prompt_cache_retention"] = unknown; } else { PromptCacheRetention = parsed; AdditionalData.Remove("prompt_cache_retention"); } } },
+                { "prompt_cache_retention", n => { PromptCacheRetention = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.CreateResponseResponsePromptCacheRetention>(global::Soenneker.Mistral.OpenApiClient.Models.CreateResponseResponsePromptCacheRetention.CreateFromDiscriminatorValue); } },
                 { "reasoning", n => { Reasoning = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ResponsesSupportedReasoning>(global::Soenneker.Mistral.OpenApiClient.Models.ResponsesSupportedReasoning.CreateFromDiscriminatorValue); } },
                 { "safety_identifier", n => { SafetyIdentifier = n.GetStringValue(); } },
-                { "service_tier", n => { var parsed = n.GetEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.CreateResponseResponseServiceTier>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueServiceTier = default; _explicitNullProperties?.Remove("service_tier"); AdditionalData["service_tier"] = unknown; } else { ServiceTier = parsed; AdditionalData.Remove("service_tier"); } } },
-                { "status", n => { var parsed = n.GetEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.CreateResponseResponseStatus>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueStatus = default; _explicitNullProperties?.Remove("status"); AdditionalData["status"] = unknown; } else { Status = parsed; AdditionalData.Remove("status"); } } },
+                { "service_tier", n => { ServiceTier = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.CreateResponseResponseServiceTier>(global::Soenneker.Mistral.OpenApiClient.Models.CreateResponseResponseServiceTier.CreateFromDiscriminatorValue); } },
+                { "status", n => { Status = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.CreateResponseResponseStatus>(global::Soenneker.Mistral.OpenApiClient.Models.CreateResponseResponseStatus.CreateFromDiscriminatorValue); } },
                 { "temperature", n => { Temperature = n.GetDoubleValue(); } },
                 { "text", n => { Text = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ResponsesTextConfig>(global::Soenneker.Mistral.OpenApiClient.Models.ResponsesTextConfig.CreateFromDiscriminatorValue); } },
                 { "tool_choice", n => { ToolChoice = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.CreateResponseResponseToolChoice>(global::Soenneker.Mistral.OpenApiClient.Models.CreateResponseResponseToolChoice.CreateFromDiscriminatorValue); } },
                 { "tools", n => { Tools = n.GetCollectionOfObjectValues<global::Soenneker.Mistral.OpenApiClient.Models.CountResponseInputTokensRequestToolsItem>(global::Soenneker.Mistral.OpenApiClient.Models.CountResponseInputTokensRequestToolsItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "top_logprobs", n => { TopLogprobs = n.GetIntValue(); } },
                 { "top_p", n => { TopP = n.GetDoubleValue(); } },
-                { "truncation", n => { var parsed = n.GetEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.CreateResponseResponseTruncation>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueTruncation = default; _explicitNullProperties?.Remove("truncation"); AdditionalData["truncation"] = unknown; } else { Truncation = parsed; AdditionalData.Remove("truncation"); } } },
+                { "truncation", n => { Truncation = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.CreateResponseResponseTruncation>(global::Soenneker.Mistral.OpenApiClient.Models.CreateResponseResponseTruncation.CreateFromDiscriminatorValue); } },
                 { "usage", n => { Usage = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ResponsesUsage>(global::Soenneker.Mistral.OpenApiClient.Models.ResponsesUsage.CreateFromDiscriminatorValue); } },
                 { "user", n => { User = n.GetStringValue(); } },
             };
@@ -363,18 +391,18 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             writer.WriteBoolValue("parallel_tool_calls", ParallelToolCalls);
             writer.WriteStringValue("previous_response_id", PreviousResponseId);
             writer.WriteStringValue("prompt_cache_key", PromptCacheKey);
-            writer.WriteEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.CreateResponseResponsePromptCacheRetention>("prompt_cache_retention", PromptCacheRetention);
+            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.CreateResponseResponsePromptCacheRetention>("prompt_cache_retention", PromptCacheRetention);
             writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ResponsesSupportedReasoning>("reasoning", Reasoning);
             writer.WriteStringValue("safety_identifier", SafetyIdentifier);
-            writer.WriteEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.CreateResponseResponseServiceTier>("service_tier", ServiceTier);
-            writer.WriteEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.CreateResponseResponseStatus>("status", Status);
+            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.CreateResponseResponseServiceTier>("service_tier", ServiceTier);
+            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.CreateResponseResponseStatus>("status", Status);
             writer.WriteDoubleValue("temperature", Temperature);
             writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ResponsesTextConfig>("text", Text);
             writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.CreateResponseResponseToolChoice>("tool_choice", ToolChoice);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Mistral.OpenApiClient.Models.CountResponseInputTokensRequestToolsItem>("tools", Tools);
             writer.WriteIntValue("top_logprobs", TopLogprobs);
             writer.WriteDoubleValue("top_p", TopP);
-            writer.WriteEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.CreateResponseResponseTruncation>("truncation", Truncation);
+            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.CreateResponseResponseTruncation>("truncation", Truncation);
             writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ResponsesUsage>("usage", Usage);
             writer.WriteStringValue("user", User);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);

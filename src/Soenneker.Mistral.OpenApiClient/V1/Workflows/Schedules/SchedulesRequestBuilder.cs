@@ -178,8 +178,15 @@ namespace Soenneker.Mistral.OpenApiClient.V1.Workflows.Schedules
             public string Search { get; set; }
 #endif
             /// <summary>Filter by schedule status: &apos;active&apos; or &apos;paused&apos;</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
             [QueryParameter("status")]
-            public global::Soenneker.Mistral.OpenApiClient.Models.GetSchedulesV1WorkflowsSchedulesGetStatusParameter? Status { get; set; }
+            public string? Status { get; set; }
+#nullable restore
+#else
+            [QueryParameter("status")]
+            public string Status { get; set; }
+#endif
             /// <summary>Filter by user ID. Pass &apos;current&apos; to resolve to the authenticated user&apos;s ID.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable

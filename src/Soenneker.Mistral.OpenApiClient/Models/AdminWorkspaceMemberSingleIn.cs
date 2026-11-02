@@ -44,8 +44,15 @@ namespace Soenneker.Mistral.OpenApiClient.Models
 #endif
         /// <summary>Deprecated single role name, kept for backward compatibility. Mutually exclusive with &apos;role&apos;.</summary>
         [Obsolete("")]
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public global::Soenneker.Mistral.OpenApiClient.Models.AdminWorkspaceMemberSingleInRoleName? RoleName { get => _explicitNullValueRoleName; set { _explicitNullValueRoleName = value; AdditionalData?.Remove("role_name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("role_name"); else _explicitNullProperties?.Remove("role_name"); } }
         private global::Soenneker.Mistral.OpenApiClient.Models.AdminWorkspaceMemberSingleInRoleName? _explicitNullValueRoleName = default!;
+#nullable restore
+#else
+        public global::Soenneker.Mistral.OpenApiClient.Models.AdminWorkspaceMemberSingleInRoleName RoleName { get => _explicitNullValueRoleName; set { _explicitNullValueRoleName = value; AdditionalData?.Remove("role_name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("role_name"); else _explicitNullProperties?.Remove("role_name"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.AdminWorkspaceMemberSingleInRoleName _explicitNullValueRoleName = default!;
+#endif
         /// <summary>Simplified role names to assign. Mutually exclusive with &apos;roles&apos;.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -95,7 +102,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "role", n => { Role = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.AdminWorkspaceMemberSingleInRole>(global::Soenneker.Mistral.OpenApiClient.Models.AdminWorkspaceMemberSingleInRole.CreateFromDiscriminatorValue); } },
-                { "role_name", n => { var parsed = n.GetEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.AdminWorkspaceMemberSingleInRoleName>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueRoleName = default; _explicitNullProperties?.Remove("role_name"); AdditionalData["role_name"] = unknown; } else { RoleName = parsed; AdditionalData.Remove("role_name"); } } },
+                { "role_name", n => { RoleName = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.AdminWorkspaceMemberSingleInRoleName>(global::Soenneker.Mistral.OpenApiClient.Models.AdminWorkspaceMemberSingleInRoleName.CreateFromDiscriminatorValue); } },
                 { "role_names", n => { RoleNames = n.GetCollectionOfEnumValues<global::Soenneker.Mistral.OpenApiClient.Models.AdminWorkspaceMemberSingleInRoleNamesItem>()?.AsList(); } },
                 { "roles", n => { Roles = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.AdminWorkspaceMemberSingleInRoles>(global::Soenneker.Mistral.OpenApiClient.Models.AdminWorkspaceMemberSingleInRoles.CreateFromDiscriminatorValue); } },
                 { "user_uuid", n => { UserUuid = n.GetGuidValue(); } },
@@ -109,7 +116,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.AdminWorkspaceMemberSingleInRole>("role", Role);
-            writer.WriteEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.AdminWorkspaceMemberSingleInRoleName>("role_name", RoleName);
+            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.AdminWorkspaceMemberSingleInRoleName>("role_name", RoleName);
             writer.WriteCollectionOfEnumValues<global::Soenneker.Mistral.OpenApiClient.Models.AdminWorkspaceMemberSingleInRoleNamesItem>("role_names", RoleNames);
             writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.AdminWorkspaceMemberSingleInRoles>("roles", Roles);
             writer.WriteGuidValue("user_uuid", UserUuid);

@@ -182,8 +182,15 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         public DateTimeOffset? Start { get => _explicitNullValueStart; set { _explicitNullValueStart = value; AdditionalData?.Remove("start"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("start"); else _explicitNullProperties?.Remove("start"); } }
         private DateTimeOffset? _explicitNullValueStart = default!;
         /// <summary>Time interval used to bucket grouped rows.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public global::Soenneker.Mistral.OpenApiClient.Models.UsageQueryInTimeBucket? TimeBucket { get => _explicitNullValueTimeBucket; set { _explicitNullValueTimeBucket = value; AdditionalData?.Remove("time_bucket"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("time_bucket"); else _explicitNullProperties?.Remove("time_bucket"); } }
         private global::Soenneker.Mistral.OpenApiClient.Models.UsageQueryInTimeBucket? _explicitNullValueTimeBucket = default!;
+#nullable restore
+#else
+        public global::Soenneker.Mistral.OpenApiClient.Models.UsageQueryInTimeBucket TimeBucket { get => _explicitNullValueTimeBucket; set { _explicitNullValueTimeBucket = value; AdditionalData?.Remove("time_bucket"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("time_bucket"); else _explicitNullProperties?.Remove("time_bucket"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.UsageQueryInTimeBucket _explicitNullValueTimeBucket = default!;
+#endif
         /// <summary>Filter by attribution status. Omit or use null to include both tracked and untracked usage.</summary>
         public bool? Untracked { get => _explicitNullValueUntracked; set { _explicitNullValueUntracked = value; AdditionalData?.Remove("untracked"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("untracked"); else _explicitNullProperties?.Remove("untracked"); } }
         private bool? _explicitNullValueUntracked = default!;
@@ -260,7 +267,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
                 { "service_account_id", n => { ServiceAccountId = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "service_tier", n => { ServiceTier = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "start", n => { Start = n.GetDateTimeOffsetValue(); } },
-                { "time_bucket", n => { var parsed = n.GetEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.UsageQueryInTimeBucket>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueTimeBucket = default; _explicitNullProperties?.Remove("time_bucket"); AdditionalData["time_bucket"] = unknown; } else { TimeBucket = parsed; AdditionalData.Remove("time_bucket"); } } },
+                { "time_bucket", n => { TimeBucket = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.UsageQueryInTimeBucket>(global::Soenneker.Mistral.OpenApiClient.Models.UsageQueryInTimeBucket.CreateFromDiscriminatorValue); } },
                 { "untracked", n => { Untracked = n.GetBoolValue(); } },
                 { "usage_type", n => { UsageType = n.GetCollectionOfEnumValues<global::Soenneker.Mistral.OpenApiClient.Models.UsageType>()?.AsList(); } },
                 { "user_id", n => { UserId = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
@@ -290,7 +297,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             writer.WriteCollectionOfPrimitiveValues<string>("service_account_id", ServiceAccountId);
             writer.WriteCollectionOfPrimitiveValues<string>("service_tier", ServiceTier);
             writer.WriteDateTimeOffsetValue("start", Start);
-            writer.WriteEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.UsageQueryInTimeBucket>("time_bucket", TimeBucket);
+            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.UsageQueryInTimeBucket>("time_bucket", TimeBucket);
             writer.WriteBoolValue("untracked", Untracked);
             writer.WriteCollectionOfEnumValues<global::Soenneker.Mistral.OpenApiClient.Models.UsageType>("usage_type", UsageType);
             writer.WriteCollectionOfPrimitiveValues<string>("user_id", UserId);

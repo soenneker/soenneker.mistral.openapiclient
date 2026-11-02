@@ -45,12 +45,12 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         /// <summary>Where the worker is running; null if the worker did not report a location</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.DeploymentLocation? Location { get => _explicitNullValueLocation; set { _explicitNullValueLocation = value; AdditionalData?.Remove("location"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("location"); else _explicitNullProperties?.Remove("location"); } }
-        private global::Soenneker.Mistral.OpenApiClient.Models.DeploymentLocation? _explicitNullValueLocation = default!;
+        public global::Soenneker.Mistral.OpenApiClient.Models.DeploymentWorkerResponseLocation? Location { get => _explicitNullValueLocation; set { _explicitNullValueLocation = value; AdditionalData?.Remove("location"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("location"); else _explicitNullProperties?.Remove("location"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.DeploymentWorkerResponseLocation? _explicitNullValueLocation = default!;
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.DeploymentLocation Location { get => _explicitNullValueLocation; set { _explicitNullValueLocation = value; AdditionalData?.Remove("location"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("location"); else _explicitNullProperties?.Remove("location"); } }
-        private global::Soenneker.Mistral.OpenApiClient.Models.DeploymentLocation _explicitNullValueLocation = default!;
+        public global::Soenneker.Mistral.OpenApiClient.Models.DeploymentWorkerResponseLocation Location { get => _explicitNullValueLocation; set { _explicitNullValueLocation = value; AdditionalData?.Remove("location"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("location"); else _explicitNullProperties?.Remove("location"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.DeploymentWorkerResponseLocation _explicitNullValueLocation = default!;
 #endif
         /// <summary>Worker name</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -94,7 +94,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
                 { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
                 { "is_active", n => { IsActive = n.GetBoolValue(); } },
                 { "last_heartbeat", n => { LastHeartbeat = n.GetDateTimeOffsetValue(); } },
-                { "location", n => { Location = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.DeploymentLocation>(global::Soenneker.Mistral.OpenApiClient.Models.DeploymentLocation.CreateFromDiscriminatorValue); } },
+                { "location", n => { Location = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.DeploymentWorkerResponseLocation>(global::Soenneker.Mistral.OpenApiClient.Models.DeploymentWorkerResponseLocation.CreateFromDiscriminatorValue); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
             };
@@ -109,7 +109,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             writer.WriteDateTimeOffsetValue("created_at", CreatedAt);
             writer.WriteBoolValue("is_active", IsActive);
             writer.WriteDateTimeOffsetValue("last_heartbeat", LastHeartbeat);
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.DeploymentLocation>("location", Location);
+            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.DeploymentWorkerResponseLocation>("location", Location);
             writer.WriteStringValue("name", Name);
             writer.WriteDateTimeOffsetValue("updated_at", UpdatedAt);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);

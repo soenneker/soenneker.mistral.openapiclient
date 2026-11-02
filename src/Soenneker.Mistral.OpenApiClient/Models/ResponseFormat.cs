@@ -27,12 +27,12 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         /// <summary>The json_schema property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.JsonSchema? JsonSchema { get => _explicitNullValueJsonSchema; set { _explicitNullValueJsonSchema = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("json_schema"); else _explicitNullProperties?.Remove("json_schema"); } }
-        private global::Soenneker.Mistral.OpenApiClient.Models.JsonSchema? _explicitNullValueJsonSchema = default!;
+        public global::Soenneker.Mistral.OpenApiClient.Models.ResponseFormatJsonSchema? JsonSchema { get => _explicitNullValueJsonSchema; set { _explicitNullValueJsonSchema = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("json_schema"); else _explicitNullProperties?.Remove("json_schema"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.ResponseFormatJsonSchema? _explicitNullValueJsonSchema = default!;
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.JsonSchema JsonSchema { get => _explicitNullValueJsonSchema; set { _explicitNullValueJsonSchema = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("json_schema"); else _explicitNullProperties?.Remove("json_schema"); } }
-        private global::Soenneker.Mistral.OpenApiClient.Models.JsonSchema _explicitNullValueJsonSchema = default!;
+        public global::Soenneker.Mistral.OpenApiClient.Models.ResponseFormatJsonSchema JsonSchema { get => _explicitNullValueJsonSchema; set { _explicitNullValueJsonSchema = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("json_schema"); else _explicitNullProperties?.Remove("json_schema"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.ResponseFormatJsonSchema _explicitNullValueJsonSchema = default!;
 #endif
         /// <summary>The type property</summary>
         public global::Soenneker.Mistral.OpenApiClient.Models.ResponseFormats? Type { get => _explicitNullValueType; set { _explicitNullValueType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
@@ -62,7 +62,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "json_schema", n => { JsonSchema = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.JsonSchema>(global::Soenneker.Mistral.OpenApiClient.Models.JsonSchema.CreateFromDiscriminatorValue); } },
+                { "json_schema", n => { JsonSchema = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ResponseFormatJsonSchema>(global::Soenneker.Mistral.OpenApiClient.Models.ResponseFormatJsonSchema.CreateFromDiscriminatorValue); } },
                 { "type", n => { Type = n.GetEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.ResponseFormats>(); } },
             };
         }
@@ -73,7 +73,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.JsonSchema>("json_schema", JsonSchema);
+            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ResponseFormatJsonSchema>("json_schema", JsonSchema);
             writer.WriteEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.ResponseFormats>("type", Type);if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             
         }

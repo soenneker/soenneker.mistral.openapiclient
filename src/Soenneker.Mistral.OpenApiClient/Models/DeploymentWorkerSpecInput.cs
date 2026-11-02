@@ -30,12 +30,12 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         /// <summary>Backend-specific configuration for the Mistral Cloud backend.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.DeploymentMistralCloudBackendSpec? BackendSpec { get => _explicitNullValueBackendSpec; set { _explicitNullValueBackendSpec = value; AdditionalData?.Remove("backend_spec"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("backend_spec"); else _explicitNullProperties?.Remove("backend_spec"); } }
-        private global::Soenneker.Mistral.OpenApiClient.Models.DeploymentMistralCloudBackendSpec? _explicitNullValueBackendSpec = default!;
+        public global::Soenneker.Mistral.OpenApiClient.Models.DeploymentWorkerSpecInputBackendSpec? BackendSpec { get => _explicitNullValueBackendSpec; set { _explicitNullValueBackendSpec = value; AdditionalData?.Remove("backend_spec"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("backend_spec"); else _explicitNullProperties?.Remove("backend_spec"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.DeploymentWorkerSpecInputBackendSpec? _explicitNullValueBackendSpec = default!;
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.DeploymentMistralCloudBackendSpec BackendSpec { get => _explicitNullValueBackendSpec; set { _explicitNullValueBackendSpec = value; AdditionalData?.Remove("backend_spec"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("backend_spec"); else _explicitNullProperties?.Remove("backend_spec"); } }
-        private global::Soenneker.Mistral.OpenApiClient.Models.DeploymentMistralCloudBackendSpec _explicitNullValueBackendSpec = default!;
+        public global::Soenneker.Mistral.OpenApiClient.Models.DeploymentWorkerSpecInputBackendSpec BackendSpec { get => _explicitNullValueBackendSpec; set { _explicitNullValueBackendSpec = value; AdditionalData?.Remove("backend_spec"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("backend_spec"); else _explicitNullProperties?.Remove("backend_spec"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.DeploymentWorkerSpecInputBackendSpec _explicitNullValueBackendSpec = default!;
 #endif
         /// <summary>The github_url property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -83,7 +83,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "backend_spec", n => { BackendSpec = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.DeploymentMistralCloudBackendSpec>(global::Soenneker.Mistral.OpenApiClient.Models.DeploymentMistralCloudBackendSpec.CreateFromDiscriminatorValue); } },
+                { "backend_spec", n => { BackendSpec = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.DeploymentWorkerSpecInputBackendSpec>(global::Soenneker.Mistral.OpenApiClient.Models.DeploymentWorkerSpecInputBackendSpec.CreateFromDiscriminatorValue); } },
                 { "github_url", n => { GithubUrl = n.GetStringValue(); } },
                 { "revision", n => { Revision = n.GetStringValue(); } },
             };
@@ -95,7 +95,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.DeploymentMistralCloudBackendSpec>("backend_spec", BackendSpec);
+            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.DeploymentWorkerSpecInputBackendSpec>("backend_spec", BackendSpec);
             writer.WriteStringValue("github_url", GithubUrl);
             writer.WriteStringValue("revision", Revision);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);

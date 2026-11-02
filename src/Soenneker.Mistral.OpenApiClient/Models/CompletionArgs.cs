@@ -48,15 +48,15 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         /// <summary>The max_tokens property</summary>
         public int? MaxTokens { get => _explicitNullValueMaxTokens; set { _explicitNullValueMaxTokens = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("max_tokens"); else _explicitNullProperties?.Remove("max_tokens"); } }
         private int? _explicitNullValueMaxTokens = default!;
-        /// <summary>The prediction property</summary>
+        /// <summary>Enable users to specify an expected completion, optimizing response times by leveraging known or predictable content.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.Prediction? Prediction { get => _explicitNullValuePrediction; set { _explicitNullValuePrediction = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("prediction"); else _explicitNullProperties?.Remove("prediction"); } }
-        private global::Soenneker.Mistral.OpenApiClient.Models.Prediction? _explicitNullValuePrediction = default!;
+        public global::Soenneker.Mistral.OpenApiClient.Models.CompletionArgsPrediction? Prediction { get => _explicitNullValuePrediction; set { _explicitNullValuePrediction = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("prediction"); else _explicitNullProperties?.Remove("prediction"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.CompletionArgsPrediction? _explicitNullValuePrediction = default!;
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.Prediction Prediction { get => _explicitNullValuePrediction; set { _explicitNullValuePrediction = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("prediction"); else _explicitNullProperties?.Remove("prediction"); } }
-        private global::Soenneker.Mistral.OpenApiClient.Models.Prediction _explicitNullValuePrediction = default!;
+        public global::Soenneker.Mistral.OpenApiClient.Models.CompletionArgsPrediction Prediction { get => _explicitNullValuePrediction; set { _explicitNullValuePrediction = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("prediction"); else _explicitNullProperties?.Remove("prediction"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.CompletionArgsPrediction _explicitNullValuePrediction = default!;
 #endif
         /// <summary>The presence_penalty property</summary>
         public double? PresencePenalty { get => _explicitNullValuePresencePenalty; set { _explicitNullValuePresencePenalty = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("presence_penalty"); else _explicitNullProperties?.Remove("presence_penalty"); } }
@@ -67,15 +67,15 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         /// <summary>The reasoning_effort property</summary>
         public global::Soenneker.Mistral.OpenApiClient.Models.ReasoningEffort? ReasoningEffort { get => _explicitNullValueReasoningEffort; set { _explicitNullValueReasoningEffort = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("reasoning_effort"); else _explicitNullProperties?.Remove("reasoning_effort"); } }
         private global::Soenneker.Mistral.OpenApiClient.Models.ReasoningEffort? _explicitNullValueReasoningEffort = default!;
-        /// <summary>The response_format property</summary>
+        /// <summary>Specify the format that the model must output. By default it will use `{ &quot;type&quot;: &quot;text&quot; }`. Setting to `{ &quot;type&quot;: &quot;json_object&quot; }` enables JSON mode, which guarantees the message the model generates is in JSON. When using JSON mode you MUST also instruct the model to produce JSON yourself with a system or a user message. Setting to `{ &quot;type&quot;: &quot;json_schema&quot; }` enables JSON schema mode, which guarantees the message the model generates is in JSON and follows the schema you provide.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.ResponseFormat? ResponseFormat { get => _explicitNullValueResponseFormat; set { _explicitNullValueResponseFormat = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("response_format"); else _explicitNullProperties?.Remove("response_format"); } }
-        private global::Soenneker.Mistral.OpenApiClient.Models.ResponseFormat? _explicitNullValueResponseFormat = default!;
+        public global::Soenneker.Mistral.OpenApiClient.Models.CompletionArgsResponseFormat? ResponseFormat { get => _explicitNullValueResponseFormat; set { _explicitNullValueResponseFormat = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("response_format"); else _explicitNullProperties?.Remove("response_format"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.CompletionArgsResponseFormat? _explicitNullValueResponseFormat = default!;
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.ResponseFormat ResponseFormat { get => _explicitNullValueResponseFormat; set { _explicitNullValueResponseFormat = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("response_format"); else _explicitNullProperties?.Remove("response_format"); } }
-        private global::Soenneker.Mistral.OpenApiClient.Models.ResponseFormat _explicitNullValueResponseFormat = default!;
+        public global::Soenneker.Mistral.OpenApiClient.Models.CompletionArgsResponseFormat ResponseFormat { get => _explicitNullValueResponseFormat; set { _explicitNullValueResponseFormat = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("response_format"); else _explicitNullProperties?.Remove("response_format"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.CompletionArgsResponseFormat _explicitNullValueResponseFormat = default!;
 #endif
         /// <summary>The stop property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -123,11 +123,11 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             {
                 { "frequency_penalty", n => { FrequencyPenalty = n.GetDoubleValue(); } },
                 { "max_tokens", n => { MaxTokens = n.GetIntValue(); } },
-                { "prediction", n => { Prediction = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.Prediction>(global::Soenneker.Mistral.OpenApiClient.Models.Prediction.CreateFromDiscriminatorValue); } },
+                { "prediction", n => { Prediction = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.CompletionArgsPrediction>(global::Soenneker.Mistral.OpenApiClient.Models.CompletionArgsPrediction.CreateFromDiscriminatorValue); } },
                 { "presence_penalty", n => { PresencePenalty = n.GetDoubleValue(); } },
                 { "random_seed", n => { RandomSeed = n.GetIntValue(); } },
                 { "reasoning_effort", n => { ReasoningEffort = n.GetEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.ReasoningEffort>(); } },
-                { "response_format", n => { ResponseFormat = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ResponseFormat>(global::Soenneker.Mistral.OpenApiClient.Models.ResponseFormat.CreateFromDiscriminatorValue); } },
+                { "response_format", n => { ResponseFormat = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.CompletionArgsResponseFormat>(global::Soenneker.Mistral.OpenApiClient.Models.CompletionArgsResponseFormat.CreateFromDiscriminatorValue); } },
                 { "stop", n => { Stop = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.CompletionArgsStop>(global::Soenneker.Mistral.OpenApiClient.Models.CompletionArgsStop.CreateFromDiscriminatorValue); } },
                 { "temperature", n => { Temperature = n.GetDoubleValue(); } },
                 { "tool_choice", n => { ToolChoice = n.GetEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.ToolChoiceEnum>(); } },
@@ -143,11 +143,11 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteDoubleValue("frequency_penalty", FrequencyPenalty);
             writer.WriteIntValue("max_tokens", MaxTokens);
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.Prediction>("prediction", Prediction);
+            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.CompletionArgsPrediction>("prediction", Prediction);
             writer.WriteDoubleValue("presence_penalty", PresencePenalty);
             writer.WriteIntValue("random_seed", RandomSeed);
             writer.WriteEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.ReasoningEffort>("reasoning_effort", ReasoningEffort);
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ResponseFormat>("response_format", ResponseFormat);
+            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.CompletionArgsResponseFormat>("response_format", ResponseFormat);
             writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.CompletionArgsStop>("stop", Stop);
             writer.WriteDoubleValue("temperature", Temperature);
             writer.WriteEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.ToolChoiceEnum>("tool_choice", ToolChoice);

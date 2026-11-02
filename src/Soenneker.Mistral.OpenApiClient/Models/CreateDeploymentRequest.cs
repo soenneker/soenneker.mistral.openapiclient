@@ -45,12 +45,12 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         /// <summary>The resources property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.DeploymentResourceConfig? Resources { get => _explicitNullValueResources; set { _explicitNullValueResources = value; AdditionalData?.Remove("resources"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("resources"); else _explicitNullProperties?.Remove("resources"); } }
-        private global::Soenneker.Mistral.OpenApiClient.Models.DeploymentResourceConfig? _explicitNullValueResources = default!;
+        public global::Soenneker.Mistral.OpenApiClient.Models.CreateDeploymentRequestResources? Resources { get => _explicitNullValueResources; set { _explicitNullValueResources = value; AdditionalData?.Remove("resources"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("resources"); else _explicitNullProperties?.Remove("resources"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.CreateDeploymentRequestResources? _explicitNullValueResources = default!;
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.DeploymentResourceConfig Resources { get => _explicitNullValueResources; set { _explicitNullValueResources = value; AdditionalData?.Remove("resources"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("resources"); else _explicitNullProperties?.Remove("resources"); } }
-        private global::Soenneker.Mistral.OpenApiClient.Models.DeploymentResourceConfig _explicitNullValueResources = default!;
+        public global::Soenneker.Mistral.OpenApiClient.Models.CreateDeploymentRequestResources Resources { get => _explicitNullValueResources; set { _explicitNullValueResources = value; AdditionalData?.Remove("resources"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("resources"); else _explicitNullProperties?.Remove("resources"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.CreateDeploymentRequestResources _explicitNullValueResources = default!;
 #endif
         /// <summary>The spec property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -90,7 +90,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             {
                 { "hardened", n => { Hardened = n.GetBoolValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
-                { "resources", n => { Resources = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.DeploymentResourceConfig>(global::Soenneker.Mistral.OpenApiClient.Models.DeploymentResourceConfig.CreateFromDiscriminatorValue); } },
+                { "resources", n => { Resources = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.CreateDeploymentRequestResources>(global::Soenneker.Mistral.OpenApiClient.Models.CreateDeploymentRequestResources.CreateFromDiscriminatorValue); } },
                 { "spec", n => { Spec = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.DeploymentWorkerSpecInput>(global::Soenneker.Mistral.OpenApiClient.Models.DeploymentWorkerSpecInput.CreateFromDiscriminatorValue); } },
             };
         }
@@ -103,7 +103,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("hardened", Hardened);
             writer.WriteStringValue("name", Name);
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.DeploymentResourceConfig>("resources", Resources);
+            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.CreateDeploymentRequestResources>("resources", Resources);
             writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.DeploymentWorkerSpecInput>("spec", Spec);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);

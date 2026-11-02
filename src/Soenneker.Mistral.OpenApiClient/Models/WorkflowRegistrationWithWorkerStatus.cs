@@ -86,12 +86,12 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         /// <summary>Workflow of the workflow registration</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.Workflow? Workflow { get => _explicitNullValueWorkflow; set { _explicitNullValueWorkflow = value; AdditionalData?.Remove("workflow"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("workflow"); else _explicitNullProperties?.Remove("workflow"); } }
-        private global::Soenneker.Mistral.OpenApiClient.Models.Workflow? _explicitNullValueWorkflow = default!;
+        public global::Soenneker.Mistral.OpenApiClient.Models.WorkflowRegistrationWithWorkerStatusWorkflow? Workflow { get => _explicitNullValueWorkflow; set { _explicitNullValueWorkflow = value; AdditionalData?.Remove("workflow"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("workflow"); else _explicitNullProperties?.Remove("workflow"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.WorkflowRegistrationWithWorkerStatusWorkflow? _explicitNullValueWorkflow = default!;
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.Workflow Workflow { get => _explicitNullValueWorkflow; set { _explicitNullValueWorkflow = value; AdditionalData?.Remove("workflow"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("workflow"); else _explicitNullProperties?.Remove("workflow"); } }
-        private global::Soenneker.Mistral.OpenApiClient.Models.Workflow _explicitNullValueWorkflow = default!;
+        public global::Soenneker.Mistral.OpenApiClient.Models.WorkflowRegistrationWithWorkerStatusWorkflow Workflow { get => _explicitNullValueWorkflow; set { _explicitNullValueWorkflow = value; AdditionalData?.Remove("workflow"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("workflow"); else _explicitNullProperties?.Remove("workflow"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.WorkflowRegistrationWithWorkerStatusWorkflow _explicitNullValueWorkflow = default!;
 #endif
         /// <summary>Workflow ID of the workflow</summary>
         public Guid? WorkflowId { get => _explicitNullValueWorkflowId; set { _explicitNullValueWorkflowId = value; AdditionalData?.Remove("workflow_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("workflow_id"); else _explicitNullProperties?.Remove("workflow_id"); } }
@@ -129,7 +129,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
                 { "deployment_name", n => { DeploymentName = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetGuidValue(); } },
                 { "task_queue", n => { TaskQueue = n.GetStringValue(); } },
-                { "workflow", n => { Workflow = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.Workflow>(global::Soenneker.Mistral.OpenApiClient.Models.Workflow.CreateFromDiscriminatorValue); } },
+                { "workflow", n => { Workflow = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.WorkflowRegistrationWithWorkerStatusWorkflow>(global::Soenneker.Mistral.OpenApiClient.Models.WorkflowRegistrationWithWorkerStatusWorkflow.CreateFromDiscriminatorValue); } },
                 { "workflow_id", n => { WorkflowId = n.GetGuidValue(); } },
             };
         }
@@ -147,7 +147,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             writer.WriteStringValue("deployment_name", DeploymentName);
             writer.WriteGuidValue("id", Id);
             writer.WriteStringValue("task_queue", TaskQueue);
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.Workflow>("workflow", Workflow);
+            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.WorkflowRegistrationWithWorkerStatusWorkflow>("workflow", Workflow);
             writer.WriteGuidValue("workflow_id", WorkflowId);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);

@@ -32,15 +32,15 @@ namespace Soenneker.Mistral.OpenApiClient.Models
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The authentication property</summary>
+        /// <summary>Authentication requirements for a remote transport (SEP-2127).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.McpServerAuthenticationRequirement? Authentication { get => _explicitNullValueAuthentication; set { _explicitNullValueAuthentication = value; AdditionalData?.Remove("authentication"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("authentication"); else _explicitNullProperties?.Remove("authentication"); } }
-        private global::Soenneker.Mistral.OpenApiClient.Models.McpServerAuthenticationRequirement? _explicitNullValueAuthentication = default!;
+        public global::Soenneker.Mistral.OpenApiClient.Models.McpServerRemoteAuthentication? Authentication { get => _explicitNullValueAuthentication; set { _explicitNullValueAuthentication = value; AdditionalData?.Remove("authentication"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("authentication"); else _explicitNullProperties?.Remove("authentication"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.McpServerRemoteAuthentication? _explicitNullValueAuthentication = default!;
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.McpServerAuthenticationRequirement Authentication { get => _explicitNullValueAuthentication; set { _explicitNullValueAuthentication = value; AdditionalData?.Remove("authentication"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("authentication"); else _explicitNullProperties?.Remove("authentication"); } }
-        private global::Soenneker.Mistral.OpenApiClient.Models.McpServerAuthenticationRequirement _explicitNullValueAuthentication = default!;
+        public global::Soenneker.Mistral.OpenApiClient.Models.McpServerRemoteAuthentication Authentication { get => _explicitNullValueAuthentication; set { _explicitNullValueAuthentication = value; AdditionalData?.Remove("authentication"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("authentication"); else _explicitNullProperties?.Remove("authentication"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.McpServerRemoteAuthentication _explicitNullValueAuthentication = default!;
 #endif
         /// <summary>The headers property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -100,7 +100,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "authentication", n => { Authentication = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.McpServerAuthenticationRequirement>(global::Soenneker.Mistral.OpenApiClient.Models.McpServerAuthenticationRequirement.CreateFromDiscriminatorValue); } },
+                { "authentication", n => { Authentication = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.McpServerRemoteAuthentication>(global::Soenneker.Mistral.OpenApiClient.Models.McpServerRemoteAuthentication.CreateFromDiscriminatorValue); } },
                 { "headers", n => { Headers = n.GetCollectionOfObjectValues<global::Soenneker.Mistral.OpenApiClient.Models.McpServerRemoteHeader>(global::Soenneker.Mistral.OpenApiClient.Models.McpServerRemoteHeader.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "supportedProtocolVersions", n => { SupportedProtocolVersions = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "type", n => { var parsed = n.GetEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.McpServerRemoteType>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueType = default; _explicitNullProperties?.Remove("type"); AdditionalData["type"] = unknown; } else { Type = parsed; AdditionalData.Remove("type"); } } },
@@ -114,7 +114,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.McpServerAuthenticationRequirement>("authentication", Authentication);
+            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.McpServerRemoteAuthentication>("authentication", Authentication);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Mistral.OpenApiClient.Models.McpServerRemoteHeader>("headers", Headers);
             writer.WriteCollectionOfPrimitiveValues<string>("supportedProtocolVersions", SupportedProtocolVersions);
             writer.WriteEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.McpServerRemoteType>("type", Type);

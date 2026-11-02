@@ -93,12 +93,12 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         /// <summary>The evaluation property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.OptimizationReference? Evaluation { get => _explicitNullValueEvaluation; set { _explicitNullValueEvaluation = value; AdditionalData?.Remove("evaluation"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("evaluation"); else _explicitNullProperties?.Remove("evaluation"); } }
-        private global::Soenneker.Mistral.OpenApiClient.Models.OptimizationReference? _explicitNullValueEvaluation = default!;
+        public global::Soenneker.Mistral.OpenApiClient.Models.OptimizationDetailEvaluation? Evaluation { get => _explicitNullValueEvaluation; set { _explicitNullValueEvaluation = value; AdditionalData?.Remove("evaluation"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("evaluation"); else _explicitNullProperties?.Remove("evaluation"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.OptimizationDetailEvaluation? _explicitNullValueEvaluation = default!;
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.OptimizationReference Evaluation { get => _explicitNullValueEvaluation; set { _explicitNullValueEvaluation = value; AdditionalData?.Remove("evaluation"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("evaluation"); else _explicitNullProperties?.Remove("evaluation"); } }
-        private global::Soenneker.Mistral.OpenApiClient.Models.OptimizationReference _explicitNullValueEvaluation = default!;
+        public global::Soenneker.Mistral.OpenApiClient.Models.OptimizationDetailEvaluation Evaluation { get => _explicitNullValueEvaluation; set { _explicitNullValueEvaluation = value; AdditionalData?.Remove("evaluation"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("evaluation"); else _explicitNullProperties?.Remove("evaluation"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.OptimizationDetailEvaluation _explicitNullValueEvaluation = default!;
 #endif
         /// <summary>The evaluation_id property</summary>
         public Guid? EvaluationId { get => _explicitNullValueEvaluationId; set { _explicitNullValueEvaluationId = value; AdditionalData?.Remove("evaluation_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("evaluation_id"); else _explicitNullProperties?.Remove("evaluation_id"); } }
@@ -139,12 +139,12 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         /// <summary>The project property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.OptimizationReference? Project { get => _explicitNullValueProject; set { _explicitNullValueProject = value; AdditionalData?.Remove("project"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("project"); else _explicitNullProperties?.Remove("project"); } }
-        private global::Soenneker.Mistral.OpenApiClient.Models.OptimizationReference? _explicitNullValueProject = default!;
+        public global::Soenneker.Mistral.OpenApiClient.Models.OptimizationDetailEvaluation? Project { get => _explicitNullValueProject; set { _explicitNullValueProject = value; AdditionalData?.Remove("project"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("project"); else _explicitNullProperties?.Remove("project"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.OptimizationDetailEvaluation? _explicitNullValueProject = default!;
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.OptimizationReference Project { get => _explicitNullValueProject; set { _explicitNullValueProject = value; AdditionalData?.Remove("project"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("project"); else _explicitNullProperties?.Remove("project"); } }
-        private global::Soenneker.Mistral.OpenApiClient.Models.OptimizationReference _explicitNullValueProject = default!;
+        public global::Soenneker.Mistral.OpenApiClient.Models.OptimizationDetailEvaluation Project { get => _explicitNullValueProject; set { _explicitNullValueProject = value; AdditionalData?.Remove("project"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("project"); else _explicitNullProperties?.Remove("project"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.OptimizationDetailEvaluation _explicitNullValueProject = default!;
 #endif
         /// <summary>The project_id property</summary>
         public Guid? ProjectId { get => _explicitNullValueProjectId; set { _explicitNullValueProjectId = value; AdditionalData?.Remove("project_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("project_id"); else _explicitNullProperties?.Remove("project_id"); } }
@@ -242,13 +242,13 @@ namespace Soenneker.Mistral.OpenApiClient.Models
                 { "creator_id", n => { CreatorId = n.GetGuidValue(); } },
                 { "deleted_at", n => { DeletedAt = n.GetDateTimeOffsetValue(); } },
                 { "description", n => { Description = n.GetStringValue(); } },
-                { "evaluation", n => { Evaluation = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.OptimizationReference>(global::Soenneker.Mistral.OpenApiClient.Models.OptimizationReference.CreateFromDiscriminatorValue); } },
+                { "evaluation", n => { Evaluation = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.OptimizationDetailEvaluation>(global::Soenneker.Mistral.OpenApiClient.Models.OptimizationDetailEvaluation.CreateFromDiscriminatorValue); } },
                 { "evaluation_id", n => { EvaluationId = n.GetGuidValue(); } },
                 { "id", n => { Id = n.GetGuidValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "objective_spec", n => { ObjectiveSpec = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.OptimizationDetailObjectiveSpecProperty>(global::Soenneker.Mistral.OpenApiClient.Models.OptimizationDetailObjectiveSpecProperty.CreateFromDiscriminatorValue); } },
                 { "outcome", n => { Outcome = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.OptimizationDetailOutcomeProperty>(global::Soenneker.Mistral.OpenApiClient.Models.OptimizationDetailOutcomeProperty.CreateFromDiscriminatorValue); } },
-                { "project", n => { Project = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.OptimizationReference>(global::Soenneker.Mistral.OpenApiClient.Models.OptimizationReference.CreateFromDiscriminatorValue); } },
+                { "project", n => { Project = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.OptimizationDetailEvaluation>(global::Soenneker.Mistral.OpenApiClient.Models.OptimizationDetailEvaluation.CreateFromDiscriminatorValue); } },
                 { "project_id", n => { ProjectId = n.GetGuidValue(); } },
                 { "source", n => { Source = n.GetStringValue(); } },
                 { "status", n => { Status = n.GetStringValue(); } },
@@ -271,13 +271,13 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             writer.WriteGuidValue("creator_id", CreatorId);
             writer.WriteDateTimeOffsetValue("deleted_at", DeletedAt);
             writer.WriteStringValue("description", Description);
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.OptimizationReference>("evaluation", Evaluation);
+            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.OptimizationDetailEvaluation>("evaluation", Evaluation);
             writer.WriteGuidValue("evaluation_id", EvaluationId);
             writer.WriteGuidValue("id", Id);
             writer.WriteStringValue("name", Name);
             writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.OptimizationDetailObjectiveSpecProperty>("objective_spec", ObjectiveSpec);
             writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.OptimizationDetailOutcomeProperty>("outcome", Outcome);
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.OptimizationReference>("project", Project);
+            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.OptimizationDetailEvaluation>("project", Project);
             writer.WriteGuidValue("project_id", ProjectId);
             writer.WriteStringValue("source", Source);
             writer.WriteStringValue("status", Status);

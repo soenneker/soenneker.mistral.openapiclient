@@ -30,12 +30,12 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         /// <summary>Aggregates over the complete filtered result set when requested.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.UsageQueryAggregatesOut? Aggregates { get => _explicitNullValueAggregates; set { _explicitNullValueAggregates = value; AdditionalData?.Remove("aggregates"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("aggregates"); else _explicitNullProperties?.Remove("aggregates"); } }
-        private global::Soenneker.Mistral.OpenApiClient.Models.UsageQueryAggregatesOut? _explicitNullValueAggregates = default!;
+        public global::Soenneker.Mistral.OpenApiClient.Models.UsageQueryOutAggregates? Aggregates { get => _explicitNullValueAggregates; set { _explicitNullValueAggregates = value; AdditionalData?.Remove("aggregates"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("aggregates"); else _explicitNullProperties?.Remove("aggregates"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.UsageQueryOutAggregates? _explicitNullValueAggregates = default!;
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.UsageQueryAggregatesOut Aggregates { get => _explicitNullValueAggregates; set { _explicitNullValueAggregates = value; AdditionalData?.Remove("aggregates"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("aggregates"); else _explicitNullProperties?.Remove("aggregates"); } }
-        private global::Soenneker.Mistral.OpenApiClient.Models.UsageQueryAggregatesOut _explicitNullValueAggregates = default!;
+        public global::Soenneker.Mistral.OpenApiClient.Models.UsageQueryOutAggregates Aggregates { get => _explicitNullValueAggregates; set { _explicitNullValueAggregates = value; AdditionalData?.Remove("aggregates"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("aggregates"); else _explicitNullProperties?.Remove("aggregates"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.UsageQueryOutAggregates _explicitNullValueAggregates = default!;
 #endif
         /// <summary>Grouped usage rows.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -82,7 +82,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "aggregates", n => { Aggregates = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.UsageQueryAggregatesOut>(global::Soenneker.Mistral.OpenApiClient.Models.UsageQueryAggregatesOut.CreateFromDiscriminatorValue); } },
+                { "aggregates", n => { Aggregates = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.UsageQueryOutAggregates>(global::Soenneker.Mistral.OpenApiClient.Models.UsageQueryOutAggregates.CreateFromDiscriminatorValue); } },
                 { "groups", n => { Groups = n.GetCollectionOfObjectValues<global::Soenneker.Mistral.OpenApiClient.Models.UsageQueryRowOut>(global::Soenneker.Mistral.OpenApiClient.Models.UsageQueryRowOut.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "metadata", n => { Metadata = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.UsageQueryMetadataOut>(global::Soenneker.Mistral.OpenApiClient.Models.UsageQueryMetadataOut.CreateFromDiscriminatorValue); } },
             };
@@ -94,7 +94,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.UsageQueryAggregatesOut>("aggregates", Aggregates);
+            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.UsageQueryOutAggregates>("aggregates", Aggregates);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Mistral.OpenApiClient.Models.UsageQueryRowOut>("groups", Groups);
             writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.UsageQueryMetadataOut>("metadata", Metadata);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);

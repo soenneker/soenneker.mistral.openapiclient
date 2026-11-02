@@ -27,15 +27,15 @@ namespace Soenneker.Mistral.OpenApiClient.Models
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The connection_config property</summary>
+        /// <summary>Connection config exposed in the public, unauthenticated /connectors/mistral response.Unlike ConnectionConfig, this has no `headers` field and forbids extra fields, soconnector credentials can never be serialized into this cacheable response.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.PublicExecutionConnectionConfig? ConnectionConfig { get => _explicitNullValueConnectionConfig; set { _explicitNullValueConnectionConfig = value; AdditionalData?.Remove("connection_config"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("connection_config"); else _explicitNullProperties?.Remove("connection_config"); } }
-        private global::Soenneker.Mistral.OpenApiClient.Models.PublicExecutionConnectionConfig? _explicitNullValueConnectionConfig = default!;
+        public global::Soenneker.Mistral.OpenApiClient.Models.PublicExecutionConnectorConnectionConfig? ConnectionConfig { get => _explicitNullValueConnectionConfig; set { _explicitNullValueConnectionConfig = value; AdditionalData?.Remove("connection_config"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("connection_config"); else _explicitNullProperties?.Remove("connection_config"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.PublicExecutionConnectorConnectionConfig? _explicitNullValueConnectionConfig = default!;
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.PublicExecutionConnectionConfig ConnectionConfig { get => _explicitNullValueConnectionConfig; set { _explicitNullValueConnectionConfig = value; AdditionalData?.Remove("connection_config"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("connection_config"); else _explicitNullProperties?.Remove("connection_config"); } }
-        private global::Soenneker.Mistral.OpenApiClient.Models.PublicExecutionConnectionConfig _explicitNullValueConnectionConfig = default!;
+        public global::Soenneker.Mistral.OpenApiClient.Models.PublicExecutionConnectorConnectionConfig ConnectionConfig { get => _explicitNullValueConnectionConfig; set { _explicitNullValueConnectionConfig = value; AdditionalData?.Remove("connection_config"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("connection_config"); else _explicitNullProperties?.Remove("connection_config"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.PublicExecutionConnectorConnectionConfig _explicitNullValueConnectionConfig = default!;
 #endif
         /// <summary>The id property</summary>
         public Guid? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; AdditionalData?.Remove("id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
@@ -75,7 +75,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "connection_config", n => { ConnectionConfig = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.PublicExecutionConnectionConfig>(global::Soenneker.Mistral.OpenApiClient.Models.PublicExecutionConnectionConfig.CreateFromDiscriminatorValue); } },
+                { "connection_config", n => { ConnectionConfig = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.PublicExecutionConnectorConnectionConfig>(global::Soenneker.Mistral.OpenApiClient.Models.PublicExecutionConnectorConnectionConfig.CreateFromDiscriminatorValue); } },
                 { "id", n => { Id = n.GetGuidValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
             };
@@ -87,7 +87,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.PublicExecutionConnectionConfig>("connection_config", ConnectionConfig);
+            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.PublicExecutionConnectorConnectionConfig>("connection_config", ConnectionConfig);
             writer.WriteGuidValue("id", Id);
             writer.WriteStringValue("name", Name);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);

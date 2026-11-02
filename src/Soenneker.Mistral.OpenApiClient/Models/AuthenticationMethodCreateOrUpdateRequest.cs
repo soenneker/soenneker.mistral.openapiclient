@@ -57,22 +57,22 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         /// <summary>New OAuth2 client credentials (client_id and client_secret).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.OAuth2MetadataSecrets? Oauth2MetadataSecrets { get => _explicitNullValueOauth2MetadataSecrets; set { _explicitNullValueOauth2MetadataSecrets = value; AdditionalData?.Remove("oauth2_metadata_secrets"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("oauth2_metadata_secrets"); else _explicitNullProperties?.Remove("oauth2_metadata_secrets"); } }
-        private global::Soenneker.Mistral.OpenApiClient.Models.OAuth2MetadataSecrets? _explicitNullValueOauth2MetadataSecrets = default!;
+        public global::Soenneker.Mistral.OpenApiClient.Models.AuthenticationMethodCreateOrUpdateRequestOAuth2MetadataSecrets? Oauth2MetadataSecrets { get => _explicitNullValueOauth2MetadataSecrets; set { _explicitNullValueOauth2MetadataSecrets = value; AdditionalData?.Remove("oauth2_metadata_secrets"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("oauth2_metadata_secrets"); else _explicitNullProperties?.Remove("oauth2_metadata_secrets"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.AuthenticationMethodCreateOrUpdateRequestOAuth2MetadataSecrets? _explicitNullValueOauth2MetadataSecrets = default!;
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.OAuth2MetadataSecrets Oauth2MetadataSecrets { get => _explicitNullValueOauth2MetadataSecrets; set { _explicitNullValueOauth2MetadataSecrets = value; AdditionalData?.Remove("oauth2_metadata_secrets"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("oauth2_metadata_secrets"); else _explicitNullProperties?.Remove("oauth2_metadata_secrets"); } }
-        private global::Soenneker.Mistral.OpenApiClient.Models.OAuth2MetadataSecrets _explicitNullValueOauth2MetadataSecrets = default!;
+        public global::Soenneker.Mistral.OpenApiClient.Models.AuthenticationMethodCreateOrUpdateRequestOAuth2MetadataSecrets Oauth2MetadataSecrets { get => _explicitNullValueOauth2MetadataSecrets; set { _explicitNullValueOauth2MetadataSecrets = value; AdditionalData?.Remove("oauth2_metadata_secrets"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("oauth2_metadata_secrets"); else _explicitNullProperties?.Remove("oauth2_metadata_secrets"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.AuthenticationMethodCreateOrUpdateRequestOAuth2MetadataSecrets _explicitNullValueOauth2MetadataSecrets = default!;
 #endif
         /// <summary>New OAuth2 authorization server metadata.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.ExtendedOAuthServerMetadata? Oauth2ServerMetadata { get => _explicitNullValueOauth2ServerMetadata; set { _explicitNullValueOauth2ServerMetadata = value; AdditionalData?.Remove("oauth2_server_metadata"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("oauth2_server_metadata"); else _explicitNullProperties?.Remove("oauth2_server_metadata"); } }
-        private global::Soenneker.Mistral.OpenApiClient.Models.ExtendedOAuthServerMetadata? _explicitNullValueOauth2ServerMetadata = default!;
+        public global::Soenneker.Mistral.OpenApiClient.Models.AuthenticationMethodCreateOrUpdateRequestOAuth2ServerMetadata? Oauth2ServerMetadata { get => _explicitNullValueOauth2ServerMetadata; set { _explicitNullValueOauth2ServerMetadata = value; AdditionalData?.Remove("oauth2_server_metadata"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("oauth2_server_metadata"); else _explicitNullProperties?.Remove("oauth2_server_metadata"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.AuthenticationMethodCreateOrUpdateRequestOAuth2ServerMetadata? _explicitNullValueOauth2ServerMetadata = default!;
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.ExtendedOAuthServerMetadata Oauth2ServerMetadata { get => _explicitNullValueOauth2ServerMetadata; set { _explicitNullValueOauth2ServerMetadata = value; AdditionalData?.Remove("oauth2_server_metadata"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("oauth2_server_metadata"); else _explicitNullProperties?.Remove("oauth2_server_metadata"); } }
-        private global::Soenneker.Mistral.OpenApiClient.Models.ExtendedOAuthServerMetadata _explicitNullValueOauth2ServerMetadata = default!;
+        public global::Soenneker.Mistral.OpenApiClient.Models.AuthenticationMethodCreateOrUpdateRequestOAuth2ServerMetadata Oauth2ServerMetadata { get => _explicitNullValueOauth2ServerMetadata; set { _explicitNullValueOauth2ServerMetadata = value; AdditionalData?.Remove("oauth2_server_metadata"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("oauth2_server_metadata"); else _explicitNullProperties?.Remove("oauth2_server_metadata"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.AuthenticationMethodCreateOrUpdateRequestOAuth2ServerMetadata _explicitNullValueOauth2ServerMetadata = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Mistral.OpenApiClient.Models.AuthenticationMethodCreateOrUpdateRequest"/> and sets the default values.
@@ -102,8 +102,8 @@ namespace Soenneker.Mistral.OpenApiClient.Models
                 { "global_headers", n => { GlobalHeaders = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.AuthenticationMethodCreateOrUpdateRequestGlobalHeadersProperty>(global::Soenneker.Mistral.OpenApiClient.Models.AuthenticationMethodCreateOrUpdateRequestGlobalHeadersProperty.CreateFromDiscriminatorValue); } },
                 { "headers", n => { Headers = n.GetCollectionOfObjectValues<global::Soenneker.Mistral.OpenApiClient.Models.ConnectorAuthenticationHeader>(global::Soenneker.Mistral.OpenApiClient.Models.ConnectorAuthenticationHeader.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "method_type", n => { var parsed = n.GetEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.AuthenticationType>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueMethodType = default; _explicitNullProperties?.Remove("method_type"); AdditionalData["method_type"] = unknown; } else { MethodType = parsed; AdditionalData.Remove("method_type"); } } },
-                { "oauth2_metadata_secrets", n => { Oauth2MetadataSecrets = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.OAuth2MetadataSecrets>(global::Soenneker.Mistral.OpenApiClient.Models.OAuth2MetadataSecrets.CreateFromDiscriminatorValue); } },
-                { "oauth2_server_metadata", n => { Oauth2ServerMetadata = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ExtendedOAuthServerMetadata>(global::Soenneker.Mistral.OpenApiClient.Models.ExtendedOAuthServerMetadata.CreateFromDiscriminatorValue); } },
+                { "oauth2_metadata_secrets", n => { Oauth2MetadataSecrets = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.AuthenticationMethodCreateOrUpdateRequestOAuth2MetadataSecrets>(global::Soenneker.Mistral.OpenApiClient.Models.AuthenticationMethodCreateOrUpdateRequestOAuth2MetadataSecrets.CreateFromDiscriminatorValue); } },
+                { "oauth2_server_metadata", n => { Oauth2ServerMetadata = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.AuthenticationMethodCreateOrUpdateRequestOAuth2ServerMetadata>(global::Soenneker.Mistral.OpenApiClient.Models.AuthenticationMethodCreateOrUpdateRequestOAuth2ServerMetadata.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -116,8 +116,8 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.AuthenticationMethodCreateOrUpdateRequestGlobalHeadersProperty>("global_headers", GlobalHeaders);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Mistral.OpenApiClient.Models.ConnectorAuthenticationHeader>("headers", Headers);
             writer.WriteEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.AuthenticationType>("method_type", MethodType);
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.OAuth2MetadataSecrets>("oauth2_metadata_secrets", Oauth2MetadataSecrets);
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ExtendedOAuthServerMetadata>("oauth2_server_metadata", Oauth2ServerMetadata);
+            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.AuthenticationMethodCreateOrUpdateRequestOAuth2MetadataSecrets>("oauth2_metadata_secrets", Oauth2MetadataSecrets);
+            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.AuthenticationMethodCreateOrUpdateRequestOAuth2ServerMetadata>("oauth2_server_metadata", Oauth2ServerMetadata);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }

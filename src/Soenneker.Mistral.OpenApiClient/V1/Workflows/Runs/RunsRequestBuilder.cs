@@ -171,8 +171,15 @@ namespace Soenneker.Mistral.OpenApiClient.V1.Workflows.Runs
             public string[] SearchKey { get; set; }
 #endif
             /// <summary>Field to sort by</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
             [QueryParameter("sort_by")]
-            public global::Soenneker.Mistral.OpenApiClient.Models.ListRunsV1WorkflowsRunsGetSortByParameter? SortBy { get; set; }
+            public string? SortBy { get; set; }
+#nullable restore
+#else
+            [QueryParameter("sort_by")]
+            public string SortBy { get; set; }
+#endif
             /// <summary>Include runs with start_time &gt;= value</summary>
             [QueryParameter("start_time_after")]
             public DateTimeOffset? StartTimeAfter { get; set; }

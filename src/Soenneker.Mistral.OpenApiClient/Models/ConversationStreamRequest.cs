@@ -69,15 +69,15 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         public global::Soenneker.Mistral.OpenApiClient.Models.AgentConversationAgentVersion AgentVersion { get => _explicitNullValueAgentVersion; set { _explicitNullValueAgentVersion = value; AdditionalData?.Remove("agent_version"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("agent_version"); else _explicitNullProperties?.Remove("agent_version"); } }
         private global::Soenneker.Mistral.OpenApiClient.Models.AgentConversationAgentVersion _explicitNullValueAgentVersion = default!;
 #endif
-        /// <summary>The completion_args property</summary>
+        /// <summary>White-listed arguments from the completion API</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.CompletionArgs? CompletionArgs { get => _explicitNullValueCompletionArgs; set { _explicitNullValueCompletionArgs = value; AdditionalData?.Remove("completion_args"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("completion_args"); else _explicitNullProperties?.Remove("completion_args"); } }
-        private global::Soenneker.Mistral.OpenApiClient.Models.CompletionArgs? _explicitNullValueCompletionArgs = default!;
+        public global::Soenneker.Mistral.OpenApiClient.Models.ConversationRequestBaseCompletionArgs? CompletionArgs { get => _explicitNullValueCompletionArgs; set { _explicitNullValueCompletionArgs = value; AdditionalData?.Remove("completion_args"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("completion_args"); else _explicitNullProperties?.Remove("completion_args"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.ConversationRequestBaseCompletionArgs? _explicitNullValueCompletionArgs = default!;
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.CompletionArgs CompletionArgs { get => _explicitNullValueCompletionArgs; set { _explicitNullValueCompletionArgs = value; AdditionalData?.Remove("completion_args"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("completion_args"); else _explicitNullProperties?.Remove("completion_args"); } }
-        private global::Soenneker.Mistral.OpenApiClient.Models.CompletionArgs _explicitNullValueCompletionArgs = default!;
+        public global::Soenneker.Mistral.OpenApiClient.Models.ConversationRequestBaseCompletionArgs CompletionArgs { get => _explicitNullValueCompletionArgs; set { _explicitNullValueCompletionArgs = value; AdditionalData?.Remove("completion_args"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("completion_args"); else _explicitNullProperties?.Remove("completion_args"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.ConversationRequestBaseCompletionArgs _explicitNullValueCompletionArgs = default!;
 #endif
         /// <summary>The description property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -100,8 +100,15 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         private List<global::Soenneker.Mistral.OpenApiClient.Models.GuardrailConfig> _explicitNullValueGuardrails = default!;
 #endif
         /// <summary>The handoff_execution property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public global::Soenneker.Mistral.OpenApiClient.Models.ConversationRequestHandoffExecution? HandoffExecution { get => _explicitNullValueHandoffExecution; set { _explicitNullValueHandoffExecution = value; AdditionalData?.Remove("handoff_execution"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("handoff_execution"); else _explicitNullProperties?.Remove("handoff_execution"); } }
         private global::Soenneker.Mistral.OpenApiClient.Models.ConversationRequestHandoffExecution? _explicitNullValueHandoffExecution = default!;
+#nullable restore
+#else
+        public global::Soenneker.Mistral.OpenApiClient.Models.ConversationRequestHandoffExecution HandoffExecution { get => _explicitNullValueHandoffExecution; set { _explicitNullValueHandoffExecution = value; AdditionalData?.Remove("handoff_execution"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("handoff_execution"); else _explicitNullProperties?.Remove("handoff_execution"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.ConversationRequestHandoffExecution _explicitNullValueHandoffExecution = default!;
+#endif
         /// <summary>The inputs property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -196,10 +203,10 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             {
                 { "agent_id", n => { AgentId = n.GetStringValue(); } },
                 { "agent_version", n => { AgentVersion = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.AgentConversationAgentVersion>(global::Soenneker.Mistral.OpenApiClient.Models.AgentConversationAgentVersion.CreateFromDiscriminatorValue); } },
-                { "completion_args", n => { CompletionArgs = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.CompletionArgs>(global::Soenneker.Mistral.OpenApiClient.Models.CompletionArgs.CreateFromDiscriminatorValue); } },
+                { "completion_args", n => { CompletionArgs = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ConversationRequestBaseCompletionArgs>(global::Soenneker.Mistral.OpenApiClient.Models.ConversationRequestBaseCompletionArgs.CreateFromDiscriminatorValue); } },
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "guardrails", n => { Guardrails = n.GetCollectionOfObjectValues<global::Soenneker.Mistral.OpenApiClient.Models.GuardrailConfig>(global::Soenneker.Mistral.OpenApiClient.Models.GuardrailConfig.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "handoff_execution", n => { var parsed = n.GetEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.ConversationRequestHandoffExecution>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueHandoffExecution = default; _explicitNullProperties?.Remove("handoff_execution"); AdditionalData["handoff_execution"] = unknown; } else { HandoffExecution = parsed; AdditionalData.Remove("handoff_execution"); } } },
+                { "handoff_execution", n => { HandoffExecution = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ConversationRequestHandoffExecution>(global::Soenneker.Mistral.OpenApiClient.Models.ConversationRequestHandoffExecution.CreateFromDiscriminatorValue); } },
                 { "inputs", n => { Inputs = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ConversationInputs>(global::Soenneker.Mistral.OpenApiClient.Models.ConversationInputs.CreateFromDiscriminatorValue); } },
                 { "instructions", n => { Instructions = n.GetStringValue(); } },
                 { "metadata", n => { Metadata = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ConversationRequestBaseMetadata>(global::Soenneker.Mistral.OpenApiClient.Models.ConversationRequestBaseMetadata.CreateFromDiscriminatorValue); } },
@@ -219,10 +226,10 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("agent_id", AgentId);
             writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.AgentConversationAgentVersion>("agent_version", AgentVersion);
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.CompletionArgs>("completion_args", CompletionArgs);
+            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ConversationRequestBaseCompletionArgs>("completion_args", CompletionArgs);
             writer.WriteStringValue("description", Description);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Mistral.OpenApiClient.Models.GuardrailConfig>("guardrails", Guardrails);
-            writer.WriteEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.ConversationRequestHandoffExecution>("handoff_execution", HandoffExecution);
+            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ConversationRequestHandoffExecution>("handoff_execution", HandoffExecution);
             writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ConversationInputs>("inputs", Inputs);
             writer.WriteStringValue("instructions", Instructions);
             writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ConversationRequestBaseMetadata>("metadata", Metadata);

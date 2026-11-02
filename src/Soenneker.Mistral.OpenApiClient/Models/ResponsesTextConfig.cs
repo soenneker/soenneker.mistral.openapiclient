@@ -36,8 +36,15 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         private global::Soenneker.Mistral.OpenApiClient.Models.ResponsesTextConfigFormat _explicitNullValueFormat = default!;
 #endif
         /// <summary>The verbosity property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public global::Soenneker.Mistral.OpenApiClient.Models.ResponsesTextConfigVerbosity? Verbosity { get => _explicitNullValueVerbosity; set { _explicitNullValueVerbosity = value; AdditionalData?.Remove("verbosity"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("verbosity"); else _explicitNullProperties?.Remove("verbosity"); } }
         private global::Soenneker.Mistral.OpenApiClient.Models.ResponsesTextConfigVerbosity? _explicitNullValueVerbosity = default!;
+#nullable restore
+#else
+        public global::Soenneker.Mistral.OpenApiClient.Models.ResponsesTextConfigVerbosity Verbosity { get => _explicitNullValueVerbosity; set { _explicitNullValueVerbosity = value; AdditionalData?.Remove("verbosity"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("verbosity"); else _explicitNullProperties?.Remove("verbosity"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.ResponsesTextConfigVerbosity _explicitNullValueVerbosity = default!;
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Mistral.OpenApiClient.Models.ResponsesTextConfig"/> and sets the default values.
         /// </summary>
@@ -64,7 +71,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "format", n => { Format = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ResponsesTextConfigFormat>(global::Soenneker.Mistral.OpenApiClient.Models.ResponsesTextConfigFormat.CreateFromDiscriminatorValue); } },
-                { "verbosity", n => { var parsed = n.GetEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.ResponsesTextConfigVerbosity>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueVerbosity = default; _explicitNullProperties?.Remove("verbosity"); AdditionalData["verbosity"] = unknown; } else { Verbosity = parsed; AdditionalData.Remove("verbosity"); } } },
+                { "verbosity", n => { Verbosity = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ResponsesTextConfigVerbosity>(global::Soenneker.Mistral.OpenApiClient.Models.ResponsesTextConfigVerbosity.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -75,7 +82,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ResponsesTextConfigFormat>("format", Format);
-            writer.WriteEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.ResponsesTextConfigVerbosity>("verbosity", Verbosity);
+            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ResponsesTextConfigVerbosity>("verbosity", Verbosity);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }

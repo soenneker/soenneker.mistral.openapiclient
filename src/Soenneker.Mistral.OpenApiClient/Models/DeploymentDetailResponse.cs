@@ -71,12 +71,12 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.DeploymentLocation? Location { get => _explicitNullValueLocation; set { _explicitNullValueLocation = value; AdditionalData?.Remove("location"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("location"); else _explicitNullProperties?.Remove("location"); } }
-        private global::Soenneker.Mistral.OpenApiClient.Models.DeploymentLocation? _explicitNullValueLocation = default!;
+        public global::Soenneker.Mistral.OpenApiClient.Models.DeploymentDetailResponseLocation? Location { get => _explicitNullValueLocation; set { _explicitNullValueLocation = value; AdditionalData?.Remove("location"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("location"); else _explicitNullProperties?.Remove("location"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.DeploymentDetailResponseLocation? _explicitNullValueLocation = default!;
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.DeploymentLocation Location { get => _explicitNullValueLocation; set { _explicitNullValueLocation = value; AdditionalData?.Remove("location"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("location"); else _explicitNullProperties?.Remove("location"); } }
-        private global::Soenneker.Mistral.OpenApiClient.Models.DeploymentLocation _explicitNullValueLocation = default!;
+        public global::Soenneker.Mistral.OpenApiClient.Models.DeploymentDetailResponseLocation Location { get => _explicitNullValueLocation; set { _explicitNullValueLocation = value; AdditionalData?.Remove("location"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("location"); else _explicitNullProperties?.Remove("location"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.DeploymentDetailResponseLocation _explicitNullValueLocation = default!;
 #endif
         /// <summary>Distinct location types reported by the deployment&apos;s workers</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -91,12 +91,12 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         /// <summary>Live managed service state for managed deployments; null for self-hosted deployments or when managed services are unavailable</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.ManagedDeploymentResponse? Managed { get => _explicitNullValueManaged; set { _explicitNullValueManaged = value; AdditionalData?.Remove("managed"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("managed"); else _explicitNullProperties?.Remove("managed"); } }
-        private global::Soenneker.Mistral.OpenApiClient.Models.ManagedDeploymentResponse? _explicitNullValueManaged = default!;
+        public global::Soenneker.Mistral.OpenApiClient.Models.DeploymentDetailResponseManaged? Managed { get => _explicitNullValueManaged; set { _explicitNullValueManaged = value; AdditionalData?.Remove("managed"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("managed"); else _explicitNullProperties?.Remove("managed"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.DeploymentDetailResponseManaged? _explicitNullValueManaged = default!;
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.ManagedDeploymentResponse Managed { get => _explicitNullValueManaged; set { _explicitNullValueManaged = value; AdditionalData?.Remove("managed"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("managed"); else _explicitNullProperties?.Remove("managed"); } }
-        private global::Soenneker.Mistral.OpenApiClient.Models.ManagedDeploymentResponse _explicitNullValueManaged = default!;
+        public global::Soenneker.Mistral.OpenApiClient.Models.DeploymentDetailResponseManaged Managed { get => _explicitNullValueManaged; set { _explicitNullValueManaged = value; AdditionalData?.Remove("managed"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("managed"); else _explicitNullProperties?.Remove("managed"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.DeploymentDetailResponseManaged _explicitNullValueManaged = default!;
 #endif
         /// <summary>Deployment name</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -169,9 +169,9 @@ namespace Soenneker.Mistral.OpenApiClient.Models
                 { "is_active", n => { IsActive = n.GetBoolValue(); } },
                 { "is_hardened", n => { IsHardened = n.GetBoolValue(); } },
                 { "last_heartbeat", n => { LastHeartbeat = n.GetDateTimeOffsetValue(); } },
-                { "location", n => { Location = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.DeploymentLocation>(global::Soenneker.Mistral.OpenApiClient.Models.DeploymentLocation.CreateFromDiscriminatorValue); } },
+                { "location", n => { Location = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.DeploymentDetailResponseLocation>(global::Soenneker.Mistral.OpenApiClient.Models.DeploymentDetailResponseLocation.CreateFromDiscriminatorValue); } },
                 { "locations", n => { Locations = n.GetCollectionOfEnumValues<global::Soenneker.Mistral.OpenApiClient.Models.LocationType>()?.AsList(); } },
-                { "managed", n => { Managed = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ManagedDeploymentResponse>(global::Soenneker.Mistral.OpenApiClient.Models.ManagedDeploymentResponse.CreateFromDiscriminatorValue); } },
+                { "managed", n => { Managed = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.DeploymentDetailResponseManaged>(global::Soenneker.Mistral.OpenApiClient.Models.DeploymentDetailResponseManaged.CreateFromDiscriminatorValue); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "owner", n => { Owner = n.GetStringValue(); } },
                 { "updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
@@ -192,9 +192,9 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             writer.WriteBoolValue("is_active", IsActive);
             writer.WriteBoolValue("is_hardened", IsHardened);
             writer.WriteDateTimeOffsetValue("last_heartbeat", LastHeartbeat);
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.DeploymentLocation>("location", Location);
+            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.DeploymentDetailResponseLocation>("location", Location);
             writer.WriteCollectionOfEnumValues<global::Soenneker.Mistral.OpenApiClient.Models.LocationType>("locations", Locations);
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ManagedDeploymentResponse>("managed", Managed);
+            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.DeploymentDetailResponseManaged>("managed", Managed);
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("owner", Owner);
             writer.WriteDateTimeOffsetValue("updated_at", UpdatedAt);

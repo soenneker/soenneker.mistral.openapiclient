@@ -54,12 +54,12 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         /// <summary>The aggregate_goal property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.GoalSpec? AggregateGoal { get => _explicitNullValueAggregateGoal; set { _explicitNullValueAggregateGoal = value; AdditionalData?.Remove("aggregate_goal"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("aggregate_goal"); else _explicitNullProperties?.Remove("aggregate_goal"); } }
-        private global::Soenneker.Mistral.OpenApiClient.Models.GoalSpec? _explicitNullValueAggregateGoal = default!;
+        public global::Soenneker.Mistral.OpenApiClient.Models.ClassificationStatisticSpecGoal? AggregateGoal { get => _explicitNullValueAggregateGoal; set { _explicitNullValueAggregateGoal = value; AdditionalData?.Remove("aggregate_goal"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("aggregate_goal"); else _explicitNullProperties?.Remove("aggregate_goal"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.ClassificationStatisticSpecGoal? _explicitNullValueAggregateGoal = default!;
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.GoalSpec AggregateGoal { get => _explicitNullValueAggregateGoal; set { _explicitNullValueAggregateGoal = value; AdditionalData?.Remove("aggregate_goal"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("aggregate_goal"); else _explicitNullProperties?.Remove("aggregate_goal"); } }
-        private global::Soenneker.Mistral.OpenApiClient.Models.GoalSpec _explicitNullValueAggregateGoal = default!;
+        public global::Soenneker.Mistral.OpenApiClient.Models.ClassificationStatisticSpecGoal AggregateGoal { get => _explicitNullValueAggregateGoal; set { _explicitNullValueAggregateGoal = value; AdditionalData?.Remove("aggregate_goal"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("aggregate_goal"); else _explicitNullProperties?.Remove("aggregate_goal"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.ClassificationStatisticSpecGoal _explicitNullValueAggregateGoal = default!;
 #endif
         /// <summary>The created_at property</summary>
         public DateTimeOffset? CreatedAt { get => _explicitNullValueCreatedAt; set { _explicitNullValueCreatedAt = value; AdditionalData?.Remove("created_at"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("created_at"); else _explicitNullProperties?.Remove("created_at"); } }
@@ -78,17 +78,24 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         private string _explicitNullValueDescription = default!;
 #endif
         /// <summary>The direction property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public global::Soenneker.Mistral.OpenApiClient.Models.EvaluatorV2Direction? Direction { get => _explicitNullValueDirection; set { _explicitNullValueDirection = value; AdditionalData?.Remove("direction"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("direction"); else _explicitNullProperties?.Remove("direction"); } }
         private global::Soenneker.Mistral.OpenApiClient.Models.EvaluatorV2Direction? _explicitNullValueDirection = default!;
+#nullable restore
+#else
+        public global::Soenneker.Mistral.OpenApiClient.Models.EvaluatorV2Direction Direction { get => _explicitNullValueDirection; set { _explicitNullValueDirection = value; AdditionalData?.Remove("direction"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("direction"); else _explicitNullProperties?.Remove("direction"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.EvaluatorV2Direction _explicitNullValueDirection = default!;
+#endif
         /// <summary>The goal property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.GoalSpec? Goal { get => _explicitNullValueGoal; set { _explicitNullValueGoal = value; AdditionalData?.Remove("goal"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("goal"); else _explicitNullProperties?.Remove("goal"); } }
-        private global::Soenneker.Mistral.OpenApiClient.Models.GoalSpec? _explicitNullValueGoal = default!;
+        public global::Soenneker.Mistral.OpenApiClient.Models.ClassificationStatisticSpecGoal? Goal { get => _explicitNullValueGoal; set { _explicitNullValueGoal = value; AdditionalData?.Remove("goal"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("goal"); else _explicitNullProperties?.Remove("goal"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.ClassificationStatisticSpecGoal? _explicitNullValueGoal = default!;
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.GoalSpec Goal { get => _explicitNullValueGoal; set { _explicitNullValueGoal = value; AdditionalData?.Remove("goal"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("goal"); else _explicitNullProperties?.Remove("goal"); } }
-        private global::Soenneker.Mistral.OpenApiClient.Models.GoalSpec _explicitNullValueGoal = default!;
+        public global::Soenneker.Mistral.OpenApiClient.Models.ClassificationStatisticSpecGoal Goal { get => _explicitNullValueGoal; set { _explicitNullValueGoal = value; AdditionalData?.Remove("goal"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("goal"); else _explicitNullProperties?.Remove("goal"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.ClassificationStatisticSpecGoal _explicitNullValueGoal = default!;
 #endif
         /// <summary>The id property</summary>
         public Guid? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; AdditionalData?.Remove("id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
@@ -164,12 +171,12 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "aggregate_goal", n => { AggregateGoal = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.GoalSpec>(global::Soenneker.Mistral.OpenApiClient.Models.GoalSpec.CreateFromDiscriminatorValue); } },
+                { "aggregate_goal", n => { AggregateGoal = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ClassificationStatisticSpecGoal>(global::Soenneker.Mistral.OpenApiClient.Models.ClassificationStatisticSpecGoal.CreateFromDiscriminatorValue); } },
                 { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
                 { "deleted_at", n => { DeletedAt = n.GetDateTimeOffsetValue(); } },
                 { "description", n => { Description = n.GetStringValue(); } },
-                { "direction", n => { var parsed = n.GetEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.EvaluatorV2Direction>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueDirection = default; _explicitNullProperties?.Remove("direction"); AdditionalData["direction"] = unknown; } else { Direction = parsed; AdditionalData.Remove("direction"); } } },
-                { "goal", n => { Goal = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.GoalSpec>(global::Soenneker.Mistral.OpenApiClient.Models.GoalSpec.CreateFromDiscriminatorValue); } },
+                { "direction", n => { Direction = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.EvaluatorV2Direction>(global::Soenneker.Mistral.OpenApiClient.Models.EvaluatorV2Direction.CreateFromDiscriminatorValue); } },
+                { "goal", n => { Goal = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ClassificationStatisticSpecGoal>(global::Soenneker.Mistral.OpenApiClient.Models.ClassificationStatisticSpecGoal.CreateFromDiscriminatorValue); } },
                 { "id", n => { Id = n.GetGuidValue(); } },
                 { "max_value", n => { MaxValue = n.GetDoubleValue(); } },
                 { "min_value", n => { MinValue = n.GetDoubleValue(); } },
@@ -188,12 +195,12 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.GoalSpec>("aggregate_goal", AggregateGoal);
+            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ClassificationStatisticSpecGoal>("aggregate_goal", AggregateGoal);
             writer.WriteDateTimeOffsetValue("created_at", CreatedAt);
             writer.WriteDateTimeOffsetValue("deleted_at", DeletedAt);
             writer.WriteStringValue("description", Description);
-            writer.WriteEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.EvaluatorV2Direction>("direction", Direction);
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.GoalSpec>("goal", Goal);
+            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.EvaluatorV2Direction>("direction", Direction);
+            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ClassificationStatisticSpecGoal>("goal", Goal);
             writer.WriteGuidValue("id", Id);
             writer.WriteDoubleValue("max_value", MaxValue);
             writer.WriteDoubleValue("min_value", MinValue);

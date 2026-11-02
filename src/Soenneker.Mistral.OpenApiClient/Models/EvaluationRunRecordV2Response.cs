@@ -60,12 +60,12 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         /// <summary>The output_record property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.EvaluationRunOutputRecordV2? OutputRecord { get => _explicitNullValueOutputRecord; set { _explicitNullValueOutputRecord = value; AdditionalData?.Remove("output_record"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("output_record"); else _explicitNullProperties?.Remove("output_record"); } }
-        private global::Soenneker.Mistral.OpenApiClient.Models.EvaluationRunOutputRecordV2? _explicitNullValueOutputRecord = default!;
+        public global::Soenneker.Mistral.OpenApiClient.Models.EvaluationRunRecordV2ResponseOutputRecord? OutputRecord { get => _explicitNullValueOutputRecord; set { _explicitNullValueOutputRecord = value; AdditionalData?.Remove("output_record"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("output_record"); else _explicitNullProperties?.Remove("output_record"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.EvaluationRunRecordV2ResponseOutputRecord? _explicitNullValueOutputRecord = default!;
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.EvaluationRunOutputRecordV2 OutputRecord { get => _explicitNullValueOutputRecord; set { _explicitNullValueOutputRecord = value; AdditionalData?.Remove("output_record"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("output_record"); else _explicitNullProperties?.Remove("output_record"); } }
-        private global::Soenneker.Mistral.OpenApiClient.Models.EvaluationRunOutputRecordV2 _explicitNullValueOutputRecord = default!;
+        public global::Soenneker.Mistral.OpenApiClient.Models.EvaluationRunRecordV2ResponseOutputRecord OutputRecord { get => _explicitNullValueOutputRecord; set { _explicitNullValueOutputRecord = value; AdditionalData?.Remove("output_record"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("output_record"); else _explicitNullProperties?.Remove("output_record"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.EvaluationRunRecordV2ResponseOutputRecord _explicitNullValueOutputRecord = default!;
 #endif
         /// <summary>The updated_at property</summary>
         public DateTimeOffset? UpdatedAt { get => _explicitNullValueUpdatedAt; set { _explicitNullValueUpdatedAt = value; AdditionalData?.Remove("updated_at"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("updated_at"); else _explicitNullProperties?.Remove("updated_at"); } }
@@ -100,7 +100,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
                 { "deleted_at", n => { DeletedAt = n.GetDateTimeOffsetValue(); } },
                 { "id", n => { Id = n.GetGuidValue(); } },
                 { "input", n => { Input = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
-                { "output_record", n => { OutputRecord = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.EvaluationRunOutputRecordV2>(global::Soenneker.Mistral.OpenApiClient.Models.EvaluationRunOutputRecordV2.CreateFromDiscriminatorValue); } },
+                { "output_record", n => { OutputRecord = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.EvaluationRunRecordV2ResponseOutputRecord>(global::Soenneker.Mistral.OpenApiClient.Models.EvaluationRunRecordV2ResponseOutputRecord.CreateFromDiscriminatorValue); } },
                 { "updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
             };
         }
@@ -116,7 +116,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             writer.WriteDateTimeOffsetValue("deleted_at", DeletedAt);
             writer.WriteGuidValue("id", Id);
             writer.WriteObjectValue<UntypedNode>("input", Input);
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.EvaluationRunOutputRecordV2>("output_record", OutputRecord);
+            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.EvaluationRunRecordV2ResponseOutputRecord>("output_record", OutputRecord);
             writer.WriteDateTimeOffsetValue("updated_at", UpdatedAt);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);

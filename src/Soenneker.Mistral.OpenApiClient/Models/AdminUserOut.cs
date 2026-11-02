@@ -103,12 +103,12 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         /// <summary>Organization roles assigned to the member.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.AdminOrganizationMemberOutRawRoles? RawRoles { get => _explicitNullValueRawRoles; set { _explicitNullValueRawRoles = value; AdditionalData?.Remove("raw_roles"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("raw_roles"); else _explicitNullProperties?.Remove("raw_roles"); } }
-        private global::Soenneker.Mistral.OpenApiClient.Models.AdminOrganizationMemberOutRawRoles? _explicitNullValueRawRoles = default!;
+        public global::Soenneker.Mistral.OpenApiClient.Models.AdminUserOutRawRoles? RawRoles { get => _explicitNullValueRawRoles; set { _explicitNullValueRawRoles = value; AdditionalData?.Remove("raw_roles"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("raw_roles"); else _explicitNullProperties?.Remove("raw_roles"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.AdminUserOutRawRoles? _explicitNullValueRawRoles = default!;
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.AdminOrganizationMemberOutRawRoles RawRoles { get => _explicitNullValueRawRoles; set { _explicitNullValueRawRoles = value; AdditionalData?.Remove("raw_roles"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("raw_roles"); else _explicitNullProperties?.Remove("raw_roles"); } }
-        private global::Soenneker.Mistral.OpenApiClient.Models.AdminOrganizationMemberOutRawRoles _explicitNullValueRawRoles = default!;
+        public global::Soenneker.Mistral.OpenApiClient.Models.AdminUserOutRawRoles RawRoles { get => _explicitNullValueRawRoles; set { _explicitNullValueRawRoles = value; AdditionalData?.Remove("raw_roles"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("raw_roles"); else _explicitNullProperties?.Remove("raw_roles"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.AdminUserOutRawRoles _explicitNullValueRawRoles = default!;
 #endif
         /// <summary>Subscriptions assigned to the member.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -176,7 +176,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "oid_id", n => { OidId = n.GetGuidValue(); } },
                 { "raw_role", n => { var parsed = n.GetEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.AdminUserOutRawRole>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueRawRole = default; _explicitNullProperties?.Remove("raw_role"); AdditionalData["raw_role"] = unknown; } else { RawRole = parsed; AdditionalData.Remove("raw_role"); } } },
-                { "raw_roles", n => { RawRoles = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.AdminOrganizationMemberOutRawRoles>(global::Soenneker.Mistral.OpenApiClient.Models.AdminOrganizationMemberOutRawRoles.CreateFromDiscriminatorValue); } },
+                { "raw_roles", n => { RawRoles = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.AdminUserOutRawRoles>(global::Soenneker.Mistral.OpenApiClient.Models.AdminUserOutRawRoles.CreateFromDiscriminatorValue); } },
                 { "subscription_types", n => { SubscriptionTypes = n.GetCollectionOfEnumValues<global::Soenneker.Mistral.OpenApiClient.Models.AdminUserOutSubscriptionTypesItem>()?.AsList(); } },
                 { "subscriptions", n => { Subscriptions = n.GetCollectionOfObjectValues<global::Soenneker.Mistral.OpenApiClient.Models.MemberSubscriptionOut>(global::Soenneker.Mistral.OpenApiClient.Models.MemberSubscriptionOut.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "uuid", n => { Uuid = n.GetGuidValue(); } },
@@ -198,7 +198,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             writer.WriteStringValue("name", Name);
             writer.WriteGuidValue("oid_id", OidId);
             writer.WriteEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.AdminUserOutRawRole>("raw_role", RawRole);
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.AdminOrganizationMemberOutRawRoles>("raw_roles", RawRoles);
+            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.AdminUserOutRawRoles>("raw_roles", RawRoles);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Mistral.OpenApiClient.Models.MemberSubscriptionOut>("subscriptions", Subscriptions);
             writer.WriteCollectionOfEnumValues<global::Soenneker.Mistral.OpenApiClient.Models.AdminUserOutSubscriptionTypesItem>("subscription_types", SubscriptionTypes);
             writer.WriteGuidValue("uuid", Uuid);

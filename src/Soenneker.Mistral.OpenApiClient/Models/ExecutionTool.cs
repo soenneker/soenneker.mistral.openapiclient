@@ -27,15 +27,15 @@ namespace Soenneker.Mistral.OpenApiClient.Models
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The execution_config property</summary>
+        /// <summary>Not typed since mcp config can changed / not stablewe allow all extra fields and this is a dictTODO: once mcp is stable, we need to type this</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.ExecutionConfig? ExecutionConfig { get => _explicitNullValueExecutionConfig; set { _explicitNullValueExecutionConfig = value; AdditionalData?.Remove("execution_config"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("execution_config"); else _explicitNullProperties?.Remove("execution_config"); } }
-        private global::Soenneker.Mistral.OpenApiClient.Models.ExecutionConfig? _explicitNullValueExecutionConfig = default!;
+        public global::Soenneker.Mistral.OpenApiClient.Models.ConnectorToolExecutionConfig? ExecutionConfig { get => _explicitNullValueExecutionConfig; set { _explicitNullValueExecutionConfig = value; AdditionalData?.Remove("execution_config"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("execution_config"); else _explicitNullProperties?.Remove("execution_config"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.ConnectorToolExecutionConfig? _explicitNullValueExecutionConfig = default!;
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.ExecutionConfig ExecutionConfig { get => _explicitNullValueExecutionConfig; set { _explicitNullValueExecutionConfig = value; AdditionalData?.Remove("execution_config"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("execution_config"); else _explicitNullProperties?.Remove("execution_config"); } }
-        private global::Soenneker.Mistral.OpenApiClient.Models.ExecutionConfig _explicitNullValueExecutionConfig = default!;
+        public global::Soenneker.Mistral.OpenApiClient.Models.ConnectorToolExecutionConfig ExecutionConfig { get => _explicitNullValueExecutionConfig; set { _explicitNullValueExecutionConfig = value; AdditionalData?.Remove("execution_config"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("execution_config"); else _explicitNullProperties?.Remove("execution_config"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.ConnectorToolExecutionConfig _explicitNullValueExecutionConfig = default!;
 #endif
         /// <summary>The integration_id property</summary>
         public Guid? IntegrationId { get => _explicitNullValueIntegrationId; set { _explicitNullValueIntegrationId = value; AdditionalData?.Remove("integration_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("integration_id"); else _explicitNullProperties?.Remove("integration_id"); } }
@@ -75,7 +75,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "execution_config", n => { ExecutionConfig = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ExecutionConfig>(global::Soenneker.Mistral.OpenApiClient.Models.ExecutionConfig.CreateFromDiscriminatorValue); } },
+                { "execution_config", n => { ExecutionConfig = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ConnectorToolExecutionConfig>(global::Soenneker.Mistral.OpenApiClient.Models.ConnectorToolExecutionConfig.CreateFromDiscriminatorValue); } },
                 { "integration_id", n => { IntegrationId = n.GetGuidValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
             };
@@ -87,7 +87,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ExecutionConfig>("execution_config", ExecutionConfig);
+            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ConnectorToolExecutionConfig>("execution_config", ExecutionConfig);
             writer.WriteGuidValue("integration_id", IntegrationId);
             writer.WriteStringValue("name", Name);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);

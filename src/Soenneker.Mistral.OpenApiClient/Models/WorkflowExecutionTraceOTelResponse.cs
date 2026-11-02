@@ -91,12 +91,12 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         /// <summary>The raw OpenTelemetry trace data</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.TempoGetTraceResponse? OtelTraceData { get => _explicitNullValueOtelTraceData; set { _explicitNullValueOtelTraceData = value; AdditionalData?.Remove("otel_trace_data"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("otel_trace_data"); else _explicitNullProperties?.Remove("otel_trace_data"); } }
-        private global::Soenneker.Mistral.OpenApiClient.Models.TempoGetTraceResponse? _explicitNullValueOtelTraceData = default!;
+        public global::Soenneker.Mistral.OpenApiClient.Models.WorkflowExecutionTraceOTelResponseOtelTraceData? OtelTraceData { get => _explicitNullValueOtelTraceData; set { _explicitNullValueOtelTraceData = value; AdditionalData?.Remove("otel_trace_data"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("otel_trace_data"); else _explicitNullProperties?.Remove("otel_trace_data"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.WorkflowExecutionTraceOTelResponseOtelTraceData? _explicitNullValueOtelTraceData = default!;
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.TempoGetTraceResponse OtelTraceData { get => _explicitNullValueOtelTraceData; set { _explicitNullValueOtelTraceData = value; AdditionalData?.Remove("otel_trace_data"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("otel_trace_data"); else _explicitNullProperties?.Remove("otel_trace_data"); } }
-        private global::Soenneker.Mistral.OpenApiClient.Models.TempoGetTraceResponse _explicitNullValueOtelTraceData = default!;
+        public global::Soenneker.Mistral.OpenApiClient.Models.WorkflowExecutionTraceOTelResponseOtelTraceData OtelTraceData { get => _explicitNullValueOtelTraceData; set { _explicitNullValueOtelTraceData = value; AdditionalData?.Remove("otel_trace_data"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("otel_trace_data"); else _explicitNullProperties?.Remove("otel_trace_data"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.WorkflowExecutionTraceOTelResponseOtelTraceData _explicitNullValueOtelTraceData = default!;
 #endif
         /// <summary>The ID of the trace</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -219,7 +219,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
                 { "deployment_name", n => { DeploymentName = n.GetStringValue(); } },
                 { "end_time", n => { EndTime = n.GetDateTimeOffsetValue(); } },
                 { "execution_id", n => { ExecutionId = n.GetStringValue(); } },
-                { "otel_trace_data", n => { OtelTraceData = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.TempoGetTraceResponse>(global::Soenneker.Mistral.OpenApiClient.Models.TempoGetTraceResponse.CreateFromDiscriminatorValue); } },
+                { "otel_trace_data", n => { OtelTraceData = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.WorkflowExecutionTraceOTelResponseOtelTraceData>(global::Soenneker.Mistral.OpenApiClient.Models.WorkflowExecutionTraceOTelResponseOtelTraceData.CreateFromDiscriminatorValue); } },
                 { "otel_trace_id", n => { OtelTraceId = n.GetStringValue(); } },
                 { "parent_execution_id", n => { ParentExecutionId = n.GetStringValue(); } },
                 { "result", n => { Result = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
@@ -245,7 +245,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             writer.WriteStringValue("deployment_name", DeploymentName);
             writer.WriteDateTimeOffsetValue("end_time", EndTime);
             writer.WriteStringValue("execution_id", ExecutionId);
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.TempoGetTraceResponse>("otel_trace_data", OtelTraceData);
+            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.WorkflowExecutionTraceOTelResponseOtelTraceData>("otel_trace_data", OtelTraceData);
             writer.WriteStringValue("otel_trace_id", OtelTraceId);
             writer.WriteStringValue("parent_execution_id", ParentExecutionId);
             writer.WriteObjectValue<UntypedNode>("result", Result);

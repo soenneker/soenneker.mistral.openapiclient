@@ -59,15 +59,15 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         public string Description { get => _explicitNullValueDescription; set { _explicitNullValueDescription = value; AdditionalData?.Remove("description"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("description"); else _explicitNullProperties?.Remove("description"); } }
         private string _explicitNullValueDescription = default!;
 #endif
-        /// <summary>The execution_config property</summary>
+        /// <summary>Not typed since mcp config can changed / not stablewe allow all extra fields and this is a dictTODO: once mcp is stable, we need to type this</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.ExecutionConfig? ExecutionConfig { get => _explicitNullValueExecutionConfig; set { _explicitNullValueExecutionConfig = value; AdditionalData?.Remove("execution_config"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("execution_config"); else _explicitNullProperties?.Remove("execution_config"); } }
-        private global::Soenneker.Mistral.OpenApiClient.Models.ExecutionConfig? _explicitNullValueExecutionConfig = default!;
+        public global::Soenneker.Mistral.OpenApiClient.Models.ConnectorToolExecutionConfig? ExecutionConfig { get => _explicitNullValueExecutionConfig; set { _explicitNullValueExecutionConfig = value; AdditionalData?.Remove("execution_config"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("execution_config"); else _explicitNullProperties?.Remove("execution_config"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.ConnectorToolExecutionConfig? _explicitNullValueExecutionConfig = default!;
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.ExecutionConfig ExecutionConfig { get => _explicitNullValueExecutionConfig; set { _explicitNullValueExecutionConfig = value; AdditionalData?.Remove("execution_config"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("execution_config"); else _explicitNullProperties?.Remove("execution_config"); } }
-        private global::Soenneker.Mistral.OpenApiClient.Models.ExecutionConfig _explicitNullValueExecutionConfig = default!;
+        public global::Soenneker.Mistral.OpenApiClient.Models.ConnectorToolExecutionConfig ExecutionConfig { get => _explicitNullValueExecutionConfig; set { _explicitNullValueExecutionConfig = value; AdditionalData?.Remove("execution_config"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("execution_config"); else _explicitNullProperties?.Remove("execution_config"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.ConnectorToolExecutionConfig _explicitNullValueExecutionConfig = default!;
 #endif
         /// <summary>The id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -92,12 +92,12 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         /// <summary>The locale property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.ConnectorToolLocale? Locale { get => _explicitNullValueLocale; set { _explicitNullValueLocale = value; AdditionalData?.Remove("locale"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("locale"); else _explicitNullProperties?.Remove("locale"); } }
-        private global::Soenneker.Mistral.OpenApiClient.Models.ConnectorToolLocale? _explicitNullValueLocale = default!;
+        public global::Soenneker.Mistral.OpenApiClient.Models.ConnectorToolLocaleComposed? Locale { get => _explicitNullValueLocale; set { _explicitNullValueLocale = value; AdditionalData?.Remove("locale"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("locale"); else _explicitNullProperties?.Remove("locale"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.ConnectorToolLocaleComposed? _explicitNullValueLocale = default!;
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.ConnectorToolLocale Locale { get => _explicitNullValueLocale; set { _explicitNullValueLocale = value; AdditionalData?.Remove("locale"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("locale"); else _explicitNullProperties?.Remove("locale"); } }
-        private global::Soenneker.Mistral.OpenApiClient.Models.ConnectorToolLocale _explicitNullValueLocale = default!;
+        public global::Soenneker.Mistral.OpenApiClient.Models.ConnectorToolLocaleComposed Locale { get => _explicitNullValueLocale; set { _explicitNullValueLocale = value; AdditionalData?.Remove("locale"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("locale"); else _explicitNullProperties?.Remove("locale"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.ConnectorToolLocaleComposed _explicitNullValueLocale = default!;
 #endif
         /// <summary>The modified_at property</summary>
         public DateTimeOffset? ModifiedAt { get => _explicitNullValueModifiedAt; set { _explicitNullValueModifiedAt = value; AdditionalData?.Remove("modified_at"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("modified_at"); else _explicitNullProperties?.Remove("modified_at"); } }
@@ -153,10 +153,10 @@ namespace Soenneker.Mistral.OpenApiClient.Models
                 { "active", n => { Active = n.GetBoolValue(); } },
                 { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
                 { "description", n => { Description = n.GetStringValue(); } },
-                { "execution_config", n => { ExecutionConfig = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ExecutionConfig>(global::Soenneker.Mistral.OpenApiClient.Models.ExecutionConfig.CreateFromDiscriminatorValue); } },
+                { "execution_config", n => { ExecutionConfig = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ConnectorToolExecutionConfig>(global::Soenneker.Mistral.OpenApiClient.Models.ConnectorToolExecutionConfig.CreateFromDiscriminatorValue); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "jsonschema", n => { Jsonschema = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ConnectorToolJsonschemaProperty>(global::Soenneker.Mistral.OpenApiClient.Models.ConnectorToolJsonschemaProperty.CreateFromDiscriminatorValue); } },
-                { "locale", n => { Locale = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ConnectorToolLocale>(global::Soenneker.Mistral.OpenApiClient.Models.ConnectorToolLocale.CreateFromDiscriminatorValue); } },
+                { "locale", n => { Locale = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ConnectorToolLocaleComposed>(global::Soenneker.Mistral.OpenApiClient.Models.ConnectorToolLocaleComposed.CreateFromDiscriminatorValue); } },
                 { "modified_at", n => { ModifiedAt = n.GetDateTimeOffsetValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "system_prompt", n => { SystemPrompt = n.GetStringValue(); } },
@@ -173,10 +173,10 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             writer.WriteBoolValue("active", Active);
             writer.WriteDateTimeOffsetValue("created_at", CreatedAt);
             writer.WriteStringValue("description", Description);
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ExecutionConfig>("execution_config", ExecutionConfig);
+            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ConnectorToolExecutionConfig>("execution_config", ExecutionConfig);
             writer.WriteStringValue("id", Id);
             writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ConnectorToolJsonschemaProperty>("jsonschema", Jsonschema);
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ConnectorToolLocale>("locale", Locale);
+            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ConnectorToolLocaleComposed>("locale", Locale);
             writer.WriteDateTimeOffsetValue("modified_at", ModifiedAt);
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("system_prompt", SystemPrompt);

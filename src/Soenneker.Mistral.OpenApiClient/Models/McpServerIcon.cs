@@ -61,8 +61,15 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         private string _explicitNullValueSrc = default!;
 #endif
         /// <summary>The theme property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public global::Soenneker.Mistral.OpenApiClient.Models.McpServerIconTheme? Theme { get => _explicitNullValueTheme; set { _explicitNullValueTheme = value; AdditionalData?.Remove("theme"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("theme"); else _explicitNullProperties?.Remove("theme"); } }
         private global::Soenneker.Mistral.OpenApiClient.Models.McpServerIconTheme? _explicitNullValueTheme = default!;
+#nullable restore
+#else
+        public global::Soenneker.Mistral.OpenApiClient.Models.McpServerIconTheme Theme { get => _explicitNullValueTheme; set { _explicitNullValueTheme = value; AdditionalData?.Remove("theme"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("theme"); else _explicitNullProperties?.Remove("theme"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.McpServerIconTheme _explicitNullValueTheme = default!;
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Mistral.OpenApiClient.Models.McpServerIcon"/> and sets the default values.
         /// </summary>
@@ -91,7 +98,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
                 { "mimeType", n => { MimeType = n.GetStringValue(); } },
                 { "sizes", n => { Sizes = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "src", n => { Src = n.GetStringValue(); } },
-                { "theme", n => { var parsed = n.GetEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.McpServerIconTheme>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueTheme = default; _explicitNullProperties?.Remove("theme"); AdditionalData["theme"] = unknown; } else { Theme = parsed; AdditionalData.Remove("theme"); } } },
+                { "theme", n => { Theme = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.McpServerIconTheme>(global::Soenneker.Mistral.OpenApiClient.Models.McpServerIconTheme.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -104,7 +111,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             writer.WriteStringValue("mimeType", MimeType);
             writer.WriteCollectionOfPrimitiveValues<string>("sizes", Sizes);
             writer.WriteStringValue("src", Src);
-            writer.WriteEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.McpServerIconTheme>("theme", Theme);
+            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.McpServerIconTheme>("theme", Theme);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }

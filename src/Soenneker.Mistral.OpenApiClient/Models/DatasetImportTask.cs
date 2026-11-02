@@ -71,15 +71,15 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         /// <summary>The progress property</summary>
         public int? Progress { get => _explicitNullValueProgress; set { _explicitNullValueProgress = value; AdditionalData?.Remove("progress"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("progress"); else _explicitNullProperties?.Remove("progress"); } }
         private int? _explicitNullValueProgress = default!;
-        /// <summary>The result property</summary>
+        /// <summary>Source-agnostic counts for a completed dataset import.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.DatasetImportResult? Result { get => _explicitNullValueResult; set { _explicitNullValueResult = value; AdditionalData?.Remove("result"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("result"); else _explicitNullProperties?.Remove("result"); } }
-        private global::Soenneker.Mistral.OpenApiClient.Models.DatasetImportResult? _explicitNullValueResult = default!;
+        public global::Soenneker.Mistral.OpenApiClient.Models.DatasetImportTaskResult? Result { get => _explicitNullValueResult; set { _explicitNullValueResult = value; AdditionalData?.Remove("result"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("result"); else _explicitNullProperties?.Remove("result"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.DatasetImportTaskResult? _explicitNullValueResult = default!;
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.DatasetImportResult Result { get => _explicitNullValueResult; set { _explicitNullValueResult = value; AdditionalData?.Remove("result"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("result"); else _explicitNullProperties?.Remove("result"); } }
-        private global::Soenneker.Mistral.OpenApiClient.Models.DatasetImportResult _explicitNullValueResult = default!;
+        public global::Soenneker.Mistral.OpenApiClient.Models.DatasetImportTaskResult Result { get => _explicitNullValueResult; set { _explicitNullValueResult = value; AdditionalData?.Remove("result"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("result"); else _explicitNullProperties?.Remove("result"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.DatasetImportTaskResult _explicitNullValueResult = default!;
 #endif
         /// <summary>The status property</summary>
         public global::Soenneker.Mistral.OpenApiClient.Models.BaseTaskStatus? Status { get => _explicitNullValueStatus; set { _explicitNullValueStatus = value; AdditionalData?.Remove("status"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status"); else _explicitNullProperties?.Remove("status"); } }
@@ -122,7 +122,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
                 { "id", n => { Id = n.GetGuidValue(); } },
                 { "message", n => { Message = n.GetStringValue(); } },
                 { "progress", n => { Progress = n.GetIntValue(); } },
-                { "result", n => { Result = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.DatasetImportResult>(global::Soenneker.Mistral.OpenApiClient.Models.DatasetImportResult.CreateFromDiscriminatorValue); } },
+                { "result", n => { Result = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.DatasetImportTaskResult>(global::Soenneker.Mistral.OpenApiClient.Models.DatasetImportTaskResult.CreateFromDiscriminatorValue); } },
                 { "status", n => { var parsed = n.GetEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.BaseTaskStatus>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueStatus = default; _explicitNullProperties?.Remove("status"); AdditionalData["status"] = unknown; } else { Status = parsed; AdditionalData.Remove("status"); } } },
                 { "updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
                 { "workspace_id", n => { WorkspaceId = n.GetGuidValue(); } },
@@ -142,7 +142,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             writer.WriteGuidValue("id", Id);
             writer.WriteStringValue("message", Message);
             writer.WriteIntValue("progress", Progress);
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.DatasetImportResult>("result", Result);
+            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.DatasetImportTaskResult>("result", Result);
             writer.WriteEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.BaseTaskStatus>("status", Status);
             writer.WriteDateTimeOffsetValue("updated_at", UpdatedAt);
             writer.WriteGuidValue("workspace_id", WorkspaceId);

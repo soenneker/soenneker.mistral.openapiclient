@@ -45,12 +45,12 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         /// <summary>The build_state property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.DeploymentBuildState? BuildState { get => _explicitNullValueBuildState; set { _explicitNullValueBuildState = value; AdditionalData?.Remove("build_state"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("build_state"); else _explicitNullProperties?.Remove("build_state"); } }
-        private global::Soenneker.Mistral.OpenApiClient.Models.DeploymentBuildState? _explicitNullValueBuildState = default!;
+        public global::Soenneker.Mistral.OpenApiClient.Models.DeploymentObservedStateBuildState? BuildState { get => _explicitNullValueBuildState; set { _explicitNullValueBuildState = value; AdditionalData?.Remove("build_state"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("build_state"); else _explicitNullProperties?.Remove("build_state"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.DeploymentObservedStateBuildState? _explicitNullValueBuildState = default!;
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.DeploymentBuildState BuildState { get => _explicitNullValueBuildState; set { _explicitNullValueBuildState = value; AdditionalData?.Remove("build_state"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("build_state"); else _explicitNullProperties?.Remove("build_state"); } }
-        private global::Soenneker.Mistral.OpenApiClient.Models.DeploymentBuildState _explicitNullValueBuildState = default!;
+        public global::Soenneker.Mistral.OpenApiClient.Models.DeploymentObservedStateBuildState BuildState { get => _explicitNullValueBuildState; set { _explicitNullValueBuildState = value; AdditionalData?.Remove("build_state"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("build_state"); else _explicitNullProperties?.Remove("build_state"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.DeploymentObservedStateBuildState _explicitNullValueBuildState = default!;
 #endif
         /// <summary>The deployed_revision property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -129,7 +129,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "available_replicas", n => { AvailableReplicas = n.GetIntValue(); } },
-                { "build_state", n => { BuildState = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.DeploymentBuildState>(global::Soenneker.Mistral.OpenApiClient.Models.DeploymentBuildState.CreateFromDiscriminatorValue); } },
+                { "build_state", n => { BuildState = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.DeploymentObservedStateBuildState>(global::Soenneker.Mistral.OpenApiClient.Models.DeploymentObservedStateBuildState.CreateFromDiscriminatorValue); } },
                 { "deployed_revision", n => { DeployedRevision = n.GetStringValue(); } },
                 { "endpoint", n => { Endpoint = n.GetStringValue(); } },
                 { "generation", n => { Generation = n.GetIntValue(); } },
@@ -147,7 +147,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteIntValue("available_replicas", AvailableReplicas);
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.DeploymentBuildState>("build_state", BuildState);
+            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.DeploymentObservedStateBuildState>("build_state", BuildState);
             writer.WriteStringValue("deployed_revision", DeployedRevision);
             writer.WriteStringValue("endpoint", Endpoint);
             writer.WriteIntValue("generation", Generation);

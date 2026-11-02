@@ -50,12 +50,12 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         /// <summary>The tool_configuration property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.ToolConfiguration? ToolConfiguration { get => _explicitNullValueToolConfiguration; set { _explicitNullValueToolConfiguration = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tool_configuration"); else _explicitNullProperties?.Remove("tool_configuration"); } }
-        private global::Soenneker.Mistral.OpenApiClient.Models.ToolConfiguration? _explicitNullValueToolConfiguration = default!;
+        public global::Soenneker.Mistral.OpenApiClient.Models.CodeInterpreterToolToolConfiguration? ToolConfiguration { get => _explicitNullValueToolConfiguration; set { _explicitNullValueToolConfiguration = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tool_configuration"); else _explicitNullProperties?.Remove("tool_configuration"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.CodeInterpreterToolToolConfiguration? _explicitNullValueToolConfiguration = default!;
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.ToolConfiguration ToolConfiguration { get => _explicitNullValueToolConfiguration; set { _explicitNullValueToolConfiguration = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tool_configuration"); else _explicitNullProperties?.Remove("tool_configuration"); } }
-        private global::Soenneker.Mistral.OpenApiClient.Models.ToolConfiguration _explicitNullValueToolConfiguration = default!;
+        public global::Soenneker.Mistral.OpenApiClient.Models.CodeInterpreterToolToolConfiguration ToolConfiguration { get => _explicitNullValueToolConfiguration; set { _explicitNullValueToolConfiguration = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tool_configuration"); else _explicitNullProperties?.Remove("tool_configuration"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.CodeInterpreterToolToolConfiguration _explicitNullValueToolConfiguration = default!;
 #endif
         /// <summary>The type property</summary>
         public global::Soenneker.Mistral.OpenApiClient.Models.ChatCompletionRequestToolsItemOneOf4_type? Type { get => _explicitNullValueType; set { _explicitNullValueType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
@@ -80,7 +80,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             {
                 { "authorization", n => { Authorization = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.CustomConnectorAuthorizationAnyOf1>(global::Soenneker.Mistral.OpenApiClient.Models.CustomConnectorAuthorizationAnyOf1.CreateFromDiscriminatorValue); } },
                 { "connector_id", n => { ConnectorId = n.GetStringValue(); } },
-                { "tool_configuration", n => { ToolConfiguration = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ToolConfiguration>(global::Soenneker.Mistral.OpenApiClient.Models.ToolConfiguration.CreateFromDiscriminatorValue); } },
+                { "tool_configuration", n => { ToolConfiguration = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.CodeInterpreterToolToolConfiguration>(global::Soenneker.Mistral.OpenApiClient.Models.CodeInterpreterToolToolConfiguration.CreateFromDiscriminatorValue); } },
                 { "type", n => { Type = n.GetEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.ChatCompletionRequestToolsItemOneOf4_type>(); } },
             };
         }
@@ -93,7 +93,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.CustomConnectorAuthorizationAnyOf1>("authorization", Authorization);
             writer.WriteStringValue("connector_id", ConnectorId);
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ToolConfiguration>("tool_configuration", ToolConfiguration);
+            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.CodeInterpreterToolToolConfiguration>("tool_configuration", ToolConfiguration);
             writer.WriteEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.ChatCompletionRequestToolsItemOneOf4_type>("type", Type);if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             
         }

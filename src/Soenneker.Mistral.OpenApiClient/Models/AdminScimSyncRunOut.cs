@@ -70,22 +70,22 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         /// <summary>Preview or result summary, available after the synchronization plan is built.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.ScimSyncSummaryOut? Summary { get => _explicitNullValueSummary; set { _explicitNullValueSummary = value; AdditionalData?.Remove("summary"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("summary"); else _explicitNullProperties?.Remove("summary"); } }
-        private global::Soenneker.Mistral.OpenApiClient.Models.ScimSyncSummaryOut? _explicitNullValueSummary = default!;
+        public global::Soenneker.Mistral.OpenApiClient.Models.AdminScimSyncRunOutSummary? Summary { get => _explicitNullValueSummary; set { _explicitNullValueSummary = value; AdditionalData?.Remove("summary"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("summary"); else _explicitNullProperties?.Remove("summary"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.AdminScimSyncRunOutSummary? _explicitNullValueSummary = default!;
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.ScimSyncSummaryOut Summary { get => _explicitNullValueSummary; set { _explicitNullValueSummary = value; AdditionalData?.Remove("summary"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("summary"); else _explicitNullProperties?.Remove("summary"); } }
-        private global::Soenneker.Mistral.OpenApiClient.Models.ScimSyncSummaryOut _explicitNullValueSummary = default!;
+        public global::Soenneker.Mistral.OpenApiClient.Models.AdminScimSyncRunOutSummary Summary { get => _explicitNullValueSummary; set { _explicitNullValueSummary = value; AdditionalData?.Remove("summary"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("summary"); else _explicitNullProperties?.Remove("summary"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.AdminScimSyncRunOutSummary _explicitNullValueSummary = default!;
 #endif
         /// <summary>Categories selected for this synchronization run.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.AdminScimSyncConfig? SyncConfig { get => _explicitNullValueSyncConfig; set { _explicitNullValueSyncConfig = value; AdditionalData?.Remove("sync_config"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sync_config"); else _explicitNullProperties?.Remove("sync_config"); } }
-        private global::Soenneker.Mistral.OpenApiClient.Models.AdminScimSyncConfig? _explicitNullValueSyncConfig = default!;
+        public global::Soenneker.Mistral.OpenApiClient.Models.AdminScimSyncRunOutSyncConfig? SyncConfig { get => _explicitNullValueSyncConfig; set { _explicitNullValueSyncConfig = value; AdditionalData?.Remove("sync_config"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sync_config"); else _explicitNullProperties?.Remove("sync_config"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.AdminScimSyncRunOutSyncConfig? _explicitNullValueSyncConfig = default!;
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.AdminScimSyncConfig SyncConfig { get => _explicitNullValueSyncConfig; set { _explicitNullValueSyncConfig = value; AdditionalData?.Remove("sync_config"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sync_config"); else _explicitNullProperties?.Remove("sync_config"); } }
-        private global::Soenneker.Mistral.OpenApiClient.Models.AdminScimSyncConfig _explicitNullValueSyncConfig = default!;
+        public global::Soenneker.Mistral.OpenApiClient.Models.AdminScimSyncRunOutSyncConfig SyncConfig { get => _explicitNullValueSyncConfig; set { _explicitNullValueSyncConfig = value; AdditionalData?.Remove("sync_config"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sync_config"); else _explicitNullProperties?.Remove("sync_config"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.AdminScimSyncRunOutSyncConfig _explicitNullValueSyncConfig = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Mistral.OpenApiClient.Models.AdminScimSyncRunOut"/> and sets the default values.
@@ -119,8 +119,8 @@ namespace Soenneker.Mistral.OpenApiClient.Models
                 { "run_id", n => { RunId = n.GetGuidValue(); } },
                 { "started_at", n => { StartedAt = n.GetDateTimeOffsetValue(); } },
                 { "status", n => { var parsed = n.GetEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.ScimSyncRunStatus>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueStatus = default; _explicitNullProperties?.Remove("status"); AdditionalData["status"] = unknown; } else { Status = parsed; AdditionalData.Remove("status"); } } },
-                { "summary", n => { Summary = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ScimSyncSummaryOut>(global::Soenneker.Mistral.OpenApiClient.Models.ScimSyncSummaryOut.CreateFromDiscriminatorValue); } },
-                { "sync_config", n => { SyncConfig = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.AdminScimSyncConfig>(global::Soenneker.Mistral.OpenApiClient.Models.AdminScimSyncConfig.CreateFromDiscriminatorValue); } },
+                { "summary", n => { Summary = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.AdminScimSyncRunOutSummary>(global::Soenneker.Mistral.OpenApiClient.Models.AdminScimSyncRunOutSummary.CreateFromDiscriminatorValue); } },
+                { "sync_config", n => { SyncConfig = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.AdminScimSyncRunOutSyncConfig>(global::Soenneker.Mistral.OpenApiClient.Models.AdminScimSyncRunOutSyncConfig.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -137,8 +137,8 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             writer.WriteGuidValue("run_id", RunId);
             writer.WriteDateTimeOffsetValue("started_at", StartedAt);
             writer.WriteEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.ScimSyncRunStatus>("status", Status);
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ScimSyncSummaryOut>("summary", Summary);
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.AdminScimSyncConfig>("sync_config", SyncConfig);
+            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.AdminScimSyncRunOutSummary>("summary", Summary);
+            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.AdminScimSyncRunOutSyncConfig>("sync_config", SyncConfig);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }

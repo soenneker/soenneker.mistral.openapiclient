@@ -43,8 +43,15 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         private global::Soenneker.Mistral.OpenApiClient.Models.AdminProvisionGroupToWorkspaceInWorkspaceRole _explicitNullValueWorkspaceRole = default!;
 #endif
         /// <summary>Workspace role name to assign to the group. Mutually exclusive with &apos;workspace_role&apos;.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public global::Soenneker.Mistral.OpenApiClient.Models.AdminProvisionGroupToWorkspaceInWorkspaceRoleName? WorkspaceRoleName { get => _explicitNullValueWorkspaceRoleName; set { _explicitNullValueWorkspaceRoleName = value; AdditionalData?.Remove("workspace_role_name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("workspace_role_name"); else _explicitNullProperties?.Remove("workspace_role_name"); } }
         private global::Soenneker.Mistral.OpenApiClient.Models.AdminProvisionGroupToWorkspaceInWorkspaceRoleName? _explicitNullValueWorkspaceRoleName = default!;
+#nullable restore
+#else
+        public global::Soenneker.Mistral.OpenApiClient.Models.AdminProvisionGroupToWorkspaceInWorkspaceRoleName WorkspaceRoleName { get => _explicitNullValueWorkspaceRoleName; set { _explicitNullValueWorkspaceRoleName = value; AdditionalData?.Remove("workspace_role_name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("workspace_role_name"); else _explicitNullProperties?.Remove("workspace_role_name"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.AdminProvisionGroupToWorkspaceInWorkspaceRoleName _explicitNullValueWorkspaceRoleName = default!;
+#endif
         /// <summary>Workspace ID where the group is provisioned.</summary>
         public Guid? WorkspaceUuid { get => _explicitNullValueWorkspaceUuid; set { _explicitNullValueWorkspaceUuid = value; AdditionalData?.Remove("workspace_uuid"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("workspace_uuid"); else _explicitNullProperties?.Remove("workspace_uuid"); } }
         private Guid? _explicitNullValueWorkspaceUuid = default!;
@@ -75,7 +82,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             {
                 { "user_group_uuid", n => { UserGroupUuid = n.GetGuidValue(); } },
                 { "workspace_role", n => { WorkspaceRole = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.AdminProvisionGroupToWorkspaceInWorkspaceRole>(global::Soenneker.Mistral.OpenApiClient.Models.AdminProvisionGroupToWorkspaceInWorkspaceRole.CreateFromDiscriminatorValue); } },
-                { "workspace_role_name", n => { var parsed = n.GetEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.AdminProvisionGroupToWorkspaceInWorkspaceRoleName>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueWorkspaceRoleName = default; _explicitNullProperties?.Remove("workspace_role_name"); AdditionalData["workspace_role_name"] = unknown; } else { WorkspaceRoleName = parsed; AdditionalData.Remove("workspace_role_name"); } } },
+                { "workspace_role_name", n => { WorkspaceRoleName = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.AdminProvisionGroupToWorkspaceInWorkspaceRoleName>(global::Soenneker.Mistral.OpenApiClient.Models.AdminProvisionGroupToWorkspaceInWorkspaceRoleName.CreateFromDiscriminatorValue); } },
                 { "workspace_uuid", n => { WorkspaceUuid = n.GetGuidValue(); } },
             };
         }
@@ -88,7 +95,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteGuidValue("user_group_uuid", UserGroupUuid);
             writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.AdminProvisionGroupToWorkspaceInWorkspaceRole>("workspace_role", WorkspaceRole);
-            writer.WriteEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.AdminProvisionGroupToWorkspaceInWorkspaceRoleName>("workspace_role_name", WorkspaceRoleName);
+            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.AdminProvisionGroupToWorkspaceInWorkspaceRoleName>("workspace_role_name", WorkspaceRoleName);
             writer.WriteGuidValue("workspace_uuid", WorkspaceUuid);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);

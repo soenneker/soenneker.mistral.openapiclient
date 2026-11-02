@@ -24,8 +24,15 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The effort property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public global::Soenneker.Mistral.OpenApiClient.Models.ResponsesSupportedReasoningEffort? Effort { get => _explicitNullValueEffort; set { _explicitNullValueEffort = value; AdditionalData?.Remove("effort"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("effort"); else _explicitNullProperties?.Remove("effort"); } }
         private global::Soenneker.Mistral.OpenApiClient.Models.ResponsesSupportedReasoningEffort? _explicitNullValueEffort = default!;
+#nullable restore
+#else
+        public global::Soenneker.Mistral.OpenApiClient.Models.ResponsesSupportedReasoningEffort Effort { get => _explicitNullValueEffort; set { _explicitNullValueEffort = value; AdditionalData?.Remove("effort"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("effort"); else _explicitNullProperties?.Remove("effort"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.ResponsesSupportedReasoningEffort _explicitNullValueEffort = default!;
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Mistral.OpenApiClient.Models.ResponsesSupportedReasoning"/> and sets the default values.
         /// </summary>
@@ -51,7 +58,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "effort", n => { var parsed = n.GetEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.ResponsesSupportedReasoningEffort>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueEffort = default; _explicitNullProperties?.Remove("effort"); AdditionalData["effort"] = unknown; } else { Effort = parsed; AdditionalData.Remove("effort"); } } },
+                { "effort", n => { Effort = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ResponsesSupportedReasoningEffort>(global::Soenneker.Mistral.OpenApiClient.Models.ResponsesSupportedReasoningEffort.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -61,7 +68,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.ResponsesSupportedReasoningEffort>("effort", Effort);
+            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ResponsesSupportedReasoningEffort>("effort", Effort);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }

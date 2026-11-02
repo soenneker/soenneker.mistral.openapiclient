@@ -106,8 +106,15 @@ namespace Soenneker.Mistral.OpenApiClient.V1.Workflows.Deployments.Item.Workers
             [QueryParameter("limit")]
             public int? Limit { get; set; }
             /// <summary>Filter by worker activity. active=only active, inactive=only inactive, None=no filter</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
             [QueryParameter("worker_status")]
-            public global::Soenneker.Mistral.OpenApiClient.Models.ListDeploymentWorkersV1WorkflowsDeploymentsNameWorkersGetWorkerStatusParameter? WorkerStatus { get; set; }
+            public string? WorkerStatus { get; set; }
+#nullable restore
+#else
+            [QueryParameter("worker_status")]
+            public string WorkerStatus { get; set; }
+#endif
         }
     }
 }
