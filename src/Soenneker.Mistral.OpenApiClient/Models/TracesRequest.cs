@@ -23,7 +23,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The search_expression property</summary>
+        /// <summary>Filter expression. Trace fields (e.g. `service_name`, `error_count`, `models_used`) are evaluated on the aggregated trace. Span attribute fields (e.g. `temporalWorkflowID`, `wf.type`, `gen_ai.provider.name`) are evaluated on the spans of the trace: a trace matches when one of its spans matches. Span attribute conditions combined with AND must hold on the same span, e.g. `temporalWorkflowID = &apos;wf-1&apos; AND wf.type = &apos;activity&apos;` only matches traces with a span carrying both attributes. Results are always one row per trace.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? SearchExpression { get => _explicitNullValueSearchExpression; set { _explicitNullValueSearchExpression = value; AdditionalData?.Remove("search_expression"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("search_expression"); else _explicitNullProperties?.Remove("search_expression"); } }

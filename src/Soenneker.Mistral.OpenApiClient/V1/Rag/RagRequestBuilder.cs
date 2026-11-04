@@ -4,7 +4,6 @@ using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions;
 using Soenneker.Mistral.OpenApiClient.V1.Rag.Deployments;
 using Soenneker.Mistral.OpenApiClient.V1.Rag.Ingestion_pipeline_configurations;
-using Soenneker.Mistral.OpenApiClient.V1.Rag.Managed_indexes;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
@@ -26,11 +25,6 @@ namespace Soenneker.Mistral.OpenApiClient.V1.Rag
         public global::Soenneker.Mistral.OpenApiClient.V1.Rag.Ingestion_pipeline_configurations.Ingestion_pipeline_configurationsRequestBuilder Ingestion_pipeline_configurations
         {
             get => new global::Soenneker.Mistral.OpenApiClient.V1.Rag.Ingestion_pipeline_configurations.Ingestion_pipeline_configurationsRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>The managed_indexes property</summary>
-        public global::Soenneker.Mistral.OpenApiClient.V1.Rag.Managed_indexes.Managed_indexesRequestBuilder Managed_indexes
-        {
-            get => new global::Soenneker.Mistral.OpenApiClient.V1.Rag.Managed_indexes.Managed_indexesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Mistral.OpenApiClient.V1.Rag.RagRequestBuilder"/> and sets the default values.

@@ -536,6 +536,50 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         #pragma warning disable CS1591
         CustomVoiceDelete,
         #pragma warning restore CS1591
+        [EnumMember(Value = "capability_registry.create")]
+        #pragma warning disable CS1591
+        CapabilityRegistryCreate,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "capability_registry.default_workspace_access.enable")]
+        #pragma warning disable CS1591
+        CapabilityRegistryDefaultWorkspaceAccessEnable,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "capability_registry.default_workspace_access.disable")]
+        #pragma warning disable CS1591
+        CapabilityRegistryDefaultWorkspaceAccessDisable,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "capability_registry.workspace_access.enable")]
+        #pragma warning disable CS1591
+        CapabilityRegistryWorkspaceAccessEnable,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "capability_registry.workspace_access.disable")]
+        #pragma warning disable CS1591
+        CapabilityRegistryWorkspaceAccessDisable,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "capability_registry.workspace_access.remove")]
+        #pragma warning disable CS1591
+        CapabilityRegistryWorkspaceAccessRemove,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "capability.version.create")]
+        #pragma warning disable CS1591
+        CapabilityVersionCreate,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "capability.version.disable")]
+        #pragma warning disable CS1591
+        CapabilityVersionDisable,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "capability.version.enable")]
+        #pragma warning disable CS1591
+        CapabilityVersionEnable,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "capability.disable")]
+        #pragma warning disable CS1591
+        CapabilityDisable,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "capability.enable")]
+        #pragma warning disable CS1591
+        CapabilityEnable,
+        #pragma warning restore CS1591
         [EnumMember(Value = "feature_permission.override.created")]
         #pragma warning disable CS1591
         FeaturePermissionOverrideCreated,
@@ -960,6 +1004,14 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         #pragma warning disable CS1591
         WorkflowExecutionTerminated,
         #pragma warning restore CS1591
+        [EnumMember(Value = "workflow.execution.completed")]
+        #pragma warning disable CS1591
+        WorkflowExecutionCompleted,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "workflow.execution.failed")]
+        #pragma warning disable CS1591
+        WorkflowExecutionFailed,
+        #pragma warning restore CS1591
         [EnumMember(Value = "workflow.execution.signal")]
         #pragma warning disable CS1591
         WorkflowExecutionSignal,
@@ -1015,6 +1067,42 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         [EnumMember(Value = "workflow.deployment.authorized_credential.revoked")]
         #pragma warning disable CS1591
         WorkflowDeploymentAuthorizedCredentialRevoked,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "workflow.managed_deployment.created")]
+        #pragma warning disable CS1591
+        WorkflowManagedDeploymentCreated,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "workflow.managed_deployment.updated")]
+        #pragma warning disable CS1591
+        WorkflowManagedDeploymentUpdated,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "workflow.managed_deployment.stopped")]
+        #pragma warning disable CS1591
+        WorkflowManagedDeploymentStopped,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "workflow.managed_deployment.started")]
+        #pragma warning disable CS1591
+        WorkflowManagedDeploymentStarted,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "workflow.managed_deployment.restarted")]
+        #pragma warning disable CS1591
+        WorkflowManagedDeploymentRestarted,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "workflow.managed_deployment.deleted")]
+        #pragma warning disable CS1591
+        WorkflowManagedDeploymentDeleted,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "workflow.managed_deployment.credential.provisioned")]
+        #pragma warning disable CS1591
+        WorkflowManagedDeploymentCredentialProvisioned,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "workflow.managed_deployment.credential.revoked")]
+        #pragma warning disable CS1591
+        WorkflowManagedDeploymentCredentialRevoked,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "workflow.managed_deployment.status.changed")]
+        #pragma warning disable CS1591
+        WorkflowManagedDeploymentStatusChanged,
         #pragma warning restore CS1591
     }
 }

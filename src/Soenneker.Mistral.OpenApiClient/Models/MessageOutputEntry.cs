@@ -87,8 +87,8 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         public global::Soenneker.Mistral.OpenApiClient.Models.MessageOutputEntryObject? Object { get => _explicitNullValueObject; set { _explicitNullValueObject = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("object"); else _explicitNullProperties?.Remove("object"); } }
         private global::Soenneker.Mistral.OpenApiClient.Models.MessageOutputEntryObject? _explicitNullValueObject = default!;
         /// <summary>The role property</summary>
-        public global::Soenneker.Mistral.OpenApiClient.Models.AssistantRole? Role { get => _explicitNullValueRole; set { _explicitNullValueRole = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("role"); else _explicitNullProperties?.Remove("role"); } }
-        private global::Soenneker.Mistral.OpenApiClient.Models.AssistantRole? _explicitNullValueRole = default!;
+        public global::Soenneker.Mistral.OpenApiClient.Models.MessageOutputEntryRole? Role { get => _explicitNullValueRole; set { _explicitNullValueRole = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("role"); else _explicitNullProperties?.Remove("role"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.MessageOutputEntryRole? _explicitNullValueRole = default!;
         /// <summary>The type property</summary>
         public global::Soenneker.Mistral.OpenApiClient.Models.MessageOutputType? Type { get => _explicitNullValueType; set { _explicitNullValueType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
         private global::Soenneker.Mistral.OpenApiClient.Models.MessageOutputType? _explicitNullValueType = default!;
@@ -117,7 +117,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "model", n => { Model = n.GetStringValue(); } },
                 { "object", n => { Object = n.GetEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.MessageOutputEntryObject>(); } },
-                { "role", n => { Role = n.GetEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.AssistantRole>(); } },
+                { "role", n => { Role = n.GetEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.MessageOutputEntryRole>(); } },
                 { "type", n => { Type = n.GetEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.MessageOutputType>(); } },
             };
         }
@@ -135,7 +135,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             writer.WriteStringValue("id", Id);
             writer.WriteStringValue("model", Model);
             writer.WriteEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.MessageOutputEntryObject>("object", Object);
-            writer.WriteEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.AssistantRole>("role", Role);
+            writer.WriteEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.MessageOutputEntryRole>("role", Role);
             writer.WriteEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.MessageOutputType>("type", Type);if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             
         }

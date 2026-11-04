@@ -15,9 +15,5 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         #pragma warning disable CS1591
         Workspace,
         #pragma warning restore CS1591
-        [EnumMember(Value = "Org")]
-        #pragma warning disable CS1591
-        Org,
-        #pragma warning restore CS1591
     }
 }

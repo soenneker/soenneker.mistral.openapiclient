@@ -2,6 +2,8 @@
 #pragma warning disable CS0618
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions;
+using Soenneker.Mistral.OpenApiClient.V1.Audio.Agents;
+using Soenneker.Mistral.OpenApiClient.V1.Audio.Sessions;
 using Soenneker.Mistral.OpenApiClient.V1.Audio.Speech;
 using Soenneker.Mistral.OpenApiClient.V1.Audio.Transcriptions;
 using Soenneker.Mistral.OpenApiClient.V1.Audio.TranscriptionsStream;
@@ -18,6 +20,16 @@ namespace Soenneker.Mistral.OpenApiClient.V1.Audio
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class AudioRequestBuilder : BaseRequestBuilder
     {
+        /// <summary>The agents property</summary>
+        public global::Soenneker.Mistral.OpenApiClient.V1.Audio.Agents.AgentsRequestBuilder Agents
+        {
+            get => new global::Soenneker.Mistral.OpenApiClient.V1.Audio.Agents.AgentsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The sessions property</summary>
+        public global::Soenneker.Mistral.OpenApiClient.V1.Audio.Sessions.SessionsRequestBuilder Sessions
+        {
+            get => new global::Soenneker.Mistral.OpenApiClient.V1.Audio.Sessions.SessionsRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>The speech property</summary>
         public global::Soenneker.Mistral.OpenApiClient.V1.Audio.Speech.SpeechRequestBuilder Speech
         {

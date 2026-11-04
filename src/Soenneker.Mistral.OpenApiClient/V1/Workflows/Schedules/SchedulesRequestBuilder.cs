@@ -167,7 +167,7 @@ namespace Soenneker.Mistral.OpenApiClient.V1.Workflows.Schedules
             /// <summary>Number of items per page. Omitting this parameter fetches all results at once (deprecated — pass page_size to use pagination).</summary>
             [QueryParameter("page_size")]
             public int? PageSize { get; set; }
-            /// <summary>Prefix search query for workflow name</summary>
+            /// <summary>Fuzzy search query for workflow name, display name, description, or ID</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("search")]

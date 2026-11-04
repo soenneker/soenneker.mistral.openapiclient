@@ -50,15 +50,8 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         private string _explicitNullValueDescription = default!;
 #endif
         /// <summary>The gender property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Gender { get => _explicitNullValueGender; set { _explicitNullValueGender = value; AdditionalData?.Remove("gender"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("gender"); else _explicitNullProperties?.Remove("gender"); } }
-        private string? _explicitNullValueGender = default!;
-#nullable restore
-#else
-        public string Gender { get => _explicitNullValueGender; set { _explicitNullValueGender = value; AdditionalData?.Remove("gender"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("gender"); else _explicitNullProperties?.Remove("gender"); } }
-        private string _explicitNullValueGender = default!;
-#endif
+        public global::Soenneker.Mistral.OpenApiClient.Models.VoiceGender? Gender { get => _explicitNullValueGender; set { _explicitNullValueGender = value; AdditionalData?.Remove("gender"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("gender"); else _explicitNullProperties?.Remove("gender"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.VoiceGender? _explicitNullValueGender = default!;
         /// <summary>The languages property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -119,7 +112,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             {
                 { "age", n => { Age = n.GetIntValue(); } },
                 { "description", n => { Description = n.GetStringValue(); } },
-                { "gender", n => { Gender = n.GetStringValue(); } },
+                { "gender", n => { var parsed = n.GetEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.VoiceGender>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueGender = default; _explicitNullProperties?.Remove("gender"); AdditionalData["gender"] = unknown; } else { Gender = parsed; AdditionalData.Remove("gender"); } } },
                 { "languages", n => { Languages = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "retention_notice", n => { RetentionNotice = n.GetIntValue(); } },
@@ -135,7 +128,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteIntValue("age", Age);
             writer.WriteStringValue("description", Description);
-            writer.WriteStringValue("gender", Gender);
+            writer.WriteEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.VoiceGender>("gender", Gender);
             writer.WriteCollectionOfPrimitiveValues<string>("languages", Languages);
             writer.WriteStringValue("name", Name);
             writer.WriteIntValue("retention_notice", RetentionNotice);

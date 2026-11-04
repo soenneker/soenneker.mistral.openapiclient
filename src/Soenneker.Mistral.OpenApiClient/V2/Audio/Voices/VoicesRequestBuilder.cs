@@ -22,7 +22,7 @@ namespace Soenneker.Mistral.OpenApiClient.V2.Audio.Voices
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public VoicesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v2/audio/voices{?gender*,language*,page_size*,page_token*,query*,type*}", pathParameters)
+        public VoicesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v2/audio/voices{?gender*,kind*,language*,page_size*,page_token*,query*,type*}", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +30,7 @@ namespace Soenneker.Mistral.OpenApiClient.V2.Audio.Voices
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public VoicesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v2/audio/voices{?gender*,language*,page_size*,page_token*,query*,type*}", rawUrl)
+        public VoicesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v2/audio/voices{?gender*,kind*,language*,page_size*,page_token*,query*,type*}", rawUrl)
         {
         }
         /// <summary>
@@ -101,6 +101,16 @@ namespace Soenneker.Mistral.OpenApiClient.V2.Audio.Voices
 #else
             [QueryParameter("gender")]
             public global::Soenneker.Mistral.OpenApiClient.Models.VoiceGender[] Gender { get; set; }
+#endif
+            /// <summary>Keep voices cloned with this technology</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("kind")]
+            public string? Kind { get; set; }
+#nullable restore
+#else
+            [QueryParameter("kind")]
+            public string Kind { get; set; }
 #endif
             /// <summary>Keep voices supporting any of these languages</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

@@ -7,6 +7,7 @@ using Soenneker.Mistral.OpenApiClient.Models;
 using Soenneker.Mistral.OpenApiClient.V1.Workflows.Item.Archive;
 using Soenneker.Mistral.OpenApiClient.V1.Workflows.Item.Execute;
 using Soenneker.Mistral.OpenApiClient.V1.Workflows.Item.Metrics;
+using Soenneker.Mistral.OpenApiClient.V1.Workflows.Item.Tags;
 using Soenneker.Mistral.OpenApiClient.V1.Workflows.Item.Unarchive;
 using System.Collections.Generic;
 using System.IO;
@@ -35,6 +36,11 @@ namespace Soenneker.Mistral.OpenApiClient.V1.Workflows.Item
         public global::Soenneker.Mistral.OpenApiClient.V1.Workflows.Item.Metrics.MetricsRequestBuilder Metrics
         {
             get => new global::Soenneker.Mistral.OpenApiClient.V1.Workflows.Item.Metrics.MetricsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The tags property</summary>
+        public global::Soenneker.Mistral.OpenApiClient.V1.Workflows.Item.Tags.TagsRequestBuilder Tags
+        {
+            get => new global::Soenneker.Mistral.OpenApiClient.V1.Workflows.Item.Tags.TagsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The unarchive property</summary>
         public global::Soenneker.Mistral.OpenApiClient.V1.Workflows.Item.Unarchive.UnarchiveRequestBuilder Unarchive

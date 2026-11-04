@@ -36,8 +36,6 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             else if (parseNode.GetChildNode("sample_audio") is { } nullNodeSampleAudio && nullNodeSampleAudio.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SampleAudio = null;
             if (parseNode.GetChildNode("sample_filename") is null) { _explicitNullValueSampleFilename = default!; _explicitNullProperties?.Remove("sample_filename"); }
             else if (parseNode.GetChildNode("sample_filename") is { } nullNodeSampleFilename && nullNodeSampleFilename.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SampleFilename = null;
-            if (parseNode.GetChildNode("slug") is null) { _explicitNullValueSlug = default!; _explicitNullProperties?.Remove("slug"); }
-            else if (parseNode.GetChildNode("slug") is { } nullNodeSlug && nullNodeSlug.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Slug = null;
             if (parseNode.GetChildNode("tags") is null) { _explicitNullValueTags = default!; _explicitNullProperties?.Remove("tags"); }
             else if (parseNode.GetChildNode("tags") is { } nullNodeTags && nullNodeTags.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Tags = null;
         }
@@ -68,15 +66,8 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         private string _explicitNullValueDescription = default!;
 #endif
         /// <summary>The gender property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Gender { get => _explicitNullValueGender; set { _explicitNullValueGender = value; AdditionalData?.Remove("gender"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("gender"); else _explicitNullProperties?.Remove("gender"); } }
-        private string? _explicitNullValueGender = default!;
-#nullable restore
-#else
-        public string Gender { get => _explicitNullValueGender; set { _explicitNullValueGender = value; AdditionalData?.Remove("gender"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("gender"); else _explicitNullProperties?.Remove("gender"); } }
-        private string _explicitNullValueGender = default!;
-#endif
+        public global::Soenneker.Mistral.OpenApiClient.Models.VoiceGender? Gender { get => _explicitNullValueGender; set { _explicitNullValueGender = value; AdditionalData?.Remove("gender"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("gender"); else _explicitNullProperties?.Remove("gender"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.VoiceGender? _explicitNullValueGender = default!;
         /// <summary>The languages property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -120,16 +111,6 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         public string SampleFilename { get => _explicitNullValueSampleFilename; set { _explicitNullValueSampleFilename = value; AdditionalData?.Remove("sample_filename"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sample_filename"); else _explicitNullProperties?.Remove("sample_filename"); } }
         private string _explicitNullValueSampleFilename = default!;
 #endif
-        /// <summary>The slug property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Slug { get => _explicitNullValueSlug; set { _explicitNullValueSlug = value; AdditionalData?.Remove("slug"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("slug"); else _explicitNullProperties?.Remove("slug"); } }
-        private string? _explicitNullValueSlug = default!;
-#nullable restore
-#else
-        public string Slug { get => _explicitNullValueSlug; set { _explicitNullValueSlug = value; AdditionalData?.Remove("slug"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("slug"); else _explicitNullProperties?.Remove("slug"); } }
-        private string _explicitNullValueSlug = default!;
-#endif
         /// <summary>The tags property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -169,13 +150,12 @@ namespace Soenneker.Mistral.OpenApiClient.Models
                 { "age", n => { Age = n.GetIntValue(); } },
                 { "color", n => { Color = n.GetStringValue(); } },
                 { "description", n => { Description = n.GetStringValue(); } },
-                { "gender", n => { Gender = n.GetStringValue(); } },
+                { "gender", n => { var parsed = n.GetEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.VoiceGender>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueGender = default; _explicitNullProperties?.Remove("gender"); AdditionalData["gender"] = unknown; } else { Gender = parsed; AdditionalData.Remove("gender"); } } },
                 { "languages", n => { Languages = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "retention_notice", n => { RetentionNotice = n.GetIntValue(); } },
                 { "sample_audio", n => { SampleAudio = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.VoiceCreateRequestSampleAudio>(global::Soenneker.Mistral.OpenApiClient.Models.VoiceCreateRequestSampleAudio.CreateFromDiscriminatorValue); } },
                 { "sample_filename", n => { SampleFilename = n.GetStringValue(); } },
-                { "slug", n => { Slug = n.GetStringValue(); } },
                 { "tags", n => { Tags = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
             };
         }
@@ -189,13 +169,12 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             writer.WriteIntValue("age", Age);
             writer.WriteStringValue("color", Color);
             writer.WriteStringValue("description", Description);
-            writer.WriteStringValue("gender", Gender);
+            writer.WriteEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.VoiceGender>("gender", Gender);
             writer.WriteCollectionOfPrimitiveValues<string>("languages", Languages);
             writer.WriteStringValue("name", Name);
             writer.WriteIntValue("retention_notice", RetentionNotice);
             writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.VoiceCreateRequestSampleAudio>("sample_audio", SampleAudio);
             writer.WriteStringValue("sample_filename", SampleFilename);
-            writer.WriteStringValue("slug", Slug);
             writer.WriteCollectionOfPrimitiveValues<string>("tags", Tags);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);

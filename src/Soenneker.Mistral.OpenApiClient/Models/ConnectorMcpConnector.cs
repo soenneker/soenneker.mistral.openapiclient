@@ -20,8 +20,6 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             base.CaptureExplicitNulls(parseNode);
             if (parseNode.GetChildNode("blocked_by") is null) { _explicitNullValueBlockedBy = default!; _explicitNullProperties?.Remove("blocked_by"); }
             else if (parseNode.GetChildNode("blocked_by") is { } nullNodeBlockedBy && nullNodeBlockedBy.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BlockedBy = null;
-            if (parseNode.GetChildNode("connection_config") is null) { _explicitNullValueConnectionConfig = default!; _explicitNullProperties?.Remove("connection_config"); }
-            else if (parseNode.GetChildNode("connection_config") is { } nullNodeConnectionConfig && nullNodeConnectionConfig.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ConnectionConfig = null;
             if (parseNode.GetChildNode("connection_credentials") is null) { _explicitNullValueConnectionCredentials = default!; _explicitNullProperties?.Remove("connection_credentials"); }
             else if (parseNode.GetChildNode("connection_credentials") is { } nullNodeConnectionCredentials && nullNodeConnectionCredentials.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ConnectionCredentials = null;
             if (parseNode.GetChildNode("connection_preferences") is null) { _explicitNullValueConnectionPreferences = default!; _explicitNullProperties?.Remove("connection_preferences"); }
@@ -32,8 +30,6 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             else if (parseNode.GetChildNode("creator_id") is { } nullNodeCreatorId && nullNodeCreatorId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CreatorId = null;
             if (parseNode.GetChildNode("description") is null) { _explicitNullValueDescription = default!; _explicitNullProperties?.Remove("description"); }
             else if (parseNode.GetChildNode("description") is { } nullNodeDescription && nullNodeDescription.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Description = null;
-            if (parseNode.GetChildNode("execution_env") is null) { _explicitNullValueExecutionEnv = default!; _explicitNullProperties?.Remove("execution_env"); }
-            else if (parseNode.GetChildNode("execution_env") is { } nullNodeExecutionEnv && nullNodeExecutionEnv.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExecutionEnv = null;
             if (parseNode.GetChildNode("icon_url") is null) { _explicitNullValueIconUrl = default!; _explicitNullProperties?.Remove("icon_url"); }
             else if (parseNode.GetChildNode("icon_url") is { } nullNodeIconUrl && nullNodeIconUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IconUrl = null;
             if (parseNode.GetChildNode("id") is null) { _explicitNullValueId = default!; _explicitNullProperties?.Remove("id"); }
@@ -82,16 +78,6 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         public List<global::Soenneker.Mistral.OpenApiClient.Models.ConsumerType?> BlockedBy { get => _explicitNullValueBlockedBy; set { _explicitNullValueBlockedBy = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("blocked_by"); else _explicitNullProperties?.Remove("blocked_by"); } }
         private List<global::Soenneker.Mistral.OpenApiClient.Models.ConsumerType?> _explicitNullValueBlockedBy = default!;
 #endif
-        /// <summary>The connection_config property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.HttpConnectorConnectionConfig? ConnectionConfig { get => _explicitNullValueConnectionConfig; set { _explicitNullValueConnectionConfig = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("connection_config"); else _explicitNullProperties?.Remove("connection_config"); } }
-        private global::Soenneker.Mistral.OpenApiClient.Models.HttpConnectorConnectionConfig? _explicitNullValueConnectionConfig = default!;
-#nullable restore
-#else
-        public global::Soenneker.Mistral.OpenApiClient.Models.HttpConnectorConnectionConfig ConnectionConfig { get => _explicitNullValueConnectionConfig; set { _explicitNullValueConnectionConfig = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("connection_config"); else _explicitNullProperties?.Remove("connection_config"); } }
-        private global::Soenneker.Mistral.OpenApiClient.Models.HttpConnectorConnectionConfig _explicitNullValueConnectionConfig = default!;
-#endif
         /// <summary>The connection_credentials property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -134,16 +120,6 @@ namespace Soenneker.Mistral.OpenApiClient.Models
 #else
         public string Description { get => _explicitNullValueDescription; set { _explicitNullValueDescription = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("description"); else _explicitNullProperties?.Remove("description"); } }
         private string _explicitNullValueDescription = default!;
-#endif
-        /// <summary>Credentials-free projection of ExecutionEnv for the public /connectors/mistral response.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.HttpConnectorExecutionEnv? ExecutionEnv { get => _explicitNullValueExecutionEnv; set { _explicitNullValueExecutionEnv = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("execution_env"); else _explicitNullProperties?.Remove("execution_env"); } }
-        private global::Soenneker.Mistral.OpenApiClient.Models.HttpConnectorExecutionEnv? _explicitNullValueExecutionEnv = default!;
-#nullable restore
-#else
-        public global::Soenneker.Mistral.OpenApiClient.Models.HttpConnectorExecutionEnv ExecutionEnv { get => _explicitNullValueExecutionEnv; set { _explicitNullValueExecutionEnv = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("execution_env"); else _explicitNullProperties?.Remove("execution_env"); } }
-        private global::Soenneker.Mistral.OpenApiClient.Models.HttpConnectorExecutionEnv _explicitNullValueExecutionEnv = default!;
 #endif
         /// <summary>The icon_url property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -295,13 +271,11 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
                 { "blocked_by", n => { BlockedBy = n.GetCollectionOfEnumValues<global::Soenneker.Mistral.OpenApiClient.Models.ConsumerType>()?.AsList(); } },
-                { "connection_config", n => { ConnectionConfig = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.HttpConnectorConnectionConfig>(global::Soenneker.Mistral.OpenApiClient.Models.HttpConnectorConnectionConfig.CreateFromDiscriminatorValue); } },
                 { "connection_credentials", n => { ConnectionCredentials = n.GetCollectionOfObjectValues<global::Soenneker.Mistral.OpenApiClient.Models.AuthenticationConfiguration>(global::Soenneker.Mistral.OpenApiClient.Models.AuthenticationConfiguration.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "connection_preferences", n => { ConnectionPreferences = n.GetCollectionOfObjectValues<global::Soenneker.Mistral.OpenApiClient.Models.ConnectionPreference>(global::Soenneker.Mistral.OpenApiClient.Models.ConnectionPreference.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
                 { "creator_id", n => { CreatorId = n.GetStringValue(); } },
                 { "description", n => { Description = n.GetStringValue(); } },
-                { "execution_env", n => { ExecutionEnv = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.HttpConnectorExecutionEnv>(global::Soenneker.Mistral.OpenApiClient.Models.HttpConnectorExecutionEnv.CreateFromDiscriminatorValue); } },
                 { "icon_url", n => { IconUrl = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetGuidValue(); } },
                 { "is_authenticated", n => { IsAuthenticated = n.GetBoolValue(); } },
@@ -331,13 +305,11 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteCollectionOfEnumValues<global::Soenneker.Mistral.OpenApiClient.Models.ConsumerType>("blocked_by", BlockedBy);
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.HttpConnectorConnectionConfig>("connection_config", ConnectionConfig);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Mistral.OpenApiClient.Models.AuthenticationConfiguration>("connection_credentials", ConnectionCredentials);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Mistral.OpenApiClient.Models.ConnectionPreference>("connection_preferences", ConnectionPreferences);
             writer.WriteDateTimeOffsetValue("created_at", CreatedAt);
             writer.WriteStringValue("creator_id", CreatorId);
             writer.WriteStringValue("description", Description);
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.HttpConnectorExecutionEnv>("execution_env", ExecutionEnv);
             writer.WriteStringValue("icon_url", IconUrl);
             writer.WriteGuidValue("id", Id);
             writer.WriteBoolValue("is_authenticated", IsAuthenticated);

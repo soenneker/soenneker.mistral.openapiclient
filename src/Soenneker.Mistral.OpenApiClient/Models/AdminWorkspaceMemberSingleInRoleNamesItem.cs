@@ -32,6 +32,10 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         #pragma warning disable CS1591
         MistralCodeUser,
         #pragma warning restore CS1591
+        [EnumMember(Value = "vibe_code_cli_user")]
+        #pragma warning disable CS1591
+        VibeCodeCliUser,
+        #pragma warning restore CS1591
         [EnumMember(Value = "cloud_user")]
         #pragma warning disable CS1591
         CloudUser,

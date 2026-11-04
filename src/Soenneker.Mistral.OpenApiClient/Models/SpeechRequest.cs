@@ -17,6 +17,10 @@ namespace Soenneker.Mistral.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
+            if (parseNode.GetChildNode("conversation_history") is null) { _explicitNullValueConversationHistory = default!; _explicitNullProperties?.Remove("conversation_history"); }
+            else if (parseNode.GetChildNode("conversation_history") is { } nullNodeConversationHistory && nullNodeConversationHistory.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ConversationHistory = null;
+            if (parseNode.GetChildNode("expressiveness") is null) { _explicitNullValueExpressiveness = default!; _explicitNullProperties?.Remove("expressiveness"); }
+            else if (parseNode.GetChildNode("expressiveness") is { } nullNodeExpressiveness && nullNodeExpressiveness.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Expressiveness = null;
             if (parseNode.GetChildNode("input") is null) { _explicitNullValueInput = default!; _explicitNullProperties?.Remove("input"); }
             else if (parseNode.GetChildNode("input") is { } nullNodeInput && nullNodeInput.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Input = null;
             if (parseNode.GetChildNode("metadata") is null) { _explicitNullValueMetadata = default!; _explicitNullProperties?.Remove("metadata"); }
@@ -39,6 +43,19 @@ namespace Soenneker.Mistral.OpenApiClient.Models
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>Prior turns, oldest first, alternating and ending on a user turn: `input` is the assistant reply to it. Conditions delivery, not speaker: set `voice_id` to choose the speaker. Requires `voice_id` to be a preset voice whose `kind` is `pvc`. Cannot be combined with `ref_audio`.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.Mistral.OpenApiClient.Models.SpeechRequestConversationHistoryItem>? ConversationHistory { get => _explicitNullValueConversationHistory; set { _explicitNullValueConversationHistory = value; AdditionalData?.Remove("conversation_history"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("conversation_history"); else _explicitNullProperties?.Remove("conversation_history"); } }
+        private List<global::Soenneker.Mistral.OpenApiClient.Models.SpeechRequestConversationHistoryItem>? _explicitNullValueConversationHistory = default!;
+#nullable restore
+#else
+        public List<global::Soenneker.Mistral.OpenApiClient.Models.SpeechRequestConversationHistoryItem> ConversationHistory { get => _explicitNullValueConversationHistory; set { _explicitNullValueConversationHistory = value; AdditionalData?.Remove("conversation_history"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("conversation_history"); else _explicitNullProperties?.Remove("conversation_history"); } }
+        private List<global::Soenneker.Mistral.OpenApiClient.Models.SpeechRequestConversationHistoryItem> _explicitNullValueConversationHistory = default!;
+#endif
+        /// <summary>Speaker flow-matching classifier-free guidance scale. Must be finite and at least 1.0.</summary>
+        public double? Expressiveness { get => _explicitNullValueExpressiveness; set { _explicitNullValueExpressiveness = value; AdditionalData?.Remove("expressiveness"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("expressiveness"); else _explicitNullProperties?.Remove("expressiveness"); } }
+        private double? _explicitNullValueExpressiveness = default!;
         /// <summary>Text to generate a speech from</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -142,6 +159,8 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "conversation_history", n => { ConversationHistory = n.GetCollectionOfObjectValues<global::Soenneker.Mistral.OpenApiClient.Models.SpeechRequestConversationHistoryItem>(global::Soenneker.Mistral.OpenApiClient.Models.SpeechRequestConversationHistoryItem.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "expressiveness", n => { Expressiveness = n.GetDoubleValue(); } },
                 { "input", n => { Input = n.GetStringValue(); } },
                 { "metadata", n => { Metadata = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.SpeechRequestMetadata>(global::Soenneker.Mistral.OpenApiClient.Models.SpeechRequestMetadata.CreateFromDiscriminatorValue); } },
                 { "model", n => { Model = n.GetStringValue(); } },
@@ -160,6 +179,8 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Mistral.OpenApiClient.Models.SpeechRequestConversationHistoryItem>("conversation_history", ConversationHistory);
+            writer.WriteDoubleValue("expressiveness", Expressiveness);
             writer.WriteStringValue("input", Input);
             writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.SpeechRequestMetadata>("metadata", Metadata);
             writer.WriteStringValue("model", Model);

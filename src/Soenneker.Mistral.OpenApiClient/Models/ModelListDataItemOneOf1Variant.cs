@@ -20,6 +20,10 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             base.CaptureExplicitNulls(parseNode);
             if (parseNode.GetChildNode("aliases") is null) { _explicitNullValueAliases = default!; _explicitNullProperties?.Remove("aliases"); }
             else if (parseNode.GetChildNode("aliases") is { } nullNodeAliases && nullNodeAliases.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Aliases = null;
+            if (parseNode.GetChildNode("audio_speech_capabilities") is null) { _explicitNullValueAudioSpeechCapabilities = default!; _explicitNullProperties?.Remove("audio_speech_capabilities"); }
+            else if (parseNode.GetChildNode("audio_speech_capabilities") is { } nullNodeAudioSpeechCapabilities && nullNodeAudioSpeechCapabilities.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AudioSpeechCapabilities = null;
+            if (parseNode.GetChildNode("audio_transcription_capabilities") is null) { _explicitNullValueAudioTranscriptionCapabilities = default!; _explicitNullProperties?.Remove("audio_transcription_capabilities"); }
+            else if (parseNode.GetChildNode("audio_transcription_capabilities") is { } nullNodeAudioTranscriptionCapabilities && nullNodeAudioTranscriptionCapabilities.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AudioTranscriptionCapabilities = null;
             if (parseNode.GetChildNode("billing_model_name") is null) { _explicitNullValueBillingModelName = default!; _explicitNullProperties?.Remove("billing_model_name"); }
             else if (parseNode.GetChildNode("billing_model_name") is { } nullNodeBillingModelName && nullNodeBillingModelName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BillingModelName = null;
             if (parseNode.GetChildNode("capabilities") is null) { _explicitNullValueCapabilities = default!; _explicitNullProperties?.Remove("capabilities"); }
@@ -57,6 +61,26 @@ namespace Soenneker.Mistral.OpenApiClient.Models
 #else
         public List<string> Aliases { get => _explicitNullValueAliases; set { _explicitNullValueAliases = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("aliases"); else _explicitNullProperties?.Remove("aliases"); } }
         private List<string> _explicitNullValueAliases = default!;
+#endif
+        /// <summary>The audio_speech_capabilities property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Mistral.OpenApiClient.Models.BaseModelCardAudioSpeechCapabilities? AudioSpeechCapabilities { get => _explicitNullValueAudioSpeechCapabilities; set { _explicitNullValueAudioSpeechCapabilities = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("audio_speech_capabilities"); else _explicitNullProperties?.Remove("audio_speech_capabilities"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.BaseModelCardAudioSpeechCapabilities? _explicitNullValueAudioSpeechCapabilities = default!;
+#nullable restore
+#else
+        public global::Soenneker.Mistral.OpenApiClient.Models.BaseModelCardAudioSpeechCapabilities AudioSpeechCapabilities { get => _explicitNullValueAudioSpeechCapabilities; set { _explicitNullValueAudioSpeechCapabilities = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("audio_speech_capabilities"); else _explicitNullProperties?.Remove("audio_speech_capabilities"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.BaseModelCardAudioSpeechCapabilities _explicitNullValueAudioSpeechCapabilities = default!;
+#endif
+        /// <summary>The audio_transcription_capabilities property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Mistral.OpenApiClient.Models.BaseModelCardAudioTranscriptionCapabilities? AudioTranscriptionCapabilities { get => _explicitNullValueAudioTranscriptionCapabilities; set { _explicitNullValueAudioTranscriptionCapabilities = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("audio_transcription_capabilities"); else _explicitNullProperties?.Remove("audio_transcription_capabilities"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.BaseModelCardAudioTranscriptionCapabilities? _explicitNullValueAudioTranscriptionCapabilities = default!;
+#nullable restore
+#else
+        public global::Soenneker.Mistral.OpenApiClient.Models.BaseModelCardAudioTranscriptionCapabilities AudioTranscriptionCapabilities { get => _explicitNullValueAudioTranscriptionCapabilities; set { _explicitNullValueAudioTranscriptionCapabilities = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("audio_transcription_capabilities"); else _explicitNullProperties?.Remove("audio_transcription_capabilities"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.BaseModelCardAudioTranscriptionCapabilities _explicitNullValueAudioTranscriptionCapabilities = default!;
 #endif
         /// <summary>The billing_model_name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -182,6 +206,8 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
                 { "aliases", n => { Aliases = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "audio_speech_capabilities", n => { AudioSpeechCapabilities = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.BaseModelCardAudioSpeechCapabilities>(global::Soenneker.Mistral.OpenApiClient.Models.BaseModelCardAudioSpeechCapabilities.CreateFromDiscriminatorValue); } },
+                { "audio_transcription_capabilities", n => { AudioTranscriptionCapabilities = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.BaseModelCardAudioTranscriptionCapabilities>(global::Soenneker.Mistral.OpenApiClient.Models.BaseModelCardAudioTranscriptionCapabilities.CreateFromDiscriminatorValue); } },
                 { "billing_model_name", n => { BillingModelName = n.GetStringValue(); } },
                 { "capabilities", n => { Capabilities = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ModelCapabilities>(global::Soenneker.Mistral.OpenApiClient.Models.ModelCapabilities.CreateFromDiscriminatorValue); } },
                 { "created", n => { Created = n.GetIntValue(); } },
@@ -206,6 +232,8 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteCollectionOfPrimitiveValues<string>("aliases", Aliases);
+            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.BaseModelCardAudioSpeechCapabilities>("audio_speech_capabilities", AudioSpeechCapabilities);
+            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.BaseModelCardAudioTranscriptionCapabilities>("audio_transcription_capabilities", AudioTranscriptionCapabilities);
             writer.WriteStringValue("billing_model_name", BillingModelName);
             writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ModelCapabilities>("capabilities", Capabilities);
             writer.WriteIntValue("created", Created);

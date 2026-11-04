@@ -4,6 +4,7 @@ using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
 using Soenneker.Mistral.OpenApiClient.Models;
+using Soenneker.Mistral.OpenApiClient.V1.Observability.Pipelines.Item.Results;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
@@ -17,6 +18,11 @@ namespace Soenneker.Mistral.OpenApiClient.V1.Observability.Pipelines.Item
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class WithPipelineItemRequestBuilder : BaseRequestBuilder
     {
+        /// <summary>The results property</summary>
+        public global::Soenneker.Mistral.OpenApiClient.V1.Observability.Pipelines.Item.Results.ResultsRequestBuilder Results
+        {
+            get => new global::Soenneker.Mistral.OpenApiClient.V1.Observability.Pipelines.Item.Results.ResultsRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Mistral.OpenApiClient.V1.Observability.Pipelines.Item.WithPipelineItemRequestBuilder"/> and sets the default values.
         /// </summary>

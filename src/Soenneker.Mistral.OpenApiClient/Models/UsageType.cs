@@ -67,6 +67,22 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         #pragma warning disable CS1591
         WorkflowExecutions,
         #pragma warning restore CS1591
+        [EnumMember(Value = "skill_activations")]
+        #pragma warning disable CS1591
+        SkillActivations,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "managed_index_storage_bytes")]
+        #pragma warning disable CS1591
+        ManagedIndexStorageBytes,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "managed_index_written_bytes")]
+        #pragma warning disable CS1591
+        ManagedIndexWrittenBytes,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "managed_index_searches")]
+        #pragma warning disable CS1591
+        ManagedIndexSearches,
+        #pragma warning restore CS1591
         [EnumMember(Value = "vibe")]
         #pragma warning disable CS1591
         Vibe,

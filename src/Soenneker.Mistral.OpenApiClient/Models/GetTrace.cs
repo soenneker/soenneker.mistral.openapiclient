@@ -65,6 +65,8 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             else if (parseNode.GetChildNode("root_span_id") is { } nullNodeRootSpanId && nullNodeRootSpanId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RootSpanId = null;
             if (parseNode.GetChildNode("root_span_name") is null) { _explicitNullValueRootSpanName = default!; _explicitNullProperties?.Remove("root_span_name"); }
             else if (parseNode.GetChildNode("root_span_name") is { } nullNodeRootSpanName && nullNodeRootSpanName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RootSpanName = null;
+            if (parseNode.GetChildNode("service_account_id") is null) { _explicitNullValueServiceAccountId = default!; _explicitNullProperties?.Remove("service_account_id"); }
+            else if (parseNode.GetChildNode("service_account_id") is { } nullNodeServiceAccountId && nullNodeServiceAccountId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ServiceAccountId = null;
             if (parseNode.GetChildNode("service_name") is null) { _explicitNullValueServiceName = default!; _explicitNullProperties?.Remove("service_name"); }
             else if (parseNode.GetChildNode("service_name") is { } nullNodeServiceName && nullNodeServiceName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ServiceName = null;
             if (parseNode.GetChildNode("span_count") is null) { _explicitNullValueSpanCount = default!; _explicitNullProperties?.Remove("span_count"); }
@@ -252,6 +254,16 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         public string RootSpanName { get => _explicitNullValueRootSpanName; set { _explicitNullValueRootSpanName = value; AdditionalData?.Remove("root_span_name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("root_span_name"); else _explicitNullProperties?.Remove("root_span_name"); } }
         private string _explicitNullValueRootSpanName = default!;
 #endif
+        /// <summary>The service_account_id property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ServiceAccountId { get => _explicitNullValueServiceAccountId; set { _explicitNullValueServiceAccountId = value; AdditionalData?.Remove("service_account_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("service_account_id"); else _explicitNullProperties?.Remove("service_account_id"); } }
+        private string? _explicitNullValueServiceAccountId = default!;
+#nullable restore
+#else
+        public string ServiceAccountId { get => _explicitNullValueServiceAccountId; set { _explicitNullValueServiceAccountId = value; AdditionalData?.Remove("service_account_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("service_account_id"); else _explicitNullProperties?.Remove("service_account_id"); } }
+        private string _explicitNullValueServiceAccountId = default!;
+#endif
         /// <summary>The service_name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -373,6 +385,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
                 { "retrieval_count", n => { RetrievalCount = n.GetIntValue(); } },
                 { "root_span_id", n => { RootSpanId = n.GetStringValue(); } },
                 { "root_span_name", n => { RootSpanName = n.GetStringValue(); } },
+                { "service_account_id", n => { ServiceAccountId = n.GetStringValue(); } },
                 { "service_name", n => { ServiceName = n.GetStringValue(); } },
                 { "span_count", n => { SpanCount = n.GetIntValue(); } },
                 { "start_time", n => { StartTime = n.GetDateTimeOffsetValue(); } },
@@ -416,6 +429,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             writer.WriteIntValue("retrieval_count", RetrievalCount);
             writer.WriteStringValue("root_span_id", RootSpanId);
             writer.WriteStringValue("root_span_name", RootSpanName);
+            writer.WriteStringValue("service_account_id", ServiceAccountId);
             writer.WriteStringValue("service_name", ServiceName);
             writer.WriteIntValue("span_count", SpanCount);
             writer.WriteDateTimeOffsetValue("start_time", StartTime);

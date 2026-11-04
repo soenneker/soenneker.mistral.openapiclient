@@ -22,6 +22,8 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             else if (parseNode.GetChildNode("field") is { } nullNodeField && nullNodeField.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Field = null;
             if (parseNode.GetChildNode("filter") is null) { _explicitNullValueFilter = default!; _explicitNullProperties?.Remove("filter"); }
             else if (parseNode.GetChildNode("filter") is { } nullNodeFilter && nullNodeFilter.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Filter = null;
+            if (parseNode.GetChildNode("operator") is null) { _explicitNullValueOperator = default!; _explicitNullProperties?.Remove("operator"); }
+            else if (parseNode.GetChildNode("operator") is { } nullNodeOperator && nullNodeOperator.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Operator = null;
             if (parseNode.GetChildNode("query") is null) { _explicitNullValueQuery = default!; _explicitNullProperties?.Remove("query"); }
             else if (parseNode.GetChildNode("query") is { } nullNodeQuery && nullNodeQuery.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Query = null;
             if (parseNode.GetChildNode("top_k") is null) { _explicitNullValueTopK = default!; _explicitNullProperties?.Remove("top_k"); }
@@ -48,6 +50,9 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         public global::Soenneker.Mistral.OpenApiClient.Models.KeywordRetrieverFilterAnyOf1 Filter { get => _explicitNullValueFilter; set { _explicitNullValueFilter = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("filter"); else _explicitNullProperties?.Remove("filter"); } }
         private global::Soenneker.Mistral.OpenApiClient.Models.KeywordRetrieverFilterAnyOf1 _explicitNullValueFilter = default!;
 #endif
+        /// <summary>The operator property</summary>
+        public global::Soenneker.Mistral.OpenApiClient.Models.KeywordRetrieverOperator? Operator { get => _explicitNullValueOperator; set { _explicitNullValueOperator = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("operator"); else _explicitNullProperties?.Remove("operator"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.KeywordRetrieverOperator? _explicitNullValueOperator = default!;
         /// <summary>The query property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -88,6 +93,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             {
                 { "field", n => { Field = n.GetStringValue(); } },
                 { "filter", n => { Filter = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.KeywordRetrieverFilterAnyOf1>(global::Soenneker.Mistral.OpenApiClient.Models.KeywordRetrieverFilterAnyOf1.CreateFromDiscriminatorValue); } },
+                { "operator", n => { Operator = n.GetEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.KeywordRetrieverOperator>(); } },
                 { "query", n => { Query = n.GetStringValue(); } },
                 { "top_k", n => { TopK = n.GetIntValue(); } },
             };
@@ -102,6 +108,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             base.Serialize(writer);
             writer.WriteStringValue("field", Field);
             writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.KeywordRetrieverFilterAnyOf1>("filter", Filter);
+            writer.WriteEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.KeywordRetrieverOperator>("operator", Operator);
             writer.WriteStringValue("query", Query);
             writer.WriteIntValue("top_k", TopK);if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             

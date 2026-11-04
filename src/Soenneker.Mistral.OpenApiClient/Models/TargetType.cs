@@ -64,6 +64,14 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         #pragma warning disable CS1591
         CustomVoice,
         #pragma warning restore CS1591
+        [EnumMember(Value = "CAPABILITY_REGISTRY")]
+        #pragma warning disable CS1591
+        CapabilityRegistry,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "CAPABILITY")]
+        #pragma warning disable CS1591
+        Capability,
+        #pragma warning restore CS1591
         [EnumMember(Value = "DATASET")]
         #pragma warning disable CS1591
         Dataset,

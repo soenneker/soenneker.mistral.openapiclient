@@ -6,10 +6,12 @@ using Soenneker.Mistral.OpenApiClient.V1.Admin;
 using Soenneker.Mistral.OpenApiClient.V1.Agents;
 using Soenneker.Mistral.OpenApiClient.V1.Audio;
 using Soenneker.Mistral.OpenApiClient.V1.Batch;
+using Soenneker.Mistral.OpenApiClient.V1.Billing;
 using Soenneker.Mistral.OpenApiClient.V1.Chat;
 using Soenneker.Mistral.OpenApiClient.V1.Classifications;
 using Soenneker.Mistral.OpenApiClient.V1.Client;
 using Soenneker.Mistral.OpenApiClient.V1.Connectors;
+using Soenneker.Mistral.OpenApiClient.V1.Context;
 using Soenneker.Mistral.OpenApiClient.V1.Conversations;
 using Soenneker.Mistral.OpenApiClient.V1.ConversationsStream;
 using Soenneker.Mistral.OpenApiClient.V1.Embeddings;
@@ -24,7 +26,9 @@ using Soenneker.Mistral.OpenApiClient.V1.Ocr;
 using Soenneker.Mistral.OpenApiClient.V1.Rag;
 using Soenneker.Mistral.OpenApiClient.V1.Responses;
 using Soenneker.Mistral.OpenApiClient.V1.ServiceAccounts;
+using Soenneker.Mistral.OpenApiClient.V1.Triggers;
 using Soenneker.Mistral.OpenApiClient.V1.Users;
+using Soenneker.Mistral.OpenApiClient.V1.Webhooks;
 using Soenneker.Mistral.OpenApiClient.V1.Whoami;
 using Soenneker.Mistral.OpenApiClient.V1.Workflows;
 using System.Collections.Generic;
@@ -59,6 +63,11 @@ namespace Soenneker.Mistral.OpenApiClient.V1
         {
             get => new global::Soenneker.Mistral.OpenApiClient.V1.Batch.BatchRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>The billing property</summary>
+        public global::Soenneker.Mistral.OpenApiClient.V1.Billing.BillingRequestBuilder Billing
+        {
+            get => new global::Soenneker.Mistral.OpenApiClient.V1.Billing.BillingRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>The chat property</summary>
         public global::Soenneker.Mistral.OpenApiClient.V1.Chat.ChatRequestBuilder Chat
         {
@@ -78,6 +87,11 @@ namespace Soenneker.Mistral.OpenApiClient.V1
         public global::Soenneker.Mistral.OpenApiClient.V1.Connectors.ConnectorsRequestBuilder Connectors
         {
             get => new global::Soenneker.Mistral.OpenApiClient.V1.Connectors.ConnectorsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The context property</summary>
+        public global::Soenneker.Mistral.OpenApiClient.V1.Context.ContextRequestBuilder Context
+        {
+            get => new global::Soenneker.Mistral.OpenApiClient.V1.Context.ContextRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The conversations property</summary>
         public global::Soenneker.Mistral.OpenApiClient.V1.Conversations.ConversationsRequestBuilder Conversations
@@ -149,10 +163,20 @@ namespace Soenneker.Mistral.OpenApiClient.V1
         {
             get => new global::Soenneker.Mistral.OpenApiClient.V1.ServiceAccounts.ServiceAccountsRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>The triggers property</summary>
+        public global::Soenneker.Mistral.OpenApiClient.V1.Triggers.TriggersRequestBuilder Triggers
+        {
+            get => new global::Soenneker.Mistral.OpenApiClient.V1.Triggers.TriggersRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>The users property</summary>
         public global::Soenneker.Mistral.OpenApiClient.V1.Users.UsersRequestBuilder Users
         {
             get => new global::Soenneker.Mistral.OpenApiClient.V1.Users.UsersRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The webhooks property</summary>
+        public global::Soenneker.Mistral.OpenApiClient.V1.Webhooks.WebhooksRequestBuilder Webhooks
+        {
+            get => new global::Soenneker.Mistral.OpenApiClient.V1.Webhooks.WebhooksRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The whoami property</summary>
         public global::Soenneker.Mistral.OpenApiClient.V1.Whoami.WhoamiRequestBuilder Whoami

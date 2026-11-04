@@ -49,7 +49,8 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         /// <summary>The grant_type property</summary>
         public global::Soenneker.Mistral.OpenApiClient.Models.OAuth2GrantType? GrantType { get => _explicitNullValueGrantType; set { _explicitNullValueGrantType = value; AdditionalData?.Remove("grant_type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("grant_type"); else _explicitNullProperties?.Remove("grant_type"); } }
         private global::Soenneker.Mistral.OpenApiClient.Models.OAuth2GrantType? _explicitNullValueGrantType = default!;
-        /// <summary>The has_default_credentials property</summary>
+        /// <summary>Deprecated: we removed the concept of connector level default credentials. Always false.</summary>
+        [Obsolete("")]
         public bool? HasDefaultCredentials { get => _explicitNullValueHasDefaultCredentials; set { _explicitNullValueHasDefaultCredentials = value; AdditionalData?.Remove("has_default_credentials"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("has_default_credentials"); else _explicitNullProperties?.Remove("has_default_credentials"); } }
         private bool? _explicitNullValueHasDefaultCredentials = default!;
         /// <summary>The headers property</summary>
@@ -84,6 +85,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         public PublicAuthenticationMethod()
         {
             AdditionalData = new Dictionary<string, object>();
+            HasDefaultCredentials = false;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

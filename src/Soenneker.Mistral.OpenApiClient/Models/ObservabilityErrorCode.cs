@@ -204,6 +204,10 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         #pragma warning disable CS1591
         OptimizationTrialKeyAlreadyExists,
         #pragma warning restore CS1591
+        [EnumMember(Value = "OPTIMIZATION_TRIAL_OBSERVATION_ALREADY_EXISTS")]
+        #pragma warning disable CS1591
+        OptimizationTrialObservationAlreadyExists,
+        #pragma warning restore CS1591
         [EnumMember(Value = "TRACES_FILTER_QUERY_PARSE_ERROR")]
         #pragma warning disable CS1591
         TracesFilterQueryParseError,

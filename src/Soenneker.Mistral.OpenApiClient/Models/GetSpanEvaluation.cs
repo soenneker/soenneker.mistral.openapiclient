@@ -35,6 +35,8 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             else if (parseNode.GetChildNode("score_label") is { } nullNodeScoreLabel && nullNodeScoreLabel.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ScoreLabel = null;
             if (parseNode.GetChildNode("score_value") is null) { _explicitNullValueScoreValue = default!; _explicitNullProperties?.Remove("score_value"); }
             else if (parseNode.GetChildNode("score_value") is { } nullNodeScoreValue && nullNodeScoreValue.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ScoreValue = null;
+            if (parseNode.GetChildNode("service_account_id") is null) { _explicitNullValueServiceAccountId = default!; _explicitNullProperties?.Remove("service_account_id"); }
+            else if (parseNode.GetChildNode("service_account_id") is { } nullNodeServiceAccountId && nullNodeServiceAccountId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ServiceAccountId = null;
             if (parseNode.GetChildNode("span_id") is null) { _explicitNullValueSpanId = default!; _explicitNullProperties?.Remove("span_id"); }
             else if (parseNode.GetChildNode("span_id") is { } nullNodeSpanId && nullNodeSpanId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SpanId = null;
             if (parseNode.GetChildNode("timestamp") is null) { _explicitNullValueTimestamp = default!; _explicitNullProperties?.Remove("timestamp"); }
@@ -132,6 +134,16 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         /// <summary>The score_value property</summary>
         public double? ScoreValue { get => _explicitNullValueScoreValue; set { _explicitNullValueScoreValue = value; AdditionalData?.Remove("score_value"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("score_value"); else _explicitNullProperties?.Remove("score_value"); } }
         private double? _explicitNullValueScoreValue = default!;
+        /// <summary>The service_account_id property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ServiceAccountId { get => _explicitNullValueServiceAccountId; set { _explicitNullValueServiceAccountId = value; AdditionalData?.Remove("service_account_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("service_account_id"); else _explicitNullProperties?.Remove("service_account_id"); } }
+        private string? _explicitNullValueServiceAccountId = default!;
+#nullable restore
+#else
+        public string ServiceAccountId { get => _explicitNullValueServiceAccountId; set { _explicitNullValueServiceAccountId = value; AdditionalData?.Remove("service_account_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("service_account_id"); else _explicitNullProperties?.Remove("service_account_id"); } }
+        private string _explicitNullValueServiceAccountId = default!;
+#endif
         /// <summary>The span_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -209,6 +221,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
                 { "response_id", n => { ResponseId = n.GetStringValue(); } },
                 { "score_label", n => { ScoreLabel = n.GetStringValue(); } },
                 { "score_value", n => { ScoreValue = n.GetDoubleValue(); } },
+                { "service_account_id", n => { ServiceAccountId = n.GetStringValue(); } },
                 { "span_id", n => { SpanId = n.GetStringValue(); } },
                 { "timestamp", n => { Timestamp = n.GetDateTimeOffsetValue(); } },
                 { "trace_id", n => { TraceId = n.GetStringValue(); } },
@@ -232,6 +245,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             writer.WriteStringValue("response_id", ResponseId);
             writer.WriteStringValue("score_label", ScoreLabel);
             writer.WriteDoubleValue("score_value", ScoreValue);
+            writer.WriteStringValue("service_account_id", ServiceAccountId);
             writer.WriteStringValue("span_id", SpanId);
             writer.WriteDateTimeOffsetValue("timestamp", Timestamp);
             writer.WriteStringValue("trace_id", TraceId);

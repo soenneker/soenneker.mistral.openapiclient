@@ -153,18 +153,15 @@ namespace Soenneker.Mistral.OpenApiClient.V2.Skills
             public string Alias { get; set; }
             #pragma warning restore CS1591
 #endif
+            /// <summary>Projection over each listed Skill. definition.description is the only definition path a list accepts; body and assets are read one skill at a time with GetSkill.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-            #pragma warning disable CS1591
             [QueryParameter("fields")]
             public string[]? Fields { get; set; }
-            #pragma warning restore CS1591
 #nullable restore
 #else
-            #pragma warning disable CS1591
             [QueryParameter("fields")]
             public string[] Fields { get; set; }
-            #pragma warning restore CS1591
 #endif
             #pragma warning disable CS1591
             [QueryParameter("pageSize")]

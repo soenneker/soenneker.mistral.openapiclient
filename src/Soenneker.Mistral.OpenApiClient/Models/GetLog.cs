@@ -39,6 +39,8 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             else if (parseNode.GetChildNode("scope_schema_url") is { } nullNodeScopeSchemaUrl && nullNodeScopeSchemaUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ScopeSchemaUrl = null;
             if (parseNode.GetChildNode("scope_version") is null) { _explicitNullValueScopeVersion = default!; _explicitNullProperties?.Remove("scope_version"); }
             else if (parseNode.GetChildNode("scope_version") is { } nullNodeScopeVersion && nullNodeScopeVersion.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ScopeVersion = null;
+            if (parseNode.GetChildNode("service_account_id") is null) { _explicitNullValueServiceAccountId = default!; _explicitNullProperties?.Remove("service_account_id"); }
+            else if (parseNode.GetChildNode("service_account_id") is { } nullNodeServiceAccountId && nullNodeServiceAccountId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ServiceAccountId = null;
             if (parseNode.GetChildNode("service_name") is null) { _explicitNullValueServiceName = default!; _explicitNullProperties?.Remove("service_name"); }
             else if (parseNode.GetChildNode("service_name") is { } nullNodeServiceName && nullNodeServiceName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ServiceName = null;
             if (parseNode.GetChildNode("severity_number") is null) { _explicitNullValueSeverityNumber = default!; _explicitNullProperties?.Remove("severity_number"); }
@@ -171,6 +173,16 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         public string ScopeVersion { get => _explicitNullValueScopeVersion; set { _explicitNullValueScopeVersion = value; AdditionalData?.Remove("scope_version"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("scope_version"); else _explicitNullProperties?.Remove("scope_version"); } }
         private string _explicitNullValueScopeVersion = default!;
 #endif
+        /// <summary>The service_account_id property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ServiceAccountId { get => _explicitNullValueServiceAccountId; set { _explicitNullValueServiceAccountId = value; AdditionalData?.Remove("service_account_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("service_account_id"); else _explicitNullProperties?.Remove("service_account_id"); } }
+        private string? _explicitNullValueServiceAccountId = default!;
+#nullable restore
+#else
+        public string ServiceAccountId { get => _explicitNullValueServiceAccountId; set { _explicitNullValueServiceAccountId = value; AdditionalData?.Remove("service_account_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("service_account_id"); else _explicitNullProperties?.Remove("service_account_id"); } }
+        private string _explicitNullValueServiceAccountId = default!;
+#endif
         /// <summary>The service_name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -276,6 +288,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
                 { "scope_name", n => { ScopeName = n.GetStringValue(); } },
                 { "scope_schema_url", n => { ScopeSchemaUrl = n.GetStringValue(); } },
                 { "scope_version", n => { ScopeVersion = n.GetStringValue(); } },
+                { "service_account_id", n => { ServiceAccountId = n.GetStringValue(); } },
                 { "service_name", n => { ServiceName = n.GetStringValue(); } },
                 { "severity_number", n => { SeverityNumber = n.GetIntValue(); } },
                 { "severity_text", n => { SeverityText = n.GetStringValue(); } },
@@ -305,6 +318,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             writer.WriteStringValue("scope_name", ScopeName);
             writer.WriteStringValue("scope_schema_url", ScopeSchemaUrl);
             writer.WriteStringValue("scope_version", ScopeVersion);
+            writer.WriteStringValue("service_account_id", ServiceAccountId);
             writer.WriteStringValue("service_name", ServiceName);
             writer.WriteIntValue("severity_number", SeverityNumber);
             writer.WriteStringValue("severity_text", SeverityText);

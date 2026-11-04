@@ -35,7 +35,7 @@ namespace Soenneker.Mistral.OpenApiClient.V1.Workflows.Deployments
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public DeploymentsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/workflows/deployments{?active_only*,created_by*,cursor*,is_hardened*,limit*,location_types*,order*,order_by*,owner*,search*,workflow_name*,workspace_id*}", pathParameters)
+        public DeploymentsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/workflows/deployments{?active_only*,created_by*,cursor*,dockerfile_path*,is_hardened*,limit*,location_types*,order*,order_by*,owner*,repository_url*,search*,workflow_name*,workspace_id*}", pathParameters)
         {
         }
         /// <summary>
@@ -43,7 +43,7 @@ namespace Soenneker.Mistral.OpenApiClient.V1.Workflows.Deployments
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public DeploymentsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/workflows/deployments{?active_only*,created_by*,cursor*,is_hardened*,limit*,location_types*,order*,order_by*,owner*,search*,workflow_name*,workspace_id*}", rawUrl)
+        public DeploymentsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/workflows/deployments{?active_only*,created_by*,cursor*,dockerfile_path*,is_hardened*,limit*,location_types*,order*,order_by*,owner*,repository_url*,search*,workflow_name*,workspace_id*}", rawUrl)
         {
         }
         /// <summary>
@@ -178,6 +178,16 @@ namespace Soenneker.Mistral.OpenApiClient.V1.Workflows.Deployments
             [QueryParameter("cursor")]
             public string Cursor { get; set; }
 #endif
+            /// <summary>Filter managed deployments by Dockerfile path (exact match)</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("dockerfile_path")]
+            public string? DockerfilePath { get; set; }
+#nullable restore
+#else
+            [QueryParameter("dockerfile_path")]
+            public string DockerfilePath { get; set; }
+#endif
             /// <summary>Filter deployments by hardened status</summary>
             [QueryParameter("is_hardened")]
             public bool? IsHardened { get; set; }
@@ -216,6 +226,16 @@ namespace Soenneker.Mistral.OpenApiClient.V1.Workflows.Deployments
 #else
             [QueryParameter("owner")]
             public string Owner { get; set; }
+#endif
+            /// <summary>Filter managed deployments by source repository URL (exact match)</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("repository_url")]
+            public string? RepositoryUrl { get; set; }
+#nullable restore
+#else
+            [QueryParameter("repository_url")]
+            public string RepositoryUrl { get; set; }
 #endif
             /// <summary>Filter deployments by name or ID prefix</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

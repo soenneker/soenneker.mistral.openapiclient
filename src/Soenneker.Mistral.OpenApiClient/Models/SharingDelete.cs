@@ -34,7 +34,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         /// <summary>The type of entity, used to share a library.</summary>
         public global::Soenneker.Mistral.OpenApiClient.Models.EntityType? ShareWithType { get => _explicitNullValueShareWithType; set { _explicitNullValueShareWithType = value; AdditionalData?.Remove("share_with_type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("share_with_type"); else _explicitNullProperties?.Remove("share_with_type"); } }
         private global::Soenneker.Mistral.OpenApiClient.Models.EntityType? _explicitNullValueShareWithType = default!;
-        /// <summary>The id of the entity (user, workspace or organization) to share with</summary>
+        /// <summary>The id of the entity to stop sharing with, as returned by the list endpoint</summary>
         public Guid? ShareWithUuid { get => _explicitNullValueShareWithUuid; set { _explicitNullValueShareWithUuid = value; AdditionalData?.Remove("share_with_uuid"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("share_with_uuid"); else _explicitNullProperties?.Remove("share_with_uuid"); } }
         private Guid? _explicitNullValueShareWithUuid = default!;
         /// <summary>

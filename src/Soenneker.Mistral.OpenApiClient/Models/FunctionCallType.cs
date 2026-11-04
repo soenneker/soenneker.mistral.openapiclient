@@ -8,7 +8,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
     public enum FunctionCallType
     #pragma warning restore CS1591
     {
-        [EnumMember(Value = "function.call")]
+        [EnumMember(Value = "function_call")]
         #pragma warning disable CS1591
         FunctionCall,
         #pragma warning restore CS1591

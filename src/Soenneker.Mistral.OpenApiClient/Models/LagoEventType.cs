@@ -40,6 +40,18 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         #pragma warning disable CS1591
         ApiLibrariesAudio,
         #pragma warning restore CS1591
+        [EnumMember(Value = "api_managed_index_storage_bytes")]
+        #pragma warning disable CS1591
+        ApiManagedIndexStorageBytes,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "api_managed_index_written_bytes")]
+        #pragma warning disable CS1591
+        ApiManagedIndexWrittenBytes,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "api_managed_index_searches")]
+        #pragma warning disable CS1591
+        ApiManagedIndexSearches,
+        #pragma warning restore CS1591
         [EnumMember(Value = "deployment_tokens")]
         #pragma warning disable CS1591
         DeploymentTokens,

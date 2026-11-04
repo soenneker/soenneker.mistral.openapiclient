@@ -32,10 +32,12 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         /// <summary>The consumer_type property</summary>
         public global::Soenneker.Mistral.OpenApiClient.Models.ConsumerType? ConsumerType { get => _explicitNullValueConsumerType; set { _explicitNullValueConsumerType = value; AdditionalData?.Remove("consumer_type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("consumer_type"); else _explicitNullProperties?.Remove("consumer_type"); } }
         private global::Soenneker.Mistral.OpenApiClient.Models.ConsumerType? _explicitNullValueConsumerType = default!;
-        /// <summary>The is_default property</summary>
+        /// <summary>Deprecated: always `true`.</summary>
+        [Obsolete("")]
         public bool? IsDefault { get => _explicitNullValueIsDefault; set { _explicitNullValueIsDefault = value; AdditionalData?.Remove("is_default"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("is_default"); else _explicitNullProperties?.Remove("is_default"); } }
         private bool? _explicitNullValueIsDefault = default!;
-        /// <summary>The name property</summary>
+        /// <summary>Deprecated: always `default`, a connection holds a single preference.</summary>
+        [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
@@ -61,6 +63,8 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         public ConnectionPreference()
         {
             AdditionalData = new Dictionary<string, object>();
+            IsDefault = true;
+            Name = "default";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

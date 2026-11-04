@@ -4,6 +4,7 @@ using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
 using Soenneker.Mistral.OpenApiClient.Models;
+using Soenneker.Mistral.OpenApiClient.V1.Workflows.Deployments.Item.Archive;
 using Soenneker.Mistral.OpenApiClient.V1.Workflows.Deployments.Item.Logs;
 using Soenneker.Mistral.OpenApiClient.V1.Workflows.Deployments.Item.Restart;
 using Soenneker.Mistral.OpenApiClient.V1.Workflows.Deployments.Item.Start;
@@ -23,6 +24,11 @@ namespace Soenneker.Mistral.OpenApiClient.V1.Workflows.Deployments.Item
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class WithDeploymentItemRequestBuilder : BaseRequestBuilder
     {
+        /// <summary>The archive property</summary>
+        public global::Soenneker.Mistral.OpenApiClient.V1.Workflows.Deployments.Item.Archive.ArchiveRequestBuilder Archive
+        {
+            get => new global::Soenneker.Mistral.OpenApiClient.V1.Workflows.Deployments.Item.Archive.ArchiveRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>The logs property</summary>
         public global::Soenneker.Mistral.OpenApiClient.V1.Workflows.Deployments.Item.Logs.LogsRequestBuilder Logs
         {
