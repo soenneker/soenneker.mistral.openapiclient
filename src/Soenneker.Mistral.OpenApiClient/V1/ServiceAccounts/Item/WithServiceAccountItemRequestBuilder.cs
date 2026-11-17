@@ -64,7 +64,7 @@ namespace Soenneker.Mistral.OpenApiClient.V1.ServiceAccounts.Item
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve a service account.Requires the Workspace admin (`workspace_admin`) role.
+        /// Retrieve a service account.Requires the `see_all_workspace_service_accounts` or `read_workspace_service_account` permission.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Mistral.OpenApiClient.Models.ServiceAccount"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -135,7 +135,7 @@ namespace Soenneker.Mistral.OpenApiClient.V1.ServiceAccounts.Item
             return requestInfo;
         }
         /// <summary>
-        /// Retrieve a service account.Requires the Workspace admin (`workspace_admin`) role.
+        /// Retrieve a service account.Requires the `see_all_workspace_service_accounts` or `read_workspace_service_account` permission.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

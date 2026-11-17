@@ -44,12 +44,12 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         /// <summary>The structuredContent property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.ConnectorToolResultMetadataStructuredContentProperty? StructuredContent { get => _explicitNullValueStructuredContent; set { _explicitNullValueStructuredContent = value; AdditionalData?.Remove("structuredContent"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("structuredContent"); else _explicitNullProperties?.Remove("structuredContent"); } }
-        private global::Soenneker.Mistral.OpenApiClient.Models.ConnectorToolResultMetadataStructuredContentProperty? _explicitNullValueStructuredContent = default!;
+        public UntypedNode? StructuredContent { get => _explicitNullValueStructuredContent; set { _explicitNullValueStructuredContent = value; AdditionalData?.Remove("structuredContent"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("structuredContent"); else _explicitNullProperties?.Remove("structuredContent"); } }
+        private UntypedNode? _explicitNullValueStructuredContent = default!;
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.ConnectorToolResultMetadataStructuredContentProperty StructuredContent { get => _explicitNullValueStructuredContent; set { _explicitNullValueStructuredContent = value; AdditionalData?.Remove("structuredContent"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("structuredContent"); else _explicitNullProperties?.Remove("structuredContent"); } }
-        private global::Soenneker.Mistral.OpenApiClient.Models.ConnectorToolResultMetadataStructuredContentProperty _explicitNullValueStructuredContent = default!;
+        public UntypedNode StructuredContent { get => _explicitNullValueStructuredContent; set { _explicitNullValueStructuredContent = value; AdditionalData?.Remove("structuredContent"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("structuredContent"); else _explicitNullProperties?.Remove("structuredContent"); } }
+        private UntypedNode _explicitNullValueStructuredContent = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Mistral.OpenApiClient.Models.ConnectorToolCallMetadataMcpMeta"/> and sets the default values.
@@ -81,7 +81,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             {
                 { "isError", n => { IsError = n.GetBoolValue(); } },
                 { "_meta", n => { Meta = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ConnectorToolResultMetadataMetaProperty>(global::Soenneker.Mistral.OpenApiClient.Models.ConnectorToolResultMetadataMetaProperty.CreateFromDiscriminatorValue); } },
-                { "structuredContent", n => { StructuredContent = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ConnectorToolResultMetadataStructuredContentProperty>(global::Soenneker.Mistral.OpenApiClient.Models.ConnectorToolResultMetadataStructuredContentProperty.CreateFromDiscriminatorValue); } },
+                { "structuredContent", n => { StructuredContent = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -93,7 +93,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("isError", IsError);
             writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ConnectorToolResultMetadataMetaProperty>("_meta", Meta);
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ConnectorToolResultMetadataStructuredContentProperty>("structuredContent", StructuredContent);
+            writer.WriteObjectValue<UntypedNode>("structuredContent", StructuredContent);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }

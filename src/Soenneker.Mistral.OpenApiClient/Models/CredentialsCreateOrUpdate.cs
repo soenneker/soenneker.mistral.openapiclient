@@ -30,7 +30,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The credential data (headers, bearer_token, or OAuth2 client credentials).</summary>
+        /// <summary>The credential data (headers, query_params, bearer_token, or OAuth2 client credentials).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Mistral.OpenApiClient.Models.CredentialsCreateOrUpdateCredentials? Credentials { get => _explicitNullValueCredentials; set { _explicitNullValueCredentials = value; AdditionalData?.Remove("credentials"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("credentials"); else _explicitNullProperties?.Remove("credentials"); } }

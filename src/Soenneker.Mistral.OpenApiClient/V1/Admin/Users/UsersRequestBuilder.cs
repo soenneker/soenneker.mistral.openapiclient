@@ -35,7 +35,7 @@ namespace Soenneker.Mistral.OpenApiClient.V1.Admin.Users
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public UsersRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/admin/users{?email*,page*,page_size*}", pathParameters)
+        public UsersRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/admin/users{?email*,include_inactive*,page*,page_size*}", pathParameters)
         {
         }
         /// <summary>
@@ -43,7 +43,7 @@ namespace Soenneker.Mistral.OpenApiClient.V1.Admin.Users
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public UsersRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/admin/users{?email*,page*,page_size*}", rawUrl)
+        public UsersRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/admin/users{?email*,include_inactive*,page*,page_size*}", rawUrl)
         {
         }
         /// <summary>
@@ -150,6 +150,9 @@ namespace Soenneker.Mistral.OpenApiClient.V1.Admin.Users
             [QueryParameter("email")]
             public string Email { get; set; }
 #endif
+            /// <summary>Also return deactivated and blocked members.</summary>
+            [QueryParameter("include_inactive")]
+            public bool? IncludeInactive { get; set; }
             /// <summary>Page number to return.</summary>
             [QueryParameter("page")]
             public int? Page { get; set; }

@@ -35,7 +35,7 @@ namespace Soenneker.Mistral.OpenApiClient.V1.Workflows.Runs
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public RunsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/workflows/runs{?deployment_name*,end_time_after*,end_time_before*,include_internal*,next_page_token*,order*,page_size*,root_execution_id*,search*,search_key*,sort_by*,start_time_after*,start_time_before*,status*,user_id*,workflow_identifier*,workflow_tags*}", pathParameters)
+        public RunsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/workflows/runs{?deployment_name*,end_time_after*,end_time_before*,exclude_workflow_tags*,include_internal*,next_page_token*,order*,page_size*,root_execution_id*,search*,search_key*,sort_by*,start_time_after*,start_time_before*,status*,user_id*,workflow_identifier*,workflow_tags*}", pathParameters)
         {
         }
         /// <summary>
@@ -43,7 +43,7 @@ namespace Soenneker.Mistral.OpenApiClient.V1.Workflows.Runs
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public RunsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/workflows/runs{?deployment_name*,end_time_after*,end_time_before*,include_internal*,next_page_token*,order*,page_size*,root_execution_id*,search*,search_key*,sort_by*,start_time_after*,start_time_before*,status*,user_id*,workflow_identifier*,workflow_tags*}", rawUrl)
+        public RunsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/workflows/runs{?deployment_name*,end_time_after*,end_time_before*,exclude_workflow_tags*,include_internal*,next_page_token*,order*,page_size*,root_execution_id*,search*,search_key*,sort_by*,start_time_after*,start_time_before*,status*,user_id*,workflow_identifier*,workflow_tags*}", rawUrl)
         {
         }
         /// <summary>
@@ -121,6 +121,16 @@ namespace Soenneker.Mistral.OpenApiClient.V1.Workflows.Runs
             /// <summary>Include runs with end_time &lt;= value. Running executions (no end_time) are excluded; use the status filter to include them.</summary>
             [QueryParameter("end_time_before")]
             public DateTimeOffset? EndTimeBefore { get; set; }
+            /// <summary>Exclude runs of workflows tagged with any of the listed tags.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("exclude_workflow_tags")]
+            public string[]? ExcludeWorkflowTags { get; set; }
+#nullable restore
+#else
+            [QueryParameter("exclude_workflow_tags")]
+            public string[] ExcludeWorkflowTags { get; set; }
+#endif
             /// <summary>Include runs of internal/technical workflows (e.g. parallel-execution)</summary>
             [QueryParameter("include_internal")]
             public bool? IncludeInternal { get; set; }

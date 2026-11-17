@@ -21,8 +21,6 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             else if (parseNode.GetChildNode("description") is { } nullNodeDescription && nullNodeDescription.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Description = null;
             if (parseNode.GetChildNode("name") is null) { _explicitNullValueName = default!; _explicitNullProperties?.Remove("name"); }
             else if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
-            if (parseNode.GetChildNode("parent_group_ids") is null) { _explicitNullValueParentGroupIds = default!; _explicitNullProperties?.Remove("parent_group_ids"); }
-            else if (parseNode.GetChildNode("parent_group_ids") is { } nullNodeParentGroupIds && nullNodeParentGroupIds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ParentGroupIds = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -46,16 +44,6 @@ namespace Soenneker.Mistral.OpenApiClient.Models
 #else
         public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
         private string _explicitNullValueName = default!;
-#endif
-        /// <summary>UUIDs of existing groups to nest this new group inside. Omit or pass an empty list to create a top-level group.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public List<Guid?>? ParentGroupIds { get => _explicitNullValueParentGroupIds; set { _explicitNullValueParentGroupIds = value; AdditionalData?.Remove("parent_group_ids"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("parent_group_ids"); else _explicitNullProperties?.Remove("parent_group_ids"); } }
-        private List<Guid?>? _explicitNullValueParentGroupIds = default!;
-#nullable restore
-#else
-        public List<Guid?> ParentGroupIds { get => _explicitNullValueParentGroupIds; set { _explicitNullValueParentGroupIds = value; AdditionalData?.Remove("parent_group_ids"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("parent_group_ids"); else _explicitNullProperties?.Remove("parent_group_ids"); } }
-        private List<Guid?> _explicitNullValueParentGroupIds = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Mistral.OpenApiClient.Models.AdminUserGroupIn"/> and sets the default values.
@@ -84,7 +72,6 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             {
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
-                { "parent_group_ids", n => { ParentGroupIds = n.GetCollectionOfPrimitiveValues<Guid?>()?.AsList(); } },
             };
         }
         /// <summary>
@@ -96,7 +83,6 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("description", Description);
             writer.WriteStringValue("name", Name);
-            writer.WriteCollectionOfPrimitiveValues<Guid?>("parent_group_ids", ParentGroupIds);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }

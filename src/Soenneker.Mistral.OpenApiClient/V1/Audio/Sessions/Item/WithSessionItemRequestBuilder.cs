@@ -83,6 +83,33 @@ namespace Soenneker.Mistral.OpenApiClient.V1.Audio.Sessions.Item
             return await RequestAdapter.SendAsync<global::Soenneker.Mistral.OpenApiClient.Models.AudioSessionResponse>(requestInfo, global::Soenneker.Mistral.OpenApiClient.Models.AudioSessionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
+        /// Update the instructions, tools or turn handling of a live session.The agent applies the update at its next turn boundary, so it is not yetapplied when this returns.The agent&apos;s `session_updated` and `session_update_failed` webhooks reportthe outcome to your server.
+        /// </summary>
+        /// <returns>A <see cref="global::Soenneker.Mistral.OpenApiClient.Models.AudioSessionUpdateResponse"/></returns>
+        /// <param name="body">The request body</param>
+        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="global::Soenneker.Mistral.OpenApiClient.Models.HttpValidationError">When receiving a 422 status code</exception>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public async Task<global::Soenneker.Mistral.OpenApiClient.Models.AudioSessionUpdateResponse?> PatchAsync(global::Soenneker.Mistral.OpenApiClient.Models.AudioSessionUpdateRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
+#nullable restore
+#else
+        public async Task<global::Soenneker.Mistral.OpenApiClient.Models.AudioSessionUpdateResponse> PatchAsync(global::Soenneker.Mistral.OpenApiClient.Models.AudioSessionUpdateRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
+#endif
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
+            var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
+                { "422", global::Soenneker.Mistral.OpenApiClient.Models.HttpValidationError.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+            };
+            return await RequestAdapter.SendAsync<global::Soenneker.Mistral.OpenApiClient.Models.AudioSessionUpdateResponse>(requestInfo, global::Soenneker.Mistral.OpenApiClient.Models.AudioSessionUpdateResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+        }
+        /// <summary>
         /// Stop an audio agent session and release its resources.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
@@ -118,6 +145,28 @@ namespace Soenneker.Mistral.OpenApiClient.V1.Audio.Sessions.Item
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
+            return requestInfo;
+        }
+        /// <summary>
+        /// Update the instructions, tools or turn handling of a live session.The agent applies the update at its next turn boundary, so it is not yetapplied when this returns.The agent&apos;s `session_updated` and `session_update_failed` webhooks reportthe outcome to your server.
+        /// </summary>
+        /// <returns>A <see cref="RequestInformation"/></returns>
+        /// <param name="body">The request body</param>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public RequestInformation ToPatchRequestInformation(global::Soenneker.Mistral.OpenApiClient.Models.AudioSessionUpdateRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        {
+#nullable restore
+#else
+        public RequestInformation ToPatchRequestInformation(global::Soenneker.Mistral.OpenApiClient.Models.AudioSessionUpdateRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        {
+#endif
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
+            var requestInfo = new RequestInformation(Method.PATCH, UrlTemplate, PathParameters);
+            requestInfo.Configure(requestConfiguration);
+            requestInfo.Headers.TryAdd("Accept", "application/json");
+            requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
             return requestInfo;
         }
         /// <summary>

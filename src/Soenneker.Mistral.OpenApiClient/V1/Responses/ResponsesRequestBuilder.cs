@@ -40,7 +40,7 @@ namespace Soenneker.Mistral.OpenApiClient.V1.Responses
         {
         }
         /// <summary>
-        /// Create a response.Generate a model response from text or image inputs. The response caninclude text, reasoning, and function calls. Set stream to true toreceive Server-Sent Events.For multi-turn conversations, send the full history in input, includingprior output items and function results. Responses are not stored. Onlyclient-executed function tools are supported.
+        /// Create a response.Generate a model response from text, image, or file inputs. The response caninclude text, reasoning, and function calls. Set stream to true toreceive Server-Sent Events.For multi-turn conversations, send the full history in input, includingprior output items and function results. Responses are not stored. Onlyclient-executed function tools are supported.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Mistral.OpenApiClient.Models.CreateResponseResponse"/></returns>
         /// <param name="body">The request body</param>
@@ -60,7 +60,7 @@ namespace Soenneker.Mistral.OpenApiClient.V1.Responses
             return await RequestAdapter.SendAsync<global::Soenneker.Mistral.OpenApiClient.Models.CreateResponseResponse>(requestInfo, global::Soenneker.Mistral.OpenApiClient.Models.CreateResponseResponse.CreateFromDiscriminatorValue, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create a response.Generate a model response from text or image inputs. The response caninclude text, reasoning, and function calls. Set stream to true toreceive Server-Sent Events.For multi-turn conversations, send the full history in input, includingprior output items and function results. Responses are not stored. Onlyclient-executed function tools are supported.
+        /// Create a response.Generate a model response from text, image, or file inputs. The response caninclude text, reasoning, and function calls. Set stream to true toreceive Server-Sent Events.For multi-turn conversations, send the full history in input, includingprior output items and function results. Responses are not stored. Onlyclient-executed function tools are supported.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

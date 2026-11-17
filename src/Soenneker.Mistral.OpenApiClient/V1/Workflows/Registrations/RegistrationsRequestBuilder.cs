@@ -35,7 +35,7 @@ namespace Soenneker.Mistral.OpenApiClient.V1.Workflows.Registrations
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public RegistrationsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/workflows/registrations{?active_only*,archived*,available_in_chat_assistant*,cursor*,include_shared*,limit*,task_queue*,with_workflow*,workflow_id*,workflow_name*,workflow_search*}", pathParameters)
+        public RegistrationsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/workflows/registrations{?active_only*,archived*,available_in_chat_assistant*,cursor*,exclude_tags*,include_shared*,limit*,task_queue*,with_workflow*,workflow_id*,workflow_name*,workflow_search*}", pathParameters)
         {
         }
         /// <summary>
@@ -43,7 +43,7 @@ namespace Soenneker.Mistral.OpenApiClient.V1.Workflows.Registrations
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public RegistrationsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/workflows/registrations{?active_only*,archived*,available_in_chat_assistant*,cursor*,include_shared*,limit*,task_queue*,with_workflow*,workflow_id*,workflow_name*,workflow_search*}", rawUrl)
+        public RegistrationsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/workflows/registrations{?active_only*,archived*,available_in_chat_assistant*,cursor*,exclude_tags*,include_shared*,limit*,task_queue*,with_workflow*,workflow_id*,workflow_name*,workflow_search*}", rawUrl)
         {
         }
         /// <summary>
@@ -123,6 +123,16 @@ namespace Soenneker.Mistral.OpenApiClient.V1.Workflows.Registrations
 #else
             [QueryParameter("cursor")]
             public string Cursor { get; set; }
+#endif
+            /// <summary>Exclude registrations of workflows tagged with any of the listed tags.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("exclude_tags")]
+            public string[]? ExcludeTags { get; set; }
+#nullable restore
+#else
+            [QueryParameter("exclude_tags")]
+            public string[] ExcludeTags { get; set; }
 #endif
             /// <summary>Whether to include shared workflow versions</summary>
             [QueryParameter("include_shared")]

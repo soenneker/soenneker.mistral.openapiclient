@@ -80,6 +80,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         public AudioSttConfig()
         {
             AdditionalData = new Dictionary<string, object>();
+            TargetStreamingDelayMs = 240;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

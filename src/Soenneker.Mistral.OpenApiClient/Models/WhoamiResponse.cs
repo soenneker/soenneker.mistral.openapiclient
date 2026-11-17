@@ -18,6 +18,8 @@ namespace Soenneker.Mistral.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
+            if (parseNode.GetChildNode("customer_id") is null) { _explicitNullValueCustomerId = default!; _explicitNullProperties?.Remove("customer_id"); }
+            else if (parseNode.GetChildNode("customer_id") is { } nullNodeCustomerId && nullNodeCustomerId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CustomerId = null;
             if (parseNode.GetChildNode("organization") is null) { _explicitNullValueOrganization = default!; _explicitNullProperties?.Remove("organization"); }
             else if (parseNode.GetChildNode("organization") is { } nullNodeOrganization && nullNodeOrganization.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Organization = null;
             if (parseNode.GetChildNode("principal") is null) { _explicitNullValuePrincipal = default!; _explicitNullProperties?.Remove("principal"); }
@@ -28,6 +30,16 @@ namespace Soenneker.Mistral.OpenApiClient.Models
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The billing customer identifier from the authenticated session. Identifies the billing account, not the organization (organization.id); the IDs are not interchangeable. Null when no customer is selected.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? CustomerId { get => _explicitNullValueCustomerId; set { _explicitNullValueCustomerId = value; AdditionalData?.Remove("customer_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("customer_id"); else _explicitNullProperties?.Remove("customer_id"); } }
+        private string? _explicitNullValueCustomerId = default!;
+#nullable restore
+#else
+        public string CustomerId { get => _explicitNullValueCustomerId; set { _explicitNullValueCustomerId = value; AdditionalData?.Remove("customer_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("customer_id"); else _explicitNullProperties?.Remove("customer_id"); } }
+        private string _explicitNullValueCustomerId = default!;
+#endif
         /// <summary>The organization the caller&apos;s session is scoped to, when set.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -83,6 +95,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "customer_id", n => { CustomerId = n.GetStringValue(); } },
                 { "organization", n => { Organization = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.WhoamiResponseOrganization>(global::Soenneker.Mistral.OpenApiClient.Models.WhoamiResponseOrganization.CreateFromDiscriminatorValue); } },
                 { "principal", n => { Principal = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.WhoamiResponsePrincipal>(global::Soenneker.Mistral.OpenApiClient.Models.WhoamiResponsePrincipal.CreateFromDiscriminatorValue); } },
                 { "workspace", n => { Workspace = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.WhoamiResponseWorkspace>(global::Soenneker.Mistral.OpenApiClient.Models.WhoamiResponseWorkspace.CreateFromDiscriminatorValue); } },
@@ -95,6 +108,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteStringValue("customer_id", CustomerId);
             writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.WhoamiResponseOrganization>("organization", Organization);
             writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.WhoamiResponsePrincipal>("principal", Principal);
             writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.WhoamiResponseWorkspace>("workspace", Workspace);

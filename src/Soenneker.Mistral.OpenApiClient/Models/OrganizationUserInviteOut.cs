@@ -44,17 +44,17 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         private Guid? _explicitNullValueInviteUuid = default!;
         /// <summary>Deprecated single invite role. Use &apos;roles&apos; instead.</summary>
         [Obsolete("")]
-        public global::Soenneker.Mistral.OpenApiClient.Models.OrganizationUserInviteOutRole? Role { get => _explicitNullValueRole; set { _explicitNullValueRole = value; AdditionalData?.Remove("role"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("role"); else _explicitNullProperties?.Remove("role"); } }
-        private global::Soenneker.Mistral.OpenApiClient.Models.OrganizationUserInviteOutRole? _explicitNullValueRole = default!;
+        public global::Soenneker.Mistral.OpenApiClient.Models.StaticOrganizationRoles? Role { get => _explicitNullValueRole; set { _explicitNullValueRole = value; AdditionalData?.Remove("role"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("role"); else _explicitNullProperties?.Remove("role"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.StaticOrganizationRoles? _explicitNullValueRole = default!;
         /// <summary>Organization roles assigned by the invite.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.OrganizationUserInviteOutRoles? Roles { get => _explicitNullValueRoles; set { _explicitNullValueRoles = value; AdditionalData?.Remove("roles"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("roles"); else _explicitNullProperties?.Remove("roles"); } }
-        private global::Soenneker.Mistral.OpenApiClient.Models.OrganizationUserInviteOutRoles? _explicitNullValueRoles = default!;
+        public List<global::Soenneker.Mistral.OpenApiClient.Models.StaticOrganizationRoles?>? Roles { get => _explicitNullValueRoles; set { _explicitNullValueRoles = value; AdditionalData?.Remove("roles"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("roles"); else _explicitNullProperties?.Remove("roles"); } }
+        private List<global::Soenneker.Mistral.OpenApiClient.Models.StaticOrganizationRoles?>? _explicitNullValueRoles = default!;
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.OrganizationUserInviteOutRoles Roles { get => _explicitNullValueRoles; set { _explicitNullValueRoles = value; AdditionalData?.Remove("roles"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("roles"); else _explicitNullProperties?.Remove("roles"); } }
-        private global::Soenneker.Mistral.OpenApiClient.Models.OrganizationUserInviteOutRoles _explicitNullValueRoles = default!;
+        public List<global::Soenneker.Mistral.OpenApiClient.Models.StaticOrganizationRoles?> Roles { get => _explicitNullValueRoles; set { _explicitNullValueRoles = value; AdditionalData?.Remove("roles"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("roles"); else _explicitNullProperties?.Remove("roles"); } }
+        private List<global::Soenneker.Mistral.OpenApiClient.Models.StaticOrganizationRoles?> _explicitNullValueRoles = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Mistral.OpenApiClient.Models.OrganizationUserInviteOut"/> and sets the default values.
@@ -83,8 +83,8 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             {
                 { "email", n => { Email = n.GetStringValue(); } },
                 { "invite_uuid", n => { InviteUuid = n.GetGuidValue(); } },
-                { "role", n => { var parsed = n.GetEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.OrganizationUserInviteOutRole>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueRole = default; _explicitNullProperties?.Remove("role"); AdditionalData["role"] = unknown; } else { Role = parsed; AdditionalData.Remove("role"); } } },
-                { "roles", n => { Roles = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.OrganizationUserInviteOutRoles>(global::Soenneker.Mistral.OpenApiClient.Models.OrganizationUserInviteOutRoles.CreateFromDiscriminatorValue); } },
+                { "role", n => { var parsed = n.GetEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.StaticOrganizationRoles>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueRole = default; _explicitNullProperties?.Remove("role"); AdditionalData["role"] = unknown; } else { Role = parsed; AdditionalData.Remove("role"); } } },
+                { "roles", n => { Roles = n.GetCollectionOfEnumValues<global::Soenneker.Mistral.OpenApiClient.Models.StaticOrganizationRoles>()?.AsList(); } },
             };
         }
         /// <summary>
@@ -96,8 +96,8 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("email", Email);
             writer.WriteGuidValue("invite_uuid", InviteUuid);
-            writer.WriteEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.OrganizationUserInviteOutRole>("role", Role);
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.OrganizationUserInviteOutRoles>("roles", Roles);
+            writer.WriteEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.StaticOrganizationRoles>("role", Role);
+            writer.WriteCollectionOfEnumValues<global::Soenneker.Mistral.OpenApiClient.Models.StaticOrganizationRoles>("roles", Roles);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }

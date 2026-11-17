@@ -27,10 +27,14 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             else if (parseNode.GetChildNode("judge_labels") is { } nullNodeJudgeLabels && nullNodeJudgeLabels.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) JudgeLabels = null;
             if (parseNode.GetChildNode("judge_scores") is null) { _explicitNullValueJudgeScores = default!; _explicitNullProperties?.Remove("judge_scores"); }
             else if (parseNode.GetChildNode("judge_scores") is { } nullNodeJudgeScores && nullNodeJudgeScores.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) JudgeScores = null;
+            if (parseNode.GetChildNode("operation_name") is null) { _explicitNullValueOperationName = default!; _explicitNullProperties?.Remove("operation_name"); }
+            else if (parseNode.GetChildNode("operation_name") is { } nullNodeOperationName && nullNodeOperationName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OperationName = null;
             if (parseNode.GetChildNode("span_id") is null) { _explicitNullValueSpanId = default!; _explicitNullProperties?.Remove("span_id"); }
             else if (parseNode.GetChildNode("span_id") is { } nullNodeSpanId && nullNodeSpanId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SpanId = null;
             if (parseNode.GetChildNode("span_name") is null) { _explicitNullValueSpanName = default!; _explicitNullProperties?.Remove("span_name"); }
             else if (parseNode.GetChildNode("span_name") is { } nullNodeSpanName && nullNodeSpanName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SpanName = null;
+            if (parseNode.GetChildNode("tool_name") is null) { _explicitNullValueToolName = default!; _explicitNullProperties?.Remove("tool_name"); }
+            else if (parseNode.GetChildNode("tool_name") is { } nullNodeToolName && nullNodeToolName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ToolName = null;
             if (parseNode.GetChildNode("trace_id") is null) { _explicitNullValueTraceId = default!; _explicitNullProperties?.Remove("trace_id"); }
             else if (parseNode.GetChildNode("trace_id") is { } nullNodeTraceId && nullNodeTraceId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TraceId = null;
         }
@@ -73,6 +77,16 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         public global::Soenneker.Mistral.OpenApiClient.Models.PipelineResultJudgeScoresProperty JudgeScores { get => _explicitNullValueJudgeScores; set { _explicitNullValueJudgeScores = value; AdditionalData?.Remove("judge_scores"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("judge_scores"); else _explicitNullProperties?.Remove("judge_scores"); } }
         private global::Soenneker.Mistral.OpenApiClient.Models.PipelineResultJudgeScoresProperty _explicitNullValueJudgeScores = default!;
 #endif
+        /// <summary>The operation_name property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? OperationName { get => _explicitNullValueOperationName; set { _explicitNullValueOperationName = value; AdditionalData?.Remove("operation_name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("operation_name"); else _explicitNullProperties?.Remove("operation_name"); } }
+        private string? _explicitNullValueOperationName = default!;
+#nullable restore
+#else
+        public string OperationName { get => _explicitNullValueOperationName; set { _explicitNullValueOperationName = value; AdditionalData?.Remove("operation_name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("operation_name"); else _explicitNullProperties?.Remove("operation_name"); } }
+        private string _explicitNullValueOperationName = default!;
+#endif
         /// <summary>The span_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -92,6 +106,16 @@ namespace Soenneker.Mistral.OpenApiClient.Models
 #else
         public string SpanName { get => _explicitNullValueSpanName; set { _explicitNullValueSpanName = value; AdditionalData?.Remove("span_name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("span_name"); else _explicitNullProperties?.Remove("span_name"); } }
         private string _explicitNullValueSpanName = default!;
+#endif
+        /// <summary>The tool_name property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ToolName { get => _explicitNullValueToolName; set { _explicitNullValueToolName = value; AdditionalData?.Remove("tool_name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tool_name"); else _explicitNullProperties?.Remove("tool_name"); } }
+        private string? _explicitNullValueToolName = default!;
+#nullable restore
+#else
+        public string ToolName { get => _explicitNullValueToolName; set { _explicitNullValueToolName = value; AdditionalData?.Remove("tool_name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tool_name"); else _explicitNullProperties?.Remove("tool_name"); } }
+        private string _explicitNullValueToolName = default!;
 #endif
         /// <summary>The trace_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -133,8 +157,10 @@ namespace Soenneker.Mistral.OpenApiClient.Models
                 { "judge_explanations", n => { JudgeExplanations = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.PipelineResultJudgeExplanationsProperty>(global::Soenneker.Mistral.OpenApiClient.Models.PipelineResultJudgeExplanationsProperty.CreateFromDiscriminatorValue); } },
                 { "judge_labels", n => { JudgeLabels = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.PipelineResultJudgeLabelsProperty>(global::Soenneker.Mistral.OpenApiClient.Models.PipelineResultJudgeLabelsProperty.CreateFromDiscriminatorValue); } },
                 { "judge_scores", n => { JudgeScores = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.PipelineResultJudgeScoresProperty>(global::Soenneker.Mistral.OpenApiClient.Models.PipelineResultJudgeScoresProperty.CreateFromDiscriminatorValue); } },
+                { "operation_name", n => { OperationName = n.GetStringValue(); } },
                 { "span_id", n => { SpanId = n.GetStringValue(); } },
                 { "span_name", n => { SpanName = n.GetStringValue(); } },
+                { "tool_name", n => { ToolName = n.GetStringValue(); } },
                 { "trace_id", n => { TraceId = n.GetStringValue(); } },
             };
         }
@@ -150,8 +176,10 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.PipelineResultJudgeExplanationsProperty>("judge_explanations", JudgeExplanations);
             writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.PipelineResultJudgeLabelsProperty>("judge_labels", JudgeLabels);
             writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.PipelineResultJudgeScoresProperty>("judge_scores", JudgeScores);
+            writer.WriteStringValue("operation_name", OperationName);
             writer.WriteStringValue("span_id", SpanId);
             writer.WriteStringValue("span_name", SpanName);
+            writer.WriteStringValue("tool_name", ToolName);
             writer.WriteStringValue("trace_id", TraceId);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);

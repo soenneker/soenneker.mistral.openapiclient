@@ -20,6 +20,8 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         {
             if (parseNode.GetChildNode("agent_id") is null) { _explicitNullValueAgentId = default!; _explicitNullProperties?.Remove("agent_id"); }
             else if (parseNode.GetChildNode("agent_id") is { } nullNodeAgentId && nullNodeAgentId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AgentId = null;
+            if (parseNode.GetChildNode("bridge_metadata") is null) { _explicitNullValueBridgeMetadata = default!; _explicitNullProperties?.Remove("bridge_metadata"); }
+            else if (parseNode.GetChildNode("bridge_metadata") is { } nullNodeBridgeMetadata && nullNodeBridgeMetadata.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BridgeMetadata = null;
             if (parseNode.GetChildNode("duration") is null) { _explicitNullValueDuration = default!; _explicitNullProperties?.Remove("duration"); }
             else if (parseNode.GetChildNode("duration") is { } nullNodeDuration && nullNodeDuration.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Duration = null;
             if (parseNode.GetChildNode("id") is null) { _explicitNullValueId = default!; _explicitNullProperties?.Remove("id"); }
@@ -35,6 +37,16 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         /// <summary>The agent_id property</summary>
         public Guid? AgentId { get => _explicitNullValueAgentId; set { _explicitNullValueAgentId = value; AdditionalData?.Remove("agent_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("agent_id"); else _explicitNullProperties?.Remove("agent_id"); } }
         private Guid? _explicitNullValueAgentId = default!;
+        /// <summary>Contact metadata recorded when Amazon Connect starts a session.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Mistral.OpenApiClient.Models.AudioAgentSessionSummaryBridgeMetadata? BridgeMetadata { get => _explicitNullValueBridgeMetadata; set { _explicitNullValueBridgeMetadata = value; AdditionalData?.Remove("bridge_metadata"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bridge_metadata"); else _explicitNullProperties?.Remove("bridge_metadata"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.AudioAgentSessionSummaryBridgeMetadata? _explicitNullValueBridgeMetadata = default!;
+#nullable restore
+#else
+        public global::Soenneker.Mistral.OpenApiClient.Models.AudioAgentSessionSummaryBridgeMetadata BridgeMetadata { get => _explicitNullValueBridgeMetadata; set { _explicitNullValueBridgeMetadata = value; AdditionalData?.Remove("bridge_metadata"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bridge_metadata"); else _explicitNullProperties?.Remove("bridge_metadata"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.AudioAgentSessionSummaryBridgeMetadata _explicitNullValueBridgeMetadata = default!;
+#endif
         /// <summary>Seconds from the first participant joining to the session ending, null if nobody joined or it is still running.</summary>
         public int? Duration { get => _explicitNullValueDuration; set { _explicitNullValueDuration = value; AdditionalData?.Remove("duration"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("duration"); else _explicitNullProperties?.Remove("duration"); } }
         private int? _explicitNullValueDuration = default!;
@@ -73,6 +85,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "agent_id", n => { AgentId = n.GetGuidValue(); } },
+                { "bridge_metadata", n => { BridgeMetadata = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.AudioAgentSessionSummaryBridgeMetadata>(global::Soenneker.Mistral.OpenApiClient.Models.AudioAgentSessionSummaryBridgeMetadata.CreateFromDiscriminatorValue); } },
                 { "duration", n => { Duration = n.GetIntValue(); } },
                 { "id", n => { Id = n.GetGuidValue(); } },
                 { "phone_number_id", n => { PhoneNumberId = n.GetGuidValue(); } },
@@ -87,6 +100,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteGuidValue("agent_id", AgentId);
+            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.AudioAgentSessionSummaryBridgeMetadata>("bridge_metadata", BridgeMetadata);
             writer.WriteIntValue("duration", Duration);
             writer.WriteGuidValue("id", Id);
             writer.WriteGuidValue("phone_number_id", PhoneNumberId);

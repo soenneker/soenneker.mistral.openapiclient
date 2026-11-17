@@ -42,7 +42,7 @@ namespace Soenneker.Mistral.OpenApiClient.V1.Admin.UserGroups
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public UserGroupsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/admin/user-groups{?page*,page_size*,search*}", pathParameters)
+        public UserGroupsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/admin/user-groups{?page*,page_size*,role*,search*,workspace_uuid*}", pathParameters)
         {
         }
         /// <summary>
@@ -50,7 +50,7 @@ namespace Soenneker.Mistral.OpenApiClient.V1.Admin.UserGroups
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public UserGroupsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/admin/user-groups{?page*,page_size*,search*}", rawUrl)
+        public UserGroupsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/admin/user-groups{?page*,page_size*,role*,search*,workspace_uuid*}", rawUrl)
         {
         }
         /// <summary>
@@ -153,6 +153,16 @@ namespace Soenneker.Mistral.OpenApiClient.V1.Admin.UserGroups
             /// <summary>Maximum number of results per page.</summary>
             [QueryParameter("page_size")]
             public int? PageSize { get; set; }
+            /// <summary>Filter groups to those holding this role on a Workspace. When combined with workspace_uuid, the role must be held on that Workspace. Assignments to archived Workspaces never match.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("role")]
+            public string? Role { get; set; }
+#nullable restore
+#else
+            [QueryParameter("role")]
+            public string Role { get; set; }
+#endif
             /// <summary>Search term used to filter user groups by name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -163,6 +173,9 @@ namespace Soenneker.Mistral.OpenApiClient.V1.Admin.UserGroups
             [QueryParameter("search")]
             public string Search { get; set; }
 #endif
+            /// <summary>Filter groups to those assigned to this Workspace. Assignments to archived Workspaces never match.</summary>
+            [QueryParameter("workspace_uuid")]
+            public Guid? WorkspaceUuid { get; set; }
         }
     }
 }

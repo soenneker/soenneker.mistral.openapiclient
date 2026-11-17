@@ -68,6 +68,10 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         #pragma warning disable CS1591
         CallType,
         #pragma warning restore CS1591
+        [EnumMember(Value = "user_agent")]
+        #pragma warning disable CS1591
+        UserAgent,
+        #pragma warning restore CS1591
         [EnumMember(Value = "customer_tier")]
         #pragma warning disable CS1591
         CustomerTier,

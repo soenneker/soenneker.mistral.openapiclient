@@ -29,6 +29,8 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             else if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
             if (parseNode.GetChildNode("owner_id") is null) { _explicitNullValueOwnerId = default!; _explicitNullProperties?.Remove("owner_id"); }
             else if (parseNode.GetChildNode("owner_id") is { } nullNodeOwnerId && nullNodeOwnerId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OwnerId = null;
+            if (parseNode.GetChildNode("owner_type") is null) { _explicitNullValueOwnerType = default!; _explicitNullProperties?.Remove("owner_type"); }
+            else if (parseNode.GetChildNode("owner_type") is { } nullNodeOwnerType && nullNodeOwnerType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OwnerType = null;
             if (parseNode.GetChildNode("slug") is null) { _explicitNullValueSlug = default!; _explicitNullProperties?.Remove("slug"); }
             else if (parseNode.GetChildNode("slug") is { } nullNodeSlug && nullNodeSlug.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Slug = null;
             if (parseNode.GetChildNode("updated_at") is null) { _explicitNullValueUpdatedAt = default!; _explicitNullProperties?.Remove("updated_at"); }
@@ -71,6 +73,9 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         /// <summary>The owner_id property</summary>
         public Guid? OwnerId { get => _explicitNullValueOwnerId; set { _explicitNullValueOwnerId = value; AdditionalData?.Remove("owner_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("owner_id"); else _explicitNullProperties?.Remove("owner_id"); } }
         private Guid? _explicitNullValueOwnerId = default!;
+        /// <summary>The owner_type property</summary>
+        public global::Soenneker.Mistral.OpenApiClient.Models.PrincipalType? OwnerType { get => _explicitNullValueOwnerType; set { _explicitNullValueOwnerType = value; AdditionalData?.Remove("owner_type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("owner_type"); else _explicitNullProperties?.Remove("owner_type"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.PrincipalType? _explicitNullValueOwnerType = default!;
         /// <summary>The slug property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -93,6 +98,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         public Dataset()
         {
             AdditionalData = new Dictionary<string, object>();
+            OwnerType = global::Soenneker.Mistral.OpenApiClient.Models.PrincipalType.User;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -118,6 +124,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
                 { "id", n => { Id = n.GetGuidValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "owner_id", n => { OwnerId = n.GetGuidValue(); } },
+                { "owner_type", n => { var parsed = n.GetEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.PrincipalType>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueOwnerType = default; _explicitNullProperties?.Remove("owner_type"); AdditionalData["owner_type"] = unknown; } else { OwnerType = parsed; AdditionalData.Remove("owner_type"); } } },
                 { "slug", n => { Slug = n.GetStringValue(); } },
                 { "updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
                 { "workspace_id", n => { WorkspaceId = n.GetGuidValue(); } },
@@ -136,6 +143,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             writer.WriteGuidValue("id", Id);
             writer.WriteStringValue("name", Name);
             writer.WriteGuidValue("owner_id", OwnerId);
+            writer.WriteEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.PrincipalType>("owner_type", OwnerType);
             writer.WriteStringValue("slug", Slug);
             writer.WriteDateTimeOffsetValue("updated_at", UpdatedAt);
             writer.WriteGuidValue("workspace_id", WorkspaceId);

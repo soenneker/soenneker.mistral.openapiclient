@@ -8,14 +8,6 @@ namespace Soenneker.Mistral.OpenApiClient.Models
     public enum WorkspaceEnrichedOutRawRolesItem
     #pragma warning restore CS1591
     {
-        [EnumMember(Value = "A")]
-        #pragma warning disable CS1591
-        A,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "M")]
-        #pragma warning disable CS1591
-        M,
-        #pragma warning restore CS1591
         [EnumMember(Value = "d7ea77c5-9260-41d0-ab26-52b5add3ee56")]
         #pragma warning disable CS1591
         D7Ea77C5926041D0Ab2652B5Add3Ee56,
@@ -71,6 +63,10 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         [EnumMember(Value = "94ef59cf-56bf-4383-9dd6-1fee77d370af")]
         #pragma warning disable CS1591
         Value94Ef59Cf56Bf43839Dd61Fee77D370Af,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "24b51cb8-72fe-411c-8652-c719c7270ca2")]
+        #pragma warning disable CS1591
+        Value24B51Cb872Fe411C8652C719C7270Ca2,
         #pragma warning restore CS1591
         [EnumMember(Value = "7e69e493-caf6-4671-af60-84951754d9fc")]
         #pragma warning disable CS1591

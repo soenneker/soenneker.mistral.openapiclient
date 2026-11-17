@@ -21,6 +21,8 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             else if (parseNode.GetChildNode("created_at") is { } nullNodeCreatedAt && nullNodeCreatedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CreatedAt = null;
             if (parseNode.GetChildNode("creator_id") is null) { _explicitNullValueCreatorId = default!; _explicitNullProperties?.Remove("creator_id"); }
             else if (parseNode.GetChildNode("creator_id") is { } nullNodeCreatorId && nullNodeCreatorId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CreatorId = null;
+            if (parseNode.GetChildNode("creator_type") is null) { _explicitNullValueCreatorType = default!; _explicitNullProperties?.Remove("creator_type"); }
+            else if (parseNode.GetChildNode("creator_type") is { } nullNodeCreatorType && nullNodeCreatorType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CreatorType = null;
             if (parseNode.GetChildNode("deleted_at") is null) { _explicitNullValueDeletedAt = default!; _explicitNullProperties?.Remove("deleted_at"); }
             else if (parseNode.GetChildNode("deleted_at") is { } nullNodeDeletedAt && nullNodeDeletedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DeletedAt = null;
             if (parseNode.GetChildNode("description") is null) { _explicitNullValueDescription = default!; _explicitNullProperties?.Remove("description"); }
@@ -53,6 +55,9 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         /// <summary>The creator_id property</summary>
         public Guid? CreatorId { get => _explicitNullValueCreatorId; set { _explicitNullValueCreatorId = value; AdditionalData?.Remove("creator_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("creator_id"); else _explicitNullProperties?.Remove("creator_id"); } }
         private Guid? _explicitNullValueCreatorId = default!;
+        /// <summary>The creator_type property</summary>
+        public global::Soenneker.Mistral.OpenApiClient.Models.PrincipalType? CreatorType { get => _explicitNullValueCreatorType; set { _explicitNullValueCreatorType = value; AdditionalData?.Remove("creator_type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("creator_type"); else _explicitNullProperties?.Remove("creator_type"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.PrincipalType? _explicitNullValueCreatorType = default!;
         /// <summary>The deleted_at property</summary>
         public DateTimeOffset? DeletedAt { get => _explicitNullValueDeletedAt; set { _explicitNullValueDeletedAt = value; AdditionalData?.Remove("deleted_at"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("deleted_at"); else _explicitNullProperties?.Remove("deleted_at"); } }
         private DateTimeOffset? _explicitNullValueDeletedAt = default!;
@@ -127,6 +132,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         public EvaluationV2()
         {
             AdditionalData = new Dictionary<string, object>();
+            CreatorType = global::Soenneker.Mistral.OpenApiClient.Models.PrincipalType.User;
             IsFavorite = false;
         }
         /// <summary>
@@ -149,6 +155,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             {
                 { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
                 { "creator_id", n => { CreatorId = n.GetGuidValue(); } },
+                { "creator_type", n => { var parsed = n.GetEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.PrincipalType>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueCreatorType = default; _explicitNullProperties?.Remove("creator_type"); AdditionalData["creator_type"] = unknown; } else { CreatorType = parsed; AdditionalData.Remove("creator_type"); } } },
                 { "deleted_at", n => { DeletedAt = n.GetDateTimeOffsetValue(); } },
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetGuidValue(); } },
@@ -171,6 +178,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteDateTimeOffsetValue("created_at", CreatedAt);
             writer.WriteGuidValue("creator_id", CreatorId);
+            writer.WriteEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.PrincipalType>("creator_type", CreatorType);
             writer.WriteDateTimeOffsetValue("deleted_at", DeletedAt);
             writer.WriteStringValue("description", Description);
             writer.WriteGuidValue("id", Id);

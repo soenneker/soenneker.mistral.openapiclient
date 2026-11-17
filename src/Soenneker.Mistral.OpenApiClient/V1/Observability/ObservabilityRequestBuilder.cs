@@ -6,12 +6,12 @@ using Soenneker.Mistral.OpenApiClient.V1.Observability.DatasetRecords;
 using Soenneker.Mistral.OpenApiClient.V1.Observability.Datasets;
 using Soenneker.Mistral.OpenApiClient.V1.Observability.EvaluationRuns_v2;
 using Soenneker.Mistral.OpenApiClient.V1.Observability.Evaluations_v2;
-using Soenneker.Mistral.OpenApiClient.V1.Observability.Judges;
 using Soenneker.Mistral.OpenApiClient.V1.Observability.Logs;
 using Soenneker.Mistral.OpenApiClient.V1.Observability.Optimizations;
 using Soenneker.Mistral.OpenApiClient.V1.Observability.PipelineResults;
 using Soenneker.Mistral.OpenApiClient.V1.Observability.Pipelines;
 using Soenneker.Mistral.OpenApiClient.V1.Observability.Projects;
+using Soenneker.Mistral.OpenApiClient.V1.Observability.Scorers;
 using Soenneker.Mistral.OpenApiClient.V1.Observability.Spans;
 using Soenneker.Mistral.OpenApiClient.V1.Observability.Traces;
 using System.Collections.Generic;
@@ -46,11 +46,6 @@ namespace Soenneker.Mistral.OpenApiClient.V1.Observability
         {
             get => new global::Soenneker.Mistral.OpenApiClient.V1.Observability.Evaluations_v2.Evaluations_v2RequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The judges property</summary>
-        public global::Soenneker.Mistral.OpenApiClient.V1.Observability.Judges.JudgesRequestBuilder Judges
-        {
-            get => new global::Soenneker.Mistral.OpenApiClient.V1.Observability.Judges.JudgesRequestBuilder(PathParameters, RequestAdapter);
-        }
         /// <summary>The logs property</summary>
         public global::Soenneker.Mistral.OpenApiClient.V1.Observability.Logs.LogsRequestBuilder Logs
         {
@@ -75,6 +70,11 @@ namespace Soenneker.Mistral.OpenApiClient.V1.Observability
         public global::Soenneker.Mistral.OpenApiClient.V1.Observability.Projects.ProjectsRequestBuilder Projects
         {
             get => new global::Soenneker.Mistral.OpenApiClient.V1.Observability.Projects.ProjectsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The scorers property</summary>
+        public global::Soenneker.Mistral.OpenApiClient.V1.Observability.Scorers.ScorersRequestBuilder Scorers
+        {
+            get => new global::Soenneker.Mistral.OpenApiClient.V1.Observability.Scorers.ScorersRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The spans property</summary>
         public global::Soenneker.Mistral.OpenApiClient.V1.Observability.Spans.SpansRequestBuilder Spans

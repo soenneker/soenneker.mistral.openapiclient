@@ -53,7 +53,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         /// <summary>The operator property</summary>
         public global::Soenneker.Mistral.OpenApiClient.Models.KeywordRetrieverOperator? Operator { get => _explicitNullValueOperator; set { _explicitNullValueOperator = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("operator"); else _explicitNullProperties?.Remove("operator"); } }
         private global::Soenneker.Mistral.OpenApiClient.Models.KeywordRetrieverOperator? _explicitNullValueOperator = default!;
-        /// <summary>The query property</summary>
+        /// <summary>The query string from which to match keywords: at most 20 whitespace-separated words.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Query { get => _explicitNullValueQuery; set { _explicitNullValueQuery = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("query"); else _explicitNullProperties?.Remove("query"); } }

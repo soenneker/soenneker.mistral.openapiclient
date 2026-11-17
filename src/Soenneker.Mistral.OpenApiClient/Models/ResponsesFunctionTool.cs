@@ -19,6 +19,8 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         {
             if (parseNode.GetChildNode("allowed_callers") is null) { _explicitNullValueAllowedCallers = default!; _explicitNullProperties?.Remove("allowed_callers"); }
             else if (parseNode.GetChildNode("allowed_callers") is { } nullNodeAllowedCallers && nullNodeAllowedCallers.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AllowedCallers = null;
+            if (parseNode.GetChildNode("async") is null) { _explicitNullValueAsync = default!; _explicitNullProperties?.Remove("async"); }
+            else if (parseNode.GetChildNode("async") is { } nullNodeAsync && nullNodeAsync.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Async = null;
             if (parseNode.GetChildNode("defer_loading") is null) { _explicitNullValueDeferLoading = default!; _explicitNullProperties?.Remove("defer_loading"); }
             else if (parseNode.GetChildNode("defer_loading") is { } nullNodeDeferLoading && nullNodeDeferLoading.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DeferLoading = null;
             if (parseNode.GetChildNode("description") is null) { _explicitNullValueDescription = default!; _explicitNullProperties?.Remove("description"); }
@@ -47,6 +49,9 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         public List<global::Soenneker.Mistral.OpenApiClient.Models.ResponsesFunctionToolAllowedCallersItem?> AllowedCallers { get => _explicitNullValueAllowedCallers; set { _explicitNullValueAllowedCallers = value; AdditionalData?.Remove("allowed_callers"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("allowed_callers"); else _explicitNullProperties?.Remove("allowed_callers"); } }
         private List<global::Soenneker.Mistral.OpenApiClient.Models.ResponsesFunctionToolAllowedCallersItem?> _explicitNullValueAllowedCallers = default!;
 #endif
+        /// <summary>The async property</summary>
+        public bool? Async { get => _explicitNullValueAsync; set { _explicitNullValueAsync = value; AdditionalData?.Remove("async"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("async"); else _explicitNullProperties?.Remove("async"); } }
+        private bool? _explicitNullValueAsync = default!;
         /// <summary>The defer_loading property</summary>
         public bool? DeferLoading { get => _explicitNullValueDeferLoading; set { _explicitNullValueDeferLoading = value; AdditionalData?.Remove("defer_loading"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("defer_loading"); else _explicitNullProperties?.Remove("defer_loading"); } }
         private bool? _explicitNullValueDeferLoading = default!;
@@ -122,6 +127,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "allowed_callers", n => { AllowedCallers = n.GetCollectionOfEnumValues<global::Soenneker.Mistral.OpenApiClient.Models.ResponsesFunctionToolAllowedCallersItem>()?.AsList(); } },
+                { "async", n => { Async = n.GetBoolValue(); } },
                 { "defer_loading", n => { DeferLoading = n.GetBoolValue(); } },
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
@@ -139,6 +145,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfEnumValues<global::Soenneker.Mistral.OpenApiClient.Models.ResponsesFunctionToolAllowedCallersItem>("allowed_callers", AllowedCallers);
+            writer.WriteBoolValue("async", Async);
             writer.WriteBoolValue("defer_loading", DeferLoading);
             writer.WriteStringValue("description", Description);
             writer.WriteStringValue("name", Name);

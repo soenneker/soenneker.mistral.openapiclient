@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.Mistral.OpenApiClient.Models
 {
     /// <summary>
-    /// Composed type wrapper for classes <see cref="double"/>, <see cref="global::Soenneker.Mistral.OpenApiClient.Models.AggregationRowMetricValueMember1"/>
+    /// Composed type wrapper for classes <see cref="DateTimeOffset"/>, <see cref="double"/>, <see cref="global::Soenneker.Mistral.OpenApiClient.Models.AggregationRowMetricValueMember1"/>
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class AggregationRowMetricValue : IComposedTypeWrapper, IParsable
@@ -26,6 +26,8 @@ namespace Soenneker.Mistral.OpenApiClient.Models
 #else
         public global::Soenneker.Mistral.OpenApiClient.Models.AggregationRowMetricValueMember1 AggregationRowMetricValueMember1 { get; set; }
 #endif
+        /// <summary>Composed type representation for type <see cref="DateTimeOffset"/></summary>
+        public DateTimeOffset? DateTimeOffset { get; set; }
         /// <summary>Composed type representation for type <see cref="double"/></summary>
         public double? Double { get; set; }
         /// <summary>
@@ -37,7 +39,11 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             var result = new global::Soenneker.Mistral.OpenApiClient.Models.AggregationRowMetricValue();
-            if(parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is (global::Microsoft.Kiota.Abstractions.Serialization.UntypedInteger or global::Microsoft.Kiota.Abstractions.Serialization.UntypedLong or global::Microsoft.Kiota.Abstractions.Serialization.UntypedFloat or global::Microsoft.Kiota.Abstractions.Serialization.UntypedDouble or global::Microsoft.Kiota.Abstractions.Serialization.UntypedDecimal) && parseNode.GetDoubleValue() is double doubleValue)
+            if(parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString && parseNode.GetDateTimeOffsetValue() is DateTimeOffset dateTimeOffsetValue)
+            {
+                result.DateTimeOffset = dateTimeOffsetValue;
+            }
+            else if(parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is (global::Microsoft.Kiota.Abstractions.Serialization.UntypedInteger or global::Microsoft.Kiota.Abstractions.Serialization.UntypedLong or global::Microsoft.Kiota.Abstractions.Serialization.UntypedFloat or global::Microsoft.Kiota.Abstractions.Serialization.UntypedDouble or global::Microsoft.Kiota.Abstractions.Serialization.UntypedDecimal) && parseNode.GetDoubleValue() is double doubleValue)
             {
                 result.Double = doubleValue;
             }
@@ -49,9 +55,9 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             bool? matchesUnionBranch0 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject ? (bool?)null : (bool?)false;
             int matchingUnionBranches = 0;
             if (matchesUnionBranch0 != false) matchingUnionBranches++;
-            bool noSelectedUnionBranch = result.AggregationRowMetricValueMember1 == null && result.Double == null;
+            bool noSelectedUnionBranch = result.AggregationRowMetricValueMember1 == null && result.DateTimeOffset == null && result.Double == null;
             if (noSelectedUnionBranch && matchesUnionBranch0 == true && matchingUnionBranches == 1) result.AggregationRowMetricValueMember1 = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Mistral.OpenApiClient.Models.AggregationRowMetricValueMember1(), parseNode);
-            if (result.AggregationRowMetricValueMember1 == null && result.Double == null) result.UnrecognizedValue = unionPayload;
+            if (result.AggregationRowMetricValueMember1 == null && result.DateTimeOffset == null && result.Double == null) result.UnrecognizedValue = unionPayload;
 return result;
         }
         /// <summary>
@@ -75,14 +81,19 @@ return result;
         public virtual void Serialize(ISerializationWriter writer)
         {
             if (global::System.Object.ReferenceEquals(writer, null)) throw new global::System.ArgumentNullException(nameof(writer));
-            if (AggregationRowMetricValueMember1 == null && Double == null) { if (UnrecognizedValue is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject rawObject) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData, rawObject)); else if (UnrecognizedValue != null) writer.WriteObjectValue(null, UnrecognizedValue); else if (AdditionalData.Count > 0) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData)); else writer.WriteNullValue(null); return; }
+            if (AggregationRowMetricValueMember1 == null && DateTimeOffset == null && Double == null) { if (UnrecognizedValue is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject rawObject) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData, rawObject)); else if (UnrecognizedValue != null) writer.WriteObjectValue(null, UnrecognizedValue); else if (AdditionalData.Count > 0) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData)); else writer.WriteNullValue(null); return; }
             int selectedUnionBranches = 0;
             if (AggregationRowMetricValueMember1 != null) selectedUnionBranches++;
+            if (DateTimeOffset != null) selectedUnionBranches++;
             if (Double != null) selectedUnionBranches++;
             if (AggregationRowMetricValueMember1 != null && selectedUnionBranches == 1) { if (AggregationRowMetricValueMember1 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, AggregationRowMetricValueMember1); return; }
 
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            if(Double != null)
+            if(DateTimeOffset != null)
+            {
+                writer.WriteDateTimeOffsetValue(null, DateTimeOffset);
+            }
+            else if(Double != null)
             {
                 writer.WriteDoubleValue(null, Double);
             }

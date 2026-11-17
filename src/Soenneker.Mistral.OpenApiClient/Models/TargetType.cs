@@ -124,6 +124,10 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         #pragma warning disable CS1591
         WorkspaceMonthlyLimit,
         #pragma warning restore CS1591
+        [EnumMember(Value = "SPENDING_LIMIT")]
+        #pragma warning disable CS1591
+        SpendingLimit,
+        #pragma warning restore CS1591
         [EnumMember(Value = "SHARED_BUDGET")]
         #pragma warning disable CS1591
         SharedBudget,

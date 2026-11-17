@@ -5,6 +5,8 @@ using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
 using Soenneker.Mistral.OpenApiClient.Models;
 using Soenneker.Mistral.OpenApiClient.V1.Admin.Users.Item.Deactivate;
+using Soenneker.Mistral.OpenApiClient.V1.Admin.Users.Item.Reactivate;
+using Soenneker.Mistral.OpenApiClient.V1.Admin.Users.Item.Workspaces;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
@@ -23,6 +25,16 @@ namespace Soenneker.Mistral.OpenApiClient.V1.Admin.Users.Item
         {
             get => new global::Soenneker.Mistral.OpenApiClient.V1.Admin.Users.Item.Deactivate.DeactivateRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>The reactivate property</summary>
+        public global::Soenneker.Mistral.OpenApiClient.V1.Admin.Users.Item.Reactivate.ReactivateRequestBuilder Reactivate
+        {
+            get => new global::Soenneker.Mistral.OpenApiClient.V1.Admin.Users.Item.Reactivate.ReactivateRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The workspaces property</summary>
+        public global::Soenneker.Mistral.OpenApiClient.V1.Admin.Users.Item.Workspaces.WorkspacesRequestBuilder Workspaces
+        {
+            get => new global::Soenneker.Mistral.OpenApiClient.V1.Admin.Users.Item.Workspaces.WorkspacesRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Mistral.OpenApiClient.V1.Admin.Users.Item.WithUserItemRequestBuilder"/> and sets the default values.
         /// </summary>
@@ -40,7 +52,7 @@ namespace Soenneker.Mistral.OpenApiClient.V1.Admin.Users.Item
         {
         }
         /// <summary>
-        /// Remove a member from the Organization.
+        /// Remove a member from the Organization, whatever their account status.Members whose email is on one of the Organization&apos;s verified domains cannot be removed: deactivate them instead.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Mistral.OpenApiClient.Models.DeleteOut"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -58,7 +70,7 @@ namespace Soenneker.Mistral.OpenApiClient.V1.Admin.Users.Item
             return await RequestAdapter.SendAsync<global::Soenneker.Mistral.OpenApiClient.Models.DeleteOut>(requestInfo, global::Soenneker.Mistral.OpenApiClient.Models.DeleteOut.CreateFromDiscriminatorValue, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get details for an Organization member.
+        /// Get details for an Organization member, including deactivated and blocked members.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Mistral.OpenApiClient.Models.AdminUserOut"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -96,7 +108,7 @@ namespace Soenneker.Mistral.OpenApiClient.V1.Admin.Users.Item
             return await RequestAdapter.SendAsync<global::Soenneker.Mistral.OpenApiClient.Models.AdminOrganizationMemberOut>(requestInfo, global::Soenneker.Mistral.OpenApiClient.Models.AdminOrganizationMemberOut.CreateFromDiscriminatorValue, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Remove a member from the Organization.
+        /// Remove a member from the Organization, whatever their account status.Members whose email is on one of the Organization&apos;s verified domains cannot be removed: deactivate them instead.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -115,7 +127,7 @@ namespace Soenneker.Mistral.OpenApiClient.V1.Admin.Users.Item
             return requestInfo;
         }
         /// <summary>
-        /// Get details for an Organization member.
+        /// Get details for an Organization member, including deactivated and blocked members.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

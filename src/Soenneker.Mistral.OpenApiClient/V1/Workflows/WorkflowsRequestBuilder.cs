@@ -83,7 +83,7 @@ namespace Soenneker.Mistral.OpenApiClient.V1.Workflows
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WorkflowsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/workflows{?active_only*,archived*,available_in_chat_assistant*,cursor*,deployment_name*,deployment_status*,include_shared*,limit*,order*,search*,sort_by*,status*,tags*}", pathParameters)
+        public WorkflowsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/workflows{?active_only*,archived*,available_in_chat_assistant*,cursor*,deployment_name*,deployment_status*,exclude_tags*,include_shared*,limit*,order*,search*,sort_by*,status*,tags*}", pathParameters)
         {
         }
         /// <summary>
@@ -91,7 +91,7 @@ namespace Soenneker.Mistral.OpenApiClient.V1.Workflows
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WorkflowsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/workflows{?active_only*,archived*,available_in_chat_assistant*,cursor*,deployment_name*,deployment_status*,include_shared*,limit*,order*,search*,sort_by*,status*,tags*}", rawUrl)
+        public WorkflowsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/workflows{?active_only*,archived*,available_in_chat_assistant*,cursor*,deployment_name*,deployment_status*,exclude_tags*,include_shared*,limit*,order*,search*,sort_by*,status*,tags*}", rawUrl)
         {
         }
         /// <summary>
@@ -192,6 +192,16 @@ namespace Soenneker.Mistral.OpenApiClient.V1.Workflows
 #else
             [QueryParameter("deployment_status")]
             public string DeploymentStatus { get; set; }
+#endif
+            /// <summary>Exclude workflows tagged with any of the listed tags.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("exclude_tags")]
+            public string[]? ExcludeTags { get; set; }
+#nullable restore
+#else
+            [QueryParameter("exclude_tags")]
+            public string[] ExcludeTags { get; set; }
 #endif
             /// <summary>Whether to include shared workflows</summary>
             [QueryParameter("include_shared")]

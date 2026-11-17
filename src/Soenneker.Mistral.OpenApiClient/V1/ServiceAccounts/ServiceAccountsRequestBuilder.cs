@@ -170,7 +170,7 @@ namespace Soenneker.Mistral.OpenApiClient.V1.ServiceAccounts
             #pragma warning restore CS1591
             #pragma warning disable CS1591
             [QueryParameter("offset")]
-            public int? Offset { get; set; }
+            public long? Offset { get; set; }
             #pragma warning restore CS1591
             #pragma warning disable CS1591
             [QueryParameter("order")]

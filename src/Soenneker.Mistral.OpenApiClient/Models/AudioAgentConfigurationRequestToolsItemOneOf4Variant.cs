@@ -29,12 +29,12 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         /// <summary>The filler property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.HangUpToolFiller? Filler { get => _explicitNullValueFiller; set { _explicitNullValueFiller = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("filler"); else _explicitNullProperties?.Remove("filler"); } }
-        private global::Soenneker.Mistral.OpenApiClient.Models.HangUpToolFiller? _explicitNullValueFiller = default!;
+        public global::Soenneker.Mistral.OpenApiClient.Models.VoiceAgentFunctionToolRequestFillerAnyOf1? Filler { get => _explicitNullValueFiller; set { _explicitNullValueFiller = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("filler"); else _explicitNullProperties?.Remove("filler"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.VoiceAgentFunctionToolRequestFillerAnyOf1? _explicitNullValueFiller = default!;
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.HangUpToolFiller Filler { get => _explicitNullValueFiller; set { _explicitNullValueFiller = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("filler"); else _explicitNullProperties?.Remove("filler"); } }
-        private global::Soenneker.Mistral.OpenApiClient.Models.HangUpToolFiller _explicitNullValueFiller = default!;
+        public global::Soenneker.Mistral.OpenApiClient.Models.VoiceAgentFunctionToolRequestFillerAnyOf1 Filler { get => _explicitNullValueFiller; set { _explicitNullValueFiller = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("filler"); else _explicitNullProperties?.Remove("filler"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.VoiceAgentFunctionToolRequestFillerAnyOf1 _explicitNullValueFiller = default!;
 #endif
         /// <summary>The function property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -67,7 +67,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "filler", n => { Filler = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.HangUpToolFiller>(global::Soenneker.Mistral.OpenApiClient.Models.HangUpToolFiller.CreateFromDiscriminatorValue); } },
+                { "filler", n => { Filler = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.VoiceAgentFunctionToolRequestFillerAnyOf1>(global::Soenneker.Mistral.OpenApiClient.Models.VoiceAgentFunctionToolRequestFillerAnyOf1.CreateFromDiscriminatorValue); } },
                 { "function", n => { Function = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.FunctionRequest>(global::Soenneker.Mistral.OpenApiClient.Models.FunctionRequest.CreateFromDiscriminatorValue); } },
                 { "timeout_ms", n => { TimeoutMs = n.GetLongValue(); } },
             };
@@ -80,7 +80,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.HangUpToolFiller>("filler", Filler);
+            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.VoiceAgentFunctionToolRequestFillerAnyOf1>("filler", Filler);
             writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.FunctionRequest>("function", Function);
             writer.WriteLongValue("timeout_ms", TimeoutMs);if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             

@@ -19,6 +19,8 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         {
             if (parseNode.GetChildNode("consumer_type") is null) { _explicitNullValueConsumerType = default!; _explicitNullProperties?.Remove("consumer_type"); }
             else if (parseNode.GetChildNode("consumer_type") is { } nullNodeConsumerType && nullNodeConsumerType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ConsumerType = null;
+            if (parseNode.GetChildNode("http_proxy_enabled") is null) { _explicitNullValueHttpProxyEnabled = default!; _explicitNullProperties?.Remove("http_proxy_enabled"); }
+            else if (parseNode.GetChildNode("http_proxy_enabled") is { } nullNodeHttpProxyEnabled && nullNodeHttpProxyEnabled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HttpProxyEnabled = null;
             if (parseNode.GetChildNode("is_default") is null) { _explicitNullValueIsDefault = default!; _explicitNullProperties?.Remove("is_default"); }
             else if (parseNode.GetChildNode("is_default") is { } nullNodeIsDefault && nullNodeIsDefault.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IsDefault = null;
             if (parseNode.GetChildNode("name") is null) { _explicitNullValueName = default!; _explicitNullProperties?.Remove("name"); }
@@ -32,6 +34,9 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         /// <summary>The consumer_type property</summary>
         public global::Soenneker.Mistral.OpenApiClient.Models.ConsumerType? ConsumerType { get => _explicitNullValueConsumerType; set { _explicitNullValueConsumerType = value; AdditionalData?.Remove("consumer_type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("consumer_type"); else _explicitNullProperties?.Remove("consumer_type"); } }
         private global::Soenneker.Mistral.OpenApiClient.Models.ConsumerType? _explicitNullValueConsumerType = default!;
+        /// <summary>Whether raw HTTP calls through this connector are allowed at this level. Only applies to HTTP connectors: null when the level has no opinion, always the case for other connectors. False at any level switches them off for this level and the ones below.</summary>
+        public bool? HttpProxyEnabled { get => _explicitNullValueHttpProxyEnabled; set { _explicitNullValueHttpProxyEnabled = value; AdditionalData?.Remove("http_proxy_enabled"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("http_proxy_enabled"); else _explicitNullProperties?.Remove("http_proxy_enabled"); } }
+        private bool? _explicitNullValueHttpProxyEnabled = default!;
         /// <summary>Deprecated: always `true`.</summary>
         [Obsolete("")]
         public bool? IsDefault { get => _explicitNullValueIsDefault; set { _explicitNullValueIsDefault = value; AdditionalData?.Remove("is_default"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("is_default"); else _explicitNullProperties?.Remove("is_default"); } }
@@ -85,6 +90,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "consumer_type", n => { var parsed = n.GetEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.ConsumerType>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueConsumerType = default; _explicitNullProperties?.Remove("consumer_type"); AdditionalData["consumer_type"] = unknown; } else { ConsumerType = parsed; AdditionalData.Remove("consumer_type"); } } },
+                { "http_proxy_enabled", n => { HttpProxyEnabled = n.GetBoolValue(); } },
                 { "is_default", n => { IsDefault = n.GetBoolValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "tool_configuration", n => { ToolConfiguration = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ToolExecutionConfiguration>(global::Soenneker.Mistral.OpenApiClient.Models.ToolExecutionConfiguration.CreateFromDiscriminatorValue); } },
@@ -98,6 +104,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.ConsumerType>("consumer_type", ConsumerType);
+            writer.WriteBoolValue("http_proxy_enabled", HttpProxyEnabled);
             writer.WriteBoolValue("is_default", IsDefault);
             writer.WriteStringValue("name", Name);
             writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ToolExecutionConfiguration>("tool_configuration", ToolConfiguration);

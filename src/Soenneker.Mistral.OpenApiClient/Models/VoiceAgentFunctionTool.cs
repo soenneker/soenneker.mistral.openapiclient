@@ -30,12 +30,12 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         /// <summary>The filler property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.HangUpToolFiller? Filler { get => _explicitNullValueFiller; set { _explicitNullValueFiller = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("filler"); else _explicitNullProperties?.Remove("filler"); } }
-        private global::Soenneker.Mistral.OpenApiClient.Models.HangUpToolFiller? _explicitNullValueFiller = default!;
+        public global::Soenneker.Mistral.OpenApiClient.Models.VoiceAgentFunctionToolFillerAnyOf1? Filler { get => _explicitNullValueFiller; set { _explicitNullValueFiller = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("filler"); else _explicitNullProperties?.Remove("filler"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.VoiceAgentFunctionToolFillerAnyOf1? _explicitNullValueFiller = default!;
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.HangUpToolFiller Filler { get => _explicitNullValueFiller; set { _explicitNullValueFiller = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("filler"); else _explicitNullProperties?.Remove("filler"); } }
-        private global::Soenneker.Mistral.OpenApiClient.Models.HangUpToolFiller _explicitNullValueFiller = default!;
+        public global::Soenneker.Mistral.OpenApiClient.Models.VoiceAgentFunctionToolFillerAnyOf1 Filler { get => _explicitNullValueFiller; set { _explicitNullValueFiller = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("filler"); else _explicitNullProperties?.Remove("filler"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.VoiceAgentFunctionToolFillerAnyOf1 _explicitNullValueFiller = default!;
 #endif
         /// <summary>The function property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -71,7 +71,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "filler", n => { Filler = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.HangUpToolFiller>(global::Soenneker.Mistral.OpenApiClient.Models.HangUpToolFiller.CreateFromDiscriminatorValue); } },
+                { "filler", n => { Filler = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.VoiceAgentFunctionToolFillerAnyOf1>(global::Soenneker.Mistral.OpenApiClient.Models.VoiceAgentFunctionToolFillerAnyOf1.CreateFromDiscriminatorValue); } },
                 { "function", n => { Function = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.Function>(global::Soenneker.Mistral.OpenApiClient.Models.Function.CreateFromDiscriminatorValue); } },
                 { "timeout_ms", n => { TimeoutMs = n.GetLongValue(); } },
                 { "type", n => { Type = n.GetEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.VoiceAgentFunctionToolType>(); } },
@@ -84,7 +84,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.HangUpToolFiller>("filler", Filler);
+            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.VoiceAgentFunctionToolFillerAnyOf1>("filler", Filler);
             writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.Function>("function", Function);
             writer.WriteLongValue("timeout_ms", TimeoutMs);
             writer.WriteEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.VoiceAgentFunctionToolType>("type", Type);if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);

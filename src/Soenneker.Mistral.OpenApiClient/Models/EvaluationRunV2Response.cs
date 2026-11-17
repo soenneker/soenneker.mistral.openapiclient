@@ -21,6 +21,8 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             else if (parseNode.GetChildNode("created_at") is { } nullNodeCreatedAt && nullNodeCreatedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CreatedAt = null;
             if (parseNode.GetChildNode("creator_id") is null) { _explicitNullValueCreatorId = default!; _explicitNullProperties?.Remove("creator_id"); }
             else if (parseNode.GetChildNode("creator_id") is { } nullNodeCreatorId && nullNodeCreatorId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CreatorId = null;
+            if (parseNode.GetChildNode("creator_type") is null) { _explicitNullValueCreatorType = default!; _explicitNullProperties?.Remove("creator_type"); }
+            else if (parseNode.GetChildNode("creator_type") is { } nullNodeCreatorType && nullNodeCreatorType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CreatorType = null;
             if (parseNode.GetChildNode("dataset_id") is null) { _explicitNullValueDatasetId = default!; _explicitNullProperties?.Remove("dataset_id"); }
             else if (parseNode.GetChildNode("dataset_id") is { } nullNodeDatasetId && nullNodeDatasetId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DatasetId = null;
             if (parseNode.GetChildNode("deleted_at") is null) { _explicitNullValueDeletedAt = default!; _explicitNullProperties?.Remove("deleted_at"); }
@@ -31,6 +33,8 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             else if (parseNode.GetChildNode("evaluation_id") is { } nullNodeEvaluationId && nullNodeEvaluationId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EvaluationId = null;
             if (parseNode.GetChildNode("evaluators") is null) { _explicitNullValueEvaluators = default!; _explicitNullProperties?.Remove("evaluators"); }
             else if (parseNode.GetChildNode("evaluators") is { } nullNodeEvaluators && nullNodeEvaluators.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Evaluators = null;
+            if (parseNode.GetChildNode("failed_record_count") is null) { _explicitNullValueFailedRecordCount = default!; _explicitNullProperties?.Remove("failed_record_count"); }
+            else if (parseNode.GetChildNode("failed_record_count") is { } nullNodeFailedRecordCount && nullNodeFailedRecordCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FailedRecordCount = null;
             if (parseNode.GetChildNode("goal_results") is null) { _explicitNullValueGoalResults = default!; _explicitNullProperties?.Remove("goal_results"); }
             else if (parseNode.GetChildNode("goal_results") is { } nullNodeGoalResults && nullNodeGoalResults.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) GoalResults = null;
             if (parseNode.GetChildNode("id") is null) { _explicitNullValueId = default!; _explicitNullProperties?.Remove("id"); }
@@ -45,6 +49,8 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             else if (parseNode.GetChildNode("optimization") is { } nullNodeOptimization && nullNodeOptimization.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Optimization = null;
             if (parseNode.GetChildNode("passed") is null) { _explicitNullValuePassed = default!; _explicitNullProperties?.Remove("passed"); }
             else if (parseNode.GetChildNode("passed") is { } nullNodePassed && nullNodePassed.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Passed = null;
+            if (parseNode.GetChildNode("record_count") is null) { _explicitNullValueRecordCount = default!; _explicitNullProperties?.Remove("record_count"); }
+            else if (parseNode.GetChildNode("record_count") is { } nullNodeRecordCount && nullNodeRecordCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RecordCount = null;
             if (parseNode.GetChildNode("run_evaluators") is null) { _explicitNullValueRunEvaluators = default!; _explicitNullProperties?.Remove("run_evaluators"); }
             else if (parseNode.GetChildNode("run_evaluators") is { } nullNodeRunEvaluators && nullNodeRunEvaluators.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RunEvaluators = null;
             if (parseNode.GetChildNode("run_info") is null) { _explicitNullValueRunInfo = default!; _explicitNullProperties?.Remove("run_info"); }
@@ -71,6 +77,9 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         /// <summary>The creator_id property</summary>
         public Guid? CreatorId { get => _explicitNullValueCreatorId; set { _explicitNullValueCreatorId = value; AdditionalData?.Remove("creator_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("creator_id"); else _explicitNullProperties?.Remove("creator_id"); } }
         private Guid? _explicitNullValueCreatorId = default!;
+        /// <summary>The creator_type property</summary>
+        public global::Soenneker.Mistral.OpenApiClient.Models.PrincipalType? CreatorType { get => _explicitNullValueCreatorType; set { _explicitNullValueCreatorType = value; AdditionalData?.Remove("creator_type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("creator_type"); else _explicitNullProperties?.Remove("creator_type"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.PrincipalType? _explicitNullValueCreatorType = default!;
         /// <summary>The dataset_id property</summary>
         public Guid? DatasetId { get => _explicitNullValueDatasetId; set { _explicitNullValueDatasetId = value; AdditionalData?.Remove("dataset_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dataset_id"); else _explicitNullProperties?.Remove("dataset_id"); } }
         private Guid? _explicitNullValueDatasetId = default!;
@@ -100,6 +109,9 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         public List<global::Soenneker.Mistral.OpenApiClient.Models.EvaluatorV2> Evaluators { get => _explicitNullValueEvaluators; set { _explicitNullValueEvaluators = value; AdditionalData?.Remove("evaluators"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("evaluators"); else _explicitNullProperties?.Remove("evaluators"); } }
         private List<global::Soenneker.Mistral.OpenApiClient.Models.EvaluatorV2> _explicitNullValueEvaluators = default!;
 #endif
+        /// <summary>Records whose task or at least one score failed, out of `record_count`. Failed tasks and scores are left out of `statistics`, `goal_results` and `passed`. Null for runs created before this counter existed.</summary>
+        public int? FailedRecordCount { get => _explicitNullValueFailedRecordCount; set { _explicitNullValueFailedRecordCount = value; AdditionalData?.Remove("failed_record_count"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("failed_record_count"); else _explicitNullProperties?.Remove("failed_record_count"); } }
+        private int? _explicitNullValueFailedRecordCount = default!;
         /// <summary>The goal_results property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -149,6 +161,9 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         /// <summary>The passed property</summary>
         public bool? Passed { get => _explicitNullValuePassed; set { _explicitNullValuePassed = value; AdditionalData?.Remove("passed"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("passed"); else _explicitNullProperties?.Remove("passed"); } }
         private bool? _explicitNullValuePassed = default!;
+        /// <summary>Records whose results were uploaded so far, failed or not. Null for runs created before this counter existed.</summary>
+        public int? RecordCount { get => _explicitNullValueRecordCount; set { _explicitNullValueRecordCount = value; AdditionalData?.Remove("record_count"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("record_count"); else _explicitNullProperties?.Remove("record_count"); } }
+        private int? _explicitNullValueRecordCount = default!;
         /// <summary>The run_evaluators property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -228,6 +243,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         public EvaluationRunV2Response()
         {
             AdditionalData = new Dictionary<string, object>();
+            CreatorType = global::Soenneker.Mistral.OpenApiClient.Models.PrincipalType.User;
             Status = "completed";
         }
         /// <summary>
@@ -250,11 +266,13 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             {
                 { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
                 { "creator_id", n => { CreatorId = n.GetGuidValue(); } },
+                { "creator_type", n => { var parsed = n.GetEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.PrincipalType>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueCreatorType = default; _explicitNullProperties?.Remove("creator_type"); AdditionalData["creator_type"] = unknown; } else { CreatorType = parsed; AdditionalData.Remove("creator_type"); } } },
                 { "dataset_id", n => { DatasetId = n.GetGuidValue(); } },
                 { "deleted_at", n => { DeletedAt = n.GetDateTimeOffsetValue(); } },
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "evaluation_id", n => { EvaluationId = n.GetGuidValue(); } },
                 { "evaluators", n => { Evaluators = n.GetCollectionOfObjectValues<global::Soenneker.Mistral.OpenApiClient.Models.EvaluatorV2>(global::Soenneker.Mistral.OpenApiClient.Models.EvaluatorV2.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "failed_record_count", n => { FailedRecordCount = n.GetIntValue(); } },
                 { "goal_results", n => { GoalResults = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.EvaluationRunV2ResponseGoalResultsProperty>(global::Soenneker.Mistral.OpenApiClient.Models.EvaluationRunV2ResponseGoalResultsProperty.CreateFromDiscriminatorValue); } },
                 { "id", n => { Id = n.GetGuidValue(); } },
                 { "metadata_", n => { Metadata = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.EvaluationRunV2ResponseMetadataProperty>(global::Soenneker.Mistral.OpenApiClient.Models.EvaluationRunV2ResponseMetadataProperty.CreateFromDiscriminatorValue); } },
@@ -262,6 +280,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
                 { "num_generations", n => { NumGenerations = n.GetIntValue(); } },
                 { "optimization", n => { Optimization = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.EvaluationRunV2ResponseOptimization>(global::Soenneker.Mistral.OpenApiClient.Models.EvaluationRunV2ResponseOptimization.CreateFromDiscriminatorValue); } },
                 { "passed", n => { Passed = n.GetBoolValue(); } },
+                { "record_count", n => { RecordCount = n.GetIntValue(); } },
                 { "run_evaluators", n => { RunEvaluators = n.GetCollectionOfObjectValues<global::Soenneker.Mistral.OpenApiClient.Models.EvaluatorV2>(global::Soenneker.Mistral.OpenApiClient.Models.EvaluatorV2.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "run_info", n => { RunInfo = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.EvaluationRunV2ResponseRunInfoProperty>(global::Soenneker.Mistral.OpenApiClient.Models.EvaluationRunV2ResponseRunInfoProperty.CreateFromDiscriminatorValue); } },
                 { "run_scores", n => { RunScores = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.EvaluationRunV2ResponseRunScoresProperty>(global::Soenneker.Mistral.OpenApiClient.Models.EvaluationRunV2ResponseRunScoresProperty.CreateFromDiscriminatorValue); } },
@@ -281,11 +300,13 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteDateTimeOffsetValue("created_at", CreatedAt);
             writer.WriteGuidValue("creator_id", CreatorId);
+            writer.WriteEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.PrincipalType>("creator_type", CreatorType);
             writer.WriteGuidValue("dataset_id", DatasetId);
             writer.WriteDateTimeOffsetValue("deleted_at", DeletedAt);
             writer.WriteStringValue("description", Description);
             writer.WriteGuidValue("evaluation_id", EvaluationId);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Mistral.OpenApiClient.Models.EvaluatorV2>("evaluators", Evaluators);
+            writer.WriteIntValue("failed_record_count", FailedRecordCount);
             writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.EvaluationRunV2ResponseGoalResultsProperty>("goal_results", GoalResults);
             writer.WriteGuidValue("id", Id);
             writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.EvaluationRunV2ResponseMetadataProperty>("metadata_", Metadata);
@@ -293,6 +314,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             writer.WriteIntValue("num_generations", NumGenerations);
             writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.EvaluationRunV2ResponseOptimization>("optimization", Optimization);
             writer.WriteBoolValue("passed", Passed);
+            writer.WriteIntValue("record_count", RecordCount);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Mistral.OpenApiClient.Models.EvaluatorV2>("run_evaluators", RunEvaluators);
             writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.EvaluationRunV2ResponseRunInfoProperty>("run_info", RunInfo);
             writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.EvaluationRunV2ResponseRunScoresProperty>("run_scores", RunScores);

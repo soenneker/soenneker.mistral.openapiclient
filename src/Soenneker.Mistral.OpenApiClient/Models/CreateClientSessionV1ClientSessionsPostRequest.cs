@@ -17,6 +17,8 @@ namespace Soenneker.Mistral.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
+            if (parseNode.GetChildNode("metadata") is null) { _explicitNullValueMetadata = default!; _explicitNullProperties?.Remove("metadata"); }
+            else if (parseNode.GetChildNode("metadata") is { } nullNodeMetadata && nullNodeMetadata.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Metadata = null;
             if (parseNode.GetChildNode("model") is null) { _explicitNullValueModel = default!; _explicitNullProperties?.Remove("model"); }
             else if (parseNode.GetChildNode("model") is { } nullNodeModel && nullNodeModel.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Model = null;
             if (parseNode.GetChildNode("purpose") is null) { _explicitNullValuePurpose = default!; _explicitNullProperties?.Remove("purpose"); }
@@ -27,6 +29,16 @@ namespace Soenneker.Mistral.OpenApiClient.Models
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>Request metadata applied to the realtime session, as if sent in the `x-metadata` header.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Mistral.OpenApiClient.Models.CreateRealtimeSessionRequestMetadata? Metadata { get => _explicitNullValueMetadata; set { _explicitNullValueMetadata = value; AdditionalData?.Remove("metadata"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("metadata"); else _explicitNullProperties?.Remove("metadata"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.CreateRealtimeSessionRequestMetadata? _explicitNullValueMetadata = default!;
+#nullable restore
+#else
+        public global::Soenneker.Mistral.OpenApiClient.Models.CreateRealtimeSessionRequestMetadata Metadata { get => _explicitNullValueMetadata; set { _explicitNullValueMetadata = value; AdditionalData?.Remove("metadata"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("metadata"); else _explicitNullProperties?.Remove("metadata"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.CreateRealtimeSessionRequestMetadata _explicitNullValueMetadata = default!;
+#endif
         /// <summary>The model property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -68,6 +80,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "metadata", n => { Metadata = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.CreateRealtimeSessionRequestMetadata>(global::Soenneker.Mistral.OpenApiClient.Models.CreateRealtimeSessionRequestMetadata.CreateFromDiscriminatorValue); } },
                 { "model", n => { Model = n.GetStringValue(); } },
                 { "purpose", n => { var parsed = n.GetEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.CreateClientSessionV1ClientSessionsPostRequest_purpose>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValuePurpose = default; _explicitNullProperties?.Remove("purpose"); AdditionalData["purpose"] = unknown; } else { Purpose = parsed; AdditionalData.Remove("purpose"); } } },
                 { "ttl_seconds", n => { TtlSeconds = n.GetIntValue(); } },
@@ -80,6 +93,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.CreateRealtimeSessionRequestMetadata>("metadata", Metadata);
             writer.WriteStringValue("model", Model);
             writer.WriteEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.CreateClientSessionV1ClientSessionsPostRequest_purpose>("purpose", Purpose);
             writer.WriteIntValue("ttl_seconds", TtlSeconds);

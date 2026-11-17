@@ -34,7 +34,7 @@ namespace Soenneker.Mistral.OpenApiClient.V1.Admin.Users.Item.Deactivate
         {
         }
         /// <summary>
-        /// Deactivate a user whose email address is on one of the Organization&apos;s verified domains: remove them fromevery organization they belong to, which revokes their API keys, and end their sessions.
+        /// Deactivate a user whose email address is on one of the Organization&apos;s verified domains: end their sessions,delete their API keys and release their seats. Their memberships, groups and roles are kept, so that`POST /users/{user_id}/reactivate` can give their access back.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Mistral.OpenApiClient.Models.DeactivateUserOut"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -52,7 +52,7 @@ namespace Soenneker.Mistral.OpenApiClient.V1.Admin.Users.Item.Deactivate
             return await RequestAdapter.SendAsync<global::Soenneker.Mistral.OpenApiClient.Models.DeactivateUserOut>(requestInfo, global::Soenneker.Mistral.OpenApiClient.Models.DeactivateUserOut.CreateFromDiscriminatorValue, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Deactivate a user whose email address is on one of the Organization&apos;s verified domains: remove them fromevery organization they belong to, which revokes their API keys, and end their sessions.
+        /// Deactivate a user whose email address is on one of the Organization&apos;s verified domains: end their sessions,delete their API keys and release their seats. Their memberships, groups and roles are kept, so that`POST /users/{user_id}/reactivate` can give their access back.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

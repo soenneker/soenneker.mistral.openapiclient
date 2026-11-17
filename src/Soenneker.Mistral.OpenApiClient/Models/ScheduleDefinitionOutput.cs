@@ -52,6 +52,8 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             else if (parseNode.GetChildNode("start_at") is { } nullNodeStartAt && nullNodeStartAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) StartAt = null;
             if (parseNode.GetChildNode("time_zone_name") is null) { _explicitNullValueTimeZoneName = default!; _explicitNullProperties?.Remove("time_zone_name"); }
             else if (parseNode.GetChildNode("time_zone_name") is { } nullNodeTimeZoneName && nullNodeTimeZoneName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TimeZoneName = null;
+            if (parseNode.GetChildNode("user_id") is null) { _explicitNullValueUserId = default!; _explicitNullProperties?.Remove("user_id"); }
+            else if (parseNode.GetChildNode("user_id") is { } nullNodeUserId && nullNodeUserId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UserId = null;
             if (parseNode.GetChildNode("workflow_name") is null) { _explicitNullValueWorkflowName = default!; _explicitNullProperties?.Remove("workflow_name"); }
             else if (parseNode.GetChildNode("workflow_name") is { } nullNodeWorkflowName && nullNodeWorkflowName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WorkflowName = null;
         }
@@ -193,6 +195,16 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         public string TimeZoneName { get => _explicitNullValueTimeZoneName; set { _explicitNullValueTimeZoneName = value; AdditionalData?.Remove("time_zone_name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("time_zone_name"); else _explicitNullProperties?.Remove("time_zone_name"); } }
         private string _explicitNullValueTimeZoneName = default!;
 #endif
+        /// <summary>ID of the user who created the schedule.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? UserId { get => _explicitNullValueUserId; set { _explicitNullValueUserId = value; AdditionalData?.Remove("user_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("user_id"); else _explicitNullProperties?.Remove("user_id"); } }
+        private string? _explicitNullValueUserId = default!;
+#nullable restore
+#else
+        public string UserId { get => _explicitNullValueUserId; set { _explicitNullValueUserId = value; AdditionalData?.Remove("user_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("user_id"); else _explicitNullProperties?.Remove("user_id"); } }
+        private string _explicitNullValueUserId = default!;
+#endif
         /// <summary>Name of the workflow this schedule triggers.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -245,6 +257,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
                 { "skip", n => { Skip = n.GetCollectionOfObjectValues<global::Soenneker.Mistral.OpenApiClient.Models.ScheduleCalendar>(global::Soenneker.Mistral.OpenApiClient.Models.ScheduleCalendar.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "start_at", n => { StartAt = n.GetDateTimeOffsetValue(); } },
                 { "time_zone_name", n => { TimeZoneName = n.GetStringValue(); } },
+                { "user_id", n => { UserId = n.GetStringValue(); } },
                 { "workflow_name", n => { WorkflowName = n.GetStringValue(); } },
             };
         }
@@ -272,6 +285,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             writer.WriteCollectionOfObjectValues<global::Soenneker.Mistral.OpenApiClient.Models.ScheduleCalendar>("skip", Skip);
             writer.WriteDateTimeOffsetValue("start_at", StartAt);
             writer.WriteStringValue("time_zone_name", TimeZoneName);
+            writer.WriteStringValue("user_id", UserId);
             writer.WriteStringValue("workflow_name", WorkflowName);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);

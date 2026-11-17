@@ -37,12 +37,12 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         /// <summary>The filler property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Mistral.OpenApiClient.Models.HangUpToolFiller? Filler { get => _explicitNullValueFiller; set { _explicitNullValueFiller = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("filler"); else _explicitNullProperties?.Remove("filler"); } }
-        private global::Soenneker.Mistral.OpenApiClient.Models.HangUpToolFiller? _explicitNullValueFiller = default!;
+        public global::Soenneker.Mistral.OpenApiClient.Models.TransferCallToolFillerAnyOf1? Filler { get => _explicitNullValueFiller; set { _explicitNullValueFiller = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("filler"); else _explicitNullProperties?.Remove("filler"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.TransferCallToolFillerAnyOf1? _explicitNullValueFiller = default!;
 #nullable restore
 #else
-        public global::Soenneker.Mistral.OpenApiClient.Models.HangUpToolFiller Filler { get => _explicitNullValueFiller; set { _explicitNullValueFiller = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("filler"); else _explicitNullProperties?.Remove("filler"); } }
-        private global::Soenneker.Mistral.OpenApiClient.Models.HangUpToolFiller _explicitNullValueFiller = default!;
+        public global::Soenneker.Mistral.OpenApiClient.Models.TransferCallToolFillerAnyOf1 Filler { get => _explicitNullValueFiller; set { _explicitNullValueFiller = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("filler"); else _explicitNullProperties?.Remove("filler"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.TransferCallToolFillerAnyOf1 _explicitNullValueFiller = default!;
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -63,7 +63,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
                 { "destinations", n => { Destinations = n.GetCollectionOfObjectValues<global::Soenneker.Mistral.OpenApiClient.Models.TransferTarget>(global::Soenneker.Mistral.OpenApiClient.Models.TransferTarget.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "filler", n => { Filler = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.HangUpToolFiller>(global::Soenneker.Mistral.OpenApiClient.Models.HangUpToolFiller.CreateFromDiscriminatorValue); } },
+                { "filler", n => { Filler = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.TransferCallToolFillerAnyOf1>(global::Soenneker.Mistral.OpenApiClient.Models.TransferCallToolFillerAnyOf1.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -75,7 +75,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Mistral.OpenApiClient.Models.TransferTarget>("destinations", Destinations);
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.HangUpToolFiller>("filler", Filler);if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
+            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.TransferCallToolFillerAnyOf1>("filler", Filler);if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             
         }
     }

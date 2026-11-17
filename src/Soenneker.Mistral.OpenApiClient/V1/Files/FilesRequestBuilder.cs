@@ -65,7 +65,7 @@ namespace Soenneker.Mistral.OpenApiClient.V1.Files
             return await RequestAdapter.SendAsync<global::Soenneker.Mistral.OpenApiClient.Models.ListFilesResponse>(requestInfo, global::Soenneker.Mistral.OpenApiClient.Models.ListFilesResponse.CreateFromDiscriminatorValue, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Upload a file that can be used across various endpoints.The size of individual files can be a maximum of 512 MB. The Fine-tuning API only supports .jsonl files.Please contact us if you need to increase these storage limits.
+        /// Upload a file that can be used across various endpoints.The size of individual files can be a maximum of 512 MB.Please contact us if you need to increase these storage limits.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Mistral.OpenApiClient.Models.CreateFileResponse"/></returns>
         /// <param name="body">The request body</param>
@@ -104,7 +104,7 @@ namespace Soenneker.Mistral.OpenApiClient.V1.Files
             return requestInfo;
         }
         /// <summary>
-        /// Upload a file that can be used across various endpoints.The size of individual files can be a maximum of 512 MB. The Fine-tuning API only supports .jsonl files.Please contact us if you need to increase these storage limits.
+        /// Upload a file that can be used across various endpoints.The size of individual files can be a maximum of 512 MB.Please contact us if you need to increase these storage limits.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

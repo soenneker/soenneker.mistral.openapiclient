@@ -25,6 +25,8 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             else if (parseNode.GetChildNode("commit") is { } nullNodeCommit && nullNodeCommit.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Commit = null;
             if (parseNode.GetChildNode("github_url") is null) { _explicitNullValueGithubUrl = default!; _explicitNullProperties?.Remove("github_url"); }
             else if (parseNode.GetChildNode("github_url") is { } nullNodeGithubUrl && nullNodeGithubUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) GithubUrl = null;
+            if (parseNode.GetChildNode("repository_url") is null) { _explicitNullValueRepositoryUrl = default!; _explicitNullProperties?.Remove("repository_url"); }
+            else if (parseNode.GetChildNode("repository_url") is { } nullNodeRepositoryUrl && nullNodeRepositoryUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RepositoryUrl = null;
             if (parseNode.GetChildNode("requested_roles") is null) { _explicitNullValueRequestedRoles = default!; _explicitNullProperties?.Remove("requested_roles"); }
             else if (parseNode.GetChildNode("requested_roles") is { } nullNodeRequestedRoles && nullNodeRequestedRoles.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RequestedRoles = null;
             if (parseNode.GetChildNode("restarted_at") is null) { _explicitNullValueRestartedAt = default!; _explicitNullProperties?.Remove("restarted_at"); }
@@ -69,6 +71,16 @@ namespace Soenneker.Mistral.OpenApiClient.Models
 #else
         public string GithubUrl { get => _explicitNullValueGithubUrl; set { _explicitNullValueGithubUrl = value; AdditionalData?.Remove("github_url"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("github_url"); else _explicitNullProperties?.Remove("github_url"); } }
         private string _explicitNullValueGithubUrl = default!;
+#endif
+        /// <summary>Repository the worker builds from, on GitHub or the git server, if any.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? RepositoryUrl { get => _explicitNullValueRepositoryUrl; set { _explicitNullValueRepositoryUrl = value; AdditionalData?.Remove("repository_url"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("repository_url"); else _explicitNullProperties?.Remove("repository_url"); } }
+        private string? _explicitNullValueRepositoryUrl = default!;
+#nullable restore
+#else
+        public string RepositoryUrl { get => _explicitNullValueRepositoryUrl; set { _explicitNullValueRepositoryUrl = value; AdditionalData?.Remove("repository_url"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("repository_url"); else _explicitNullProperties?.Remove("repository_url"); } }
+        private string _explicitNullValueRepositoryUrl = default!;
 #endif
         /// <summary>The requested_roles property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -140,6 +152,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
                 { "backend_spec", n => { BackendSpec = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.DeploymentWorkerSpecResponseBackendSpec>(global::Soenneker.Mistral.OpenApiClient.Models.DeploymentWorkerSpecResponseBackendSpec.CreateFromDiscriminatorValue); } },
                 { "commit", n => { Commit = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.DeploymentWorkerSpecResponseCommit>(global::Soenneker.Mistral.OpenApiClient.Models.DeploymentWorkerSpecResponseCommit.CreateFromDiscriminatorValue); } },
                 { "github_url", n => { GithubUrl = n.GetStringValue(); } },
+                { "repository_url", n => { RepositoryUrl = n.GetStringValue(); } },
                 { "requested_roles", n => { RequestedRoles = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "restarted_at", n => { RestartedAt = n.GetStringValue(); } },
                 { "revision", n => { Revision = n.GetStringValue(); } },
@@ -157,6 +170,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.DeploymentWorkerSpecResponseBackendSpec>("backend_spec", BackendSpec);
             writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.DeploymentWorkerSpecResponseCommit>("commit", Commit);
             writer.WriteStringValue("github_url", GithubUrl);
+            writer.WriteStringValue("repository_url", RepositoryUrl);
             writer.WriteCollectionOfPrimitiveValues<string>("requested_roles", RequestedRoles);
             writer.WriteStringValue("restarted_at", RestartedAt);
             writer.WriteStringValue("revision", Revision);

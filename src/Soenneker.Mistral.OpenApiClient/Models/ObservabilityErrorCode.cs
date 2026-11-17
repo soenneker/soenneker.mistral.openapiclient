@@ -92,6 +92,10 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         #pragma warning disable CS1591
         JudgeDidNotChange,
         #pragma warning restore CS1591
+        [EnumMember(Value = "JUDGE_WRITES_FROZEN")]
+        #pragma warning disable CS1591
+        JudgeWritesFrozen,
+        #pragma warning restore CS1591
         [EnumMember(Value = "DATASET_NOT_FOUND")]
         #pragma warning disable CS1591
         DatasetNotFound,
@@ -147,6 +151,10 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         [EnumMember(Value = "EVALUATION_RUN_OUTPUT_RECORD_CONFLICT")]
         #pragma warning disable CS1591
         EvaluationRunOutputRecordConflict,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "EVALUATION_RUN_INPUT_RECORD_CONFLICT")]
+        #pragma warning disable CS1591
+        EvaluationRunInputRecordConflict,
         #pragma warning restore CS1591
         [EnumMember(Value = "TEMPLATE_ERROR")]
         #pragma warning disable CS1591

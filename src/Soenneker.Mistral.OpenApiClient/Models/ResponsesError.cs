@@ -21,6 +21,14 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             else if (parseNode.GetChildNode("code") is { } nullNodeCode && nullNodeCode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Code = null;
             if (parseNode.GetChildNode("message") is null) { _explicitNullValueMessage = default!; _explicitNullProperties?.Remove("message"); }
             else if (parseNode.GetChildNode("message") is { } nullNodeMessage && nullNodeMessage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Message = null;
+            if (parseNode.GetChildNode("misalignment") is null) { _explicitNullValueMisalignment = default!; _explicitNullProperties?.Remove("misalignment"); }
+            else if (parseNode.GetChildNode("misalignment") is { } nullNodeMisalignment && nullNodeMisalignment.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Misalignment = null;
+            if (parseNode.GetChildNode("param") is null) { _explicitNullValueParam = default!; _explicitNullProperties?.Remove("param"); }
+            else if (parseNode.GetChildNode("param") is { } nullNodeParam && nullNodeParam.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Param = null;
+            if (parseNode.GetChildNode("reason") is null) { _explicitNullValueReason = default!; _explicitNullProperties?.Remove("reason"); }
+            else if (parseNode.GetChildNode("reason") is { } nullNodeReason && nullNodeReason.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Reason = null;
+            if (parseNode.GetChildNode("type") is null) { _explicitNullValueType = default!; _explicitNullProperties?.Remove("type"); }
+            else if (parseNode.GetChildNode("type") is { } nullNodeType && nullNodeType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Type = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -37,6 +45,39 @@ namespace Soenneker.Mistral.OpenApiClient.Models
 #else
         public string Message { get => _explicitNullValueMessage; set { _explicitNullValueMessage = value; AdditionalData?.Remove("message"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("message"); else _explicitNullProperties?.Remove("message"); } }
         private string _explicitNullValueMessage = default!;
+#endif
+        /// <summary>The misalignment property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Mistral.OpenApiClient.Models.ResponsesMisalignment? Misalignment { get => _explicitNullValueMisalignment; set { _explicitNullValueMisalignment = value; AdditionalData?.Remove("misalignment"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("misalignment"); else _explicitNullProperties?.Remove("misalignment"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.ResponsesMisalignment? _explicitNullValueMisalignment = default!;
+#nullable restore
+#else
+        public global::Soenneker.Mistral.OpenApiClient.Models.ResponsesMisalignment Misalignment { get => _explicitNullValueMisalignment; set { _explicitNullValueMisalignment = value; AdditionalData?.Remove("misalignment"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("misalignment"); else _explicitNullProperties?.Remove("misalignment"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.ResponsesMisalignment _explicitNullValueMisalignment = default!;
+#endif
+        /// <summary>The param property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Param { get => _explicitNullValueParam; set { _explicitNullValueParam = value; AdditionalData?.Remove("param"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("param"); else _explicitNullProperties?.Remove("param"); } }
+        private string? _explicitNullValueParam = default!;
+#nullable restore
+#else
+        public string Param { get => _explicitNullValueParam; set { _explicitNullValueParam = value; AdditionalData?.Remove("param"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("param"); else _explicitNullProperties?.Remove("param"); } }
+        private string _explicitNullValueParam = default!;
+#endif
+        /// <summary>The reason property</summary>
+        public global::Soenneker.Mistral.OpenApiClient.Models.ResponsesErrorReason? Reason { get => _explicitNullValueReason; set { _explicitNullValueReason = value; AdditionalData?.Remove("reason"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("reason"); else _explicitNullProperties?.Remove("reason"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.ResponsesErrorReason? _explicitNullValueReason = default!;
+        /// <summary>The type property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Type { get => _explicitNullValueType; set { _explicitNullValueType = value; AdditionalData?.Remove("type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
+        private string? _explicitNullValueType = default!;
+#nullable restore
+#else
+        public string Type { get => _explicitNullValueType; set { _explicitNullValueType = value; AdditionalData?.Remove("type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
+        private string _explicitNullValueType = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Mistral.OpenApiClient.Models.ResponsesError"/> and sets the default values.
@@ -65,6 +106,10 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             {
                 { "code", n => { var parsed = n.GetEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.ResponsesErrorCode>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueCode = default; _explicitNullProperties?.Remove("code"); AdditionalData["code"] = unknown; } else { Code = parsed; AdditionalData.Remove("code"); } } },
                 { "message", n => { Message = n.GetStringValue(); } },
+                { "misalignment", n => { Misalignment = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ResponsesMisalignment>(global::Soenneker.Mistral.OpenApiClient.Models.ResponsesMisalignment.CreateFromDiscriminatorValue); } },
+                { "param", n => { Param = n.GetStringValue(); } },
+                { "reason", n => { var parsed = n.GetEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.ResponsesErrorReason>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueReason = default; _explicitNullProperties?.Remove("reason"); AdditionalData["reason"] = unknown; } else { Reason = parsed; AdditionalData.Remove("reason"); } } },
+                { "type", n => { Type = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -76,6 +121,10 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.ResponsesErrorCode>("code", Code);
             writer.WriteStringValue("message", Message);
+            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ResponsesMisalignment>("misalignment", Misalignment);
+            writer.WriteStringValue("param", Param);
+            writer.WriteEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.ResponsesErrorReason>("reason", Reason);
+            writer.WriteStringValue("type", Type);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }

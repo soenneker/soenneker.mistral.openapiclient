@@ -35,7 +35,7 @@ namespace Soenneker.Mistral.OpenApiClient.V1.Observability.Pipelines
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public PipelinesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/observability/pipelines{?enabled*,page*,page_size*,q*}", pathParameters)
+        public PipelinesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/observability/pipelines{?enabled*,from*,page*,page_size*,q*,to*}", pathParameters)
         {
         }
         /// <summary>
@@ -43,7 +43,7 @@ namespace Soenneker.Mistral.OpenApiClient.V1.Observability.Pipelines
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public PipelinesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/observability/pipelines{?enabled*,page*,page_size*,q*}", rawUrl)
+        public PipelinesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/v1/observability/pipelines{?enabled*,from*,page*,page_size*,q*,to*}", rawUrl)
         {
         }
         /// <summary>
@@ -175,6 +175,10 @@ namespace Soenneker.Mistral.OpenApiClient.V1.Observability.Pipelines
             public bool? Enabled { get; set; }
             #pragma warning restore CS1591
             #pragma warning disable CS1591
+            [QueryParameter("from")]
+            public DateTimeOffset? From { get; set; }
+            #pragma warning restore CS1591
+            #pragma warning disable CS1591
             [QueryParameter("page")]
             public int? Page { get; set; }
             #pragma warning restore CS1591
@@ -195,6 +199,10 @@ namespace Soenneker.Mistral.OpenApiClient.V1.Observability.Pipelines
             public string Q { get; set; }
             #pragma warning restore CS1591
 #endif
+            #pragma warning disable CS1591
+            [QueryParameter("to")]
+            public DateTimeOffset? To { get; set; }
+            #pragma warning restore CS1591
         }
     }
 }

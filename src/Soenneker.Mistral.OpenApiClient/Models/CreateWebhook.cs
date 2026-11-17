@@ -19,8 +19,10 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         {
             if (parseNode.GetChildNode("encryption_key") is null) { _explicitNullValueEncryptionKey = default!; _explicitNullProperties?.Remove("encryption_key"); }
             else if (parseNode.GetChildNode("encryption_key") is { } nullNodeEncryptionKey && nullNodeEncryptionKey.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EncryptionKey = null;
-            if (parseNode.GetChildNode("event_type_path") is null) { _explicitNullValueEventTypePath = default!; _explicitNullProperties?.Remove("event_type_path"); }
-            else if (parseNode.GetChildNode("event_type_path") is { } nullNodeEventTypePath && nullNodeEventTypePath.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EventTypePath = null;
+            if (parseNode.GetChildNode("event_id_pattern") is null) { _explicitNullValueEventIdPattern = default!; _explicitNullProperties?.Remove("event_id_pattern"); }
+            else if (parseNode.GetChildNode("event_id_pattern") is { } nullNodeEventIdPattern && nullNodeEventIdPattern.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EventIdPattern = null;
+            if (parseNode.GetChildNode("event_type_pattern") is null) { _explicitNullValueEventTypePattern = default!; _explicitNullProperties?.Remove("event_type_pattern"); }
+            else if (parseNode.GetChildNode("event_type_pattern") is { } nullNodeEventTypePattern && nullNodeEventTypePattern.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EventTypePattern = null;
             if (parseNode.GetChildNode("expires_at") is null) { _explicitNullValueExpiresAt = default!; _explicitNullProperties?.Remove("expires_at"); }
             else if (parseNode.GetChildNode("expires_at") is { } nullNodeExpiresAt && nullNodeExpiresAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExpiresAt = null;
             if (parseNode.GetChildNode("name") is null) { _explicitNullValueName = default!; _explicitNullProperties?.Remove("name"); }
@@ -45,6 +47,8 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             else if (parseNode.GetChildNode("success_status_code") is { } nullNodeSuccessStatusCode && nullNodeSuccessStatusCode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SuccessStatusCode = null;
             if (parseNode.GetChildNode("timestamp_extractor_regex") is null) { _explicitNullValueTimestampExtractorRegex = default!; _explicitNullProperties?.Remove("timestamp_extractor_regex"); }
             else if (parseNode.GetChildNode("timestamp_extractor_regex") is { } nullNodeTimestampExtractorRegex && nullNodeTimestampExtractorRegex.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TimestampExtractorRegex = null;
+            if (parseNode.GetChildNode("url_verification_token") is null) { _explicitNullValueUrlVerificationToken = default!; _explicitNullProperties?.Remove("url_verification_token"); }
+            else if (parseNode.GetChildNode("url_verification_token") is { } nullNodeUrlVerificationToken && nullNodeUrlVerificationToken.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UrlVerificationToken = null;
             if (parseNode.GetChildNode("validity_period_second") is null) { _explicitNullValueValidityPeriodSecond = default!; _explicitNullProperties?.Remove("validity_period_second"); }
             else if (parseNode.GetChildNode("validity_period_second") is { } nullNodeValidityPeriodSecond && nullNodeValidityPeriodSecond.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ValidityPeriodSecond = null;
         }
@@ -61,15 +65,25 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         public string EncryptionKey { get => _explicitNullValueEncryptionKey; set { _explicitNullValueEncryptionKey = value; AdditionalData?.Remove("encryption_key"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("encryption_key"); else _explicitNullProperties?.Remove("encryption_key"); } }
         private string _explicitNullValueEncryptionKey = default!;
 #endif
-        /// <summary>Path to extract event type, eg body.type or headers.X-GitHub-Event</summary>
+        /// <summary>Pattern for a unique event identifier used to deduplicate deliveries, with {body.&lt;path&gt;} and {headers.&lt;Header-Name&gt;} placeholders, eg {body.id} or {body.event_id}.{headers.X-Delivery-Id}. Defaults to a hash of the request body</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? EventTypePath { get => _explicitNullValueEventTypePath; set { _explicitNullValueEventTypePath = value; AdditionalData?.Remove("event_type_path"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("event_type_path"); else _explicitNullProperties?.Remove("event_type_path"); } }
-        private string? _explicitNullValueEventTypePath = default!;
+        public string? EventIdPattern { get => _explicitNullValueEventIdPattern; set { _explicitNullValueEventIdPattern = value; AdditionalData?.Remove("event_id_pattern"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("event_id_pattern"); else _explicitNullProperties?.Remove("event_id_pattern"); } }
+        private string? _explicitNullValueEventIdPattern = default!;
 #nullable restore
 #else
-        public string EventTypePath { get => _explicitNullValueEventTypePath; set { _explicitNullValueEventTypePath = value; AdditionalData?.Remove("event_type_path"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("event_type_path"); else _explicitNullProperties?.Remove("event_type_path"); } }
-        private string _explicitNullValueEventTypePath = default!;
+        public string EventIdPattern { get => _explicitNullValueEventIdPattern; set { _explicitNullValueEventIdPattern = value; AdditionalData?.Remove("event_id_pattern"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("event_id_pattern"); else _explicitNullProperties?.Remove("event_id_pattern"); } }
+        private string _explicitNullValueEventIdPattern = default!;
+#endif
+        /// <summary>Pattern for the event type, with {body.&lt;path&gt;} and {headers.&lt;Header-Name&gt;} placeholders, eg {body.type} or {headers.X-GitHub-Event}</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? EventTypePattern { get => _explicitNullValueEventTypePattern; set { _explicitNullValueEventTypePattern = value; AdditionalData?.Remove("event_type_pattern"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("event_type_pattern"); else _explicitNullProperties?.Remove("event_type_pattern"); } }
+        private string? _explicitNullValueEventTypePattern = default!;
+#nullable restore
+#else
+        public string EventTypePattern { get => _explicitNullValueEventTypePattern; set { _explicitNullValueEventTypePattern = value; AdditionalData?.Remove("event_type_pattern"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("event_type_pattern"); else _explicitNullProperties?.Remove("event_type_pattern"); } }
+        private string _explicitNullValueEventTypePattern = default!;
 #endif
         /// <summary>The expires_at property</summary>
         public DateTimeOffset? ExpiresAt { get => _explicitNullValueExpiresAt; set { _explicitNullValueExpiresAt = value; AdditionalData?.Remove("expires_at"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("expires_at"); else _explicitNullProperties?.Remove("expires_at"); } }
@@ -139,7 +153,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         /// <summary>The success_status_code property</summary>
         public int? SuccessStatusCode { get => _explicitNullValueSuccessStatusCode; set { _explicitNullValueSuccessStatusCode = value; AdditionalData?.Remove("success_status_code"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("success_status_code"); else _explicitNullProperties?.Remove("success_status_code"); } }
         private int? _explicitNullValueSuccessStatusCode = default!;
-        /// <summary>The timestamp_extractor_regex property</summary>
+        /// <summary>Regex to extract the timestamp from the signature header, used as {timestamp}, eg t=([^,]+)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? TimestampExtractorRegex { get => _explicitNullValueTimestampExtractorRegex; set { _explicitNullValueTimestampExtractorRegex = value; AdditionalData?.Remove("timestamp_extractor_regex"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("timestamp_extractor_regex"); else _explicitNullProperties?.Remove("timestamp_extractor_regex"); } }
@@ -149,7 +163,17 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         public string TimestampExtractorRegex { get => _explicitNullValueTimestampExtractorRegex; set { _explicitNullValueTimestampExtractorRegex = value; AdditionalData?.Remove("timestamp_extractor_regex"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("timestamp_extractor_regex"); else _explicitNullProperties?.Remove("timestamp_extractor_regex"); } }
         private string _explicitNullValueTimestampExtractorRegex = default!;
 #endif
-        /// <summary>The validity_period_second property</summary>
+        /// <summary>Token the provider echoes back when verifying the URL. Required for WhatsApp (paste the same value in the Verify token field of the Meta App Dashboard), forbidden for other providers</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? UrlVerificationToken { get => _explicitNullValueUrlVerificationToken; set { _explicitNullValueUrlVerificationToken = value; AdditionalData?.Remove("url_verification_token"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("url_verification_token"); else _explicitNullProperties?.Remove("url_verification_token"); } }
+        private string? _explicitNullValueUrlVerificationToken = default!;
+#nullable restore
+#else
+        public string UrlVerificationToken { get => _explicitNullValueUrlVerificationToken; set { _explicitNullValueUrlVerificationToken = value; AdditionalData?.Remove("url_verification_token"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("url_verification_token"); else _explicitNullProperties?.Remove("url_verification_token"); } }
+        private string _explicitNullValueUrlVerificationToken = default!;
+#endif
+        /// <summary>Maximum allowed drift in seconds between the signed timestamp and reception time, eg 300</summary>
         public int? ValidityPeriodSecond { get => _explicitNullValueValidityPeriodSecond; set { _explicitNullValueValidityPeriodSecond = value; AdditionalData?.Remove("validity_period_second"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("validity_period_second"); else _explicitNullProperties?.Remove("validity_period_second"); } }
         private int? _explicitNullValueValidityPeriodSecond = default!;
         /// <summary>
@@ -179,7 +203,8 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "encryption_key", n => { EncryptionKey = n.GetStringValue(); } },
-                { "event_type_path", n => { EventTypePath = n.GetStringValue(); } },
+                { "event_id_pattern", n => { EventIdPattern = n.GetStringValue(); } },
+                { "event_type_pattern", n => { EventTypePattern = n.GetStringValue(); } },
                 { "expires_at", n => { ExpiresAt = n.GetDateTimeOffsetValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "owner_type", n => { var parsed = n.GetEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.TriggersOwnerType>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueOwnerType = default; _explicitNullProperties?.Remove("owner_type"); AdditionalData["owner_type"] = unknown; } else { OwnerType = parsed; AdditionalData.Remove("owner_type"); } } },
@@ -192,6 +217,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
                 { "signature_payload_pattern", n => { SignaturePayloadPattern = n.GetStringValue(); } },
                 { "success_status_code", n => { SuccessStatusCode = n.GetIntValue(); } },
                 { "timestamp_extractor_regex", n => { TimestampExtractorRegex = n.GetStringValue(); } },
+                { "url_verification_token", n => { UrlVerificationToken = n.GetStringValue(); } },
                 { "validity_period_second", n => { ValidityPeriodSecond = n.GetIntValue(); } },
             };
         }
@@ -203,7 +229,8 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("encryption_key", EncryptionKey);
-            writer.WriteStringValue("event_type_path", EventTypePath);
+            writer.WriteStringValue("event_id_pattern", EventIdPattern);
+            writer.WriteStringValue("event_type_pattern", EventTypePattern);
             writer.WriteDateTimeOffsetValue("expires_at", ExpiresAt);
             writer.WriteStringValue("name", Name);
             writer.WriteEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.TriggersOwnerType>("owner_type", OwnerType);
@@ -216,6 +243,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             writer.WriteStringValue("signature_payload_pattern", SignaturePayloadPattern);
             writer.WriteIntValue("success_status_code", SuccessStatusCode);
             writer.WriteStringValue("timestamp_extractor_regex", TimestampExtractorRegex);
+            writer.WriteStringValue("url_verification_token", UrlVerificationToken);
             writer.WriteIntValue("validity_period_second", ValidityPeriodSecond);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);

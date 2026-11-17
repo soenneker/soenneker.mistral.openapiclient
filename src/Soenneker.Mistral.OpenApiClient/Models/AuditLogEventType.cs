@@ -32,6 +32,14 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         #pragma warning disable CS1591
         UserPhoneNumberVerify,
         #pragma warning restore CS1591
+        [EnumMember(Value = "user.deactivate")]
+        #pragma warning disable CS1591
+        UserDeactivate,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "user.reactivate")]
+        #pragma warning disable CS1591
+        UserReactivate,
+        #pragma warning restore CS1591
         [EnumMember(Value = "user.organization.leave")]
         #pragma warning disable CS1591
         UserOrganizationLeave,
@@ -59,6 +67,10 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         [EnumMember(Value = "organization.update")]
         #pragma warning disable CS1591
         OrganizationUpdate,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "organization.members.export")]
+        #pragma warning disable CS1591
+        OrganizationMembersExport,
         #pragma warning restore CS1591
         [EnumMember(Value = "organization.invite.send")]
         #pragma warning disable CS1591
@@ -263,6 +275,18 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         [EnumMember(Value = "billing.shared_budget_override.updated")]
         #pragma warning disable CS1591
         BillingSharedBudgetOverrideUpdated,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "billing.spending_limit.created")]
+        #pragma warning disable CS1591
+        BillingSpendingLimitCreated,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "billing.spending_limit.updated")]
+        #pragma warning disable CS1591
+        BillingSpendingLimitUpdated,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "billing.spending_limit.deleted")]
+        #pragma warning disable CS1591
+        BillingSpendingLimitDeleted,
         #pragma warning restore CS1591
         [EnumMember(Value = "billing.auto_recharge.updated")]
         #pragma warning disable CS1591
@@ -519,6 +543,10 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         [EnumMember(Value = "knowledge_base.update")]
         #pragma warning disable CS1591
         KnowledgeBaseUpdate,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "knowledge_base.load")]
+        #pragma warning disable CS1591
+        KnowledgeBaseLoad,
         #pragma warning restore CS1591
         [EnumMember(Value = "knowledge_base.version.create")]
         #pragma warning disable CS1591

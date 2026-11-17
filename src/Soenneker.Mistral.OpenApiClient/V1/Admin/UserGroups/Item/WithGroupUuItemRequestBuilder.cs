@@ -5,7 +5,6 @@ using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
 using Soenneker.Mistral.OpenApiClient.Models;
 using Soenneker.Mistral.OpenApiClient.V1.Admin.UserGroups.Item.Members;
-using Soenneker.Mistral.OpenApiClient.V1.Admin.UserGroups.Item.Nested;
 using Soenneker.Mistral.OpenApiClient.V1.Admin.UserGroups.Item.OrganizationRole;
 using Soenneker.Mistral.OpenApiClient.V1.Admin.UserGroups.Item.Workspaces;
 using System.Collections.Generic;
@@ -25,11 +24,6 @@ namespace Soenneker.Mistral.OpenApiClient.V1.Admin.UserGroups.Item
         public global::Soenneker.Mistral.OpenApiClient.V1.Admin.UserGroups.Item.Members.MembersRequestBuilder Members
         {
             get => new global::Soenneker.Mistral.OpenApiClient.V1.Admin.UserGroups.Item.Members.MembersRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>The nested property</summary>
-        public global::Soenneker.Mistral.OpenApiClient.V1.Admin.UserGroups.Item.Nested.NestedRequestBuilder Nested
-        {
-            get => new global::Soenneker.Mistral.OpenApiClient.V1.Admin.UserGroups.Item.Nested.NestedRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The organizationRole property</summary>
         public global::Soenneker.Mistral.OpenApiClient.V1.Admin.UserGroups.Item.OrganizationRole.OrganizationRoleRequestBuilder OrganizationRole

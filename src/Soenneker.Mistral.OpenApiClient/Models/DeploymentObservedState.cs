@@ -27,6 +27,8 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             else if (parseNode.GetChildNode("endpoint") is { } nullNodeEndpoint && nullNodeEndpoint.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Endpoint = null;
             if (parseNode.GetChildNode("generation") is null) { _explicitNullValueGeneration = default!; _explicitNullProperties?.Remove("generation"); }
             else if (parseNode.GetChildNode("generation") is { } nullNodeGeneration && nullNodeGeneration.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Generation = null;
+            if (parseNode.GetChildNode("last_phase_changed_at") is null) { _explicitNullValueLastPhaseChangedAt = default!; _explicitNullProperties?.Remove("last_phase_changed_at"); }
+            else if (parseNode.GetChildNode("last_phase_changed_at") is { } nullNodeLastPhaseChangedAt && nullNodeLastPhaseChangedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LastPhaseChangedAt = null;
             if (parseNode.GetChildNode("last_seen") is null) { _explicitNullValueLastSeen = default!; _explicitNullProperties?.Remove("last_seen"); }
             else if (parseNode.GetChildNode("last_seen") is { } nullNodeLastSeen && nullNodeLastSeen.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LastSeen = null;
             if (parseNode.GetChildNode("message") is null) { _explicitNullValueMessage = default!; _explicitNullProperties?.Remove("message"); }
@@ -75,6 +77,9 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         /// <summary>The generation property</summary>
         public int? Generation { get => _explicitNullValueGeneration; set { _explicitNullValueGeneration = value; AdditionalData?.Remove("generation"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("generation"); else _explicitNullProperties?.Remove("generation"); } }
         private int? _explicitNullValueGeneration = default!;
+        /// <summary>The last_phase_changed_at property</summary>
+        public DateTimeOffset? LastPhaseChangedAt { get => _explicitNullValueLastPhaseChangedAt; set { _explicitNullValueLastPhaseChangedAt = value; AdditionalData?.Remove("last_phase_changed_at"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("last_phase_changed_at"); else _explicitNullProperties?.Remove("last_phase_changed_at"); } }
+        private DateTimeOffset? _explicitNullValueLastPhaseChangedAt = default!;
         /// <summary>The last_seen property</summary>
         public DateTimeOffset? LastSeen { get => _explicitNullValueLastSeen; set { _explicitNullValueLastSeen = value; AdditionalData?.Remove("last_seen"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("last_seen"); else _explicitNullProperties?.Remove("last_seen"); } }
         private DateTimeOffset? _explicitNullValueLastSeen = default!;
@@ -133,6 +138,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
                 { "deployed_revision", n => { DeployedRevision = n.GetStringValue(); } },
                 { "endpoint", n => { Endpoint = n.GetStringValue(); } },
                 { "generation", n => { Generation = n.GetIntValue(); } },
+                { "last_phase_changed_at", n => { LastPhaseChangedAt = n.GetDateTimeOffsetValue(); } },
                 { "last_seen", n => { LastSeen = n.GetDateTimeOffsetValue(); } },
                 { "message", n => { Message = n.GetStringValue(); } },
                 { "phase", n => { Phase = n.GetStringValue(); } },
@@ -151,6 +157,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             writer.WriteStringValue("deployed_revision", DeployedRevision);
             writer.WriteStringValue("endpoint", Endpoint);
             writer.WriteIntValue("generation", Generation);
+            writer.WriteDateTimeOffsetValue("last_phase_changed_at", LastPhaseChangedAt);
             writer.WriteDateTimeOffsetValue("last_seen", LastSeen);
             writer.WriteStringValue("message", Message);
             writer.WriteStringValue("phase", Phase);

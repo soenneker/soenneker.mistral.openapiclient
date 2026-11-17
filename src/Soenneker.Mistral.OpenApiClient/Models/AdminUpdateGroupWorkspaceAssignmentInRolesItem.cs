@@ -72,6 +72,10 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         #pragma warning disable CS1591
         Value94Ef59Cf56Bf43839Dd61Fee77D370Af,
         #pragma warning restore CS1591
+        [EnumMember(Value = "24b51cb8-72fe-411c-8652-c719c7270ca2")]
+        #pragma warning disable CS1591
+        Value24B51Cb872Fe411C8652C719C7270Ca2,
+        #pragma warning restore CS1591
         [EnumMember(Value = "7e69e493-caf6-4671-af60-84951754d9fc")]
         #pragma warning disable CS1591
         Value7E69E493Caf64671Af6084951754D9Fc,

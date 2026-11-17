@@ -36,6 +36,10 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         #pragma warning disable CS1591
         Ashby,
         #pragma warning restore CS1591
+        [EnumMember(Value = "whatsapp")]
+        #pragma warning disable CS1591
+        Whatsapp,
+        #pragma warning restore CS1591
         [EnumMember(Value = "custom")]
         #pragma warning disable CS1591
         Custom,

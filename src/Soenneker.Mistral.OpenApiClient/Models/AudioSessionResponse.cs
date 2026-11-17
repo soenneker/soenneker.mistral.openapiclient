@@ -17,6 +17,8 @@ namespace Soenneker.Mistral.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
+            if (parseNode.GetChildNode("bridge_metadata") is null) { _explicitNullValueBridgeMetadata = default!; _explicitNullProperties?.Remove("bridge_metadata"); }
+            else if (parseNode.GetChildNode("bridge_metadata") is { } nullNodeBridgeMetadata && nullNodeBridgeMetadata.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BridgeMetadata = null;
             if (parseNode.GetChildNode("created_at") is null) { _explicitNullValueCreatedAt = default!; _explicitNullProperties?.Remove("created_at"); }
             else if (parseNode.GetChildNode("created_at") is { } nullNodeCreatedAt && nullNodeCreatedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CreatedAt = null;
             if (parseNode.GetChildNode("id") is null) { _explicitNullValueId = default!; _explicitNullProperties?.Remove("id"); }
@@ -33,6 +35,16 @@ namespace Soenneker.Mistral.OpenApiClient.Models
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>Contact metadata recorded when Amazon Connect starts a session.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Mistral.OpenApiClient.Models.AudioAgentSessionSummaryBridgeMetadata? BridgeMetadata { get => _explicitNullValueBridgeMetadata; set { _explicitNullValueBridgeMetadata = value; AdditionalData?.Remove("bridge_metadata"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bridge_metadata"); else _explicitNullProperties?.Remove("bridge_metadata"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.AudioAgentSessionSummaryBridgeMetadata? _explicitNullValueBridgeMetadata = default!;
+#nullable restore
+#else
+        public global::Soenneker.Mistral.OpenApiClient.Models.AudioAgentSessionSummaryBridgeMetadata BridgeMetadata { get => _explicitNullValueBridgeMetadata; set { _explicitNullValueBridgeMetadata = value; AdditionalData?.Remove("bridge_metadata"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bridge_metadata"); else _explicitNullProperties?.Remove("bridge_metadata"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.AudioAgentSessionSummaryBridgeMetadata _explicitNullValueBridgeMetadata = default!;
+#endif
         /// <summary>The created_at property</summary>
         public DateTimeOffset? CreatedAt { get => _explicitNullValueCreatedAt; set { _explicitNullValueCreatedAt = value; AdditionalData?.Remove("created_at"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("created_at"); else _explicitNullProperties?.Remove("created_at"); } }
         private DateTimeOffset? _explicitNullValueCreatedAt = default!;
@@ -90,6 +102,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "bridge_metadata", n => { BridgeMetadata = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.AudioAgentSessionSummaryBridgeMetadata>(global::Soenneker.Mistral.OpenApiClient.Models.AudioAgentSessionSummaryBridgeMetadata.CreateFromDiscriminatorValue); } },
                 { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
                 { "id", n => { Id = n.GetGuidValue(); } },
                 { "num_participants", n => { NumParticipants = n.GetIntValue(); } },
@@ -105,6 +118,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.AudioAgentSessionSummaryBridgeMetadata>("bridge_metadata", BridgeMetadata);
             writer.WriteDateTimeOffsetValue("created_at", CreatedAt);
             writer.WriteGuidValue("id", Id);
             writer.WriteIntValue("num_participants", NumParticipants);

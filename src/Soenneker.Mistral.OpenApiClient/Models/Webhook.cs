@@ -21,8 +21,12 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             else if (parseNode.GetChildNode("created_at") is { } nullNodeCreatedAt && nullNodeCreatedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CreatedAt = null;
             if (parseNode.GetChildNode("creator_id") is null) { _explicitNullValueCreatorId = default!; _explicitNullProperties?.Remove("creator_id"); }
             else if (parseNode.GetChildNode("creator_id") is { } nullNodeCreatorId && nullNodeCreatorId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CreatorId = null;
+            if (parseNode.GetChildNode("event_id_pattern") is null) { _explicitNullValueEventIdPattern = default!; _explicitNullProperties?.Remove("event_id_pattern"); }
+            else if (parseNode.GetChildNode("event_id_pattern") is { } nullNodeEventIdPattern && nullNodeEventIdPattern.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EventIdPattern = null;
             if (parseNode.GetChildNode("event_type_path") is null) { _explicitNullValueEventTypePath = default!; _explicitNullProperties?.Remove("event_type_path"); }
             else if (parseNode.GetChildNode("event_type_path") is { } nullNodeEventTypePath && nullNodeEventTypePath.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EventTypePath = null;
+            if (parseNode.GetChildNode("event_type_pattern") is null) { _explicitNullValueEventTypePattern = default!; _explicitNullProperties?.Remove("event_type_pattern"); }
+            else if (parseNode.GetChildNode("event_type_pattern") is { } nullNodeEventTypePattern && nullNodeEventTypePattern.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EventTypePattern = null;
             if (parseNode.GetChildNode("expires_at") is null) { _explicitNullValueExpiresAt = default!; _explicitNullProperties?.Remove("expires_at"); }
             else if (parseNode.GetChildNode("expires_at") is { } nullNodeExpiresAt && nullNodeExpiresAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExpiresAt = null;
             if (parseNode.GetChildNode("http_method") is null) { _explicitNullValueHttpMethod = default!; _explicitNullProperties?.Remove("http_method"); }
@@ -55,6 +59,8 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             else if (parseNode.GetChildNode("updated_at") is { } nullNodeUpdatedAt && nullNodeUpdatedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UpdatedAt = null;
             if (parseNode.GetChildNode("url") is null) { _explicitNullValueUrl = default!; _explicitNullProperties?.Remove("url"); }
             else if (parseNode.GetChildNode("url") is { } nullNodeUrl && nullNodeUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Url = null;
+            if (parseNode.GetChildNode("url_verification_token") is null) { _explicitNullValueUrlVerificationToken = default!; _explicitNullProperties?.Remove("url_verification_token"); }
+            else if (parseNode.GetChildNode("url_verification_token") is { } nullNodeUrlVerificationToken && nullNodeUrlVerificationToken.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UrlVerificationToken = null;
             if (parseNode.GetChildNode("url_verified") is null) { _explicitNullValueUrlVerified = default!; _explicitNullProperties?.Remove("url_verified"); }
             else if (parseNode.GetChildNode("url_verified") is { } nullNodeUrlVerified && nullNodeUrlVerified.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UrlVerified = null;
             if (parseNode.GetChildNode("validity_period_second") is null) { _explicitNullValueValidityPeriodSecond = default!; _explicitNullProperties?.Remove("validity_period_second"); }
@@ -71,7 +77,18 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         /// <summary>The creator_id property</summary>
         public Guid? CreatorId { get => _explicitNullValueCreatorId; set { _explicitNullValueCreatorId = value; AdditionalData?.Remove("creator_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("creator_id"); else _explicitNullProperties?.Remove("creator_id"); } }
         private Guid? _explicitNullValueCreatorId = default!;
+        /// <summary>The event_id_pattern property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? EventIdPattern { get => _explicitNullValueEventIdPattern; set { _explicitNullValueEventIdPattern = value; AdditionalData?.Remove("event_id_pattern"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("event_id_pattern"); else _explicitNullProperties?.Remove("event_id_pattern"); } }
+        private string? _explicitNullValueEventIdPattern = default!;
+#nullable restore
+#else
+        public string EventIdPattern { get => _explicitNullValueEventIdPattern; set { _explicitNullValueEventIdPattern = value; AdditionalData?.Remove("event_id_pattern"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("event_id_pattern"); else _explicitNullProperties?.Remove("event_id_pattern"); } }
+        private string _explicitNullValueEventIdPattern = default!;
+#endif
         /// <summary>The event_type_path property</summary>
+        [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? EventTypePath { get => _explicitNullValueEventTypePath; set { _explicitNullValueEventTypePath = value; AdditionalData?.Remove("event_type_path"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("event_type_path"); else _explicitNullProperties?.Remove("event_type_path"); } }
@@ -80,6 +97,16 @@ namespace Soenneker.Mistral.OpenApiClient.Models
 #else
         public string EventTypePath { get => _explicitNullValueEventTypePath; set { _explicitNullValueEventTypePath = value; AdditionalData?.Remove("event_type_path"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("event_type_path"); else _explicitNullProperties?.Remove("event_type_path"); } }
         private string _explicitNullValueEventTypePath = default!;
+#endif
+        /// <summary>The event_type_pattern property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? EventTypePattern { get => _explicitNullValueEventTypePattern; set { _explicitNullValueEventTypePattern = value; AdditionalData?.Remove("event_type_pattern"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("event_type_pattern"); else _explicitNullProperties?.Remove("event_type_pattern"); } }
+        private string? _explicitNullValueEventTypePattern = default!;
+#nullable restore
+#else
+        public string EventTypePattern { get => _explicitNullValueEventTypePattern; set { _explicitNullValueEventTypePattern = value; AdditionalData?.Remove("event_type_pattern"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("event_type_pattern"); else _explicitNullProperties?.Remove("event_type_pattern"); } }
+        private string _explicitNullValueEventTypePattern = default!;
 #endif
         /// <summary>The expires_at property</summary>
         public DateTimeOffset? ExpiresAt { get => _explicitNullValueExpiresAt; set { _explicitNullValueExpiresAt = value; AdditionalData?.Remove("expires_at"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("expires_at"); else _explicitNullProperties?.Remove("expires_at"); } }
@@ -178,6 +205,16 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         public string Url { get => _explicitNullValueUrl; set { _explicitNullValueUrl = value; AdditionalData?.Remove("url"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("url"); else _explicitNullProperties?.Remove("url"); } }
         private string _explicitNullValueUrl = default!;
 #endif
+        /// <summary>Token the provider echoes back when verifying the URL (WhatsApp: the Verify token)</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? UrlVerificationToken { get => _explicitNullValueUrlVerificationToken; set { _explicitNullValueUrlVerificationToken = value; AdditionalData?.Remove("url_verification_token"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("url_verification_token"); else _explicitNullProperties?.Remove("url_verification_token"); } }
+        private string? _explicitNullValueUrlVerificationToken = default!;
+#nullable restore
+#else
+        public string UrlVerificationToken { get => _explicitNullValueUrlVerificationToken; set { _explicitNullValueUrlVerificationToken = value; AdditionalData?.Remove("url_verification_token"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("url_verification_token"); else _explicitNullProperties?.Remove("url_verification_token"); } }
+        private string _explicitNullValueUrlVerificationToken = default!;
+#endif
         /// <summary>The url_verified property</summary>
         public bool? UrlVerified { get => _explicitNullValueUrlVerified; set { _explicitNullValueUrlVerified = value; AdditionalData?.Remove("url_verified"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("url_verified"); else _explicitNullProperties?.Remove("url_verified"); } }
         private bool? _explicitNullValueUrlVerified = default!;
@@ -214,7 +251,9 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             {
                 { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
                 { "creator_id", n => { CreatorId = n.GetGuidValue(); } },
+                { "event_id_pattern", n => { EventIdPattern = n.GetStringValue(); } },
                 { "event_type_path", n => { EventTypePath = n.GetStringValue(); } },
+                { "event_type_pattern", n => { EventTypePattern = n.GetStringValue(); } },
                 { "expires_at", n => { ExpiresAt = n.GetDateTimeOffsetValue(); } },
                 { "http_method", n => { HttpMethod = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetGuidValue(); } },
@@ -231,6 +270,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
                 { "timestamp_extractor_regex", n => { TimestampExtractorRegex = n.GetStringValue(); } },
                 { "updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
                 { "url", n => { Url = n.GetStringValue(); } },
+                { "url_verification_token", n => { UrlVerificationToken = n.GetStringValue(); } },
                 { "url_verified", n => { UrlVerified = n.GetBoolValue(); } },
                 { "validity_period_second", n => { ValidityPeriodSecond = n.GetIntValue(); } },
                 { "workspace_id", n => { WorkspaceId = n.GetGuidValue(); } },
@@ -245,7 +285,9 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteDateTimeOffsetValue("created_at", CreatedAt);
             writer.WriteGuidValue("creator_id", CreatorId);
+            writer.WriteStringValue("event_id_pattern", EventIdPattern);
             writer.WriteStringValue("event_type_path", EventTypePath);
+            writer.WriteStringValue("event_type_pattern", EventTypePattern);
             writer.WriteDateTimeOffsetValue("expires_at", ExpiresAt);
             writer.WriteStringValue("http_method", HttpMethod);
             writer.WriteGuidValue("id", Id);
@@ -262,6 +304,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             writer.WriteStringValue("timestamp_extractor_regex", TimestampExtractorRegex);
             writer.WriteDateTimeOffsetValue("updated_at", UpdatedAt);
             writer.WriteStringValue("url", Url);
+            writer.WriteStringValue("url_verification_token", UrlVerificationToken);
             writer.WriteBoolValue("url_verified", UrlVerified);
             writer.WriteIntValue("validity_period_second", ValidityPeriodSecond);
             writer.WriteGuidValue("workspace_id", WorkspaceId);

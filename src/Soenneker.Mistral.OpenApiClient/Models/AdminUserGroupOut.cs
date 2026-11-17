@@ -25,8 +25,6 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             else if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
             if (parseNode.GetChildNode("organization_role") is null) { _explicitNullValueOrganizationRole = default!; _explicitNullProperties?.Remove("organization_role"); }
             else if (parseNode.GetChildNode("organization_role") is { } nullNodeOrganizationRole && nullNodeOrganizationRole.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OrganizationRole = null;
-            if (parseNode.GetChildNode("parent_group_ids") is null) { _explicitNullValueParentGroupIds = default!; _explicitNullProperties?.Remove("parent_group_ids"); }
-            else if (parseNode.GetChildNode("parent_group_ids") is { } nullNodeParentGroupIds && nullNodeParentGroupIds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ParentGroupIds = null;
             if (parseNode.GetChildNode("uuid") is null) { _explicitNullValueUuid = default!; _explicitNullProperties?.Remove("uuid"); }
             else if (parseNode.GetChildNode("uuid") is { } nullNodeUuid && nullNodeUuid.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Uuid = null;
         }
@@ -66,16 +64,6 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         public string OrganizationRole { get => _explicitNullValueOrganizationRole; set { _explicitNullValueOrganizationRole = value; AdditionalData?.Remove("organization_role"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("organization_role"); else _explicitNullProperties?.Remove("organization_role"); } }
         private string _explicitNullValueOrganizationRole = default!;
 #endif
-        /// <summary>UUIDs of the groups this group is directly nested inside.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public List<Guid?>? ParentGroupIds { get => _explicitNullValueParentGroupIds; set { _explicitNullValueParentGroupIds = value; AdditionalData?.Remove("parent_group_ids"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("parent_group_ids"); else _explicitNullProperties?.Remove("parent_group_ids"); } }
-        private List<Guid?>? _explicitNullValueParentGroupIds = default!;
-#nullable restore
-#else
-        public List<Guid?> ParentGroupIds { get => _explicitNullValueParentGroupIds; set { _explicitNullValueParentGroupIds = value; AdditionalData?.Remove("parent_group_ids"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("parent_group_ids"); else _explicitNullProperties?.Remove("parent_group_ids"); } }
-        private List<Guid?> _explicitNullValueParentGroupIds = default!;
-#endif
         /// <summary>User group ID.</summary>
         public Guid? Uuid { get => _explicitNullValueUuid; set { _explicitNullValueUuid = value; AdditionalData?.Remove("uuid"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("uuid"); else _explicitNullProperties?.Remove("uuid"); } }
         private Guid? _explicitNullValueUuid = default!;
@@ -108,7 +96,6 @@ namespace Soenneker.Mistral.OpenApiClient.Models
                 { "externally_managed", n => { ExternallyManaged = n.GetBoolValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "organization_role", n => { OrganizationRole = n.GetStringValue(); } },
-                { "parent_group_ids", n => { ParentGroupIds = n.GetCollectionOfPrimitiveValues<Guid?>()?.AsList(); } },
                 { "uuid", n => { Uuid = n.GetGuidValue(); } },
             };
         }
@@ -123,7 +110,6 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             writer.WriteBoolValue("externally_managed", ExternallyManaged);
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("organization_role", OrganizationRole);
-            writer.WriteCollectionOfPrimitiveValues<Guid?>("parent_group_ids", ParentGroupIds);
             writer.WriteGuidValue("uuid", Uuid);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);

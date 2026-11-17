@@ -4,7 +4,6 @@ using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
 using Soenneker.Mistral.OpenApiClient.Models;
-using Soenneker.Mistral.OpenApiClient.V1.Observability.DatasetRecords.Item.LiveJudging;
 using Soenneker.Mistral.OpenApiClient.V1.Observability.DatasetRecords.Item.Payload;
 using Soenneker.Mistral.OpenApiClient.V1.Observability.DatasetRecords.Item.Properties;
 using System.Collections.Generic;
@@ -20,11 +19,6 @@ namespace Soenneker.Mistral.OpenApiClient.V1.Observability.DatasetRecords.Item
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class WithDatasetRecordItemRequestBuilder : BaseRequestBuilder
     {
-        /// <summary>The liveJudging property</summary>
-        public global::Soenneker.Mistral.OpenApiClient.V1.Observability.DatasetRecords.Item.LiveJudging.LiveJudgingRequestBuilder LiveJudging
-        {
-            get => new global::Soenneker.Mistral.OpenApiClient.V1.Observability.DatasetRecords.Item.LiveJudging.LiveJudgingRequestBuilder(PathParameters, RequestAdapter);
-        }
         /// <summary>The payload property</summary>
         public global::Soenneker.Mistral.OpenApiClient.V1.Observability.DatasetRecords.Item.Payload.PayloadRequestBuilder Payload
         {

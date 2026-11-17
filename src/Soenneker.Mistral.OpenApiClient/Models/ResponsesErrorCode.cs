@@ -20,9 +20,17 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         #pragma warning disable CS1591
         InvalidPrompt,
         #pragma warning restore CS1591
+        [EnumMember(Value = "data_residency_mismatch")]
+        #pragma warning disable CS1591
+        DataResidencyMismatch,
+        #pragma warning restore CS1591
         [EnumMember(Value = "bio_policy")]
         #pragma warning disable CS1591
         BioPolicy,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "misalignment_policy_violation")]
+        #pragma warning disable CS1591
+        MisalignmentPolicyViolation,
         #pragma warning restore CS1591
         [EnumMember(Value = "vector_store_timeout")]
         #pragma warning disable CS1591

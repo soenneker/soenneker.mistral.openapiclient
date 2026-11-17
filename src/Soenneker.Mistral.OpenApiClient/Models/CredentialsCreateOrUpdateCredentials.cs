@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.Mistral.OpenApiClient.Models
 {
     /// <summary>
-    /// The credential data (headers, bearer_token, or OAuth2 client credentials).
+    /// The credential data (headers, query_params, bearer_token, or OAuth2 client credentials).
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class CredentialsCreateOrUpdateCredentials : IParsable
@@ -24,6 +24,8 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             else if (parseNode.GetChildNode("headers") is { } nullNodeHeaders && nullNodeHeaders.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Headers = null;
             if (parseNode.GetChildNode("oauth") is null) { _explicitNullValueOauth = default!; _explicitNullProperties?.Remove("oauth"); }
             else if (parseNode.GetChildNode("oauth") is { } nullNodeOauth && nullNodeOauth.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Oauth = null;
+            if (parseNode.GetChildNode("query_params") is null) { _explicitNullValueQueryParams = default!; _explicitNullProperties?.Remove("query_params"); }
+            else if (parseNode.GetChildNode("query_params") is { } nullNodeQueryParams && nullNodeQueryParams.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) QueryParams = null;
         }
 
         /// <summary>The bearer_token property</summary>
@@ -56,6 +58,16 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         public global::Soenneker.Mistral.OpenApiClient.Models.ConnectionCredentialsInputOAuth Oauth { get => _explicitNullValueOauth; set { _explicitNullValueOauth = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("oauth"); else _explicitNullProperties?.Remove("oauth"); } }
         private global::Soenneker.Mistral.OpenApiClient.Models.ConnectionCredentialsInputOAuth _explicitNullValueOauth = default!;
 #endif
+        /// <summary>The query_params property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Mistral.OpenApiClient.Models.ConnectionCredentialsInputQueryParamsProperty? QueryParams { get => _explicitNullValueQueryParams; set { _explicitNullValueQueryParams = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("query_params"); else _explicitNullProperties?.Remove("query_params"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.ConnectionCredentialsInputQueryParamsProperty? _explicitNullValueQueryParams = default!;
+#nullable restore
+#else
+        public global::Soenneker.Mistral.OpenApiClient.Models.ConnectionCredentialsInputQueryParamsProperty QueryParams { get => _explicitNullValueQueryParams; set { _explicitNullValueQueryParams = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("query_params"); else _explicitNullProperties?.Remove("query_params"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.ConnectionCredentialsInputQueryParamsProperty _explicitNullValueQueryParams = default!;
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -79,6 +91,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
                 { "bearer_token", n => { BearerToken = n.GetStringValue(); } },
                 { "headers", n => { Headers = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ConnectionCredentialsInputHeadersProperty>(global::Soenneker.Mistral.OpenApiClient.Models.ConnectionCredentialsInputHeadersProperty.CreateFromDiscriminatorValue); } },
                 { "oauth", n => { Oauth = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ConnectionCredentialsInputOAuth>(global::Soenneker.Mistral.OpenApiClient.Models.ConnectionCredentialsInputOAuth.CreateFromDiscriminatorValue); } },
+                { "query_params", n => { QueryParams = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ConnectionCredentialsInputQueryParamsProperty>(global::Soenneker.Mistral.OpenApiClient.Models.ConnectionCredentialsInputQueryParamsProperty.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -90,7 +103,8 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("bearer_token", BearerToken);
             writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ConnectionCredentialsInputHeadersProperty>("headers", Headers);
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ConnectionCredentialsInputOAuth>("oauth", Oauth);if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
+            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ConnectionCredentialsInputOAuth>("oauth", Oauth);
+            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ConnectionCredentialsInputQueryParamsProperty>("query_params", QueryParams);if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             
         }
     }

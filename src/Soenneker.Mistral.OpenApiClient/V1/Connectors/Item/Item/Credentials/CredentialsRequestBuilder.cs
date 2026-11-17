@@ -53,6 +53,7 @@ namespace Soenneker.Mistral.OpenApiClient.V1.Connectors.Item.Item.Credentials
         /// <param name="body">Request to create or update credentials for a connector.</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="global::Soenneker.Mistral.OpenApiClient.Models.ConnectorErrorResponse">When receiving a 401 status code</exception>
         /// <exception cref="global::Soenneker.Mistral.OpenApiClient.Models.HttpValidationError">When receiving a 422 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -67,6 +68,7 @@ namespace Soenneker.Mistral.OpenApiClient.V1.Connectors.Item.Item.Credentials
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
+                { "401", global::Soenneker.Mistral.OpenApiClient.Models.ConnectorErrorResponse.CreateFromDiscriminatorValue },
                 { "422", global::Soenneker.Mistral.OpenApiClient.Models.HttpValidationError.CreateFromDiscriminatorValue },
                 { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
                 { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
@@ -74,12 +76,13 @@ namespace Soenneker.Mistral.OpenApiClient.V1.Connectors.Item.Item.Credentials
             return await RequestAdapter.SendAsync<global::Soenneker.Mistral.OpenApiClient.Models.MessageResponse>(requestInfo, global::Soenneker.Mistral.OpenApiClient.Models.MessageResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create consumer credentials for a given connector and consumer scope (organization, workspace, user)
+        /// Create consumer credentials for a given connector and consumer scope (workspace, user)
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Mistral.OpenApiClient.Models.MessageResponse"/></returns>
         /// <param name="body">Request to create or update credentials for a connector.</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="global::Soenneker.Mistral.OpenApiClient.Models.ConnectorErrorResponse">When receiving a 401 status code</exception>
         /// <exception cref="global::Soenneker.Mistral.OpenApiClient.Models.HttpValidationError">When receiving a 422 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -94,6 +97,7 @@ namespace Soenneker.Mistral.OpenApiClient.V1.Connectors.Item.Item.Credentials
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
+                { "401", global::Soenneker.Mistral.OpenApiClient.Models.ConnectorErrorResponse.CreateFromDiscriminatorValue },
                 { "422", global::Soenneker.Mistral.OpenApiClient.Models.HttpValidationError.CreateFromDiscriminatorValue },
                 { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
                 { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
@@ -123,7 +127,7 @@ namespace Soenneker.Mistral.OpenApiClient.V1.Connectors.Item.Item.Credentials
             return requestInfo;
         }
         /// <summary>
-        /// Create consumer credentials for a given connector and consumer scope (organization, workspace, user)
+        /// Create consumer credentials for a given connector and consumer scope (workspace, user)
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">Request to create or update credentials for a connector.</param>
