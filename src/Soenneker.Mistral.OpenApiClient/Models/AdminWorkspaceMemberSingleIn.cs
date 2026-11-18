@@ -99,7 +99,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(5)
             {
                 { "role", n => { Role = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.AdminWorkspaceMemberSingleInRole>(global::Soenneker.Mistral.OpenApiClient.Models.AdminWorkspaceMemberSingleInRole.CreateFromDiscriminatorValue); } },
                 { "role_name", n => { RoleName = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.AdminWorkspaceMemberSingleInRoleName>(global::Soenneker.Mistral.OpenApiClient.Models.AdminWorkspaceMemberSingleInRoleName.CreateFromDiscriminatorValue); } },

@@ -78,7 +78,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(4)
             {
                 { "labels", n => { Labels = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "loss_function", n => { var parsed = n.GetEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.FtClassifierLossFunction>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueLossFunction = default; _explicitNullProperties?.Remove("loss_function"); AdditionalData["loss_function"] = unknown; } else { LossFunction = parsed; AdditionalData.Remove("loss_function"); } } },

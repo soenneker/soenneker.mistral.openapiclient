@@ -118,7 +118,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(6)
             {
                 { "average_latency_ms", n => { AverageLatencyMs = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ScalarMetric>(global::Soenneker.Mistral.OpenApiClient.Models.ScalarMetric.CreateFromDiscriminatorValue); } },
                 { "error_count", n => { ErrorCount = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ScalarMetric>(global::Soenneker.Mistral.OpenApiClient.Models.ScalarMetric.CreateFromDiscriminatorValue); } },

@@ -127,7 +127,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(11)
             {
                 { "action", n => { Action = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.TriggerAction>(global::Soenneker.Mistral.OpenApiClient.Models.TriggerAction.CreateFromDiscriminatorValue); } },
                 { "creator_id", n => { CreatorId = n.GetGuidValue(); } },

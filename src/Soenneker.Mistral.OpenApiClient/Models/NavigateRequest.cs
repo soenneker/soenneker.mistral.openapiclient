@@ -87,7 +87,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(6)
             {
                 { "content_type", n => { ContentType = n.GetStringValue(); } },
                 { "direction", n => { Direction = n.GetEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.NavigationDirection>(); } },

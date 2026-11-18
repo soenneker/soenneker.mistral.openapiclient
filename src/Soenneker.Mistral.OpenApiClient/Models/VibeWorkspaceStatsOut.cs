@@ -138,7 +138,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(9)
             {
                 { "active_users", n => { ActiveUsers = n.GetCollectionOfObjectValues<global::Soenneker.Mistral.OpenApiClient.Models.VibeActiveUsersStat>(global::Soenneker.Mistral.OpenApiClient.Models.VibeActiveUsersStat.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "consumed_tokens", n => { ConsumedTokens = n.GetCollectionOfObjectValues<global::Soenneker.Mistral.OpenApiClient.Models.VibeConsumedTokensStat>(global::Soenneker.Mistral.OpenApiClient.Models.VibeConsumedTokensStat.CreateFromDiscriminatorValue)?.AsList(); } },

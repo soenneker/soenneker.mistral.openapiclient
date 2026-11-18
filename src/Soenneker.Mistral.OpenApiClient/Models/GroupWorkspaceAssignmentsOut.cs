@@ -71,7 +71,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(4)
             {
                 { "items", n => { Items = n.GetCollectionOfObjectValues<global::Soenneker.Mistral.OpenApiClient.Models.GroupWorkspaceAssignmentOut>(global::Soenneker.Mistral.OpenApiClient.Models.GroupWorkspaceAssignmentOut.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "page", n => { Page = n.GetIntValue(); } },

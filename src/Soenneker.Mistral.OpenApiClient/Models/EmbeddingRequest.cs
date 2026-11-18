@@ -94,7 +94,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(6)
             {
                 { "encoding_format", n => { EncodingFormat = n.GetEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.EncodingFormat>(); } },
                 { "input", n => { Input = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.EmbeddingRequestInput>(global::Soenneker.Mistral.OpenApiClient.Models.EmbeddingRequestInput.CreateFromDiscriminatorValue); } },

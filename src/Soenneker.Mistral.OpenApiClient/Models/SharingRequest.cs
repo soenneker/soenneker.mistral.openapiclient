@@ -65,7 +65,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(4)
             {
                 { "level", n => { var parsed = n.GetEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.ShareEnum>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueLevel = default; _explicitNullProperties?.Remove("level"); AdditionalData["level"] = unknown; } else { Level = parsed; AdditionalData.Remove("level"); } } },
                 { "org_id", n => { OrgId = n.GetGuidValue(); } },

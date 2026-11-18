@@ -264,7 +264,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(30)
             {
                 { "frequency_penalty", n => { FrequencyPenalty = n.GetDoubleValue(); } },
                 { "guardrails", n => { Guardrails = n.GetCollectionOfObjectValues<global::Soenneker.Mistral.OpenApiClient.Models.GuardrailConfig>(global::Soenneker.Mistral.OpenApiClient.Models.GuardrailConfig.CreateFromDiscriminatorValue)?.AsList(); } },

@@ -157,7 +157,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(10)
             {
                 { "blocks", n => { Blocks = n.GetCollectionOfObjectValues<global::Soenneker.Mistral.OpenApiClient.Models.OcrPageObjectBlocksItem>(global::Soenneker.Mistral.OpenApiClient.Models.OcrPageObjectBlocksItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "confidence_scores", n => { ConfidenceScores = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.OcrPageObjectConfidenceScores>(global::Soenneker.Mistral.OpenApiClient.Models.OcrPageObjectConfidenceScores.CreateFromDiscriminatorValue); } },

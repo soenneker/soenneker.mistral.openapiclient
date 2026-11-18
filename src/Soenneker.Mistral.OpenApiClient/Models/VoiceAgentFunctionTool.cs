@@ -69,7 +69,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(4)
             {
                 { "filler", n => { Filler = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.VoiceAgentFunctionToolFillerAnyOf1>(global::Soenneker.Mistral.OpenApiClient.Models.VoiceAgentFunctionToolFillerAnyOf1.CreateFromDiscriminatorValue); } },
                 { "function", n => { Function = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.Function>(global::Soenneker.Mistral.OpenApiClient.Models.Function.CreateFromDiscriminatorValue); } },

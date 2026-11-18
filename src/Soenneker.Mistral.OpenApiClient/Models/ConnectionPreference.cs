@@ -87,7 +87,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(5)
             {
                 { "consumer_type", n => { var parsed = n.GetEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.ConsumerType>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueConsumerType = default; _explicitNullProperties?.Remove("consumer_type"); AdditionalData["consumer_type"] = unknown; } else { ConsumerType = parsed; AdditionalData.Remove("consumer_type"); } } },
                 { "http_proxy_enabled", n => { HttpProxyEnabled = n.GetBoolValue(); } },

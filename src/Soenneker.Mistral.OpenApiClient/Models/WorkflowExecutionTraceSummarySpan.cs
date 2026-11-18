@@ -114,7 +114,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(7)
             {
                 { "attributes", n => { Attributes = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.WorkflowExecutionTraceSummarySpanAttributesProperty>(global::Soenneker.Mistral.OpenApiClient.Models.WorkflowExecutionTraceSummarySpanAttributesProperty.CreateFromDiscriminatorValue); } },
                 { "children", n => { Children = n.GetCollectionOfObjectValues<global::Soenneker.Mistral.OpenApiClient.Models.WorkflowExecutionTraceSummarySpan>(global::Soenneker.Mistral.OpenApiClient.Models.WorkflowExecutionTraceSummarySpan.CreateFromDiscriminatorValue)?.AsList(); } },

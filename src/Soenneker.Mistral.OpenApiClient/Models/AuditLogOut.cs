@@ -115,7 +115,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(10)
             {
                 { "actor_metadata", n => { ActorMetadata = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.AuditLogOutActorMetadataProperty>(global::Soenneker.Mistral.OpenApiClient.Models.AuditLogOutActorMetadataProperty.CreateFromDiscriminatorValue); } },
                 { "actor_type", n => { var parsed = n.GetEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.ActorType>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueActorType = default; _explicitNullProperties?.Remove("actor_type"); AdditionalData["actor_type"] = unknown; } else { ActorType = parsed; AdditionalData.Remove("actor_type"); } } },

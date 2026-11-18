@@ -95,7 +95,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(6)
             {
                 { "api_zone", n => { var parsed = n.GetEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.ApiZone>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueApiZone = default; _explicitNullProperties?.Remove("api_zone"); AdditionalData["api_zone"] = unknown; } else { ApiZone = parsed; AdditionalData.Remove("api_zone"); } } },
                 { "billing_group", n => { BillingGroup = n.GetStringValue(); } },

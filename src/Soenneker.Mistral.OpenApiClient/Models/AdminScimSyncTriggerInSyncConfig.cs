@@ -74,7 +74,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(5)
             {
                 { "delete_missing_groups", n => { DeleteMissingGroups = n.GetBoolValue(); } },
                 { "deprovision_users", n => { DeprovisionUsers = n.GetBoolValue(); } },

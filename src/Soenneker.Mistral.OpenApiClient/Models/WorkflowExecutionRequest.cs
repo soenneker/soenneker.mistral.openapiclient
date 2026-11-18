@@ -146,7 +146,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(10)
             {
                 { "custom_tracing_attributes", n => { CustomTracingAttributes = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.WorkflowExecutionRequestCustomTracingAttributesProperty>(global::Soenneker.Mistral.OpenApiClient.Models.WorkflowExecutionRequestCustomTracingAttributesProperty.CreateFromDiscriminatorValue); } },
                 { "deployment_name", n => { DeploymentName = n.GetStringValue(); } },

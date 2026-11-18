@@ -141,7 +141,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(8)
             {
                 { "completions", n => { Completions = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ServerCapabilitiesCompletions>(global::Soenneker.Mistral.OpenApiClient.Models.ServerCapabilitiesCompletions.CreateFromDiscriminatorValue); } },
                 { "experimental", n => { Experimental = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ServerCapabilitiesExperimentalProperty>(global::Soenneker.Mistral.OpenApiClient.Models.ServerCapabilitiesExperimentalProperty.CreateFromDiscriminatorValue); } },

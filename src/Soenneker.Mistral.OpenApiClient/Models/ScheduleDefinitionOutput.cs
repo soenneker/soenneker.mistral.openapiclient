@@ -238,7 +238,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(19)
             {
                 { "calendars", n => { Calendars = n.GetCollectionOfObjectValues<global::Soenneker.Mistral.OpenApiClient.Models.ScheduleCalendar>(global::Soenneker.Mistral.OpenApiClient.Models.ScheduleCalendar.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "cron_expressions", n => { CronExpressions = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },

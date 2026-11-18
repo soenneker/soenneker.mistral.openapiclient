@@ -73,7 +73,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(4)
             {
                 { "error_http_code", n => { ErrorHttpCode = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.CredentialsStatusErrorHttpCode>(global::Soenneker.Mistral.OpenApiClient.Models.CredentialsStatusErrorHttpCode.CreateFromDiscriminatorValue); } },
                 { "error_message", n => { var parsed = n.GetEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.CredentialsStatusErrorReason>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueErrorMessage = default; _explicitNullProperties?.Remove("error_message"); AdditionalData["error_message"] = unknown; } else { ErrorMessage = parsed; AdditionalData.Remove("error_message"); } } },

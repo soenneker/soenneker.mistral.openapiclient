@@ -83,7 +83,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(5)
             {
                 { "input_tokens", n => { InputTokens = n.GetIntValue(); } },
                 { "input_tokens_details", n => { InputTokensDetails = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ResponsesInputTokensDetails>(global::Soenneker.Mistral.OpenApiClient.Models.ResponsesInputTokensDetails.CreateFromDiscriminatorValue); } },

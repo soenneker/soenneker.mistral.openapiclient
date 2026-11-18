@@ -83,7 +83,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(4)
             {
                 { "model", n => { Model = n.GetStringValue(); } },
                 { "output_spec", n => { OutputSpec = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.EvaluationResultSpec>(global::Soenneker.Mistral.OpenApiClient.Models.EvaluationResultSpec.CreateFromDiscriminatorValue); } },
