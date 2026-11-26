@@ -8,41 +8,21 @@ namespace Soenneker.Mistral.OpenApiClient.Models
     [Obsolete("")]
     public enum WorkspaceEnrichedOutRawRole
     {
-        [EnumMember(Value = "d7ea77c5-9260-41d0-ab26-52b5add3ee56")]
-        #pragma warning disable CS1591
-        D7Ea77C5926041D0Ab2652B5Add3Ee56,
-        #pragma warning restore CS1591
         [EnumMember(Value = "48436751-ee56-44bd-8a2d-712233977821")]
         #pragma warning disable CS1591
         Value48436751Ee5644Bd8A2D712233977821,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "375cd0db-3bbe-4b79-80f3-954ccf04f3d1")]
-        #pragma warning disable CS1591
-        Value375Cd0Db3Bbe4B7980F3954Ccf04F3D1,
         #pragma warning restore CS1591
         [EnumMember(Value = "578584f1-4319-4c88-9948-38a5184483b6")]
         #pragma warning disable CS1591
         Value578584F143194C88994838A5184483B6,
         #pragma warning restore CS1591
-        [EnumMember(Value = "d79b3027-4eb2-4521-8722-825acfee7d8b")]
-        #pragma warning disable CS1591
-        D79B30274Eb245218722825Acfee7D8B,
-        #pragma warning restore CS1591
         [EnumMember(Value = "252a0825-40b9-4b98-be80-7658956f13e9")]
         #pragma warning disable CS1591
         Value252A082540B94B98Be807658956F13E9,
         #pragma warning restore CS1591
-        [EnumMember(Value = "50023ca6-3db1-41bc-8c10-f0ae6f460fba")]
-        #pragma warning disable CS1591
-        Value50023Ca63Db141Bc8C10F0Ae6F460Fba,
-        #pragma warning restore CS1591
         [EnumMember(Value = "17aa61c5-1c61-477e-a40a-e52c8ccd74b9")]
         #pragma warning disable CS1591
         Value17Aa61C51C61477EA40AE52C8Ccd74B9,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "348fc8da-f6da-4464-ad3e-af7bc137e221")]
-        #pragma warning disable CS1591
-        Value348Fc8DaF6Da4464Ad3EAf7Bc137E221,
         #pragma warning restore CS1591
         [EnumMember(Value = "b23cd6e0-91cd-4a8a-9869-b30366bf3966")]
         #pragma warning disable CS1591
@@ -51,26 +31,6 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         [EnumMember(Value = "731eb2be-a74f-4070-b797-35bf7009e553")]
         #pragma warning disable CS1591
         Value731Eb2BeA74F4070B79735Bf7009E553,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "ff86d432-7f27-47f8-b02f-b5c102ef6a55")]
-        #pragma warning disable CS1591
-        Ff86D4327F2747F8B02FB5C102Ef6A55,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "0f9acbf6-93b5-42c7-a227-fc7652755f65")]
-        #pragma warning disable CS1591
-        Value0F9Acbf693B542C7A227Fc7652755F65,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "94ef59cf-56bf-4383-9dd6-1fee77d370af")]
-        #pragma warning disable CS1591
-        Value94Ef59Cf56Bf43839Dd61Fee77D370Af,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "24b51cb8-72fe-411c-8652-c719c7270ca2")]
-        #pragma warning disable CS1591
-        Value24B51Cb872Fe411C8652C719C7270Ca2,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "7e69e493-caf6-4671-af60-84951754d9fc")]
-        #pragma warning disable CS1591
-        Value7E69E493Caf64671Af6084951754D9Fc,
         #pragma warning restore CS1591
         [EnumMember(Value = "0d48f530-095c-43fe-8aea-6673bcacabe6")]
         #pragma warning disable CS1591

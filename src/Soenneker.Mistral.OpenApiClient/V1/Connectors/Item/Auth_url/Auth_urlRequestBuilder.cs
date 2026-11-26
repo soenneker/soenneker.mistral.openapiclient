@@ -131,7 +131,7 @@ namespace Soenneker.Mistral.OpenApiClient.V1.Connectors.Item.Auth_url
             public string CredentialsTitle { get; set; }
             #pragma warning restore CS1591
 #endif
-            /// <summary>Only valid with method_type=oauth2. When true, returns a GitHub App installation URL (https://github.com/apps/&lt;slug&gt;/installations/new) if the connector has the proper configuration The Github application needs to have &apos;Request user authorization (OAuth) during installation&apos; enabled to perform the proper auth loop.</summary>
+            /// <summary>Only valid with method_type=oauth2. When true, returns a GitHub App installation URL (https://github.com/apps/&amp;lt;slug&amp;gt;/installations/new) if the connector has the proper configuration The Github application needs to have &apos;Request user authorization (OAuth) during installation&apos; enabled to perform the proper auth loop.</summary>
             [QueryParameter("github_installation_link")]
             public bool? GithubInstallationLink { get; set; }
             /// <summary>Auth method type to use for the authorization URL. Required when the connector supports multiple interactive auth methods; otherwise the sole method is selected automatically. Use this to pick a specific method (e.g. &apos;oauth2&apos; vs &apos;github_app&apos;).</summary>

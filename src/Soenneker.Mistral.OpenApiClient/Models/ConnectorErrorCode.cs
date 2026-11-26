@@ -20,5 +20,9 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         #pragma warning disable CS1591
         ServerUnreachable,
         #pragma warning restore CS1591
+        [EnumMember(Value = "custom_connectors_disabled")]
+        #pragma warning disable CS1591
+        CustomConnectorsDisabled,
+        #pragma warning restore CS1591
     }
 }

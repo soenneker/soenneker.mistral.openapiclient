@@ -2,7 +2,6 @@
 #pragma warning disable CS0618
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions;
-using Soenneker.Mistral.OpenApiClient.V1.Rag.Deployments;
 using Soenneker.Mistral.OpenApiClient.V1.Rag.Ingestion_pipeline_configurations;
 using System.Collections.Generic;
 using System.IO;
@@ -16,11 +15,6 @@ namespace Soenneker.Mistral.OpenApiClient.V1.Rag
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class RagRequestBuilder : BaseRequestBuilder
     {
-        /// <summary>The deployments property</summary>
-        public global::Soenneker.Mistral.OpenApiClient.V1.Rag.Deployments.DeploymentsRequestBuilder Deployments
-        {
-            get => new global::Soenneker.Mistral.OpenApiClient.V1.Rag.Deployments.DeploymentsRequestBuilder(PathParameters, RequestAdapter);
-        }
         /// <summary>The ingestion_pipeline_configurations property</summary>
         public global::Soenneker.Mistral.OpenApiClient.V1.Rag.Ingestion_pipeline_configurations.Ingestion_pipeline_configurationsRequestBuilder Ingestion_pipeline_configurations
         {

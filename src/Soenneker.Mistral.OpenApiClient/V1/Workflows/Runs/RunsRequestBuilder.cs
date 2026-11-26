@@ -118,7 +118,7 @@ namespace Soenneker.Mistral.OpenApiClient.V1.Workflows.Runs
             /// <summary>Include runs with end_time &gt;= value. Running executions (no end_time) are excluded; use the status filter to include them.</summary>
             [QueryParameter("end_time_after")]
             public DateTimeOffset? EndTimeAfter { get; set; }
-            /// <summary>Include runs with end_time &lt;= value. Running executions (no end_time) are excluded; use the status filter to include them.</summary>
+            /// <summary>Include runs with end_time &amp;lt;= value. Running executions (no end_time) are excluded; use the status filter to include them.</summary>
             [QueryParameter("end_time_before")]
             public DateTimeOffset? EndTimeBefore { get; set; }
             /// <summary>Exclude runs of workflows tagged with any of the listed tags.</summary>
@@ -193,7 +193,7 @@ namespace Soenneker.Mistral.OpenApiClient.V1.Workflows.Runs
             /// <summary>Include runs with start_time &gt;= value</summary>
             [QueryParameter("start_time_after")]
             public DateTimeOffset? StartTimeAfter { get; set; }
-            /// <summary>Include runs with start_time &lt;= value</summary>
+            /// <summary>Include runs with start_time &amp;lt;= value</summary>
             [QueryParameter("start_time_before")]
             public DateTimeOffset? StartTimeBefore { get; set; }
             /// <summary>Filter by workflow status</summary>

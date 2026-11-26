@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.Mistral.OpenApiClient.Models
 {
     /// <summary>
-    /// Specify the format that the model must output. By default it will use `{ &quot;type&quot;: &quot;text&quot; }`. Setting to `{ &quot;type&quot;: &quot;json_object&quot; }` enables JSON mode, which guarantees the message the model generates is in JSON. When using JSON mode you MUST also instruct the model to produce JSON yourself with a system or a user message. Setting to `{ &quot;type&quot;: &quot;json_schema&quot; }` enables JSON schema mode, which guarantees the message the model generates is in JSON and follows the schema you provide.
+    /// Specify the format that the model must output. By default it will use `{ &quot;type&quot;: &quot;text&quot; }`. Setting to `{ &quot;type&quot;: &quot;json_object&quot; }` enables JSON mode, which guarantees the message the model generates is in JSON. When using JSON mode you MUST also instruct the model to produce JSON yourself with a system or a user message. Setting to `{ &quot;type&quot;: &quot;json_schema&quot; }` enables JSON schema mode, which guarantees the message the model generates is in JSON and follows the schema you provide. Note: on third-party models (for example GLM), the schema is still enforced, but field descriptions may not influence the output; put field-level requirements in the prompt.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class CompletionArgsResponseFormat : IParsable

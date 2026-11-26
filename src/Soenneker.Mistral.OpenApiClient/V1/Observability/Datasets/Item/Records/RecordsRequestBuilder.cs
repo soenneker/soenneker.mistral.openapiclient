@@ -4,6 +4,7 @@ using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
 using Soenneker.Mistral.OpenApiClient.Models;
+using Soenneker.Mistral.OpenApiClient.V1.Observability.Datasets.Item.Records.Bulk;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
@@ -17,6 +18,11 @@ namespace Soenneker.Mistral.OpenApiClient.V1.Observability.Datasets.Item.Records
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class RecordsRequestBuilder : BaseRequestBuilder
     {
+        /// <summary>The bulk property</summary>
+        public global::Soenneker.Mistral.OpenApiClient.V1.Observability.Datasets.Item.Records.Bulk.BulkRequestBuilder Bulk
+        {
+            get => new global::Soenneker.Mistral.OpenApiClient.V1.Observability.Datasets.Item.Records.Bulk.BulkRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Mistral.OpenApiClient.V1.Observability.Datasets.Item.Records.RecordsRequestBuilder"/> and sets the default values.
         /// </summary>

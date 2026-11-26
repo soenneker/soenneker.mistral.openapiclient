@@ -90,8 +90,8 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         private string _explicitNullValuePromptCacheKey = default!;
 #endif
         /// <summary>The seed to use for random sampling. If set, different calls will generate deterministic results.</summary>
-        public int? RandomSeed { get => _explicitNullValueRandomSeed; set { _explicitNullValueRandomSeed = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("random_seed"); else _explicitNullProperties?.Remove("random_seed"); } }
-        private int? _explicitNullValueRandomSeed = default!;
+        public long? RandomSeed { get => _explicitNullValueRandomSeed; set { _explicitNullValueRandomSeed = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("random_seed"); else _explicitNullProperties?.Remove("random_seed"); } }
+        private long? _explicitNullValueRandomSeed = default!;
         /// <summary>Stop generation if this token is detected. Or if one of these tokens is detected when providing an array</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -153,7 +153,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
                 { "model", n => { Model = n.GetStringValue(); } },
                 { "prompt", n => { Prompt = n.GetStringValue(); } },
                 { "prompt_cache_key", n => { PromptCacheKey = n.GetStringValue(); } },
-                { "random_seed", n => { RandomSeed = n.GetIntValue(); } },
+                { "random_seed", n => { RandomSeed = n.GetLongValue(); } },
                 { "stop", n => { Stop = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.AgentsCompletionRequestStop>(global::Soenneker.Mistral.OpenApiClient.Models.AgentsCompletionRequestStop.CreateFromDiscriminatorValue); } },
                 { "stream", n => { Stream = n.GetBoolValue(); } },
                 { "suffix", n => { Suffix = n.GetStringValue(); } },
@@ -174,7 +174,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             writer.WriteStringValue("model", Model);
             writer.WriteStringValue("prompt", Prompt);
             writer.WriteStringValue("prompt_cache_key", PromptCacheKey);
-            writer.WriteIntValue("random_seed", RandomSeed);
+            writer.WriteLongValue("random_seed", RandomSeed);
             writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.AgentsCompletionRequestStop>("stop", Stop);
             writer.WriteBoolValue("stream", Stream);
             writer.WriteStringValue("suffix", Suffix);

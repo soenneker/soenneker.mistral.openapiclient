@@ -108,6 +108,10 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         #pragma warning disable CS1591
         DatasetRecordNotFound,
         #pragma warning restore CS1591
+        [EnumMember(Value = "DATASET_RECORD_ID_CONFLICT")]
+        #pragma warning disable CS1591
+        DatasetRecordIdConflict,
+        #pragma warning restore CS1591
         [EnumMember(Value = "DATASET_RECORD_FORMAT_ERROR")]
         #pragma warning disable CS1591
         DatasetRecordFormatError,
@@ -227,6 +231,10 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         [EnumMember(Value = "SPAN_NOT_FOUND")]
         #pragma warning disable CS1591
         SpanNotFound,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "OCSF_NOT_ENABLED")]
+        #pragma warning disable CS1591
+        OcsfNotEnabled,
         #pragma warning restore CS1591
     }
 }

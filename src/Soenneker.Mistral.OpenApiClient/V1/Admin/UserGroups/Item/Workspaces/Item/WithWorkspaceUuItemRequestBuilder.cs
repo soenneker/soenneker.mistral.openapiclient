@@ -51,9 +51,9 @@ namespace Soenneker.Mistral.OpenApiClient.V1.Admin.UserGroups.Item.Workspaces.It
             await RequestAdapter.SendNoContentAsync(requestInfo, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the workspace role assignment for a user group.
+        /// Update the workspace role assignment for a user group.Either set the group&apos;s roles with `role_names` or `roles`, which replaces all the roles it has on theWorkspace, or change them with `add_role_names`/`add_roles` and `remove_role_names`/`remove_roles`, whichkeeps its other roles.
         /// </summary>
-        /// <param name="body">The request body</param>
+        /// <param name="body">Either set the group&apos;s roles on the Workspace, or add and remove some of them.</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -88,10 +88,10 @@ namespace Soenneker.Mistral.OpenApiClient.V1.Admin.UserGroups.Item.Workspaces.It
             return requestInfo;
         }
         /// <summary>
-        /// Update the workspace role assignment for a user group.
+        /// Update the workspace role assignment for a user group.Either set the group&apos;s roles with `role_names` or `roles`, which replaces all the roles it has on theWorkspace, or change them with `add_role_names`/`add_roles` and `remove_role_names`/`remove_roles`, whichkeeps its other roles.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
-        /// <param name="body">The request body</param>
+        /// <param name="body">Either set the group&apos;s roles on the Workspace, or add and remove some of them.</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable

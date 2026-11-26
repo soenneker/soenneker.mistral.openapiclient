@@ -21,8 +21,6 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             else if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
             if (parseNode.GetChildNode("pipeline_composition") is null) { _explicitNullValuePipelineComposition = default!; _explicitNullProperties?.Remove("pipeline_composition"); }
             else if (parseNode.GetChildNode("pipeline_composition") is { } nullNodePipelineComposition && nullNodePipelineComposition.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PipelineComposition = null;
-            if (parseNode.GetChildNode("target_indexes") is null) { _explicitNullValueTargetIndexes = default!; _explicitNullProperties?.Remove("target_indexes"); }
-            else if (parseNode.GetChildNode("target_indexes") is { } nullNodeTargetIndexes && nullNodeTargetIndexes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TargetIndexes = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -46,16 +44,6 @@ namespace Soenneker.Mistral.OpenApiClient.Models
 #else
         public global::Soenneker.Mistral.OpenApiClient.Models.CreateIngestionPipelineConfigurationRequestPipelineCompositionProperty PipelineComposition { get => _explicitNullValuePipelineComposition; set { _explicitNullValuePipelineComposition = value; AdditionalData?.Remove("pipeline_composition"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pipeline_composition"); else _explicitNullProperties?.Remove("pipeline_composition"); } }
         private global::Soenneker.Mistral.OpenApiClient.Models.CreateIngestionPipelineConfigurationRequestPipelineCompositionProperty _explicitNullValuePipelineComposition = default!;
-#endif
-        /// <summary>The target_indexes property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public List<global::Soenneker.Mistral.OpenApiClient.Models.IngestionPipelineTargetIndexRef>? TargetIndexes { get => _explicitNullValueTargetIndexes; set { _explicitNullValueTargetIndexes = value; AdditionalData?.Remove("target_indexes"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("target_indexes"); else _explicitNullProperties?.Remove("target_indexes"); } }
-        private List<global::Soenneker.Mistral.OpenApiClient.Models.IngestionPipelineTargetIndexRef>? _explicitNullValueTargetIndexes = default!;
-#nullable restore
-#else
-        public List<global::Soenneker.Mistral.OpenApiClient.Models.IngestionPipelineTargetIndexRef> TargetIndexes { get => _explicitNullValueTargetIndexes; set { _explicitNullValueTargetIndexes = value; AdditionalData?.Remove("target_indexes"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("target_indexes"); else _explicitNullProperties?.Remove("target_indexes"); } }
-        private List<global::Soenneker.Mistral.OpenApiClient.Models.IngestionPipelineTargetIndexRef> _explicitNullValueTargetIndexes = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Mistral.OpenApiClient.Models.CreateIngestionPipelineConfigurationRequest"/> and sets the default values.
@@ -84,7 +72,6 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             {
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "pipeline_composition", n => { PipelineComposition = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.CreateIngestionPipelineConfigurationRequestPipelineCompositionProperty>(global::Soenneker.Mistral.OpenApiClient.Models.CreateIngestionPipelineConfigurationRequestPipelineCompositionProperty.CreateFromDiscriminatorValue); } },
-                { "target_indexes", n => { TargetIndexes = n.GetCollectionOfObjectValues<global::Soenneker.Mistral.OpenApiClient.Models.IngestionPipelineTargetIndexRef>(global::Soenneker.Mistral.OpenApiClient.Models.IngestionPipelineTargetIndexRef.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
         /// <summary>
@@ -96,7 +83,6 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("name", Name);
             writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.CreateIngestionPipelineConfigurationRequestPipelineCompositionProperty>("pipeline_composition", PipelineComposition);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Mistral.OpenApiClient.Models.IngestionPipelineTargetIndexRef>("target_indexes", TargetIndexes);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }

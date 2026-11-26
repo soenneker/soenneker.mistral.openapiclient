@@ -36,7 +36,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         public string EnvVarName { get => _explicitNullValueEnvVarName; set { _explicitNullValueEnvVarName = value; AdditionalData?.Remove("env_var_name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("env_var_name"); else _explicitNullProperties?.Remove("env_var_name"); } }
         private string _explicitNullValueEnvVarName = default!;
 #endif
-        /// <summary>Secret reference as &apos;secret:workspace:&lt;NAME&gt;&apos;. Resolved at boot by the runtime-init container; the value never reaches the control plane.</summary>
+        /// <summary>Secret reference as &apos;secret:workspace:&amp;lt;NAME&amp;gt;&apos;. Resolved at boot by the runtime-init container; the value never reaches the control plane.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Reference { get => _explicitNullValueReference; set { _explicitNullValueReference = value; AdditionalData?.Remove("reference"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("reference"); else _explicitNullProperties?.Remove("reference"); } }

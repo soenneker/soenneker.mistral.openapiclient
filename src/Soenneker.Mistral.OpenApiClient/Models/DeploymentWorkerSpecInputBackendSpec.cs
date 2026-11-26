@@ -48,7 +48,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         public string DockerfilePath { get => _explicitNullValueDockerfilePath; set { _explicitNullValueDockerfilePath = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dockerfile_path"); else _explicitNullProperties?.Remove("dockerfile_path"); } }
         private string _explicitNullValueDockerfilePath = default!;
 #endif
-        /// <summary>Secrets to bind to the worker, as &apos;secret:workspace:&lt;NAME&gt;&apos; references. Each is available during build and run: as a Dockerfile build arg (declare a matching &apos;ARG&apos;) and as an env var. On update, the field carries the complete set: send the full list to rebind, an empty list to unbind all, omit it to leave the bindings unchanged.</summary>
+        /// <summary>Secrets to bind to the worker, as &apos;secret:workspace:&amp;lt;NAME&amp;gt;&apos; references. Each is available during build and run: as a Dockerfile build arg (declare a matching &apos;ARG&apos;) and as an env var. On update, the field carries the complete set: send the full list to rebind, an empty list to unbind all, omit it to leave the bindings unchanged.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Soenneker.Mistral.OpenApiClient.Models.DeploymentSecretBinding>? Secrets { get => _explicitNullValueSecrets; set { _explicitNullValueSecrets = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("secrets"); else _explicitNullProperties?.Remove("secrets"); } }

@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.Mistral.OpenApiClient.Models
 {
     /// <summary>
-    /// A scalar numeric reduction with no parameters (``avg``/``sum``/``min``/``max``/``std``/``count``).
+    /// A scalar numeric reduction (``avg``/``sum``/``min``/``max``/``std``/``count``).``weight_key`` (``avg`` only) turns the mean into a weighted mean, ``sum(w * x) / sum(w)``, whereeach score&apos;s weight ``w`` is read from its ``metadata`` under that key. Scores whose weight ismissing, non-numeric or negative are left out of that statistic.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class EvaluatorV2StatisticsItemSimpleNumericStatisticSpec : global::Soenneker.Mistral.OpenApiClient.Models.EvaluatorV2StatisticsItem, IParsable
@@ -21,6 +21,8 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             base.CaptureExplicitNulls(parseNode);
             if (parseNode.GetChildNode("goal") is null) { _explicitNullValueGoal = default!; _explicitNullProperties?.Remove("goal"); }
             else if (parseNode.GetChildNode("goal") is { } nullNodeGoal && nullNodeGoal.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Goal = null;
+            if (parseNode.GetChildNode("weight_key") is null) { _explicitNullValueWeightKey = default!; _explicitNullProperties?.Remove("weight_key"); }
+            else if (parseNode.GetChildNode("weight_key") is { } nullNodeWeightKey && nullNodeWeightKey.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WeightKey = null;
         }
 
         /// <summary>The goal property</summary>
@@ -32,6 +34,16 @@ namespace Soenneker.Mistral.OpenApiClient.Models
 #else
         public global::Soenneker.Mistral.OpenApiClient.Models.ClassificationStatisticSpecGoal Goal { get => _explicitNullValueGoal; set { _explicitNullValueGoal = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("goal"); else _explicitNullProperties?.Remove("goal"); } }
         private global::Soenneker.Mistral.OpenApiClient.Models.ClassificationStatisticSpecGoal _explicitNullValueGoal = default!;
+#endif
+        /// <summary>The weight_key property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? WeightKey { get => _explicitNullValueWeightKey; set { _explicitNullValueWeightKey = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("weight_key"); else _explicitNullProperties?.Remove("weight_key"); } }
+        private string? _explicitNullValueWeightKey = default!;
+#nullable restore
+#else
+        public string WeightKey { get => _explicitNullValueWeightKey; set { _explicitNullValueWeightKey = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("weight_key"); else _explicitNullProperties?.Remove("weight_key"); } }
+        private string _explicitNullValueWeightKey = default!;
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -52,6 +64,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
                 { "goal", n => { Goal = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ClassificationStatisticSpecGoal>(global::Soenneker.Mistral.OpenApiClient.Models.ClassificationStatisticSpecGoal.CreateFromDiscriminatorValue); } },
+                { "weight_key", n => { WeightKey = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -62,7 +75,8 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ClassificationStatisticSpecGoal>("goal", Goal);if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
+            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ClassificationStatisticSpecGoal>("goal", Goal);
+            writer.WriteStringValue("weight_key", WeightKey);if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             
         }
     }

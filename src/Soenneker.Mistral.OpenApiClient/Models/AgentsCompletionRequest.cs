@@ -131,7 +131,8 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         /// <summary>The parallel_tool_calls property</summary>
         public bool? ParallelToolCalls { get => _explicitNullValueParallelToolCalls; set { _explicitNullValueParallelToolCalls = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("parallel_tool_calls"); else _explicitNullProperties?.Remove("parallel_tool_calls"); } }
         private bool? _explicitNullValueParallelToolCalls = default!;
-        /// <summary>Enable users to specify expected results, optimizing response times by leveraging known or predictable content. This approach is especially effective for updating text documents or code files with minimal changes, reducing latency while maintaining high-quality results.</summary>
+        /// <summary>Deprecated: the API accepts this field but ignores it, and it will be removed in a future major version.</summary>
+        [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Mistral.OpenApiClient.Models.Prediction? Prediction { get => _explicitNullValuePrediction; set { _explicitNullValuePrediction = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("prediction"); else _explicitNullProperties?.Remove("prediction"); } }
@@ -161,15 +162,15 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         public global::Soenneker.Mistral.OpenApiClient.Models.MistralPromptMode? PromptMode { get => _explicitNullValuePromptMode; set { _explicitNullValuePromptMode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("prompt_mode"); else _explicitNullProperties?.Remove("prompt_mode"); } }
         private global::Soenneker.Mistral.OpenApiClient.Models.MistralPromptMode? _explicitNullValuePromptMode = default!;
         /// <summary>The seed to use for random sampling. If set, different calls will generate deterministic results.</summary>
-        public int? RandomSeed { get => _explicitNullValueRandomSeed; set { _explicitNullValueRandomSeed = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("random_seed"); else _explicitNullProperties?.Remove("random_seed"); } }
-        private int? _explicitNullValueRandomSeed = default!;
+        public long? RandomSeed { get => _explicitNullValueRandomSeed; set { _explicitNullValueRandomSeed = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("random_seed"); else _explicitNullProperties?.Remove("random_seed"); } }
+        private long? _explicitNullValueRandomSeed = default!;
         /// <summary>The reasoning_effort property</summary>
         public global::Soenneker.Mistral.OpenApiClient.Models.ReasoningEffort? ReasoningEffort { get => _explicitNullValueReasoningEffort; set { _explicitNullValueReasoningEffort = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("reasoning_effort"); else _explicitNullProperties?.Remove("reasoning_effort"); } }
         private global::Soenneker.Mistral.OpenApiClient.Models.ReasoningEffort? _explicitNullValueReasoningEffort = default!;
         /// <summary>The repetition_penalty property</summary>
         public double? RepetitionPenalty { get => _explicitNullValueRepetitionPenalty; set { _explicitNullValueRepetitionPenalty = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("repetition_penalty"); else _explicitNullProperties?.Remove("repetition_penalty"); } }
         private double? _explicitNullValueRepetitionPenalty = default!;
-        /// <summary>Specify the format that the model must output. By default it will use `{ &quot;type&quot;: &quot;text&quot; }`. Setting to `{ &quot;type&quot;: &quot;json_object&quot; }` enables JSON mode, which guarantees the message the model generates is in JSON. When using JSON mode you MUST also instruct the model to produce JSON yourself with a system or a user message. Setting to `{ &quot;type&quot;: &quot;json_schema&quot; }` enables JSON schema mode, which guarantees the message the model generates is in JSON and follows the schema you provide.</summary>
+        /// <summary>Specify the format that the model must output. By default it will use `{ &quot;type&quot;: &quot;text&quot; }`. Setting to `{ &quot;type&quot;: &quot;json_object&quot; }` enables JSON mode, which guarantees the message the model generates is in JSON. When using JSON mode you MUST also instruct the model to produce JSON yourself with a system or a user message. Setting to `{ &quot;type&quot;: &quot;json_schema&quot; }` enables JSON schema mode, which guarantees the message the model generates is in JSON and follows the schema you provide. Note: on third-party models (for example GLM), the schema is still enforced, but field descriptions may not influence the output; put field-level requirements in the prompt.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Mistral.OpenApiClient.Models.ResponseFormat? ResponseFormat { get => _explicitNullValueResponseFormat; set { _explicitNullValueResponseFormat = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("response_format"); else _explicitNullProperties?.Remove("response_format"); } }
@@ -265,7 +266,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
                 { "prompt_cache_key", n => { PromptCacheKey = n.GetStringValue(); } },
                 { "prompt_logprobs", n => { PromptLogprobs = n.GetBoolValue(); } },
                 { "prompt_mode", n => { PromptMode = n.GetEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.MistralPromptMode>(); } },
-                { "random_seed", n => { RandomSeed = n.GetIntValue(); } },
+                { "random_seed", n => { RandomSeed = n.GetLongValue(); } },
                 { "reasoning_effort", n => { ReasoningEffort = n.GetEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.ReasoningEffort>(); } },
                 { "repetition_penalty", n => { RepetitionPenalty = n.GetDoubleValue(); } },
                 { "response_format", n => { ResponseFormat = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ResponseFormat>(global::Soenneker.Mistral.OpenApiClient.Models.ResponseFormat.CreateFromDiscriminatorValue); } },
@@ -301,7 +302,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             writer.WriteStringValue("prompt_cache_key", PromptCacheKey);
             writer.WriteBoolValue("prompt_logprobs", PromptLogprobs);
             writer.WriteEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.MistralPromptMode>("prompt_mode", PromptMode);
-            writer.WriteIntValue("random_seed", RandomSeed);
+            writer.WriteLongValue("random_seed", RandomSeed);
             writer.WriteEnumValue<global::Soenneker.Mistral.OpenApiClient.Models.ReasoningEffort>("reasoning_effort", ReasoningEffort);
             writer.WriteDoubleValue("repetition_penalty", RepetitionPenalty);
             writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ResponseFormat>("response_format", ResponseFormat);

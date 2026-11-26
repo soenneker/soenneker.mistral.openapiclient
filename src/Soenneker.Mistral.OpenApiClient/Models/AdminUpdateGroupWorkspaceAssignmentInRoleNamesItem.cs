@@ -8,33 +8,17 @@ namespace Soenneker.Mistral.OpenApiClient.Models
     public enum AdminUpdateGroupWorkspaceAssignmentInRoleNamesItem
     #pragma warning restore CS1591
     {
-        [EnumMember(Value = "billing")]
-        #pragma warning disable CS1591
-        Billing,
-        #pragma warning restore CS1591
         [EnumMember(Value = "user")]
         #pragma warning disable CS1591
         User,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "contributor")]
-        #pragma warning disable CS1591
-        Contributor,
         #pragma warning restore CS1591
         [EnumMember(Value = "dev")]
         #pragma warning disable CS1591
         Dev,
         #pragma warning restore CS1591
-        [EnumMember(Value = "dev_contributor")]
-        #pragma warning disable CS1591
-        DevContributor,
-        #pragma warning restore CS1591
         [EnumMember(Value = "mistral_code_user")]
         #pragma warning disable CS1591
         MistralCodeUser,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "vibe_code_cli_user")]
-        #pragma warning disable CS1591
-        VibeCodeCliUser,
         #pragma warning restore CS1591
         [EnumMember(Value = "cloud_user")]
         #pragma warning disable CS1591
@@ -47,18 +31,6 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         [EnumMember(Value = "workspace_admin")]
         #pragma warning disable CS1591
         WorkspaceAdmin,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "observability_viewer")]
-        #pragma warning disable CS1591
-        ObservabilityViewer,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "workflow_executor")]
-        #pragma warning disable CS1591
-        WorkflowExecutor,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "member")]
-        #pragma warning disable CS1591
-        Member,
         #pragma warning restore CS1591
     }
 }

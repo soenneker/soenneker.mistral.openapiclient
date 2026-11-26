@@ -17,6 +17,8 @@ namespace Soenneker.Mistral.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
+            if (parseNode.GetChildNode("call_context") is null) { _explicitNullValueCallContext = default!; _explicitNullProperties?.Remove("call_context"); }
+            else if (parseNode.GetChildNode("call_context") is { } nullNodeCallContext && nullNodeCallContext.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CallContext = null;
             if (parseNode.GetChildNode("custom_tracing_attributes") is null) { _explicitNullValueCustomTracingAttributes = default!; _explicitNullProperties?.Remove("custom_tracing_attributes"); }
             else if (parseNode.GetChildNode("custom_tracing_attributes") is { } nullNodeCustomTracingAttributes && nullNodeCustomTracingAttributes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CustomTracingAttributes = null;
             if (parseNode.GetChildNode("deployment_name") is null) { _explicitNullValueDeploymentName = default!; _explicitNullProperties?.Remove("deployment_name"); }
@@ -41,6 +43,16 @@ namespace Soenneker.Mistral.OpenApiClient.Models
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>Cleartext technical values (ids, flags) for the code this call runs, read with `get_call_context()`. Not covered by payload encryption: never put customer content here.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Mistral.OpenApiClient.Models.WorkflowExecutionRequestCallContext? CallContext { get => _explicitNullValueCallContext; set { _explicitNullValueCallContext = value; AdditionalData?.Remove("call_context"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("call_context"); else _explicitNullProperties?.Remove("call_context"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.WorkflowExecutionRequestCallContext? _explicitNullValueCallContext = default!;
+#nullable restore
+#else
+        public global::Soenneker.Mistral.OpenApiClient.Models.WorkflowExecutionRequestCallContext CallContext { get => _explicitNullValueCallContext; set { _explicitNullValueCallContext = value; AdditionalData?.Remove("call_context"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("call_context"); else _explicitNullProperties?.Remove("call_context"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.WorkflowExecutionRequestCallContext _explicitNullValueCallContext = default!;
+#endif
         /// <summary>The custom_tracing_attributes property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -146,8 +158,9 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>(10)
+            return new Dictionary<string, Action<IParseNode>>(11)
             {
+                { "call_context", n => { CallContext = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.WorkflowExecutionRequestCallContext>(global::Soenneker.Mistral.OpenApiClient.Models.WorkflowExecutionRequestCallContext.CreateFromDiscriminatorValue); } },
                 { "custom_tracing_attributes", n => { CustomTracingAttributes = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.WorkflowExecutionRequestCustomTracingAttributesProperty>(global::Soenneker.Mistral.OpenApiClient.Models.WorkflowExecutionRequestCustomTracingAttributesProperty.CreateFromDiscriminatorValue); } },
                 { "deployment_name", n => { DeploymentName = n.GetStringValue(); } },
                 { "execution_id", n => { ExecutionId = n.GetStringValue(); } },
@@ -167,6 +180,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.WorkflowExecutionRequestCallContext>("call_context", CallContext);
             writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.WorkflowExecutionRequestCustomTracingAttributesProperty>("custom_tracing_attributes", CustomTracingAttributes);
             writer.WriteStringValue("deployment_name", DeploymentName);
             writer.WriteStringValue("execution_id", ExecutionId);

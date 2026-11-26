@@ -27,12 +27,18 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             else if (parseNode.GetChildNode("description") is { } nullNodeDescription && nullNodeDescription.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Description = null;
             if (parseNode.GetChildNode("direction") is null) { _explicitNullValueDirection = default!; _explicitNullProperties?.Remove("direction"); }
             else if (parseNode.GetChildNode("direction") is { } nullNodeDirection && nullNodeDirection.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Direction = null;
+            if (parseNode.GetChildNode("display") is null) { _explicitNullValueDisplay = default!; _explicitNullProperties?.Remove("display"); }
+            else if (parseNode.GetChildNode("display") is { } nullNodeDisplay && nullNodeDisplay.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Display = null;
             if (parseNode.GetChildNode("goal") is null) { _explicitNullValueGoal = default!; _explicitNullProperties?.Remove("goal"); }
             else if (parseNode.GetChildNode("goal") is { } nullNodeGoal && nullNodeGoal.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Goal = null;
+            if (parseNode.GetChildNode("goals") is null) { _explicitNullValueGoals = default!; _explicitNullProperties?.Remove("goals"); }
+            else if (parseNode.GetChildNode("goals") is { } nullNodeGoals && nullNodeGoals.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Goals = null;
             if (parseNode.GetChildNode("id") is null) { _explicitNullValueId = default!; _explicitNullProperties?.Remove("id"); }
             else if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
             if (parseNode.GetChildNode("max_value") is null) { _explicitNullValueMaxValue = default!; _explicitNullProperties?.Remove("max_value"); }
             else if (parseNode.GetChildNode("max_value") is { } nullNodeMaxValue && nullNodeMaxValue.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MaxValue = null;
+            if (parseNode.GetChildNode("metric_directions") is null) { _explicitNullValueMetricDirections = default!; _explicitNullProperties?.Remove("metric_directions"); }
+            else if (parseNode.GetChildNode("metric_directions") is { } nullNodeMetricDirections && nullNodeMetricDirections.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MetricDirections = null;
             if (parseNode.GetChildNode("min_value") is null) { _explicitNullValueMinValue = default!; _explicitNullProperties?.Remove("min_value"); }
             else if (parseNode.GetChildNode("min_value") is { } nullNodeMinValue && nullNodeMinValue.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MinValue = null;
             if (parseNode.GetChildNode("name") is null) { _explicitNullValueName = default!; _explicitNullProperties?.Remove("name"); }
@@ -87,6 +93,16 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         public global::Soenneker.Mistral.OpenApiClient.Models.EvaluatorV2Direction Direction { get => _explicitNullValueDirection; set { _explicitNullValueDirection = value; AdditionalData?.Remove("direction"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("direction"); else _explicitNullProperties?.Remove("direction"); } }
         private global::Soenneker.Mistral.OpenApiClient.Models.EvaluatorV2Direction _explicitNullValueDirection = default!;
 #endif
+        /// <summary>The display property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.Mistral.OpenApiClient.Models.DisplaySpec>? Display { get => _explicitNullValueDisplay; set { _explicitNullValueDisplay = value; AdditionalData?.Remove("display"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("display"); else _explicitNullProperties?.Remove("display"); } }
+        private List<global::Soenneker.Mistral.OpenApiClient.Models.DisplaySpec>? _explicitNullValueDisplay = default!;
+#nullable restore
+#else
+        public List<global::Soenneker.Mistral.OpenApiClient.Models.DisplaySpec> Display { get => _explicitNullValueDisplay; set { _explicitNullValueDisplay = value; AdditionalData?.Remove("display"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("display"); else _explicitNullProperties?.Remove("display"); } }
+        private List<global::Soenneker.Mistral.OpenApiClient.Models.DisplaySpec> _explicitNullValueDisplay = default!;
+#endif
         /// <summary>The goal property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -97,12 +113,32 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         public global::Soenneker.Mistral.OpenApiClient.Models.ClassificationStatisticSpecGoal Goal { get => _explicitNullValueGoal; set { _explicitNullValueGoal = value; AdditionalData?.Remove("goal"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("goal"); else _explicitNullProperties?.Remove("goal"); } }
         private global::Soenneker.Mistral.OpenApiClient.Models.ClassificationStatisticSpecGoal _explicitNullValueGoal = default!;
 #endif
+        /// <summary>The goals property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.Mistral.OpenApiClient.Models.GoalSpec>? Goals { get => _explicitNullValueGoals; set { _explicitNullValueGoals = value; AdditionalData?.Remove("goals"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("goals"); else _explicitNullProperties?.Remove("goals"); } }
+        private List<global::Soenneker.Mistral.OpenApiClient.Models.GoalSpec>? _explicitNullValueGoals = default!;
+#nullable restore
+#else
+        public List<global::Soenneker.Mistral.OpenApiClient.Models.GoalSpec> Goals { get => _explicitNullValueGoals; set { _explicitNullValueGoals = value; AdditionalData?.Remove("goals"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("goals"); else _explicitNullProperties?.Remove("goals"); } }
+        private List<global::Soenneker.Mistral.OpenApiClient.Models.GoalSpec> _explicitNullValueGoals = default!;
+#endif
         /// <summary>The id property</summary>
         public Guid? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; AdditionalData?.Remove("id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
         private Guid? _explicitNullValueId = default!;
         /// <summary>The max_value property</summary>
         public double? MaxValue { get => _explicitNullValueMaxValue; set { _explicitNullValueMaxValue = value; AdditionalData?.Remove("max_value"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("max_value"); else _explicitNullProperties?.Remove("max_value"); } }
         private double? _explicitNullValueMaxValue = default!;
+        /// <summary>The metric_directions property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.Mistral.OpenApiClient.Models.MetricDirectionSpec>? MetricDirections { get => _explicitNullValueMetricDirections; set { _explicitNullValueMetricDirections = value; AdditionalData?.Remove("metric_directions"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("metric_directions"); else _explicitNullProperties?.Remove("metric_directions"); } }
+        private List<global::Soenneker.Mistral.OpenApiClient.Models.MetricDirectionSpec>? _explicitNullValueMetricDirections = default!;
+#nullable restore
+#else
+        public List<global::Soenneker.Mistral.OpenApiClient.Models.MetricDirectionSpec> MetricDirections { get => _explicitNullValueMetricDirections; set { _explicitNullValueMetricDirections = value; AdditionalData?.Remove("metric_directions"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("metric_directions"); else _explicitNullProperties?.Remove("metric_directions"); } }
+        private List<global::Soenneker.Mistral.OpenApiClient.Models.MetricDirectionSpec> _explicitNullValueMetricDirections = default!;
+#endif
         /// <summary>The min_value property</summary>
         public double? MinValue { get => _explicitNullValueMinValue; set { _explicitNullValueMinValue = value; AdditionalData?.Remove("min_value"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("min_value"); else _explicitNullProperties?.Remove("min_value"); } }
         private double? _explicitNullValueMinValue = default!;
@@ -169,16 +205,19 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>(15)
+            return new Dictionary<string, Action<IParseNode>>(18)
             {
                 { "aggregate_goal", n => { AggregateGoal = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ClassificationStatisticSpecGoal>(global::Soenneker.Mistral.OpenApiClient.Models.ClassificationStatisticSpecGoal.CreateFromDiscriminatorValue); } },
                 { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
                 { "deleted_at", n => { DeletedAt = n.GetDateTimeOffsetValue(); } },
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "direction", n => { Direction = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.EvaluatorV2Direction>(global::Soenneker.Mistral.OpenApiClient.Models.EvaluatorV2Direction.CreateFromDiscriminatorValue); } },
+                { "display", n => { Display = n.GetCollectionOfObjectValues<global::Soenneker.Mistral.OpenApiClient.Models.DisplaySpec>(global::Soenneker.Mistral.OpenApiClient.Models.DisplaySpec.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "goal", n => { Goal = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ClassificationStatisticSpecGoal>(global::Soenneker.Mistral.OpenApiClient.Models.ClassificationStatisticSpecGoal.CreateFromDiscriminatorValue); } },
+                { "goals", n => { Goals = n.GetCollectionOfObjectValues<global::Soenneker.Mistral.OpenApiClient.Models.GoalSpec>(global::Soenneker.Mistral.OpenApiClient.Models.GoalSpec.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "id", n => { Id = n.GetGuidValue(); } },
                 { "max_value", n => { MaxValue = n.GetDoubleValue(); } },
+                { "metric_directions", n => { MetricDirections = n.GetCollectionOfObjectValues<global::Soenneker.Mistral.OpenApiClient.Models.MetricDirectionSpec>(global::Soenneker.Mistral.OpenApiClient.Models.MetricDirectionSpec.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "min_value", n => { MinValue = n.GetDoubleValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "num_scores", n => { NumScores = n.GetIntValue(); } },
@@ -200,9 +239,12 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             writer.WriteDateTimeOffsetValue("deleted_at", DeletedAt);
             writer.WriteStringValue("description", Description);
             writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.EvaluatorV2Direction>("direction", Direction);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Mistral.OpenApiClient.Models.DisplaySpec>("display", Display);
             writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.ClassificationStatisticSpecGoal>("goal", Goal);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Mistral.OpenApiClient.Models.GoalSpec>("goals", Goals);
             writer.WriteGuidValue("id", Id);
             writer.WriteDoubleValue("max_value", MaxValue);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Mistral.OpenApiClient.Models.MetricDirectionSpec>("metric_directions", MetricDirections);
             writer.WriteDoubleValue("min_value", MinValue);
             writer.WriteStringValue("name", Name);
             writer.WriteIntValue("num_scores", NumScores);

@@ -10,6 +10,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
     /// <summary>
     /// Enable users to specify an expected completion, optimizing response times by leveraging known or predictable content.
     /// </summary>
+    [Obsolete("")]
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class Prediction : IParsable
     , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {

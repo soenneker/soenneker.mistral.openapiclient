@@ -160,6 +160,10 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         #pragma warning disable CS1591
         WorkspaceDelete,
         #pragma warning restore CS1591
+        [EnumMember(Value = "workspace.members.export")]
+        #pragma warning disable CS1591
+        WorkspaceMembersExport,
+        #pragma warning restore CS1591
         [EnumMember(Value = "workspace.member.add")]
         #pragma warning disable CS1591
         WorkspaceMemberAdd,
@@ -999,6 +1003,10 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         [EnumMember(Value = "secrets_manager.secret.deleted")]
         #pragma warning disable CS1591
         SecretsManagerSecretDeleted,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "secrets_manager.secret.destroyed")]
+        #pragma warning disable CS1591
+        SecretsManagerSecretDestroyed,
         #pragma warning restore CS1591
         [EnumMember(Value = "secrets_manager.secret.version.deleted")]
         #pragma warning disable CS1591

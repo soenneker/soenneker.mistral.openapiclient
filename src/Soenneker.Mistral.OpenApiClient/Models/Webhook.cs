@@ -21,6 +21,8 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             else if (parseNode.GetChildNode("created_at") is { } nullNodeCreatedAt && nullNodeCreatedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CreatedAt = null;
             if (parseNode.GetChildNode("creator_id") is null) { _explicitNullValueCreatorId = default!; _explicitNullProperties?.Remove("creator_id"); }
             else if (parseNode.GetChildNode("creator_id") is { } nullNodeCreatorId && nullNodeCreatorId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CreatorId = null;
+            if (parseNode.GetChildNode("description") is null) { _explicitNullValueDescription = default!; _explicitNullProperties?.Remove("description"); }
+            else if (parseNode.GetChildNode("description") is { } nullNodeDescription && nullNodeDescription.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Description = null;
             if (parseNode.GetChildNode("event_id_pattern") is null) { _explicitNullValueEventIdPattern = default!; _explicitNullProperties?.Remove("event_id_pattern"); }
             else if (parseNode.GetChildNode("event_id_pattern") is { } nullNodeEventIdPattern && nullNodeEventIdPattern.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EventIdPattern = null;
             if (parseNode.GetChildNode("event_type_path") is null) { _explicitNullValueEventTypePath = default!; _explicitNullProperties?.Remove("event_type_path"); }
@@ -55,6 +57,8 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             else if (parseNode.GetChildNode("success_status_code") is { } nullNodeSuccessStatusCode && nullNodeSuccessStatusCode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SuccessStatusCode = null;
             if (parseNode.GetChildNode("timestamp_extractor_regex") is null) { _explicitNullValueTimestampExtractorRegex = default!; _explicitNullProperties?.Remove("timestamp_extractor_regex"); }
             else if (parseNode.GetChildNode("timestamp_extractor_regex") is { } nullNodeTimestampExtractorRegex && nullNodeTimestampExtractorRegex.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TimestampExtractorRegex = null;
+            if (parseNode.GetChildNode("timestamp_pattern") is null) { _explicitNullValueTimestampPattern = default!; _explicitNullProperties?.Remove("timestamp_pattern"); }
+            else if (parseNode.GetChildNode("timestamp_pattern") is { } nullNodeTimestampPattern && nullNodeTimestampPattern.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TimestampPattern = null;
             if (parseNode.GetChildNode("updated_at") is null) { _explicitNullValueUpdatedAt = default!; _explicitNullProperties?.Remove("updated_at"); }
             else if (parseNode.GetChildNode("updated_at") is { } nullNodeUpdatedAt && nullNodeUpdatedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UpdatedAt = null;
             if (parseNode.GetChildNode("url") is null) { _explicitNullValueUrl = default!; _explicitNullProperties?.Remove("url"); }
@@ -77,6 +81,16 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         /// <summary>The creator_id property</summary>
         public Guid? CreatorId { get => _explicitNullValueCreatorId; set { _explicitNullValueCreatorId = value; AdditionalData?.Remove("creator_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("creator_id"); else _explicitNullProperties?.Remove("creator_id"); } }
         private Guid? _explicitNullValueCreatorId = default!;
+        /// <summary>The description property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Description { get => _explicitNullValueDescription; set { _explicitNullValueDescription = value; AdditionalData?.Remove("description"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("description"); else _explicitNullProperties?.Remove("description"); } }
+        private string? _explicitNullValueDescription = default!;
+#nullable restore
+#else
+        public string Description { get => _explicitNullValueDescription; set { _explicitNullValueDescription = value; AdditionalData?.Remove("description"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("description"); else _explicitNullProperties?.Remove("description"); } }
+        private string _explicitNullValueDescription = default!;
+#endif
         /// <summary>The event_id_pattern property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -192,6 +206,16 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         public string TimestampExtractorRegex { get => _explicitNullValueTimestampExtractorRegex; set { _explicitNullValueTimestampExtractorRegex = value; AdditionalData?.Remove("timestamp_extractor_regex"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("timestamp_extractor_regex"); else _explicitNullProperties?.Remove("timestamp_extractor_regex"); } }
         private string _explicitNullValueTimestampExtractorRegex = default!;
 #endif
+        /// <summary>The timestamp_pattern property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? TimestampPattern { get => _explicitNullValueTimestampPattern; set { _explicitNullValueTimestampPattern = value; AdditionalData?.Remove("timestamp_pattern"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("timestamp_pattern"); else _explicitNullProperties?.Remove("timestamp_pattern"); } }
+        private string? _explicitNullValueTimestampPattern = default!;
+#nullable restore
+#else
+        public string TimestampPattern { get => _explicitNullValueTimestampPattern; set { _explicitNullValueTimestampPattern = value; AdditionalData?.Remove("timestamp_pattern"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("timestamp_pattern"); else _explicitNullProperties?.Remove("timestamp_pattern"); } }
+        private string _explicitNullValueTimestampPattern = default!;
+#endif
         /// <summary>The updated_at property</summary>
         public DateTimeOffset? UpdatedAt { get => _explicitNullValueUpdatedAt; set { _explicitNullValueUpdatedAt = value; AdditionalData?.Remove("updated_at"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("updated_at"); else _explicitNullProperties?.Remove("updated_at"); } }
         private DateTimeOffset? _explicitNullValueUpdatedAt = default!;
@@ -247,10 +271,11 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>(25)
+            return new Dictionary<string, Action<IParseNode>>(27)
             {
                 { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
                 { "creator_id", n => { CreatorId = n.GetGuidValue(); } },
+                { "description", n => { Description = n.GetStringValue(); } },
                 { "event_id_pattern", n => { EventIdPattern = n.GetStringValue(); } },
                 { "event_type_path", n => { EventTypePath = n.GetStringValue(); } },
                 { "event_type_pattern", n => { EventTypePattern = n.GetStringValue(); } },
@@ -268,6 +293,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
                 { "signature_payload_pattern", n => { SignaturePayloadPattern = n.GetStringValue(); } },
                 { "success_status_code", n => { SuccessStatusCode = n.GetIntValue(); } },
                 { "timestamp_extractor_regex", n => { TimestampExtractorRegex = n.GetStringValue(); } },
+                { "timestamp_pattern", n => { TimestampPattern = n.GetStringValue(); } },
                 { "updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
                 { "url", n => { Url = n.GetStringValue(); } },
                 { "url_verification_token", n => { UrlVerificationToken = n.GetStringValue(); } },
@@ -285,6 +311,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteDateTimeOffsetValue("created_at", CreatedAt);
             writer.WriteGuidValue("creator_id", CreatorId);
+            writer.WriteStringValue("description", Description);
             writer.WriteStringValue("event_id_pattern", EventIdPattern);
             writer.WriteStringValue("event_type_path", EventTypePath);
             writer.WriteStringValue("event_type_pattern", EventTypePattern);
@@ -302,6 +329,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             writer.WriteStringValue("signature_payload_pattern", SignaturePayloadPattern);
             writer.WriteIntValue("success_status_code", SuccessStatusCode);
             writer.WriteStringValue("timestamp_extractor_regex", TimestampExtractorRegex);
+            writer.WriteStringValue("timestamp_pattern", TimestampPattern);
             writer.WriteDateTimeOffsetValue("updated_at", UpdatedAt);
             writer.WriteStringValue("url", Url);
             writer.WriteStringValue("url_verification_token", UrlVerificationToken);

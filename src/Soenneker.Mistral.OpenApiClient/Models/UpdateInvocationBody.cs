@@ -17,6 +17,8 @@ namespace Soenneker.Mistral.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
+            if (parseNode.GetChildNode("call_context") is null) { _explicitNullValueCallContext = default!; _explicitNullProperties?.Remove("call_context"); }
+            else if (parseNode.GetChildNode("call_context") is { } nullNodeCallContext && nullNodeCallContext.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CallContext = null;
             if (parseNode.GetChildNode("input") is null) { _explicitNullValueInput = default!; _explicitNullProperties?.Remove("input"); }
             else if (parseNode.GetChildNode("input") is { } nullNodeInput && nullNodeInput.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Input = null;
             if (parseNode.GetChildNode("name") is null) { _explicitNullValueName = default!; _explicitNullProperties?.Remove("name"); }
@@ -25,6 +27,16 @@ namespace Soenneker.Mistral.OpenApiClient.Models
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>Cleartext technical values (ids, flags) for the code this call runs, read with `get_call_context()`. Not covered by payload encryption: never put customer content here.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Mistral.OpenApiClient.Models.UpdateInvocationBodyCallContext? CallContext { get => _explicitNullValueCallContext; set { _explicitNullValueCallContext = value; AdditionalData?.Remove("call_context"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("call_context"); else _explicitNullProperties?.Remove("call_context"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.UpdateInvocationBodyCallContext? _explicitNullValueCallContext = default!;
+#nullable restore
+#else
+        public global::Soenneker.Mistral.OpenApiClient.Models.UpdateInvocationBodyCallContext CallContext { get => _explicitNullValueCallContext; set { _explicitNullValueCallContext = value; AdditionalData?.Remove("call_context"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("call_context"); else _explicitNullProperties?.Remove("call_context"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.UpdateInvocationBodyCallContext _explicitNullValueCallContext = default!;
+#endif
         /// <summary>Input data for the update, matching its schema</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -70,6 +82,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "call_context", n => { CallContext = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.UpdateInvocationBodyCallContext>(global::Soenneker.Mistral.OpenApiClient.Models.UpdateInvocationBodyCallContext.CreateFromDiscriminatorValue); } },
                 { "input", n => { Input = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.UpdateInvocationBodyInput>(global::Soenneker.Mistral.OpenApiClient.Models.UpdateInvocationBodyInput.CreateFromDiscriminatorValue); } },
                 { "name", n => { Name = n.GetStringValue(); } },
             };
@@ -81,6 +94,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.UpdateInvocationBodyCallContext>("call_context", CallContext);
             writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.UpdateInvocationBodyInput>("input", Input);
             writer.WriteStringValue("name", Name);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);

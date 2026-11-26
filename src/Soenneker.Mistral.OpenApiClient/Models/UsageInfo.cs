@@ -23,6 +23,8 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             else if (parseNode.GetChildNode("prompt_audio_seconds") is { } nullNodePromptAudioSeconds && nullNodePromptAudioSeconds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PromptAudioSeconds = null;
             if (parseNode.GetChildNode("prompt_tokens") is null) { _explicitNullValuePromptTokens = default!; _explicitNullProperties?.Remove("prompt_tokens"); }
             else if (parseNode.GetChildNode("prompt_tokens") is { } nullNodePromptTokens && nullNodePromptTokens.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PromptTokens = null;
+            if (parseNode.GetChildNode("prompt_tokens_details") is null) { _explicitNullValuePromptTokensDetails = default!; _explicitNullProperties?.Remove("prompt_tokens_details"); }
+            else if (parseNode.GetChildNode("prompt_tokens_details") is { } nullNodePromptTokensDetails && nullNodePromptTokensDetails.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PromptTokensDetails = null;
             if (parseNode.GetChildNode("service_tier") is null) { _explicitNullValueServiceTier = default!; _explicitNullProperties?.Remove("service_tier"); }
             else if (parseNode.GetChildNode("service_tier") is { } nullNodeServiceTier && nullNodeServiceTier.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ServiceTier = null;
             if (parseNode.GetChildNode("total_tokens") is null) { _explicitNullValueTotalTokens = default!; _explicitNullProperties?.Remove("total_tokens"); }
@@ -38,6 +40,16 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         /// <summary>The prompt_tokens property</summary>
         public int? PromptTokens { get => _explicitNullValuePromptTokens; set { _explicitNullValuePromptTokens = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("prompt_tokens"); else _explicitNullProperties?.Remove("prompt_tokens"); } }
         private int? _explicitNullValuePromptTokens = default!;
+        /// <summary>Token usage details for the prompt.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Mistral.OpenApiClient.Models.UsageInfoPromptTokensDetails? PromptTokensDetails { get => _explicitNullValuePromptTokensDetails; set { _explicitNullValuePromptTokensDetails = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("prompt_tokens_details"); else _explicitNullProperties?.Remove("prompt_tokens_details"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.UsageInfoPromptTokensDetails? _explicitNullValuePromptTokensDetails = default!;
+#nullable restore
+#else
+        public global::Soenneker.Mistral.OpenApiClient.Models.UsageInfoPromptTokensDetails PromptTokensDetails { get => _explicitNullValuePromptTokensDetails; set { _explicitNullValuePromptTokensDetails = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("prompt_tokens_details"); else _explicitNullProperties?.Remove("prompt_tokens_details"); } }
+        private global::Soenneker.Mistral.OpenApiClient.Models.UsageInfoPromptTokensDetails _explicitNullValuePromptTokensDetails = default!;
+#endif
         /// <summary>The service tier at which the request was processed: standard or priority.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -76,11 +88,12 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>(5)
+            return new Dictionary<string, Action<IParseNode>>(6)
             {
                 { "completion_tokens", n => { CompletionTokens = n.GetIntValue(); } },
                 { "prompt_audio_seconds", n => { PromptAudioSeconds = n.GetIntValue(); } },
                 { "prompt_tokens", n => { PromptTokens = n.GetIntValue(); } },
+                { "prompt_tokens_details", n => { PromptTokensDetails = n.GetObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.UsageInfoPromptTokensDetails>(global::Soenneker.Mistral.OpenApiClient.Models.UsageInfoPromptTokensDetails.CreateFromDiscriminatorValue); } },
                 { "service_tier", n => { ServiceTier = n.GetStringValue(); } },
                 { "total_tokens", n => { TotalTokens = n.GetIntValue(); } },
             };
@@ -95,6 +108,7 @@ namespace Soenneker.Mistral.OpenApiClient.Models
             writer.WriteIntValue("completion_tokens", CompletionTokens);
             writer.WriteIntValue("prompt_audio_seconds", PromptAudioSeconds);
             writer.WriteIntValue("prompt_tokens", PromptTokens);
+            writer.WriteObjectValue<global::Soenneker.Mistral.OpenApiClient.Models.UsageInfoPromptTokensDetails>("prompt_tokens_details", PromptTokensDetails);
             writer.WriteStringValue("service_tier", ServiceTier);
             writer.WriteIntValue("total_tokens", TotalTokens);if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             

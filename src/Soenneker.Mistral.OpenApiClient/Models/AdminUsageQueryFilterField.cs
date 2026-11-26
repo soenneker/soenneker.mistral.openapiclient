@@ -63,5 +63,13 @@ namespace Soenneker.Mistral.OpenApiClient.Models
         #pragma warning disable CS1591
         UserAgent,
         #pragma warning restore CS1591
+        [EnumMember(Value = "resource_id")]
+        #pragma warning disable CS1591
+        ResourceId,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "resource_version")]
+        #pragma warning disable CS1591
+        ResourceVersion,
+        #pragma warning restore CS1591
     }
 }

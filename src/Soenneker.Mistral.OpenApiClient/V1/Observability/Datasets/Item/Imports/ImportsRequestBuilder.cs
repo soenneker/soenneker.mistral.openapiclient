@@ -4,7 +4,6 @@ using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions;
 using Soenneker.Mistral.OpenApiClient.V1.Observability.Datasets.Item.Imports.FromDataset;
 using Soenneker.Mistral.OpenApiClient.V1.Observability.Datasets.Item.Imports.FromFile;
-using Soenneker.Mistral.OpenApiClient.V1.Observability.Datasets.Item.Imports.FromPlayground;
 using Soenneker.Mistral.OpenApiClient.V1.Observability.Datasets.Item.Imports.FromSpans;
 using System.Collections.Generic;
 using System.IO;
@@ -27,11 +26,6 @@ namespace Soenneker.Mistral.OpenApiClient.V1.Observability.Datasets.Item.Imports
         public global::Soenneker.Mistral.OpenApiClient.V1.Observability.Datasets.Item.Imports.FromFile.FromFileRequestBuilder FromFile
         {
             get => new global::Soenneker.Mistral.OpenApiClient.V1.Observability.Datasets.Item.Imports.FromFile.FromFileRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>The fromPlayground property</summary>
-        public global::Soenneker.Mistral.OpenApiClient.V1.Observability.Datasets.Item.Imports.FromPlayground.FromPlaygroundRequestBuilder FromPlayground
-        {
-            get => new global::Soenneker.Mistral.OpenApiClient.V1.Observability.Datasets.Item.Imports.FromPlayground.FromPlaygroundRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The fromSpans property</summary>
         public global::Soenneker.Mistral.OpenApiClient.V1.Observability.Datasets.Item.Imports.FromSpans.FromSpansRequestBuilder FromSpans
